@@ -15,11 +15,20 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamgamecoordinator.callbacks.Mes
 import uk.co.thomasc.steamkit.util.util.MsgUtil;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This handler handles all game coordinator messaging.
  */
 public final class SteamGameCoordinator extends ClientMsgHandler {
+
+    private final Map<EMsg, Action<IPacketMsg>> dispatchMap;
+
+    public SteamGameCoordinator() {
+        this.dispatchMap = new HashMap<>(6);
+        this.dispatchMap.put(EMsg.ClientFromGC, this::handleFromGC);
+    }
 
     /**
      * Sends a game coordinator message for a specific appid.
@@ -52,23 +61,35 @@ public final class SteamGameCoordinator extends ClientMsgHandler {
      */
     @Override
     public void handleMsg(IPacketMsg packetMsg) {
-        if (packetMsg.getMsgType() == EMsg.ClientFromGC) {
-            final ClientMsgProtobuf<CMsgGCClient.Builder> msg = new ClientMsgProtobuf<CMsgGCClient.Builder>(CMsgGCClient.class, packetMsg);
+        final Action<IPacketMsg> iPacketMsgAction = dispatchMap.get(packetMsg.getMsgType());
+        boolean haveFunc = dispatchMap.containsKey(packetMsg.getMsgType());
+        if (!haveFunc) {
+            // ignore messages that we don't have a handler function for
+            return;
+        }
 
-            final MessageCallback callback = new MessageCallback(msg.getBody().build());
-            getClient().postCallback(callback);
+        dispatchMap.get(packetMsg.getMsgType()).handle(packetMsg);
+    }
 
-            if (callback.getEMsg() == EGCMsgBase.CraftResponse) {
-                final ClientGCMsg<GCMsgCraftItemResponse> craftMsg = new ClientGCMsg<GCMsgCraftItemResponse>(GCMsgCraftItemResponse.class);
-                try {
-                    craftMsg.deSerialize(msg.getBody().getPayload().toByteArray());
+    private void handleFromGC(IPacketMsg packetMsg) {
+        final ClientMsgProtobuf<CMsgGCClient.Builder> msg = new ClientMsgProtobuf<>(CMsgGCClient.class, packetMsg);
 
-                    final CraftResponseCallback craftCallback = new CraftResponseCallback(craftMsg.getBody());
-                    getClient().postCallback(craftCallback);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        final MessageCallback messageCallback = new MessageCallback(msg.getBody().build());
+        getClient().postCallback(messageCallback);
+        if (messageCallback.getEMsg() == EGCMsgBase.CraftResponse) {
+            final ClientGCMsg<GCMsgCraftItemResponse> craftMsg = new ClientGCMsg<GCMsgCraftItemResponse>(GCMsgCraftItemResponse.class);
+            try {
+                craftMsg.deSerialize(msg.getBody().getPayload().toByteArray());
+
+                final CraftResponseCallback craftCallback = new CraftResponseCallback(craftMsg.getBody());
+                getClient().postCallback(craftCallback);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
+    }
+
+    private interface Action<T> {
+        public void handle(T msg);
     }
 }
