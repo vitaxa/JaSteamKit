@@ -33,8 +33,10 @@ public class SmartCMServerList {
                     .collect(Collectors.toList());
             if (!badIpList.isEmpty()) {
                 final List<ServerInfo> goodIpList = filterBadIpList(badIpList);
-                goodIpList.forEach(serverInfo -> markServer(serverInfo.getIpEndPoint(), ServerQuality.GOOD));
-                return goodIpList.get(new Random().nextInt(goodIpList.size())).getIpEndPoint();
+                if (!goodIpList.isEmpty()) {
+                    goodIpList.forEach(serverInfo -> markServer(serverInfo.getIpEndPoint(), ServerQuality.GOOD));
+                    return goodIpList.get(new Random().nextInt(goodIpList.size())).getIpEndPoint();
+                }
             }
             final ServerInfo serverInfo = serverList.get(new Random().nextInt(serverList.size()));
             return serverInfo.getIpEndPoint();
