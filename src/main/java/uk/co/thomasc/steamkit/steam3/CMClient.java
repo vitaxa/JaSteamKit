@@ -17,6 +17,8 @@ import uk.co.thomasc.steamkit.networking.steam3.Connection;
 import uk.co.thomasc.steamkit.networking.steam3.NetFilterEncryption;
 import uk.co.thomasc.steamkit.networking.steam3.TcpConnection;
 import uk.co.thomasc.steamkit.networking.steam3.UdpConnection;
+import uk.co.thomasc.steamkit.steam3.discovery.SmartCMServerList;
+import uk.co.thomasc.steamkit.steam3.discovery.provider.SteamDirectoryProvider;
 import uk.co.thomasc.steamkit.steam3.steamclient.SteamClient;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.ConnectedCallback;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
@@ -43,142 +45,6 @@ import java.util.*;
  */
 public abstract class CMClient {
     /**
-     * Default addresses for CM servers.
-     * Updated 4/18/2016
-     */
-    public static final String[] default_addrs = new String[]{
-            "208.78.164.12:27017",
-            "208.78.164.9:27017",
-            "208.78.164.9:27018",
-            "208.78.164.12:27018",
-            "208.78.164.9:27019",
-            "208.78.164.10:27019",
-            "208.78.164.10:27018",
-            "208.78.164.13:27017",
-            "208.78.164.14:27019",
-            "208.78.164.11:27017",
-            "208.78.164.10:27017",
-            "208.78.164.11:27019",
-            "208.78.164.11:27018",
-            "208.78.164.13:27019",
-            "208.78.164.12:27019",
-            "208.78.164.14:27017",
-            "208.78.164.14:27018",
-            "208.78.164.13:27018",
-            "162.254.195.44:27021",
-            "162.254.195.46:27020",
-            "162.254.195.46:27021",
-            "162.254.195.45:27019",
-            "162.254.195.47:27021",
-            "162.254.195.44:27020",
-            "162.254.195.46:27017",
-            "162.254.195.45:27020",
-            "162.254.195.45:27017",
-            "162.254.195.47:27019",
-            "162.254.195.47:27017",
-            "162.254.195.45:27021",
-            "162.254.195.45:27018",
-            "162.254.195.47:27020",
-            "162.254.195.44:27017",
-            "162.254.195.46:27019",
-            "162.254.195.44:27019",
-            "162.254.195.46:27018",
-            "162.254.195.44:27018",
-            "162.254.195.47:27018",
-            "162.254.193.7:27017",
-            "162.254.193.47:27017",
-            "162.254.193.46:27020",
-            "162.254.193.7:27020",
-            "162.254.193.6:27019",
-            "162.254.193.47:27019",
-            "162.254.193.46:27021",
-            "162.254.193.6:27020",
-            "162.254.193.47:27020",
-            "162.254.193.47:27018",
-            "162.254.193.7:27021",
-            "162.254.193.7:27019",
-            "162.254.193.47:27021",
-            "162.254.193.46:27018",
-            "162.254.193.6:27018",
-            "162.254.193.6:27017",
-            "162.254.193.46:27019",
-            "162.254.193.7:27018",
-            "162.254.193.6:27021",
-            "162.254.193.46:27017",
-            "208.64.201.176:27021",
-            "208.64.201.176:27019",
-            "208.64.201.176:27020",
-            "208.64.201.169:27021",
-            "208.64.201.169:27019",
-            "208.64.201.169:27020",
-            "208.64.201.176:27017",
-            "72.165.61.185:27017",
-            "72.165.61.175:27017",
-            "208.64.201.169:27018",
-            "72.165.61.187:27017",
-            "72.165.61.174:27017",
-            "208.64.201.169:27017",
-            "72.165.61.175:27018",
-            "72.165.61.174:27018",
-            "208.64.201.176:27018",
-            "162.254.196.43:27019",
-            "162.254.196.42:27021",
-            "162.254.196.41:27017",
-            "162.254.196.41:27020",
-            "162.254.196.43:27017",
-            "162.254.196.41:27021",
-            "162.254.196.40:27019",
-            "162.254.196.42:27018",
-            "162.254.196.41:27019",
-            "162.254.196.43:27020",
-            "162.254.196.42:27019",
-            "162.254.196.42:27017",
-            "162.254.196.43:27021",
-            "162.254.196.43:27018",
-            "162.254.196.40:27018",
-            "162.254.196.41:27018",
-            "162.254.196.42:27020",
-            "162.254.196.40:27020",
-            "162.254.196.40:27017",
-            "162.254.196.40:27021",
-            "146.66.152.11:27017",
-            "146.66.152.10:27019",
-            "146.66.152.10:27020",
-            "146.66.152.11:27019",
-            "146.66.152.11:27018",
-            "146.66.152.10:27018"
-    };
-
-    /**
-     * Bootstrap list of CM servers.
-     */
-    public static IPEndPoint[] Servers;
-
-    static {
-        updateCMServers(default_addrs);
-    }
-
-    /**
-     * Updates the internal list of IP addresses for CMServers
-     *
-     * @param addrs A String[] of IP addresses and ports to add to the internal list
-     */
-    public static void updateCMServers(String[] addrs) {
-        Servers = new IPEndPoint[addrs.length];
-        for (int i = 0; i < addrs.length; i++) Servers[i] = IPEndPoint.fromString(addrs[i]);
-        DebugLog.writeLine("CMClient", "Loaded IP list, length: " + Servers.length);
-    }
-
-    /**
-     * Returns the the local IP of this client.
-     *
-     * @return The local IP.
-     */
-    public InetAddress getLocalIP() {
-        return connection.getLocalIP();
-    }
-
-    /**
      * The universe.
      */
     private EUniverse connectedUniverse;
@@ -196,6 +62,8 @@ public abstract class CMClient {
     private ScheduledFunction heartBeatFunc;
     private Map<EServerType, List<IPEndPoint>> serverMap;
 
+    private SmartCMServerList serverList;
+
     public CMClient() {
         this(ProtocolType.Tcp);
     }
@@ -209,7 +77,8 @@ public abstract class CMClient {
      *                                       and Udp are available.
      */
     public CMClient(ProtocolType type) {
-        serverMap = new HashMap<EServerType, List<IPEndPoint>>();
+        this.serverList = new SmartCMServerList(new SteamDirectoryProvider());
+        this.serverMap = new HashMap<EServerType, List<IPEndPoint>>();
         switch (type) {
             case Tcp:
                 connection = new TcpConnection();
@@ -222,20 +91,20 @@ public abstract class CMClient {
             default:
                 throw new UnsupportedOperationException("The provided protocol type is not supported. Only Tcp and Udp are available.");
         }
-        connection.netMsgReceived.addEventHandler((sender, e) -> {
+        this.connection.netMsgReceived.addEventHandler((sender, e) -> {
             try {
                 onClientMsgReceived(getPacketMsg(e.getData()));
             } catch (final IOException ex) {
                 ex.printStackTrace();
             }
         });
-        connection.disconnected.addEventHandler((sender, e) -> {
+        this.connection.disconnected.addEventHandler((sender, e) -> {
             connectedUniverse = EUniverse.Invalid;
             heartBeatFunc.stop();
             connection.netFilter = null;
             onClientDisconnected(e.getValue());
         });
-        connection.connected.addEventHandler((sender, e) -> {
+        this.connection.connected.addEventHandler((sender, e) -> {
             // If we're on an encrypted connection, we wait for the handshake to complete
             if (encrypted) {
                 return;
@@ -245,7 +114,7 @@ public abstract class CMClient {
             // since there is no encryption handshake, we're 'connected' after the underlying connection is established
             onClientConnected();
         });
-        heartBeatFunc = new ScheduledFunction(() -> {
+        this.heartBeatFunc = new ScheduledFunction(() -> {
             send(new ClientMsgProtobuf<CMsgClientHeartBeat.Builder>(CMsgClientHeartBeat.class, EMsg.ClientHeartBeat));
         });
     }
@@ -267,7 +136,7 @@ public abstract class CMClient {
         disconnect();
         encrypted = bEncrypted;
         final Random random = new Random();
-        final IPEndPoint server = CMClient.Servers[random.nextInt(CMClient.Servers.length)];
+        final IPEndPoint server = serverList.getNextServerCandidate();
         connection.connect(server);
     }
 
@@ -519,5 +388,14 @@ public abstract class CMClient {
      */
     public SteamID getSteamId() {
         return this.steamId;
+    }
+
+    /**
+     * Returns the the local IP of this client.
+     *
+     * @return The local IP.
+     */
+    public InetAddress getLocalIP() {
+        return connection.getLocalIP();
     }
 }
