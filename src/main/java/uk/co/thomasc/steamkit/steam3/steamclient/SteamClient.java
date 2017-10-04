@@ -1,6 +1,5 @@
 package uk.co.thomasc.steamkit.steam3.steamclient;
 
-import uk.co.thomasc.steamkit.base.ClientMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
 import uk.co.thomasc.steamkit.base.Msg;
@@ -27,7 +26,6 @@ import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.CMListCallback;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.ConnectedCallback;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.DisconnectedCallback;
 import uk.co.thomasc.steamkit.types.JobID;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
 import uk.co.thomasc.steamkit.util.cSharp.ip.ProtocolType;
 
 import java.io.IOException;
@@ -96,33 +94,6 @@ public final class SteamClient extends CMClient {
 
         handlers.put(handler.getClass(), handler);
         handler.setup(this);
-    }
-
-    /**
-     * Accepts the invite to a Steam Group
-     * @param group SteamID of the group to accept the invite from
-     */
-    public void acceptGroupInvite(SteamID group) {
-        ClientMsg<CMsgGroupInviteAction> acceptInvite = new ClientMsg<>(CMsgGroupInviteAction.class);
-
-        acceptInvite.getBody().groupID = group.convertToLong();
-        acceptInvite.getBody().acceptInvite = true;
-
-        send(acceptInvite);
-
-    }
-
-    /**
-     * Declines the invite to a Steam Group
-     * @param group SteamId of the group to decline the invite from
-     */
-    public void declineGroupInvite(SteamID group) {
-        ClientMsg<CMsgGroupInviteAction> declineInvite = new ClientMsg<>(CMsgGroupInviteAction.class);
-
-        declineInvite.getBody().groupID = group.convertToLong();
-        declineInvite.getBody().acceptInvite = false;
-
-        send(declineInvite);
     }
 
     /**

@@ -1358,6 +1358,14 @@ public final class SteamMsgGCEcon {
      * <code>k_EGCMsgFailedToCreate = 8;</code>
      */
     k_EGCMsgFailedToCreate(8),
+    /**
+     * <code>k_EGCMsgLimitExceeded = 9;</code>
+     */
+    k_EGCMsgLimitExceeded(9),
+    /**
+     * <code>k_EGCMsgCommitUnfinalized = 10;</code>
+     */
+    k_EGCMsgCommitUnfinalized(10),
     ;
 
     /**
@@ -1396,6 +1404,14 @@ public final class SteamMsgGCEcon {
      * <code>k_EGCMsgFailedToCreate = 8;</code>
      */
     public static final int k_EGCMsgFailedToCreate_VALUE = 8;
+    /**
+     * <code>k_EGCMsgLimitExceeded = 9;</code>
+     */
+    public static final int k_EGCMsgLimitExceeded_VALUE = 9;
+    /**
+     * <code>k_EGCMsgCommitUnfinalized = 10;</code>
+     */
+    public static final int k_EGCMsgCommitUnfinalized_VALUE = 10;
 
 
     public final int getNumber() {
@@ -1421,6 +1437,8 @@ public final class SteamMsgGCEcon {
         case 6: return k_EGCMsgResponseUnknownError;
         case 7: return k_EGCMsgResponseNotLoggedOn;
         case 8: return k_EGCMsgFailedToCreate;
+        case 9: return k_EGCMsgLimitExceeded;
+        case 10: return k_EGCMsgCommitUnfinalized;
         default: return null;
       }
     }
@@ -3562,7 +3580,7 @@ public final class SteamMsgGCEcon {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025econ_gcmessages.proto\032\023SteamMsgBase.p" +
+      "\n\025econ_gcmessages.proto\032\023steammessages.p" +
       "roto\"\230\001\n\021CMsgGCGiftedItems\022\021\n\taccountid\030" +
       "\001 \001(\r\022\024\n\014giftdefindex\030\002 \001(\r\022\032\n\022max_gifts" +
       "_possible\030\003 \001(\r\022\037\n\027num_eligible_recipien" +
@@ -3691,7 +3709,7 @@ public final class SteamMsgGCEcon {
       "ed\020\334\023\022!\n\034k_EMsgGCRequestAnnouncements\020\335\023" +
       "\022)\n$k_EMsgGCRequestAnnouncementsResponse" +
       "\020\336\023\022%\n k_EMsgGCRequestPassportItemGrant\020" +
-      "\337\023\022!\n\034k_EMsgGCClientVersionUpdated\020\340\023*\233\002",
+      "\337\023\022!\n\034k_EMsgGCClientVersionUpdated\020\340\023*\325\002",
       "\n\016EGCMsgResponse\022\026\n\022k_EGCMsgResponseOK\020\000" +
       "\022\032\n\026k_EGCMsgResponseDenied\020\001\022\037\n\033k_EGCMsg" +
       "ResponseServerError\020\002\022\033\n\027k_EGCMsgRespons" +
@@ -3699,13 +3717,14 @@ public final class SteamMsgGCEcon {
       "\033\n\027k_EGCMsgResponseNoMatch\020\005\022 \n\034k_EGCMsg" +
       "ResponseUnknownError\020\006\022\037\n\033k_EGCMsgRespon" +
       "seNotLoggedOn\020\007\022\032\n\026k_EGCMsgFailedToCreat" +
-      "e\020\010*\351\001\n\014EUnlockStyle\022\033\n\027k_UnlockStyle_Su" +
-      "cceeded\020\000\022\037\n\033k_UnlockStyle_Failed_PreReq" +
-      "\020\001\022#\n\037k_UnlockStyle_Failed_CantAfford\020\002\022",
-      "#\n\037k_UnlockStyle_Failed_CantCommit\020\003\022&\n\"" +
-      "k_UnlockStyle_Failed_CantLockCache\020\004\022)\n%" +
-      "k_UnlockStyle_Failed_CantAffordAttrib\020\005B" +
-      "\005H\001\200\001\000"
+      "e\020\010\022\031\n\025k_EGCMsgLimitExceeded\020\t\022\035\n\031k_EGCM" +
+      "sgCommitUnfinalized\020\n*\351\001\n\014EUnlockStyle\022\033" +
+      "\n\027k_UnlockStyle_Succeeded\020\000\022\037\n\033k_UnlockS",
+      "tyle_Failed_PreReq\020\001\022#\n\037k_UnlockStyle_Fa" +
+      "iled_CantAfford\020\002\022#\n\037k_UnlockStyle_Faile" +
+      "d_CantCommit\020\003\022&\n\"k_UnlockStyle_Failed_C" +
+      "antLockCache\020\004\022)\n%k_UnlockStyle_Failed_C" +
+      "antAffordAttrib\020\005B\005H\001\200\001\000"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3718,7 +3737,7 @@ public final class SteamMsgGCEcon {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          SteamMsgBase.getDescriptor(),
+              SteamMsgBase.getDescriptor(),
         }, assigner);
     internal_static_CMsgGCGiftedItems_descriptor =
       getDescriptor().getMessageTypes().get(0);

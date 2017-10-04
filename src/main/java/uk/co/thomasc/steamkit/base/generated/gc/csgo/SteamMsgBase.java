@@ -33607,7 +33607,8 @@ public final class SteamMsgBase {
     }
     public static SteamMsgBase.CMsgAMSendEmail parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static SteamMsgBase.CMsgAMSendEmail parseFrom(
         java.io.InputStream input,
@@ -57970,6 +57971,46 @@ public final class SteamMsgBase {
      */
     SteamMsgBase.CMsgGCHUpdateSession.ExtraFieldOrBuilder getExtraFieldsOrBuilder(
         int index);
+
+    /**
+     * <code>optional fixed64 owner_id = 10;</code>
+     */
+    boolean hasOwnerId();
+    /**
+     * <code>optional fixed64 owner_id = 10;</code>
+     */
+    long getOwnerId();
+
+    /**
+     * <code>optional uint32 cm_session_sysid = 11;</code>
+     */
+    boolean hasCmSessionSysid();
+    /**
+     * <code>optional uint32 cm_session_sysid = 11;</code>
+     */
+    int getCmSessionSysid();
+
+    /**
+     * <code>optional uint32 cm_session_identifier = 12;</code>
+     */
+    boolean hasCmSessionIdentifier();
+    /**
+     * <code>optional uint32 cm_session_identifier = 12;</code>
+     */
+    int getCmSessionIdentifier();
+
+    /**
+     * <code>repeated uint32 depot_ids = 13;</code>
+     */
+    java.util.List<java.lang.Integer> getDepotIdsList();
+    /**
+     * <code>repeated uint32 depot_ids = 13;</code>
+     */
+    int getDepotIdsCount();
+    /**
+     * <code>repeated uint32 depot_ids = 13;</code>
+     */
+    int getDepotIds(int index);
   }
   /**
    * Protobuf type {@code CMsgGCHUpdateSession}
@@ -57993,6 +58034,10 @@ public final class SteamMsgBase {
       osType_ = 0;
       clientAddr_ = 0;
       extraFields_ = java.util.Collections.emptyList();
+      ownerId_ = 0L;
+      cmSessionSysid_ = 0;
+      cmSessionIdentifier_ = 0;
+      depotIds_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -58072,6 +58117,42 @@ public final class SteamMsgBase {
                   input.readMessage(SteamMsgBase.CMsgGCHUpdateSession.ExtraField.PARSER, extensionRegistry));
               break;
             }
+            case 81: {
+              bitField0_ |= 0x00000100;
+              ownerId_ = input.readFixed64();
+              break;
+            }
+            case 88: {
+              bitField0_ |= 0x00000200;
+              cmSessionSysid_ = input.readUInt32();
+              break;
+            }
+            case 96: {
+              bitField0_ |= 0x00000400;
+              cmSessionIdentifier_ = input.readUInt32();
+              break;
+            }
+            case 104: {
+              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+                depotIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00001000;
+              }
+              depotIds_.add(input.readUInt32());
+              break;
+            }
+            case 106: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000) && input.getBytesUntilLimit() > 0) {
+                depotIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00001000;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                depotIds_.add(input.readUInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -58082,6 +58163,9 @@ public final class SteamMsgBase {
       } finally {
         if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
           extraFields_ = java.util.Collections.unmodifiableList(extraFields_);
+        }
+        if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+          depotIds_ = java.util.Collections.unmodifiableList(depotIds_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -58975,6 +59059,73 @@ public final class SteamMsgBase {
       return extraFields_.get(index);
     }
 
+    public static final int OWNER_ID_FIELD_NUMBER = 10;
+    private long ownerId_;
+    /**
+     * <code>optional fixed64 owner_id = 10;</code>
+     */
+    public boolean hasOwnerId() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional fixed64 owner_id = 10;</code>
+     */
+    public long getOwnerId() {
+      return ownerId_;
+    }
+
+    public static final int CM_SESSION_SYSID_FIELD_NUMBER = 11;
+    private int cmSessionSysid_;
+    /**
+     * <code>optional uint32 cm_session_sysid = 11;</code>
+     */
+    public boolean hasCmSessionSysid() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional uint32 cm_session_sysid = 11;</code>
+     */
+    public int getCmSessionSysid() {
+      return cmSessionSysid_;
+    }
+
+    public static final int CM_SESSION_IDENTIFIER_FIELD_NUMBER = 12;
+    private int cmSessionIdentifier_;
+    /**
+     * <code>optional uint32 cm_session_identifier = 12;</code>
+     */
+    public boolean hasCmSessionIdentifier() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>optional uint32 cm_session_identifier = 12;</code>
+     */
+    public int getCmSessionIdentifier() {
+      return cmSessionIdentifier_;
+    }
+
+    public static final int DEPOT_IDS_FIELD_NUMBER = 13;
+    private java.util.List<java.lang.Integer> depotIds_;
+    /**
+     * <code>repeated uint32 depot_ids = 13;</code>
+     */
+    public java.util.List<java.lang.Integer>
+        getDepotIdsList() {
+      return depotIds_;
+    }
+    /**
+     * <code>repeated uint32 depot_ids = 13;</code>
+     */
+    public int getDepotIdsCount() {
+      return depotIds_.size();
+    }
+    /**
+     * <code>repeated uint32 depot_ids = 13;</code>
+     */
+    public int getDepotIds(int index) {
+      return depotIds_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -59013,6 +59164,18 @@ public final class SteamMsgBase {
       }
       for (int i = 0; i < extraFields_.size(); i++) {
         output.writeMessage(9, extraFields_.get(i));
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeFixed64(10, ownerId_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeUInt32(11, cmSessionSysid_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeUInt32(12, cmSessionIdentifier_);
+      }
+      for (int i = 0; i < depotIds_.size(); i++) {
+        output.writeUInt32(13, depotIds_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -59057,6 +59220,27 @@ public final class SteamMsgBase {
       for (int i = 0; i < extraFields_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, extraFields_.get(i));
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed64Size(10, ownerId_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(11, cmSessionSysid_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(12, cmSessionIdentifier_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < depotIds_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeUInt32SizeNoTag(depotIds_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getDepotIdsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -59116,6 +59300,23 @@ public final class SteamMsgBase {
       }
       result = result && getExtraFieldsList()
           .equals(other.getExtraFieldsList());
+      result = result && (hasOwnerId() == other.hasOwnerId());
+      if (hasOwnerId()) {
+        result = result && (getOwnerId()
+            == other.getOwnerId());
+      }
+      result = result && (hasCmSessionSysid() == other.hasCmSessionSysid());
+      if (hasCmSessionSysid()) {
+        result = result && (getCmSessionSysid()
+            == other.getCmSessionSysid());
+      }
+      result = result && (hasCmSessionIdentifier() == other.hasCmSessionIdentifier());
+      if (hasCmSessionIdentifier()) {
+        result = result && (getCmSessionIdentifier()
+            == other.getCmSessionIdentifier());
+      }
+      result = result && getDepotIdsList()
+          .equals(other.getDepotIdsList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -59165,6 +59366,23 @@ public final class SteamMsgBase {
       if (getExtraFieldsCount() > 0) {
         hash = (37 * hash) + EXTRA_FIELDS_FIELD_NUMBER;
         hash = (53 * hash) + getExtraFieldsList().hashCode();
+      }
+      if (hasOwnerId()) {
+        hash = (37 * hash) + OWNER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getOwnerId());
+      }
+      if (hasCmSessionSysid()) {
+        hash = (37 * hash) + CM_SESSION_SYSID_FIELD_NUMBER;
+        hash = (53 * hash) + getCmSessionSysid();
+      }
+      if (hasCmSessionIdentifier()) {
+        hash = (37 * hash) + CM_SESSION_IDENTIFIER_FIELD_NUMBER;
+        hash = (53 * hash) + getCmSessionIdentifier();
+      }
+      if (getDepotIdsCount() > 0) {
+        hash = (37 * hash) + DEPOT_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getDepotIdsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -59318,6 +59536,14 @@ public final class SteamMsgBase {
         } else {
           extraFieldsBuilder_.clear();
         }
+        ownerId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        cmSessionSysid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        cmSessionIdentifier_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000800);
+        depotIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
 
@@ -59383,6 +59609,23 @@ public final class SteamMsgBase {
         } else {
           result.extraFields_ = extraFieldsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.ownerId_ = ownerId_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.cmSessionSysid_ = cmSessionSysid_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.cmSessionIdentifier_ = cmSessionIdentifier_;
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          depotIds_ = java.util.Collections.unmodifiableList(depotIds_);
+          bitField0_ = (bitField0_ & ~0x00001000);
+        }
+        result.depotIds_ = depotIds_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -59474,6 +59717,25 @@ public final class SteamMsgBase {
               extraFieldsBuilder_.addAllMessages(other.extraFields_);
             }
           }
+        }
+        if (other.hasOwnerId()) {
+          setOwnerId(other.getOwnerId());
+        }
+        if (other.hasCmSessionSysid()) {
+          setCmSessionSysid(other.getCmSessionSysid());
+        }
+        if (other.hasCmSessionIdentifier()) {
+          setCmSessionIdentifier(other.getCmSessionIdentifier());
+        }
+        if (!other.depotIds_.isEmpty()) {
+          if (depotIds_.isEmpty()) {
+            depotIds_ = other.depotIds_;
+            bitField0_ = (bitField0_ & ~0x00001000);
+          } else {
+            ensureDepotIdsIsMutable();
+            depotIds_.addAll(other.depotIds_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -59997,6 +60259,168 @@ public final class SteamMsgBase {
           extraFields_ = null;
         }
         return extraFieldsBuilder_;
+      }
+
+      private long ownerId_ ;
+      /**
+       * <code>optional fixed64 owner_id = 10;</code>
+       */
+      public boolean hasOwnerId() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional fixed64 owner_id = 10;</code>
+       */
+      public long getOwnerId() {
+        return ownerId_;
+      }
+      /**
+       * <code>optional fixed64 owner_id = 10;</code>
+       */
+      public Builder setOwnerId(long value) {
+        bitField0_ |= 0x00000200;
+        ownerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional fixed64 owner_id = 10;</code>
+       */
+      public Builder clearOwnerId() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        ownerId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int cmSessionSysid_ ;
+      /**
+       * <code>optional uint32 cm_session_sysid = 11;</code>
+       */
+      public boolean hasCmSessionSysid() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional uint32 cm_session_sysid = 11;</code>
+       */
+      public int getCmSessionSysid() {
+        return cmSessionSysid_;
+      }
+      /**
+       * <code>optional uint32 cm_session_sysid = 11;</code>
+       */
+      public Builder setCmSessionSysid(int value) {
+        bitField0_ |= 0x00000400;
+        cmSessionSysid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 cm_session_sysid = 11;</code>
+       */
+      public Builder clearCmSessionSysid() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        cmSessionSysid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int cmSessionIdentifier_ ;
+      /**
+       * <code>optional uint32 cm_session_identifier = 12;</code>
+       */
+      public boolean hasCmSessionIdentifier() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional uint32 cm_session_identifier = 12;</code>
+       */
+      public int getCmSessionIdentifier() {
+        return cmSessionIdentifier_;
+      }
+      /**
+       * <code>optional uint32 cm_session_identifier = 12;</code>
+       */
+      public Builder setCmSessionIdentifier(int value) {
+        bitField0_ |= 0x00000800;
+        cmSessionIdentifier_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 cm_session_identifier = 12;</code>
+       */
+      public Builder clearCmSessionIdentifier() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        cmSessionIdentifier_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> depotIds_ = java.util.Collections.emptyList();
+      private void ensureDepotIdsIsMutable() {
+        if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+          depotIds_ = new java.util.ArrayList<java.lang.Integer>(depotIds_);
+          bitField0_ |= 0x00001000;
+         }
+      }
+      /**
+       * <code>repeated uint32 depot_ids = 13;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getDepotIdsList() {
+        return java.util.Collections.unmodifiableList(depotIds_);
+      }
+      /**
+       * <code>repeated uint32 depot_ids = 13;</code>
+       */
+      public int getDepotIdsCount() {
+        return depotIds_.size();
+      }
+      /**
+       * <code>repeated uint32 depot_ids = 13;</code>
+       */
+      public int getDepotIds(int index) {
+        return depotIds_.get(index);
+      }
+      /**
+       * <code>repeated uint32 depot_ids = 13;</code>
+       */
+      public Builder setDepotIds(
+          int index, int value) {
+        ensureDepotIdsIsMutable();
+        depotIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 depot_ids = 13;</code>
+       */
+      public Builder addDepotIds(int value) {
+        ensureDepotIdsIsMutable();
+        depotIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 depot_ids = 13;</code>
+       */
+      public Builder addAllDepotIds(
+          java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureDepotIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, depotIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated uint32 depot_ids = 13;</code>
+       */
+      public Builder clearDepotIds() {
+        depotIds_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -61446,6 +61870,4945 @@ public final class SteamMsgBase {
 
   }
 
+  public interface CMsgDPPartnerMicroTxnsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CMsgDPPartnerMicroTxns)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 appid = 1;</code>
+     */
+    boolean hasAppid();
+    /**
+     * <code>optional uint32 appid = 1;</code>
+     */
+    int getAppid();
+
+    /**
+     * <code>optional string gc_name = 2;</code>
+     */
+    boolean hasGcName();
+    /**
+     * <code>optional string gc_name = 2;</code>
+     */
+    java.lang.String getGcName();
+    /**
+     * <code>optional string gc_name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getGcNameBytes();
+
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+     */
+    boolean hasPartner();
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+     */
+    SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo getPartner();
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+     */
+    SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfoOrBuilder getPartnerOrBuilder();
+
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    java.util.List<SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn> 
+        getTransactionsList();
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn getTransactions(int index);
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    int getTransactionsCount();
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    java.util.List<? extends SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder> 
+        getTransactionsOrBuilderList();
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder getTransactionsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code CMsgDPPartnerMicroTxns}
+   */
+  public  static final class CMsgDPPartnerMicroTxns extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CMsgDPPartnerMicroTxns)
+      CMsgDPPartnerMicroTxnsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CMsgDPPartnerMicroTxns.newBuilder() to construct.
+    private CMsgDPPartnerMicroTxns(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CMsgDPPartnerMicroTxns() {
+      appid_ = 0;
+      gcName_ = "";
+      transactions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CMsgDPPartnerMicroTxns(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              appid_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              gcName_ = bs;
+              break;
+            }
+            case 26: {
+              SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = partner_.toBuilder();
+              }
+              partner_ = input.readMessage(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(partner_);
+                partner_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000004;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                transactions_ = new java.util.ArrayList<SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              transactions_.add(
+                  input.readMessage(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+          transactions_ = java.util.Collections.unmodifiableList(transactions_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgBase.CMsgDPPartnerMicroTxns.class, SteamMsgBase.CMsgDPPartnerMicroTxns.Builder.class);
+    }
+
+    public interface PartnerMicroTxnOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:CMsgDPPartnerMicroTxns.PartnerMicroTxn)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional uint32 init_time = 1;</code>
+       */
+      boolean hasInitTime();
+      /**
+       * <code>optional uint32 init_time = 1;</code>
+       */
+      int getInitTime();
+
+      /**
+       * <code>optional uint32 last_update_time = 2;</code>
+       */
+      boolean hasLastUpdateTime();
+      /**
+       * <code>optional uint32 last_update_time = 2;</code>
+       */
+      int getLastUpdateTime();
+
+      /**
+       * <code>optional uint64 txn_id = 3;</code>
+       */
+      boolean hasTxnId();
+      /**
+       * <code>optional uint64 txn_id = 3;</code>
+       */
+      long getTxnId();
+
+      /**
+       * <code>optional uint32 account_id = 4;</code>
+       */
+      boolean hasAccountId();
+      /**
+       * <code>optional uint32 account_id = 4;</code>
+       */
+      int getAccountId();
+
+      /**
+       * <code>optional uint32 line_item = 5;</code>
+       */
+      boolean hasLineItem();
+      /**
+       * <code>optional uint32 line_item = 5;</code>
+       */
+      int getLineItem();
+
+      /**
+       * <code>optional uint64 item_id = 6;</code>
+       */
+      boolean hasItemId();
+      /**
+       * <code>optional uint64 item_id = 6;</code>
+       */
+      long getItemId();
+
+      /**
+       * <code>optional uint32 def_index = 7;</code>
+       */
+      boolean hasDefIndex();
+      /**
+       * <code>optional uint32 def_index = 7;</code>
+       */
+      int getDefIndex();
+
+      /**
+       * <code>optional uint64 price = 8;</code>
+       */
+      boolean hasPrice();
+      /**
+       * <code>optional uint64 price = 8;</code>
+       */
+      long getPrice();
+
+      /**
+       * <code>optional uint64 tax = 9;</code>
+       */
+      boolean hasTax();
+      /**
+       * <code>optional uint64 tax = 9;</code>
+       */
+      long getTax();
+
+      /**
+       * <code>optional uint64 price_usd = 10;</code>
+       */
+      boolean hasPriceUsd();
+      /**
+       * <code>optional uint64 price_usd = 10;</code>
+       */
+      long getPriceUsd();
+
+      /**
+       * <code>optional uint64 tax_usd = 11;</code>
+       */
+      boolean hasTaxUsd();
+      /**
+       * <code>optional uint64 tax_usd = 11;</code>
+       */
+      long getTaxUsd();
+
+      /**
+       * <code>optional uint32 purchase_type = 12;</code>
+       */
+      boolean hasPurchaseType();
+      /**
+       * <code>optional uint32 purchase_type = 12;</code>
+       */
+      int getPurchaseType();
+
+      /**
+       * <code>optional uint32 steam_txn_type = 13;</code>
+       */
+      boolean hasSteamTxnType();
+      /**
+       * <code>optional uint32 steam_txn_type = 13;</code>
+       */
+      int getSteamTxnType();
+
+      /**
+       * <code>optional string country_code = 14;</code>
+       */
+      boolean hasCountryCode();
+      /**
+       * <code>optional string country_code = 14;</code>
+       */
+      java.lang.String getCountryCode();
+      /**
+       * <code>optional string country_code = 14;</code>
+       */
+      com.google.protobuf.ByteString
+          getCountryCodeBytes();
+
+      /**
+       * <code>optional string region_code = 15;</code>
+       */
+      boolean hasRegionCode();
+      /**
+       * <code>optional string region_code = 15;</code>
+       */
+      java.lang.String getRegionCode();
+      /**
+       * <code>optional string region_code = 15;</code>
+       */
+      com.google.protobuf.ByteString
+          getRegionCodeBytes();
+
+      /**
+       * <code>optional int32 quantity = 16;</code>
+       */
+      boolean hasQuantity();
+      /**
+       * <code>optional int32 quantity = 16;</code>
+       */
+      int getQuantity();
+
+      /**
+       * <code>optional uint64 ref_trans_id = 17;</code>
+       */
+      boolean hasRefTransId();
+      /**
+       * <code>optional uint64 ref_trans_id = 17;</code>
+       */
+      long getRefTransId();
+    }
+    /**
+     * Protobuf type {@code CMsgDPPartnerMicroTxns.PartnerMicroTxn}
+     */
+    public  static final class PartnerMicroTxn extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:CMsgDPPartnerMicroTxns.PartnerMicroTxn)
+        PartnerMicroTxnOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use PartnerMicroTxn.newBuilder() to construct.
+      private PartnerMicroTxn(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private PartnerMicroTxn() {
+        initTime_ = 0;
+        lastUpdateTime_ = 0;
+        txnId_ = 0L;
+        accountId_ = 0;
+        lineItem_ = 0;
+        itemId_ = 0L;
+        defIndex_ = 0;
+        price_ = 0L;
+        tax_ = 0L;
+        priceUsd_ = 0L;
+        taxUsd_ = 0L;
+        purchaseType_ = 0;
+        steamTxnType_ = 0;
+        countryCode_ = "";
+        regionCode_ = "";
+        quantity_ = 0;
+        refTransId_ = 0L;
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private PartnerMicroTxn(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                bitField0_ |= 0x00000001;
+                initTime_ = input.readUInt32();
+                break;
+              }
+              case 16: {
+                bitField0_ |= 0x00000002;
+                lastUpdateTime_ = input.readUInt32();
+                break;
+              }
+              case 24: {
+                bitField0_ |= 0x00000004;
+                txnId_ = input.readUInt64();
+                break;
+              }
+              case 32: {
+                bitField0_ |= 0x00000008;
+                accountId_ = input.readUInt32();
+                break;
+              }
+              case 40: {
+                bitField0_ |= 0x00000010;
+                lineItem_ = input.readUInt32();
+                break;
+              }
+              case 48: {
+                bitField0_ |= 0x00000020;
+                itemId_ = input.readUInt64();
+                break;
+              }
+              case 56: {
+                bitField0_ |= 0x00000040;
+                defIndex_ = input.readUInt32();
+                break;
+              }
+              case 64: {
+                bitField0_ |= 0x00000080;
+                price_ = input.readUInt64();
+                break;
+              }
+              case 72: {
+                bitField0_ |= 0x00000100;
+                tax_ = input.readUInt64();
+                break;
+              }
+              case 80: {
+                bitField0_ |= 0x00000200;
+                priceUsd_ = input.readUInt64();
+                break;
+              }
+              case 88: {
+                bitField0_ |= 0x00000400;
+                taxUsd_ = input.readUInt64();
+                break;
+              }
+              case 96: {
+                bitField0_ |= 0x00000800;
+                purchaseType_ = input.readUInt32();
+                break;
+              }
+              case 104: {
+                bitField0_ |= 0x00001000;
+                steamTxnType_ = input.readUInt32();
+                break;
+              }
+              case 114: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00002000;
+                countryCode_ = bs;
+                break;
+              }
+              case 122: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00004000;
+                regionCode_ = bs;
+                break;
+              }
+              case 128: {
+                bitField0_ |= 0x00008000;
+                quantity_ = input.readInt32();
+                break;
+              }
+              case 136: {
+                bitField0_ |= 0x00010000;
+                refTransId_ = input.readUInt64();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.class, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int INIT_TIME_FIELD_NUMBER = 1;
+      private int initTime_;
+      /**
+       * <code>optional uint32 init_time = 1;</code>
+       */
+      public boolean hasInitTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 init_time = 1;</code>
+       */
+      public int getInitTime() {
+        return initTime_;
+      }
+
+      public static final int LAST_UPDATE_TIME_FIELD_NUMBER = 2;
+      private int lastUpdateTime_;
+      /**
+       * <code>optional uint32 last_update_time = 2;</code>
+       */
+      public boolean hasLastUpdateTime() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint32 last_update_time = 2;</code>
+       */
+      public int getLastUpdateTime() {
+        return lastUpdateTime_;
+      }
+
+      public static final int TXN_ID_FIELD_NUMBER = 3;
+      private long txnId_;
+      /**
+       * <code>optional uint64 txn_id = 3;</code>
+       */
+      public boolean hasTxnId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional uint64 txn_id = 3;</code>
+       */
+      public long getTxnId() {
+        return txnId_;
+      }
+
+      public static final int ACCOUNT_ID_FIELD_NUMBER = 4;
+      private int accountId_;
+      /**
+       * <code>optional uint32 account_id = 4;</code>
+       */
+      public boolean hasAccountId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional uint32 account_id = 4;</code>
+       */
+      public int getAccountId() {
+        return accountId_;
+      }
+
+      public static final int LINE_ITEM_FIELD_NUMBER = 5;
+      private int lineItem_;
+      /**
+       * <code>optional uint32 line_item = 5;</code>
+       */
+      public boolean hasLineItem() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional uint32 line_item = 5;</code>
+       */
+      public int getLineItem() {
+        return lineItem_;
+      }
+
+      public static final int ITEM_ID_FIELD_NUMBER = 6;
+      private long itemId_;
+      /**
+       * <code>optional uint64 item_id = 6;</code>
+       */
+      public boolean hasItemId() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional uint64 item_id = 6;</code>
+       */
+      public long getItemId() {
+        return itemId_;
+      }
+
+      public static final int DEF_INDEX_FIELD_NUMBER = 7;
+      private int defIndex_;
+      /**
+       * <code>optional uint32 def_index = 7;</code>
+       */
+      public boolean hasDefIndex() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional uint32 def_index = 7;</code>
+       */
+      public int getDefIndex() {
+        return defIndex_;
+      }
+
+      public static final int PRICE_FIELD_NUMBER = 8;
+      private long price_;
+      /**
+       * <code>optional uint64 price = 8;</code>
+       */
+      public boolean hasPrice() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional uint64 price = 8;</code>
+       */
+      public long getPrice() {
+        return price_;
+      }
+
+      public static final int TAX_FIELD_NUMBER = 9;
+      private long tax_;
+      /**
+       * <code>optional uint64 tax = 9;</code>
+       */
+      public boolean hasTax() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional uint64 tax = 9;</code>
+       */
+      public long getTax() {
+        return tax_;
+      }
+
+      public static final int PRICE_USD_FIELD_NUMBER = 10;
+      private long priceUsd_;
+      /**
+       * <code>optional uint64 price_usd = 10;</code>
+       */
+      public boolean hasPriceUsd() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional uint64 price_usd = 10;</code>
+       */
+      public long getPriceUsd() {
+        return priceUsd_;
+      }
+
+      public static final int TAX_USD_FIELD_NUMBER = 11;
+      private long taxUsd_;
+      /**
+       * <code>optional uint64 tax_usd = 11;</code>
+       */
+      public boolean hasTaxUsd() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional uint64 tax_usd = 11;</code>
+       */
+      public long getTaxUsd() {
+        return taxUsd_;
+      }
+
+      public static final int PURCHASE_TYPE_FIELD_NUMBER = 12;
+      private int purchaseType_;
+      /**
+       * <code>optional uint32 purchase_type = 12;</code>
+       */
+      public boolean hasPurchaseType() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional uint32 purchase_type = 12;</code>
+       */
+      public int getPurchaseType() {
+        return purchaseType_;
+      }
+
+      public static final int STEAM_TXN_TYPE_FIELD_NUMBER = 13;
+      private int steamTxnType_;
+      /**
+       * <code>optional uint32 steam_txn_type = 13;</code>
+       */
+      public boolean hasSteamTxnType() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional uint32 steam_txn_type = 13;</code>
+       */
+      public int getSteamTxnType() {
+        return steamTxnType_;
+      }
+
+      public static final int COUNTRY_CODE_FIELD_NUMBER = 14;
+      private volatile java.lang.Object countryCode_;
+      /**
+       * <code>optional string country_code = 14;</code>
+       */
+      public boolean hasCountryCode() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional string country_code = 14;</code>
+       */
+      public java.lang.String getCountryCode() {
+        java.lang.Object ref = countryCode_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            countryCode_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string country_code = 14;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCountryCodeBytes() {
+        java.lang.Object ref = countryCode_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          countryCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int REGION_CODE_FIELD_NUMBER = 15;
+      private volatile java.lang.Object regionCode_;
+      /**
+       * <code>optional string region_code = 15;</code>
+       */
+      public boolean hasRegionCode() {
+        return ((bitField0_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>optional string region_code = 15;</code>
+       */
+      public java.lang.String getRegionCode() {
+        java.lang.Object ref = regionCode_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            regionCode_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string region_code = 15;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRegionCodeBytes() {
+        java.lang.Object ref = regionCode_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          regionCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int QUANTITY_FIELD_NUMBER = 16;
+      private int quantity_;
+      /**
+       * <code>optional int32 quantity = 16;</code>
+       */
+      public boolean hasQuantity() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>optional int32 quantity = 16;</code>
+       */
+      public int getQuantity() {
+        return quantity_;
+      }
+
+      public static final int REF_TRANS_ID_FIELD_NUMBER = 17;
+      private long refTransId_;
+      /**
+       * <code>optional uint64 ref_trans_id = 17;</code>
+       */
+      public boolean hasRefTransId() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      /**
+       * <code>optional uint64 ref_trans_id = 17;</code>
+       */
+      public long getRefTransId() {
+        return refTransId_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeUInt32(1, initTime_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeUInt32(2, lastUpdateTime_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          output.writeUInt64(3, txnId_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          output.writeUInt32(4, accountId_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          output.writeUInt32(5, lineItem_);
+        }
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          output.writeUInt64(6, itemId_);
+        }
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          output.writeUInt32(7, defIndex_);
+        }
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          output.writeUInt64(8, price_);
+        }
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          output.writeUInt64(9, tax_);
+        }
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          output.writeUInt64(10, priceUsd_);
+        }
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          output.writeUInt64(11, taxUsd_);
+        }
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          output.writeUInt32(12, purchaseType_);
+        }
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          output.writeUInt32(13, steamTxnType_);
+        }
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 14, countryCode_);
+        }
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 15, regionCode_);
+        }
+        if (((bitField0_ & 0x00008000) == 0x00008000)) {
+          output.writeInt32(16, quantity_);
+        }
+        if (((bitField0_ & 0x00010000) == 0x00010000)) {
+          output.writeUInt64(17, refTransId_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(1, initTime_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(2, lastUpdateTime_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(3, txnId_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(4, accountId_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(5, lineItem_);
+        }
+        if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(6, itemId_);
+        }
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(7, defIndex_);
+        }
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(8, price_);
+        }
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(9, tax_);
+        }
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(10, priceUsd_);
+        }
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(11, taxUsd_);
+        }
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(12, purchaseType_);
+        }
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(13, steamTxnType_);
+        }
+        if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, countryCode_);
+        }
+        if (((bitField0_ & 0x00004000) == 0x00004000)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, regionCode_);
+        }
+        if (((bitField0_ & 0x00008000) == 0x00008000)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeInt32Size(16, quantity_);
+        }
+        if (((bitField0_ & 0x00010000) == 0x00010000)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(17, refTransId_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn)) {
+          return super.equals(obj);
+        }
+        SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn other = (SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn) obj;
+
+        boolean result = true;
+        result = result && (hasInitTime() == other.hasInitTime());
+        if (hasInitTime()) {
+          result = result && (getInitTime()
+              == other.getInitTime());
+        }
+        result = result && (hasLastUpdateTime() == other.hasLastUpdateTime());
+        if (hasLastUpdateTime()) {
+          result = result && (getLastUpdateTime()
+              == other.getLastUpdateTime());
+        }
+        result = result && (hasTxnId() == other.hasTxnId());
+        if (hasTxnId()) {
+          result = result && (getTxnId()
+              == other.getTxnId());
+        }
+        result = result && (hasAccountId() == other.hasAccountId());
+        if (hasAccountId()) {
+          result = result && (getAccountId()
+              == other.getAccountId());
+        }
+        result = result && (hasLineItem() == other.hasLineItem());
+        if (hasLineItem()) {
+          result = result && (getLineItem()
+              == other.getLineItem());
+        }
+        result = result && (hasItemId() == other.hasItemId());
+        if (hasItemId()) {
+          result = result && (getItemId()
+              == other.getItemId());
+        }
+        result = result && (hasDefIndex() == other.hasDefIndex());
+        if (hasDefIndex()) {
+          result = result && (getDefIndex()
+              == other.getDefIndex());
+        }
+        result = result && (hasPrice() == other.hasPrice());
+        if (hasPrice()) {
+          result = result && (getPrice()
+              == other.getPrice());
+        }
+        result = result && (hasTax() == other.hasTax());
+        if (hasTax()) {
+          result = result && (getTax()
+              == other.getTax());
+        }
+        result = result && (hasPriceUsd() == other.hasPriceUsd());
+        if (hasPriceUsd()) {
+          result = result && (getPriceUsd()
+              == other.getPriceUsd());
+        }
+        result = result && (hasTaxUsd() == other.hasTaxUsd());
+        if (hasTaxUsd()) {
+          result = result && (getTaxUsd()
+              == other.getTaxUsd());
+        }
+        result = result && (hasPurchaseType() == other.hasPurchaseType());
+        if (hasPurchaseType()) {
+          result = result && (getPurchaseType()
+              == other.getPurchaseType());
+        }
+        result = result && (hasSteamTxnType() == other.hasSteamTxnType());
+        if (hasSteamTxnType()) {
+          result = result && (getSteamTxnType()
+              == other.getSteamTxnType());
+        }
+        result = result && (hasCountryCode() == other.hasCountryCode());
+        if (hasCountryCode()) {
+          result = result && getCountryCode()
+              .equals(other.getCountryCode());
+        }
+        result = result && (hasRegionCode() == other.hasRegionCode());
+        if (hasRegionCode()) {
+          result = result && getRegionCode()
+              .equals(other.getRegionCode());
+        }
+        result = result && (hasQuantity() == other.hasQuantity());
+        if (hasQuantity()) {
+          result = result && (getQuantity()
+              == other.getQuantity());
+        }
+        result = result && (hasRefTransId() == other.hasRefTransId());
+        if (hasRefTransId()) {
+          result = result && (getRefTransId()
+              == other.getRefTransId());
+        }
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasInitTime()) {
+          hash = (37 * hash) + INIT_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getInitTime();
+        }
+        if (hasLastUpdateTime()) {
+          hash = (37 * hash) + LAST_UPDATE_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getLastUpdateTime();
+        }
+        if (hasTxnId()) {
+          hash = (37 * hash) + TXN_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getTxnId());
+        }
+        if (hasAccountId()) {
+          hash = (37 * hash) + ACCOUNT_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getAccountId();
+        }
+        if (hasLineItem()) {
+          hash = (37 * hash) + LINE_ITEM_FIELD_NUMBER;
+          hash = (53 * hash) + getLineItem();
+        }
+        if (hasItemId()) {
+          hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getItemId());
+        }
+        if (hasDefIndex()) {
+          hash = (37 * hash) + DEF_INDEX_FIELD_NUMBER;
+          hash = (53 * hash) + getDefIndex();
+        }
+        if (hasPrice()) {
+          hash = (37 * hash) + PRICE_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getPrice());
+        }
+        if (hasTax()) {
+          hash = (37 * hash) + TAX_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getTax());
+        }
+        if (hasPriceUsd()) {
+          hash = (37 * hash) + PRICE_USD_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getPriceUsd());
+        }
+        if (hasTaxUsd()) {
+          hash = (37 * hash) + TAX_USD_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getTaxUsd());
+        }
+        if (hasPurchaseType()) {
+          hash = (37 * hash) + PURCHASE_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getPurchaseType();
+        }
+        if (hasSteamTxnType()) {
+          hash = (37 * hash) + STEAM_TXN_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getSteamTxnType();
+        }
+        if (hasCountryCode()) {
+          hash = (37 * hash) + COUNTRY_CODE_FIELD_NUMBER;
+          hash = (53 * hash) + getCountryCode().hashCode();
+        }
+        if (hasRegionCode()) {
+          hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
+          hash = (53 * hash) + getRegionCode().hashCode();
+        }
+        if (hasQuantity()) {
+          hash = (37 * hash) + QUANTITY_FIELD_NUMBER;
+          hash = (53 * hash) + getQuantity();
+        }
+        if (hasRefTransId()) {
+          hash = (37 * hash) + REF_TRANS_ID_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+              getRefTransId());
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code CMsgDPPartnerMicroTxns.PartnerMicroTxn}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:CMsgDPPartnerMicroTxns.PartnerMicroTxn)
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.class, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder.class);
+        }
+
+        // Construct using SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          initTime_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          lastUpdateTime_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          txnId_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          accountId_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000008);
+          lineItem_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000010);
+          itemId_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000020);
+          defIndex_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000040);
+          price_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000080);
+          tax_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000100);
+          priceUsd_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000200);
+          taxUsd_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000400);
+          purchaseType_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000800);
+          steamTxnType_ = 0;
+          bitField0_ = (bitField0_ & ~0x00001000);
+          countryCode_ = "";
+          bitField0_ = (bitField0_ & ~0x00002000);
+          regionCode_ = "";
+          bitField0_ = (bitField0_ & ~0x00004000);
+          quantity_ = 0;
+          bitField0_ = (bitField0_ & ~0x00008000);
+          refTransId_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00010000);
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_descriptor;
+        }
+
+        public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn getDefaultInstanceForType() {
+          return SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.getDefaultInstance();
+        }
+
+        public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn build() {
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn buildPartial() {
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn result = new SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.initTime_ = initTime_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.lastUpdateTime_ = lastUpdateTime_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.txnId_ = txnId_;
+          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+            to_bitField0_ |= 0x00000008;
+          }
+          result.accountId_ = accountId_;
+          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+            to_bitField0_ |= 0x00000010;
+          }
+          result.lineItem_ = lineItem_;
+          if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+            to_bitField0_ |= 0x00000020;
+          }
+          result.itemId_ = itemId_;
+          if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+            to_bitField0_ |= 0x00000040;
+          }
+          result.defIndex_ = defIndex_;
+          if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+            to_bitField0_ |= 0x00000080;
+          }
+          result.price_ = price_;
+          if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+            to_bitField0_ |= 0x00000100;
+          }
+          result.tax_ = tax_;
+          if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+            to_bitField0_ |= 0x00000200;
+          }
+          result.priceUsd_ = priceUsd_;
+          if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+            to_bitField0_ |= 0x00000400;
+          }
+          result.taxUsd_ = taxUsd_;
+          if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+            to_bitField0_ |= 0x00000800;
+          }
+          result.purchaseType_ = purchaseType_;
+          if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+            to_bitField0_ |= 0x00001000;
+          }
+          result.steamTxnType_ = steamTxnType_;
+          if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+            to_bitField0_ |= 0x00002000;
+          }
+          result.countryCode_ = countryCode_;
+          if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+            to_bitField0_ |= 0x00004000;
+          }
+          result.regionCode_ = regionCode_;
+          if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+            to_bitField0_ |= 0x00008000;
+          }
+          result.quantity_ = quantity_;
+          if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+            to_bitField0_ |= 0x00010000;
+          }
+          result.refTransId_ = refTransId_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn) {
+            return mergeFrom((SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn other) {
+          if (other == SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.getDefaultInstance()) return this;
+          if (other.hasInitTime()) {
+            setInitTime(other.getInitTime());
+          }
+          if (other.hasLastUpdateTime()) {
+            setLastUpdateTime(other.getLastUpdateTime());
+          }
+          if (other.hasTxnId()) {
+            setTxnId(other.getTxnId());
+          }
+          if (other.hasAccountId()) {
+            setAccountId(other.getAccountId());
+          }
+          if (other.hasLineItem()) {
+            setLineItem(other.getLineItem());
+          }
+          if (other.hasItemId()) {
+            setItemId(other.getItemId());
+          }
+          if (other.hasDefIndex()) {
+            setDefIndex(other.getDefIndex());
+          }
+          if (other.hasPrice()) {
+            setPrice(other.getPrice());
+          }
+          if (other.hasTax()) {
+            setTax(other.getTax());
+          }
+          if (other.hasPriceUsd()) {
+            setPriceUsd(other.getPriceUsd());
+          }
+          if (other.hasTaxUsd()) {
+            setTaxUsd(other.getTaxUsd());
+          }
+          if (other.hasPurchaseType()) {
+            setPurchaseType(other.getPurchaseType());
+          }
+          if (other.hasSteamTxnType()) {
+            setSteamTxnType(other.getSteamTxnType());
+          }
+          if (other.hasCountryCode()) {
+            bitField0_ |= 0x00002000;
+            countryCode_ = other.countryCode_;
+            onChanged();
+          }
+          if (other.hasRegionCode()) {
+            bitField0_ |= 0x00004000;
+            regionCode_ = other.regionCode_;
+            onChanged();
+          }
+          if (other.hasQuantity()) {
+            setQuantity(other.getQuantity());
+          }
+          if (other.hasRefTransId()) {
+            setRefTransId(other.getRefTransId());
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private int initTime_ ;
+        /**
+         * <code>optional uint32 init_time = 1;</code>
+         */
+        public boolean hasInitTime() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional uint32 init_time = 1;</code>
+         */
+        public int getInitTime() {
+          return initTime_;
+        }
+        /**
+         * <code>optional uint32 init_time = 1;</code>
+         */
+        public Builder setInitTime(int value) {
+          bitField0_ |= 0x00000001;
+          initTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 init_time = 1;</code>
+         */
+        public Builder clearInitTime() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          initTime_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int lastUpdateTime_ ;
+        /**
+         * <code>optional uint32 last_update_time = 2;</code>
+         */
+        public boolean hasLastUpdateTime() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>optional uint32 last_update_time = 2;</code>
+         */
+        public int getLastUpdateTime() {
+          return lastUpdateTime_;
+        }
+        /**
+         * <code>optional uint32 last_update_time = 2;</code>
+         */
+        public Builder setLastUpdateTime(int value) {
+          bitField0_ |= 0x00000002;
+          lastUpdateTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 last_update_time = 2;</code>
+         */
+        public Builder clearLastUpdateTime() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          lastUpdateTime_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private long txnId_ ;
+        /**
+         * <code>optional uint64 txn_id = 3;</code>
+         */
+        public boolean hasTxnId() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional uint64 txn_id = 3;</code>
+         */
+        public long getTxnId() {
+          return txnId_;
+        }
+        /**
+         * <code>optional uint64 txn_id = 3;</code>
+         */
+        public Builder setTxnId(long value) {
+          bitField0_ |= 0x00000004;
+          txnId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 txn_id = 3;</code>
+         */
+        public Builder clearTxnId() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          txnId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private int accountId_ ;
+        /**
+         * <code>optional uint32 account_id = 4;</code>
+         */
+        public boolean hasAccountId() {
+          return ((bitField0_ & 0x00000008) == 0x00000008);
+        }
+        /**
+         * <code>optional uint32 account_id = 4;</code>
+         */
+        public int getAccountId() {
+          return accountId_;
+        }
+        /**
+         * <code>optional uint32 account_id = 4;</code>
+         */
+        public Builder setAccountId(int value) {
+          bitField0_ |= 0x00000008;
+          accountId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 account_id = 4;</code>
+         */
+        public Builder clearAccountId() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          accountId_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int lineItem_ ;
+        /**
+         * <code>optional uint32 line_item = 5;</code>
+         */
+        public boolean hasLineItem() {
+          return ((bitField0_ & 0x00000010) == 0x00000010);
+        }
+        /**
+         * <code>optional uint32 line_item = 5;</code>
+         */
+        public int getLineItem() {
+          return lineItem_;
+        }
+        /**
+         * <code>optional uint32 line_item = 5;</code>
+         */
+        public Builder setLineItem(int value) {
+          bitField0_ |= 0x00000010;
+          lineItem_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 line_item = 5;</code>
+         */
+        public Builder clearLineItem() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          lineItem_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private long itemId_ ;
+        /**
+         * <code>optional uint64 item_id = 6;</code>
+         */
+        public boolean hasItemId() {
+          return ((bitField0_ & 0x00000020) == 0x00000020);
+        }
+        /**
+         * <code>optional uint64 item_id = 6;</code>
+         */
+        public long getItemId() {
+          return itemId_;
+        }
+        /**
+         * <code>optional uint64 item_id = 6;</code>
+         */
+        public Builder setItemId(long value) {
+          bitField0_ |= 0x00000020;
+          itemId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 item_id = 6;</code>
+         */
+        public Builder clearItemId() {
+          bitField0_ = (bitField0_ & ~0x00000020);
+          itemId_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private int defIndex_ ;
+        /**
+         * <code>optional uint32 def_index = 7;</code>
+         */
+        public boolean hasDefIndex() {
+          return ((bitField0_ & 0x00000040) == 0x00000040);
+        }
+        /**
+         * <code>optional uint32 def_index = 7;</code>
+         */
+        public int getDefIndex() {
+          return defIndex_;
+        }
+        /**
+         * <code>optional uint32 def_index = 7;</code>
+         */
+        public Builder setDefIndex(int value) {
+          bitField0_ |= 0x00000040;
+          defIndex_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 def_index = 7;</code>
+         */
+        public Builder clearDefIndex() {
+          bitField0_ = (bitField0_ & ~0x00000040);
+          defIndex_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private long price_ ;
+        /**
+         * <code>optional uint64 price = 8;</code>
+         */
+        public boolean hasPrice() {
+          return ((bitField0_ & 0x00000080) == 0x00000080);
+        }
+        /**
+         * <code>optional uint64 price = 8;</code>
+         */
+        public long getPrice() {
+          return price_;
+        }
+        /**
+         * <code>optional uint64 price = 8;</code>
+         */
+        public Builder setPrice(long value) {
+          bitField0_ |= 0x00000080;
+          price_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 price = 8;</code>
+         */
+        public Builder clearPrice() {
+          bitField0_ = (bitField0_ & ~0x00000080);
+          price_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long tax_ ;
+        /**
+         * <code>optional uint64 tax = 9;</code>
+         */
+        public boolean hasTax() {
+          return ((bitField0_ & 0x00000100) == 0x00000100);
+        }
+        /**
+         * <code>optional uint64 tax = 9;</code>
+         */
+        public long getTax() {
+          return tax_;
+        }
+        /**
+         * <code>optional uint64 tax = 9;</code>
+         */
+        public Builder setTax(long value) {
+          bitField0_ |= 0x00000100;
+          tax_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 tax = 9;</code>
+         */
+        public Builder clearTax() {
+          bitField0_ = (bitField0_ & ~0x00000100);
+          tax_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long priceUsd_ ;
+        /**
+         * <code>optional uint64 price_usd = 10;</code>
+         */
+        public boolean hasPriceUsd() {
+          return ((bitField0_ & 0x00000200) == 0x00000200);
+        }
+        /**
+         * <code>optional uint64 price_usd = 10;</code>
+         */
+        public long getPriceUsd() {
+          return priceUsd_;
+        }
+        /**
+         * <code>optional uint64 price_usd = 10;</code>
+         */
+        public Builder setPriceUsd(long value) {
+          bitField0_ |= 0x00000200;
+          priceUsd_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 price_usd = 10;</code>
+         */
+        public Builder clearPriceUsd() {
+          bitField0_ = (bitField0_ & ~0x00000200);
+          priceUsd_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long taxUsd_ ;
+        /**
+         * <code>optional uint64 tax_usd = 11;</code>
+         */
+        public boolean hasTaxUsd() {
+          return ((bitField0_ & 0x00000400) == 0x00000400);
+        }
+        /**
+         * <code>optional uint64 tax_usd = 11;</code>
+         */
+        public long getTaxUsd() {
+          return taxUsd_;
+        }
+        /**
+         * <code>optional uint64 tax_usd = 11;</code>
+         */
+        public Builder setTaxUsd(long value) {
+          bitField0_ |= 0x00000400;
+          taxUsd_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 tax_usd = 11;</code>
+         */
+        public Builder clearTaxUsd() {
+          bitField0_ = (bitField0_ & ~0x00000400);
+          taxUsd_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private int purchaseType_ ;
+        /**
+         * <code>optional uint32 purchase_type = 12;</code>
+         */
+        public boolean hasPurchaseType() {
+          return ((bitField0_ & 0x00000800) == 0x00000800);
+        }
+        /**
+         * <code>optional uint32 purchase_type = 12;</code>
+         */
+        public int getPurchaseType() {
+          return purchaseType_;
+        }
+        /**
+         * <code>optional uint32 purchase_type = 12;</code>
+         */
+        public Builder setPurchaseType(int value) {
+          bitField0_ |= 0x00000800;
+          purchaseType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 purchase_type = 12;</code>
+         */
+        public Builder clearPurchaseType() {
+          bitField0_ = (bitField0_ & ~0x00000800);
+          purchaseType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int steamTxnType_ ;
+        /**
+         * <code>optional uint32 steam_txn_type = 13;</code>
+         */
+        public boolean hasSteamTxnType() {
+          return ((bitField0_ & 0x00001000) == 0x00001000);
+        }
+        /**
+         * <code>optional uint32 steam_txn_type = 13;</code>
+         */
+        public int getSteamTxnType() {
+          return steamTxnType_;
+        }
+        /**
+         * <code>optional uint32 steam_txn_type = 13;</code>
+         */
+        public Builder setSteamTxnType(int value) {
+          bitField0_ |= 0x00001000;
+          steamTxnType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 steam_txn_type = 13;</code>
+         */
+        public Builder clearSteamTxnType() {
+          bitField0_ = (bitField0_ & ~0x00001000);
+          steamTxnType_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object countryCode_ = "";
+        /**
+         * <code>optional string country_code = 14;</code>
+         */
+        public boolean hasCountryCode() {
+          return ((bitField0_ & 0x00002000) == 0x00002000);
+        }
+        /**
+         * <code>optional string country_code = 14;</code>
+         */
+        public java.lang.String getCountryCode() {
+          java.lang.Object ref = countryCode_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              countryCode_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string country_code = 14;</code>
+         */
+        public com.google.protobuf.ByteString
+            getCountryCodeBytes() {
+          java.lang.Object ref = countryCode_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            countryCode_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string country_code = 14;</code>
+         */
+        public Builder setCountryCode(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+          countryCode_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string country_code = 14;</code>
+         */
+        public Builder clearCountryCode() {
+          bitField0_ = (bitField0_ & ~0x00002000);
+          countryCode_ = getDefaultInstance().getCountryCode();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string country_code = 14;</code>
+         */
+        public Builder setCountryCodeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
+          countryCode_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object regionCode_ = "";
+        /**
+         * <code>optional string region_code = 15;</code>
+         */
+        public boolean hasRegionCode() {
+          return ((bitField0_ & 0x00004000) == 0x00004000);
+        }
+        /**
+         * <code>optional string region_code = 15;</code>
+         */
+        public java.lang.String getRegionCode() {
+          java.lang.Object ref = regionCode_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              regionCode_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string region_code = 15;</code>
+         */
+        public com.google.protobuf.ByteString
+            getRegionCodeBytes() {
+          java.lang.Object ref = regionCode_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            regionCode_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string region_code = 15;</code>
+         */
+        public Builder setRegionCode(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
+          regionCode_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string region_code = 15;</code>
+         */
+        public Builder clearRegionCode() {
+          bitField0_ = (bitField0_ & ~0x00004000);
+          regionCode_ = getDefaultInstance().getRegionCode();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string region_code = 15;</code>
+         */
+        public Builder setRegionCodeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
+          regionCode_ = value;
+          onChanged();
+          return this;
+        }
+
+        private int quantity_ ;
+        /**
+         * <code>optional int32 quantity = 16;</code>
+         */
+        public boolean hasQuantity() {
+          return ((bitField0_ & 0x00008000) == 0x00008000);
+        }
+        /**
+         * <code>optional int32 quantity = 16;</code>
+         */
+        public int getQuantity() {
+          return quantity_;
+        }
+        /**
+         * <code>optional int32 quantity = 16;</code>
+         */
+        public Builder setQuantity(int value) {
+          bitField0_ |= 0x00008000;
+          quantity_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional int32 quantity = 16;</code>
+         */
+        public Builder clearQuantity() {
+          bitField0_ = (bitField0_ & ~0x00008000);
+          quantity_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private long refTransId_ ;
+        /**
+         * <code>optional uint64 ref_trans_id = 17;</code>
+         */
+        public boolean hasRefTransId() {
+          return ((bitField0_ & 0x00010000) == 0x00010000);
+        }
+        /**
+         * <code>optional uint64 ref_trans_id = 17;</code>
+         */
+        public long getRefTransId() {
+          return refTransId_;
+        }
+        /**
+         * <code>optional uint64 ref_trans_id = 17;</code>
+         */
+        public Builder setRefTransId(long value) {
+          bitField0_ |= 0x00010000;
+          refTransId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 ref_trans_id = 17;</code>
+         */
+        public Builder clearRefTransId() {
+          bitField0_ = (bitField0_ & ~0x00010000);
+          refTransId_ = 0L;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:CMsgDPPartnerMicroTxns.PartnerMicroTxn)
+      }
+
+      // @@protoc_insertion_point(class_scope:CMsgDPPartnerMicroTxns.PartnerMicroTxn)
+      private static final SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn();
+      }
+
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<PartnerMicroTxn>
+          PARSER = new com.google.protobuf.AbstractParser<PartnerMicroTxn>() {
+        public PartnerMicroTxn parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PartnerMicroTxn(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<PartnerMicroTxn> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PartnerMicroTxn> getParserForType() {
+        return PARSER;
+      }
+
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public interface PartnerInfoOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:CMsgDPPartnerMicroTxns.PartnerInfo)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional uint32 partner_id = 1;</code>
+       */
+      boolean hasPartnerId();
+      /**
+       * <code>optional uint32 partner_id = 1;</code>
+       */
+      int getPartnerId();
+
+      /**
+       * <code>optional string partner_name = 2;</code>
+       */
+      boolean hasPartnerName();
+      /**
+       * <code>optional string partner_name = 2;</code>
+       */
+      java.lang.String getPartnerName();
+      /**
+       * <code>optional string partner_name = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getPartnerNameBytes();
+
+      /**
+       * <code>optional string currency_code = 3;</code>
+       */
+      boolean hasCurrencyCode();
+      /**
+       * <code>optional string currency_code = 3;</code>
+       */
+      java.lang.String getCurrencyCode();
+      /**
+       * <code>optional string currency_code = 3;</code>
+       */
+      com.google.protobuf.ByteString
+          getCurrencyCodeBytes();
+
+      /**
+       * <code>optional string currency_name = 4;</code>
+       */
+      boolean hasCurrencyName();
+      /**
+       * <code>optional string currency_name = 4;</code>
+       */
+      java.lang.String getCurrencyName();
+      /**
+       * <code>optional string currency_name = 4;</code>
+       */
+      com.google.protobuf.ByteString
+          getCurrencyNameBytes();
+    }
+    /**
+     * Protobuf type {@code CMsgDPPartnerMicroTxns.PartnerInfo}
+     */
+    public  static final class PartnerInfo extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:CMsgDPPartnerMicroTxns.PartnerInfo)
+        PartnerInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use PartnerInfo.newBuilder() to construct.
+      private PartnerInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private PartnerInfo() {
+        partnerId_ = 0;
+        partnerName_ = "";
+        currencyCode_ = "";
+        currencyName_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private PartnerInfo(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                bitField0_ |= 0x00000001;
+                partnerId_ = input.readUInt32();
+                break;
+              }
+              case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000002;
+                partnerName_ = bs;
+                break;
+              }
+              case 26: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000004;
+                currencyCode_ = bs;
+                break;
+              }
+              case 34: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000008;
+                currencyName_ = bs;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.class, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int PARTNER_ID_FIELD_NUMBER = 1;
+      private int partnerId_;
+      /**
+       * <code>optional uint32 partner_id = 1;</code>
+       */
+      public boolean hasPartnerId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 partner_id = 1;</code>
+       */
+      public int getPartnerId() {
+        return partnerId_;
+      }
+
+      public static final int PARTNER_NAME_FIELD_NUMBER = 2;
+      private volatile java.lang.Object partnerName_;
+      /**
+       * <code>optional string partner_name = 2;</code>
+       */
+      public boolean hasPartnerName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string partner_name = 2;</code>
+       */
+      public java.lang.String getPartnerName() {
+        java.lang.Object ref = partnerName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            partnerName_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string partner_name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPartnerNameBytes() {
+        java.lang.Object ref = partnerName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          partnerName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CURRENCY_CODE_FIELD_NUMBER = 3;
+      private volatile java.lang.Object currencyCode_;
+      /**
+       * <code>optional string currency_code = 3;</code>
+       */
+      public boolean hasCurrencyCode() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string currency_code = 3;</code>
+       */
+      public java.lang.String getCurrencyCode() {
+        java.lang.Object ref = currencyCode_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            currencyCode_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string currency_code = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCurrencyCodeBytes() {
+        java.lang.Object ref = currencyCode_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          currencyCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int CURRENCY_NAME_FIELD_NUMBER = 4;
+      private volatile java.lang.Object currencyName_;
+      /**
+       * <code>optional string currency_name = 4;</code>
+       */
+      public boolean hasCurrencyName() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string currency_name = 4;</code>
+       */
+      public java.lang.String getCurrencyName() {
+        java.lang.Object ref = currencyName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            currencyName_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string currency_name = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCurrencyNameBytes() {
+        java.lang.Object ref = currencyName_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          currencyName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeUInt32(1, partnerId_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, partnerName_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, currencyCode_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, currencyName_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(1, partnerId_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, partnerName_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, currencyCode_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, currencyName_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo)) {
+          return super.equals(obj);
+        }
+        SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo other = (SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo) obj;
+
+        boolean result = true;
+        result = result && (hasPartnerId() == other.hasPartnerId());
+        if (hasPartnerId()) {
+          result = result && (getPartnerId()
+              == other.getPartnerId());
+        }
+        result = result && (hasPartnerName() == other.hasPartnerName());
+        if (hasPartnerName()) {
+          result = result && getPartnerName()
+              .equals(other.getPartnerName());
+        }
+        result = result && (hasCurrencyCode() == other.hasCurrencyCode());
+        if (hasCurrencyCode()) {
+          result = result && getCurrencyCode()
+              .equals(other.getCurrencyCode());
+        }
+        result = result && (hasCurrencyName() == other.hasCurrencyName());
+        if (hasCurrencyName()) {
+          result = result && getCurrencyName()
+              .equals(other.getCurrencyName());
+        }
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasPartnerId()) {
+          hash = (37 * hash) + PARTNER_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getPartnerId();
+        }
+        if (hasPartnerName()) {
+          hash = (37 * hash) + PARTNER_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getPartnerName().hashCode();
+        }
+        if (hasCurrencyCode()) {
+          hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
+          hash = (53 * hash) + getCurrencyCode().hashCode();
+        }
+        if (hasCurrencyName()) {
+          hash = (37 * hash) + CURRENCY_NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getCurrencyName().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code CMsgDPPartnerMicroTxns.PartnerInfo}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:CMsgDPPartnerMicroTxns.PartnerInfo)
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfoOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.class, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.Builder.class);
+        }
+
+        // Construct using SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          partnerId_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          partnerName_ = "";
+          bitField0_ = (bitField0_ & ~0x00000002);
+          currencyCode_ = "";
+          bitField0_ = (bitField0_ & ~0x00000004);
+          currencyName_ = "";
+          bitField0_ = (bitField0_ & ~0x00000008);
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_descriptor;
+        }
+
+        public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo getDefaultInstanceForType() {
+          return SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.getDefaultInstance();
+        }
+
+        public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo build() {
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo buildPartial() {
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo result = new SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.partnerId_ = partnerId_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.partnerName_ = partnerName_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.currencyCode_ = currencyCode_;
+          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+            to_bitField0_ |= 0x00000008;
+          }
+          result.currencyName_ = currencyName_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo) {
+            return mergeFrom((SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo other) {
+          if (other == SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.getDefaultInstance()) return this;
+          if (other.hasPartnerId()) {
+            setPartnerId(other.getPartnerId());
+          }
+          if (other.hasPartnerName()) {
+            bitField0_ |= 0x00000002;
+            partnerName_ = other.partnerName_;
+            onChanged();
+          }
+          if (other.hasCurrencyCode()) {
+            bitField0_ |= 0x00000004;
+            currencyCode_ = other.currencyCode_;
+            onChanged();
+          }
+          if (other.hasCurrencyName()) {
+            bitField0_ |= 0x00000008;
+            currencyName_ = other.currencyName_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private int partnerId_ ;
+        /**
+         * <code>optional uint32 partner_id = 1;</code>
+         */
+        public boolean hasPartnerId() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional uint32 partner_id = 1;</code>
+         */
+        public int getPartnerId() {
+          return partnerId_;
+        }
+        /**
+         * <code>optional uint32 partner_id = 1;</code>
+         */
+        public Builder setPartnerId(int value) {
+          bitField0_ |= 0x00000001;
+          partnerId_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 partner_id = 1;</code>
+         */
+        public Builder clearPartnerId() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          partnerId_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object partnerName_ = "";
+        /**
+         * <code>optional string partner_name = 2;</code>
+         */
+        public boolean hasPartnerName() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>optional string partner_name = 2;</code>
+         */
+        public java.lang.String getPartnerName() {
+          java.lang.Object ref = partnerName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              partnerName_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string partner_name = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getPartnerNameBytes() {
+          java.lang.Object ref = partnerName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            partnerName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string partner_name = 2;</code>
+         */
+        public Builder setPartnerName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          partnerName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string partner_name = 2;</code>
+         */
+        public Builder clearPartnerName() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          partnerName_ = getDefaultInstance().getPartnerName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string partner_name = 2;</code>
+         */
+        public Builder setPartnerNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          partnerName_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object currencyCode_ = "";
+        /**
+         * <code>optional string currency_code = 3;</code>
+         */
+        public boolean hasCurrencyCode() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional string currency_code = 3;</code>
+         */
+        public java.lang.String getCurrencyCode() {
+          java.lang.Object ref = currencyCode_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              currencyCode_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string currency_code = 3;</code>
+         */
+        public com.google.protobuf.ByteString
+            getCurrencyCodeBytes() {
+          java.lang.Object ref = currencyCode_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            currencyCode_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string currency_code = 3;</code>
+         */
+        public Builder setCurrencyCode(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+          currencyCode_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string currency_code = 3;</code>
+         */
+        public Builder clearCurrencyCode() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          currencyCode_ = getDefaultInstance().getCurrencyCode();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string currency_code = 3;</code>
+         */
+        public Builder setCurrencyCodeBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+          currencyCode_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object currencyName_ = "";
+        /**
+         * <code>optional string currency_name = 4;</code>
+         */
+        public boolean hasCurrencyName() {
+          return ((bitField0_ & 0x00000008) == 0x00000008);
+        }
+        /**
+         * <code>optional string currency_name = 4;</code>
+         */
+        public java.lang.String getCurrencyName() {
+          java.lang.Object ref = currencyName_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              currencyName_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string currency_name = 4;</code>
+         */
+        public com.google.protobuf.ByteString
+            getCurrencyNameBytes() {
+          java.lang.Object ref = currencyName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            currencyName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string currency_name = 4;</code>
+         */
+        public Builder setCurrencyName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+          currencyName_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string currency_name = 4;</code>
+         */
+        public Builder clearCurrencyName() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          currencyName_ = getDefaultInstance().getCurrencyName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string currency_name = 4;</code>
+         */
+        public Builder setCurrencyNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+          currencyName_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:CMsgDPPartnerMicroTxns.PartnerInfo)
+      }
+
+      // @@protoc_insertion_point(class_scope:CMsgDPPartnerMicroTxns.PartnerInfo)
+      private static final SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo();
+      }
+
+      public static SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<PartnerInfo>
+          PARSER = new com.google.protobuf.AbstractParser<PartnerInfo>() {
+        public PartnerInfo parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PartnerInfo(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<PartnerInfo> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PartnerInfo> getParserForType() {
+        return PARSER;
+      }
+
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int APPID_FIELD_NUMBER = 1;
+    private int appid_;
+    /**
+     * <code>optional uint32 appid = 1;</code>
+     */
+    public boolean hasAppid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 appid = 1;</code>
+     */
+    public int getAppid() {
+      return appid_;
+    }
+
+    public static final int GC_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object gcName_;
+    /**
+     * <code>optional string gc_name = 2;</code>
+     */
+    public boolean hasGcName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string gc_name = 2;</code>
+     */
+    public java.lang.String getGcName() {
+      java.lang.Object ref = gcName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          gcName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string gc_name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGcNameBytes() {
+      java.lang.Object ref = gcName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        gcName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTNER_FIELD_NUMBER = 3;
+    private SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo partner_;
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+     */
+    public boolean hasPartner() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+     */
+    public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo getPartner() {
+      return partner_ == null ? SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.getDefaultInstance() : partner_;
+    }
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+     */
+    public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfoOrBuilder getPartnerOrBuilder() {
+      return partner_ == null ? SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.getDefaultInstance() : partner_;
+    }
+
+    public static final int TRANSACTIONS_FIELD_NUMBER = 4;
+    private java.util.List<SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn> transactions_;
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    public java.util.List<SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn> getTransactionsList() {
+      return transactions_;
+    }
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    public java.util.List<? extends SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder> 
+        getTransactionsOrBuilderList() {
+      return transactions_;
+    }
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    public int getTransactionsCount() {
+      return transactions_.size();
+    }
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn getTransactions(int index) {
+      return transactions_.get(index);
+    }
+    /**
+     * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+     */
+    public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder getTransactionsOrBuilder(
+        int index) {
+      return transactions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, appid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, gcName_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, getPartner());
+      }
+      for (int i = 0; i < transactions_.size(); i++) {
+        output.writeMessage(4, transactions_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, appid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, gcName_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getPartner());
+      }
+      for (int i = 0; i < transactions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, transactions_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgBase.CMsgDPPartnerMicroTxns)) {
+        return super.equals(obj);
+      }
+      SteamMsgBase.CMsgDPPartnerMicroTxns other = (SteamMsgBase.CMsgDPPartnerMicroTxns) obj;
+
+      boolean result = true;
+      result = result && (hasAppid() == other.hasAppid());
+      if (hasAppid()) {
+        result = result && (getAppid()
+            == other.getAppid());
+      }
+      result = result && (hasGcName() == other.hasGcName());
+      if (hasGcName()) {
+        result = result && getGcName()
+            .equals(other.getGcName());
+      }
+      result = result && (hasPartner() == other.hasPartner());
+      if (hasPartner()) {
+        result = result && getPartner()
+            .equals(other.getPartner());
+      }
+      result = result && getTransactionsList()
+          .equals(other.getTransactionsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAppid()) {
+        hash = (37 * hash) + APPID_FIELD_NUMBER;
+        hash = (53 * hash) + getAppid();
+      }
+      if (hasGcName()) {
+        hash = (37 * hash) + GC_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getGcName().hashCode();
+      }
+      if (hasPartner()) {
+        hash = (37 * hash) + PARTNER_FIELD_NUMBER;
+        hash = (53 * hash) + getPartner().hashCode();
+      }
+      if (getTransactionsCount() > 0) {
+        hash = (37 * hash) + TRANSACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getTransactionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgBase.CMsgDPPartnerMicroTxns prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CMsgDPPartnerMicroTxns}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CMsgDPPartnerMicroTxns)
+        SteamMsgBase.CMsgDPPartnerMicroTxnsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgBase.CMsgDPPartnerMicroTxns.class, SteamMsgBase.CMsgDPPartnerMicroTxns.Builder.class);
+      }
+
+      // Construct using SteamMsgBase.CMsgDPPartnerMicroTxns.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPartnerFieldBuilder();
+          getTransactionsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        appid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        gcName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (partnerBuilder_ == null) {
+          partner_ = null;
+        } else {
+          partnerBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (transactionsBuilder_ == null) {
+          transactions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          transactionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxns_descriptor;
+      }
+
+      public SteamMsgBase.CMsgDPPartnerMicroTxns getDefaultInstanceForType() {
+        return SteamMsgBase.CMsgDPPartnerMicroTxns.getDefaultInstance();
+      }
+
+      public SteamMsgBase.CMsgDPPartnerMicroTxns build() {
+        SteamMsgBase.CMsgDPPartnerMicroTxns result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgBase.CMsgDPPartnerMicroTxns buildPartial() {
+        SteamMsgBase.CMsgDPPartnerMicroTxns result = new SteamMsgBase.CMsgDPPartnerMicroTxns(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.appid_ = appid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.gcName_ = gcName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (partnerBuilder_ == null) {
+          result.partner_ = partner_;
+        } else {
+          result.partner_ = partnerBuilder_.build();
+        }
+        if (transactionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            transactions_ = java.util.Collections.unmodifiableList(transactions_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.transactions_ = transactions_;
+        } else {
+          result.transactions_ = transactionsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgBase.CMsgDPPartnerMicroTxns) {
+          return mergeFrom((SteamMsgBase.CMsgDPPartnerMicroTxns)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgBase.CMsgDPPartnerMicroTxns other) {
+        if (other == SteamMsgBase.CMsgDPPartnerMicroTxns.getDefaultInstance()) return this;
+        if (other.hasAppid()) {
+          setAppid(other.getAppid());
+        }
+        if (other.hasGcName()) {
+          bitField0_ |= 0x00000002;
+          gcName_ = other.gcName_;
+          onChanged();
+        }
+        if (other.hasPartner()) {
+          mergePartner(other.getPartner());
+        }
+        if (transactionsBuilder_ == null) {
+          if (!other.transactions_.isEmpty()) {
+            if (transactions_.isEmpty()) {
+              transactions_ = other.transactions_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureTransactionsIsMutable();
+              transactions_.addAll(other.transactions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.transactions_.isEmpty()) {
+            if (transactionsBuilder_.isEmpty()) {
+              transactionsBuilder_.dispose();
+              transactionsBuilder_ = null;
+              transactions_ = other.transactions_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              transactionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTransactionsFieldBuilder() : null;
+            } else {
+              transactionsBuilder_.addAllMessages(other.transactions_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgBase.CMsgDPPartnerMicroTxns parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgBase.CMsgDPPartnerMicroTxns) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int appid_ ;
+      /**
+       * <code>optional uint32 appid = 1;</code>
+       */
+      public boolean hasAppid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 appid = 1;</code>
+       */
+      public int getAppid() {
+        return appid_;
+      }
+      /**
+       * <code>optional uint32 appid = 1;</code>
+       */
+      public Builder setAppid(int value) {
+        bitField0_ |= 0x00000001;
+        appid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 appid = 1;</code>
+       */
+      public Builder clearAppid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        appid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object gcName_ = "";
+      /**
+       * <code>optional string gc_name = 2;</code>
+       */
+      public boolean hasGcName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string gc_name = 2;</code>
+       */
+      public java.lang.String getGcName() {
+        java.lang.Object ref = gcName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            gcName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string gc_name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGcNameBytes() {
+        java.lang.Object ref = gcName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          gcName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string gc_name = 2;</code>
+       */
+      public Builder setGcName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        gcName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string gc_name = 2;</code>
+       */
+      public Builder clearGcName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        gcName_ = getDefaultInstance().getGcName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string gc_name = 2;</code>
+       */
+      public Builder setGcNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        gcName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo partner_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.Builder, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfoOrBuilder> partnerBuilder_;
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      public boolean hasPartner() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo getPartner() {
+        if (partnerBuilder_ == null) {
+          return partner_ == null ? SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.getDefaultInstance() : partner_;
+        } else {
+          return partnerBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      public Builder setPartner(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo value) {
+        if (partnerBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          partner_ = value;
+          onChanged();
+        } else {
+          partnerBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      public Builder setPartner(
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.Builder builderForValue) {
+        if (partnerBuilder_ == null) {
+          partner_ = builderForValue.build();
+          onChanged();
+        } else {
+          partnerBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      public Builder mergePartner(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo value) {
+        if (partnerBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              partner_ != null &&
+              partner_ != SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.getDefaultInstance()) {
+            partner_ =
+              SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.newBuilder(partner_).mergeFrom(value).buildPartial();
+          } else {
+            partner_ = value;
+          }
+          onChanged();
+        } else {
+          partnerBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      public Builder clearPartner() {
+        if (partnerBuilder_ == null) {
+          partner_ = null;
+          onChanged();
+        } else {
+          partnerBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.Builder getPartnerBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getPartnerFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfoOrBuilder getPartnerOrBuilder() {
+        if (partnerBuilder_ != null) {
+          return partnerBuilder_.getMessageOrBuilder();
+        } else {
+          return partner_ == null ?
+              SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.getDefaultInstance() : partner_;
+        }
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxns.PartnerInfo partner = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.Builder, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfoOrBuilder> 
+          getPartnerFieldBuilder() {
+        if (partnerBuilder_ == null) {
+          partnerBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfo.Builder, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerInfoOrBuilder>(
+                  getPartner(),
+                  getParentForChildren(),
+                  isClean());
+          partner_ = null;
+        }
+        return partnerBuilder_;
+      }
+
+      private java.util.List<SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn> transactions_ =
+        java.util.Collections.emptyList();
+      private void ensureTransactionsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          transactions_ = new java.util.ArrayList<SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn>(transactions_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder> transactionsBuilder_;
+
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public java.util.List<SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn> getTransactionsList() {
+        if (transactionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(transactions_);
+        } else {
+          return transactionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public int getTransactionsCount() {
+        if (transactionsBuilder_ == null) {
+          return transactions_.size();
+        } else {
+          return transactionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn getTransactions(int index) {
+        if (transactionsBuilder_ == null) {
+          return transactions_.get(index);
+        } else {
+          return transactionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder setTransactions(
+          int index, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn value) {
+        if (transactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactionsIsMutable();
+          transactions_.set(index, value);
+          onChanged();
+        } else {
+          transactionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder setTransactions(
+          int index, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder builderForValue) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          transactions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          transactionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder addTransactions(SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn value) {
+        if (transactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactionsIsMutable();
+          transactions_.add(value);
+          onChanged();
+        } else {
+          transactionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder addTransactions(
+          int index, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn value) {
+        if (transactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactionsIsMutable();
+          transactions_.add(index, value);
+          onChanged();
+        } else {
+          transactionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder addTransactions(
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder builderForValue) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          transactions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          transactionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder addTransactions(
+          int index, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder builderForValue) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          transactions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          transactionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder addAllTransactions(
+          java.lang.Iterable<? extends SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn> values) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, transactions_);
+          onChanged();
+        } else {
+          transactionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder clearTransactions() {
+        if (transactionsBuilder_ == null) {
+          transactions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          transactionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public Builder removeTransactions(int index) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          transactions_.remove(index);
+          onChanged();
+        } else {
+          transactionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder getTransactionsBuilder(
+          int index) {
+        return getTransactionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder getTransactionsOrBuilder(
+          int index) {
+        if (transactionsBuilder_ == null) {
+          return transactions_.get(index);  } else {
+          return transactionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public java.util.List<? extends SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder> 
+           getTransactionsOrBuilderList() {
+        if (transactionsBuilder_ != null) {
+          return transactionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(transactions_);
+        }
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder addTransactionsBuilder() {
+        return getTransactionsFieldBuilder().addBuilder(
+            SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder addTransactionsBuilder(
+          int index) {
+        return getTransactionsFieldBuilder().addBuilder(
+            index, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .CMsgDPPartnerMicroTxns.PartnerMicroTxn transactions = 4;</code>
+       */
+      public java.util.List<SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder> 
+           getTransactionsBuilderList() {
+        return getTransactionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder> 
+          getTransactionsFieldBuilder() {
+        if (transactionsBuilder_ == null) {
+          transactionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxn.Builder, SteamMsgBase.CMsgDPPartnerMicroTxns.PartnerMicroTxnOrBuilder>(
+                  transactions_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          transactions_ = null;
+        }
+        return transactionsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CMsgDPPartnerMicroTxns)
+    }
+
+    // @@protoc_insertion_point(class_scope:CMsgDPPartnerMicroTxns)
+    private static final SteamMsgBase.CMsgDPPartnerMicroTxns DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgBase.CMsgDPPartnerMicroTxns();
+    }
+
+    public static SteamMsgBase.CMsgDPPartnerMicroTxns getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CMsgDPPartnerMicroTxns>
+        PARSER = new com.google.protobuf.AbstractParser<CMsgDPPartnerMicroTxns>() {
+      public CMsgDPPartnerMicroTxns parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CMsgDPPartnerMicroTxns(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CMsgDPPartnerMicroTxns> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CMsgDPPartnerMicroTxns> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgBase.CMsgDPPartnerMicroTxns getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CMsgDPPartnerMicroTxnsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CMsgDPPartnerMicroTxnsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 eresult = 1 [default = 2];</code>
+     */
+    boolean hasEresult();
+    /**
+     * <code>optional uint32 eresult = 1 [default = 2];</code>
+     */
+    int getEresult();
+
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxnsResponse.EErrorCode eerrorcode = 2 [default = k_MsgValid];</code>
+     */
+    boolean hasEerrorcode();
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxnsResponse.EErrorCode eerrorcode = 2 [default = k_MsgValid];</code>
+     */
+    SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode getEerrorcode();
+  }
+  /**
+   * Protobuf type {@code CMsgDPPartnerMicroTxnsResponse}
+   */
+  public  static final class CMsgDPPartnerMicroTxnsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CMsgDPPartnerMicroTxnsResponse)
+      CMsgDPPartnerMicroTxnsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CMsgDPPartnerMicroTxnsResponse.newBuilder() to construct.
+    private CMsgDPPartnerMicroTxnsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CMsgDPPartnerMicroTxnsResponse() {
+      eresult_ = 2;
+      eerrorcode_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CMsgDPPartnerMicroTxnsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              eresult_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+              SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode value = SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                bitField0_ |= 0x00000002;
+                eerrorcode_ = rawValue;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxnsResponse_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxnsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.class, SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code CMsgDPPartnerMicroTxnsResponse.EErrorCode}
+     */
+    public enum EErrorCode
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>k_MsgValid = 0;</code>
+       */
+      k_MsgValid(0),
+      /**
+       * <code>k_MsgInvalidAppID = 1;</code>
+       */
+      k_MsgInvalidAppID(1),
+      /**
+       * <code>k_MsgInvalidPartnerInfo = 2;</code>
+       */
+      k_MsgInvalidPartnerInfo(2),
+      /**
+       * <code>k_MsgNoTransactions = 3;</code>
+       */
+      k_MsgNoTransactions(3),
+      /**
+       * <code>k_MsgSQLFailure = 4;</code>
+       */
+      k_MsgSQLFailure(4),
+      /**
+       * <code>k_MsgPartnerInfoDiscrepancy = 5;</code>
+       */
+      k_MsgPartnerInfoDiscrepancy(5),
+      /**
+       * <code>k_MsgTransactionInsertFailed = 7;</code>
+       */
+      k_MsgTransactionInsertFailed(7),
+      /**
+       * <code>k_MsgAlreadyRunning = 8;</code>
+       */
+      k_MsgAlreadyRunning(8),
+      /**
+       * <code>k_MsgInvalidTransactionData = 9;</code>
+       */
+      k_MsgInvalidTransactionData(9),
+      ;
+
+      /**
+       * <code>k_MsgValid = 0;</code>
+       */
+      public static final int k_MsgValid_VALUE = 0;
+      /**
+       * <code>k_MsgInvalidAppID = 1;</code>
+       */
+      public static final int k_MsgInvalidAppID_VALUE = 1;
+      /**
+       * <code>k_MsgInvalidPartnerInfo = 2;</code>
+       */
+      public static final int k_MsgInvalidPartnerInfo_VALUE = 2;
+      /**
+       * <code>k_MsgNoTransactions = 3;</code>
+       */
+      public static final int k_MsgNoTransactions_VALUE = 3;
+      /**
+       * <code>k_MsgSQLFailure = 4;</code>
+       */
+      public static final int k_MsgSQLFailure_VALUE = 4;
+      /**
+       * <code>k_MsgPartnerInfoDiscrepancy = 5;</code>
+       */
+      public static final int k_MsgPartnerInfoDiscrepancy_VALUE = 5;
+      /**
+       * <code>k_MsgTransactionInsertFailed = 7;</code>
+       */
+      public static final int k_MsgTransactionInsertFailed_VALUE = 7;
+      /**
+       * <code>k_MsgAlreadyRunning = 8;</code>
+       */
+      public static final int k_MsgAlreadyRunning_VALUE = 8;
+      /**
+       * <code>k_MsgInvalidTransactionData = 9;</code>
+       */
+      public static final int k_MsgInvalidTransactionData_VALUE = 9;
+
+
+      public final int getNumber() {
+        return value;
+      }
+
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EErrorCode valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static EErrorCode forNumber(int value) {
+        switch (value) {
+          case 0: return k_MsgValid;
+          case 1: return k_MsgInvalidAppID;
+          case 2: return k_MsgInvalidPartnerInfo;
+          case 3: return k_MsgNoTransactions;
+          case 4: return k_MsgSQLFailure;
+          case 5: return k_MsgPartnerInfoDiscrepancy;
+          case 7: return k_MsgTransactionInsertFailed;
+          case 8: return k_MsgAlreadyRunning;
+          case 9: return k_MsgInvalidTransactionData;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EErrorCode>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          EErrorCode> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<EErrorCode>() {
+              public EErrorCode findValueByNumber(int number) {
+                return EErrorCode.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final EErrorCode[] VALUES = values();
+
+      public static EErrorCode valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EErrorCode(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:CMsgDPPartnerMicroTxnsResponse.EErrorCode)
+    }
+
+    private int bitField0_;
+    public static final int ERESULT_FIELD_NUMBER = 1;
+    private int eresult_;
+    /**
+     * <code>optional uint32 eresult = 1 [default = 2];</code>
+     */
+    public boolean hasEresult() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 eresult = 1 [default = 2];</code>
+     */
+    public int getEresult() {
+      return eresult_;
+    }
+
+    public static final int EERRORCODE_FIELD_NUMBER = 2;
+    private int eerrorcode_;
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxnsResponse.EErrorCode eerrorcode = 2 [default = k_MsgValid];</code>
+     */
+    public boolean hasEerrorcode() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .CMsgDPPartnerMicroTxnsResponse.EErrorCode eerrorcode = 2 [default = k_MsgValid];</code>
+     */
+    public SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode getEerrorcode() {
+      SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode result = SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode.valueOf(eerrorcode_);
+      return result == null ? SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode.k_MsgValid : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, eresult_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeEnum(2, eerrorcode_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, eresult_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, eerrorcode_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgBase.CMsgDPPartnerMicroTxnsResponse)) {
+        return super.equals(obj);
+      }
+      SteamMsgBase.CMsgDPPartnerMicroTxnsResponse other = (SteamMsgBase.CMsgDPPartnerMicroTxnsResponse) obj;
+
+      boolean result = true;
+      result = result && (hasEresult() == other.hasEresult());
+      if (hasEresult()) {
+        result = result && (getEresult()
+            == other.getEresult());
+      }
+      result = result && (hasEerrorcode() == other.hasEerrorcode());
+      if (hasEerrorcode()) {
+        result = result && eerrorcode_ == other.eerrorcode_;
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEresult()) {
+        hash = (37 * hash) + ERESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getEresult();
+      }
+      if (hasEerrorcode()) {
+        hash = (37 * hash) + EERRORCODE_FIELD_NUMBER;
+        hash = (53 * hash) + eerrorcode_;
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgBase.CMsgDPPartnerMicroTxnsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CMsgDPPartnerMicroTxnsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CMsgDPPartnerMicroTxnsResponse)
+        SteamMsgBase.CMsgDPPartnerMicroTxnsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxnsResponse_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxnsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.class, SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.Builder.class);
+      }
+
+      // Construct using SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        eresult_ = 2;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        eerrorcode_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgBase.internal_static_CMsgDPPartnerMicroTxnsResponse_descriptor;
+      }
+
+      public SteamMsgBase.CMsgDPPartnerMicroTxnsResponse getDefaultInstanceForType() {
+        return SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.getDefaultInstance();
+      }
+
+      public SteamMsgBase.CMsgDPPartnerMicroTxnsResponse build() {
+        SteamMsgBase.CMsgDPPartnerMicroTxnsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgBase.CMsgDPPartnerMicroTxnsResponse buildPartial() {
+        SteamMsgBase.CMsgDPPartnerMicroTxnsResponse result = new SteamMsgBase.CMsgDPPartnerMicroTxnsResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.eresult_ = eresult_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.eerrorcode_ = eerrorcode_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgBase.CMsgDPPartnerMicroTxnsResponse) {
+          return mergeFrom((SteamMsgBase.CMsgDPPartnerMicroTxnsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgBase.CMsgDPPartnerMicroTxnsResponse other) {
+        if (other == SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.getDefaultInstance()) return this;
+        if (other.hasEresult()) {
+          setEresult(other.getEresult());
+        }
+        if (other.hasEerrorcode()) {
+          setEerrorcode(other.getEerrorcode());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgBase.CMsgDPPartnerMicroTxnsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgBase.CMsgDPPartnerMicroTxnsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int eresult_ = 2;
+      /**
+       * <code>optional uint32 eresult = 1 [default = 2];</code>
+       */
+      public boolean hasEresult() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 eresult = 1 [default = 2];</code>
+       */
+      public int getEresult() {
+        return eresult_;
+      }
+      /**
+       * <code>optional uint32 eresult = 1 [default = 2];</code>
+       */
+      public Builder setEresult(int value) {
+        bitField0_ |= 0x00000001;
+        eresult_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 eresult = 1 [default = 2];</code>
+       */
+      public Builder clearEresult() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        eresult_ = 2;
+        onChanged();
+        return this;
+      }
+
+      private int eerrorcode_ = 0;
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxnsResponse.EErrorCode eerrorcode = 2 [default = k_MsgValid];</code>
+       */
+      public boolean hasEerrorcode() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxnsResponse.EErrorCode eerrorcode = 2 [default = k_MsgValid];</code>
+       */
+      public SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode getEerrorcode() {
+        SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode result = SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode.valueOf(eerrorcode_);
+        return result == null ? SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode.k_MsgValid : result;
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxnsResponse.EErrorCode eerrorcode = 2 [default = k_MsgValid];</code>
+       */
+      public Builder setEerrorcode(SteamMsgBase.CMsgDPPartnerMicroTxnsResponse.EErrorCode value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        eerrorcode_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .CMsgDPPartnerMicroTxnsResponse.EErrorCode eerrorcode = 2 [default = k_MsgValid];</code>
+       */
+      public Builder clearEerrorcode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        eerrorcode_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CMsgDPPartnerMicroTxnsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:CMsgDPPartnerMicroTxnsResponse)
+    private static final SteamMsgBase.CMsgDPPartnerMicroTxnsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgBase.CMsgDPPartnerMicroTxnsResponse();
+    }
+
+    public static SteamMsgBase.CMsgDPPartnerMicroTxnsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CMsgDPPartnerMicroTxnsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CMsgDPPartnerMicroTxnsResponse>() {
+      public CMsgDPPartnerMicroTxnsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CMsgDPPartnerMicroTxnsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CMsgDPPartnerMicroTxnsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CMsgDPPartnerMicroTxnsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgBase.CMsgDPPartnerMicroTxnsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public static final int KEY_FIELD_FIELD_NUMBER = 60000;
   /**
    * <code>extend .google.protobuf.FieldOptions { ... }</code>
@@ -61854,6 +67217,26 @@ public final class SteamMsgBase {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgNotificationOfSuspiciousActivity_MultipleGameInstances_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CMsgDPPartnerMicroTxns_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CMsgDPPartnerMicroTxns_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CMsgDPPartnerMicroTxnsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CMsgDPPartnerMicroTxnsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -62066,30 +67449,58 @@ public final class SteamMsgBase {
       "ge\032)\n\014MessageRange\022\013\n\003low\030\001 \002(\r\022\014\n\004high\030" +
       "\002 \002(\r\"n\n\006Option\022\030\n\024NOTIFY_USER_SESSIONS\020" +
       "\000\022\032\n\026NOTIFY_SERVER_SESSIONS\020\001\022\027\n\023NOTIFY_" +
-      "ACHIEVEMENTS\020\002\022\025\n\021NOTIFY_VAC_ACTION\020\003\"\224\002" +
+      "ACHIEVEMENTS\020\002\022\025\n\021NOTIFY_VAC_ACTION\020\003\"\362\002" +
       "\n\024CMsgGCHUpdateSession\022\020\n\010steam_id\030\001 \001(\006" +
       "\022\016\n\006app_id\030\002 \001(\r\022\016\n\006online\030\003 \001(\010\022\027\n\017serv" +
       "er_steam_id\030\004 \001(\006\022\023\n\013server_addr\030\005 \001(\r\022\023" +
       "\n\013server_port\030\006 \001(\r\022\017\n\007os_type\030\007 \001(\r\022\023\n\013" +
       "client_addr\030\010 \001(\r\0226\n\014extra_fields\030\t \003(\0132" +
-      " .CMsgGCHUpdateSession.ExtraField\032)\n\nExt",
-      "raField\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\354\001\n" +
-      "$CMsgNotificationOfSuspiciousActivity\022\017\n" +
-      "\007steamid\030\001 \001(\006\022\r\n\005appid\030\002 \001(\r\022W\n\022multipl" +
-      "e_instances\030\003 \001(\0132;.CMsgNotificationOfSu" +
-      "spiciousActivity.MultipleGameInstances\032K" +
-      "\n\025MultipleGameInstances\022\032\n\022app_instance_" +
-      "count\030\001 \001(\r\022\026\n\016other_steamids\030\002 \003(\006*\266\001\n\020" +
-      "GCProtoBufMsgSrc\022 \n\034GCProtoBufMsgSrc_Uns" +
-      "pecified\020\000\022\037\n\033GCProtoBufMsgSrc_FromSyste" +
-      "m\020\001\022 \n\034GCProtoBufMsgSrc_FromSteamID\020\002\022\033\n",
-      "\027GCProtoBufMsgSrc_FromGC\020\003\022 \n\034GCProtoBuf" +
-      "MsgSrc_ReplySystem\020\004:9\n\tkey_field\022\035.goog" +
-      "le.protobuf.FieldOptions\030\340\324\003 \001(\010:\005false:" +
-      "A\n\022msgpool_soft_limit\022\037.google.protobuf." +
-      "MessageOptions\030\340\324\003 \001(\005:\00232:B\n\022msgpool_ha" +
-      "rd_limit\022\037.google.protobuf.MessageOption" +
-      "s\030\341\324\003 \001(\005:\003384B\005H\001\200\001\000"
+      " .CMsgGCHUpdateSession.ExtraField\022\020\n\010own",
+      "er_id\030\n \001(\006\022\030\n\020cm_session_sysid\030\013 \001(\r\022\035\n" +
+      "\025cm_session_identifier\030\014 \001(\r\022\021\n\tdepot_id" +
+      "s\030\r \003(\r\032)\n\nExtraField\022\014\n\004name\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t\"\354\001\n$CMsgNotificationOfSuspici" +
+      "ousActivity\022\017\n\007steamid\030\001 \001(\006\022\r\n\005appid\030\002 " +
+      "\001(\r\022W\n\022multiple_instances\030\003 \001(\0132;.CMsgNo" +
+      "tificationOfSuspiciousActivity.MultipleG" +
+      "ameInstances\032K\n\025MultipleGameInstances\022\032\n" +
+      "\022app_instance_count\030\001 \001(\r\022\026\n\016other_steam" +
+      "ids\030\002 \003(\006\"\362\004\n\026CMsgDPPartnerMicroTxns\022\r\n\005",
+      "appid\030\001 \001(\r\022\017\n\007gc_name\030\002 \001(\t\0224\n\007partner\030" +
+      "\003 \001(\0132#.CMsgDPPartnerMicroTxns.PartnerIn" +
+      "fo\022=\n\014transactions\030\004 \003(\0132\'.CMsgDPPartner" +
+      "MicroTxns.PartnerMicroTxn\032\333\002\n\017PartnerMic" +
+      "roTxn\022\021\n\tinit_time\030\001 \001(\r\022\030\n\020last_update_" +
+      "time\030\002 \001(\r\022\016\n\006txn_id\030\003 \001(\004\022\022\n\naccount_id" +
+      "\030\004 \001(\r\022\021\n\tline_item\030\005 \001(\r\022\017\n\007item_id\030\006 \001" +
+      "(\004\022\021\n\tdef_index\030\007 \001(\r\022\r\n\005price\030\010 \001(\004\022\013\n\003" +
+      "tax\030\t \001(\004\022\021\n\tprice_usd\030\n \001(\004\022\017\n\007tax_usd\030" +
+      "\013 \001(\004\022\025\n\rpurchase_type\030\014 \001(\r\022\026\n\016steam_tx",
+      "n_type\030\r \001(\r\022\024\n\014country_code\030\016 \001(\t\022\023\n\013re" +
+      "gion_code\030\017 \001(\t\022\020\n\010quantity\030\020 \001(\005\022\024\n\014ref" +
+      "_trans_id\030\021 \001(\004\032e\n\013PartnerInfo\022\022\n\npartne" +
+      "r_id\030\001 \001(\r\022\024\n\014partner_name\030\002 \001(\t\022\025\n\rcurr" +
+      "ency_code\030\003 \001(\t\022\025\n\rcurrency_name\030\004 \001(\t\"\376" +
+      "\002\n\036CMsgDPPartnerMicroTxnsResponse\022\022\n\007ere" +
+      "sult\030\001 \001(\r:\0012\022J\n\neerrorcode\030\002 \001(\0162*.CMsg" +
+      "DPPartnerMicroTxnsResponse.EErrorCode:\nk" +
+      "_MsgValid\"\373\001\n\nEErrorCode\022\016\n\nk_MsgValid\020\000" +
+      "\022\025\n\021k_MsgInvalidAppID\020\001\022\033\n\027k_MsgInvalidP",
+      "artnerInfo\020\002\022\027\n\023k_MsgNoTransactions\020\003\022\023\n" +
+      "\017k_MsgSQLFailure\020\004\022\037\n\033k_MsgPartnerInfoDi" +
+      "screpancy\020\005\022 \n\034k_MsgTransactionInsertFai" +
+      "led\020\007\022\027\n\023k_MsgAlreadyRunning\020\010\022\037\n\033k_MsgI" +
+      "nvalidTransactionData\020\t*\266\001\n\020GCProtoBufMs" +
+      "gSrc\022 \n\034GCProtoBufMsgSrc_Unspecified\020\000\022\037" +
+      "\n\033GCProtoBufMsgSrc_FromSystem\020\001\022 \n\034GCPro" +
+      "toBufMsgSrc_FromSteamID\020\002\022\033\n\027GCProtoBufM" +
+      "sgSrc_FromGC\020\003\022 \n\034GCProtoBufMsgSrc_Reply" +
+      "System\020\004:9\n\tkey_field\022\035.google.protobuf.",
+      "FieldOptions\030\340\324\003 \001(\010:\005false:A\n\022msgpool_s" +
+      "oft_limit\022\037.google.protobuf.MessageOptio" +
+      "ns\030\340\324\003 \001(\005:\00232:B\n\022msgpool_hard_limit\022\037.g" +
+      "oogle.protobuf.MessageOptions\030\341\324\003 \001(\005:\0033" +
+      "84B\005H\001\200\001\000"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -62535,7 +67946,7 @@ public final class SteamMsgBase {
     internal_static_CMsgGCHUpdateSession_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CMsgGCHUpdateSession_descriptor,
-        new java.lang.String[] { "SteamId", "AppId", "Online", "ServerSteamId", "ServerAddr", "ServerPort", "OsType", "ClientAddr", "ExtraFields", });
+        new java.lang.String[] { "SteamId", "AppId", "Online", "ServerSteamId", "ServerAddr", "ServerPort", "OsType", "ClientAddr", "ExtraFields", "OwnerId", "CmSessionSysid", "CmSessionIdentifier", "DepotIds", });
     internal_static_CMsgGCHUpdateSession_ExtraField_descriptor =
       internal_static_CMsgGCHUpdateSession_descriptor.getNestedTypes().get(0);
     internal_static_CMsgGCHUpdateSession_ExtraField_fieldAccessorTable = new
@@ -62554,6 +67965,30 @@ public final class SteamMsgBase {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CMsgNotificationOfSuspiciousActivity_MultipleGameInstances_descriptor,
         new java.lang.String[] { "AppInstanceCount", "OtherSteamids", });
+    internal_static_CMsgDPPartnerMicroTxns_descriptor =
+      getDescriptor().getMessageTypes().get(59);
+    internal_static_CMsgDPPartnerMicroTxns_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CMsgDPPartnerMicroTxns_descriptor,
+        new java.lang.String[] { "Appid", "GcName", "Partner", "Transactions", });
+    internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_descriptor =
+      internal_static_CMsgDPPartnerMicroTxns_descriptor.getNestedTypes().get(0);
+    internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CMsgDPPartnerMicroTxns_PartnerMicroTxn_descriptor,
+        new java.lang.String[] { "InitTime", "LastUpdateTime", "TxnId", "AccountId", "LineItem", "ItemId", "DefIndex", "Price", "Tax", "PriceUsd", "TaxUsd", "PurchaseType", "SteamTxnType", "CountryCode", "RegionCode", "Quantity", "RefTransId", });
+    internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_descriptor =
+      internal_static_CMsgDPPartnerMicroTxns_descriptor.getNestedTypes().get(1);
+    internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CMsgDPPartnerMicroTxns_PartnerInfo_descriptor,
+        new java.lang.String[] { "PartnerId", "PartnerName", "CurrencyCode", "CurrencyName", });
+    internal_static_CMsgDPPartnerMicroTxnsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(60);
+    internal_static_CMsgDPPartnerMicroTxnsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CMsgDPPartnerMicroTxnsResponse_descriptor,
+        new java.lang.String[] { "Eresult", "Eerrorcode", });
     keyField.internalInit(descriptor.getExtensions().get(0));
     msgpoolSoftLimit.internalInit(descriptor.getExtensions().get(1));
     msgpoolHardLimit.internalInit(descriptor.getExtensions().get(2));
