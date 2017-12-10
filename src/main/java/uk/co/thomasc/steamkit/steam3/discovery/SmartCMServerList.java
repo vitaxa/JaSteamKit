@@ -17,7 +17,11 @@ public class SmartCMServerList {
 
     public SmartCMServerList(IServerListProvider serverListProvider) {
         this.serverListProvider = Objects.requireNonNull(serverListProvider, "ServerListProvider can't be null");
-        this.serverList = Collections.synchronizedList(serverListProvider.provideServerList());
+        this.serverList = Collections.synchronizedList(
+                Objects.requireNonNull(serverListProvider.provideServerList(), "server list can't be null"));
+        if (this.serverList.isEmpty()) {
+            throw new IllegalStateException("Server list can't be empty");
+        }
     }
 
     public void fetchServerList() {
@@ -27,18 +31,22 @@ public class SmartCMServerList {
 
     public IPEndPoint getNextServerCandidate() {
         synchronized (serverList) {
+            List<ServerInfo> goodIpList;
             // If we have bad ips then filter them
             final List<ServerInfo> badIpList = serverList.stream()
                     .filter(serverInfo -> serverInfo.getLastBadConnectionTime() != null)
                     .collect(Collectors.toList());
             if (!badIpList.isEmpty()) {
-                final List<ServerInfo> goodIpList = filterBadIpList(badIpList);
+                goodIpList = filterBadIpList(badIpList);
                 if (!goodIpList.isEmpty()) {
                     goodIpList.forEach(serverInfo -> markServer(serverInfo.getIpEndPoint(), ServerQuality.GOOD));
                     return goodIpList.get(new Random().nextInt(goodIpList.size())).getIpEndPoint();
                 }
+            } else {
+                goodIpList = serverList.stream().filter(serverInfo -> serverInfo.getLastBadConnectionTime() == null)
+                        .collect(Collectors.toList());
             }
-            final ServerInfo serverInfo = serverList.get(new Random().nextInt(serverList.size()));
+            final ServerInfo serverInfo = goodIpList.get(new Random().nextInt(goodIpList.size()));
             return serverInfo.getIpEndPoint();
         }
     }

@@ -25,6 +25,8 @@ public class TcpConnection extends Connection {
 
     private Thread netThread;
 
+    private IPEndPoint currentIpEndPoint;
+
     private final Object netLock = new Object();
 
     /**
@@ -52,6 +54,7 @@ public class TcpConnection extends Connection {
         } catch (final IOException e) {
             DebugLog.writeLine("TcpConnection", "Error connecting (2): %s", e);
         }
+        currentIpEndPoint = endPoint;
     }
 
     /**
@@ -112,6 +115,11 @@ public class TcpConnection extends Connection {
             } // Return a InetAddress. The request will fail anyway so it doesn't matter
         }
         return sock.getLocalAddress();
+    }
+
+    @Override
+    public IPEndPoint currentIpEndPoint() {
+        return currentIpEndPoint;
     }
 
     private void connectCompleted(Socket socket) throws IOException {
@@ -233,6 +241,7 @@ public class TcpConnection extends Connection {
             // signal that our connection is dead
             isConnected = false;
             onDisconnected(false);
+            currentIpEndPoint = null;
         }
     }
 }

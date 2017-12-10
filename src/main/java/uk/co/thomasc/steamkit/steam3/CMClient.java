@@ -3,6 +3,7 @@ package uk.co.thomasc.steamkit.steam3;
 import uk.co.thomasc.steamkit.base.*;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgMulti;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientHeartBeat;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLoggedOff;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLogonResponse;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList.Server;
@@ -17,6 +18,7 @@ import uk.co.thomasc.steamkit.networking.steam3.Connection;
 import uk.co.thomasc.steamkit.networking.steam3.NetFilterEncryption;
 import uk.co.thomasc.steamkit.networking.steam3.TcpConnection;
 import uk.co.thomasc.steamkit.networking.steam3.UdpConnection;
+import uk.co.thomasc.steamkit.steam3.discovery.ServerQuality;
 import uk.co.thomasc.steamkit.steam3.discovery.SmartCMServerList;
 import uk.co.thomasc.steamkit.steam3.discovery.provider.SteamDirectoryProvider;
 import uk.co.thomasc.steamkit.steam3.steamclient.SteamClient;
@@ -37,7 +39,10 @@ import uk.co.thomasc.steamkit.util.util.NetHelpers;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This base client handles the underlying connection to a CM server. This class
@@ -135,7 +140,6 @@ public abstract class CMClient {
     public void connect(boolean bEncrypted) {
         disconnect();
         encrypted = bEncrypted;
-        final Random random = new Random();
         final IPEndPoint server = serverList.getNextServerCandidate();
         connection.connect(server);
     }
@@ -356,6 +360,15 @@ public abstract class CMClient {
         sessionId = null;
         steamId = null;
         heartBeatFunc.stop();
+        if (packetMsg.isProto()) {
+            ClientMsgProtobuf<CMsgClientLoggedOff.Builder> logoffMsg =
+                    new ClientMsgProtobuf<CMsgClientLoggedOff.Builder>(CMsgClientLoggedOff.class, packetMsg);
+            EResult logoffResult = EResult.f(logoffMsg.getBody().getEresult());
+
+            if (logoffResult == EResult.TryAnotherCM || logoffResult == EResult.ServiceUnavailable) {
+                serverList.markServer(connection.currentIpEndPoint(), ServerQuality.BAD);
+            }
+        }
     }
 
     private void handleServerList(IPacketMsg packetMsg) {
@@ -397,5 +410,9 @@ public abstract class CMClient {
      */
     public InetAddress getLocalIP() {
         return connection.getLocalIP();
+    }
+
+    public SmartCMServerList getServerList() {
+        return serverList;
     }
 }

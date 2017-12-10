@@ -84,4 +84,6 @@ public abstract class Connection {
      * @return The local IP
      */
     public abstract InetAddress getLocalIP();
+
+    public abstract IPEndPoint currentIpEndPoint();
 }

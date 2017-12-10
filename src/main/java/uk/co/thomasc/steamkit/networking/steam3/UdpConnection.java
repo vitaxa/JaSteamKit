@@ -87,6 +87,8 @@ public class UdpConnection extends Connection {
     private List<UdpPacket> outPackets;
     private Map<Integer, UdpPacket> inPackets;
 
+    private IPEndPoint currentIpEndPoint;
+
     public UdpConnection() {
         try {
             sock = new DatagramSocket();
@@ -124,6 +126,8 @@ public class UdpConnection extends Connection {
         netThread = new Thread(new NetLoop());
         netThread.setName("UdpConnection Thread");
         netThread.start();
+
+        currentIpEndPoint = endPoint;
     }
 
     /**
@@ -151,6 +155,8 @@ public class UdpConnection extends Connection {
 
         // Advance this the same way that steam does, when a socket gets reused.
         sourceConnId += 256;
+
+        currentIpEndPoint = null;
     }
 
     /**
@@ -632,6 +638,11 @@ public class UdpConnection extends Connection {
     @Override
     public InetAddress getLocalIP() {
         return sock.getLocalAddress();
+    }
+
+    @Override
+    public IPEndPoint currentIpEndPoint() {
+        return currentIpEndPoint;
     }
 
     public static byte[] copyOfRange(byte[] from, int start, int end){
