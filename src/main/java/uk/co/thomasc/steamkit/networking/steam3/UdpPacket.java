@@ -2,87 +2,75 @@ package uk.co.thomasc.steamkit.networking.steam3;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUdpPacketType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.UdpHeader;
-import uk.co.thomasc.steamkit.util.stream.BinaryReader;
-import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
+import uk.co.thomasc.steamkit.util.stream.MemoryStream;
+import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 class UdpPacket {
-    public static final int MAX_PAYLOAD = 1244;
+    public static final int MAX_PAYLOAD = 0x4DC;
+
     private UdpHeader header;
-    private BinaryReader payload;
 
-    //public MemoryStream Payload { get; private set; }
-
-    /**
-     * Gets a value indicating whether this instance is valid.
-     *
-     * @return true if this instance is valid; otherwise, false.
-     */
-    public boolean isValid() {
-        return header.magic == UdpHeader.MAGIC && header.payloadSize <= UdpPacket.MAX_PAYLOAD && payload != null;
-    }
+    private MemoryStream payload;
 
     /**
      * Initializes a new instance of the {@link UdpPacket} class with
-     * information from the memory stream.
-     *
      * Header is populated from the MemoryStream
      *
      * @param ms The stream containing the packet and it's payload data.
      */
-    public UdpPacket(BinaryReader ms) {
+    UdpPacket(MemoryStream ms) {
         header = new UdpHeader();
+
         try {
-            header.deSerialize(ms);
-        } catch (final IOException e) {
+            header.deserialize(ms);
+        } catch (IOException e) {
             return;
         }
-        if (header.magic != UdpHeader.MAGIC) {
+
+        if (header.getMagic() != UdpHeader.MAGIC) {
             return;
         }
-        setPayload(ms);
+
+        setPayload(ms, header.getPayloadSize());
     }
 
     /**
-     * Initializes a new instance of the {@link UdpPacket} class, with no
-     * payload.
-     *
+     * Initializes a new instance of the {@link UdpPacket} class, with no payload.
      * Header must be populated manually.
      *
      * @param type The type.
      */
-    public UdpPacket(EUdpPacketType type) {
+    UdpPacket(EUdpPacketType type) {
         header = new UdpHeader();
-        payload = new BinaryReader(new byte[0]);
-        header.packetType = type;
+        payload = new MemoryStream();
+
+        header.setPacketType(type);
     }
 
     /**
-     * Initializes a new instance of the {@link UdpPacket} class, of the
-     * specified type containing the specified payload.
-     *
+     * Initializes a new instance of the {@link UdpPacket} class, of the specified type containing the specified payload.
      * Header must be populated manually.
      *
-     * @param type   The type.
-     * @param reader The payload.
+     * @param type    The type.
+     * @param payload The payload.
      */
-    public UdpPacket(EUdpPacketType type, BinaryReader reader) {
+    UdpPacket(EUdpPacketType type, MemoryStream payload) {
         this(type);
-        setPayload(reader);
+        setPayload(payload);
     }
 
     /**
-     * Initializes a new instance of the {@link UdpPacket} class, of the
-     * specified type containing the first 'length' bytes of specified payload.
-     *
+     * Initializes a new instance of the {@link UdpPacket} class, of the specified type containing the first 'length' bytes of specified payload.
      * Header must be populated manually.
      *
      * @param type    The type.
      * @param payload The payload.
      * @param length  The length.
      */
-    public UdpPacket(EUdpPacketType type, BinaryReader payload, int length) {
+    UdpPacket(EUdpPacketType type, MemoryStream payload, long length) {
         this(type);
         setPayload(payload, length);
     }
@@ -92,28 +80,22 @@ class UdpPacket {
      *
      * @param ms The payload to copy.
      */
-    public void setPayload(BinaryReader ms) {
-        setPayload(ms, ms.getRemaining());
+    public void setPayload(MemoryStream ms) {
+        setPayload(ms, ms.getLength() - ms.getPosition());
     }
 
-    /**
-     * Sets the payload.
-     *
-     * @param ms     The payload.
-     * @param length The length.
-     */
-    public void setPayload(BinaryReader ms, int length) {
-        if (length > UdpPacket.MAX_PAYLOAD) {
+    public void setPayload(MemoryStream ms, long length) {
+        if (length > MAX_PAYLOAD) {
             throw new IllegalArgumentException("Payload length exceeds 0x4DC maximum");
         }
-        try {
-            final byte[] buf = ms.readBytes(length);
-            payload = new BinaryReader(buf);
-            header.payloadSize = (short) buf.length;
-            header.msgSize = buf.length;
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
+
+        byte[] buf = new byte[(int) length];
+        ms.read(buf, 0, buf.length);
+
+        payload = new MemoryStream(buf);
+        header.setPayloadSize((short) payload.getLength());
+        header.setMsgSize((int) payload.getLength());
+
     }
 
     /**
@@ -122,21 +104,34 @@ class UdpPacket {
      * @return The serialized packet.
      */
     public byte[] getData() {
-        final BinaryWriter ms = new BinaryWriter();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
         try {
-            header.serialize(ms);
-            ms.write(payload.readBytes());
-        } catch (final IOException e) {
-            e.printStackTrace();
+            header.serialize(baos);
+            payload.seek(0, SeekOrigin.BEGIN);
+            baos.write(payload.toByteArray());
+        } catch (IOException ignored) {
         }
-        return ms.toByteArray();
+
+        return baos.toByteArray();
+    }
+
+    /**
+     * Gets a value indicating whether this instance is valid.
+     *
+     * @return <b>true</b> if this instance is valid; otherwise, <b>false</b>.
+     */
+    public boolean isValid() {
+        return header.getMagic() == UdpHeader.MAGIC &&
+                header.getPayloadSize() <= MAX_PAYLOAD &&
+                payload != null;
     }
 
     public UdpHeader getHeader() {
-        return this.header;
+        return header;
     }
 
-    public BinaryReader getPayload() {
-        return this.payload;
+    public MemoryStream getPayload() {
+        return payload;
     }
 }

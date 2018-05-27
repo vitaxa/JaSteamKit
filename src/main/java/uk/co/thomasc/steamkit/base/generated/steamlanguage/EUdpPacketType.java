@@ -1,29 +1,36 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
-import java.util.HashMap;
 
 public enum EUdpPacketType {
-    Invalid(0), ChallengeReq(1), Challenge(2), Connect(3), Accept(4), Disconnect(5), Data(6), Datagram(7), Max(8),;
 
-    private byte code;
+    Invalid((byte) 0),
+    ChallengeReq((byte) 1),
+    Challenge((byte) 2),
+    Connect((byte) 3),
+    Accept((byte) 4),
+    Disconnect((byte) 5),
+    Data((byte) 6),
+    Datagram((byte) 7),
+    Max((byte) 8),
 
-    private EUdpPacketType(int code) {
-        this.code = (byte) code;
+    ;
+
+    private final byte code;
+
+    EUdpPacketType(byte code) {
+        this.code = code;
     }
 
-    public byte v() {
-        return code;
+    public byte code() {
+        return this.code;
     }
 
-    private static HashMap<Byte, EUdpPacketType> values = new HashMap<Byte, EUdpPacketType>();
-
-    static {
-        for (final EUdpPacketType type : EUdpPacketType.values()) {
-            EUdpPacketType.values.put(type.v(), type);
+    public static EUdpPacketType from(byte code) {
+        for (EUdpPacketType e : EUdpPacketType.values()) {
+            if (e.code == code) {
+                return e;
+            }
         }
-    }
-
-    public static EUdpPacketType fromCode(byte code) {
-        return EUdpPacketType.values.get(code);
+        return null;
     }
 }

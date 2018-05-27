@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.base.gc;
 
-import uk.co.thomasc.steamkit.base.AMsgBase;
+import uk.co.thomasc.steamkit.base.AbstractMsgBase;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.IGCSerializableHeader;
 import uk.co.thomasc.steamkit.types.JobID;
 
@@ -13,7 +13,7 @@ import java.io.IOException;
  *
  * @param <T> The header type for this gc message.
  */
-public abstract class GCMsgBase<T extends IGCSerializableHeader> extends AMsgBase implements IClientGCMsg {
+public abstract class GCMsgBase<T extends IGCSerializableHeader> extends AbstractMsgBase implements IClientGCMsg {
     /**
      * true if this instance is protobuf backed; otherwise, false
      */

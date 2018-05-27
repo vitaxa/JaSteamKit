@@ -1,15 +1,34 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
+
 public enum EContentDownloadSourceType {
-    Invalid(0), CS(1), CDN(2), LCS(3), Proxy(4),;
 
-    private int code;
+    Invalid(0),
+    CS(1),
+    CDN(2),
+    LCS(3),
+    ProxyCache(4),
+    LANPeer(5),
+    Max(5),
 
-    private EContentDownloadSourceType(int code) {
+    ;
+
+    private final int code;
+
+    EContentDownloadSourceType(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
+    }
+
+    public static EContentDownloadSourceType from(int code) {
+        for (EContentDownloadSourceType e : EContentDownloadSourceType.values()) {
+            if (e.code == code) {
+                return e;
+            }
+        }
+        return null;
     }
 }

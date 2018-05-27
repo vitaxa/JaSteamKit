@@ -1,6 +1,5 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLogonResponse;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountFlags;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.SteamUser;
@@ -12,6 +11,8 @@ import uk.co.thomasc.steamkit.util.util.NetHelpers;
 
 import java.net.InetAddress;
 import java.util.Date;
+
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
 
 /**
  * This callback is returned in response to an attempt to log on to the Steam3
@@ -72,8 +73,8 @@ public final class LoggedOnCallback extends CallbackMsg {
     private Steam2Ticket steam2Ticket = null;
 
     public LoggedOnCallback(CMsgClientLogonResponse resp) {
-        result = EResult.f(resp.getEresult());
-        extendedResult = EResult.f(resp.getEresultExtended());
+        result = EResult.from(resp.getEresult());
+        extendedResult = EResult.from(resp.getEresultExtended());
         outOfGameSecsPerHeartbeat = resp.getOutOfGameHeartbeatSeconds();
         inGameSecsPerHeartbeat = resp.getInGameHeartbeatSeconds();
         publicIP = NetHelpers.getIPAddress(resp.getPublicIp());

@@ -1,29 +1,41 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
-import java.util.HashMap;
+import java.util.EnumSet;
 
 public enum EChatFlags {
-    Locked(1), InvisibleToFriends(2), Moderated(4), Unjoinable(8);
 
-    private int code;
+    Locked(1),
+    InvisibleToFriends(2),
+    Moderated(4),
+    Unjoinable(8),
 
-    private EChatFlags(int code) {
+    ;
+
+    private final int code;
+
+    EChatFlags(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
     }
 
-    private static HashMap<Integer, EChatFlags> values = new HashMap<Integer, EChatFlags>();
-
-    static {
-        for (final EChatFlags type : EChatFlags.values()) {
-            EChatFlags.values.put(type.v(), type);
+    public static EnumSet<EChatFlags> from(int code) {
+        EnumSet<EChatFlags> set = EnumSet.noneOf(EChatFlags.class);
+        for (EChatFlags e : EChatFlags.values()) {
+            if ((e.code & code) == e.code) {
+                set.add(e);
+            }
         }
+        return set;
     }
 
-    public static EChatFlags f(int code) {
-        return EChatFlags.values.get(code);
+    public static int code(EnumSet<EChatFlags> flags) {
+        int code = 0;
+        for (EChatFlags flag : flags) {
+            code |= flag.code;
+        }
+        return code;
     }
 }

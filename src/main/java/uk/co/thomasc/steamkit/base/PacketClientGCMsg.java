@@ -3,8 +3,8 @@ package uk.co.thomasc.steamkit.base;
 import uk.co.thomasc.steamkit.base.gc.IPacketGCMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgGCHdr;
 import uk.co.thomasc.steamkit.types.JobID;
-import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
@@ -41,18 +41,23 @@ public final class PacketClientGCMsg implements IPacketGCMsg {
      * @param data The data.
      */
     public PacketClientGCMsg(int eMsg, byte[] data) {
+        if (data == null) {
+            throw new IllegalArgumentException("data is null");
+        }
+
         msgType = eMsg;
         payload = data;
-        final MsgGCHdr gcHdr = new MsgGCHdr();
-        // deserialize the gc header to get our hands on the job ids
-        final BinaryReader is = new BinaryReader(data);
-        try {
-            gcHdr.deSerialize(is);
-        } catch (final IOException e) {
-            e.printStackTrace();
+
+        MsgGCHdr gcHdr = new MsgGCHdr();
+
+        // we need to pull out the job ids, so we deserialize the protobuf header
+        try (ByteArrayInputStream bais = new ByteArrayInputStream(data)) {
+            gcHdr.deserialize(bais);
+        } catch (IOException ignored) {
         }
-        targetJobID = new JobID(gcHdr.targetJobID);
-        sourceJobID = new JobID(gcHdr.sourceJobID);
+
+        targetJobID = new JobID(gcHdr.getTargetJobID());
+        sourceJobID = new JobID(gcHdr.getSourceJobID());
     }
 
     /**
@@ -68,7 +73,7 @@ public final class PacketClientGCMsg implements IPacketGCMsg {
     /**
      * Gets the network message type of this packet message.
      */
-    public int getMsgType() {
+    public int msgType() {
         return this.msgType;
     }
 

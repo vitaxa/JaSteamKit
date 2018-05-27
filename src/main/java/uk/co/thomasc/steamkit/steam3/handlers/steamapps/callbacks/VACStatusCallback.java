@@ -1,37 +1,37 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks;
 
-import com.google.protobuf.CodedInputStream;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgClientVACBanStatus;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientVACBanStatus;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
+import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * This callback is fired when the client receives it's VAC banned status.
  */
-public final class VACStatusCallback extends CallbackMsg {
-    /**
-     * Gets a list of VAC banned apps the client is banned from.
-     */
-    private final List<Integer> bannedApps = new ArrayList<Integer>();
+public class VACStatusCallback extends CallbackMsg {
+
+    private List<Integer> bannedApps;
 
     public VACStatusCallback(MsgClientVACBanStatus msg, byte[] payload) {
-        final CodedInputStream cs = CodedInputStream.newInstance(payload);
+        List<Integer> tempList = new ArrayList<>();
+
         try {
-            for (int x = 0; x < msg.numBans; x++) {
-                bannedApps.add(cs.readInt32());
+            BinaryReader br = new BinaryReader(new ByteArrayInputStream(payload));
+            for (int i = 0; i < msg.getNumBans(); i++) {
+                tempList.add(br.readInt());
             }
-        } catch (final IOException e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            throw new IllegalArgumentException("failed to read bans", e);
         }
+        bannedApps = Collections.unmodifiableList(tempList);
     }
 
-    /**
-     * Gets a list of VAC banned apps the client is banned from.
-     */
     public List<Integer> getBannedApps() {
-        return this.bannedApps;
+        return bannedApps;
     }
 }

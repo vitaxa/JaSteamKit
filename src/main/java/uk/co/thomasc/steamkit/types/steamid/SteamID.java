@@ -254,7 +254,7 @@ public class SteamID {
      * @return A 64bit static account key.
      */
     public long getStaticAccountKey() {
-        return ((long) getAccountUniverse().v() << 56) + ((long) getAccountType().v() << 52) + getAccountID();
+        return ((long) getAccountUniverse().code() << 56) + ((long) getAccountType().code() << 52) + getAccountID();
     }
 
     /**
@@ -380,11 +380,11 @@ public class SteamID {
      * @return true if this instance is valid; otherwise, false.
      */
     public boolean IsValid() {
-        if (getAccountType().v() <= EAccountType.Invalid.v() || getAccountType().v() >= EAccountType.Max.v()) {
+        if (getAccountType().code() <= EAccountType.Invalid.code() || getAccountType().code() >= EAccountType.Max.code()) {
             return false;
         }
 
-        if (getAccountUniverse().v() <= EUniverse.Invalid.v() || getAccountUniverse().v() >= EUniverse.Max.v()) {
+        if (getAccountUniverse().code() <= EUniverse.Invalid.code() || getAccountUniverse().code() >= EUniverse.Max.code()) {
             return false;
         }
 
@@ -458,7 +458,7 @@ public class SteamID {
      * @return The account type.
      */
     public EAccountType getAccountType() {
-        return EAccountType.fromCode((int) steamid.getMask((short) 52, 0xF));
+        return EAccountType.from((int) steamid.getMask((short) 52, 0xF));
     }
 
     /**
@@ -468,7 +468,7 @@ public class SteamID {
      *            The account type.
      */
     public void setAccountType(EAccountType value) {
-        steamid.setMask((short) 52, 0xF, value.v());
+        steamid.setMask((short) 52, 0xF, value.code());
     }
 
     /**
@@ -477,7 +477,7 @@ public class SteamID {
      * @return The account universe.
      */
     public EUniverse getAccountUniverse() {
-        return EUniverse.f((int) steamid.getMask((short) 56, 0xFF));
+        return EUniverse.from((int) steamid.getMask((short) 56, 0xFF));
     }
 
     /**
@@ -487,7 +487,7 @@ public class SteamID {
      *            The account universe.
      */
     public void setAccountUniverse(EUniverse value) {
-        steamid.setMask((short) 56, 0xFF, value.v());
+        steamid.setMask((short) 56, 0xFF, value.code());
     }
 
     /**
@@ -499,10 +499,10 @@ public class SteamID {
         switch (getAccountType()) {
         case Invalid:
         case Individual:
-            if (getAccountUniverse().v() <= EUniverse.Public.v()) {
+            if (getAccountUniverse().code() <= EUniverse.Public.code()) {
                 return String.format("STEAM_0:%d:%d", getAccountID() & 1, (int) getAccountID() >> 1);
             } else {
-                return String.format("STEAM_%d:%d:%d", getAccountID() & 1, (int) getAccountID() >> 1, getAccountUniverse().v());
+                return String.format("STEAM_%d:%d:%d", getAccountID() & 1, (int) getAccountID() >> 1, getAccountUniverse().code());
             }
         default:
             return super.toString();

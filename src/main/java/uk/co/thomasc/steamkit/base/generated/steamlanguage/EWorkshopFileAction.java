@@ -1,15 +1,29 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
+
 public enum EWorkshopFileAction {
-    Played(0), Completed(1),;
 
-    private int code;
+    Played(0),
+    Completed(1),
 
-    private EWorkshopFileAction(int code) {
+    ;
+
+    private final int code;
+
+    EWorkshopFileAction(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
+    }
+
+    public static EWorkshopFileAction from(int code) {
+        for (EWorkshopFileAction e : EWorkshopFileAction.values()) {
+            if (e.code == code) {
+                return e;
+            }
+        }
+        return null;
     }
 }

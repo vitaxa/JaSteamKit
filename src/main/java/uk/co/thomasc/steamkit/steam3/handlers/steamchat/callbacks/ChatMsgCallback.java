@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamchat.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatEntryType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgClientChatMsg;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientChatMsg;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 
@@ -29,7 +29,7 @@ public final class ChatMsgCallback extends CallbackMsg {
     public ChatMsgCallback(MsgClientChatMsg msg, byte[] payload) {
         chatterID = msg.getSteamIdChatter();
         chatRoomID = msg.getSteamIdChatRoom();
-        chatMsgType = msg.chatMsgType;
+        chatMsgType = msg.getChatMsgType();
         if (payload != null && payload.length > 0) {
             message = new String(copyOfRange(payload, 0, payload.length - 1));
         }

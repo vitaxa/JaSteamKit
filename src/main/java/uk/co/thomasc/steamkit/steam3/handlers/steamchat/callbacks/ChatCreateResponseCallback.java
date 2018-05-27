@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamchat.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatRoomType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgClientCreateChatResponse;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientCreateChatResponse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 

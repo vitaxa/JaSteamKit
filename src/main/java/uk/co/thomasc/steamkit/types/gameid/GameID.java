@@ -8,7 +8,7 @@ import uk.co.thomasc.steamkit.types.steamid.BitVector64;
  */
 public class GameID {
 
-    BitVector64 gameId;
+    private BitVector64 gameId;
 
     /**
      * Initializes a new instance of the {@link GameID} class.

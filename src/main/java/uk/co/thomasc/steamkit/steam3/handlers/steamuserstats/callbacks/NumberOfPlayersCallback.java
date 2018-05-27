@@ -1,14 +1,13 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks;
 
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgDPGetNumberOfCurrentPlayersResponse;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgClientGetNumberOfCurrentPlayersResponse;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.SteamUserStats;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.gameid.GameID;
+import uk.co.thomasc.steamkit.types.JobID;
 
 /**
- * This callback is fired in response to
- * {@link SteamUserStats#getNumberOfCurrentPlayers(GameID)}.
+ * This callback is fired in response to {@link SteamUserStats#getNumberOfCurrentPlayers(int)}.
  */
 public class NumberOfPlayersCallback extends CallbackMsg {
     /**
@@ -20,9 +19,10 @@ public class NumberOfPlayersCallback extends CallbackMsg {
      */
     private final int numPlayers;
 
-    public NumberOfPlayersCallback(MsgClientGetNumberOfCurrentPlayersResponse resp) {
-        result = resp.result;
-        numPlayers = resp.numPlayers;
+    public NumberOfPlayersCallback(JobID jobID, CMsgDPGetNumberOfCurrentPlayersResponse.Builder resp) {
+        setJobID(jobID);
+        result = EResult.from(resp.getEresult());
+        numPlayers = resp.getPlayerCount();
     }
 
     /**

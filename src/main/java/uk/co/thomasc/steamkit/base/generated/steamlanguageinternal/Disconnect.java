@@ -4,19 +4,20 @@ import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class Disconnect implements ISteamSerializable {
 
-    public Disconnect() {
+    @Override
+    public void serialize(OutputStream stream) throws IOException {
+        BinaryWriter bw = new BinaryWriter(stream);
+
     }
 
     @Override
-    public void serialize(BinaryWriter stream) throws IOException {
-
-    }
-
-    @Override
-    public void deSerialize(BinaryReader stream) throws IOException {
+    public void deserialize(InputStream stream) throws IOException {
+        BinaryReader br = new BinaryReader(stream);
 
     }
 }

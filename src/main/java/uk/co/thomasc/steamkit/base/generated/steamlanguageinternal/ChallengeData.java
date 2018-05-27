@@ -4,27 +4,46 @@ import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class ChallengeData implements ISteamSerializable {
+
     public static final int CHALLENGE_MASK = 0xA426DF2B;
-    // Static size: 4
-    public int challengeValue = 0;
-    // Static size: 4
-    public int serverLoad = 0;
 
-    public ChallengeData() {
+    private int challengeValue = 0;
 
+    private int serverLoad = 0;
+
+    public int getChallengeValue() {
+        return this.challengeValue;
+    }
+
+    public void setChallengeValue(int challengeValue) {
+        this.challengeValue = challengeValue;
+    }
+
+    public int getServerLoad() {
+        return this.serverLoad;
+    }
+
+    public void setServerLoad(int serverLoad) {
+        this.serverLoad = serverLoad;
     }
 
     @Override
-    public void serialize(BinaryWriter stream) throws IOException {
-        stream.write(challengeValue);
-        stream.write(serverLoad);
+    public void serialize(OutputStream stream) throws IOException {
+        BinaryWriter bw = new BinaryWriter(stream);
+
+        bw.write(challengeValue);
+        bw.write(serverLoad);
     }
 
     @Override
-    public void deSerialize(BinaryReader stream) throws IOException {
-        challengeValue = stream.readInt();
-        serverLoad = stream.readInt();
+    public void deserialize(InputStream stream) throws IOException {
+        BinaryReader br = new BinaryReader(stream);
+
+        challengeValue = br.readInt();
+        serverLoad = br.readInt();
     }
 }

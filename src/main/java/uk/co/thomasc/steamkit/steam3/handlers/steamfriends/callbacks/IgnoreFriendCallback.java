@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgClientSetIgnoreFriendResponse;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientSetIgnoreFriendResponse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 /**
@@ -14,7 +14,7 @@ public final class IgnoreFriendCallback extends CallbackMsg {
     private final EResult result;
 
     public IgnoreFriendCallback(MsgClientSetIgnoreFriendResponse response) {
-        result = response.result;
+        result = response.getResult();
     }
 
     /**

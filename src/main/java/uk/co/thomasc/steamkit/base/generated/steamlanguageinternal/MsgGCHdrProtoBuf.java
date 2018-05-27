@@ -1,46 +1,69 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
+
+import uk.co.thomasc.steamkit.base.generated.gc.csgo.SteamMsgBase;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
-import uk.co.thomasc.steamkit.util.util.MsgUtil;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class MsgGCHdrProtoBuf implements IGCSerializableHeader {
 
-    // Static size: 4
-    public int msg = 0;
-    // Static size: 4
-    public int headerLength = 0;
-    // Static size: 0
-    public CMsgProtoBufHeader.Builder proto = CMsgProtoBufHeader.newBuilder();
+    private int msg = 0;
 
-    public MsgGCHdrProtoBuf() {
+    private int headerLength = 0;
 
-    }
-
-    @Override
-    public void serialize(BinaryWriter stream) throws IOException {
-        final byte[] msProto = proto.build().toByteArray();
-
-        headerLength = msProto.length;
-
-        stream.write(MsgUtil.makeGCMsg(msg, true));
-        stream.write(headerLength);
-        stream.write(msProto);
-    }
-
-    @Override
-    public void deSerialize(BinaryReader stream) throws IOException {
-        msg = MsgUtil.getGCMsg(stream.readInt());
-        headerLength = stream.readInt();
-
-        proto.mergeFrom(stream.readBytes(headerLength));
-    }
+    private SteamMsgBase.CMsgProtoBufHeader.Builder proto = SteamMsgBase.CMsgProtoBufHeader.newBuilder();
 
     @Override
     public void setEMsg(int msg) {
         this.msg = msg;
+    }
+
+    public int getMsg() {
+        return this.msg;
+    }
+
+    public void setMsg(int msg) {
+        this.msg = msg;
+    }
+
+    public int getHeaderLength() {
+        return this.headerLength;
+    }
+
+    public void setHeaderLength(int headerLength) {
+        this.headerLength = headerLength;
+    }
+
+    public SteamMsgBase.CMsgProtoBufHeader.Builder getProto() {
+        return this.proto;
+    }
+
+    public void setProto(SteamMsgBase.CMsgProtoBufHeader.Builder proto) {
+        this.proto = proto;
+    }
+
+    @Override
+    public void serialize(OutputStream stream) throws IOException {
+        BinaryWriter bw = new BinaryWriter(stream);
+
+        bw.write(msg);
+        byte[] protoBuffer = proto.build().toByteArray();
+        headerLength = protoBuffer.length;
+        bw.write(headerLength);
+        bw.write(protoBuffer);
+    }
+
+    @Override
+    public void deserialize(InputStream stream) throws IOException {
+        BinaryReader br = new BinaryReader(stream);
+
+        msg = br.readInt();
+        headerLength = br.readInt();
+        byte[] protoBuffer = br.readBytes(headerLength);
+        proto = SteamMsgBase.CMsgProtoBufHeader.newBuilder().mergeFrom(protoBuffer);
     }
 }

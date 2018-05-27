@@ -1,29 +1,30 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
-import java.util.HashMap;
 
 public enum EChatInfoType {
-    StateChange(1), InfoUpdate(2), MemberLimitChange(3),;
 
-    private int code;
+    StateChange(1),
+    InfoUpdate(2),
+    MemberLimitChange(3),
 
-    private EChatInfoType(int code) {
+    ;
+
+    private final int code;
+
+    EChatInfoType(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
     }
 
-    private static HashMap<Integer, EChatInfoType> values = new HashMap<Integer, EChatInfoType>();
-
-    static {
-        for (final EChatInfoType type : EChatInfoType.values()) {
-            EChatInfoType.values.put(type.v(), type);
+    public static EChatInfoType from(int code) {
+        for (EChatInfoType e : EChatInfoType.values()) {
+            if (e.code == code) {
+                return e;
+            }
         }
-    }
-
-    public static EChatInfoType f(int code) {
-        return EChatInfoType.values.get(code);
+        return null;
     }
 }

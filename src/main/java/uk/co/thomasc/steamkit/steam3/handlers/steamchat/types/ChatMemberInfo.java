@@ -7,6 +7,8 @@ import uk.co.thomasc.steamkit.types.MessageObject;
 import uk.co.thomasc.steamkit.types.keyvalue.KeyValue;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 
+import java.util.EnumSet;
+
 /**
  * Represents the details of a user which is a member of a chatroom.
  */
@@ -30,17 +32,17 @@ public class ChatMemberInfo extends MessageObject {
     /**
      * Gets the clan permission details of this chat member.
      */
-    public EClanPermission getDetails() {
+    public EnumSet<EClanPermission> getDetails() {
         int value = keyValues.get("Details").asInteger();
-        return EClanPermission.f(value);
+        return EClanPermission.from(value);
     }
 
     /**
      * Gets the permissions this user has within the chatroom.
      */
-    public EChatPermission getPermissions() {
+    public EnumSet<EChatPermission> getPermissions() {
         int value = keyValues.get("permissions").asInteger();
-        return EChatPermission.f(value);
+        return EChatPermission.from(value);
     }
 
     /**

@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientFriendMsgIncoming;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientFriendMsgIncoming;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatEntryType;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
@@ -26,9 +26,9 @@ public final class FriendMsgEchoCallback extends CallbackMsg {
      */
     private String message;
 
-    public FriendMsgEchoCallback(CMsgClientFriendMsgIncoming msg) {
+    public FriendMsgEchoCallback(CMsgClientFriendMsgIncoming.Builder msg) {
         recipient = new SteamID(msg.getSteamidFrom());
-        entryType = EChatEntryType.f(msg.getChatEntryType());
+        entryType = EChatEntryType.from(msg.getChatEntryType());
         fromLimitedAccount = msg.getFromLimitedAccount();
         if (msg.getMessage() != null && msg.getMessage().size() > 0) {
             message = new String(msg.getMessage().toByteArray());

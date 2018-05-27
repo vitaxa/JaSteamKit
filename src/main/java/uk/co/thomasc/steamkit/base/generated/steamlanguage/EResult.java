@@ -1,8 +1,8 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
-import java.util.HashMap;
 
 public enum EResult {
+
     Invalid(0),
     OK(1),
     Fail(2),
@@ -10,7 +10,8 @@ public enum EResult {
     InvalidPassword(5),
     LoggedInElsewhere(6),
     InvalidProtocolVer(7),
-    InvalidParam(8), FileNotFound(9),
+    InvalidParam(8),
+    FileNotFound(9),
     Busy(10),
     InvalidState(11),
     InvalidName(12),
@@ -91,12 +92,12 @@ public enum EResult {
     AccountLoginDeniedThrottle(87),
     TwoFactorCodeMismatch(88),
     TwoFactorActivationCodeMismatch(89),
-    AccountAssociatedToMultiplePlayers(90),
+    AccountAssociatedToMultiplePartners(90),
     NotModified(91),
     NoMobileDevice(92),
     TimeNotSynced(93),
     SMSCodeFailed(94),
-    TooManyAccountsAccessThisResource(95),
+    AccountLimitExceeded(95),
     AccountActivityLimitExceeded(96),
     PhoneActivityLimitExceeded(97),
     RefundToWallet(98),
@@ -107,27 +108,30 @@ public enum EResult {
     GSOwnerDenied(103),
     InvalidItemType(104),
     IPBanned(105),
-    GSLTExpired(106);
+    GSLTExpired(106),
+    InsufficientFunds(107),
+    TooManyPending(108),
+    NoSiteLicensesFound(109),
+    WGNetworkSendExceeded(110),
 
-    private int code;
+    ;
 
-    private EResult(int code) {
+    private final int code;
+
+    EResult(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
     }
 
-    private static HashMap<Integer, EResult> values = new HashMap<Integer, EResult>();
-
-    static {
-        for (final EResult type : EResult.values()) {
-            EResult.values.put(type.v(), type);
+    public static EResult from(int code) {
+        for (EResult e : EResult.values()) {
+            if (e.code == code) {
+                return e;
+            }
         }
-    }
-
-    public static EResult f(int code) {
-        return EResult.values.get(code);
+        return null;
     }
 }

@@ -6,6 +6,8 @@ import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,22 +30,25 @@ public class GCMsgCraftItemResponse implements IGCSerializableMessage {
     }
 
     @Override
-    public void serialize(BinaryWriter stream) throws IOException {
-        stream.write(recipe.v());
-        stream.write(unknown);
-        stream.write((short) items.size());
+    public void serialize(OutputStream stream) throws IOException {
+        BinaryWriter bw = new BinaryWriter(stream);
+        bw.write(recipe.v());
+        bw.write(unknown);
+        bw.write((short) items.size());
         for (final Long item : items) {
-            stream.write(item);
+            bw.write(item);
         }
     }
 
     @Override
-    public void deSerialize(BinaryReader stream) throws IOException {
-        recipe = ECraftingRecipe.f(stream.readShort());
-        unknown = stream.readInt();
-        final int itemCount = stream.readShort();
+    public void deserialize(InputStream stream) throws IOException {
+        BinaryReader br = new BinaryReader(stream);
+        recipe = ECraftingRecipe.f(br.readShort());
+        unknown = br.readInt();
+        final int itemCount = br.readShort();
         for (int i = 0; i < itemCount; i++) {
-            items.add(stream.readLong());
+            items.add(br.readLong());
         }
     }
+
 }

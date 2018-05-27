@@ -6,62 +6,121 @@ import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class ExtendedClientMsgHdr implements ISteamSerializableHeader {
-    // Static size: 4
-    public EMsg msg = EMsg.Invalid;
-    // Static size: 1
-    public byte headerSize = 36;
-    // Static size: 2
-    public short headerVersion = 2;
-    // Static size: 8
-    public long targetJobID = BinaryReader.LongMaxValue;
-    // Static size: 8
-    public long sourceJobID = BinaryReader.LongMaxValue;
-    // Static size: 1
-    public byte headerCanary = (byte) 239;
-    // Static size: 8
-    private long steamID = 0;
+
+    private EMsg msg = EMsg.Invalid;
+
+    private byte headerSize = (byte) 36;
+
+    private short headerVersion = (short) 2;
+
+    private long targetJobID = 0xFFFFFFFFFFFFFFFFL;
+
+    private long sourceJobID = 0xFFFFFFFFFFFFFFFFL;
+
+    private byte headerCanary = (byte) 239;
+
+    private long steamID = 0L;
+
+    private int sessionID = 0;
+
+    @Override
+    public void setEMsg(EMsg msg) {
+        this.msg = msg;
+    }
+
+    public EMsg getMsg() {
+        return this.msg;
+    }
+
+    public void setMsg(EMsg msg) {
+        this.msg = msg;
+    }
+
+    public byte getHeaderSize() {
+        return this.headerSize;
+    }
+
+    public void setHeaderSize(byte headerSize) {
+        this.headerSize = headerSize;
+    }
+
+    public short getHeaderVersion() {
+        return this.headerVersion;
+    }
+
+    public void setHeaderVersion(short headerVersion) {
+        this.headerVersion = headerVersion;
+    }
+
+    public long getTargetJobID() {
+        return this.targetJobID;
+    }
+
+    public void setTargetJobID(long targetJobID) {
+        this.targetJobID = targetJobID;
+    }
+
+    public long getSourceJobID() {
+        return this.sourceJobID;
+    }
+
+    public void setSourceJobID(long sourceJobID) {
+        this.sourceJobID = sourceJobID;
+    }
+
+    public byte getHeaderCanary() {
+        return this.headerCanary;
+    }
+
+    public void setHeaderCanary(byte headerCanary) {
+        this.headerCanary = headerCanary;
+    }
 
     public SteamID getSteamID() {
-        return new SteamID(steamID);
+        return new SteamID(this.steamID);
     }
 
-    public void setSteamID(SteamID steamID) {
-        this.steamID = steamID.convertToLong();
+    public void setSteamID(SteamID steamId) {
+        this.steamID = steamId.convertToLong();
     }
 
-    // Static size: 4
-    public int sessionID = 0;
-
-    public ExtendedClientMsgHdr() {
+    public int getSessionID() {
+        return this.sessionID;
     }
 
-    @Override
-    public void serialize(BinaryWriter stream) throws IOException {
-        stream.write(msg.v());
-        stream.write(headerSize);
-        stream.write(headerVersion);
-        stream.write(targetJobID);
-        stream.write(sourceJobID);
-        stream.write(headerCanary);
-        stream.write(steamID);
-        stream.write(sessionID);
+    public void setSessionID(int sessionID) {
+        this.sessionID = sessionID;
     }
 
     @Override
-    public void deSerialize(BinaryReader stream) throws IOException {
-        msg = EMsg.f(stream.readInt());
-        headerSize = stream.readByte();
-        headerVersion = stream.readShort();
-        targetJobID = stream.readLong();
-        sourceJobID = stream.readLong();
-        headerCanary = stream.readByte();
-        steamID = stream.readLong();
-        sessionID = stream.readInt();
+    public void serialize(OutputStream stream) throws IOException {
+        BinaryWriter bw = new BinaryWriter(stream);
+
+        bw.write(msg.code());
+        bw.write(headerSize);
+        bw.write(headerVersion);
+        bw.write(targetJobID);
+        bw.write(sourceJobID);
+        bw.write(headerCanary);
+        bw.write(steamID);
+        bw.write(sessionID);
     }
 
-    public void setMsg(final EMsg msg) {
-        this.msg = msg;
+    @Override
+    public void deserialize(InputStream stream) throws IOException {
+        BinaryReader br = new BinaryReader(stream);
+
+        msg = EMsg.from(br.readInt());
+        headerSize = br.readByte();
+        headerVersion = br.readShort();
+        targetJobID = br.readLong();
+        sourceJobID = br.readLong();
+        headerCanary = br.readByte();
+        steamID = br.readLong();
+        sessionID = br.readInt();
     }
 }

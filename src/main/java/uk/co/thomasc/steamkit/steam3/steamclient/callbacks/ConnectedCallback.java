@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.steamclient.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgChannelEncryptResult;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 /**
@@ -14,7 +14,7 @@ public final class ConnectedCallback extends CallbackMsg {
     private final EResult result;
 
     public ConnectedCallback(MsgChannelEncryptResult result) {
-        this(result.result);
+        this(result.getResult());
     }
 
     public ConnectedCallback(EResult result) {

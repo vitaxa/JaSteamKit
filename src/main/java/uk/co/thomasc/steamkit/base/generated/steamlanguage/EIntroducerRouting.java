@@ -1,15 +1,29 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
+
 public enum EIntroducerRouting {
-    FileShare(0), P2PVoiceChat(1), P2PNetworking(2),;
 
-    private int code;
+    P2PVoiceChat(1),
+    P2PNetworking(2),
 
-    private EIntroducerRouting(int code) {
+    ;
+
+    private final int code;
+
+    EIntroducerRouting(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
+    }
+
+    public static EIntroducerRouting from(int code) {
+        for (EIntroducerRouting e : EIntroducerRouting.values()) {
+            if (e.code == code) {
+                return e;
+            }
+        }
+        return null;
     }
 }

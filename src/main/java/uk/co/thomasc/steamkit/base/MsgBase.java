@@ -13,7 +13,7 @@ import java.io.IOException;
  *
  * @param <T> The header type for this client message.
  */
-public abstract class MsgBase<T extends ISteamSerializableHeader> extends AMsgBase implements IClientMsg {
+public abstract class MsgBase<T extends ISteamSerializableHeader> extends AbstractMsgBase implements IClientMsg {
     /**
      * true if this instance is protobuf backed; otherwise, false.
      */

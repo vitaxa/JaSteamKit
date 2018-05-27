@@ -6,7 +6,7 @@ import uk.co.thomasc.steamkit.base.Msg;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgChannelEncryptResult;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptResult;
 import uk.co.thomasc.steamkit.steam3.CMClient;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.SteamApps;

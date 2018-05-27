@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamchat.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatAction;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatActionResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgClientChatActionResult;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientChatActionResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 
@@ -30,8 +30,8 @@ public final class ChatActionResultCallback extends CallbackMsg {
     public ChatActionResultCallback(MsgClientChatActionResult result) {
         chatRoomID = result.getSteamIdChat();
         chatterID = result.getSteamIdUserActedOn();
-        action = result.chatAction;
-        this.result = result.actionResult;
+        action = result.getChatAction();
+        this.result = result.getActionResult();
     }
 
     /**

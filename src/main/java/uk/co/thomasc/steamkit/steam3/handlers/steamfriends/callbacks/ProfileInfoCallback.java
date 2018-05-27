@@ -1,8 +1,9 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientFriendProfileInfoResponse;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
+import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 
 import java.util.Date;
@@ -48,8 +49,8 @@ public final class ProfileInfoCallback extends CallbackMsg {
      */
     private final String summary;
 
-    public ProfileInfoCallback(SteammessagesClientserver.CMsgClientFriendProfileInfoResponse response) {
-        result = EResult.f(response.getEresult());
+    public ProfileInfoCallback(JobID jobID, CMsgClientFriendProfileInfoResponse response) {
+        result = EResult.from(response.getEresult());
         steamID = new SteamID(response.getSteamidFriend());
         timeCreated = new Date((long) response.getTimeCreated() * 1000L);
         realName = response.getRealName();

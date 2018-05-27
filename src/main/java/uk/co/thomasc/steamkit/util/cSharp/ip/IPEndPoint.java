@@ -1,8 +1,11 @@
 package uk.co.thomasc.steamkit.util.cSharp.ip;
 
+import uk.co.thomasc.steamkit.util.util.NetHelpers;
+
 import java.net.InetAddress;
 
 public class IPEndPoint {
+    private final InetAddress address;
     private final String ipAddress;
     private int port = 0;
 
@@ -13,11 +16,13 @@ public class IPEndPoint {
      * @param port      port number
      */
     public IPEndPoint(String ipAddress, int port) {
+        this.address = NetHelpers.getIPAddress(Long.parseLong(ipAddress));
         this.ipAddress = ipAddress;
         this.port = port;
     }
 
     public IPEndPoint(InetAddress ipAddress, short port) {
+        this.address = ipAddress;
         this.ipAddress = ipAddress.getHostAddress();
         this.port = port;
     }
@@ -40,6 +45,10 @@ public class IPEndPoint {
         final StringBuffer result = new StringBuffer();
         result.append("[").append(ipAddress).append(":").append(port).append("]");
         return result.toString();
+    }
+
+    public InetAddress getAddress() {
+        return address;
     }
 
     public String getIpAddress() {

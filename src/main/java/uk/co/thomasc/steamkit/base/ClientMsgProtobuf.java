@@ -2,20 +2,20 @@ package uk.co.thomasc.steamkit.base;
 
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.GeneratedMessageV3;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesBase;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgHdrProtoBuf;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 import uk.co.thomasc.steamkit.util.logging.Debug;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
-import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
+import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 
 /**
  * Represents a protobuf backed client message.
@@ -36,7 +36,7 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
      */
     @Override
     public EMsg getMsgType() {
-        return getHeader().msg;
+        return getHeader().getMsg();
     }
 
     /**
@@ -106,8 +106,8 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
     /**
      * Shorthand accessor for the protobuf header.
      */
-    public CMsgProtoBufHeader.Builder getProtoHeader() {
-        return getHeader().proto;
+    public SteammessagesBase.CMsgProtoBufHeader.Builder getProtoHeader() {
+        return getHeader().getProto();
     }
 
     /**
@@ -142,7 +142,7 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
         }
 
         // set our emsg
-        getHeader().msg = eMsg;
+        getHeader().setMsg(eMsg);
     }
 
     public ClientMsgProtobuf(Class<? extends AbstractMessage> clazz, EMsg eMsg, MsgBase<MsgHdrProtoBuf> msg) {
@@ -159,7 +159,7 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
     public ClientMsgProtobuf(Class<? extends AbstractMessage> clazz, EMsg eMsg, MsgBase<MsgHdrProtoBuf> msg, int payloadReserve) {
         this(clazz, eMsg, payloadReserve);
         // our target is where the message came from
-        getHeader().proto.setJobidTarget(msg.getHeader().proto.getJobidSource());
+        getHeader().getProto().setJobIdTarget(msg.getHeader().getProto().getJobIdSource());
     }
 
     /**
@@ -185,13 +185,16 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
      */
     @Override
     public byte[] serialize() throws IOException {
-        final BinaryWriter ms = new BinaryWriter();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(0);
 
-        getHeader().serialize(ms);
-        ms.write(body.build().toByteArray());
-        ms.write(getOutputStream().toByteArray());
-
-        return ms.toByteArray();
+        try {
+            getHeader().serialize(baos);
+            baos.write(body.build().toByteArray());
+            baos.write(payload.toByteArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return baos.toByteArray();
     }
 
     /**
@@ -201,21 +204,21 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
     @SuppressWarnings("unchecked")
     @Override
     public void deSerialize(byte[] data) throws IOException {
-        final BinaryReader is = new BinaryReader(data);
-        getHeader().deSerialize(is);
+        if (data == null) {
+            throw new IllegalArgumentException("data is null");
+        }
+        BinaryReader ms = new BinaryReader(new ByteArrayInputStream(data));
+
         try {
+            getHeader().deserialize(ms);
             final Method m = clazz.getMethod("newBuilder");
             body = (U) m.invoke(null);
-        } catch (IllegalAccessException | NoSuchMethodException | SecurityException | IllegalArgumentException | InvocationTargetException e) {
+            body.mergeFrom(ms);
+            payload.write(data, ms.getPosition(), ms.available());
+            payload.seek(0, SeekOrigin.BEGIN);
+        } catch (IOException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             e.printStackTrace();
         }
-        body.mergeFrom(is.getStream());
-
-        // the rest of the data is the payload
-        final int payloadOffset = is.getPosition();
-        final int payloadLen = is.getRemaining();
-
-        setPayload(new BinaryReader(new ByteArrayInputStream(Arrays.copyOfRange(data, payloadOffset, payloadOffset + payloadLen))));
     }
 
     /**

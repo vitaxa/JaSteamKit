@@ -2,18 +2,15 @@ package uk.co.thomasc.steamkit.steam3;
 
 import uk.co.thomasc.steamkit.base.*;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgMulti;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientHeartBeat;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLoggedOff;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLogonResponse;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList.Server;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EServerType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgChannelEncryptRequest;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgChannelEncryptResponse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgChannelEncryptResult;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptRequest;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptResponse;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptResult;
 import uk.co.thomasc.steamkit.networking.steam3.Connection;
 import uk.co.thomasc.steamkit.networking.steam3.NetFilterEncryption;
 import uk.co.thomasc.steamkit.networking.steam3.TcpConnection;
@@ -43,6 +40,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
 
 /**
  * This base client handles the underlying connection to a CM server. This class
@@ -96,7 +95,7 @@ public abstract class CMClient {
             default:
                 throw new UnsupportedOperationException("The provided protocol type is not supported. Only Tcp and Udp are available.");
         }
-        this.connection.netMsgReceived.addEventHandler((sender, e) -> {
+        this.connection.getNetMsgReceived().addEventHandler((sender, e) -> {
             try {
                 onClientMsgReceived(getPacketMsg(e.getData()));
             } catch (final IOException ex) {
@@ -106,7 +105,7 @@ public abstract class CMClient {
         this.connection.disconnected.addEventHandler((sender, e) -> {
             connectedUniverse = EUniverse.Invalid;
             heartBeatFunc.stop();
-            connection.netFilter = null;
+            connection.setNetFilter(null);
             onClientDisconnected(e.getValue());
         });
         this.connection.connected.addEventHandler((sender, e) -> {
@@ -210,7 +209,7 @@ public abstract class CMClient {
      * @throws IOException
      */
     protected void onClientMsgReceived(IPacketMsg packetMsg) throws IOException {
-        DebugLog.writeLine("CMClient", "<- Recv\'d EMsg: %s (%d) (Proto: %s)", packetMsg.getMsgType(), packetMsg.getMsgType().v(), packetMsg.isProto());
+        DebugLog.writeLine("CMClient", "<- Recv\'d EMsg: %s (%d) (Proto: %s)", packetMsg.getMsgType(), packetMsg.getMsgType().code(), packetMsg.isProto());
         switch (packetMsg.getMsgType()) {
             case ChannelEncryptRequest:
                 handleEncryptRequest(packetMsg);
@@ -310,7 +309,7 @@ public abstract class CMClient {
             return;
         }
         final ClientMsgProtobuf<CMsgClientLogonResponse.Builder> logonResp = new ClientMsgProtobuf<CMsgClientLogonResponse.Builder>(CMsgClientLogonResponse.class, packetMsg);
-        if (EResult.f(logonResp.getBody().getEresult()) == EResult.OK) {
+        if (EResult.from(logonResp.getBody().getEresult()) == EResult.OK) {
             sessionId = logonResp.getProtoHeader().getClientSessionid();
             steamId = new SteamID(logonResp.getProtoHeader().getSteamid());
             final int hbDelay = logonResp.getBody().getOutOfGameHeartbeatSeconds();
@@ -323,8 +322,8 @@ public abstract class CMClient {
 
     private void handleEncryptRequest(IPacketMsg packetMsg) {
         final Msg<MsgChannelEncryptRequest> encRequest = new Msg<MsgChannelEncryptRequest>(packetMsg, MsgChannelEncryptRequest.class);
-        final EUniverse eUniv = encRequest.getBody().universe;
-        final int protoVersion = encRequest.getBody().protocolVersion;
+        final EUniverse eUniv = encRequest.getBody().getUniverse();
+        final int protoVersion = encRequest.getBody().getProtocolVersion();
         DebugLog.writeLine("CMClient", "Got encryption request. Universe: %s Protocol ver: %d", eUniv, protoVersion);
         final byte[] pubKey = KeyDictionary.getPublicKey(eUniv);
         if (pubKey == null) {
@@ -350,9 +349,9 @@ public abstract class CMClient {
 
     protected void handleEncryptResult(IPacketMsg packetMsg) {
         final Msg<MsgChannelEncryptResult> encResult = new Msg<MsgChannelEncryptResult>(packetMsg, MsgChannelEncryptResult.class);
-        DebugLog.writeLine("CMClient", "Encryption result: %s", encResult.getBody().result);
-        if (encResult.getBody().result == EResult.OK) {
-            connection.netFilter = new NetFilterEncryption(tempSessionKey);
+        DebugLog.writeLine("CMClient", "Encryption result: %s", encResult.getBody().getResult());
+        if (encResult.getBody().getResult() == EResult.OK) {
+            connection.setNetFilter(new NetFilterEncryption(tempSessionKey));
         }
     }
 
@@ -363,7 +362,7 @@ public abstract class CMClient {
         if (packetMsg.isProto()) {
             ClientMsgProtobuf<CMsgClientLoggedOff.Builder> logoffMsg =
                     new ClientMsgProtobuf<CMsgClientLoggedOff.Builder>(CMsgClientLoggedOff.class, packetMsg);
-            EResult logoffResult = EResult.f(logoffMsg.getBody().getEresult());
+            EResult logoffResult = EResult.from(logoffMsg.getBody().getEresult());
 
             if (logoffResult == EResult.TryAnotherCM || logoffResult == EResult.ServiceUnavailable) {
                 serverList.markServer(connection.currentIpEndPoint(), ServerQuality.BAD);
@@ -374,7 +373,7 @@ public abstract class CMClient {
     private void handleServerList(IPacketMsg packetMsg) {
         final ClientMsgProtobuf<CMsgClientServerList.Builder> listMsg = new ClientMsgProtobuf<CMsgClientServerList.Builder>(CMsgClientServerList.class, packetMsg);
         for (final Server server : listMsg.getBody().getServersList()) {
-            final EServerType type = EServerType.f(server.getServerType());
+            final EServerType type = EServerType.from(server.getServerType());
             if (!serverMap.containsKey(type)) {
                 serverMap.put(type, new ArrayList<IPEndPoint>());
             }

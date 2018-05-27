@@ -6,144 +6,90 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.ELicenseType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EPaymentMethod;
 
 import java.util.Date;
+import java.util.EnumSet;
 
 /**
  * Represents a granted license (steam3 subscription) for one or more games.
  */
-public final class License {
-    /**
-     * Gets the package ID used to identify the license.
-     */
-    private final int packageID;
-    /**
-     * Gets the last change number for this license.
-     */
-    private final int lastChangeNumber;
-    /**
-     * Gets the time the license was created.
-     */
-    private final Date timeCreated;
-    /**
-     * Gets the next process time for the license.
-     */
-    private final Date timeNextProcess;
-    /**
-     * Gets the minute limit of the license.
-     */
-    private final int minuteLimit;
-    /**
-     * Gets the minutes used of the license.
-     */
-    private final int minutesUsed;
-    /**
-     * Gets the payment method used when the license was created.
-     */
-    private final EPaymentMethod paymentMethod;
-    /**
-     * Gets the license flags.
-     */
-    private final ELicenseFlags licenseFlags;
-    /**
-     * Gets the two letter country code where the license was purchased.
-     */
-    private final String purchaseCountryCode;
-    /**
-     * Gets the type of the license.
-     */
-    private final ELicenseType licenseType;
-    /**
-     * Gets the territory code of the license.
-     */
-    private final int territoryCode;
+public class License {
+
+    private int packageID;
+
+    private int lastChangeNumber;
+
+    private Date timeCreated;
+
+    private Date timeNextProcess;
+
+    private int minuteLimit;
+
+    private int minutesUsed;
+
+    private EPaymentMethod paymentMethod;
+
+    private EnumSet<ELicenseFlags> licenseFlags;
+
+    private String purchaseCode;
+
+    private ELicenseType licenseType;
+
+    private int territoryCode;
 
     public License(CMsgClientLicenseList.License license) {
         packageID = license.getPackageId();
         lastChangeNumber = license.getChangeNumber();
-        timeCreated = new Date(license.getTimeCreated());
-        timeNextProcess = new Date(license.getTimeNextProcess());
+        timeCreated = new Date(license.getTimeCreated() * 1000L);
+        timeNextProcess = new Date(license.getTimeNextProcess() * 1000L);
         minuteLimit = license.getMinuteLimit();
         minutesUsed = license.getMinutesUsed();
-        paymentMethod = EPaymentMethod.f(license.getPaymentMethod());
-        licenseFlags = ELicenseFlags.f(license.getFlags());
-        purchaseCountryCode = license.getPurchaseCountryCode();
-        licenseType = ELicenseType.f(license.getLicenseType());
+        paymentMethod = EPaymentMethod.from(license.getPaymentMethod());
+        licenseFlags = ELicenseFlags.from(license.getFlags());
+        purchaseCode = license.getPurchaseCountryCode();
+        licenseType = ELicenseType.from(license.getLicenseType());
         territoryCode = license.getTerritoryCode();
     }
 
-    /**
-     * Gets the package ID used to identify the license.
-     */
     public int getPackageID() {
-        return this.packageID;
+        return packageID;
     }
 
-    /**
-     * Gets the last change number for this license.
-     */
     public int getLastChangeNumber() {
-        return this.lastChangeNumber;
+        return lastChangeNumber;
     }
 
-    /**
-     * Gets the time the license was created.
-     */
     public Date getTimeCreated() {
-        return this.timeCreated;
+        return timeCreated;
     }
 
-    /**
-     * Gets the next process time for the license.
-     */
     public Date getTimeNextProcess() {
-        return this.timeNextProcess;
+        return timeNextProcess;
     }
 
-    /**
-     * Gets the minute limit of the license.
-     */
     public int getMinuteLimit() {
-        return this.minuteLimit;
+        return minuteLimit;
     }
 
-    /**
-     * Gets the minutes used of the license.
-     */
     public int getMinutesUsed() {
-        return this.minutesUsed;
+        return minutesUsed;
     }
 
-    /**
-     * Gets the payment method used when the license was created.
-     */
     public EPaymentMethod getPaymentMethod() {
-        return this.paymentMethod;
+        return paymentMethod;
     }
 
-    /**
-     * Gets the license flags.
-     */
-    public ELicenseFlags getLicenseFlags() {
-        return this.licenseFlags;
+    public EnumSet<ELicenseFlags> getLicenseFlags() {
+        return licenseFlags;
     }
 
-    /**
-     * Gets the two letter country code where the license was purchased.
-     */
-    public String getPurchaseCountryCode() {
-        return this.purchaseCountryCode;
+    public String getPurchaseCode() {
+        return purchaseCode;
     }
 
-    /**
-     * Gets the type of the license.
-     */
     public ELicenseType getLicenseType() {
-        return this.licenseType;
+        return licenseType;
     }
 
-    /**
-     * Gets the territory code of the license.
-     */
     public int getTerritoryCode() {
-        return this.territoryCode;
+        return territoryCode;
     }
 }

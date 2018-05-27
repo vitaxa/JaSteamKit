@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPersonaState;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientPersonaState;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EPersonaState;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.gameid.GameID;
@@ -95,7 +95,7 @@ public final class PersonaStateCallback extends CallbackMsg {
     public PersonaStateCallback(CMsgClientPersonaState.Friend friend) {
         statusFlags = friend.getPersonaStateFlags();
         friendID = new SteamID(friend.getFriendid());
-        state = EPersonaState.f(friend.getPersonaState());
+        state = EPersonaState.from(friend.getPersonaState());
         gameAppID = friend.getGamePlayedAppId();
         gameID = new GameID(friend.getGameid());
         gameName = friend.getGameName();

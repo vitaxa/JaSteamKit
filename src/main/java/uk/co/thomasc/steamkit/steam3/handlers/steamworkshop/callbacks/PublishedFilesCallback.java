@@ -30,7 +30,7 @@ public final class PublishedFilesCallback extends CallbackMsg {
     private final int totalResults;
 
     public PublishedFilesCallback(CMsgCREEnumeratePublishedFilesResponse msg) {
-        result = EResult.f(msg.getEresult());
+        result = EResult.from(msg.getEresult());
         for (final PublishedFileId file : msg.getPublishedFilesList()) {
             files.add(new FileInfo(file));
         }

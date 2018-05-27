@@ -5,6 +5,7 @@ import uk.co.thomasc.steamkit.types.steamid.SteamID;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
 import java.io.IOException;
+import java.util.EnumSet;
 
 /**
  * Represents state change information.
@@ -17,7 +18,7 @@ public final class StateChangeDetails {
     /**
      * Gets the state change for the acted on SteamID.
      */
-    private EChatMemberStateChange stateChange;
+    private EnumSet<EChatMemberStateChange> stateChange;
     /**
      * Gets the SteamID of the chatter that acted on {@link #chatterActedOn}.
      */
@@ -32,9 +33,9 @@ public final class StateChangeDetails {
         final BinaryReader is = new BinaryReader(data);
         try {
             chatterActedOn = new SteamID(is.readLong());
-            stateChange = EChatMemberStateChange.f(is.readInt());
+            stateChange = EChatMemberStateChange.from(is.readInt());
             chatterActedBy = new SteamID(is.readLong());
-            if (stateChange == EChatMemberStateChange.Entered) {
+            if (stateChange.contains(EChatMemberStateChange.Entered)) {
                 memberInfo = new ChatMemberInfo();
                 memberInfo.readFromBinary(is);
             }
@@ -57,8 +58,8 @@ public final class StateChangeDetails {
     /**
      * Gets the state change for the acted on SteamID.
      */
-    public EChatMemberStateChange getStateChange() {
-        return this.stateChange;
+    public EnumSet<EChatMemberStateChange> getStateChange() {
+        return stateChange;
     }
 
     /**

@@ -1,29 +1,35 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
-import java.util.HashMap;
 
 public enum ELicenseType {
-    NoLicense(0), SinglePurchase(1), SinglePurchaseLimitedUse(2), RecurringCharge(3), RecurringChargeLimitedUse(4), RecurringChargeLimitedUseWithOverages(5),;
 
-    private int code;
+    NoLicense(0),
+    SinglePurchase(1),
+    SinglePurchaseLimitedUse(2),
+    RecurringCharge(3),
+    RecurringChargeLimitedUse(4),
+    RecurringChargeLimitedUseWithOverages(5),
+    RecurringOption(6),
+    LimitedUseDelayedActivation(7),
 
-    private ELicenseType(int code) {
+    ;
+
+    private final int code;
+
+    ELicenseType(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
     }
 
-    private static HashMap<Integer, ELicenseType> values = new HashMap<Integer, ELicenseType>();
-
-    static {
-        for (final ELicenseType type : ELicenseType.values()) {
-            ELicenseType.values.put(type.v(), type);
+    public static ELicenseType from(int code) {
+        for (ELicenseType e : ELicenseType.values()) {
+            if (e.code == code) {
+                return e;
+            }
         }
-    }
-
-    public static ELicenseType f(int code) {
-        return ELicenseType.values.get(code);
+        return null;
     }
 }

@@ -1,5 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr;
 
+import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.cSharp.events.ActionT;
 
 import java.security.InvalidParameterException;
@@ -8,6 +9,8 @@ import java.security.InvalidParameterException;
  * Represents the base object all callbacks are based off.
  */
 public abstract class CallbackMsg {
+
+    private JobID jobID = JobID.INVALID;
 
     /**
      * Initializes a new instance of the {@link CallbackMsg} class.
@@ -46,5 +49,13 @@ public abstract class CallbackMsg {
         if (type.isAssignableFrom(this.getClass())) {
             handler.call((T) this);
         }
+    }
+
+    public JobID getJobID() {
+        return jobID;
+    }
+
+    public void setJobID(JobID jobID) {
+        this.jobID = jobID;
     }
 }

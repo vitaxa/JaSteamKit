@@ -14,12 +14,12 @@ public abstract class Connection {
     /**
      * The net filter.
      */
-    public NetFilterEncryption netFilter;
+    protected NetFilterEncryption netFilter;
 
     /**
      * Occurs when a net message is recieved over the network.
      */
-    public Event<NetMsgEventArgs> netMsgReceived = new Event<NetMsgEventArgs>();
+    protected Event<NetMsgEventArgs> netMsgReceived = new Event<NetMsgEventArgs>();
 
     /**
      * Raises the {@link #netMsgReceived} event.
@@ -86,4 +86,16 @@ public abstract class Connection {
     public abstract InetAddress getLocalIP();
 
     public abstract IPEndPoint currentIpEndPoint();
+
+    public NetFilterEncryption getNetFilter() {
+        return netFilter;
+    }
+
+    public void setNetFilter(NetFilterEncryption netFilter) {
+        this.netFilter = netFilter;
+    }
+
+    public Event<NetMsgEventArgs> getNetMsgReceived() {
+        return netMsgReceived;
+    }
 }

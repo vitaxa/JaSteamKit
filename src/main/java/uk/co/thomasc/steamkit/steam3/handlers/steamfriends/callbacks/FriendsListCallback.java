@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientFriendsList;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientFriendsList;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EFriendRelationship;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
@@ -45,7 +45,7 @@ public final class FriendsListCallback extends CallbackMsg {
 
         public Friend(CMsgClientFriendsList.Friend friend) {
             steamId = new SteamID(friend.getUlfriendid());
-            relationship = EFriendRelationship.f(friend.getEfriendrelationship());
+            relationship = EFriendRelationship.from(friend.getEfriendrelationship());
         }
 
         public SteamID getSteamId() {

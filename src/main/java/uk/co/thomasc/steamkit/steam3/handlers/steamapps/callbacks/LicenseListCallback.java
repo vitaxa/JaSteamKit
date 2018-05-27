@@ -6,40 +6,35 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamapps.types.License;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
- * This callback is fired during logon, informing the client of it's available
- * licenses.
+ * This callback is fired during logon, informing the client of it's available licenses.
  */
-public final class LicenseListCallback extends CallbackMsg {
-    /**
-     * Gets the result of the message.
-     */
-    private final EResult result;
-    /**
-     * Gets the license list.
-     */
-    private final List<License> licenseList = new ArrayList<License>();
+public class LicenseListCallback extends CallbackMsg {
 
-    public LicenseListCallback(CMsgClientLicenseList msg) {
-        result = EResult.f(msg.getEresult());
-        for (final CMsgClientLicenseList.License l : msg.getLicensesList()) {
-            licenseList.add(new License(l));
+    private EResult result;
+
+    private List<License> licenseList;
+
+    public LicenseListCallback(CMsgClientLicenseList.Builder msg) {
+        result = EResult.from(msg.getEresult());
+
+        List<License> licenses = new ArrayList<>();
+
+        for (CMsgClientLicenseList.License l : msg.getLicensesList()) {
+            licenses.add(new License(l));
         }
+
+        licenseList = Collections.unmodifiableList(licenses);
     }
 
-    /**
-     * Gets the result of the message.
-     */
     public EResult getResult() {
-        return this.result;
+        return result;
     }
 
-    /**
-     * Gets the license list.
-     */
     public List<License> getLicenseList() {
-        return this.licenseList;
+        return licenseList;
     }
 }

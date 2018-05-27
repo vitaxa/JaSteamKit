@@ -5,7 +5,7 @@ import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.*;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.*;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.callbacks.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.types.Chat;
@@ -88,10 +88,10 @@ public final class SteamChat extends ClientMsgHandler {
             chatId.setAccountType(EAccountType.Chat);
         }
         leaveChat.getBody().setSteamIdChat(chatId);
-        leaveChat.getBody().type = EChatInfoType.StateChange;
+        leaveChat.getBody().setType(EChatInfoType.StateChange);
         try {
             leaveChat.write(getClient().getSteamId().convertToLong()); // ChatterActedOn
-            leaveChat.write(EChatMemberStateChange.Left.v()); // StateChange
+            leaveChat.write(EChatMemberStateChange.Left.code()); // StateChange
             leaveChat.write(getClient().getSteamId().convertToLong()); // ChatterActedBy
         } catch (final IOException e) {
             e.printStackTrace();
@@ -114,7 +114,7 @@ public final class SteamChat extends ClientMsgHandler {
             chatId.setAccountType(EAccountType.Chat);
         }
         final ClientMsg<MsgClientChatMsg> chatMsg = new ClientMsg<MsgClientChatMsg>(MsgClientChatMsg.class);
-        chatMsg.getBody().chatMsgType = type;
+        chatMsg.getBody().setChatMsgType(type);
         chatMsg.getBody().setSteamIdChatRoom(chatId);
         chatMsg.getBody().setSteamIdChatter(getClient().getSteamId());
         try {
@@ -141,7 +141,7 @@ public final class SteamChat extends ClientMsgHandler {
         }
         kickMember.getBody().setSteamIdChat(chatId);
         kickMember.getBody().setSteamIdUserToActOn(steamIdMember);
-        kickMember.getBody().chatAction = EChatAction.Kick;
+        kickMember.getBody().setChatAction(EChatAction.Kick);
         getClient().send(kickMember);
     }
 
@@ -161,7 +161,7 @@ public final class SteamChat extends ClientMsgHandler {
         }
         banMember.getBody().setSteamIdChat(chatId);
         banMember.getBody().setSteamIdUserToActOn(steamIdMember);
-        banMember.getBody().chatAction = EChatAction.Ban;
+        banMember.getBody().setChatAction(EChatAction.Ban);
         getClient().send(banMember);
     }
 

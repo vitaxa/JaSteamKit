@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamchat.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatRoomEnterResponse;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatRoomType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgClientChatEnter;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientChatEnter;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.types.ChatMemberInfo;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
@@ -60,12 +60,12 @@ public final class ChatEnterCallback extends CallbackMsg {
     public ChatEnterCallback(MsgClientChatEnter msg, BinaryReader payload) {
         chatID = msg.getSteamIdChat();
         friendID = msg.getSteamIdFriend();
-        chatRoomType = msg.chatRoomType;
+        chatRoomType = msg.getChatRoomType();
         ownerID = msg.getSteamIdOwner();
         clanID = msg.getSteamIdClan();
-        chatFlags = msg.chatFlags;
-        enterResponse = msg.enterResponse;
-        numChatMembers = msg.numMembers;
+        chatFlags = msg.getChatFlags();
+        enterResponse = msg.getEnterResponse();
+        numChatMembers = msg.getNumMembers();
         // reading the payload
         try {
             chatRoomName = payload.readNullTermString();

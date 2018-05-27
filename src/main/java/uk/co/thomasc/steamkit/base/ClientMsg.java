@@ -6,8 +6,8 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.ISteamSeriali
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 import uk.co.thomasc.steamkit.util.logging.Debug;
-import uk.co.thomasc.steamkit.util.stream.BinaryReader;
-import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
+import uk.co.thomasc.steamkit.util.stream.MemoryStream;
+import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
 
     @Override
     public EMsg getMsgType() {
-        return getHeader().msg;
+        return getHeader().getMsg();
     }
 
     /**
@@ -36,7 +36,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      */
     @Override
     public int getSessionID() {
-        return getHeader().sessionID;
+        return getHeader().getSessionID();
     }
 
     /**
@@ -44,7 +44,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      */
     @Override
     public void setSessionID(int sessionID) {
-        getHeader().sessionID = sessionID;
+        getHeader().setSessionID(sessionID);
     }
 
     /**
@@ -68,7 +68,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      */
     @Override
     public JobID getTargetJobID() {
-        return new JobID(getHeader().targetJobID);
+        return new JobID(getHeader().getTargetJobID());
     }
 
     /**
@@ -76,7 +76,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      */
     @Override
     public void setTargetJobID(JobID jobID) {
-        getHeader().targetJobID = jobID.getValue();
+        getHeader().setTargetJobID(jobID.getValue());
     }
 
     /**
@@ -84,7 +84,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      */
     @Override
     public JobID getSourceJobID() {
-        return new JobID(getHeader().sourceJobID);
+        return new JobID(getHeader().getSourceJobID());
     }
 
     /**
@@ -92,7 +92,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      */
     @Override
     public void setSourceJobID(JobID jobID) {
-        getHeader().sourceJobID = jobID.getValue();
+        getHeader().setSourceJobID(jobID.getValue());
     }
 
     /**
@@ -118,7 +118,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
             e.printStackTrace();
         }
         // assign our emsg
-        getHeader().msg = body.getEMsg();
+        getHeader().setMsg(body.getEMsg());
     }
 
     public ClientMsg(Class<T> clazz, MsgBase<ExtendedClientMsgHdr> msg) {
@@ -135,7 +135,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
     public ClientMsg(Class<T> clazz, MsgBase<ExtendedClientMsgHdr> msg, int payloadReserve) {
         this(clazz, payloadReserve);
         // our target is where the message came from
-        getHeader().targetJobID = msg.getHeader().sourceJobID;
+        getHeader().setTargetJobID(msg.getHeader().getSourceJobID());
     }
 
     /**
@@ -161,11 +161,12 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      */
     @Override
     public byte[] serialize() throws IOException {
-        final BinaryWriter ms = new BinaryWriter(new ByteArrayOutputStream());
-        getHeader().serialize(ms);
-        body.serialize(ms);
-        ms.write(getOutputStream().toByteArray());
-        return ms.toByteArray();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(0);
+        getHeader().serialize(baos);
+        body.serialize(baos);
+        baos.write(payload.toByteArray());
+
+        return baos.toByteArray();
     }
 
     /**
@@ -175,13 +176,20 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      */
     @Override
     public void deSerialize(byte[] data) throws IOException {
-        final BinaryReader cs = new BinaryReader(data);
-        getHeader().deSerialize(cs);
-        body.deSerialize(cs);
-        // the rest of the data is the payload
-        final int payloadOffset = cs.getPosition();
-        final int payloadLen = cs.getRemaining();
-        setPayload(new BinaryReader(copyOfRange(data, payloadOffset, payloadOffset + payloadLen)));
+        if (data == null) {
+            throw new IllegalArgumentException("data is null");
+        }
+        MemoryStream ms = new MemoryStream(data);
+
+        try {
+            getHeader().deserialize(ms);
+            body.deserialize(ms);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        payload.write(data, (int) ms.getPosition(), ms.available());
+        payload.seek(0, SeekOrigin.BEGIN);
     }
 
     public static byte[] copyOfRange(byte[] from, int start, int end) {

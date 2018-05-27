@@ -21,7 +21,7 @@ public enum GameType {
     /**
      * A peer-to-peer file.
      */
-    P2P(3), ;
+    P2P(3);
 
     private int code;
 

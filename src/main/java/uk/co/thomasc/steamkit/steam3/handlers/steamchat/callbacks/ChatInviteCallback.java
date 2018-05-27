@@ -43,7 +43,7 @@ public final class ChatInviteCallback extends CallbackMsg {
         invitedID = new SteamID(invite.getSteamIdInvited());
         chatRoomID = new SteamID(invite.getSteamIdChat());
         patronID = new SteamID(invite.getSteamIdPatron());
-        chatRoomType = EChatRoomType.f(invite.getChatroomType());
+        chatRoomType = EChatRoomType.from(invite.getChatroomType());
         friendChatID = new SteamID(invite.getSteamIdFriendChat());
         chatRoomName = invite.getChatName();
         gameID = new GameID(invite.getGameId());

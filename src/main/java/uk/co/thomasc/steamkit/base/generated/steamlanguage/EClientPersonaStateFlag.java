@@ -1,29 +1,48 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
-import java.util.HashMap;
+import java.util.EnumSet;
 
 public enum EClientPersonaStateFlag {
-    Status(1), PlayerName(2), QueryPort(4), SourceID(8), Presence(16), Metadata(32), LastSeen(64), ClanInfo(128), GameExtraInfo(256), GameDataBlob(512), ClanTag(1024),;
 
-    private int code;
+    Status(1),
+    PlayerName(2),
+    QueryPort(4),
+    SourceID(8),
+    Presence(16),
+    LastSeen(64),
+    ClanInfo(128),
+    GameExtraInfo(256),
+    GameDataBlob(512),
+    ClanTag(1024),
+    Facebook(2048),
 
-    private EClientPersonaStateFlag(int code) {
+    ;
+
+    private final int code;
+
+    EClientPersonaStateFlag(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
     }
 
-    private static HashMap<Integer, EClientPersonaStateFlag> values = new HashMap<Integer, EClientPersonaStateFlag>();
-
-    static {
-        for (final EClientPersonaStateFlag type : EClientPersonaStateFlag.values()) {
-            EClientPersonaStateFlag.values.put(type.v(), type);
+    public static EnumSet<EClientPersonaStateFlag> from(int code) {
+        EnumSet<EClientPersonaStateFlag> set = EnumSet.noneOf(EClientPersonaStateFlag.class);
+        for (EClientPersonaStateFlag e : EClientPersonaStateFlag.values()) {
+            if ((e.code & code) == e.code) {
+                set.add(e);
+            }
         }
+        return set;
     }
 
-    public static EClientPersonaStateFlag f(int code) {
-        return EClientPersonaStateFlag.values.get(code);
+    public static int code(EnumSet<EClientPersonaStateFlag> flags) {
+        int code = 0;
+        for (EClientPersonaStateFlag flag : flags) {
+            code |= flag.code;
+        }
+        return code;
     }
 }

@@ -1,29 +1,35 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguage;
 
-import java.util.HashMap;
 
 public enum EPersonaState {
-    Offline(0), Online(1), Busy(2), Away(3), Snooze(4), LookingToTrade(5), LookingToPlay(6),;
 
-    private int code;
+    Offline(0),
+    Online(1),
+    Busy(2),
+    Away(3),
+    Snooze(4),
+    LookingToTrade(5),
+    LookingToPlay(6),
+    Max(7),
 
-    private EPersonaState(int code) {
+    ;
+
+    private final int code;
+
+    EPersonaState(int code) {
         this.code = code;
     }
 
-    public int v() {
-        return code;
+    public int code() {
+        return this.code;
     }
 
-    private static HashMap<Integer, EPersonaState> values = new HashMap<Integer, EPersonaState>();
-
-    static {
-        for (final EPersonaState type : EPersonaState.values()) {
-            EPersonaState.values.put(type.v(), type);
+    public static EPersonaState from(int code) {
+        for (EPersonaState e : EPersonaState.values()) {
+            if (e.code == code) {
+                return e;
+            }
         }
-    }
-
-    public static EPersonaState f(int code) {
-        return EPersonaState.values.get(code);
+        return null;
     }
 }

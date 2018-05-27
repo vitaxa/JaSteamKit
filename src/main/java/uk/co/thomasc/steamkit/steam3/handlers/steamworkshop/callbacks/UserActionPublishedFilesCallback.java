@@ -31,7 +31,7 @@ public final class UserActionPublishedFilesCallback extends CallbackMsg {
     private final int totalResults;
 
     public UserActionPublishedFilesCallback(CMsgClientUCMEnumeratePublishedFilesByUserActionResponse msg) {
-        result = EResult.f(msg.getEresult());
+        result = EResult.from(msg.getEresult());
         for (final PublishedFileId f : msg.getPublishedFilesList()) {
             files.add(new FilePublished(f));
         }

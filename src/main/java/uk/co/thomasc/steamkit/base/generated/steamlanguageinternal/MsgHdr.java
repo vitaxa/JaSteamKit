@@ -5,33 +5,61 @@ import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class MsgHdr implements ISteamSerializableHeader {
-    // Static size: 4
-    public EMsg msg = EMsg.Invalid;
-    // Static size: 8
-    public long targetJobID = BinaryReader.LongMaxValue;
-    // Static size: 8
-    public long sourceJobID = BinaryReader.LongMaxValue;
 
-    public MsgHdr() {
-    }
+    private EMsg msg = EMsg.Invalid;
+
+    private long targetJobID = 0xFFFFFFFFFFFFFFFFL;
+
+    private long sourceJobID = 0xFFFFFFFFFFFFFFFFL;
 
     @Override
-    public void serialize(BinaryWriter stream) throws IOException {
-        stream.write(msg.v());
-        stream.write(targetJobID);
-        stream.write(sourceJobID);
-    }
-
-    @Override
-    public void deSerialize(BinaryReader stream) throws IOException {
-        msg = EMsg.f(stream.readInt());
-        targetJobID = stream.readLong();
-        sourceJobID = stream.readLong();
-    }
-
-    public void setMsg(final EMsg msg) {
+    public void setEMsg(EMsg msg) {
         this.msg = msg;
+    }
+
+    public EMsg getMsg() {
+        return this.msg;
+    }
+
+    public void setMsg(EMsg msg) {
+        this.msg = msg;
+    }
+
+    public long getTargetJobID() {
+        return this.targetJobID;
+    }
+
+    public void setTargetJobID(long targetJobID) {
+        this.targetJobID = targetJobID;
+    }
+
+    public long getSourceJobID() {
+        return this.sourceJobID;
+    }
+
+    public void setSourceJobID(long sourceJobID) {
+        this.sourceJobID = sourceJobID;
+    }
+
+    @Override
+    public void serialize(OutputStream stream) throws IOException {
+        BinaryWriter bw = new BinaryWriter(stream);
+
+        bw.write(msg.code());
+        bw.write(targetJobID);
+        bw.write(sourceJobID);
+    }
+
+    @Override
+    public void deserialize(InputStream stream) throws IOException {
+        BinaryReader br = new BinaryReader(stream);
+
+        msg = EMsg.from(br.readInt());
+        targetJobID = br.readLong();
+        sourceJobID = br.readLong();
     }
 }
