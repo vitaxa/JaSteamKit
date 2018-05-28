@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.webapi;
 
-import uk.co.thomasc.steamkit.types.keyvalue.KeyValue;
+import uk.co.thomasc.steamkit.types.KeyValue;
 import uk.co.thomasc.steamkit.util.WebHelpers;
 
 import java.io.*;

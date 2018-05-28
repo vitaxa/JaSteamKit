@@ -4,7 +4,7 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CM
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.Date;
 

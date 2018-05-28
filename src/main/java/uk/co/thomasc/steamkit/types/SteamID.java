@@ -1,4 +1,4 @@
-package uk.co.thomasc.steamkit.types.steamid;
+package uk.co.thomasc.steamkit.types;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;

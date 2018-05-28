@@ -9,7 +9,7 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.*;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.callbacks.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.types.Chat;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
 import java.io.IOException;

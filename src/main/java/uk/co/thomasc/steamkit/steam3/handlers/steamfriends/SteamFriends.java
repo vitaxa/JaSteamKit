@@ -18,9 +18,9 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.AccountCache;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.Clan;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.User;
+import uk.co.thomasc.steamkit.types.GameID;
 import uk.co.thomasc.steamkit.types.JobID;
-import uk.co.thomasc.steamkit.types.gameid.GameID;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.ArrayList;
 import java.util.Collection;

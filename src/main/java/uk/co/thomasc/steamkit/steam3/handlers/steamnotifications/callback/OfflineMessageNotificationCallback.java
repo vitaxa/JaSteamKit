@@ -3,7 +3,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamnotifications.callback;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientOfflineMessageNotification;
 import uk.co.thomasc.steamkit.steam3.handlers.steamnotifications.SteamNotifications;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.ArrayList;
 import java.util.Collections;

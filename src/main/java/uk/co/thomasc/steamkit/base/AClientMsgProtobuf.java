@@ -4,7 +4,7 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeade
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgHdrProtoBuf;
 import uk.co.thomasc.steamkit.types.JobID;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
 import java.io.ByteArrayInputStream;

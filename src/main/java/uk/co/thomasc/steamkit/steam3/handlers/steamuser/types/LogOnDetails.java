@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.types;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EOSType;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.util.Utils;
 
 /**

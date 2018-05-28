@@ -4,10 +4,8 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountFlags;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientLogOnResponse;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.SteamUser;
-import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.LogOnDetails;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steam2ticket.Steam2Ticket;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;
 
 import java.net.InetAddress;
@@ -17,76 +15,77 @@ import java.util.EnumSet;
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
 
 /**
- * This callback is returned in response to an attempt to log on to the Steam3
- * network through {@link SteamUser}.
+ * This callback is returned in response to an attempt to log on to the Steam3 network through {@link SteamUser}.
  */
-public final class LoggedOnCallback extends CallbackMsg {
-    /**
-     * Gets the result of the logon.
-     */
+public class LoggedOnCallback extends CallbackMsg {
+
     private EResult result;
-    /**
-     * Gets the extended result of the logon.
-     */
+
     private EResult extendedResult;
-    /**
-     * Gets the out of game secs per heartbeat value. This is used internally by
-     * SteamKit to initialize heartbeating.
-     */
+
     private int outOfGameSecsPerHeartbeat;
-    /**
-     * Gets the in game secs per heartbeat value. This is used internally by
-     * SteamKit to initialize heartbeating.
-     */
+
     private int inGameSecsPerHeartbeat;
-    /**
-     * Gets or sets the public IP of the client
-     */
+
     private InetAddress publicIP;
-    /**
-     * Gets the Steam3 server time.
-     */
+
     private Date serverTime;
-    /**
-     * Gets the account flags assigned by the server.
-     */
+
     private EnumSet<EAccountFlags> accountFlags;
-    /**
-     * Gets the client steam ID.
-     */
+
     private SteamID clientSteamID;
-    /**
-     * Gets the email domain.
-     */
+
     private String emailDomain;
-    /**
-     * Gets the WebAPI User Nonce
-     */
+
+    private int cellID;
+
+    private int cellIDPingThreshold;
+
+    private byte[] steam2Ticket;
+
+    private boolean usePICS;
+
     private String webAPIUserNonce;
-    /**
-     * Gets the Steam2 CellID.
-     */
-    private int cellId;
-    /**
-     * Gets the Steam2 ticket. This is used for authenticated content downloads
-     * in Steam2. This field will only be set when
-     * {@link LogOnDetails#requestSteam2Ticket} has been set to true.
-     */
-    private Steam2Ticket steam2Ticket = null;
+
+    private String ipCountryCode;
+
+    private String vanityURL;
+
+    private int numLoginFailuresToMigrate;
+
+    private int numDisconnectsToMigrate;
 
     public LoggedOnCallback(CMsgClientLogonResponse.Builder resp) {
         result = EResult.from(resp.getEresult());
         extendedResult = EResult.from(resp.getEresultExtended());
+
         outOfGameSecsPerHeartbeat = resp.getOutOfGameHeartbeatSeconds();
         inGameSecsPerHeartbeat = resp.getInGameHeartbeatSeconds();
+
         publicIP = NetHelpers.getIPAddress(resp.getPublicIp());
-        serverTime = new Date(resp.getRtime32ServerTime());
+        serverTime = new Date(resp.getRtime32ServerTime() * 1000L);
+
         accountFlags = EAccountFlags.from(resp.getAccountFlags());
+
         clientSteamID = new SteamID(resp.getClientSuppliedSteamid());
+
         emailDomain = resp.getEmailDomain();
-        cellId = resp.getCellId();
+
+        cellID = resp.getCellId();
+        cellIDPingThreshold = resp.getCellIdPingThreshold();
+
+        steam2Ticket = resp.getSteam2Ticket().toByteArray();
+
+        ipCountryCode = resp.getIpCountryCode();
+
         webAPIUserNonce = resp.getWebapiAuthenticateUserNonce();
-        if (resp.getSteam2Ticket().size() > 0) steam2Ticket = new Steam2Ticket(resp.getSteam2Ticket().toByteArray());
+
+        usePICS = resp.getUsePics();
+
+        vanityURL = resp.getVanityUrl();
+
+        numLoginFailuresToMigrate = resp.getCountLoginfailuresToMigrate();
+        numDisconnectsToMigrate = resp.getCountDisconnectsToMigrate();
     }
 
     public LoggedOnCallback(MsgClientLogOnResponse resp) {
@@ -106,91 +105,76 @@ public final class LoggedOnCallback extends CallbackMsg {
         this.result = result;
     }
 
-    /**
-     * Gets the result of the logon.
-     */
     public EResult getResult() {
-        return this.result;
+        return result;
     }
 
-    /**
-     * Gets the extended result of the logon.
-     */
     public EResult getExtendedResult() {
-        return this.extendedResult;
+        return extendedResult;
     }
 
-    /**
-     * Gets the out of game secs per heartbeat value. This is used internally by
-     * SteamKit to initialize heartbeating.
-     */
     public int getOutOfGameSecsPerHeartbeat() {
-        return this.outOfGameSecsPerHeartbeat;
+        return outOfGameSecsPerHeartbeat;
     }
 
-    /**
-     * Gets the in game secs per heartbeat value. This is used internally by
-     * SteamKit to initialize heartbeating.
-     */
     public int getInGameSecsPerHeartbeat() {
-        return this.inGameSecsPerHeartbeat;
+        return inGameSecsPerHeartbeat;
     }
 
-    /**
-     * Gets or sets the public IP of the client
-     */
     public InetAddress getPublicIP() {
-        return this.publicIP;
+        return publicIP;
     }
 
-    /**
-     * Gets the Steam3 server time.
-     */
     public Date getServerTime() {
-        return this.serverTime;
+        return serverTime;
     }
 
-    /**
-     * Gets the account flags assigned by the server.
-     */
     public EnumSet<EAccountFlags> getAccountFlags() {
-        return this.accountFlags;
+        return accountFlags;
     }
 
-    /**
-     * Gets the client steam ID.
-     */
     public SteamID getClientSteamID() {
-        return this.clientSteamID;
+        return clientSteamID;
     }
 
-    /**
-     * Gets the email domain.
-     */
     public String getEmailDomain() {
-        return this.emailDomain;
+        return emailDomain;
     }
 
-    /**
-     * Gets the WebAPI User Nonce
-     */
+    public int getCellID() {
+        return cellID;
+    }
+
+    public int getCellIDPingThreshold() {
+        return cellIDPingThreshold;
+    }
+
+    public byte[] getSteam2Ticket() {
+        return steam2Ticket;
+    }
+
+    public boolean isUsePICS() {
+        return usePICS;
+    }
+
     public String getWebAPIUserNonce() {
-        return this.webAPIUserNonce;
+        return webAPIUserNonce;
     }
 
-    /**
-     * Gets the Steam2 CellID.
-     */
-    public int getCellId() {
-        return this.cellId;
+    public String getIpCountryCode() {
+        return ipCountryCode;
     }
 
-    /**
-     * Gets the Steam2 ticket. This is used for authenticated content downloads
-     * in Steam2. This field will only be set when
-     * {@link LogOnDetails#requestSteam2Ticket} has been set to true.
-     */
-    public Steam2Ticket getSteam2Ticket() {
-        return this.steam2Ticket;
+    public String getVanityURL() {
+        return vanityURL;
+    }
+
+    public int getNumLoginFailuresToMigrate() {
+        return numLoginFailuresToMigrate;
+    }
+
+    public int getNumDisconnectsToMigrate() {
+        return numDisconnectsToMigrate;
     }
 }
+

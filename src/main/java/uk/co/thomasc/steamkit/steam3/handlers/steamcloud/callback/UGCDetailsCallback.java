@@ -5,8 +5,8 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.SteamCloud;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
-import uk.co.thomasc.steamkit.types.ugc.UGCHandle;
+import uk.co.thomasc.steamkit.types.SteamID;
+import uk.co.thomasc.steamkit.types.UGCHandle;
 
 /**
  * This callback is received in response to calling {@link SteamCloud#requestUGCDetails(UGCHandle)}.

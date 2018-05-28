@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 
 import uk.co.thomasc.steamkit.base.ISteamSerializableMessage;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.types.gameid.GameID;
+import uk.co.thomasc.steamkit.types.GameID;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
@@ -24,7 +24,7 @@ public class MsgClientGetFriendsWhoPlayGame implements ISteamSerializableMessage
     }
 
     public void setGameId(GameID gameId) {
-        this.gameId = gameId.toLong();
+        this.gameId = gameId.toUInt64();
     }
 
     @Override

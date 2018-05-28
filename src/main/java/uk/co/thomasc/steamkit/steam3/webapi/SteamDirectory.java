@@ -3,7 +3,7 @@ package uk.co.thomasc.steamkit.steam3.webapi;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.steam3.discovery.ServerRecord;
 import uk.co.thomasc.steamkit.steam3.steamclient.configuration.SteamConfiguration;
-import uk.co.thomasc.steamkit.types.keyvalue.KeyValue;
+import uk.co.thomasc.steamkit.types.KeyValue;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

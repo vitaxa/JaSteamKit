@@ -4,7 +4,7 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatInfoType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientChatMemberInfo;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.types.StateChangeDetails;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 /**
  * This callback is fired in response to chat member info being recieved.
@@ -28,9 +28,9 @@ public final class ChatMemberInfoCallback extends CallbackMsg {
         chatRoomID = msg.getSteamIdChat();
         type = msg.getType();
         switch (type) {
-        case StateChange:
-            stateChangeInfo = new StateChangeDetails(payload);
-            break;
+            case StateChange:
+                stateChangeInfo = new StateChangeDetails(payload);
+                break;
         }
     }
 

@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamtrading.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeRequest;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 /**
  * This callback is fired when this client receives a trade proposal.

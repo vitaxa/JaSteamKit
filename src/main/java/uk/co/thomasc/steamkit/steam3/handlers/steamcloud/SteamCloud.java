@@ -9,7 +9,7 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.ShareFileCallb
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.SingleFileInfoCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.UGCDetailsCallback;
 import uk.co.thomasc.steamkit.types.JobID;
-import uk.co.thomasc.steamkit.types.ugc.UGCHandle;
+import uk.co.thomasc.steamkit.types.UGCHandle;
 
 import java.util.Collections;
 import java.util.HashMap;

@@ -1,8 +1,9 @@
 package uk.co.thomasc.steamkit.types;
 
-import uk.co.thomasc.steamkit.types.ugc.GlobalID;
-
-public final class JobID extends GlobalID {
+/**
+ * Represents an identifier of a network task known as a job.
+ */
+public class JobID extends GlobalID {
 
     /**
      * Represents an invalid JobID.
@@ -24,5 +25,4 @@ public final class JobID extends GlobalID {
     public JobID(long gid) {
         super(gid);
     }
-
 }

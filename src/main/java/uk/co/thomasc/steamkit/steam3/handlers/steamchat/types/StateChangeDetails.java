@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamchat.types;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatMemberStateChange;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
 import java.io.ByteArrayInputStream;
@@ -31,21 +31,17 @@ public final class StateChangeDetails {
     private ChatMemberInfo memberInfo;
 
     public StateChangeDetails(byte[] data) {
-        try (final BinaryReader is = new BinaryReader(new ByteArrayInputStream(data))) {
-            chatterActedOn = new SteamID(is.readLong());
-            stateChange = EChatMemberStateChange.from(is.readInt());
-            chatterActedBy = new SteamID(is.readLong());
+        try (BinaryReader br = new BinaryReader(new ByteArrayInputStream(data))) {
+            chatterActedOn = new SteamID(br.readLong());
+            stateChange = EChatMemberStateChange.from(br.readInt());
+            chatterActedBy = new SteamID(br.readLong());
+
             if (stateChange.contains(EChatMemberStateChange.Entered)) {
                 memberInfo = new ChatMemberInfo();
-                memberInfo.readFromBinary(is);
+                memberInfo.readFromStream(br);
             }
-        } catch (final IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
         }
-        // based off disassembly
-        //  - for InfoUpdate, a ChatMemberInfo object is present
-        //  - for MemberLimitChange, looks like an ignored uint64 (probably steamid) followed
-        //     by an int which likely represents the member limit
     }
 
     /**

@@ -6,7 +6,7 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.FriendMessage;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.ArrayList;
 import java.util.Collections;

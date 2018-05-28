@@ -3,7 +3,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientAddFriendResponse;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 /**
  * This callback is fired in response to adding a user to your friends list.

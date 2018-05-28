@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamapps.types;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSProductInfoResponse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.keyvalue.KeyValue;
+import uk.co.thomasc.steamkit.types.KeyValue;
 import uk.co.thomasc.steamkit.util.StringHelper;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.MemoryStream;
@@ -70,7 +70,7 @@ public class PICSProductInfo extends CallbackMsg {
         if (packageInfo.hasBuffer()) {
             try (BinaryReader br = new BinaryReader(new ByteArrayInputStream(packageInfo.getBuffer().toByteArray()))) {
                 br.readInt();
-                keyValues.readAsBinary(br);
+                keyValues.tryReadAsBinary(br);
             } catch (IOException e) {
                 throw new IllegalArgumentException("failed to read buffer", e);
             }

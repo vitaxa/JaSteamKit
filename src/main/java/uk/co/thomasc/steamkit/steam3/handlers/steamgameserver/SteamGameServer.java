@@ -20,7 +20,7 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.types.LogOnDetails
 import uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.types.StatusDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.LoggedOnCallback;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.DisconnectedCallback;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.HardwareUtils;
 import uk.co.thomasc.steamkit.util.StringHelper;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;

@@ -5,7 +5,7 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatRoomType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientChatEnter;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.types.ChatMemberInfo;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
 import java.io.ByteArrayInputStream;

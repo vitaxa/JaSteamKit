@@ -3,7 +3,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMarketingMessageFlags;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientMarketingMessageUpdate2;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.ugc.GlobalID;
+import uk.co.thomasc.steamkit.types.GlobalID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 

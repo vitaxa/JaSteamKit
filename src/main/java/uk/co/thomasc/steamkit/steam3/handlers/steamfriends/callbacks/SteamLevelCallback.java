@@ -5,7 +5,7 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClie
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.HashMap;
 import java.util.Map;

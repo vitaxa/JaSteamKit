@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientPlayerNicknameList;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.HashSet;
 import java.util.Set;

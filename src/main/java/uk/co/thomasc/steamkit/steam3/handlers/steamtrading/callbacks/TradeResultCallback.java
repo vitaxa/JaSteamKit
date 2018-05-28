@@ -3,7 +3,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamtrading.callbacks;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeResponse;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EEconTradeResponse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 /**
  * This callback is fired when this client receives the response from a trade

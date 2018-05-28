@@ -3,7 +3,7 @@ package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 import uk.co.thomasc.steamkit.base.ISteamSerializableMessage;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatInfoType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 

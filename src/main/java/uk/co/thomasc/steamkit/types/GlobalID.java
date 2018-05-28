@@ -1,6 +1,4 @@
-package uk.co.thomasc.steamkit.types.ugc;
-
-import uk.co.thomasc.steamkit.types.steamid.BitVector64;
+package uk.co.thomasc.steamkit.types;
 
 import java.util.Date;
 

@@ -3,9 +3,9 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamchat.types;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatPermission;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EClanPermission;
+import uk.co.thomasc.steamkit.types.KeyValue;
 import uk.co.thomasc.steamkit.types.MessageObject;
-import uk.co.thomasc.steamkit.types.keyvalue.KeyValue;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.util.EnumSet;
 

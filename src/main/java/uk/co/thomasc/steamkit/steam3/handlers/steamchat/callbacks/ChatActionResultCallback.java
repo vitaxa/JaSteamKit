@@ -4,7 +4,7 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatAction;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatActionResult;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientChatActionResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 /**
  * This callback is fired when a chat action has completed.

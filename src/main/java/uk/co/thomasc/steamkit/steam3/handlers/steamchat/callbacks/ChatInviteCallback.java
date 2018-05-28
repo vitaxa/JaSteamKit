@@ -3,8 +3,8 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamchat.callbacks;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientChatInvite;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatRoomType;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
-import uk.co.thomasc.steamkit.types.gameid.GameID;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.GameID;
+import uk.co.thomasc.steamkit.types.SteamID;
 
 /**
  * This callback is fired when a chat invite is recieved.

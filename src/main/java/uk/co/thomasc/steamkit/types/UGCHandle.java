@@ -1,4 +1,4 @@
-package uk.co.thomasc.steamkit.types.ugc;
+package uk.co.thomasc.steamkit.types;
 
 /**
  * Represents a single unique handle to a piece of User Generated Content.

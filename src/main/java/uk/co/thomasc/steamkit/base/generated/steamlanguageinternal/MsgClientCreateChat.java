@@ -4,8 +4,8 @@ import uk.co.thomasc.steamkit.base.ISteamSerializableMessage;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatPermission;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatRoomType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.types.gameid.GameID;
-import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.types.GameID;
+import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
@@ -54,7 +54,7 @@ public class MsgClientCreateChat implements ISteamSerializableMessage {
     }
 
     public void setGameId(GameID gameId) {
-        this.gameId = gameId.toLong();
+        this.gameId = gameId.toUInt64();
     }
 
     public SteamID getSteamIdClan() {
