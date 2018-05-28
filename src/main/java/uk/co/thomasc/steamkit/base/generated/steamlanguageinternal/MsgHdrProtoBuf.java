@@ -1,5 +1,6 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 
+import uk.co.thomasc.steamkit.base.ISteamSerializableHeader;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
@@ -51,10 +52,10 @@ public class MsgHdrProtoBuf implements ISteamSerializableHeader {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(MsgUtil.makeMsg(msg.code(), true));
+        bw.writeInt(MsgUtil.makeMsg(msg.code(), true));
         byte[] protoBuffer = proto.build().toByteArray();
         headerLength = protoBuffer.length;
-        bw.write(headerLength);
+        bw.writeInt(headerLength);
         bw.write(protoBuffer);
     }
 

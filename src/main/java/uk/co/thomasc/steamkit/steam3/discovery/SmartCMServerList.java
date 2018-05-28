@@ -16,7 +16,7 @@ public class SmartCMServerList {
 
     private final SteamConfiguration configuration;
 
-    private List<ServerInfo> servers = Collections.synchronizedList(new ArrayList<ServerInfo>());
+    private final List<ServerInfo> servers = Collections.synchronizedList(new ArrayList<ServerInfo>());
 
     private Long badConnectionMemoryTimeSpan;
 
@@ -63,9 +63,11 @@ public class SmartCMServerList {
 
         final long cutoff = System.currentTimeMillis() - badConnectionMemoryTimeSpan;
 
-        for (ServerInfo serverInfo : servers) {
-            if (serverInfo.getLastBadConnection() != null && serverInfo.getLastBadConnection().getTime() < cutoff) {
-                serverInfo.setLastBadConnection(null);
+        synchronized (servers) {
+            for (ServerInfo serverInfo : servers) {
+                if (serverInfo.getLastBadConnection() != null && serverInfo.getLastBadConnection().getTime() < cutoff) {
+                    serverInfo.setLastBadConnection(null);
+                }
             }
         }
     }
@@ -99,8 +101,10 @@ public class SmartCMServerList {
      * Explicitly resets the known state of all servers.
      */
     public void resetBadServers() {
-        for (ServerInfo serverInfo : servers) {
-            serverInfo.setLastBadConnection(null);
+        synchronized (servers) {
+            for (ServerInfo serverInfo : servers) {
+                serverInfo.setLastBadConnection(null);
+            }
         }
     }
 
@@ -110,15 +114,17 @@ public class SmartCMServerList {
 
     public boolean tryMark(InetSocketAddress endPoint, EnumSet<ProtocolType> protocolTypes, ServerQuality quality) {
         List<ServerInfo> serverInfos = new ArrayList<>();
-        for (ServerInfo x : servers) {
-            if (x.getRecord().getEndpoint().equals(endPoint) && protocolTypes.contains(x.getProtocol())) {
-                serverInfos.add(x);
+        synchronized (servers) {
+            for (ServerInfo x : servers) {
+                if (x.getRecord().getEndpoint().equals(endPoint) && protocolTypes.contains(x.getProtocol())) {
+                    serverInfos.add(x);
+                }
             }
-        }
 
-        for (ServerInfo serverInfo : serverInfos) {
-            DebugLog.writeLine("SmartCMServerList", "Marking " + serverInfo.getRecord().getEndpoint() + " - " + serverInfo.getProtocol() + " as " + quality);
-            markServerCore(serverInfo, quality);
+            for (ServerInfo serverInfo : serverInfos) {
+                DebugLog.writeLine("SmartCMServerList", "Marking " + serverInfo.getRecord().getEndpoint() + " - " + serverInfo.getProtocol() + " as " + quality);
+                markServerCore(serverInfo, quality);
+            }
         }
 
         return serverInfos.size() > 0;
@@ -221,10 +227,12 @@ public class SmartCMServerList {
 
         List<ServerRecord> serverRecords = new ArrayList<>();
 
-        for (ServerInfo server : servers) {
-            ServerRecord record = server.getRecord();
-            if (!serverRecords.contains(record)) {
-                serverRecords.add(record);
+        synchronized (servers) {
+            for (ServerInfo server : servers) {
+                ServerRecord record = server.getRecord();
+                if (!serverRecords.contains(record)) {
+                    serverRecords.add(record);
+                }
             }
         }
 

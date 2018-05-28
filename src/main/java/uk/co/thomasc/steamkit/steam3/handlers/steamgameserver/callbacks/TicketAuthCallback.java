@@ -35,7 +35,7 @@ public final class TicketAuthCallback extends CallbackMsg {
      */
     private final int ticketSequence;
 
-    public TicketAuthCallback(CMsgClientTicketAuthComplete tickAuth) {
+    public TicketAuthCallback(CMsgClientTicketAuthComplete.Builder tickAuth) {
         steamId = new SteamID(tickAuth.getSteamId());
         gameId = new GameID(tickAuth.getGameId());
         state = tickAuth.getEstate();

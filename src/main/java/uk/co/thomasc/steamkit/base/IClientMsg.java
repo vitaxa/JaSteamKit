@@ -4,63 +4,92 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 
-import java.io.IOException;
-
 /**
  * Represents a unified interface into client messages.
  */
 public interface IClientMsg {
+
     /**
-     * True if this instance is protobuf backed; otherwise, false.
+     * Gets a value indicating whether this client message is protobuf backed.
+     *
+     * @return <b>true</b> if this instance is protobuf backed; otherwise, <b>false</b>.
      */
     boolean isProto();
 
     /**
-     * The message type.
+     * Gets the network message type of this client message.
+     *
+     * @return The message type.
      */
     EMsg getMsgType();
 
     /**
-     * The session id.
+     * Gets the session id for this client message.
+     *
+     * @return The session id.
      */
     int getSessionID();
 
+    /**
+     * Sets the session id for this client message.
+     *
+     * @param sessionID The session id.
+     */
     void setSessionID(int sessionID);
 
     /**
-     * The {@link SteamID}
+     * Gets the {@link SteamID} for this client message.
+     *
+     * @return The {@link SteamID}.
      */
     SteamID getSteamID();
 
-    void setSteamID(SteamID SteamID);
+    /**
+     * Sets the {@link SteamID} for this client message.
+     *
+     * @param steamID The {@link SteamID}.
+     */
+    void setSteamID(SteamID steamID);
 
     /**
-     * The target job id.
+     * Gets the target job id for this client message.
+     *
+     * @return The target job id.
      */
     JobID getTargetJobID();
 
-    void setTargetJobID(JobID JobID);
+    /**
+     * Sets the target job id for this client message.
+     *
+     * @param jobID The target job id.
+     */
+    void setTargetJobID(JobID jobID);
 
     /**
-     * The source job id.
+     * Gets the source job id for this client message.
+     *
+     * @return The source job id.
      */
     JobID getSourceJobID();
 
-    void setSourceJobID(JobID JobID);
+    /**
+     * Sets the source job id for this client message.
+     *
+     * @param jobID The source job id.
+     */
+    void setSourceJobID(JobID jobID);
 
     /**
      * serializes this client message instance to a byte array.
      *
      * @return Data representing a client message.
-     * @throws IOException
      */
     byte[] serialize();
 
     /**
      * Initializes this client message by deserializing the specified data.
      *
-     * @param data
-     *            The data representing a client message.
+     * @param data The data representing a client message.
      */
     void deserialize(byte[] data);
 }

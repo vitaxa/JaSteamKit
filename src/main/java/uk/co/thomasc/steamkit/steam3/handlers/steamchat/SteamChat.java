@@ -99,7 +99,7 @@ public final class SteamChat extends ClientMsgHandler {
             leaveChat.write(EChatMemberStateChange.Left.code()); // StateChange
             leaveChat.write(client.getSteamID().convertToUInt64()); // ChatterActedBy
         } catch (IOException e) {
-            DebugLog.printStackTrace("SteamChat",e);
+            DebugLog.printStackTrace("SteamChat", e);
         }
 
         client.send(leaveChat);
@@ -137,7 +137,7 @@ public final class SteamChat extends ClientMsgHandler {
         try {
             chatMsg.writeNullTermString(message, Charset.forName("UTF-8"));
         } catch (IOException e) {
-            DebugLog.printStackTrace("SteamChat",e);
+            DebugLog.printStackTrace("SteamChat", e);
         }
 
         client.send(chatMsg);
@@ -270,7 +270,7 @@ public final class SteamChat extends ClientMsgHandler {
     }
 
     void handleChatEnter(IPacketMsg packetMsg) {
-        final ClientMsg<MsgClientChatEnter> chatEnter = new ClientMsg<MsgClientChatEnter>(packetMsg, MsgClientChatEnter.class);
+        final ClientMsg<MsgClientChatEnter> chatEnter = new ClientMsg<MsgClientChatEnter>(MsgClientChatEnter.class, packetMsg);
         byte[] payload = chatEnter.getPayload().toByteArray();
         final ChatEnterCallback callback = new ChatEnterCallback(chatEnter.getBody(), payload);
         getClient().postCallback(callback);
@@ -284,24 +284,24 @@ public final class SteamChat extends ClientMsgHandler {
     }
 
     void handleChatMsg(IPacketMsg packetMsg) {
-        final ClientMsg<MsgClientChatMsg> chatMsg = new ClientMsg<MsgClientChatMsg>(packetMsg, MsgClientChatMsg.class);
+        final ClientMsg<MsgClientChatMsg> chatMsg = new ClientMsg<MsgClientChatMsg>(MsgClientChatMsg.class, packetMsg);
         byte[] payload = chatMsg.getPayload().toByteArray();
-        getClient().postCallback( new ChatMsgCallback(chatMsg.getBody(), payload));
+        getClient().postCallback(new ChatMsgCallback(chatMsg.getBody(), payload));
     }
 
     void handleChatMemberInfo(IPacketMsg packetMsg) {
-        final ClientMsg<MsgClientChatMemberInfo> membInfo = new ClientMsg<MsgClientChatMemberInfo>(packetMsg, MsgClientChatMemberInfo.class);
+        final ClientMsg<MsgClientChatMemberInfo> membInfo = new ClientMsg<MsgClientChatMemberInfo>(MsgClientChatMemberInfo.class, packetMsg);
         byte[] payload = membInfo.getPayload().toByteArray();
         getClient().postCallback(new ChatMemberInfoCallback(membInfo.getBody(), payload));
     }
 
     void handleChatActionResult(IPacketMsg packetMsg) {
-        final ClientMsg<MsgClientChatActionResult> actionResult = new ClientMsg<MsgClientChatActionResult>(packetMsg, MsgClientChatActionResult.class);
+        final ClientMsg<MsgClientChatActionResult> actionResult = new ClientMsg<MsgClientChatActionResult>(MsgClientChatActionResult.class, packetMsg);
         getClient().postCallback(new ChatActionResultCallback(actionResult.getBody()));
     }
 
     void handleCreateChatResponse(IPacketMsg packetMsg) {
-        final ClientMsg<MsgClientCreateChatResponse> actionResult = new ClientMsg<MsgClientCreateChatResponse>(packetMsg, MsgClientCreateChatResponse.class);
+        final ClientMsg<MsgClientCreateChatResponse> actionResult = new ClientMsg<MsgClientCreateChatResponse>(MsgClientCreateChatResponse.class, packetMsg);
         final ChatCreateResponseCallback callback = new ChatCreateResponseCallback(actionResult.getBody());
         getClient().postCallback(new ChatCreateResponseCallback(actionResult.getBody()));
         if (callback.getResult() == EResult.OK) {

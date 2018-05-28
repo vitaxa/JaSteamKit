@@ -84,7 +84,7 @@ public class EnvelopeEncryptedConnection extends Connection {
     }
 
     private void handleEncryptRequest(IPacketMsg packetMsg) {
-        Msg<MsgChannelEncryptRequest> request = new Msg<>(packetMsg, MsgChannelEncryptRequest.class);
+        Msg<MsgChannelEncryptRequest> request = new Msg<>(MsgChannelEncryptRequest.class, packetMsg);
 
         EUniverse connectedUniverse = request.getBody().getUniverse();
         long protoVersion = request.getBody().getProtocolVersion();
@@ -152,7 +152,7 @@ public class EnvelopeEncryptedConnection extends Connection {
     }
 
     private void handleEncryptResult(IPacketMsg packetMsg) {
-        Msg<MsgChannelEncryptResult> result = new Msg<>(packetMsg, MsgChannelEncryptResult.class);
+        Msg<MsgChannelEncryptResult> result = new Msg<>(MsgChannelEncryptResult.class, packetMsg);
 
         DebugLog.writeLine("EnvelopeEncryptedConnection", "Encryption result: " + result.getBody().getResult());
 

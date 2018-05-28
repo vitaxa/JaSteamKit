@@ -1,7 +1,8 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 
 
-import uk.co.thomasc.steamkit.base.generated.gc.csgo.SteamMsgBase;
+import uk.co.thomasc.steamkit.base.IGCSerializableHeader;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 
@@ -15,7 +16,7 @@ public class MsgGCHdrProtoBuf implements IGCSerializableHeader {
 
     private int headerLength = 0;
 
-    private SteamMsgBase.CMsgProtoBufHeader.Builder proto = SteamMsgBase.CMsgProtoBufHeader.newBuilder();
+    private CMsgProtoBufHeader.Builder proto = CMsgProtoBufHeader.newBuilder();
 
     @Override
     public void setEMsg(int msg) {
@@ -38,11 +39,11 @@ public class MsgGCHdrProtoBuf implements IGCSerializableHeader {
         this.headerLength = headerLength;
     }
 
-    public SteamMsgBase.CMsgProtoBufHeader.Builder getProto() {
+    public CMsgProtoBufHeader.Builder getProto() {
         return this.proto;
     }
 
-    public void setProto(SteamMsgBase.CMsgProtoBufHeader.Builder proto) {
+    public void setProto(CMsgProtoBufHeader.Builder proto) {
         this.proto = proto;
     }
 
@@ -50,10 +51,10 @@ public class MsgGCHdrProtoBuf implements IGCSerializableHeader {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(msg);
+        bw.writeInt(msg);
         byte[] protoBuffer = proto.build().toByteArray();
         headerLength = protoBuffer.length;
-        bw.write(headerLength);
+        bw.writeInt(headerLength);
         bw.write(protoBuffer);
     }
 
@@ -64,6 +65,6 @@ public class MsgGCHdrProtoBuf implements IGCSerializableHeader {
         msg = br.readInt();
         headerLength = br.readInt();
         byte[] protoBuffer = br.readBytes(headerLength);
-        proto = SteamMsgBase.CMsgProtoBufHeader.newBuilder().mergeFrom(protoBuffer);
+        proto = CMsgProtoBufHeader.newBuilder().mergeFrom(protoBuffer);
     }
 }

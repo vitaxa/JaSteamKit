@@ -88,7 +88,7 @@ public final class WebAPI {
         final Iterator<Entry<String, String>> it = args.entrySet().iterator();
         while (it.hasNext()) {
             final Entry<String, String> entry = it.next();
-            paramBuilder.append(String.format("%s=%s&", WebHelpers.UrlEncode(entry.getKey()), entry.getValue()));
+            paramBuilder.append(String.format("%s=%s&", WebHelpers.urlEncode(entry.getKey()), entry.getValue()));
         }
 
         byte[] data = null;

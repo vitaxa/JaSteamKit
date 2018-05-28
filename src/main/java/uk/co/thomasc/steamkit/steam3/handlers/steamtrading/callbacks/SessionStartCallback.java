@@ -14,7 +14,7 @@ public final class SessionStartCallback extends CallbackMsg {
      */
     private final SteamID otherClient;
 
-    public SessionStartCallback(CMsgTrading_StartSession msg) {
+    public SessionStartCallback(CMsgTrading_StartSession.Builder msg) {
         otherClient = new SteamID(msg.getOtherSteamid());
     }
 

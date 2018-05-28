@@ -3,10 +3,10 @@ package uk.co.thomasc.steamkit.base;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 
 /**
- * Represents a simple unified interface into client messages recieved from the
- * network. This is contrasted with {@link IClientMsg} in that this interface is
- * packet body agnostic and only allows simple access into the header. This
- * interface is also immutable, and the underlying data cannot be modified.
+ * Represents a simple unified interface into client messages recieved from the network.
+ * This is contrasted with {@link IClientMsg} in that this interface is packet body agnostic
+ * and only allows simple access into the header. This interface is also immutable, and the underlying
+ * data cannot be modified.
  */
 public interface IPacketMsg {
     /**

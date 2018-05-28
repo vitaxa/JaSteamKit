@@ -9,75 +9,59 @@ import java.io.IOException;
 /**
  * Represents a packet message with extended header information.
  */
-public final class PacketClientMsg implements IPacketMsg {
-    /**
-     * Gets a value indicating whether this packet message is protobuf backed.
-     * This type of message is never protobuf backed.
-     */
-    @Override
-    public boolean isProto() {
-        return false;
-    }
+public class PacketClientMsg implements IPacketMsg {
 
-    /**
-     * Gets the network message type of this packet message.
-     */
-    private final EMsg msgType;
-    /**
-     * Gets the target job id for this packet message.
-     */
+    private EMsg msgType;
+
     private long targetJobID;
-    /**
-     * Gets the source job id for this packet message.
-     */
+
     private long sourceJobID;
-    byte[] payload;
+
+    private byte[] payload;
 
     /**
      * Initializes a new instance of the {@link PacketClientMsg} class.
      *
      * @param eMsg The network message type for this packet message.
      * @param data The data.
+     * @throws IOException exception while deserializing the data
      */
-    public PacketClientMsg(EMsg eMsg, byte[] data) {
-        msgType = eMsg;
-        payload = data;
-        final ExtendedClientMsgHdr extendedHdr = new ExtendedClientMsgHdr();
+    public PacketClientMsg(EMsg eMsg, byte[] data) throws IOException {
+        this.msgType = eMsg;
+        this.payload = data;
+
+        ExtendedClientMsgHdr extendedHdr = new ExtendedClientMsgHdr();
+
         try (ByteArrayInputStream stream = new ByteArrayInputStream(data)) {
             extendedHdr.deserialize(stream);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
+
         targetJobID = extendedHdr.getTargetJobID();
         sourceJobID = extendedHdr.getSourceJobID();
     }
 
-    /**
-     * Gets the underlying data that represents this client message.
-     */
+    @Override
+    public boolean isProto() {
+        return false;
+    }
+
+    @Override
+    public EMsg getMsgType() {
+        return msgType;
+    }
+
+    @Override
+    public long getTargetJobID() {
+        return targetJobID;
+    }
+
+    @Override
+    public long getSourceJobID() {
+        return sourceJobID;
+    }
+
     @Override
     public byte[] getData() {
         return payload;
-    }
-
-    /**
-     * Gets the network message type of this packet message.
-     */
-    public EMsg getMsgType() {
-        return this.msgType;
-    }
-
-    /**
-     * Gets the target job id for this packet message.
-     */
-    public long getTargetJobID() {
-        return this.targetJobID;
-    }
-
-    /**
-     * Gets the source job id for this packet message.
-     */
-    public long getSourceJobID() {
-        return this.sourceJobID;
     }
 }

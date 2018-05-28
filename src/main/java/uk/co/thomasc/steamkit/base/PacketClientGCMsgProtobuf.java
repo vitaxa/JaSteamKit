@@ -1,6 +1,5 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.gc.IPacketGCMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgGCHdrProtoBuf;
 import uk.co.thomasc.steamkit.types.JobID;
 
@@ -42,8 +41,8 @@ public class PacketClientGCMsgProtobuf implements IPacketGCMsg {
         } catch (IOException ignored) {
         }
 
-        targetJobID = new JobID(protobufHeader.getProto().getJobIdTarget());
-        sourceJobID = new JobID(protobufHeader.getProto().getJobIdSource());
+        targetJobID = new JobID(protobufHeader.getProto().getJobidTarget());
+        sourceJobID = new JobID(protobufHeader.getProto().getJobidSource());
     }
 
     @Override

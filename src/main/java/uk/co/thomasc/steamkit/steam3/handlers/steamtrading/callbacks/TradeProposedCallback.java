@@ -21,7 +21,7 @@ public final class TradeProposedCallback extends CallbackMsg {
      */
     private final String otherName;
 
-    public TradeProposedCallback(CMsgTrading_InitiateTradeRequest msg) {
+    public TradeProposedCallback(CMsgTrading_InitiateTradeRequest.Builder msg) {
         tradeID = msg.getTradeRequestId();
         otherClient = new SteamID(msg.getOtherSteamid());
         otherName = msg.getOtherName();

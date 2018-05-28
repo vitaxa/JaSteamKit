@@ -1,152 +1,151 @@
 package uk.co.thomasc.steamkit.base;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.ISteamSerializableMessage;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgHdr;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.MemoryStream;
 import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgHdr> {
-    /**
-     * Gets a value indicating whether this client message is protobuf backed.
-     */
-    @Override
-    public boolean isProto() {
-        return false;
-    }
+/**
+ * Represents a struct backed message without session or client info.
+ */
+public class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgHdr> {
 
-    /**
-     * Gets the network message type of this client message.
-     */
-    @Override
-    public EMsg getMsgType() {
-        return getHeader().getMsg();
-    }
-
-    /**
-     * Gets the session id for this client message.
-     */
-    @Override
-    public int getSessionID() {
-        return sessionID;
-    }
-
-    /**
-     * Sets the session id for this client message.
-     */
-    @Override
-    public void setSessionID(int sessionID) {
-        this.sessionID = sessionID;
-    }
-
-    /**
-     * Gets the {@link SteamID} for this client message.
-     */
-    @Override
-    public SteamID getSteamID() {
-        return steamID;
-    }
-
-    /**
-     * Sets the {@link SteamID} for this client message.
-     */
-    @Override
-    public void setSteamID(SteamID steamID) {
-        this.steamID = steamID;
-    }
-
-    /**
-     * Gets or sets the target job id for this client message.
-     */
-    @Override
-    public JobID getTargetJobID() {
-        return targetJobID;
-    }
-
-    /**
-     * Sets the target job id for this client message.
-     */
-    @Override
-    public void setTargetJobID(JobID jobID) {
-        targetJobID = jobID;
-    }
-
-    /**
-     * Gets or sets the target job id for this client message.
-     */
-    @Override
-    public JobID getSourceJobID() {
-        return sourceJobID;
-    }
-
-    /**
-     * Sets the target job id for this client message.
-     */
-    @Override
-    public void setSourceJobID(JobID jobID) {
-        sourceJobID = jobID;
-    }
-
-    /**
-     * The structure body of the message.
-     */
     private T body;
 
-    public Msg(Class<T> clazz) {
-        this(clazz, 0);
+    /**
+     * Initializes a new instance of the {@link Msg} class.
+     *
+     * @param bodyType body type
+     */
+    public Msg(Class<? extends T> bodyType) {
+        this(bodyType, 0);
     }
 
     /**
-     * Initializes a new instance of the {@link Msg} class. This is a client
-     * send constructor.
+     * Initializes a new instance of the {@link Msg} class.
      *
+     * @param bodyType       body type
      * @param payloadReserve The number of bytes to initialize the payload capacity to.
      */
-    public Msg(Class<T> clazz, int payloadReserve) {
+    public Msg(Class<? extends T> bodyType, int payloadReserve) {
         super(MsgHdr.class, payloadReserve);
+
         try {
-            body = clazz.newInstance();
-        } catch (final InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
+            body = bodyType.newInstance();
+        } catch (InstantiationException | IllegalAccessException e) {
+            DebugLog.printStackTrace("Msg", e);
         }
-        // assign our emsg
-        getHeader().setMsg(body.getEMsg());
+
+        getHeader().setEMsg(body.getEMsg());
     }
 
     /**
-     * Initializes a new instance of the {@link Msg} class. This a reply
-     * constructor.
+     * Initializes a new instance of the {@link Msg} class.
+     * This a reply constructor.
      *
+     * @param bodyType body type
+     * @param msg      The message that this instance is a reply for.
+     */
+    public Msg(Class<? extends T> bodyType, MsgBase<MsgHdr> msg) {
+        this(bodyType, msg, 0);
+    }
+
+    /**
+     * Initializes a new instance of the {@link Msg} class.
+     * This a reply constructor.
+     *
+     * @param bodyType       body type
      * @param msg            The message that this instance is a reply for.
      * @param payloadReserve The number of bytes to initialize the payload capacity to.
      */
-    public Msg(MsgBase<MsgHdr> msg, Class<T> clazz, int payloadReserve) {
-        this(clazz, payloadReserve);
+    public Msg(Class<? extends T> bodyType, MsgBase<MsgHdr> msg, int payloadReserve) {
+        this(bodyType, payloadReserve);
+
+        if (msg == null) {
+            throw new IllegalArgumentException("msg is null");
+        }
+
         // our target is where the message came from
         getHeader().setTargetJobID(msg.getHeader().getSourceJobID());
     }
 
     /**
-     * Initializes a new instance of the {@link Msg} class. This is a recieve
-     * constructor.
+     * Initializes a new instance of the {@link Msg} class.
+     * This a receive constructor.
      *
-     * @param msg The packet message to build this client message from.
+     * @param bodyType body type
+     * @param msg      The packet message to build this client message from.
      */
-    public Msg(IPacketMsg msg, Class<T> clazz) {
-        this(clazz);
+    public Msg(Class<? extends T> bodyType, IPacketMsg msg) {
+        this(bodyType);
+
+        if (msg == null) {
+            throw new IllegalArgumentException("msg is null");
+        }
+
         deserialize(msg.getData());
     }
 
-    /**
-     * serializes this client message instance to a byte array.
-     *
-     * @throws IOException
-     */
+    @Override
+    public boolean isProto() {
+        return false;
+    }
+
+    @Override
+    public EMsg getMsgType() {
+        return getHeader().getMsg();
+    }
+
+    @Override
+    public int getSessionID() {
+        return 0;
+    }
+
+    @Override
+    public void setSessionID(int sessionID) {
+    }
+
+    @Override
+    public SteamID getSteamID() {
+        return null;
+    }
+
+    @Override
+    public void setSteamID(SteamID steamID) {
+    }
+
+    @Override
+    public JobID getTargetJobID() {
+        return new JobID(getHeader().getTargetJobID());
+    }
+
+    @Override
+    public void setTargetJobID(JobID jobID) {
+        if (jobID == null) {
+            throw new IllegalArgumentException("jobID is null");
+        }
+        getHeader().setTargetJobID(jobID.getValue());
+    }
+
+    @Override
+    public JobID getSourceJobID() {
+        return new JobID(getHeader().getSourceJobID());
+    }
+
+    @Override
+    public void setSourceJobID(JobID jobID) {
+        if (jobID == null) {
+            throw new IllegalArgumentException("jobID is null");
+        }
+        getHeader().setSourceJobID(jobID.getValue());
+    }
+
     @Override
     public byte[] serialize() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream(0);
@@ -155,16 +154,11 @@ public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgH
             body.serialize(baos);
             baos.write(payload.toByteArray());
         } catch (IOException e) {
-            e.printStackTrace();
+            DebugLog.printStackTrace("Msg", e);
         }
         return baos.toByteArray();
     }
 
-    /**
-     * Initializes this client message by deserializing the specified data.
-     *
-     * @throws IOException
-     */
     @Override
     public void deserialize(byte[] data) {
         if (data == null) {
@@ -176,24 +170,14 @@ public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgH
             getHeader().deserialize(ms);
             body.deserialize(ms);
         } catch (IOException e) {
-            e.printStackTrace();
+            DebugLog.printStackTrace("Msg", e);
         }
 
         payload.write(data, (int) ms.getPosition(), ms.available());
         payload.seek(0, SeekOrigin.BEGIN);
     }
 
-    public static byte[] copyOfRange(byte[] from, int start, int end) {
-        int length = end - start;
-        byte[] result = new byte[length];
-        System.arraycopy(from, start, result, 0, length);
-        return result;
-    }
-
-    /**
-     * The structure body of the message.
-     */
     public T getBody() {
-        return this.body;
+        return body;
     }
 }

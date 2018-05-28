@@ -30,9 +30,7 @@ public final class BerDecodeException extends Exception {
 
     @Override
     public String getMessage() {
-        final StringBuilder sb = new StringBuilder(super.getMessage());
-        sb.append(String.format(" (Position %d)%s", _position, System.getProperty("line.separator")));
-        return sb.toString();
+        return super.getMessage() + String.format(" (Position %d)%s", _position, System.getProperty("line.separator"));
     }
 
     public int get_position() {

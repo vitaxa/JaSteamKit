@@ -649,7 +649,7 @@ public final class SteamFriends extends ClientMsgHandler {
     }
 
     private void handleIgnoreFriendResponse(IPacketMsg packetMsg) {
-        ClientMsg<MsgClientSetIgnoreFriendResponse> response = new ClientMsg<>(packetMsg, MsgClientSetIgnoreFriendResponse.class);
+        ClientMsg<MsgClientSetIgnoreFriendResponse> response = new ClientMsg<>(MsgClientSetIgnoreFriendResponse.class, packetMsg);
         client.postCallback(new IgnoreFriendCallback(response.getTargetJobID(), response.getBody()));
     }
 

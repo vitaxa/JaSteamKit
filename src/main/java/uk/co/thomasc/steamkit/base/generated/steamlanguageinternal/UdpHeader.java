@@ -1,5 +1,6 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 
+import uk.co.thomasc.steamkit.base.ISteamSerializable;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUdpPacketType;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;

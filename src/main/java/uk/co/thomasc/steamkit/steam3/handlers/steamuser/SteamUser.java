@@ -329,7 +329,7 @@ public class SteamUser extends ClientMsgHandler {
 
             getClient().postCallback(new LoggedOnCallback(logonResp.getBody()));
         } else {
-            ClientMsg<MsgClientLogOnResponse> logonResp = new ClientMsg<>(packetMsg, MsgClientLogOnResponse.class);
+            ClientMsg<MsgClientLogOnResponse> logonResp = new ClientMsg<>(MsgClientLogOnResponse.class, packetMsg);
 
             getClient().postCallback(new LoggedOnCallback(logonResp.getBody()));
         }
@@ -342,12 +342,13 @@ public class SteamUser extends ClientMsgHandler {
             ClientMsgProtobuf<CMsgClientLoggedOff.Builder> loggedOff = new ClientMsgProtobuf<>(CMsgClientLoggedOff.class, packetMsg);
             result = EResult.from(loggedOff.getBody().getEresult());
         } else {
-            ClientMsg<MsgClientLoggedOff> loggedOff = new ClientMsg<>(packetMsg, MsgClientLoggedOff.class);
+            ClientMsg<MsgClientLoggedOff> loggedOff = new ClientMsg<>(MsgClientLoggedOff.class, packetMsg);
             result = loggedOff.getBody().getResult();
         }
 
         getClient().postCallback(new LoggedOffCallback(result));
 
+        // TODO: 2018-02-28 it seems like the socket is not closed after getting logged of or I am doing something horribly wrong, let's disconnect here
         getClient().disconnect();
     }
 
@@ -382,10 +383,10 @@ public class SteamUser extends ClientMsgHandler {
     }
 
     private void handleMarketingMessageUpdate(IPacketMsg packetMsg) {
-        ClientMsg<MsgClientMarketingMessageUpdate2> marketingMessage = new ClientMsg<>(packetMsg, MsgClientMarketingMessageUpdate2.class);
+        ClientMsg<MsgClientMarketingMessageUpdate2> marketingMessage = new ClientMsg<>(MsgClientMarketingMessageUpdate2.class, packetMsg);
 
         byte[] payload = marketingMessage.getPayload().toByteArray();
 
-        getClient().postCallback(new MarketingMessageCallback(marketingMessage.getBody(), payload));
+        client.postCallback(new MarketingMessageCallback(marketingMessage.getBody(), payload));
     }
 }

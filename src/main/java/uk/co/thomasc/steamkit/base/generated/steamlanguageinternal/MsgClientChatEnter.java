@@ -1,5 +1,6 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 
+import uk.co.thomasc.steamkit.base.ISteamSerializableMessage;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatRoomEnterResponse;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatRoomType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;

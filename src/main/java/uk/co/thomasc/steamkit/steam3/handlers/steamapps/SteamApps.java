@@ -530,7 +530,7 @@ public class SteamApps extends ClientMsgHandler {
 
     private void handleVACBanStatus(IPacketMsg packetMsg) {
         ClientMsg<MsgClientVACBanStatus> vacStatus =
-                new ClientMsg<>(packetMsg, MsgClientVACBanStatus.class);
+                new ClientMsg<>(MsgClientVACBanStatus.class, packetMsg);
 
         getClient().postCallback(new VACStatusCallback(vacStatus.getBody(), vacStatus.getPayload().toByteArray()));
     }
@@ -558,7 +558,7 @@ public class SteamApps extends ClientMsgHandler {
 
     private void handleGuestPassList(IPacketMsg packetMsg) {
         ClientMsg<MsgClientUpdateGuestPassesList> guestPasses =
-                new ClientMsg<MsgClientUpdateGuestPassesList>(packetMsg, MsgClientUpdateGuestPassesList.class);
+                new ClientMsg<MsgClientUpdateGuestPassesList>(MsgClientUpdateGuestPassesList.class, packetMsg);
 
         getClient().postCallback(new GuestPassListCallback(guestPasses.getBody(), guestPasses.getPayload()));
     }

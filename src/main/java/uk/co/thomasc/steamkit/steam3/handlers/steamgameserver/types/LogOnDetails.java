@@ -3,19 +3,37 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.types;
 /**
  * Represents the details required to log into Steam3 as a game server.
  */
-public final class LogOnDetails {
-    /**
-     * Gets or sets the username.
-     */
-    public String username;
+public class LogOnDetails {
+
+    private String token;
+
+    private int appID;
 
     /**
-     * Gets or sets the password.
+     * @return the authentication token used to log in as a game server
      */
-    public String password;
+    public String getToken() {
+        return token;
+    }
 
     /**
-     * Gets or sets the AppID this gameserver will serve.
+     * @param token the authentication token used to log in as a game server
      */
-    public int appId;
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    /**
+     * @return the AppID this gameserver will serve
+     */
+    public int getAppID() {
+        return appID;
+    }
+
+    /**
+     * @param appID the AppID this gameserver will serve
+     */
+    public void setAppID(int appID) {
+        this.appID = appID;
+    }
 }

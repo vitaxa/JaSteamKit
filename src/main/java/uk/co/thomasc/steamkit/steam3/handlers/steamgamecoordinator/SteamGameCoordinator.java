@@ -2,28 +2,37 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamgamecoordinator;
 
 import com.google.protobuf.ByteString;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
+import uk.co.thomasc.steamkit.base.IClientGCMsg;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.gc.IClientGCMsg;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgGCClient;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamgamecoordinator.callbacks.MessageCallback;
 import uk.co.thomasc.steamkit.util.util.MsgUtil;
 
-import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * This handler handles all game coordinator messaging.
  */
 public final class SteamGameCoordinator extends ClientMsgHandler {
 
-    private final Map<EMsg, Action<IPacketMsg>> dispatchMap;
+    private Map<EMsg, Consumer<IPacketMsg>> dispatchMap;
 
     public SteamGameCoordinator() {
-        this.dispatchMap = new HashMap<>(6);
-        this.dispatchMap.put(EMsg.ClientFromGC, this::handleFromGC);
+        dispatchMap = new HashMap<>();
+
+        dispatchMap.put(EMsg.ClientFromGC, new Consumer<IPacketMsg>() {
+            @Override
+            public void accept(IPacketMsg packetMsg) {
+                handleFromGC(packetMsg);
+            }
+        });
+
+        dispatchMap = Collections.unmodifiableMap(dispatchMap);
     }
 
     /**
@@ -33,43 +42,36 @@ public final class SteamGameCoordinator extends ClientMsgHandler {
      * @param appId The app id of the game coordinator to send to.
      */
     public void send(IClientGCMsg msg, int appId) {
-        final ClientMsgProtobuf<CMsgGCClient.Builder> clientMsg = new ClientMsgProtobuf<CMsgGCClient.Builder>(CMsgGCClient.class, EMsg.ClientToGC);
+        if (msg == null) {
+            throw new IllegalArgumentException("msg is null");
+        }
 
-        clientMsg.getBody().setMsgtype(MsgUtil.makeGCMsg(msg.getMsgType(), msg.isProto()));
+        ClientMsgProtobuf<CMsgGCClient.Builder> clientMsg = new ClientMsgProtobuf<>(CMsgGCClient.class, EMsg.ClientToGC);
+
+        clientMsg.getProtoHeader().setRoutingAppid(appId);
+        clientMsg.getBody().setMsgtype(MsgUtil.makeGCMsg(msg.getMsgType().code(), msg.isProto()));
         clientMsg.getBody().setAppid(appId);
 
-        try {
-            clientMsg.getBody().setPayload(ByteString.copyFrom(msg.serialize()));
+        clientMsg.getBody().setPayload(ByteString.copyFrom(msg.serialize()));
 
-            getClient().send(clientMsg);
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
+        client.send(clientMsg);
     }
 
-    /**
-     * Handles a client message. This should not be called directly.
-     *
-     * @param packetMsg The packet message that contains the data.
-     */
     @Override
     public void handleMsg(IPacketMsg packetMsg) {
-        final Action<IPacketMsg> iPacketMsgAction = dispatchMap.get(packetMsg.getMsgType());
-        boolean haveFunc = dispatchMap.containsKey(packetMsg.getMsgType());
-        if (!haveFunc) {
-            // ignore messages that we don't have a handler function for
-            return;
+        if (packetMsg == null) {
+            throw new IllegalArgumentException("packetMsg is null");
         }
 
-        dispatchMap.get(packetMsg.getMsgType()).handle(packetMsg);
+        Consumer<IPacketMsg> dispatcher = dispatchMap.get(packetMsg.getMsgType());
+        if (dispatcher != null) {
+            dispatcher.accept(packetMsg);
+        }
     }
 
     private void handleFromGC(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgGCClient.Builder> msg = new ClientMsgProtobuf<>(CMsgGCClient.class, packetMsg);
-        getClient().postCallback(new MessageCallback(msg.getBody()));
-    }
+        ClientMsgProtobuf<CMsgGCClient.Builder> msg = new ClientMsgProtobuf<>(CMsgGCClient.class, packetMsg);
 
-    private interface Action<T> {
-        public void handle(T msg);
+        client.postCallback(new MessageCallback(msg.getBody()));
     }
 }

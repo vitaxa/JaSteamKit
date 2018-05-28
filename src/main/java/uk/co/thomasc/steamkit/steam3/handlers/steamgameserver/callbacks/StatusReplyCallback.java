@@ -12,7 +12,7 @@ public final class StatusReplyCallback extends CallbackMsg {
      */
     private final boolean isSecure;
 
-    public StatusReplyCallback(CMsgGSStatusReply reply) {
+    public StatusReplyCallback(CMsgGSStatusReply.Builder reply) {
         isSecure = reply.getIsSecure();
     }
 

@@ -1,5 +1,6 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 
+import uk.co.thomasc.steamkit.base.ISteamSerializableMessage;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EClanRank;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EClanRelationship;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;

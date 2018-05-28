@@ -19,7 +19,6 @@ import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.DisconnectedCallback;
 import uk.co.thomasc.steamkit.steam3.steamclient.configuration.SteamConfiguration;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 import uk.co.thomasc.steamkit.util.ScheduledFunction;
-import uk.co.thomasc.steamkit.util.cSharp.events.Action;
 import uk.co.thomasc.steamkit.util.cSharp.events.EventArgs;
 import uk.co.thomasc.steamkit.util.cSharp.events.EventHandler;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
@@ -113,12 +112,9 @@ public abstract class CMClient {
         this.configuration = configuration;
         this.serverMap = new HashMap<>();
 
-        heartBeatFunc = new ScheduledFunction(new Action() {
-            @Override
-            public void call() {
-                send(new ClientMsgProtobuf<CMsgClientHeartBeat.Builder>(CMsgClientHeartBeat.class, EMsg.ClientHeartBeat));
-            }
-        }, 5000);
+        this.heartBeatFunc = new ScheduledFunction(() -> {
+            send(new ClientMsgProtobuf<CMsgClientHeartBeat.Builder>(CMsgClientHeartBeat.class, EMsg.ClientHeartBeat));
+        });
     }
 
     /**

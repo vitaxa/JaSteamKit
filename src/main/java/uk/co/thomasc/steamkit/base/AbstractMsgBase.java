@@ -12,6 +12,7 @@ import java.nio.charset.Charset;
  * This class provides a payload backing to client messages.
  */
 public abstract class AbstractMsgBase {
+
     protected MemoryStream payload;
 
     private final BinaryReader reader;
@@ -37,6 +38,13 @@ public abstract class AbstractMsgBase {
         writer = new BinaryWriter(payload.asOutputStream());
     }
 
+    /**
+     * Seeks within the payload to the specified offset.
+     *
+     * @param offset     The offset in the payload to seek to.
+     * @param seekOrigin The origin to seek from.
+     * @return The new position within the stream, calculated by combining the initial reference point and the offset.
+     */
     public long seek(long offset, SeekOrigin seekOrigin) {
         return payload.seek(offset, seekOrigin);
     }
@@ -123,7 +131,11 @@ public abstract class AbstractMsgBase {
     }
 
     public String readNullTermString() throws IOException {
-        return reader.readNullTermString();
+        return readNullTermString(Charset.defaultCharset());
+    }
+
+    public String readNullTermString(Charset charset) throws IOException {
+        return reader.readNullTermString(charset);
     }
 
     public MemoryStream getPayload() {

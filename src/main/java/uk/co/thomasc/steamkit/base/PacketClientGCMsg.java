@@ -1,6 +1,5 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.gc.IPacketGCMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgGCHdr;
 import uk.co.thomasc.steamkit.types.JobID;
 
@@ -10,29 +9,15 @@ import java.io.IOException;
 /**
  * Represents a packet message with extended header information.
  */
-public final class PacketClientGCMsg implements IPacketGCMsg {
-    /**
-     * Gets a value indicating whether this packet message is protobuf backed.
-     * This type of message is never protobuf backed.
-     */
-    @Override
-    public boolean isProto() {
-        return false;
-    }
+public class PacketClientGCMsg implements IPacketGCMsg {
 
-    /**
-     * Gets the network message type of this packet message.
-     */
-    private final int msgType;
-    /**
-     * Gets the target job id for this packet message.
-     */
+    private int msgType;
+
     private JobID targetJobID;
-    /**
-     * Gets the source job id for this packet message.
-     */
+
     private JobID sourceJobID;
-    byte[] payload;
+
+    private byte[] payload;
 
     /**
      * Initializes a new instance of the {@link PacketClientGCMsg} class.
@@ -60,48 +45,28 @@ public final class PacketClientGCMsg implements IPacketGCMsg {
         sourceJobID = new JobID(gcHdr.getSourceJobID());
     }
 
-    /**
-     * Gets the underlying data that represents this packet message.
-     *
-     * @return The data.
-     */
+    @Override
+    public boolean isProto() {
+        return false;
+    }
+
+    @Override
+    public int msgType() {
+        return msgType;
+    }
+
+    @Override
+    public JobID getTargetJobID() {
+        return targetJobID;
+    }
+
+    @Override
+    public JobID getSourceJobID() {
+        return sourceJobID;
+    }
+
     @Override
     public byte[] getData() {
         return payload;
-    }
-
-    /**
-     * Gets the network message type of this packet message.
-     */
-    public int msgType() {
-        return this.msgType;
-    }
-
-    /**
-     * Gets the target job id for this packet message.
-     */
-    public JobID getTargetJobID() {
-        return this.targetJobID;
-    }
-
-    /**
-     * Gets the target job id for this packet message.
-     */
-    public void setTargetJobID(final JobID targetJobID) {
-        this.targetJobID = targetJobID;
-    }
-
-    /**
-     * Gets the source job id for this packet message.
-     */
-    public JobID getSourceJobID() {
-        return this.sourceJobID;
-    }
-
-    /**
-     * Gets the source job id for this packet message.
-     */
-    public void setSourceJobID(final JobID sourceJobID) {
-        this.sourceJobID = sourceJobID;
     }
 }
