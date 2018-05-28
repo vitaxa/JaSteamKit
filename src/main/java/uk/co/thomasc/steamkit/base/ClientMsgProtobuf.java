@@ -68,7 +68,7 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
      */
     @Override
     public void setSteamID(SteamID steamID) {
-        getProtoHeader().setSteamid(steamID.convertToLong());
+        getProtoHeader().setSteamid(steamID.convertToUInt64());
     }
 
     /**
@@ -159,7 +159,7 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
     public ClientMsgProtobuf(Class<? extends AbstractMessage> clazz, EMsg eMsg, MsgBase<MsgHdrProtoBuf> msg, int payloadReserve) {
         this(clazz, eMsg, payloadReserve);
         // our target is where the message came from
-        getHeader().getProto().setJobIdTarget(msg.getHeader().getProto().getJobIdSource());
+        getHeader().getProto().setJobidTarget(msg.getHeader().getProto().getJobidSource());
     }
 
     /**
@@ -172,11 +172,7 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
 
         Debug.Assert(msg.isProto(), "ClientMsgProtobuf used for non-proto message!");
 
-        try {
-            deSerialize(msg.getData());
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
+        deserialize(msg.getData());
     }
 
     /**
@@ -184,7 +180,7 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
      * @throws IOException
      */
     @Override
-    public byte[] serialize() throws IOException {
+    public byte[] serialize() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream(0);
 
         try {
@@ -203,7 +199,7 @@ public final class ClientMsgProtobuf<U extends GeneratedMessageV3.Builder<U>> ex
      */
     @SuppressWarnings("unchecked")
     @Override
-    public void deSerialize(byte[] data) throws IOException {
+    public void deserialize(byte[] data) {
         if (data == null) {
             throw new IllegalArgumentException("data is null");
         }

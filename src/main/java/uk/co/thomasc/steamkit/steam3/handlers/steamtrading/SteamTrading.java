@@ -27,7 +27,7 @@ public final class SteamTrading extends ClientMsgHandler {
     public void trade(SteamID user) {
         final ClientMsgProtobuf<CMsgTrading_InitiateTradeRequest.Builder> tradeReq = new ClientMsgProtobuf<CMsgTrading_InitiateTradeRequest.Builder>(CMsgTrading_InitiateTradeRequest.class, EMsg.EconTrading_InitiateTradeRequest);
 
-        tradeReq.getBody().setOtherSteamid(user.convertToLong());
+        tradeReq.getBody().setOtherSteamid(user.convertToUInt64());
 
         getClient().send(tradeReq);
     }
@@ -58,7 +58,7 @@ public final class SteamTrading extends ClientMsgHandler {
     public void cancelTrade(SteamID user) {
         final ClientMsgProtobuf<CMsgTrading_CancelTradeRequest.Builder> cancelTrade = new ClientMsgProtobuf<CMsgTrading_CancelTradeRequest.Builder>(CMsgTrading_CancelTradeRequest.class, EMsg.EconTrading_CancelTradeRequest);
 
-        cancelTrade.getBody().setOtherSteamid(user.convertToLong());
+        cancelTrade.getBody().setOtherSteamid(user.convertToUInt64());
 
         getClient().send(cancelTrade);
     }

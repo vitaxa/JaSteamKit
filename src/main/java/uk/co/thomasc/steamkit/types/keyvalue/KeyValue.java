@@ -52,6 +52,14 @@ public class KeyValue {
      */
     private List<KeyValue> children;
 
+    public String getName() {
+        return name;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
     /**
      * Gets the child {@link KeyValue} with the specified key. If no child with
      * this key exists, {@link #Invalid} is returned.

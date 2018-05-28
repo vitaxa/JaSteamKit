@@ -25,7 +25,7 @@ public class MsgClientJoinChat implements ISteamSerializableMessage {
     }
 
     public void setSteamIdChat(SteamID steamId) {
-        this.steamIdChat = steamId.convertToLong();
+        this.steamIdChat = steamId.convertToUInt64();
     }
 
     public boolean getIsVoiceSpeaker() {
@@ -40,8 +40,8 @@ public class MsgClientJoinChat implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamIdChat);
-        bw.write(isVoiceSpeaker);
+        bw.writeLong(steamIdChat);
+        bw.writeBoolean(isVoiceSpeaker);
     }
 
     @Override

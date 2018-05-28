@@ -21,9 +21,9 @@ public final class WalletInfoCallback extends CallbackMsg {
      */
     private final int balance;
 
-    public WalletInfoCallback(CMsgClientWalletInfoUpdate wallet) {
+    public WalletInfoCallback(CMsgClientWalletInfoUpdate.Builder wallet) {
         hasWallet = wallet.getHasWallet();
-        currency = ECurrencyCode.f(wallet.getCurrency());
+        currency = ECurrencyCode.from(wallet.getCurrency());
         balance = wallet.getBalance();
     }
 

@@ -3,13 +3,13 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamgameserver;
 import com.google.protobuf.ByteString;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLogOff;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLogon;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientTicketAuthComplete;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgGSStatusReply;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.msg.MsgClientLogon;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientLogon;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.callbacks.StatusReplyCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.callbacks.TicketAuthCallback;
@@ -31,8 +31,7 @@ public final class SteamGameServer extends ClientMsgHandler {
      * should already have been connected at this point. Results are return in a
      * {@link LoggedOnCallback}.
      *
-     * @param details
-     *            The details to use for logging on.
+     * @param details The details to use for logging on.
      */
     public void logOn(LogOnDetails details, String machineID) {
         if (details == null) {
@@ -45,17 +44,17 @@ public final class SteamGameServer extends ClientMsgHandler {
 
         final ClientMsgProtobuf<CMsgClientLogon.Builder> logon = new ClientMsgProtobuf<CMsgClientLogon.Builder>(CMsgClientLogon.class, EMsg.ClientLogon);
 
-        final SteamID gsId = new SteamID(0, 0, getClient().getConnectedUniverse(), EAccountType.GameServer);
+        final SteamID gsId = new SteamID(0, 0, getClient().getUniverse(), EAccountType.GameServer);
 
         logon.getProtoHeader().setClientSessionid(0);
-        logon.getProtoHeader().setSteamid(gsId.convertToLong());
+        logon.getProtoHeader().setSteamid(gsId.convertToUInt64());
 
         final int localIp = (int) NetHelpers.getIPAddress(getClient().getLocalIP());
         logon.getBody().setObfustucatedPrivateIp(localIp ^ MsgClientLogon.ObfuscationMask);
 
         logon.getBody().setProtocolVersion(MsgClientLogon.CurrentProtocol);
 
-        logon.getBody().setClientOsType(Utils.getOSType().v());
+        logon.getBody().setClientOsType(Utils.getOSType().code());
         logon.getBody().setGameServerAppId(details.appId);
         logon.getBody().setMachineId(ByteString.copyFrom(machineID.getBytes()));
 
@@ -70,23 +69,22 @@ public final class SteamGameServer extends ClientMsgHandler {
      * client should already have been connected at this point. Results are
      * returned in a {@link LoggedOnCallback}.
      *
-     * @param appId
-     *            The AppID served by this game server, or 0 for the default.
+     * @param appId The AppID served by this game server, or 0 for the default.
      */
     public void logOnAnonymous(int appId, String machineID) {
         final ClientMsgProtobuf<CMsgClientLogon.Builder> logon = new ClientMsgProtobuf<CMsgClientLogon.Builder>(CMsgClientLogon.class, EMsg.ClientLogon);
 
-        final SteamID gsId = new SteamID(0, 0, getClient().getConnectedUniverse(), EAccountType.AnonGameServer);
+        final SteamID gsId = new SteamID(0, 0, getClient().getUniverse(), EAccountType.AnonGameServer);
 
         logon.getProtoHeader().setClientSessionid(0);
-        logon.getProtoHeader().setSteamid(gsId.convertToLong());
+        logon.getProtoHeader().setSteamid(gsId.convertToUInt64());
 
         final int localIp = (int) NetHelpers.getIPAddress(getClient().getLocalIP());
         logon.getBody().setObfustucatedPrivateIp(localIp ^ MsgClientLogon.ObfuscationMask);
 
         logon.getBody().setProtocolVersion(MsgClientLogon.CurrentProtocol);
 
-        logon.getBody().setClientOsType(Utils.getOSType().v());
+        logon.getBody().setClientOsType(Utils.getOSType().code());
         logon.getBody().setGameServerAppId(appId);
         logon.getBody().setMachineId(ByteString.copyFrom(machineID.getBytes()));
 
@@ -113,12 +111,12 @@ public final class SteamGameServer extends ClientMsgHandler {
     @Override
     public void handleMsg(IPacketMsg packetMsg) {
         switch (packetMsg.getMsgType()) {
-        case GSStatusReply:
-            handleStatusReply(packetMsg);
-            break;
-        case ClientTicketAuthComplete:
-            handleAuthComplete(packetMsg);
-            break;
+            case GSStatusReply:
+                handleStatusReply(packetMsg);
+                break;
+            case ClientTicketAuthComplete:
+                handleAuthComplete(packetMsg);
+                break;
         }
     }
 

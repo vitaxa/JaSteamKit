@@ -1,21 +1,12 @@
 package uk.co.thomasc.steamkit.networking.steam3;
 
-import uk.co.thomasc.steamkit.base.IClientMsg;
 import uk.co.thomasc.steamkit.util.cSharp.events.Event;
 import uk.co.thomasc.steamkit.util.cSharp.events.EventArgs;
-import uk.co.thomasc.steamkit.util.cSharp.events.EventArgsGeneric;
-import uk.co.thomasc.steamkit.util.cSharp.events.GenericEvent;
-import uk.co.thomasc.steamkit.util.cSharp.ip.IPEndPoint;
 
-import java.io.IOException;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 
 public abstract class Connection {
-    /**
-     * The net filter.
-     */
-    protected NetFilterEncryption netFilter;
-
     /**
      * Occurs when a net message is recieved over the network.
      */
@@ -37,7 +28,7 @@ public abstract class Connection {
     /**
      * Occurs when the physical connection is established.
      */
-    public GenericEvent connected = new GenericEvent();
+    Event<EventArgs> connected = new Event<>();
 
     protected void onConnected(EventArgs e) {
         if (connected != null) {
@@ -48,11 +39,11 @@ public abstract class Connection {
     /**
      * Occurs when the physical connection is broken.
      */
-    public Event<EventArgsGeneric<Boolean>> disconnected = new Event<EventArgsGeneric<Boolean>>();
+    Event<DisconnectedEventArgs> disconnected = new Event<>();
 
     protected void onDisconnected(boolean e) {
         if (disconnected != null) {
-            disconnected.handleEvent(this, new EventArgsGeneric<Boolean>(e));
+            disconnected.handleEvent(this, new DisconnectedEventArgs(e));
         }
     }
 
@@ -62,7 +53,16 @@ public abstract class Connection {
      * @param endPoint
      *            The end point.
      */
-    public abstract void connect(IPEndPoint endPoint);
+    public abstract void connect(InetSocketAddress endPoint, int timeout);
+
+    /**
+     * Connects to the specified end point.
+     *
+     * @param endPoint The end point to connect to.
+     */
+    public final void connect(InetSocketAddress endPoint) {
+        connect(endPoint, 5000);
+    }
 
     /**
      * Disconnects this instance.
@@ -70,13 +70,11 @@ public abstract class Connection {
     public abstract void disconnect();
 
     /**
-     * Sends the specified client net message.
+     * Sends the specified data packet.
      *
-     * @param clientMsg
-     *            The client net message.
-     * @throws IOException
+     * @param data The data packet to send.
      */
-    public abstract void send(IClientMsg clientMsg) throws IOException;
+    public abstract void send(byte[] data);
 
     /**
      * Gets the local IP.
@@ -85,17 +83,19 @@ public abstract class Connection {
      */
     public abstract InetAddress getLocalIP();
 
-    public abstract IPEndPoint currentIpEndPoint();
-
-    public NetFilterEncryption getNetFilter() {
-        return netFilter;
-    }
-
-    public void setNetFilter(NetFilterEncryption netFilter) {
-        this.netFilter = netFilter;
-    }
+    public abstract InetSocketAddress currentIpEndPoint();
 
     public Event<NetMsgEventArgs> getNetMsgReceived() {
         return netMsgReceived;
+    }
+
+    public abstract ProtocolType getProtocolType();
+
+    public Event<EventArgs> getConnected() {
+        return connected;
+    }
+
+    public Event<DisconnectedEventArgs> getDisconnected() {
+        return disconnected;
     }
 }

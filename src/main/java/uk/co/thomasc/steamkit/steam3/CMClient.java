@@ -3,43 +3,37 @@ package uk.co.thomasc.steamkit.steam3;
 import uk.co.thomasc.steamkit.base.*;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgMulti;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList.Server;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientSessionToken;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EServerType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptRequest;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptResponse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptResult;
-import uk.co.thomasc.steamkit.networking.steam3.Connection;
-import uk.co.thomasc.steamkit.networking.steam3.NetFilterEncryption;
-import uk.co.thomasc.steamkit.networking.steam3.TcpConnection;
-import uk.co.thomasc.steamkit.networking.steam3.UdpConnection;
+import uk.co.thomasc.steamkit.networking.steam3.*;
+import uk.co.thomasc.steamkit.steam3.discovery.ServerInfo;
 import uk.co.thomasc.steamkit.steam3.discovery.ServerQuality;
+import uk.co.thomasc.steamkit.steam3.discovery.ServerRecord;
 import uk.co.thomasc.steamkit.steam3.discovery.SmartCMServerList;
-import uk.co.thomasc.steamkit.steam3.discovery.provider.SteamDirectoryProvider;
 import uk.co.thomasc.steamkit.steam3.steamclient.SteamClient;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.ConnectedCallback;
+import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.DisconnectedCallback;
+import uk.co.thomasc.steamkit.steam3.steamclient.configuration.SteamConfiguration;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
-import uk.co.thomasc.steamkit.util.KeyDictionary;
 import uk.co.thomasc.steamkit.util.ScheduledFunction;
-import uk.co.thomasc.steamkit.util.ZipUtil;
-import uk.co.thomasc.steamkit.util.cSharp.ip.IPEndPoint;
-import uk.co.thomasc.steamkit.util.cSharp.ip.ProtocolType;
-import uk.co.thomasc.steamkit.util.crypto.CryptoHelper;
-import uk.co.thomasc.steamkit.util.crypto.RSACrypto;
+import uk.co.thomasc.steamkit.util.cSharp.events.Action;
+import uk.co.thomasc.steamkit.util.cSharp.events.EventArgs;
+import uk.co.thomasc.steamkit.util.cSharp.events.EventHandler;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.util.MsgUtil;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.InetAddress;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.net.InetSocketAddress;
+import java.util.*;
+import java.util.zip.GZIPInputStream;
 
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
 
@@ -48,145 +42,176 @@ import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLog
  * should not be use directly, but through the {@link SteamClient} class.
  */
 public abstract class CMClient {
-    /**
-     * The universe.
-     */
-    private EUniverse connectedUniverse;
-    /**
-     * The session ID.
-     */
-    private Integer sessionId;
-    /**
-     * The SteamID.
-     */
-    private SteamID steamId;
+    private SteamConfiguration configuration;
+
+    private boolean isConnected;
+
+    private long sessionToken;
+
+    private Integer cellID;
+
+    private Integer sessionID;
+
+    private SteamID steamID;
+
+    private boolean expectDisconnection;
+
+    // connection lock around the setup and tear down of the connection task
+    private final Object connectionLock = new Object();
+
     private Connection connection;
-    private byte[] tempSessionKey;
-    private boolean encrypted;
+
     private ScheduledFunction heartBeatFunc;
-    private Map<EServerType, List<IPEndPoint>> serverMap;
 
-    private SmartCMServerList serverList;
+    private Map<EServerType, Set<InetSocketAddress>> serverMap;
 
-    public CMClient() {
-        this(ProtocolType.Tcp);
-    }
-
-    /**
-     * Initializes a new instance of the {@link CMClient} class with a specific
-     * connection type.
-     *
-     * @param type The connection type to use.
-     * @throws UnsupportedOperationException The provided {@link ProtocolType} is not supported. Only Tcp
-     *                                       and Udp are available.
-     */
-    public CMClient(ProtocolType type) {
-        this.serverList = new SmartCMServerList(new SteamDirectoryProvider());
-        this.serverMap = new HashMap<EServerType, List<IPEndPoint>>();
-        switch (type) {
-            case Tcp:
-                connection = new TcpConnection();
-                break;
-
-            case Udp:
-                connection = new UdpConnection();
-                break;
-
-            default:
-                throw new UnsupportedOperationException("The provided protocol type is not supported. Only Tcp and Udp are available.");
+    private final EventHandler<NetMsgEventArgs> netMsgReceived = new EventHandler<NetMsgEventArgs>() {
+        @Override
+        public void handleEvent(Object sender, NetMsgEventArgs e) {
+            onClientMsgReceived(getPacketMsg(e.getData()));
         }
-        this.connection.getNetMsgReceived().addEventHandler((sender, e) -> {
-            try {
-                onClientMsgReceived(getPacketMsg(e.getData()));
-            } catch (final IOException ex) {
-                ex.printStackTrace();
-            }
-        });
-        this.connection.disconnected.addEventHandler((sender, e) -> {
-            connectedUniverse = EUniverse.Invalid;
-            heartBeatFunc.stop();
-            connection.setNetFilter(null);
-            onClientDisconnected(e.getValue());
-        });
-        this.connection.connected.addEventHandler((sender, e) -> {
-            // If we're on an encrypted connection, we wait for the handshake to complete
-            if (encrypted) {
-                return;
-            }
-            // we only connect to the public universe
-            connectedUniverse = EUniverse.Public;
-            // since there is no encryption handshake, we're 'connected' after the underlying connection is established
-            onClientConnected();
-        });
-        this.heartBeatFunc = new ScheduledFunction(() -> {
-            send(new ClientMsgProtobuf<CMsgClientHeartBeat.Builder>(CMsgClientHeartBeat.class, EMsg.ClientHeartBeat));
-        });
-    }
+    };
 
-    public void connect() {
-        connect(true);
+    private final EventHandler<EventArgs> connected = new EventHandler<EventArgs>() {
+        @Override
+        public void handleEvent(Object sender, EventArgs e) {
+            getServers().tryMark(connection.currentIpEndPoint(), connection.getProtocolType(), ServerQuality.GOOD);
+
+            isConnected = true;
+            onClientConnected();
+        }
+    };
+
+    private final EventHandler<DisconnectedEventArgs> disconnected = new EventHandler<DisconnectedEventArgs>() {
+        @Override
+        public void handleEvent(Object sender, DisconnectedEventArgs e) {
+            isConnected = false;
+
+            if (!e.isUserInitiated() && !expectDisconnection) {
+                getServers().tryMark(connection.currentIpEndPoint(), connection.getProtocolType(), ServerQuality.BAD);
+            }
+
+            sessionID = null;
+            steamID = null;
+
+            connection.getNetMsgReceived().removeEventHandler(netMsgReceived);
+            connection.getConnected().removeEventHandler(connected);
+            connection.getDisconnected().removeEventHandler(this);
+            connection = null;
+
+            heartBeatFunc.stop();
+
+            onClientDisconnected(e.isUserInitiated() || expectDisconnection);
+        }
+    };
+
+    public CMClient(SteamConfiguration configuration) {
+        if (configuration == null) {
+            throw new IllegalArgumentException("configuration is null");
+        }
+
+        this.configuration = configuration;
+        this.serverMap = new HashMap<>();
+
+        heartBeatFunc = new ScheduledFunction(new Action() {
+            @Override
+            public void call() {
+                send(new ClientMsgProtobuf<CMsgClientHeartBeat.Builder>(CMsgClientHeartBeat.class, EMsg.ClientHeartBeat));
+            }
+        }, 5000);
     }
 
     /**
-     * Connects this client to a Steam3 server. This begins the process of
-     * connecting and encrypting the data channel between the client and the
-     * server. Results are returned in a {@link ConnectedCallback}
-     *
-     * @param bEncrypted If set to true the underlying connection to Steam will be
-     *                   encrypted. This is the default mode of communication. Previous
-     *                   versions of SteamKit always used encryption.
+     * Connects this client to a Steam3 server. This begins the process of connecting and encrypting the data channel
+     * between the client and the server. Results are returned asynchronously in a {@link ConnectedCallback ConnectedCallback}. If the
+     * server that SteamKit attempts to connect to is down, a {@link DisconnectedCallback DisconnectedCallback} will be posted instead.
+     * SteamKit will not attempt to reconnect to Steam, you must handle this callback and call Connect again preferably
+     * after a short delay. SteamKit will randomly select a CM server from its internal list.
      */
-    public void connect(boolean bEncrypted) {
-        disconnect();
-        encrypted = bEncrypted;
-        final IPEndPoint server = serverList.getNextServerCandidate();
-        connection.connect(server);
+    public void connect() {
+        connect(null);
+    }
+
+    /**
+     * Connects this client to a Steam3 server. This begins the process of connecting and encrypting the data channel
+     * between the client and the server. Results are returned asynchronously in a {@link ConnectedCallback ConnectedCallback}. If the
+     * server that SteamKit attempts to connect to is down, a {@link DisconnectedCallback DisconnectedCallback} will be posted instead.
+     * SteamKit will not attempt to reconnect to Steam, you must handle this callback and call Connect again preferably
+     * after a short delay.
+     *
+     * @param cmServer The {@link ServerInfo} of the CM server to connect to.
+     */
+    public void connect(ServerRecord cmServer) {
+        synchronized (connectionLock) {
+            try {
+                disconnect();
+
+                assert connection != null;
+
+                expectDisconnection = false;
+
+                if (cmServer == null) {
+                    cmServer = getServers().getNextServerCandidate(configuration.getProtocolTypes());
+                }
+
+                connection = createConnection(configuration.getProtocolTypes());
+                connection.getNetMsgReceived().addEventHandler(netMsgReceived);
+                connection.getConnected().addEventHandler(connected);
+                connection.getDisconnected().addEventHandler(disconnected);
+                connection.connect(cmServer.getEndpoint());
+            } catch (Exception e) {
+                DebugLog.writeLine("CMClient", "Failed to connect to Steam network: %s", e);
+                onClientDisconnected(false);
+            }
+        }
     }
 
     /**
      * Disconnects this client.
      */
     public void disconnect() {
-        heartBeatFunc.stop();
-        connection.disconnect();
+        synchronized (connectionLock) {
+            heartBeatFunc.stop();
+
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
     }
 
     /**
-     * Reconnect this client
-     */
-    public void reconnect() {
-        heartBeatFunc.stop();
-        connection.disconnect();
-        connect();
-    }
-
-    /**
-     * Sends the specified client message to the server. This method
-     * automatically assigns the correct SessionID and SteamID of the message.
+     * Sends the specified client message to the server. This method automatically assigns the correct SessionID and
+     * SteamID of the message.
      *
      * @param msg The client message to send.
      */
-    public void send(final IClientMsg msg) {
-        if (sessionId != null) {
-            msg.setSessionID(sessionId);
+    public void send(IClientMsg msg) {
+        if (msg == null) {
+            throw new IllegalArgumentException("A value for 'msg' must be supplied");
         }
-        if (steamId != null) {
-            msg.setSteamID(steamId);
+
+        if (sessionID != null) {
+            msg.setSessionID(sessionID);
         }
-        DebugLog.writeLine("CMClient", "Sent -> EMsg: %s (Proto: %s)", msg.getMsgType(), msg.isProto());
+
+        if (steamID != null) {
+            msg.setSteamID(steamID);
+        }
+
+        DebugLog.writeLine("CMClient", String.format("Sent -> EMsg: %s (Proto: %s)", msg.getMsgType(), msg.isProto()));
+
         // we'll swallow any network failures here because they will be thrown later
         // on the network thread, and that will lead to a disconnect callback
         // down the line
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+        if (connection != null) {
+            new Thread(() -> {
                 try {
-                    connection.send(msg);
-                } catch (final IOException e) {
+                    connection.send(msg.serialize());
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-        }).start();
+            }).start();
+        }
     }
 
     /**
@@ -195,211 +220,230 @@ public abstract class CMClient {
      * @param type Server type requested
      * @return List of server endpoints
      */
-    public List<IPEndPoint> getServersOfType(EServerType type) {
-        if (!serverMap.containsKey(type)) {
-            return new ArrayList<IPEndPoint>();
+    public List<InetSocketAddress> getServers(EServerType type) {
+        Set<InetSocketAddress> addresses = serverMap.get(type);
+        if (addresses != null) {
+            return new ArrayList<>(addresses);
         }
-        return serverMap.get(type);
+
+        return new ArrayList<>();
     }
 
-    /**
-     * Called when a client message is received from the network.
-     *
-     * @param packetMsg The packet message.
-     * @throws IOException
-     */
-    protected void onClientMsgReceived(IPacketMsg packetMsg) throws IOException {
-        DebugLog.writeLine("CMClient", "<- Recv\'d EMsg: %s (%d) (Proto: %s)", packetMsg.getMsgType(), packetMsg.getMsgType().code(), packetMsg.isProto());
+    protected boolean onClientMsgReceived(IPacketMsg packetMsg) {
+        if (packetMsg == null) {
+            DebugLog.writeLine("CMClient", "Packet message failed to parse, shutting down connection");
+            disconnect();
+            return false;
+        }
+
+        DebugLog.writeLine("CMClient", String.format("<- Recv'd EMsg: %s (%d) (Proto: %s)", packetMsg.getMsgType(), packetMsg.getMsgType().code(), packetMsg.isProto()));
+
         switch (packetMsg.getMsgType()) {
-            case ChannelEncryptRequest:
-                handleEncryptRequest(packetMsg);
-                break;
-
-            case ChannelEncryptResult:
-                handleEncryptResult(packetMsg);
-                break;
-
             case Multi:
                 handleMulti(packetMsg);
                 break;
-
-            case ClientLogOnResponse:
-                // we handle this to get the SteamID/SessionID and to setup heartbeating
+            case ClientLogOnResponse: // we handle this to get the SteamID/SessionID and to setup heartbeating
                 handleLogOnResponse(packetMsg);
                 break;
-
-            case ClientLoggedOff:
-                // to stop heartbeating when we get logged off
+            case ClientLoggedOff: // to stop heartbeating when we get logged off
                 handleLoggedOff(packetMsg);
                 break;
-
-            case ClientServerList:
-                // Steam server list
+            case ClientServerList: // Steam server list
                 handleServerList(packetMsg);
                 break;
+            case ClientSessionToken: // am session token
+                handleSessionToken(packetMsg);
+                break;
         }
+
+        return true;
+    }
+
+    /**
+     * Called when the client is securely isConnected to Steam3.
+     */
+    protected void onClientConnected() {
+
     }
 
     /**
      * Called when the client is physically disconnected from Steam3.
+     *
+     * @param userInitiated whether the disconnect was initialized by the client
      */
-    protected abstract void onClientDisconnected(boolean newconnection);
-
-    /**
-     * Called when the client is connected to Steam3 and is ready to send
-     * messages.
-     */
-    protected abstract void onClientConnected();
-
-    private IPacketMsg getPacketMsg(byte[] data) {
-        final byte[] rMsg = new byte[4];
-        for (int i = 0; i < 4; i++) {
-            rMsg[3 - i] = data[i];
-        }
-        final ByteBuffer buffer = ByteBuffer.wrap(rMsg);
-        final int rawEMsg = buffer.getInt();
-        DebugLog.writeLine("EMsg GET", "Got EMSG: " + rawEMsg);
-        final EMsg eMsg = MsgUtil.getMsg(rawEMsg);
-        if (eMsg != null) {
-            switch (eMsg) {
-                // certain message types are always MsgHdr
-                case ChannelEncryptRequest:
-
-                case ChannelEncryptResponse:
-
-                case ChannelEncryptResult:
-                    return new PacketMsg(eMsg, data);
-            }
-        }
-        if (MsgUtil.isProtoBuf(rawEMsg)) {
-            // if the emsg is flagged, we're a proto message
-            return new PacketClientMsgProtobuf(eMsg, data);
-        } else {
-            // otherwise we're a struct message
-            return new PacketClientMsg(eMsg, data);
+    protected void onClientDisconnected(boolean userInitiated) {
+        for (Set<InetSocketAddress> set : serverMap.values()) {
+            set.clear();
         }
     }
 
-    private void handleMulti(IPacketMsg packetMsg) throws IOException {
+    private Connection createConnection(EnumSet<ProtocolType> protocol) {
+        if (protocol.contains(ProtocolType.TCP)) {
+            return new EnvelopeEncryptedConnection(new TcpConnection(), getUniverse());
+        } else if (protocol.contains(ProtocolType.UDP)) {
+            return new EnvelopeEncryptedConnection(new UdpConnection(), getUniverse());
+        }
+
+        throw new IllegalArgumentException("Protocol bitmask has no supported protocols set.");
+    }
+
+    public static IPacketMsg getPacketMsg(byte[] data) {
+        if (data.length < 4) {
+            DebugLog.writeLine("CMClient", "PacketMsg too small to contain a message");
+            return null;
+        }
+
+        BinaryReader reader = new BinaryReader(new ByteArrayInputStream(data));
+
+        int rawEMsg = 0;
+        try {
+            rawEMsg = reader.readInt();
+        } catch (IOException e) {
+            DebugLog.writeLine("CMClient", "Exception while getting EMsg code: %s", e);
+        }
+        EMsg eMsg = MsgUtil.getMsg(rawEMsg);
+
+        switch (eMsg) {
+            case ChannelEncryptRequest:
+            case ChannelEncryptResponse:
+            case ChannelEncryptResult:
+                try {
+                    return new PacketMsg(eMsg, data);
+                } catch (IOException e) {
+                    DebugLog.writeLine("CMClient", "Exception deserializing emsg " + eMsg + " (" + MsgUtil.isProtoBuf(rawEMsg) + "). %s", e);
+                }
+        }
+
+        try {
+            if (MsgUtil.isProtoBuf(rawEMsg)) {
+                return new PacketClientMsgProtobuf(eMsg, data);
+            } else {
+                return new PacketClientMsg(eMsg, data);
+            }
+        } catch (IOException e) {
+            DebugLog.writeLine("CMClient", "Exception deserializing emsg " + eMsg + " (" + MsgUtil.isProtoBuf(rawEMsg) + "). %s", e);
+            return null;
+        }
+    }
+
+    private void handleMulti(IPacketMsg packetMsg) {
         if (!packetMsg.isProto()) {
             DebugLog.writeLine("CMClient", "HandleMulti got non-proto MsgMulti!!");
             return;
         }
-        final ClientMsgProtobuf<CMsgMulti.Builder> msgMulti = new ClientMsgProtobuf<CMsgMulti.Builder>(CMsgMulti.class, packetMsg);
+
+        ClientMsgProtobuf<CMsgMulti.Builder> msgMulti = new ClientMsgProtobuf<>(CMsgMulti.class, packetMsg);
+
         byte[] payload = msgMulti.getBody().getMessageBody().toByteArray();
+
         if (msgMulti.getBody().getSizeUnzipped() > 0) {
             try {
-                payload = ZipUtil.deCompress(payload);
-            } catch (final IOException ex) {
-                DebugLog.writeLine("CMClient", "HandleMulti encountered an exception when decompressing.\n%s", ex.toString());
+                GZIPInputStream gzin = new GZIPInputStream(new ByteArrayInputStream(payload));
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+                int res = 0;
+                byte buf[] = new byte[1024];
+                while (res >= 0) {
+                    res = gzin.read(buf, 0, buf.length);
+                    if (res > 0) {
+                        baos.write(buf, 0, res);
+                    }
+                }
+                payload = baos.toByteArray();
+            } catch (IOException e) {
+                DebugLog.writeLine("CMClient", "HandleMulti encountered an exception when decompressing: %s", e);
                 return;
             }
         }
-        final BinaryReader ds = new BinaryReader(payload);
-        while (!ds.isAtEnd()) {
-            final int subSize = ds.readInt();
-            final byte[] subData = ds.readBytes(subSize);
-            onClientMsgReceived(getPacketMsg(subData));
+
+        try (BinaryReader br = new BinaryReader(new ByteArrayInputStream(payload))) {
+            while (br.available() > 0) {
+                int subSize = br.readInt();
+                byte[] subData = br.readBytes(subSize);
+
+                if (!onClientMsgReceived(getPacketMsg(subData))) {
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     private void handleLogOnResponse(IPacketMsg packetMsg) {
         if (!packetMsg.isProto()) {
-            DebugLog.writeLine("CMClient", "HandleLogOnResponse got non-proto MsgClientLogonResponse!!");
+            // a non proto ClientLogonResponse can come in as a result of connecting but never sending a ClientLogon
+            // in this case, it always fails, so we don't need to do anything special here
+            DebugLog.writeLine("CMClient", "Got non-proto logon response, this is indicative of no logon attempt after connecting.");
             return;
         }
-        final ClientMsgProtobuf<CMsgClientLogonResponse.Builder> logonResp = new ClientMsgProtobuf<CMsgClientLogonResponse.Builder>(CMsgClientLogonResponse.class, packetMsg);
-        if (EResult.from(logonResp.getBody().getEresult()) == EResult.OK) {
-            sessionId = logonResp.getProtoHeader().getClientSessionid();
-            steamId = new SteamID(logonResp.getProtoHeader().getSteamid());
-            final int hbDelay = logonResp.getBody().getOutOfGameHeartbeatSeconds();
+
+        ClientMsgProtobuf<CMsgClientLogonResponse.Builder> logonResp = new ClientMsgProtobuf<>(CMsgClientLogonResponse.class, packetMsg);
+
+        if (logonResp.getBody().getEresult() == EResult.OK.code()) {
+            sessionID = logonResp.getProtoHeader().getClientSessionid();
+            steamID = new SteamID(logonResp.getProtoHeader().getSteamid());
+
+            cellID = logonResp.getBody().getCellId();
+
             // restart heartbeat
             heartBeatFunc.stop();
-            heartBeatFunc.delay = hbDelay * 1000;
+            heartBeatFunc.setDelay(logonResp.getBody().getOutOfGameHeartbeatSeconds() * 1000L);
             heartBeatFunc.start();
         }
     }
 
-    private void handleEncryptRequest(IPacketMsg packetMsg) {
-        final Msg<MsgChannelEncryptRequest> encRequest = new Msg<MsgChannelEncryptRequest>(packetMsg, MsgChannelEncryptRequest.class);
-        final EUniverse eUniv = encRequest.getBody().getUniverse();
-        final int protoVersion = encRequest.getBody().getProtocolVersion();
-        DebugLog.writeLine("CMClient", "Got encryption request. Universe: %s Protocol ver: %d", eUniv, protoVersion);
-        final byte[] pubKey = KeyDictionary.getPublicKey(eUniv);
-        if (pubKey == null) {
-            DebugLog.writeLine("CMClient", "HandleEncryptionRequest got request for invalid universe! Universe: %s Protocol ver: %d", eUniv, protoVersion);
-            return;
-        }
-        connectedUniverse = eUniv;
-        final Msg<MsgChannelEncryptResponse> encResp = new Msg<MsgChannelEncryptResponse>(MsgChannelEncryptResponse.class);
-        tempSessionKey = CryptoHelper.GenerateRandomBlock(32);
-        byte[] cryptedSessKey = null;
-        final RSACrypto rsa = new RSACrypto(pubKey);
-        cryptedSessKey = rsa.encrypt(tempSessionKey);
-        final byte[] keyCrc = CryptoHelper.CRCHash(cryptedSessKey);
-        try {
-            encResp.write(cryptedSessKey);
-            encResp.write(keyCrc);
-            encResp.write(0);
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
-        send(encResp);
-    }
-
-    protected void handleEncryptResult(IPacketMsg packetMsg) {
-        final Msg<MsgChannelEncryptResult> encResult = new Msg<MsgChannelEncryptResult>(packetMsg, MsgChannelEncryptResult.class);
-        DebugLog.writeLine("CMClient", "Encryption result: %s", encResult.getBody().getResult());
-        if (encResult.getBody().getResult() == EResult.OK) {
-            connection.setNetFilter(new NetFilterEncryption(tempSessionKey));
-        }
-    }
-
     private void handleLoggedOff(IPacketMsg packetMsg) {
-        sessionId = null;
-        steamId = null;
+        sessionID = null;
+        steamID = null;
+
+        cellID = null;
+
         heartBeatFunc.stop();
+
         if (packetMsg.isProto()) {
-            ClientMsgProtobuf<CMsgClientLoggedOff.Builder> logoffMsg =
-                    new ClientMsgProtobuf<CMsgClientLoggedOff.Builder>(CMsgClientLoggedOff.class, packetMsg);
+            ClientMsgProtobuf<CMsgClientLoggedOff.Builder> logoffMsg = new ClientMsgProtobuf<>(CMsgClientLoggedOff.class, packetMsg);
             EResult logoffResult = EResult.from(logoffMsg.getBody().getEresult());
 
             if (logoffResult == EResult.TryAnotherCM || logoffResult == EResult.ServiceUnavailable) {
-                serverList.markServer(connection.currentIpEndPoint(), ServerQuality.BAD);
+                getServers().tryMark(connection.currentIpEndPoint(), connection.getProtocolType(), ServerQuality.BAD);
             }
         }
     }
 
     private void handleServerList(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientServerList.Builder> listMsg = new ClientMsgProtobuf<CMsgClientServerList.Builder>(CMsgClientServerList.class, packetMsg);
-        for (final Server server : listMsg.getBody().getServersList()) {
-            final EServerType type = EServerType.from(server.getServerType());
-            if (!serverMap.containsKey(type)) {
-                serverMap.put(type, new ArrayList<IPEndPoint>());
+        ClientMsgProtobuf<CMsgClientServerList.Builder> listMsg = new ClientMsgProtobuf<>(CMsgClientServerList.class, packetMsg);
+
+        for (CMsgClientServerList.Server server : listMsg.getBody().getServersList()) {
+            EServerType type = EServerType.from(server.getServerType());
+
+            Set<InetSocketAddress> endPointSet;
+            endPointSet = serverMap.get(type);
+
+            if (endPointSet == null) {
+                endPointSet = new HashSet<>();
+                serverMap.put(type, endPointSet);
             }
-            serverMap.get(type).add(new IPEndPoint(NetHelpers.getIPAddress(server.getServerIp()), (short) server.getServerPort()));
+
+            endPointSet.add(new InetSocketAddress(NetHelpers.getIPAddress(server.getServerIp()), server.getServerPort()));
         }
     }
 
-    /**
-     * The universe.
-     */
-    public EUniverse getConnectedUniverse() {
-        return this.connectedUniverse;
+    private void handleSessionToken(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientSessionToken.Builder> sessToken = new ClientMsgProtobuf<>(CMsgClientSessionToken.class, packetMsg);
+
+        sessionToken = sessToken.getBody().getToken();
+    }
+
+    public SteamConfiguration getConfiguration() {
+        return configuration;
     }
 
     /**
-     * The session ID.
+     * @return Bootstrap list of CM servers.
      */
-    public Integer getSessionId() {
-        return this.sessionId;
-    }
-
-    /**
-     * The SteamID.
-     */
-    public SteamID getSteamId() {
-        return this.steamId;
+    public SmartCMServerList getServers() {
+        return configuration.getServerList();
     }
 
     /**
@@ -411,7 +455,73 @@ public abstract class CMClient {
         return connection.getLocalIP();
     }
 
-    public SmartCMServerList getServerList() {
-        return serverList;
+    /**
+     * Gets the universe of this client.
+     *
+     * @return The universe.
+     */
+    public EUniverse getUniverse() {
+        return configuration.getUniverse();
+    }
+
+    /**
+     * Gets a value indicating whether this instance is isConnected to the remote CM server.
+     *
+     * @return <b>true</b> if this instance is isConnected; otherwise, <b>false</b>.
+     */
+    public boolean isConnected() {
+        return isConnected;
+    }
+
+    /**
+     * @return the session token assigned to this client from the AM.
+     */
+    public long getSessionToken() {
+        return sessionToken;
+    }
+
+    /**
+     * @return the Steam recommended Cell ID of this client. This value is assigned after a logon attempt has succeeded.
+     * This value will be <b>null</b> if the client is logged off of Steam.
+     */
+    public Integer getCellID() {
+        return cellID;
+    }
+
+    /**
+     * Gets the session ID of this client. This value is assigned after a logon attempt has succeeded.
+     * This value will be <b>null</b> if the client is logged off of Steam.
+     *
+     * @return The session ID.
+     */
+    public Integer getSessionID() {
+        return sessionID;
+    }
+
+    /**
+     * Gets the SteamID of this client. This value is assigned after a logon attempt has succeeded.
+     * This value will be <b>null</b> if the client is logged off of Steam.
+     *
+     * @return The SteamID.
+     */
+    public SteamID getSteamID() {
+        return steamID;
+    }
+
+    /**
+     * Gets or sets the connection timeout used when connecting to the Steam server.
+     *
+     * @return The connection timeout.
+     */
+    public long getConnectionTimeout() {
+        return configuration.getConnectionTimeout();
+    }
+
+    public boolean isExpectDisconnection() {
+        return expectDisconnection;
+    }
+
+    public void setExpectDisconnection(boolean expectDisconnection) {
+        this.expectDisconnection = expectDisconnection;
     }
 }

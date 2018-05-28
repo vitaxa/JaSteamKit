@@ -28,7 +28,7 @@ public class MsgGSKick implements ISteamSerializableMessage {
     }
 
     public void setSteamId(SteamID steamId) {
-        this.steamId = steamId.convertToLong();
+        this.steamId = steamId.convertToUInt64();
     }
 
     public EDenyReason getDenyReason() {
@@ -51,9 +51,9 @@ public class MsgGSKick implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamId);
-        bw.write(denyReason.code());
-        bw.write(waitTilMapChange);
+        bw.writeLong(steamId);
+        bw.writeInt(denyReason.code());
+        bw.writeInt(waitTilMapChange);
     }
 
     @Override

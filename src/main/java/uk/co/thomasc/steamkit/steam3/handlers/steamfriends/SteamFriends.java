@@ -18,7 +18,6 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.AccountCache;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.Clan;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.User;
-import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.JobCallback;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.gameid.GameID;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
@@ -273,7 +272,7 @@ public final class SteamFriends extends ClientMsgHandler {
      */
     public void sendChatMessage(SteamID target, EChatEntryType type, String message) {
         final ClientMsgProtobuf<CMsgClientFriendMsg.Builder> chatMsg = new ClientMsgProtobuf<CMsgClientFriendMsg.Builder>(CMsgClientFriendMsg.class, EMsg.ClientFriendMsg);
-        chatMsg.getBody().setSteamid(target.convertToLong());
+        chatMsg.getBody().setSteamid(target.convertToUInt64());
         chatMsg.getBody().setChatEntryType(type.code());
         chatMsg.getBody().setMessage(ByteString.copyFrom(message.getBytes()));
         getClient().send(chatMsg);
@@ -297,7 +296,7 @@ public final class SteamFriends extends ClientMsgHandler {
      */
     public void addFriend(SteamID steamId) {
         final ClientMsgProtobuf<CMsgClientAddFriend.Builder> addFriend = new ClientMsgProtobuf<CMsgClientAddFriend.Builder>(CMsgClientAddFriend.class, EMsg.ClientAddFriend);
-        addFriend.getBody().setSteamidToAdd(steamId.convertToLong());
+        addFriend.getBody().setSteamidToAdd(steamId.convertToUInt64());
         getClient().send(addFriend);
     }
 
@@ -308,7 +307,7 @@ public final class SteamFriends extends ClientMsgHandler {
      */
     public void removeFriend(SteamID steamId) {
         final ClientMsgProtobuf<CMsgClientRemoveFriend.Builder> removeFriend = new ClientMsgProtobuf<CMsgClientRemoveFriend.Builder>(CMsgClientRemoveFriend.class, EMsg.ClientRemoveFriend);
-        removeFriend.getBody().setFriendid(steamId.convertToLong());
+        removeFriend.getBody().setFriendid(steamId.convertToUInt64());
         getClient().send(removeFriend);
     }
 
@@ -326,7 +325,7 @@ public final class SteamFriends extends ClientMsgHandler {
         final ClientMsgProtobuf<CMsgClientRequestFriendData.Builder> request = new ClientMsgProtobuf<CMsgClientRequestFriendData.Builder>(CMsgClientRequestFriendData.class, EMsg.ClientRequestFriendData);
 
         for (final SteamID steamId : steamIdList) {
-            request.getBody().getFriendsList().add(steamId.convertToLong());
+            request.getBody().getFriendsList().add(steamId.convertToUInt64());
         }
         request.getBody().setPersonaStateRequested(requestedInfo);
 
@@ -363,42 +362,64 @@ public final class SteamFriends extends ClientMsgHandler {
     }
 
     /**
-     * Ignores or unignores a friend on Steam. Results are returned in a
-     * {@link IgnoreFriendCallback}.
+     * Ignores a friend on Steam.
+     * Results are returned in a {@link IgnoreFriendCallback}.
      *
-     * @param steamId   The SteamID of the friend to ignore or unignore.
-     * @param setIgnore if set to true, the friend will be ignored; otherwise, they
-     *                  will be unignored.
-     * @return The Job ID of the request. This can be used to find the
-     * appropriate {@link JobCallback}.
+     * @param steamID The SteamID of the friend to ignore or unignore.
+     * @return The Job ID of the request. This can be used to find the appropriate {@link IgnoreFriendCallback}.
      */
-    public JobID ignoreFriend(SteamID steamId, boolean setIgnore) {
-        final ClientMsg<MsgClientSetIgnoreFriend> ignore = new ClientMsg<MsgClientSetIgnoreFriend>(MsgClientSetIgnoreFriend.class);
-        ignore.setSourceJobID(getClient().getNextJobID());
-        ignore.getBody().setMySteamId(getClient().getSteamId());
-        ignore.getBody().setIgnore((byte) (setIgnore ? 1 : 0));
-        ignore.getBody().setSteamIdFriend(steamId);
-        getClient().send(ignore);
-        return ignore.getSourceJobID();
-    }
-
-    public JobID ignoreFriend(SteamID steamId) {
-        return ignoreFriend(steamId, true);
+    public JobID ignoreFriend(SteamID steamID) {
+        return ignoreFriend(steamID, true);
     }
 
     /**
-     * Requests profile info for the given SteamID.
+     * Ignores or unignores a friend on Steam.
+     * Results are returned in a {@link IgnoreFriendCallback}.
+     *
+     * @param steamID   The SteamID of the friend to ignore or unignore.
+     * @param setIgnore if set to <b>true</b>, the friend will be ignored; otherwise, they will be unignored.
+     * @return The Job ID of the request. This can be used to find the appropriate {@link IgnoreFriendCallback}.
+     */
+    public JobID ignoreFriend(SteamID steamID, boolean setIgnore) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
+        }
+
+        ClientMsg<MsgClientSetIgnoreFriend> ignore = new ClientMsg<>(MsgClientSetIgnoreFriend.class);
+        JobID jobID = client.getNextJobID();
+        ignore.setSourceJobID(jobID);
+
+        ignore.getBody().setMySteamId(client.getSteamID());
+        ignore.getBody().setIgnore(setIgnore ? (byte) 1 : (byte) 0);
+        ignore.getBody().setSteamIdFriend(steamID);
+
+        client.send(ignore);
+
+        return jobID;
+    }
+
+    /**
+     * Requests profile information for the given {@link SteamID}
      * Results are returned in a {@link ProfileInfoCallback}
      *
-     * @param steamId The SteamID to request the profile info of.
-     * @return the JobID of the request
+     * @param steamID The SteamID of the friend to request the details of.
+     * @return The Job ID of the request. This can be used to find the appropriate {@link ProfileInfoCallback}.
      */
-    public JobID requestProfileInfo(SteamID steamId) {
-        final ClientMsgProtobuf<CMsgClientFriendProfileInfo.Builder> request = new ClientMsgProtobuf<CMsgClientFriendProfileInfo.Builder>(CMsgClientFriendProfileInfo.class, EMsg.ClientFriendProfileInfo);
-        request.setSourceJobID(getClient().getNextJobID());
-        request.getBody().setSteamidFriend(steamId.convertToLong());
-        getClient().send(request);
-        return request.getSourceJobID();
+    public JobID requestProfileInfo(SteamID steamID) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
+        }
+
+        ClientMsgProtobuf<CMsgClientFriendProfileInfo.Builder> request =
+                new ClientMsgProtobuf<>(CMsgClientFriendProfileInfo.class, EMsg.ClientFriendProfileInfo);
+        JobID jobID = client.getNextJobID();
+        request.setSourceJobID(jobID);
+
+        request.getBody().setSteamidFriend(steamID.convertToUInt64());
+
+        client.send(request);
+
+        return jobID;
     }
 
     /**
@@ -415,7 +436,7 @@ public final class SteamFriends extends ClientMsgHandler {
         ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistory.Builder> request =
                 new ClientMsgProtobuf<>(CMsgClientChatGetFriendMessageHistory.class, EMsg.ClientFSGetFriendMessageHistory);
 
-        request.getBody().setSteamid(steamID.convertToLong());
+        request.getBody().setSteamid(steamID.convertToUInt64());
 
         getClient().send(request);
     }
@@ -428,9 +449,8 @@ public final class SteamFriends extends ClientMsgHandler {
     public void requestOfflineMessages() {
         ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryForOfflineMessages.Builder> request =
                 new ClientMsgProtobuf<>(CMsgClientChatGetFriendMessageHistoryForOfflineMessages.class, EMsg.ClientFSGetFriendMessageHistoryForOfflineMessages);
-        getClient().send(request);
+        client.send(request);
     }
-
 
     /**
      * Handles a client message. This should not be called directly.
@@ -513,7 +533,7 @@ public final class SteamFriends extends ClientMsgHandler {
     private void handleFriendsList(IPacketMsg packetMsg) {
         final ClientMsgProtobuf<CMsgClientFriendsList.Builder> list = new ClientMsgProtobuf<CMsgClientFriendsList.Builder>(CMsgClientFriendsList.class, packetMsg);
 
-        cache.getLocalUser().steamId = getClient().getSteamId();
+        cache.getLocalUser().steamId = getClient().getSteamID();
 
         if (!list.getBody().getBincremental()) {
             // if we're not an incremental update, the message contains all friends, so we should clear our current list
@@ -568,7 +588,7 @@ public final class SteamFriends extends ClientMsgHandler {
 
                 if (!list.getBody().getBincremental()) {
                     // request persona state for our friend & clan list when it's a non-incremental update
-                    reqInfo.getBody().addFriends(friendId.convertToLong());
+                    reqInfo.getBody().addFriends(friendId.convertToUInt64());
                 }
             }
 
@@ -625,33 +645,27 @@ public final class SteamFriends extends ClientMsgHandler {
 
     private void handleFriendResponse(IPacketMsg packetMsg) {
         final ClientMsgProtobuf<CMsgClientAddFriendResponse.Builder> friendResponse = new ClientMsgProtobuf<CMsgClientAddFriendResponse.Builder>(CMsgClientAddFriendResponse.class, packetMsg);
-        final FriendAddedCallback callback = new FriendAddedCallback(friendResponse.getBody().build());
-        getClient().postCallback(callback);
+        getClient().postCallback(new FriendAddedCallback(friendResponse.getBody().build()));
     }
 
     private void handleIgnoreFriendResponse(IPacketMsg packetMsg) {
-        final ClientMsg<MsgClientSetIgnoreFriendResponse> response = new ClientMsg<MsgClientSetIgnoreFriendResponse>(packetMsg, MsgClientSetIgnoreFriendResponse.class);
-        final IgnoreFriendCallback innerCallback = new IgnoreFriendCallback(response.getBody());
-        final JobCallback<?> callback = new JobCallback<IgnoreFriendCallback>(response.getTargetJobID(), innerCallback);
-        getClient().postCallback(callback);
+        ClientMsg<MsgClientSetIgnoreFriendResponse> response = new ClientMsg<>(packetMsg, MsgClientSetIgnoreFriendResponse.class);
+        client.postCallback(new IgnoreFriendCallback(response.getTargetJobID(), response.getBody()));
     }
 
     private void handleProfileInfoResponse(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientFriendProfileInfoResponse.Builder> response = new ClientMsgProtobuf<CMsgClientFriendProfileInfoResponse.Builder>(CMsgClientFriendProfileInfoResponse.class, packetMsg);
-        final ProfileInfoCallback callback = new ProfileInfoCallback(new JobID(packetMsg.getTargetJobID()), response.getBody().build());
-        getClient().postCallback(callback);
+        ClientMsgProtobuf<CMsgClientFriendProfileInfoResponse.Builder> response = new ClientMsgProtobuf<>(CMsgClientFriendProfileInfoResponse.class, packetMsg);
+        client.postCallback(new ProfileInfoCallback(new JobID(packetMsg.getTargetJobID()), response.getBody()));
     }
 
     private void handleSteamLevelResponse(IPacketMsg packetMsg) {
         final ClientMsgProtobuf<CMsgClientFSGetFriendsSteamLevelsResponse.Builder> response = new ClientMsgProtobuf<CMsgClientFSGetFriendsSteamLevelsResponse.Builder>(CMsgClientFSGetFriendsSteamLevelsResponse.class, packetMsg);
-        final SteamLevelCallback callback = new SteamLevelCallback(response.getBody().build());
-        getClient().postCallback(callback);
+        getClient().postCallback(new SteamLevelCallback(response.getBody().build()));
     }
 
     private void handleFriendMessageHistoryResponse(IPacketMsg packetMsg) {
         final ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryResponse.Builder> response = new ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryResponse.Builder>(CMsgClientChatGetFriendMessageHistoryResponse.class, packetMsg);
-        final FriendMsgHistoryCallback callback = new FriendMsgHistoryCallback(response.getBody(), getClient().getConnectedUniverse());
-        getClient().postCallback(callback);
+        getClient().postCallback(new FriendMsgHistoryCallback(response.getBody(), getClient().getUniverse()));
     }
 
     public List<SteamID> getFriendList() {

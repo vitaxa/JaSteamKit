@@ -47,9 +47,9 @@ public class MsgGCHdr implements IGCSerializableHeader {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(headerVersion);
-        bw.write(targetJobID);
-        bw.write(sourceJobID);
+        bw.writeShort(headerVersion);
+        bw.writeLong(targetJobID);
+        bw.writeLong(sourceJobID);
     }
 
     @Override

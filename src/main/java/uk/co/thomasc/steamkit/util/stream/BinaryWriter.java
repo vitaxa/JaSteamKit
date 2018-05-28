@@ -1,93 +1,61 @@
 package uk.co.thomasc.steamkit.util.stream;
 
-import com.google.protobuf.CodedOutputStream;
-
-import java.io.ByteArrayOutputStream;
+import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.ByteBuffer;
 
-public class BinaryWriter {
+/**
+ * Basically DataOutputStream, but the bytes are parsed in reverse order
+ */
+public class BinaryWriter extends FilterOutputStream {
 
-    private CodedOutputStream writer;
-    private OutputStream os;
-    private ByteArrayOutputStream stream = null;
+    private byte writeBuffer[] = new byte[8];
 
-    public BinaryWriter(ByteArrayOutputStream stream) {
-        this((OutputStream) stream);
-        this.stream = stream;
+    public BinaryWriter(OutputStream out) {
+        super(out);
     }
 
-    public BinaryWriter(int size) {
-        this(new ByteArrayOutputStream(size));
+    public void writeInt(int v) throws IOException {
+        out.write(v & 0xFF);
+        out.write((v >>> 8) & 0xFF);
+        out.write((v >>> 16) & 0xFF);
+        out.write((v >>> 24) & 0xFF);
     }
 
-    public BinaryWriter() {
-        this(32);
+    public void writeShort(short v) throws IOException {
+        out.write(v & 0xFF);
+        out.write((v >>> 8) & 0xFF);
     }
 
-    public BinaryWriter(OutputStream outputStream) {
-        os = outputStream;
-        writer = CodedOutputStream.newInstance(outputStream);
+    public void writeLong(long v) throws IOException {
+        writeBuffer[7] = (byte) (v >>> 56);
+        writeBuffer[6] = (byte) (v >>> 48);
+        writeBuffer[5] = (byte) (v >>> 40);
+        writeBuffer[4] = (byte) (v >>> 32);
+        writeBuffer[3] = (byte) (v >>> 24);
+        writeBuffer[2] = (byte) (v >>> 16);
+        writeBuffer[1] = (byte) (v >>> 8);
+        writeBuffer[0] = (byte) v;
+        out.write(writeBuffer, 0, 8);
     }
 
-    public void write(short data) throws IOException {
-        final ByteBuffer buffer = ByteBuffer.allocate(2);
-        buffer.putShort(data);
-        writeR(buffer);
+    public void writeFloat(float v) throws IOException {
+        writeInt(Float.floatToIntBits(v));
     }
 
-    public void write(int data) throws IOException {
-        final ByteBuffer buffer = ByteBuffer.allocate(4);
-        buffer.putInt(data);
-        writeR(buffer);
+    public void writeDouble(double v) throws IOException {
+        writeLong(Double.doubleToLongBits(v));
     }
 
-    public void write(long data) throws IOException {
-        final ByteBuffer buffer = ByteBuffer.allocate(8);
-        buffer.putLong(data);
-        writeR(buffer);
+    public void writeBoolean(boolean v) throws IOException {
+        out.write(v ? 1 : 0);
     }
 
-    public void write(boolean bool) throws IOException {
-        final ByteBuffer buffer = ByteBuffer.allocate(2);
-        buffer.put((byte) (bool ? 1 : 0));
-        writeR(buffer);
+    public void writeByte(byte v) throws IOException {
+        out.write(v);
     }
 
-    public byte[] toByteArray() {
-        if (stream != null) {
-            return stream.toByteArray();
-        }
-        return null;
+    public void writeChar(char v) throws IOException {
+        out.write((int) v);
     }
-
-    public void writeR(ByteBuffer buffer) throws IOException {
-        for (int i = buffer.capacity() - 1; i >= 0; --i) {
-            write(buffer.get(i));
-        }
-    }
-
-    public void write(byte[] data) throws IOException {
-        writer.writeRawBytes(data);
-        writer.flush();
-    }
-
-    public void write(byte data) throws IOException {
-        writer.writeRawByte(data);
-        writer.flush();
-    }
-
-    public CodedOutputStream getStream() {
-        return writer;
-    }
-
-    public void flush() {
-        try {
-            os.flush();
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 }

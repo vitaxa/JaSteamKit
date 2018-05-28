@@ -58,7 +58,7 @@ public class MsgClientLogOnResponse implements ISteamSerializableMessage {
     }
 
     public void setClientSuppliedSteamId(SteamID steamId) {
-        this.clientSuppliedSteamId = steamId.convertToLong();
+        this.clientSuppliedSteamId = steamId.convertToUInt64();
     }
 
     public int getIpPublic() {
@@ -81,12 +81,12 @@ public class MsgClientLogOnResponse implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(result.code());
-        bw.write(outOfGameHeartbeatRateSec);
-        bw.write(inGameHeartbeatRateSec);
-        bw.write(clientSuppliedSteamId);
-        bw.write(ipPublic);
-        bw.write(serverRealTime);
+        bw.writeInt(result.code());
+        bw.writeInt(outOfGameHeartbeatRateSec);
+        bw.writeInt(inGameHeartbeatRateSec);
+        bw.writeLong(clientSuppliedSteamId);
+        bw.writeInt(ipPublic);
+        bw.writeInt(serverRealTime);
     }
 
     @Override

@@ -39,8 +39,8 @@ public class MsgClientOGSWriteRow implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(sessionId);
-        bw.write(countAttributes);
+        bw.writeLong(sessionId);
+        bw.writeInt(countAttributes);
     }
 
     @Override

@@ -64,7 +64,7 @@ public abstract class GCMsgBase<T extends IGCSerializableHeader> extends Abstrac
      * @throws IOException
      */
     @Override
-    public abstract void deSerialize(byte[] data) throws IOException;
+    public abstract void deserialize(byte[] data) throws IOException;
 
     /**
      * true if this instance is protobuf backed; otherwise, false

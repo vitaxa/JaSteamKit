@@ -23,14 +23,14 @@ public class MsgGSApprove implements ISteamSerializableMessage {
     }
 
     public void setSteamId(SteamID steamId) {
-        this.steamId = steamId.convertToLong();
+        this.steamId = steamId.convertToUInt64();
     }
 
     @Override
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamId);
+        bw.writeLong(steamId);
     }
 
     @Override

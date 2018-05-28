@@ -2,6 +2,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountFlags;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientLogOnResponse;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.SteamUser;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.LogOnDetails;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
@@ -11,6 +12,7 @@ import uk.co.thomasc.steamkit.util.util.NetHelpers;
 
 import java.net.InetAddress;
 import java.util.Date;
+import java.util.EnumSet;
 
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
 
@@ -22,49 +24,49 @@ public final class LoggedOnCallback extends CallbackMsg {
     /**
      * Gets the result of the logon.
      */
-    private final EResult result;
+    private EResult result;
     /**
      * Gets the extended result of the logon.
      */
-    private final EResult extendedResult;
+    private EResult extendedResult;
     /**
      * Gets the out of game secs per heartbeat value. This is used internally by
      * SteamKit to initialize heartbeating.
      */
-    private final int outOfGameSecsPerHeartbeat;
+    private int outOfGameSecsPerHeartbeat;
     /**
      * Gets the in game secs per heartbeat value. This is used internally by
      * SteamKit to initialize heartbeating.
      */
-    private final int inGameSecsPerHeartbeat;
+    private int inGameSecsPerHeartbeat;
     /**
      * Gets or sets the public IP of the client
      */
-    private final InetAddress publicIP;
+    private InetAddress publicIP;
     /**
      * Gets the Steam3 server time.
      */
-    private final Date serverTime;
+    private Date serverTime;
     /**
      * Gets the account flags assigned by the server.
      */
-    private final EAccountFlags accountFlags;
+    private EnumSet<EAccountFlags> accountFlags;
     /**
      * Gets the client steam ID.
      */
-    private final SteamID clientSteamID;
+    private SteamID clientSteamID;
     /**
      * Gets the email domain.
      */
-    private final String emailDomain;
+    private String emailDomain;
     /**
      * Gets the WebAPI User Nonce
      */
-    private final String webAPIUserNonce;
+    private String webAPIUserNonce;
     /**
      * Gets the Steam2 CellID.
      */
-    private final int cellId;
+    private int cellId;
     /**
      * Gets the Steam2 ticket. This is used for authenticated content downloads
      * in Steam2. This field will only be set when
@@ -72,19 +74,36 @@ public final class LoggedOnCallback extends CallbackMsg {
      */
     private Steam2Ticket steam2Ticket = null;
 
-    public LoggedOnCallback(CMsgClientLogonResponse resp) {
+    public LoggedOnCallback(CMsgClientLogonResponse.Builder resp) {
         result = EResult.from(resp.getEresult());
         extendedResult = EResult.from(resp.getEresultExtended());
         outOfGameSecsPerHeartbeat = resp.getOutOfGameHeartbeatSeconds();
         inGameSecsPerHeartbeat = resp.getInGameHeartbeatSeconds();
         publicIP = NetHelpers.getIPAddress(resp.getPublicIp());
         serverTime = new Date(resp.getRtime32ServerTime());
-        accountFlags = EAccountFlags.f(resp.getAccountFlags());
+        accountFlags = EAccountFlags.from(resp.getAccountFlags());
         clientSteamID = new SteamID(resp.getClientSuppliedSteamid());
         emailDomain = resp.getEmailDomain();
         cellId = resp.getCellId();
         webAPIUserNonce = resp.getWebapiAuthenticateUserNonce();
         if (resp.getSteam2Ticket().size() > 0) steam2Ticket = new Steam2Ticket(resp.getSteam2Ticket().toByteArray());
+    }
+
+    public LoggedOnCallback(MsgClientLogOnResponse resp) {
+        result = resp.getResult();
+
+        outOfGameSecsPerHeartbeat = resp.getOutOfGameHeartbeatRateSec();
+        inGameSecsPerHeartbeat = resp.getInGameHeartbeatRateSec();
+
+        publicIP = NetHelpers.getIPAddress((int) resp.getIpPublic());
+
+        serverTime = new Date(resp.getServerRealTime() * 1000L);
+
+        clientSteamID = resp.getClientSuppliedSteamId();
+    }
+
+    public LoggedOnCallback(EResult result) {
+        this.result = result;
     }
 
     /**
@@ -134,7 +153,7 @@ public final class LoggedOnCallback extends CallbackMsg {
     /**
      * Gets the account flags assigned by the server.
      */
-    public EAccountFlags getAccountFlags() {
+    public EnumSet<EAccountFlags> getAccountFlags() {
         return this.accountFlags;
     }
 

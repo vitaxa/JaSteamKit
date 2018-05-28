@@ -46,19 +46,27 @@ public abstract class AbstractMsgBase {
     }
 
     public void write(short data) throws IOException {
-        writer.write(data);
+        writer.writeShort(data);
     }
 
     public void write(int data) throws IOException {
-        writer.write(data);
+        writer.writeInt(data);
     }
 
     public void write(long data) throws IOException {
-        writer.write(data);
+        writer.writeLong(data);
     }
 
     public void write(byte[] data) throws IOException {
         writer.write(data);
+    }
+
+    public void write(float data) throws IOException {
+        writer.writeFloat(data);
+    }
+
+    public void write(double data) throws IOException {
+        writer.writeDouble(data);
     }
 
     public void write(String data) throws IOException {
@@ -108,6 +116,10 @@ public abstract class AbstractMsgBase {
 
     public float readFloat() throws IOException {
         return reader.readFloat();
+    }
+
+    public double readDouble() throws IOException {
+        return reader.readDouble();
     }
 
     public String readNullTermString() throws IOException {

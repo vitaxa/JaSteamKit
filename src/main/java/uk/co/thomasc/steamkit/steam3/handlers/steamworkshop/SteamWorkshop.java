@@ -11,165 +11,195 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.callbacks.UserPublis
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.callbacks.UserSubscribedFilesCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.types.EnumerationDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.types.EnumerationUserDetails;
-import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.JobCallback;
 import uk.co.thomasc.steamkit.types.JobID;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * This handler is used for requesting files published on the Steam Workshop.
  */
-public final class SteamWorkshop extends ClientMsgHandler {
+public class SteamWorkshop extends ClientMsgHandler {
+
+    private Map<EMsg, Consumer<IPacketMsg>> dispatchMap;
+
+    public SteamWorkshop() {
+        dispatchMap = new HashMap<>();
+
+        dispatchMap.put(EMsg.CREEnumeratePublishedFilesResponse, new Consumer<IPacketMsg>() {
+            @Override
+            public void accept(IPacketMsg packetMsg) {
+                handleEnumPublishedFiles(packetMsg);
+            }
+        });
+        dispatchMap.put(EMsg.ClientUCMEnumerateUserPublishedFilesResponse, new Consumer<IPacketMsg>() {
+            @Override
+            public void accept(IPacketMsg packetMsg) {
+                handleEnumUserPublishedFiles(packetMsg);
+            }
+        });
+        dispatchMap.put(EMsg.ClientUCMEnumerateUserSubscribedFilesResponse, new Consumer<IPacketMsg>() {
+            @Override
+            public void accept(IPacketMsg packetMsg) {
+                handleEnumUserSubscribedFiles(packetMsg);
+            }
+        });
+        dispatchMap.put(EMsg.ClientUCMEnumeratePublishedFilesByUserActionResponse, new Consumer<IPacketMsg>() {
+            @Override
+            public void accept(IPacketMsg packetMsg) {
+                handleEnumPublishedFilesByAction(packetMsg);
+            }
+        });
+
+        dispatchMap = Collections.unmodifiableMap(dispatchMap);
+    }
+
     /**
      * Enumerates the list of published files for the current logged in user.
-     * Results are returned in a {@link UserPublishedFilesCallback} from a
-     * {@link JobCallback}.
+     * Results are returned in a {@link UserPublishedFilesCallback}.
      *
-     * @param details
-     *            The specific details of the request.
-     * @return The Job ID of the request. This can be used to find the
-     *         appropriate {@link JobCallback}.
+     * @param details The specific details of the request.
+     * @return The Job ID of the request. This can be used to find the appropriate {@link UserPublishedFilesCallback}.
      */
     public JobID enumerateUserPublishedFiles(EnumerationUserDetails details) {
-        final ClientMsgProtobuf<CMsgClientUCMEnumerateUserPublishedFiles.Builder> enumRequest = new ClientMsgProtobuf<CMsgClientUCMEnumerateUserPublishedFiles.Builder>(CMsgClientUCMEnumerateUserPublishedFiles.class, EMsg.ClientUCMEnumerateUserPublishedFiles);
-        enumRequest.setSourceJobID(getClient().getNextJobID());
+        if (details == null) {
+            throw new IllegalArgumentException("details is null");
+        }
 
-        enumRequest.getBody().setAppId(details.appId);
-        enumRequest.getBody().setSortOrder(details.sortOrder);
-        enumRequest.getBody().setStartIndex(details.startIndex);
+        ClientMsgProtobuf<CMsgClientUCMEnumerateUserPublishedFiles.Builder> enumRequest =
+                new ClientMsgProtobuf<>(CMsgClientUCMEnumerateUserPublishedFiles.class, EMsg.ClientUCMEnumerateUserPublishedFiles);
+        JobID jobID = client.getNextJobID();
+        enumRequest.setSourceJobID(jobID);
 
-        getClient().send(enumRequest);
+        enumRequest.getBody().setAppId(details.getAppID());
+        enumRequest.getBody().setSortOrder(details.getSortOrder());
+        enumRequest.getBody().setStartIndex(details.getStartIndex());
 
-        return enumRequest.getSourceJobID();
+        client.send(enumRequest);
+
+        return jobID;
     }
 
     /**
      * Enumerates the list of subscribed files for the current logged in user.
-     * Results are returned in a {@link UserSubscribedFilesCallback} from a
-     * {@link JobCallback}.
+     * Results are returned in a {@link UserSubscribedFilesCallback}.
      *
-     * @param details
-     *            The specific details of the request.
-     * @return The Job ID of the request. This can be used to find the
-     *         appropriate {@link JobCallback}.
+     * @param details The specific details of the request.
+     * @return The Job ID of the request. This can be used to find the appropriate {@link UserSubscribedFilesCallback}.
      */
     public JobID enumerateUserSubscribedFiles(EnumerationUserDetails details) {
-        final ClientMsgProtobuf<CMsgClientUCMEnumerateUserSubscribedFiles.Builder> enumRequest = new ClientMsgProtobuf<CMsgClientUCMEnumerateUserSubscribedFiles.Builder>(CMsgClientUCMEnumerateUserSubscribedFiles.class, EMsg.ClientUCMEnumerateUserSubscribedFiles);
-        enumRequest.setSourceJobID(getClient().getNextJobID());
+        if (details == null) {
+            throw new IllegalArgumentException("details is null");
+        }
 
-        enumRequest.getBody().setAppId(details.appId);
-        enumRequest.getBody().setStartIndex(details.startIndex);
+        ClientMsgProtobuf<CMsgClientUCMEnumerateUserSubscribedFiles.Builder> enumRequest =
+                new ClientMsgProtobuf<>(CMsgClientUCMEnumerateUserSubscribedFiles.class, EMsg.ClientUCMEnumerateUserSubscribedFiles);
+        JobID jobID = client.getNextJobID();
+        enumRequest.setSourceJobID(jobID);
 
-        getClient().send(enumRequest);
+        enumRequest.getBody().setAppId(details.getAppID());
+        enumRequest.getBody().setStartIndex(details.getStartIndex());
 
-        return enumRequest.getSourceJobID();
+        client.send(enumRequest);
+
+        return jobID;
     }
 
     /**
-     * Enumerates the list of published files for the current logged in user
-     * based on user action. Results are returned in a
-     * {@link UserActionPublishedFilesCallback} from a {@link JobCallback}.
+     * Enumerates the list of published files for the current logged in user based on user action.
+     * Results are returned in a {@link UserActionPublishedFilesCallback}.
      *
-     * @param details
-     *            The specific details of the request.
-     * @return The Job ID of the request. This can be used to find the
-     *         appropriate {@link JobCallback}.
+     * @param details The specific details of the request.
+     * @return The Job ID of the request. This can be used to find the appropriate {@link UserActionPublishedFilesCallback}.
      */
     public JobID enumeratePublishedFilesByUserAction(EnumerationUserDetails details) {
-        final ClientMsgProtobuf<CMsgClientUCMEnumeratePublishedFilesByUserAction.Builder> enumRequest = new ClientMsgProtobuf<CMsgClientUCMEnumeratePublishedFilesByUserAction.Builder>(CMsgClientUCMEnumeratePublishedFilesByUserAction.class, EMsg.ClientUCMEnumeratePublishedFilesByUserAction);
-        enumRequest.setSourceJobID(getClient().getNextJobID());
+        if (details == null) {
+            throw new IllegalArgumentException("details is null");
+        }
 
-        enumRequest.getBody().setAction(details.userAction.v());
-        enumRequest.getBody().setAppId(details.appId);
-        enumRequest.getBody().setStartIndex(details.startIndex);
+        ClientMsgProtobuf<CMsgClientUCMEnumeratePublishedFilesByUserAction.Builder> enumRequest =
+                new ClientMsgProtobuf<>(CMsgClientUCMEnumeratePublishedFilesByUserAction.class, EMsg.ClientUCMEnumeratePublishedFilesByUserAction);
+        JobID jobID = client.getNextJobID();
+        enumRequest.setSourceJobID(jobID);
 
-        getClient().send(enumRequest);
+        enumRequest.getBody().setAction(details.getUserAction().code());
+        enumRequest.getBody().setAppId(details.getAppID());
+        enumRequest.getBody().setStartIndex(details.getStartIndex());
 
-        return enumRequest.getSourceJobID();
+        client.send(enumRequest);
+
+        return jobID;
     }
 
     /**
-     * Enumerates the list of all published files on the Steam workshop. Results
-     * are returned in a {@link PublishedFilesCallback} from a
-     * {@link JobCallback}.
+     * Enumerates the list of all published files on the Steam workshop.
+     * Results are returned in a {@link PublishedFilesCallback}.
      *
-     * @param details
-     *            The specific details of the request.
-     * @return The Job ID of the request. This can be used to find the
-     *         appropriate {@link JobCallback}.
+     * @param details The specific details of the request.
+     * @return The Job ID of the request. This can be used to find the appropriate {@link PublishedFilesCallback}.
      */
     public JobID enumeratePublishedFiles(EnumerationDetails details) {
-        final ClientMsgProtobuf<CMsgCREEnumeratePublishedFiles.Builder> enumRequest = new ClientMsgProtobuf<CMsgCREEnumeratePublishedFiles.Builder>(CMsgCREEnumeratePublishedFiles.class, EMsg.CREEnumeratePublishedFiles);
-        enumRequest.setSourceJobID(getClient().getNextJobID());
+        if (details == null) {
+            throw new IllegalArgumentException("details is null");
+        }
 
-        enumRequest.getBody().setAppId(details.appID);
+        ClientMsgProtobuf<CMsgCREEnumeratePublishedFiles.Builder> enumRequest =
+                new ClientMsgProtobuf<>(CMsgCREEnumeratePublishedFiles.class, EMsg.CREEnumeratePublishedFiles);
+        JobID jobID = client.getNextJobID();
+        enumRequest.setSourceJobID(jobID);
 
-        enumRequest.getBody().setQueryType(details.type.v());
+        enumRequest.getBody().setAppId(details.getAppID());
+        enumRequest.getBody().setQueryType(details.getType().code());
+        enumRequest.getBody().setStartIndex(details.getStartIndex());
+        enumRequest.getBody().setDays(details.getDays());
+        enumRequest.getBody().setCount(details.getCount());
+        enumRequest.getBody().addAllTags(details.getTags());
+        enumRequest.getBody().addAllUserTags(details.getUserTags());
 
-        enumRequest.getBody().setStartIndex(details.startIndex);
+        client.send(enumRequest);
 
-        enumRequest.getBody().setDays(details.days);
-        enumRequest.getBody().setCount(details.count);
-
-        enumRequest.getBody().getTagsList().addAll(details.getTags());
-        enumRequest.getBody().getUserTagsList().addAll(details.getUserTags());
-
-        getClient().send(enumRequest);
-
-        return enumRequest.getSourceJobID();
+        return jobID;
     }
 
-    /**
-     * Handles a client message. This should not be called directly.
-     */
     @Override
     public void handleMsg(IPacketMsg packetMsg) {
-        switch (packetMsg.getMsgType()) {
-            case CREEnumeratePublishedFilesResponse:
-                handleEnumPublishedFiles(packetMsg);
-                break;
-            case ClientUCMEnumerateUserPublishedFilesResponse:
-                handleEnumUserPublishedFiles(packetMsg);
-                break;
-            case ClientUCMEnumerateUserSubscribedFilesResponse:
-                handleEnumUserSubscribedFiles(packetMsg);
-                break;
-            case ClientUCMEnumeratePublishedFilesByUserActionResponse:
-                handleEnumPublishedFilesByAction(packetMsg);
-                break;
-            //case ClientUCMGetPublishedFileDetailsResponse:
-            //    handlePublishedFileDetails(packetMsg);
-            //    break;
+        if (packetMsg == null) {
+            throw new IllegalArgumentException("packetMsg is null");
+        }
+
+        Consumer<IPacketMsg> dispatcher = dispatchMap.get(packetMsg.getMsgType());
+        if (dispatcher != null) {
+            dispatcher.accept(packetMsg);
         }
     }
 
-    void handleEnumPublishedFiles(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgCREEnumeratePublishedFilesResponse.Builder> response = new ClientMsgProtobuf<CMsgCREEnumeratePublishedFilesResponse.Builder>(CMsgCREEnumeratePublishedFilesResponse.class, packetMsg);
+    private void handleEnumPublishedFiles(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgCREEnumeratePublishedFilesResponse.Builder> response =
+                new ClientMsgProtobuf<>(CMsgCREEnumeratePublishedFilesResponse.class, packetMsg);
 
-        final PublishedFilesCallback innerCallback = new PublishedFilesCallback(response.getBody().build());
-        final JobCallback<?> callback = new JobCallback<PublishedFilesCallback>(response.getTargetJobID(), innerCallback);
-        getClient().postCallback(callback);
+        client.postCallback(new PublishedFilesCallback(response.getTargetJobID(), response.getBody()));
     }
 
-    void handleEnumUserPublishedFiles(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientUCMEnumerateUserPublishedFilesResponse.Builder> response = new ClientMsgProtobuf<CMsgClientUCMEnumerateUserPublishedFilesResponse.Builder>(CMsgClientUCMEnumerateUserPublishedFilesResponse.class, packetMsg);
+    private void handleEnumUserPublishedFiles(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientUCMEnumerateUserPublishedFilesResponse.Builder> response =
+                new ClientMsgProtobuf<>(CMsgClientUCMEnumerateUserPublishedFilesResponse.class, packetMsg);
 
-        final UserPublishedFilesCallback innerCallback = new UserPublishedFilesCallback(response.getBody().build());
-        final JobCallback<?> callback = new JobCallback<UserPublishedFilesCallback>(response.getTargetJobID(), innerCallback);
-        getClient().postCallback(callback);
+        client.postCallback(new UserPublishedFilesCallback(response.getTargetJobID(), response.getBody()));
     }
 
-    void handleEnumUserSubscribedFiles(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientUCMEnumerateUserSubscribedFilesResponse.Builder> response = new ClientMsgProtobuf<CMsgClientUCMEnumerateUserSubscribedFilesResponse.Builder>(CMsgClientUCMEnumerateUserSubscribedFilesResponse.class, packetMsg);
+    private void handleEnumUserSubscribedFiles(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientUCMEnumerateUserSubscribedFilesResponse.Builder> response =
+                new ClientMsgProtobuf<>(CMsgClientUCMEnumerateUserSubscribedFilesResponse.class, packetMsg);
 
-        final UserSubscribedFilesCallback innerCallback = new UserSubscribedFilesCallback(response.getBody().build());
-        final JobCallback<?> callback = new JobCallback<UserSubscribedFilesCallback>(response.getTargetJobID(), innerCallback);
-        getClient().postCallback(callback);
+        client.postCallback(new UserSubscribedFilesCallback(response.getTargetJobID(), response.getBody()));
     }
 
-    void handleEnumPublishedFilesByAction(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.Builder> response = new ClientMsgProtobuf<CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.Builder>(CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.class, packetMsg);
+    private void handleEnumPublishedFilesByAction(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.Builder> response =
+                new ClientMsgProtobuf<>(CMsgClientUCMEnumeratePublishedFilesByUserActionResponse.class, packetMsg);
 
-        final UserActionPublishedFilesCallback innerCallback = new UserActionPublishedFilesCallback(response.getBody().build());
-        final JobCallback<?> callback = new JobCallback<UserActionPublishedFilesCallback>(response.getTargetJobID(), innerCallback);
-        getClient().postCallback(callback);
+        client.postCallback(new UserActionPublishedFilesCallback(response.getTargetJobID(), response.getBody()));
     }
 }

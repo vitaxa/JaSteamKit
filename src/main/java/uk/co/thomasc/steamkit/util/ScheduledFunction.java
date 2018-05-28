@@ -50,4 +50,12 @@ public class ScheduledFunction implements Runnable {
             func.call();
         }
     }
+
+    public long getDelay() {
+        return delay;
+    }
+
+    public void setDelay(long delay) {
+        this.delay = delay;
+    }
 }

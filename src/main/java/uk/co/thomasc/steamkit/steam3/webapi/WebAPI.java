@@ -19,7 +19,7 @@ public final class WebAPI {
     String iface;
     String apiKey;
 
-    final String API_ROOT = "api.steampowered.com";
+    public static final String API_ROOT = "api.steampowered.com";
 
     public WebAPI(String iface) {
         this(iface, null);

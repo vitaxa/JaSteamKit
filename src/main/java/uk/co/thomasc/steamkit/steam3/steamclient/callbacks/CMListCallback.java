@@ -1,29 +1,39 @@
 package uk.co.thomasc.steamkit.steam3.steamclient.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver;
+import uk.co.thomasc.steamkit.steam3.discovery.ServerRecord;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;
+
+import java.net.InetSocketAddress;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * This callback is received when the client has received the CM list from Steam.
  */
-public final class CMListCallback extends CallbackMsg {
-    /**
-     * Gets the CM server list.
-     */
-    private final String[] serverList;
+public class CMListCallback extends CallbackMsg {
 
-    public CMListCallback(SteammessagesClientserver.CMsgClientCMList result) {
-        serverList = new String[result.getCmAddressesList().size()];
-        for (int i = 0; i < serverList.length; i++) {
-            serverList[i] = (NetHelpers.getIPAddress(result.getCmAddresses(i)).getHostAddress()) + ":" + result.getCmPorts(i);
+    private final Collection<ServerRecord> servers;
+
+    public CMListCallback(SteammessagesClientserver.CMsgClientCMList.Builder cmMsg) {
+        List<Integer> addresses = cmMsg.getCmAddressesList();
+        List<Integer> ports = cmMsg.getCmPortsList();
+
+        List<ServerRecord> cmList = new ArrayList<>();
+        for (int i = 0; i < Math.min(addresses.size(), ports.size()); i++) {
+            cmList.add(ServerRecord.createSocketServer(new InetSocketAddress(NetHelpers.getIPAddress(addresses.get(i)), ports.get(i))));
         }
+
+        servers = Collections.unmodifiableCollection(cmList);
     }
 
     /**
-     * Gets the CM server list.
+     * @return the CM server list.
      */
-    public String[] getServerList() {
-        return this.serverList;
+    public Collection<ServerRecord> getServers() {
+        return servers;
     }
 }

@@ -7,7 +7,7 @@ public class MsgUtil {
     private static final int EMsgMask = ~MsgUtil.ProtoMask;
 
     public static EMsg getMsg(int msg) {
-        return EMsg.f(msg & MsgUtil.EMsgMask);
+        return EMsg.from(msg & MsgUtil.EMsgMask);
     }
 
     /**
@@ -29,7 +29,7 @@ public class MsgUtil {
      * @return The underlying EMsg.
      */
     public static EMsg getMsg(EMsg msg) {
-        return MsgUtil.getMsg(msg.v());
+        return MsgUtil.getMsg(msg.code());
     }
 
     /**
@@ -51,7 +51,7 @@ public class MsgUtil {
      * @return true if this message is protobuf flagged; otherwise, false
      */
     public static boolean isProtoBuf(EMsg msg) {
-        return MsgUtil.isProtoBuf(msg.v());
+        return MsgUtil.isProtoBuf(msg.code());
     }
 
     /**

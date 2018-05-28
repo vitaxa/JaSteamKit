@@ -4,6 +4,7 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EChatMemberStateChang
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.EnumSet;
 
@@ -30,8 +31,7 @@ public final class StateChangeDetails {
     private ChatMemberInfo memberInfo;
 
     public StateChangeDetails(byte[] data) {
-        final BinaryReader is = new BinaryReader(data);
-        try {
+        try (final BinaryReader is = new BinaryReader(new ByteArrayInputStream(data))) {
             chatterActedOn = new SteamID(is.readLong());
             stateChange = EChatMemberStateChange.from(is.readInt());
             chatterActedBy = new SteamID(is.readLong());

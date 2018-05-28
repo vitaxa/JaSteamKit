@@ -1,12 +1,9 @@
 package uk.co.thomasc.steamkit.networking.steam3;
 
-import uk.co.thomasc.steamkit.base.IClientMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUdpPacketType;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.ChallengeData;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.ConnectData;
 import uk.co.thomasc.steamkit.util.cSharp.events.EventArgs;
-import uk.co.thomasc.steamkit.util.cSharp.ip.IPEndPoint;
-import uk.co.thomasc.steamkit.util.cSharp.ip.ProtocolType;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.MemoryStream;
 import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
@@ -85,7 +82,7 @@ public class UdpConnection extends Connection {
     private List<UdpPacket> outPackets;
     private Map<Integer, UdpPacket> inPackets;
 
-    private IPEndPoint currentEndPoint;
+    private InetSocketAddress currentEndPoint;
 
     public UdpConnection() {
         try {
@@ -98,7 +95,7 @@ public class UdpConnection extends Connection {
     }
 
     @Override
-    public void connect(IPEndPoint endPoint) {
+    public void connect(InetSocketAddress endPoint, int timeout) {
         outPackets = new ArrayList<>();
         inPackets = new HashMap<>();
 
@@ -144,13 +141,9 @@ public class UdpConnection extends Connection {
     }
 
     @Override
-    public void send(IClientMsg clientMsg) {
+    public void send(byte[] data) {
         if (state.get() == State.CONNECTED) {
-            try {
-                sendData(new MemoryStream(clientMsg.serialize()));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            sendData(new MemoryStream(data));
         }
     }
 
@@ -160,12 +153,12 @@ public class UdpConnection extends Connection {
     }
 
     @Override
-    public IPEndPoint currentIpEndPoint() {
+    public InetSocketAddress currentIpEndPoint() {
         return currentEndPoint;
     }
 
-    public ProtocolType getProtocolTypes() {
-        return ProtocolType.Udp;
+    public uk.co.thomasc.steamkit.networking.steam3.ProtocolType getProtocolType() {
+        return ProtocolType.UDP;
     }
 
     /**
@@ -456,7 +449,7 @@ public class UdpConnection extends Connection {
         remoteConnId = packet.getHeader().getSourceConnID();
         inSeqHandled = packet.getHeader().getSeqThis();
 
-        onConnected(EventArgs.Empty);
+        onConnected(EventArgs.EMPTY);
     }
 
     private void receiveData(UdpPacket packet) {
@@ -481,7 +474,7 @@ public class UdpConnection extends Connection {
      */
     private class NetLoop implements Runnable {
 
-        NetLoop(IPEndPoint endPoint) {
+        NetLoop(InetSocketAddress endPoint) {
             currentEndPoint = endPoint;
         }
 

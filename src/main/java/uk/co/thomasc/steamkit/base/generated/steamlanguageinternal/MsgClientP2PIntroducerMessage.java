@@ -30,7 +30,7 @@ public class MsgClientP2PIntroducerMessage implements ISteamSerializableMessage 
     }
 
     public void setSteamID(SteamID steamId) {
-        this.steamID = steamId.convertToLong();
+        this.steamID = steamId.convertToUInt64();
     }
 
     public EIntroducerRouting getRoutingType() {
@@ -61,11 +61,11 @@ public class MsgClientP2PIntroducerMessage implements ISteamSerializableMessage 
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamID);
-        bw.write(routingType.code());
-        bw.write(data.length);
+        bw.writeLong(steamID);
+        bw.writeInt(routingType.code());
+        bw.writeInt(data.length);
         bw.write(data);
-        bw.write(dataLen);
+        bw.writeInt(dataLen);
     }
 
     @Override

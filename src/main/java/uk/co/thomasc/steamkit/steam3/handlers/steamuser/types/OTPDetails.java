@@ -4,28 +4,34 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamuser.types;
  * The One-Time-Password details for this response.
  */
 public class OTPDetails {
-    /**
-     * Gets or sets the one-time-password type.
-     */
-    public int type;
 
-    /**
-     * Gets or sets the one-time-password identifier.
-     */
-    public String identifier;
+    private int type;
 
-    /**
-     * Gets or sets the one-time-password value.
-     */
-    public int value;
+    private String identifier;
 
-    /**
-     * Gets the OTP shared secret.
-     */
-    protected byte[] sharedSecret;
+    private int value;
 
-    /**
-     * Gets the OTP time drift.
-     */
-    protected int timeDrift;
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

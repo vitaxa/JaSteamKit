@@ -51,9 +51,9 @@ public class MsgClientGetFriendsWhoPlayGameResponse implements ISteamSerializabl
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(result.code());
-        bw.write(gameId);
-        bw.write(countFriends);
+        bw.writeInt(result.code());
+        bw.writeLong(gameId);
+        bw.writeInt(countFriends);
     }
 
     @Override

@@ -8,61 +8,83 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.callbacks.QueryCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.types.QueryDetails;
-import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.JobCallback;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
 
 /**
  * This handler is used for requesting server list details from Steam.
  */
-public final class SteamMasterServer extends ClientMsgHandler {
+public class SteamMasterServer extends ClientMsgHandler {
+
+    private Map<EMsg, Consumer<IPacketMsg>> dispatchMap;
+
+    public SteamMasterServer() {
+        dispatchMap = new HashMap<>();
+
+        dispatchMap.put(EMsg.GMSClientServerQueryResponse, new Consumer<IPacketMsg>() {
+            @Override
+            public void accept(IPacketMsg packetMsg) {
+                handleServerQueryResponse(packetMsg);
+            }
+        });
+
+        dispatchMap = Collections.unmodifiableMap(dispatchMap);
+    }
+
     /**
-     * Requests a list of servers from the Steam game master server. Results are
-     * returned in a {@link QueryCallback} from a {@link JobCallback}.
+     * Requests a list of servers from the Steam game master server.
+     * Results are returned in a {@link QueryCallback}.
      *
-     * @param details
-     *            The details for the request.
-     * @return The Job ID of the request. This can be used to find the
-     *         appropriate {@link JobCallback}.
+     * @param details The details for the request.
+     * @return The Job ID of the request. This can be used to find the appropriate {@link QueryCallback}.
      */
     public JobID serverQuery(QueryDetails details) {
-        final ClientMsgProtobuf<CMsgClientGMSServerQuery.Builder> query = new ClientMsgProtobuf<CMsgClientGMSServerQuery.Builder>(CMsgClientGMSServerQuery.class, EMsg.ClientGMSServerQuery);
-        query.setSourceJobID(getClient().getNextJobID());
-
-        query.getBody().setAppId(details.appId);
-
-        if (details.geoLocatedIP != null) {
-            query.getBody().setGeoLocationIp((int) NetHelpers.getIPAddress(details.geoLocatedIP));
+        if (details == null) {
+            throw new IllegalArgumentException("details is null");
         }
 
-        query.getBody().setFilterText(details.filter);
-        query.getBody().setRegionCode(details.region.v());
+        ClientMsgProtobuf<CMsgClientGMSServerQuery.Builder> query =
+                new ClientMsgProtobuf<>(CMsgClientGMSServerQuery.class, EMsg.ClientGMSServerQuery);
+        JobID jobID = getClient().getNextJobID();
+        query.setSourceJobID(jobID);
 
-        query.getBody().setMaxServers(details.maxServers);
+        query.getBody().setAppId(details.getAppID());
+
+        if (details.getGeoLocatedIP() != null) {
+            query.getBody().setGeoLocationIp(NetHelpers.getIPAddress(details.getGeoLocatedIP()));
+        }
+
+        query.getBody().setFilterText(details.getFilter());
+        query.getBody().setRegionCode(details.getRegion().code());
+
+        query.getBody().setMaxServers(details.getMaxServers());
 
         getClient().send(query);
 
-        return query.getSourceJobID();
+        return jobID;
     }
 
-    /**
-     * Handles a client message. This should not be called directly.
-     */
     @Override
     public void handleMsg(IPacketMsg packetMsg) {
-        switch (packetMsg.getMsgType()) {
-            case GMSClientServerQueryResponse:
-                handleServerQueryResponse(packetMsg);
-                break;
+        if (packetMsg == null) {
+            throw new IllegalArgumentException("packetMsg is null");
+        }
+
+        Consumer<IPacketMsg> dispatcher = dispatchMap.get(packetMsg.getMsgType());
+        if (dispatcher != null) {
+            dispatcher.accept(packetMsg);
         }
     }
 
-    void handleServerQueryResponse(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgGMSClientServerQueryResponse.Builder> queryResponse = new ClientMsgProtobuf<CMsgGMSClientServerQueryResponse.Builder>(CMsgGMSClientServerQueryResponse.class, packetMsg);
+    private void handleServerQueryResponse(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgGMSClientServerQueryResponse.Builder> queryResponse =
+                new ClientMsgProtobuf<>(CMsgGMSClientServerQueryResponse.class, packetMsg);
 
-        final QueryCallback innerCallback = new QueryCallback(queryResponse.getBody().build());
-        final JobCallback<?> callback = new JobCallback<QueryCallback>(queryResponse.getTargetJobID(), innerCallback);
-        getClient().postCallback(callback);
+        getClient().postCallback(new QueryCallback(queryResponse.getTargetJobID(), queryResponse.getBody()));
     }
-
 }

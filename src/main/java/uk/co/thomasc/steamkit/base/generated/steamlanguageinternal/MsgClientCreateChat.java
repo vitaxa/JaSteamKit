@@ -61,7 +61,7 @@ public class MsgClientCreateChat implements ISteamSerializableMessage {
     }
 
     public void setSteamIdClan(SteamID steamId) {
-        this.steamIdClan = steamId.convertToLong();
+        this.steamIdClan = steamId.convertToUInt64();
     }
 
     public EnumSet<EChatPermission> getPermissionOfficer() {
@@ -109,7 +109,7 @@ public class MsgClientCreateChat implements ISteamSerializableMessage {
     }
 
     public void setSteamIdFriendChat(SteamID steamId) {
-        this.steamIdFriendChat = steamId.convertToLong();
+        this.steamIdFriendChat = steamId.convertToUInt64();
     }
 
     public SteamID getSteamIdInvited() {
@@ -117,23 +117,23 @@ public class MsgClientCreateChat implements ISteamSerializableMessage {
     }
 
     public void setSteamIdInvited(SteamID steamId) {
-        this.steamIdInvited = steamId.convertToLong();
+        this.steamIdInvited = steamId.convertToUInt64();
     }
 
     @Override
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(chatRoomType.code());
-        bw.write(gameId);
-        bw.write(steamIdClan);
-        bw.write(EChatPermission.code(permissionOfficer));
-        bw.write(EChatPermission.code(permissionMember));
-        bw.write(EChatPermission.code(permissionAll));
-        bw.write(membersMax);
-        bw.write(chatFlags);
-        bw.write(steamIdFriendChat);
-        bw.write(steamIdInvited);
+        bw.writeInt(chatRoomType.code());
+        bw.writeLong(gameId);
+        bw.writeLong(steamIdClan);
+        bw.writeInt(EChatPermission.code(permissionOfficer));
+        bw.writeInt(EChatPermission.code(permissionMember));
+        bw.writeInt(EChatPermission.code(permissionAll));
+        bw.writeInt(membersMax);
+        bw.writeByte(chatFlags);
+        bw.writeLong(steamIdFriendChat);
+        bw.writeLong(steamIdInvited);
     }
 
     @Override

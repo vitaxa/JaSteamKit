@@ -49,9 +49,9 @@ public class MsgHdr implements ISteamSerializableHeader {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(msg.code());
-        bw.write(targetJobID);
-        bw.write(sourceJobID);
+        bw.writeInt(msg.code());
+        bw.writeLong(targetJobID);
+        bw.writeLong(sourceJobID);
     }
 
     @Override

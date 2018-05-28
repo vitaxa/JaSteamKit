@@ -39,7 +39,7 @@ public final class TicketAuthCallback extends CallbackMsg {
         steamId = new SteamID(tickAuth.getSteamId());
         gameId = new GameID(tickAuth.getGameId());
         state = tickAuth.getEstate();
-        authSessionResponse = EAuthSessionResponse.f(tickAuth.getEauthSessionResponse());
+        authSessionResponse = EAuthSessionResponse.from(tickAuth.getEauthSessionResponse());
         ticketCRC = tickAuth.getTicketCrc();
         ticketSequence = tickAuth.getTicketSequence();
     }

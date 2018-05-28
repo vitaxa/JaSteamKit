@@ -43,7 +43,7 @@ public class MessageCallback extends CallbackMsg {
      */
     private final IPacketGCMsg message;
 
-    public MessageCallback(CMsgGCClient gcMsg) {
+    public MessageCallback(CMsgGCClient.Builder gcMsg) {
         eMsg = gcMsg.getMsgtype();
         appId = gcMsg.getAppid();
         // we are knowingly using this obsolete property
@@ -51,7 +51,7 @@ public class MessageCallback extends CallbackMsg {
         message = MessageCallback.getPacketGCMsg(gcMsg.getMsgtype(), gcMsg.getPayload().toByteArray());
     }
 
-    static IPacketGCMsg getPacketGCMsg(int eMsg, byte[] data) {
+    private static IPacketGCMsg getPacketGCMsg(int eMsg, byte[] data) {
         // strip off the protobuf flag
         final int realEMsg = MsgUtil.getGCMsg(eMsg);
         if (MsgUtil.isProtoBuf(eMsg)) {

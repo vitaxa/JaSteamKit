@@ -6,6 +6,8 @@ import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.MessageObject;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
+import java.io.ByteArrayInputStream;
+
 /**
  * This callback is recieved when wallet info is recieved from the network.
  */
@@ -26,10 +28,10 @@ public final class PurchaseResponseCallback extends CallbackMsg {
     private final MessageObject purchaseReceiptInfo;
 
     public PurchaseResponseCallback(CMsgClientPurchaseResponse wallet) {
-        result = EResult.f(wallet.getEresult());
+        result = EResult.from(wallet.getEresult());
         purchaseResultDetails = wallet.getPurchaseResultDetails();
         purchaseReceiptInfo = new MessageObject();
-        purchaseReceiptInfo.readFromBinary(new BinaryReader(wallet.getPurchaseReceiptInfo().toByteArray()));
+        purchaseReceiptInfo.readFromBinary(new BinaryReader(new ByteArrayInputStream(wallet.getPurchaseReceiptInfo().toByteArray())));
     }
 
     /**

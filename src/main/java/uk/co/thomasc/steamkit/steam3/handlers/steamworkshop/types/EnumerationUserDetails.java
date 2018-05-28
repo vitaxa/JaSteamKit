@@ -1,33 +1,49 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.types;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EWorkshopFileAction;
-import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.SteamWorkshop;
 
 /**
- * Represents the details of an enumeration request used for the local user's
- * files.
+ * Represents the details of an enumeration request used for the local user's files.
  */
-public final class EnumerationUserDetails {
-    /**
-     * Gets or sets the AppID of the workshop to enumerate.
-     */
-    public int appId;
+public class EnumerationUserDetails {
 
-    /**
-     * Gets or sets the sort order. This value is only used by
-     * {@link SteamWorkshop#enumeratePublishedFiles(EnumerationDetails)}
-     */
-    public int sortOrder;
+    private int appID;
 
-    /**
-     * Gets or sets the start index.
-     */
-    public int startIndex;
+    private int sortOrder;
 
-    /**
-     * Gets or sets the user action to filter by. This value is only used by
-     * {@link SteamWorkshop#enumeratePublishedFilesByUserAction(EnumerationUserDetails)}
-     * .
-     */
-    public EWorkshopFileAction userAction;
+    private int startIndex;
+
+    private EWorkshopFileAction userAction;
+
+    public int getAppID() {
+        return appID;
+    }
+
+    public void setAppID(int appID) {
+        this.appID = appID;
+    }
+
+    public int getSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(int sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    public int getStartIndex() {
+        return startIndex;
+    }
+
+    public void setStartIndex(int startIndex) {
+        this.startIndex = startIndex;
+    }
+
+    public EWorkshopFileAction getUserAction() {
+        return userAction;
+    }
+
+    public void setUserAction(EWorkshopFileAction userAction) {
+        this.userAction = userAction;
+    }
 }

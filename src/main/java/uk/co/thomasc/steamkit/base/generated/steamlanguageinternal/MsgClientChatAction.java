@@ -28,7 +28,7 @@ public class MsgClientChatAction implements ISteamSerializableMessage {
     }
 
     public void setSteamIdChat(SteamID steamId) {
-        this.steamIdChat = steamId.convertToLong();
+        this.steamIdChat = steamId.convertToUInt64();
     }
 
     public SteamID getSteamIdUserToActOn() {
@@ -36,7 +36,7 @@ public class MsgClientChatAction implements ISteamSerializableMessage {
     }
 
     public void setSteamIdUserToActOn(SteamID steamId) {
-        this.steamIdUserToActOn = steamId.convertToLong();
+        this.steamIdUserToActOn = steamId.convertToUInt64();
     }
 
     public EChatAction getChatAction() {
@@ -51,9 +51,9 @@ public class MsgClientChatAction implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamIdChat);
-        bw.write(steamIdUserToActOn);
-        bw.write(chatAction.code());
+        bw.writeLong(steamIdChat);
+        bw.writeLong(steamIdUserToActOn);
+        bw.writeInt(chatAction.code());
     }
 
     @Override

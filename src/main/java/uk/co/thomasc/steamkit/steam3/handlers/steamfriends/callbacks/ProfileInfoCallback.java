@@ -49,7 +49,9 @@ public final class ProfileInfoCallback extends CallbackMsg {
      */
     private final String summary;
 
-    public ProfileInfoCallback(JobID jobID, CMsgClientFriendProfileInfoResponse response) {
+    public ProfileInfoCallback(JobID jobID, CMsgClientFriendProfileInfoResponse.Builder response) {
+        setJobID(jobID);
+
         result = EResult.from(response.getEresult());
         steamID = new SteamID(response.getSteamidFriend());
         timeCreated = new Date((long) response.getTimeCreated() * 1000L);

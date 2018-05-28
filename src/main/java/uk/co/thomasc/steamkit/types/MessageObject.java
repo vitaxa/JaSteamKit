@@ -28,6 +28,21 @@ public class MessageObject {
         }
     }
 
+    /**
+     * Populates this MessageObject instance from the data inside the given stream.
+     *
+     * @param stream The stream to load data from.
+     * @return <b>true</b> on success; otherwise, <b>false</b>.
+     * @throws IOException IO exception during reading from the stream
+     */
+    public boolean readFromStream(BinaryReader stream) throws IOException {
+        if (stream == null) {
+            throw new IllegalArgumentException("stream is null");
+        }
+
+        return keyValues.readAsBinary(stream);
+    }
+
     public KeyValue getKeyValues() {
         return this.keyValues;
     }

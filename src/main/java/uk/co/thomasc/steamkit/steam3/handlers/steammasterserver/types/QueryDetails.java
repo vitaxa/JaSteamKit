@@ -7,32 +7,93 @@ import java.net.InetAddress;
 /**
  * Details used when performing a server list query.
  */
-public final class QueryDetails {
-    /**
-     * Gets or sets the AppID used when querying servers.
-     */
-    public int appId;
+public class QueryDetails {
+
+    private int appID;
+
+    private String filter;
+
+    private ERegionCode region;
+
+    private InetAddress geoLocatedIP;
+
+    private int maxServers;
 
     /**
-     * Gets or sets the filter used for querying the master server. Check
-     * https://developer.valvesoftware.com/wiki/Master_Server_Query_Protocol for
-     * details on how the filter is structured.
+     * @return the AppID used when querying servers
      */
-    public String filter;
+    public int getAppID() {
+        return appID;
+    }
 
     /**
-     * Gets or sets the region that servers will be returned from.
+     * @param appID the AppID used when querying servers
      */
-    public ERegionCode region;
+    public void setAppID(int appID) {
+        this.appID = appID;
+    }
 
     /**
-     * Gets or sets the IP address that will be GeoIP located. This is done to
-     * return servers closer to this location.
+     * Check <a href="https://developer.valvesoftware.com/wiki/Master_Server_Query_Protocol">https://developer.valvesoftware.com/wiki/Master_Server_Query_Protocol</a> for details on how the filter is structured.
+     *
+     * @return the filter used for querying the master server
      */
-    public InetAddress geoLocatedIP;
+    public String getFilter() {
+        return filter;
+    }
 
     /**
-     * Gets or sets the maximum number of servers to return.
+     * Check <a href="https://developer.valvesoftware.com/wiki/Master_Server_Query_Protocol">https://developer.valvesoftware.com/wiki/Master_Server_Query_Protocol</a> for details on how the filter is structured.
+     *
+     * @param filter the filter used for querying the master server
      */
-    public int maxServers;
+    public void setFilter(String filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * @return the region that servers will be returned from
+     */
+    public ERegionCode getRegion() {
+        return region;
+    }
+
+    /**
+     * @param region the region that servers will be returned from
+     */
+    public void setRegion(ERegionCode region) {
+        this.region = region;
+    }
+
+    /**
+     * This is done to return servers closer to this location.
+     *
+     * @return the IP address that will be GeoIP located
+     */
+    public InetAddress getGeoLocatedIP() {
+        return geoLocatedIP;
+    }
+
+    /**
+     * This is done to return servers closer to this location.
+     *
+     * @param geoLocatedIP the IP address that will be GeoIP located
+     */
+    public void setGeoLocatedIP(InetAddress geoLocatedIP) {
+        this.geoLocatedIP = geoLocatedIP;
+    }
+
+    /**
+     * @return the maximum number of servers to return
+     */
+    public int getMaxServers() {
+        return maxServers;
+    }
+
+    /**
+     * @param maxServers the maximum number of servers to return
+     */
+    public void setMaxServers(int maxServers) {
+        this.maxServers = maxServers;
+    }
 }

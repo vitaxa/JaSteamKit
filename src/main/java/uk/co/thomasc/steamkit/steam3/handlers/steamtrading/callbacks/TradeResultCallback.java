@@ -25,7 +25,7 @@ public final class TradeResultCallback extends CallbackMsg {
 
     public TradeResultCallback(CMsgTrading_InitiateTradeResponse msg) {
         tradeID = msg.getTradeRequestId();
-        response = EEconTradeResponse.f(msg.getResponse());
+        response = EEconTradeResponse.from(msg.getResponse());
         otherClient = new SteamID(msg.getOtherSteamid());
     }
 

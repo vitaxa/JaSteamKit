@@ -2,6 +2,7 @@ package uk.co.thomasc.steamkit.types.steam2ticket;
 
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +27,11 @@ public final class Steam2Ticket {
     private final List<Entry> entries = new ArrayList<Entry>();
 
     public Steam2Ticket(byte[] blob) {
-        final BinaryReader stream = new BinaryReader(blob);
-        try {
+        try (final BinaryReader stream = new BinaryReader(new ByteArrayInputStream(blob))) {
             magic = stream.readShort();
             length = stream.readInt();
             /* unknown1 = */stream.readInt();
-            while (stream.getRemaining() > 0) {
+            while (stream.available() > 0) {
                 final Entry entry = new Entry();
                 entry.deSerialize(stream);
                 entries.add(entry);

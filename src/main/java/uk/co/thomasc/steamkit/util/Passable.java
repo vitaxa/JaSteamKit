@@ -3,6 +3,10 @@ package uk.co.thomasc.steamkit.util;
 public class Passable<T> {
     private T value;
 
+    public Passable() {
+        this(null);
+    }
+
     public Passable(T value) {
         this.value = value;
     }

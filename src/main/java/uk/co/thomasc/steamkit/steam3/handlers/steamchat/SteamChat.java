@@ -10,6 +10,7 @@ import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.callbacks.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamchat.types.Chat;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -29,18 +30,20 @@ public final class SteamChat extends ClientMsgHandler {
     /**
      * Attempts to join a chat room.
      *
-     * @param steamId The SteamID of the chat room.
+     * @param steamID The SteamID of the chat room.
      */
-    public void joinChat(SteamID steamId) {
-        final SteamID chatId = steamId.clone(); // copy the steamid so we don't modify it
-        final ClientMsg<MsgClientJoinChat> joinChat = new ClientMsg<MsgClientJoinChat>(MsgClientJoinChat.class);
-        if (chatId.isClanAccount()) {
-            // this steamid is incorrect, so we'll fix it up
-            chatId.setAccountInstance(SteamID.ChatInstanceFlags.Clan);
-            chatId.setAccountType(EAccountType.Chat);
+    public void joinChat(SteamID steamID) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
         }
-        joinChat.getBody().setSteamIdChat(chatId);
-        getClient().send(joinChat);
+
+        SteamID chatID = fixChatID(steamID); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientJoinChat> joinChat = new ClientMsg<>(MsgClientJoinChat.class);
+
+        joinChat.getBody().setSteamIdChat(chatID);
+
+        client.send(joinChat);
     }
 
     /**
@@ -77,27 +80,31 @@ public final class SteamChat extends ClientMsgHandler {
     /**
      * Attempts to leave a chat room.
      *
-     * @param steamId The SteamID of the chat room.
+     * @param steamID The SteamID of the chat room.
      */
-    public void leaveChat(SteamID steamId) {
-        final SteamID chatId = steamId.clone(); // copy the steamid so we don't modify it
-        final ClientMsg<MsgClientChatMemberInfo> leaveChat = new ClientMsg<MsgClientChatMemberInfo>(MsgClientChatMemberInfo.class);
-        if (chatId.isClanAccount()) {
-            // this steamid is incorrect, so we'll fix it up
-            chatId.setAccountInstance(SteamID.ChatInstanceFlags.Clan);
-            chatId.setAccountType(EAccountType.Chat);
+    public void leaveChat(SteamID steamID) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
         }
-        leaveChat.getBody().setSteamIdChat(chatId);
+
+        SteamID chatID = fixChatID(steamID); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatMemberInfo> leaveChat = new ClientMsg<>(MsgClientChatMemberInfo.class);
+
+        leaveChat.getBody().setSteamIdChat(chatID);
         leaveChat.getBody().setType(EChatInfoType.StateChange);
+
         try {
-            leaveChat.write(getClient().getSteamId().convertToLong()); // ChatterActedOn
+            leaveChat.write(client.getSteamID().convertToUInt64()); // ChatterActedOn
             leaveChat.write(EChatMemberStateChange.Left.code()); // StateChange
-            leaveChat.write(getClient().getSteamId().convertToLong()); // ChatterActedBy
-        } catch (final IOException e) {
-            e.printStackTrace();
+            leaveChat.write(client.getSteamID().convertToUInt64()); // ChatterActedBy
+        } catch (IOException e) {
+            DebugLog.printStackTrace("SteamChat",e);
         }
-        getClient().send(leaveChat);
+
+        client.send(leaveChat);
     }
+
 
     /**
      * Sends a message to a chat room.
@@ -107,22 +114,33 @@ public final class SteamChat extends ClientMsgHandler {
      * @param message     The message.
      */
     public void sendChatRoomMessage(SteamID steamIdChat, EChatEntryType type, String message) {
-        final SteamID chatId = steamIdChat.clone(); // copy the steamid so we don't modify it
-        if (chatId.isClanAccount()) {
-            // this steamid is incorrect, so we'll fix it up
-            chatId.setAccountInstance(SteamID.ChatInstanceFlags.Clan);
-            chatId.setAccountType(EAccountType.Chat);
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
         }
-        final ClientMsg<MsgClientChatMsg> chatMsg = new ClientMsg<MsgClientChatMsg>(MsgClientChatMsg.class);
+
+        if (type == null) {
+            throw new IllegalArgumentException("type is null");
+        }
+
+        if (message == null) {
+            throw new IllegalArgumentException("message is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatMsg> chatMsg = new ClientMsg<>(MsgClientChatMsg.class);
+
         chatMsg.getBody().setChatMsgType(type);
-        chatMsg.getBody().setSteamIdChatRoom(chatId);
-        chatMsg.getBody().setSteamIdChatter(getClient().getSteamId());
+        chatMsg.getBody().setSteamIdChatRoom(chatID);
+        chatMsg.getBody().setSteamIdChatter(client.getSteamID());
+
         try {
-            chatMsg.writeNullTermString(message, Charset.forName("UTF8"));
-        } catch (final IOException e) {
-            e.printStackTrace();
+            chatMsg.writeNullTermString(message, Charset.forName("UTF-8"));
+        } catch (IOException e) {
+            DebugLog.printStackTrace("SteamChat",e);
         }
-        getClient().send(chatMsg);
+
+        client.send(chatMsg);
     }
 
     /**
@@ -132,17 +150,24 @@ public final class SteamChat extends ClientMsgHandler {
      * @param steamIdMember The SteamID of the member to kick from the chat.
      */
     public void kickChatMember(SteamID steamIdChat, SteamID steamIdMember) {
-        final SteamID chatId = steamIdChat.clone(); // copy the steamid so we don't modify it
-        final ClientMsg<MsgClientChatAction> kickMember = new ClientMsg<MsgClientChatAction>(MsgClientChatAction.class);
-        if (chatId.isClanAccount()) {
-            // this steamid is incorrect, so we'll fix it up
-            chatId.setAccountInstance(SteamID.ChatInstanceFlags.Clan);
-            chatId.setAccountType(EAccountType.Chat);
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
         }
-        kickMember.getBody().setSteamIdChat(chatId);
+
+        if (steamIdMember == null) {
+            throw new IllegalArgumentException("steamIdMember is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatAction> kickMember = new ClientMsg<>(MsgClientChatAction.class);
+
+        kickMember.getBody().setSteamIdChat(chatID);
         kickMember.getBody().setSteamIdUserToActOn(steamIdMember);
+
         kickMember.getBody().setChatAction(EChatAction.Kick);
-        getClient().send(kickMember);
+
+        client.send(kickMember);
     }
 
     /**
@@ -152,18 +177,53 @@ public final class SteamChat extends ClientMsgHandler {
      * @param steamIdMember The SteamID of the member to ban from the chat.
      */
     public void banChatMember(SteamID steamIdChat, SteamID steamIdMember) {
-        final SteamID chatId = steamIdChat.clone(); // copy the steamid so we don't modify it
-        final ClientMsg<MsgClientChatAction> banMember = new ClientMsg<MsgClientChatAction>(MsgClientChatAction.class);
-        if (chatId.isClanAccount()) {
-            // this steamid is incorrect, so we'll fix it up
-            chatId.setAccountInstance(SteamID.ChatInstanceFlags.Clan);
-            chatId.setAccountType(EAccountType.Chat);
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
         }
-        banMember.getBody().setSteamIdChat(chatId);
-        banMember.getBody().setSteamIdUserToActOn(steamIdMember);
-        banMember.getBody().setChatAction(EChatAction.Ban);
-        getClient().send(banMember);
+
+        if (steamIdMember == null) {
+            throw new IllegalArgumentException("steamIdMember is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatAction> kickMember = new ClientMsg<>(MsgClientChatAction.class);
+
+        kickMember.getBody().setSteamIdChat(chatID);
+        kickMember.getBody().setSteamIdUserToActOn(steamIdMember);
+
+        kickMember.getBody().setChatAction(EChatAction.Ban);
+
+        client.send(kickMember);
     }
+
+    /**
+     * Unbans the specified chat member from the given chat room.
+     *
+     * @param steamIdChat   The SteamID of chat room to unban the member from.
+     * @param steamIdMember The SteamID of the member to unban from the chat.
+     */
+    public void unbanChatMember(SteamID steamIdChat, SteamID steamIdMember) {
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
+        }
+
+        if (steamIdMember == null) {
+            throw new IllegalArgumentException("steamIdMember is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatAction> kickMember = new ClientMsg<>(MsgClientChatAction.class);
+
+        kickMember.getBody().setSteamIdChat(chatID);
+        kickMember.getBody().setSteamIdUserToActOn(steamIdMember);
+
+        kickMember.getBody().setChatAction(EChatAction.UnBan);
+
+        client.send(kickMember);
+    }
+
 
     /**
      * Handles a client message. This should not be called directly.
@@ -197,9 +257,22 @@ public final class SteamChat extends ClientMsgHandler {
         }
     }
 
+    private SteamID fixChatID(SteamID steamIdChat) {
+        SteamID chatID = new SteamID(steamIdChat.convertToUInt64()); // copy the steamid so we don't modify it
+
+        if (chatID.isClanAccount()) {
+            // this steamid is incorrect, so we'll fix it up
+            chatID.setAccountInstance(SteamID.ChatInstanceFlags.CLAN.code());
+            chatID.setAccountType(EAccountType.Chat);
+        }
+
+        return chatID;
+    }
+
     void handleChatEnter(IPacketMsg packetMsg) {
         final ClientMsg<MsgClientChatEnter> chatEnter = new ClientMsg<MsgClientChatEnter>(packetMsg, MsgClientChatEnter.class);
-        final ChatEnterCallback callback = new ChatEnterCallback(chatEnter.getBody(), chatEnter.getPayload());
+        byte[] payload = chatEnter.getPayload().toByteArray();
+        final ChatEnterCallback callback = new ChatEnterCallback(chatEnter.getBody(), payload);
         getClient().postCallback(callback);
         // Add this chat to the list of chats
         if (callback.getEnterResponse() == EChatRoomEnterResponse.Success) {
@@ -212,37 +285,25 @@ public final class SteamChat extends ClientMsgHandler {
 
     void handleChatMsg(IPacketMsg packetMsg) {
         final ClientMsg<MsgClientChatMsg> chatMsg = new ClientMsg<MsgClientChatMsg>(packetMsg, MsgClientChatMsg.class);
-        byte[] msgData = new byte[0];
-        try {
-            msgData = chatMsg.getPayload().readBytes();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        final ChatMsgCallback callback = new ChatMsgCallback(chatMsg.getBody(), msgData);
-        getClient().postCallback(callback);
+        byte[] payload = chatMsg.getPayload().toByteArray();
+        getClient().postCallback( new ChatMsgCallback(chatMsg.getBody(), payload));
     }
 
     void handleChatMemberInfo(IPacketMsg packetMsg) {
         final ClientMsg<MsgClientChatMemberInfo> membInfo = new ClientMsg<MsgClientChatMemberInfo>(packetMsg, MsgClientChatMemberInfo.class);
-        try {
-            byte[] payload = membInfo.getPayload().readBytes();
-            final ChatMemberInfoCallback callback = new ChatMemberInfoCallback(membInfo.getBody(), payload);
-            getClient().postCallback(callback);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        byte[] payload = membInfo.getPayload().toByteArray();
+        getClient().postCallback(new ChatMemberInfoCallback(membInfo.getBody(), payload));
     }
 
     void handleChatActionResult(IPacketMsg packetMsg) {
         final ClientMsg<MsgClientChatActionResult> actionResult = new ClientMsg<MsgClientChatActionResult>(packetMsg, MsgClientChatActionResult.class);
-        final ChatActionResultCallback callback = new ChatActionResultCallback(actionResult.getBody());
-        getClient().postCallback(callback);
+        getClient().postCallback(new ChatActionResultCallback(actionResult.getBody()));
     }
 
     void handleCreateChatResponse(IPacketMsg packetMsg) {
         final ClientMsg<MsgClientCreateChatResponse> actionResult = new ClientMsg<MsgClientCreateChatResponse>(packetMsg, MsgClientCreateChatResponse.class);
         final ChatCreateResponseCallback callback = new ChatCreateResponseCallback(actionResult.getBody());
-        getClient().postCallback(callback);
+        getClient().postCallback(new ChatCreateResponseCallback(actionResult.getBody()));
         if (callback.getResult() == EResult.OK) {
             joinChat(callback.getChatID());
         }
@@ -252,8 +313,6 @@ public final class SteamChat extends ClientMsgHandler {
         final ClientMsgProtobuf<SteammessagesClientserver.CMsgClientChatInvite.Builder> chatInvite = new ClientMsgProtobuf<SteammessagesClientserver.CMsgClientChatInvite.Builder>(SteammessagesClientserver.CMsgClientChatInvite.class, packetMsg);
         final ChatInviteCallback callback = new ChatInviteCallback(chatInvite.getBody().build());
         getClient().postCallback(callback);
-        // maybe not do this automatically
-        joinChat(callback.getChatRoomID());
     }
 
     public List<Chat> getChats() {

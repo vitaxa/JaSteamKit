@@ -26,7 +26,7 @@ public class MsgClientSetIgnoreFriendResponse implements ISteamSerializableMessa
     }
 
     public void setFriendId(SteamID steamId) {
-        this.friendId = steamId.convertToLong();
+        this.friendId = steamId.convertToUInt64();
     }
 
     public EResult getResult() {
@@ -41,8 +41,8 @@ public class MsgClientSetIgnoreFriendResponse implements ISteamSerializableMessa
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(friendId);
-        bw.write(result.code());
+        bw.writeLong(friendId);
+        bw.writeInt(result.code());
     }
 
     @Override

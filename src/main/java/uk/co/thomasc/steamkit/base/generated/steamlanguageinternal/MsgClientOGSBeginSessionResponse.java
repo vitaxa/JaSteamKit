@@ -60,10 +60,10 @@ public class MsgClientOGSBeginSessionResponse implements ISteamSerializableMessa
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(result.code());
-        bw.write(collectingAny);
-        bw.write(collectingDetails);
-        bw.write(sessionId);
+        bw.writeInt(result.code());
+        bw.writeBoolean(collectingAny);
+        bw.writeBoolean(collectingDetails);
+        bw.writeLong(sessionId);
     }
 
     @Override

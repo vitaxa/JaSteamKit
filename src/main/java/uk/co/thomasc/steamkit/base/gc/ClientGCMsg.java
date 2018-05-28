@@ -4,10 +4,9 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.IGCSerializab
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgGCHdr;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.logging.Debug;
-import uk.co.thomasc.steamkit.util.stream.BinaryReader;
-import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
+import uk.co.thomasc.steamkit.util.stream.MemoryStream;
+import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -46,7 +45,7 @@ public final class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBa
      */
     @Override
     public JobID getTargetJobID() {
-        return new JobID(getHeader().targetJobID);
+        return new JobID(getHeader().getTargetJobID());
     }
 
     /**
@@ -56,7 +55,7 @@ public final class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBa
      */
     @Override
     public void setTargetJobID(JobID value) {
-        getHeader().targetJobID = value.getValue();
+        getHeader().setTargetJobID(value.getValue());
     }
 
     /**
@@ -66,7 +65,7 @@ public final class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBa
      */
     @Override
     public JobID getSourceJobID() {
-        return new JobID(getHeader().sourceJobID);
+        return new JobID(getHeader().getSourceJobID());
     }
 
     /**
@@ -76,7 +75,7 @@ public final class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBa
      */
     @Override
     public void setSourceJobID(JobID value) {
-        getHeader().sourceJobID = value.getValue();
+        getHeader().setSourceJobID(value.getValue());
     }
 
     /**
@@ -115,7 +114,7 @@ public final class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBa
     public ClientGCMsg(Class<T> clazz, GCMsgBase<MsgGCHdr> msg, int payloadReserve) {
         this(clazz, payloadReserve);
         // our target is where the message came from
-        getHeader().targetJobID = msg.getHeader().sourceJobID;
+        getHeader().setTargetJobID(msg.getHeader().getSourceJobID());
     }
 
     public ClientGCMsg(Class<T> clazz, GCMsgBase<MsgGCHdr> msg) {
@@ -132,7 +131,7 @@ public final class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBa
         this(clazz);
         Debug.Assert(!msg.isProto(), "ClientGCMsg used for proto message!");
         try {
-            deSerialize(msg.getData());
+            deserialize(msg.getData());
         } catch (final IOException e) {
             e.printStackTrace();
         }
@@ -145,11 +144,17 @@ public final class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBa
      */
     @Override
     public byte[] serialize() throws IOException {
-        final BinaryWriter ms = new BinaryWriter(new ByteArrayOutputStream());
-        getHeader().serialize(ms);
-        body.serialize(ms);
-        ms.write(getOutputStream().toByteArray());
-        return ms.toByteArray();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(0);
+
+        try {
+            getHeader().serialize(baos);
+            body.serialize(baos);
+            baos.write(payload.toByteArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return baos.toByteArray();
     }
 
     /**
@@ -158,14 +163,21 @@ public final class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBa
      * @param data The data representing a client message.
      */
     @Override
-    public void deSerialize(byte[] data) throws IOException {
-        final BinaryReader cs = new BinaryReader(data);
-        getHeader().deSerialize(cs);
-        body.deSerialize(cs);
-        // the rest of the data is the payload
-        final int payloadOffset = cs.getPosition();
-        final int payloadLen = cs.getRemaining();
-        setPayload(new BinaryReader(new ByteArrayInputStream(copyOfRange(data, payloadOffset, payloadOffset + payloadLen))));
+    public void deserialize(byte[] data) throws IOException {
+        if (data == null) {
+            throw new IllegalArgumentException("data is null");
+        }
+        MemoryStream ms = new MemoryStream(data);
+
+        try {
+            getHeader().deserialize(ms);
+            body.deserialize(ms);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        payload.write(data, (int) ms.getPosition(), ms.available());
+        payload.seek(0, SeekOrigin.BEGIN);
     }
 
     public static byte[] copyOfRange(byte[] from, int start, int end) {

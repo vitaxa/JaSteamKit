@@ -37,7 +37,7 @@ public class MsgClientOGSBeginSession implements ISteamSerializableMessage {
     }
 
     public void setAccountId(SteamID steamId) {
-        this.accountId = steamId.convertToLong();
+        this.accountId = steamId.convertToUInt64();
     }
 
     public int getAppId() {
@@ -60,10 +60,10 @@ public class MsgClientOGSBeginSession implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(accountType);
-        bw.write(accountId);
-        bw.write(appId);
-        bw.write(timeStarted);
+        bw.writeByte(accountType);
+        bw.writeLong(accountId);
+        bw.writeInt(appId);
+        bw.writeInt(timeStarted);
     }
 
     @Override

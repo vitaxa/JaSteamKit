@@ -1,90 +1,158 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.types;
 
+import uk.co.thomasc.steamkit.base.generated.steamlanguage.EOSType;
+import uk.co.thomasc.steamkit.types.steamid.SteamID;
+import uk.co.thomasc.steamkit.util.util.Utils;
+
 /**
  * Represents the details required to log into Steam3 as a user.
  */
-public final class LogOnDetails {
-    /**
-     * Gets or sets the username.
-     */
-    public String username = "";
-    /**
-     * Gets or sets the password.
-     */
-    public String password = "";
-    /**
-     * Gets or sets the Steam Guard auth code used to login. This is the code
-     * sent to the user's email.
-     */
-    public String authCode = "";
-    /**
-     * The two factor auth code from the mobile app
-     */
-    public String twoFactorCode = "";
-    /**
-     * Gets or sets the sentry file hash for this logon attempt, or null if no
-     * sentry file is available.
-     */
-    public byte[] sentryFileHash = null;
-    /**
-     * Gets or sets the account instance. 1 for the PC instance or 2 for the
-     * Console (PS3) instance.
-     */
-    public int accountInstance = 1; // use the default pc steam instance
-    /**
-     * Gets or sets a value indicating whether to request the Steam2 ticket.
-     * This is an optional request only needed for Steam2 content downloads.
-     */
-    public boolean requestSteam2Ticket = false;
-    /**
-     * Tells Steam if we should remember the password by getting a valid loginkey for future logons.
-     */
-    public boolean shouldRememberPassword = false;
-    /**
-     * The loginkey to use, for passwordless authentication
-     */
-    public String loginkey = "";
+public class LogOnDetails {
+    private String username = "";
 
-    /**
-     * Initializes a new instance of the {@link LogOnDetails} class.
-     */
+    private String password = "";
+
+    private int cellID;
+
+    private Integer loginID;
+
+    private String authCode = "";
+
+    private String twoFactorCode = "";
+
+    private String loginKey = "";
+
+    private boolean shouldRememberPassword;
+
+    private byte[] sentryFileHash;
+
+    private long accountInstance;
+
+    private long accountID;
+
+    private boolean requestSteam2Ticket;
+
+    private EOSType clientOSType;
+
+    private String clientLanguage = "";
+
     public LogOnDetails() {
+        accountInstance = SteamID.DESKTOP_INSTANCE;
+        accountID = 0L;
+
+        clientOSType = Utils.getOSType();
+        clientLanguage = "english";
     }
 
-    /**
-     * Gets or sets the username.
-     * @return this
-     */
-    public LogOnDetails username(final String username) {
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
-        return this;
     }
 
-    /**
-     * Gets or sets the password.
-     * @return this
-     */
-    public LogOnDetails password(final String password) {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
-        return this;
     }
 
-    /**
-     * Gets or sets the Steam Guard auth code used to login. This is the code
-     * sent to the user's email.
-     * @return this
-     */
-    public LogOnDetails authCode(final String authCode) {
+    public int getCellID() {
+        return cellID;
+    }
+
+    public void setCellID(int cellID) {
+        this.cellID = cellID;
+    }
+
+    public Integer getLoginID() {
+        return loginID;
+    }
+
+    public void setLoginID(Integer loginID) {
+        this.loginID = loginID;
+    }
+
+    public String getAuthCode() {
+        return authCode;
+    }
+
+    public void setAuthCode(String authCode) {
         this.authCode = authCode;
-        return this;
     }
 
-    /**
-     * The two factor auth code from the mobile app
-     * @return this
-     */
-    public LogOnDetails twoFactorCode(final String twoFactorCode) {
+    public String getTwoFactorCode() {
+        return twoFactorCode;
+    }
+
+    public void setTwoFactorCode(String twoFactorCode) {
         this.twoFactorCode = twoFactorCode;
-        return this;
+    }
+
+    public String getLoginKey() {
+        return loginKey;
+    }
+
+    public void setLoginKey(String loginKey) {
+        this.loginKey = loginKey;
+    }
+
+    public boolean isShouldRememberPassword() {
+        return shouldRememberPassword;
+    }
+
+    public void setShouldRememberPassword(boolean shouldRememberPassword) {
+        this.shouldRememberPassword = shouldRememberPassword;
+    }
+
+    public byte[] getSentryFileHash() {
+        return sentryFileHash;
+    }
+
+    public void setSentryFileHash(byte[] sentryFileHash) {
+        this.sentryFileHash = sentryFileHash;
+    }
+
+    public long getAccountInstance() {
+        return accountInstance;
+    }
+
+    public void setAccountInstance(long accountInstance) {
+        this.accountInstance = accountInstance;
+    }
+
+    public long getAccountID() {
+        return accountID;
+    }
+
+    public void setAccountID(long accountID) {
+        this.accountID = accountID;
+    }
+
+    public boolean isRequestSteam2Ticket() {
+        return requestSteam2Ticket;
+    }
+
+    public void setRequestSteam2Ticket(boolean requestSteam2Ticket) {
+        this.requestSteam2Ticket = requestSteam2Ticket;
+    }
+
+    public EOSType getClientOSType() {
+        return clientOSType;
+    }
+
+    public void setClientOSType(EOSType clientOSType) {
+        this.clientOSType = clientOSType;
+    }
+
+    public String getClientLanguage() {
+        return clientLanguage;
+    }
+
+    public void setClientLanguage(String clientLanguage) {
+        this.clientLanguage = clientLanguage;
     }
 }

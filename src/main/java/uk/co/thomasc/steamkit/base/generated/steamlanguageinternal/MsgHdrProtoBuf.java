@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.base.generated.steamlanguageinternal;
 
-import uk.co.thomasc.steamkit.base.generated.gc.csgo.SteamMsgBase.CMsgProtoBufHeader;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;

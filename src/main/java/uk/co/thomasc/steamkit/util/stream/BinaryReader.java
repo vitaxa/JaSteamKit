@@ -1,109 +1,133 @@
 package uk.co.thomasc.steamkit.util.stream;
 
-import com.google.protobuf.CodedInputStream;
-import com.google.protobuf.InvalidProtocolBufferException;
+import java.io.*;
+import java.nio.charset.Charset;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.ByteBuffer;
+/**
+ * Basically DataInputStream, but the bytes are parsed in reverse order
+ */
+public class BinaryReader extends FilterInputStream {
 
-public class BinaryReader {
+    private byte readBuffer[] = new byte[8];
 
-    public static long LongMaxValue = 0xFFFFFFFFFFFFFFFFL;
+    private int position = 0;
 
-    private CodedInputStream reader;
-    private int len = 0;
-
-    public BinaryReader(InputStream stream) {
-        reader = CodedInputStream.newInstance(stream);
-    }
-
-    public BinaryReader(byte[] data) {
-        reader = CodedInputStream.newInstance(data);
-        len = data.length;
-        try {
-            reader.pushLimit(len);
-        } catch (final InvalidProtocolBufferException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public long readLong() throws IOException {
-        return getBuffer(8).getLong();
-    }
-
-    private ByteBuffer getBuffer(int size) throws IOException {
-        final byte[] buffer = new byte[size];
-        for (int i = 1; i <= size; i++) {
-            buffer[size - i] = reader.readRawByte();
-        }
-        return ByteBuffer.wrap(buffer);
+    public BinaryReader(InputStream in) {
+        super(in);
     }
 
     public int readInt() throws IOException {
-        return getBuffer(4).getInt();
+        int ch1 = in.read();
+        int ch2 = in.read();
+        int ch3 = in.read();
+        int ch4 = in.read();
+        position += 4;
+        if ((ch1 | ch2 | ch3 | ch4) < 0) {
+            throw new EOFException();
+        }
+        return ((ch4 << 24) + (ch3 << 16) + (ch2 << 8) + ch1);
     }
 
-    public int getPosition() {
-        /*
-         * try { Field f =
-         * CodedInputStream.class.getDeclaredField("totalBytesRetired");
-         * f.setAccessible(true); return (int) f.get(reader); } catch
-         * (NoSuchFieldException | SecurityException | IllegalArgumentException
-         * | IllegalAccessException e) {
-         * uk.co.thomasc.steamkit.util.logging.DebugLog.writeLine("NEW_EX",
-         * "Exception: %s", e); } return 0;
-         */
-        return reader.getTotalBytesRead();
-    }
+    public byte[] readBytes(int len) throws IOException {
+        if (len < 0) {
+            throw new IOException("negative length");
+        }
 
-    public int getRemaining() {
-        return len - getPosition();
-    }
+        byte[] bytes = new byte[len];
 
-    public CodedInputStream getStream() {
-        return reader;
-    }
+        for (int i = 0; i < bytes.length; i++) {
+            bytes[i] = readByte();
+        }
 
-    public short readShort() throws IOException {
-        return getBuffer(2).getShort();
+        return bytes;
     }
 
     public byte readByte() throws IOException {
-        return reader.readRawByte();
+        int ch = in.read();
+        if (ch < 0) {
+            throw new EOFException();
+        }
+        position += 1;
+        return (byte) ch;
     }
 
-    public byte[] readBytes(int length) throws IOException {
-        return reader.readRawBytes(length);
+    public short readShort() throws IOException {
+        int ch1 = in.read();
+        int ch2 = in.read();
+        if ((ch1 | ch2) < 0) {
+            throw new EOFException();
+        }
+        position += 2;
+        return (short) ((ch2 << 8) + ch1);
     }
 
-    public boolean readBoolean() throws IOException {
-        return reader.readBool();
+    public long readLong() throws IOException {
+        in.read(readBuffer, 0, 8);
+        position += 8;
+        return (((long) readBuffer[7] << 56) +
+                ((long) (readBuffer[6] & 255) << 48) +
+                ((long) (readBuffer[5] & 255) << 40) +
+                ((long) (readBuffer[4] & 255) << 32) +
+                ((long) (readBuffer[3] & 255) << 24) +
+                ((readBuffer[2] & 255) << 16) +
+                ((readBuffer[1] & 255) << 8) +
+                (readBuffer[0] & 255));
     }
 
-    public boolean isAtEnd() throws IOException {
-        return reader.isAtEnd();
-    }
-
-    public byte[] readBytes() throws IOException {
-        return reader.readRawBytes(getRemaining());
+    public char readChar() throws IOException {
+        int ch1 = in.read();
+        if (ch1 < 0) {
+            throw new EOFException();
+        }
+        position += 1;
+        return (char) ch1;
     }
 
     public float readFloat() throws IOException {
-        return getBuffer(4).getFloat();
+        return Float.intBitsToFloat(readInt());
     }
 
-    public String readString() throws IOException {
-        return reader.readString();
+    public double readDouble() throws IOException {
+        return Double.longBitsToDouble(readLong());
+    }
+
+    public boolean readBoolean() throws IOException {
+        int ch = in.read();
+        if (ch < 0) {
+            throw new EOFException();
+        }
+        position += 1;
+        return ch != 0;
     }
 
     public String readNullTermString() throws IOException {
-        int rb, i = 0;
-        final byte[] res = new byte[2048];
-        while ((rb = readByte()) != 0 && rb != -1) {
-            res[i++] = (byte) rb;
-        }
-        return new String(res, 0, i);
+        return readNullTermString(Charset.defaultCharset());
     }
 
+    public String readNullTermString(Charset charset) throws IOException {
+        if (charset == null) {
+            throw new IOException("charset is null");
+        }
+
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream(0);
+        BinaryWriter bw = new BinaryWriter(buffer);
+
+        while (true) {
+            char ch = readChar();
+
+            if (ch == 0) {
+                break;
+            }
+
+            bw.writeChar(ch);
+        }
+
+        byte[] bytes = buffer.toByteArray();
+        position += bytes.length;
+        return new String(bytes, charset);
+    }
+
+    public int getPosition() {
+        return position;
+    }
 }

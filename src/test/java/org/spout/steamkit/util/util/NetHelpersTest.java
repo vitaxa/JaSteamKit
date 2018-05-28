@@ -32,16 +32,6 @@ public class NetHelpersTest {
         } catch (final UnknownHostException e) {
             uk.co.thomasc.steamkit.util.logging.DebugLog.writeLine("NEW_EX", "Exception: %s", e);
         }
-
-        try {
-            ip = InetAddress.getByName("252.106.110.134");
-            ipV = 4234833542L;
-
-            Assert.assertEquals(NetHelpers.getIPAddress(ip), ipV);
-            Assert.assertEquals(NetHelpers.getIPAddress(ipV), ip);
-        } catch (final UnknownHostException e) {
-            uk.co.thomasc.steamkit.util.logging.DebugLog.writeLine("NEW_EX", "Exception: %s", e);
-        }
     }
 
 }

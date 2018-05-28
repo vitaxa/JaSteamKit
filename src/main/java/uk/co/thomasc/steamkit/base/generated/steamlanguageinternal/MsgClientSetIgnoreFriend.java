@@ -27,7 +27,7 @@ public class MsgClientSetIgnoreFriend implements ISteamSerializableMessage {
     }
 
     public void setMySteamId(SteamID steamId) {
-        this.mySteamId = steamId.convertToLong();
+        this.mySteamId = steamId.convertToUInt64();
     }
 
     public SteamID getSteamIdFriend() {
@@ -35,7 +35,7 @@ public class MsgClientSetIgnoreFriend implements ISteamSerializableMessage {
     }
 
     public void setSteamIdFriend(SteamID steamId) {
-        this.steamIdFriend = steamId.convertToLong();
+        this.steamIdFriend = steamId.convertToUInt64();
     }
 
     public byte getIgnore() {
@@ -50,9 +50,9 @@ public class MsgClientSetIgnoreFriend implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(mySteamId);
-        bw.write(steamIdFriend);
-        bw.write(ignore);
+        bw.writeLong(mySteamId);
+        bw.writeLong(steamIdFriend);
+        bw.writeByte(ignore);
     }
 
     @Override

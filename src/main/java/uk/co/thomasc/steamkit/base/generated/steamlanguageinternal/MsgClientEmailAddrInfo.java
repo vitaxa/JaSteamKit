@@ -49,9 +49,9 @@ public class MsgClientEmailAddrInfo implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(passwordStrength);
-        bw.write(flagsAccountSecurityPolicy);
-        bw.write(validated);
+        bw.writeInt(passwordStrength);
+        bw.writeInt(flagsAccountSecurityPolicy);
+        bw.writeBoolean(validated);
     }
 
     @Override

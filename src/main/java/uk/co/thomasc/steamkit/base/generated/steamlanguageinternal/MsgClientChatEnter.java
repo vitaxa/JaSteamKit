@@ -39,7 +39,7 @@ public class MsgClientChatEnter implements ISteamSerializableMessage {
     }
 
     public void setSteamIdChat(SteamID steamId) {
-        this.steamIdChat = steamId.convertToLong();
+        this.steamIdChat = steamId.convertToUInt64();
     }
 
     public SteamID getSteamIdFriend() {
@@ -47,7 +47,7 @@ public class MsgClientChatEnter implements ISteamSerializableMessage {
     }
 
     public void setSteamIdFriend(SteamID steamId) {
-        this.steamIdFriend = steamId.convertToLong();
+        this.steamIdFriend = steamId.convertToUInt64();
     }
 
     public EChatRoomType getChatRoomType() {
@@ -63,7 +63,7 @@ public class MsgClientChatEnter implements ISteamSerializableMessage {
     }
 
     public void setSteamIdOwner(SteamID steamId) {
-        this.steamIdOwner = steamId.convertToLong();
+        this.steamIdOwner = steamId.convertToUInt64();
     }
 
     public SteamID getSteamIdClan() {
@@ -71,7 +71,7 @@ public class MsgClientChatEnter implements ISteamSerializableMessage {
     }
 
     public void setSteamIdClan(SteamID steamId) {
-        this.steamIdClan = steamId.convertToLong();
+        this.steamIdClan = steamId.convertToUInt64();
     }
 
     public byte getChatFlags() {
@@ -102,14 +102,14 @@ public class MsgClientChatEnter implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamIdChat);
-        bw.write(steamIdFriend);
-        bw.write(chatRoomType.code());
-        bw.write(steamIdOwner);
-        bw.write(steamIdClan);
-        bw.write(chatFlags);
-        bw.write(enterResponse.code());
-        bw.write(numMembers);
+        bw.writeLong(steamIdChat);
+        bw.writeLong(steamIdFriend);
+        bw.writeInt(chatRoomType.code());
+        bw.writeLong(steamIdOwner);
+        bw.writeLong(steamIdClan);
+        bw.writeByte(chatFlags);
+        bw.writeInt(enterResponse.code());
+        bw.writeInt(numMembers);
     }
 
     @Override

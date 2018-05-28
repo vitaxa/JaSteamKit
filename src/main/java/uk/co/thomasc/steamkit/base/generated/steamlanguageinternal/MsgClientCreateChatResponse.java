@@ -39,7 +39,7 @@ public class MsgClientCreateChatResponse implements ISteamSerializableMessage {
     }
 
     public void setSteamIdChat(SteamID steamId) {
-        this.steamIdChat = steamId.convertToLong();
+        this.steamIdChat = steamId.convertToUInt64();
     }
 
     public EChatRoomType getChatRoomType() {
@@ -55,17 +55,17 @@ public class MsgClientCreateChatResponse implements ISteamSerializableMessage {
     }
 
     public void setSteamIdFriendChat(SteamID steamId) {
-        this.steamIdFriendChat = steamId.convertToLong();
+        this.steamIdFriendChat = steamId.convertToUInt64();
     }
 
     @Override
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(result.code());
-        bw.write(steamIdChat);
-        bw.write(chatRoomType.code());
-        bw.write(steamIdFriendChat);
+        bw.writeInt(result.code());
+        bw.writeLong(steamIdChat);
+        bw.writeInt(chatRoomType.code());
+        bw.writeLong(steamIdFriendChat);
     }
 
     @Override

@@ -68,8 +68,7 @@ public class PICSProductInfo extends CallbackMsg {
 
         keyValues = new KeyValue();
         if (packageInfo.hasBuffer()) {
-            try {
-                BinaryReader br = new BinaryReader(new ByteArrayInputStream(packageInfo.getBuffer().toByteArray()));
+            try (BinaryReader br = new BinaryReader(new ByteArrayInputStream(packageInfo.getBuffer().toByteArray()))) {
                 br.readInt();
                 keyValues.readAsBinary(br);
             } catch (IOException e) {

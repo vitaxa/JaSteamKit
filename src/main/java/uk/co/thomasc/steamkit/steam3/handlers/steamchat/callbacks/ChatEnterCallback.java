@@ -8,8 +8,10 @@ import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -57,7 +59,7 @@ public final class ChatEnterCallback extends CallbackMsg {
      */
     private List<ChatMemberInfo> chatMembers;
 
-    public ChatEnterCallback(MsgClientChatEnter msg, BinaryReader payload) {
+    public ChatEnterCallback(MsgClientChatEnter msg, byte[] payload) {
         chatID = msg.getSteamIdChat();
         friendID = msg.getSteamIdFriend();
         chatRoomType = msg.getChatRoomType();
@@ -66,21 +68,30 @@ public final class ChatEnterCallback extends CallbackMsg {
         chatFlags = msg.getChatFlags();
         enterResponse = msg.getEnterResponse();
         numChatMembers = msg.getNumMembers();
+
+        ByteArrayInputStream bais = new ByteArrayInputStream(payload);
         // reading the payload
         try {
-            chatRoomName = payload.readNullTermString();
+            BinaryReader br = new BinaryReader(bais);
+            // steamclient always attempts to read the chat room name, regardless of the enter response
+            chatRoomName = br.readNullTermString();
+
             if (enterResponse != EChatRoomEnterResponse.Success) {
                 // the rest of the payload depends on a successful chat enter
                 return;
             }
-            chatMembers = new ArrayList<ChatMemberInfo>();
+
+            List<ChatMemberInfo> memberList = new ArrayList<>();
+
             for (int i = 0; i < numChatMembers; i++) {
                 ChatMemberInfo memberInfo = new ChatMemberInfo();
-                memberInfo.readFromBinary(payload);
-                chatMembers.add(memberInfo);
+                memberInfo.readFromStream(br);
+
+                memberList.add(memberInfo);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            chatMembers = Collections.unmodifiableList(memberList);
+        } catch (IOException ignored) {
         }
     }
 

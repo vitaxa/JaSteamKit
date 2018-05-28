@@ -67,7 +67,7 @@ public abstract class MsgBase<T extends ISteamSerializableHeader> extends Abstra
      * @return Data representing a client message.
      */
     @Override
-    public abstract byte[] serialize() throws IOException;
+    public abstract byte[] serialize();
 
     /**
      * Initializes this client message by deserializing the specified data.
@@ -76,7 +76,7 @@ public abstract class MsgBase<T extends ISteamSerializableHeader> extends Abstra
      * @throws IOException
      */
     @Override
-    public abstract void deSerialize(byte[] data) throws IOException;
+    public abstract void deserialize(byte[] data);
 
     /**
      * true if this instance is protobuf backed; otherwise, false.

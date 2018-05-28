@@ -2,8 +2,8 @@ package uk.co.thomasc.steamkit.base;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgHdrProtoBuf;
-import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
@@ -32,19 +32,17 @@ public final class PacketClientMsgProtobuf implements IPacketMsg {
      * @param eMsg The network message type for this packet message.
      * @param data The data.
      */
-    public PacketClientMsgProtobuf(EMsg eMsg, byte[] data) {
+    public PacketClientMsgProtobuf(EMsg eMsg, byte[] data) throws IOException {
         msgType = eMsg;
         payload = data;
         final MsgHdrProtoBuf protobufHeader = new MsgHdrProtoBuf();
         // we need to pull out the job ids, so we deSerialize the protobuf header
-        final BinaryReader ms = new BinaryReader(data);
-        try {
-            protobufHeader.deSerialize(ms);
-        } catch (final IOException e) {
-            e.printStackTrace();
+        try (ByteArrayInputStream stream = new ByteArrayInputStream(data)) {
+            protobufHeader.deserialize(stream);
         }
-        targetJobID = protobufHeader.proto.getJobidTarget();
-        sourceJobID = protobufHeader.proto.getJobidSource();
+
+        targetJobID = protobufHeader.getProto().getJobidTarget();
+        sourceJobID = protobufHeader.getProto().getJobidSource();
     }
 
     /**

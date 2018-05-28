@@ -90,13 +90,13 @@ public class MsgGSGetReputationResponse implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(result.code());
-        bw.write(reputationScore);
-        bw.write(banned);
-        bw.write(bannedIp);
-        bw.write(bannedPort);
-        bw.write(bannedGameId);
-        bw.write(timeBanExpires);
+        bw.writeInt(result.code());
+        bw.writeInt(reputationScore);
+        bw.writeBoolean(banned);
+        bw.writeInt(bannedIp);
+        bw.writeShort(bannedPort);
+        bw.writeLong(bannedGameId);
+        bw.writeInt(timeBanExpires);
     }
 
     @Override

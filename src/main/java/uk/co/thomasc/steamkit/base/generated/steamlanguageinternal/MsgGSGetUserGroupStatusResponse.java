@@ -31,7 +31,7 @@ public class MsgGSGetUserGroupStatusResponse implements ISteamSerializableMessag
     }
 
     public void setSteamIdUser(SteamID steamId) {
-        this.steamIdUser = steamId.convertToLong();
+        this.steamIdUser = steamId.convertToUInt64();
     }
 
     public SteamID getSteamIdGroup() {
@@ -39,7 +39,7 @@ public class MsgGSGetUserGroupStatusResponse implements ISteamSerializableMessag
     }
 
     public void setSteamIdGroup(SteamID steamId) {
-        this.steamIdGroup = steamId.convertToLong();
+        this.steamIdGroup = steamId.convertToUInt64();
     }
 
     public EClanRelationship getClanRelationship() {
@@ -62,10 +62,10 @@ public class MsgGSGetUserGroupStatusResponse implements ISteamSerializableMessag
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamIdUser);
-        bw.write(steamIdGroup);
-        bw.write(clanRelationship.code());
-        bw.write(clanRank.code());
+        bw.writeLong(steamIdUser);
+        bw.writeLong(steamIdGroup);
+        bw.writeInt(clanRelationship.code());
+        bw.writeInt(clanRank.code());
     }
 
     @Override

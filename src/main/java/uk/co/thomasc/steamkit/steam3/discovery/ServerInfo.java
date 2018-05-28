@@ -1,38 +1,34 @@
 package uk.co.thomasc.steamkit.steam3.discovery;
 
-import uk.co.thomasc.steamkit.util.cSharp.ip.IPEndPoint;
+import uk.co.thomasc.steamkit.networking.steam3.ProtocolType;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class ServerInfo {
-    private IPEndPoint ipEndPoint;
-    private LocalDate lastBadConnectionTime;
+    private ServerRecord record;
 
-    public ServerInfo(IPEndPoint ipEndPoint) {
-        this.ipEndPoint = ipEndPoint;
-        this.lastBadConnectionTime = null;
+    private ProtocolType protocol;
+
+    private Date lastBadConnection;
+
+    public ServerInfo(ServerRecord record, ProtocolType protocol) {
+        this.record = record;
+        this.protocol = protocol;
     }
 
-    public ServerInfo(IPEndPoint ipEndPoint, LocalDate lastBadConnectionTime) {
-        this.ipEndPoint = ipEndPoint;
-        this.lastBadConnectionTime = lastBadConnectionTime;
+    public ServerRecord getRecord() {
+        return record;
     }
 
-    public IPEndPoint getIpEndPoint() {
-        return ipEndPoint;
+    public ProtocolType getProtocol() {
+        return protocol;
     }
 
-    public ServerInfo setIpEndPoint(IPEndPoint ipEndPoint) {
-        this.ipEndPoint = ipEndPoint;
-        return this;
+    public Date getLastBadConnection() {
+        return lastBadConnection;
     }
 
-    public LocalDate getLastBadConnectionTime() {
-        return lastBadConnectionTime;
-    }
-
-    public ServerInfo setLastBadConnectionTime(LocalDate lastBadConnectionTime) {
-        this.lastBadConnectionTime = lastBadConnectionTime;
-        return this;
+    public void setLastBadConnection(Date lastBadConnection) {
+        this.lastBadConnection = lastBadConnection;
     }
 }

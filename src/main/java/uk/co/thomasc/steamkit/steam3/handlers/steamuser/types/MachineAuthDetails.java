@@ -1,64 +1,99 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.types;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.UpdateMachineAuthCallback;
-import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.JobCallback;
+import uk.co.thomasc.steamkit.types.JobID;
 
 /**
  * Represents details required to complete a machine auth request.
  */
-public final class MachineAuthDetails {
-    /**
-     * Gets or sets the target Job ID for the request. This is provided in the
-     * {@link JobCallback} for a {@link UpdateMachineAuthCallback}.
-     */
-    public long jobId;
+public class MachineAuthDetails {
+    private JobID jobID;
 
-    /**
-     * Gets or sets the result of updating the machine auth.
-     */
-    public EResult result;
+    private EResult eResult;
 
-    /**
-     * Gets or sets the number of bytes written for the sentry file.
-     */
-    public int bytesWritten;
+    private int bytesWritten;
 
-    /**
-     * Gets or sets the offset within the sentry file that was written.
-     */
-    public int offset;
+    private int offset;
 
-    /**
-     * Gets or sets the filename of the sentry file that was written.
-     */
-    public String fileName;
+    private String fileName = "";
 
-    /**
-     * Gets or sets the size of the sentry file.
-     */
-    public int fileSize;
+    private int fileSize;
 
-    /**
-     * Gets or sets the last error that occurred while writing the sentry file,
-     * or 0 if no error occurred.
-     */
-    public int lastError;
+    private int lastError;
 
-    /**
-     * Gets or sets the SHA-1 hash of the sentry file.
-     */
-    public byte[] sentryFileHash;
+    private byte[] sentryFileHash;
 
-    /**
-     * Gets or sets the one-time-password details.
-     */
-    public OTPDetails oneTimePassword = new OTPDetails();
+    private OTPDetails oneTimePassword = new OTPDetails();
 
-    /**
-     * Initializes a new instance of the {@link MachineAuthDetails} class.
-     */
-    public MachineAuthDetails() {
+    public JobID getJobID() {
+        return jobID;
+    }
 
+    public void setJobID(JobID jobID) {
+        this.jobID = jobID;
+    }
+
+    public EResult geteResult() {
+        return eResult;
+    }
+
+    public void seteResult(EResult eResult) {
+        this.eResult = eResult;
+    }
+
+    public int getBytesWritten() {
+        return bytesWritten;
+    }
+
+    public void setBytesWritten(int bytesWritten) {
+        this.bytesWritten = bytesWritten;
+    }
+
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public int getFileSize() {
+        return fileSize;
+    }
+
+    public void setFileSize(int fileSize) {
+        this.fileSize = fileSize;
+    }
+
+    public int getLastError() {
+        return lastError;
+    }
+
+    public void setLastError(int lastError) {
+        this.lastError = lastError;
+    }
+
+    public byte[] getSentryFileHash() {
+        return sentryFileHash;
+    }
+
+    public void setSentryFileHash(byte[] sentryFileHash) {
+        this.sentryFileHash = sentryFileHash;
+    }
+
+    public OTPDetails getOneTimePassword() {
+        return oneTimePassword;
+    }
+
+    public void setOneTimePassword(OTPDetails oneTimePassword) {
+        this.oneTimePassword = oneTimePassword;
     }
 }

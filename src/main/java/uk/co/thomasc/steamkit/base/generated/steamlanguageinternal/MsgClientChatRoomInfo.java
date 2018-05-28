@@ -26,7 +26,7 @@ public class MsgClientChatRoomInfo implements ISteamSerializableMessage {
     }
 
     public void setSteamIdChat(SteamID steamId) {
-        this.steamIdChat = steamId.convertToLong();
+        this.steamIdChat = steamId.convertToUInt64();
     }
 
     public EChatInfoType getType() {
@@ -41,8 +41,8 @@ public class MsgClientChatRoomInfo implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamIdChat);
-        bw.write(type.code());
+        bw.writeLong(steamIdChat);
+        bw.writeInt(type.code());
     }
 
     @Override

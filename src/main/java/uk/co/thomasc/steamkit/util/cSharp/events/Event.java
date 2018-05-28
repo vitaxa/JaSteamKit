@@ -2,7 +2,7 @@ package uk.co.thomasc.steamkit.util.cSharp.events;
 
 import java.util.HashSet;
 
-public class Event<T> {
+public class Event<T extends EventArgs> {
     protected final HashSet<EventHandler<T>> handlers = new HashSet<EventHandler<T>>();
 
     public void addEventHandler(EventHandler<T> handler) {

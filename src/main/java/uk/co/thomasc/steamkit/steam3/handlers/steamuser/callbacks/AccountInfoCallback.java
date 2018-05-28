@@ -1,8 +1,10 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientAccountInfo;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountFlags;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
+
+import java.util.EnumSet;
 
 /**
  * This callback is recieved when account information is recieved from the
@@ -24,7 +26,7 @@ public final class AccountInfoCallback extends CallbackMsg {
     /**
      * Gets the account flags for this account.
      */
-    private final EAccountFlags accountFlags;
+    private final EnumSet<EAccountFlags> accountFlags;
     /**
      * Gets the facebook ID of this account if it is linked with facebook.
      */
@@ -34,11 +36,11 @@ public final class AccountInfoCallback extends CallbackMsg {
      */
     private final String facebookName;
 
-    public AccountInfoCallback(CMsgClientAccountInfo msg) {
+    public AccountInfoCallback(CMsgClientAccountInfo.Builder msg) {
         personaName = msg.getPersonaName();
         country = msg.getIpCountry();
         countAuthedComputers = msg.getCountAuthedComputers();
-        accountFlags = EAccountFlags.f(msg.getAccountFlags());
+        accountFlags = EAccountFlags.from(msg.getAccountFlags());
         facebookID = msg.getFacebookId();
         facebookName = msg.getFacebookName();
     }
@@ -67,7 +69,7 @@ public final class AccountInfoCallback extends CallbackMsg {
     /**
      * Gets the account flags for this account.
      */
-    public EAccountFlags getAccountFlags() {
+    public EnumSet<EAccountFlags> getAccountFlags() {
         return this.accountFlags;
     }
 

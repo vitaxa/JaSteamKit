@@ -1,19 +1,25 @@
 package uk.co.thomasc.steamkit.steam3.steamclient.callbacks;
 
+import uk.co.thomasc.steamkit.steam3.CMClient;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 /**
- * This callback is received when the steamclient is physically disconnected
- * from the Steam network.
+ * This callback is received when the steamclient is physically disconnected from the Steam network.
  */
-public final class DisconnectedCallback extends CallbackMsg {
-    private boolean newconnection;
+public class DisconnectedCallback extends CallbackMsg {
 
-    public DisconnectedCallback(boolean newconnection) {
-        this.newconnection = newconnection;
+    private boolean userInitiated;
+
+    public DisconnectedCallback(boolean userInitiated) {
+        this.userInitiated = userInitiated;
     }
 
-    public boolean isNewconnection() {
-        return this.newconnection;
+    /**
+     * @return If true, the disconnection was initiated by calling {@link CMClient#disconnect()}.
+     * If false, the disconnection was the cause of something not user-controlled, such as a network failure or
+     * a forcible disconnection by the remote server.
+     */
+    public boolean isUserInitiated() {
+        return userInitiated;
     }
 }

@@ -5,10 +5,10 @@ import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.ISteamSeriali
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgHdr;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.steamid.SteamID;
-import uk.co.thomasc.steamkit.util.stream.BinaryReader;
-import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
+import uk.co.thomasc.steamkit.util.stream.MemoryStream;
+import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
-import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgHdr> {
@@ -25,7 +25,7 @@ public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgH
      */
     @Override
     public EMsg getMsgType() {
-        return getHeader().msg;
+        return getHeader().getMsg();
     }
 
     /**
@@ -115,7 +115,7 @@ public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgH
             e.printStackTrace();
         }
         // assign our emsg
-        getHeader().msg = body.getEMsg();
+        getHeader().setMsg(body.getEMsg());
     }
 
     /**
@@ -128,7 +128,7 @@ public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgH
     public Msg(MsgBase<MsgHdr> msg, Class<T> clazz, int payloadReserve) {
         this(clazz, payloadReserve);
         // our target is where the message came from
-        getHeader().targetJobID = msg.getHeader().sourceJobID;
+        getHeader().setTargetJobID(msg.getHeader().getSourceJobID());
     }
 
     /**
@@ -139,11 +139,7 @@ public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgH
      */
     public Msg(IPacketMsg msg, Class<T> clazz) {
         this(clazz);
-        try {
-            deSerialize(msg.getData());
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
+        deserialize(msg.getData());
     }
 
     /**
@@ -152,12 +148,16 @@ public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgH
      * @throws IOException
      */
     @Override
-    public byte[] serialize() throws IOException {
-        final BinaryWriter ms = new BinaryWriter();
-        getHeader().serialize(ms);
-        body.serialize(ms);
-        ms.write(getOutputStream().toByteArray());
-        return ms.toByteArray();
+    public byte[] serialize() {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream(0);
+        try {
+            getHeader().serialize(baos);
+            body.serialize(baos);
+            baos.write(payload.toByteArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return baos.toByteArray();
     }
 
     /**
@@ -166,14 +166,21 @@ public final class Msg<T extends ISteamSerializableMessage> extends MsgBase<MsgH
      * @throws IOException
      */
     @Override
-    public void deSerialize(byte[] data) throws IOException {
-        final BinaryReader ms = new BinaryReader(data);
-        getHeader().deSerialize(ms);
-        body.deSerialize(ms);
-        // the rest of the data is the payload
-        final int payloadOffset = ms.getPosition();
-        final int payloadLen = ms.getRemaining();
-        setPayload(new BinaryReader(new ByteArrayInputStream(copyOfRange(data, payloadOffset, payloadOffset + payloadLen))));
+    public void deserialize(byte[] data) {
+        if (data == null) {
+            throw new IllegalArgumentException("data is null");
+        }
+        MemoryStream ms = new MemoryStream(data);
+
+        try {
+            getHeader().deserialize(ms);
+            body.deserialize(ms);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        payload.write(data, (int) ms.getPosition(), ms.available());
+        payload.seek(0, SeekOrigin.BEGIN);
     }
 
     public static byte[] copyOfRange(byte[] from, int start, int end) {

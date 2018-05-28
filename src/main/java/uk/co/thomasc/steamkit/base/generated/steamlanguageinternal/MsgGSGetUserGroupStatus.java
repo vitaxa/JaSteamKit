@@ -25,7 +25,7 @@ public class MsgGSGetUserGroupStatus implements ISteamSerializableMessage {
     }
 
     public void setSteamIdUser(SteamID steamId) {
-        this.steamIdUser = steamId.convertToLong();
+        this.steamIdUser = steamId.convertToUInt64();
     }
 
     public SteamID getSteamIdGroup() {
@@ -33,15 +33,15 @@ public class MsgGSGetUserGroupStatus implements ISteamSerializableMessage {
     }
 
     public void setSteamIdGroup(SteamID steamId) {
-        this.steamIdGroup = steamId.convertToLong();
+        this.steamIdGroup = steamId.convertToUInt64();
     }
 
     @Override
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(steamIdUser);
-        bw.write(steamIdGroup);
+        bw.writeLong(steamIdUser);
+        bw.writeLong(steamIdGroup);
     }
 
     @Override

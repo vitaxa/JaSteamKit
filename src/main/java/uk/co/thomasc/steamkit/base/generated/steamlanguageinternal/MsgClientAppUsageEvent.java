@@ -51,9 +51,9 @@ public class MsgClientAppUsageEvent implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(appUsageEvent.code());
-        bw.write(gameID);
-        bw.write(offline);
+        bw.writeInt(appUsageEvent.code());
+        bw.writeLong(gameID);
+        bw.writeShort(offline);
     }
 
     @Override

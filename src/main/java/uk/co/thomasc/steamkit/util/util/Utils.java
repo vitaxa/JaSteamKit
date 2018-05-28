@@ -1,34 +1,34 @@
 package uk.co.thomasc.steamkit.util.util;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EOSType;
-import uk.co.thomasc.steamkit.util.crypto.CryptoHelper;
-
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.util.Enumeration;
 
 public class Utils {
 
+    private static String OS = System.getProperty("os.name").toLowerCase();
+
     public static EOSType getOSType() {
-        return EOSType.Win7;
+        if (isWindows()) {
+            return EOSType.Windows10;
+        }
+        if (isMac()) {
+            return EOSType.MacOSUnknown;
+        }
+        if (isUnix()) {
+            return EOSType.LinuxUnknown;
+        }
+        return EOSType.Unknown;
     }
 
-    private static byte[] generateMachineID() {
-        // Java can't really do much here :/
-        // TODO: Make this better?
+    private static boolean isWindows() {
+        return (OS.contains("win"));
+    }
 
-        try {
-            final Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
-            do {
-                final NetworkInterface n = interfaces.nextElement();
-                if (n.getHardwareAddress() != null && n.getHardwareAddress().length > 0) {
-                    return CryptoHelper.SHAHash(n.getHardwareAddress());
-                }
-            } while (NetworkInterface.getNetworkInterfaces().hasMoreElements());
-        } catch (final SocketException e) {
-            e.printStackTrace();
-        }
-        return null;
+    private static boolean isMac() {
+        return (OS.contains("mac"));
+    }
+
+    private static boolean isUnix() {
+        return (OS.contains("nix") || OS.contains("nux") || OS.indexOf("aix") > 0 );
     }
 
 }

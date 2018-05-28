@@ -45,5 +45,5 @@ public interface IClientGCMsg {
      * @param data The data representing a client message.
      * @throws IOException
      */
-    void deSerialize(byte[] data) throws IOException;
+    void deserialize(byte[] data) throws IOException;
 }

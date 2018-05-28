@@ -147,11 +147,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
     public ClientMsg(IPacketMsg msg, Class<T> clazz) {
         this(clazz);
         Debug.Assert(!msg.isProto(), "ClientMsg used for proto message!");
-        try {
-            deSerialize(msg.getData());
-        } catch (final IOException e) {
-            e.printStackTrace();
-        }
+        deserialize(msg.getData());
     }
 
     /**
@@ -160,11 +156,16 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      * @throws IOException
      */
     @Override
-    public byte[] serialize() throws IOException {
+    public byte[] serialize() {
         ByteArrayOutputStream baos = new ByteArrayOutputStream(0);
-        getHeader().serialize(baos);
-        body.serialize(baos);
-        baos.write(payload.toByteArray());
+
+        try {
+            getHeader().serialize(baos);
+            body.serialize(baos);
+            baos.write(payload.toByteArray());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return baos.toByteArray();
     }
@@ -175,7 +176,7 @@ public final class ClientMsg<T extends ISteamSerializableMessage> extends MsgBas
      * @throws IOException
      */
     @Override
-    public void deSerialize(byte[] data) throws IOException {
+    public void deserialize(byte[] data) {
         if (data == null) {
             throw new IllegalArgumentException("data is null");
         }

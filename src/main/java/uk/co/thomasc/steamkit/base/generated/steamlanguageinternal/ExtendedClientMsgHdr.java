@@ -85,7 +85,7 @@ public class ExtendedClientMsgHdr implements ISteamSerializableHeader {
     }
 
     public void setSteamID(SteamID steamId) {
-        this.steamID = steamId.convertToLong();
+        this.steamID = steamId.convertToUInt64();
     }
 
     public int getSessionID() {
@@ -100,14 +100,14 @@ public class ExtendedClientMsgHdr implements ISteamSerializableHeader {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(msg.code());
-        bw.write(headerSize);
-        bw.write(headerVersion);
-        bw.write(targetJobID);
-        bw.write(sourceJobID);
-        bw.write(headerCanary);
-        bw.write(steamID);
-        bw.write(sessionID);
+        bw.writeInt(msg.code());
+        bw.writeByte(headerSize);
+        bw.writeShort(headerVersion);
+        bw.writeLong(targetJobID);
+        bw.writeLong(sourceJobID);
+        bw.writeByte(headerCanary);
+        bw.writeLong(steamID);
+        bw.writeInt(sessionID);
     }
 
     @Override

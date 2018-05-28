@@ -50,9 +50,9 @@ public class MsgClientServerUnavailable implements ISteamSerializableMessage {
     public void serialize(OutputStream stream) throws IOException {
         BinaryWriter bw = new BinaryWriter(stream);
 
-        bw.write(jobidSent);
-        bw.write(eMsgSent);
-        bw.write(eServerTypeUnavailable.code());
+        bw.writeLong(jobidSent);
+        bw.writeInt(eMsgSent);
+        bw.writeInt(eServerTypeUnavailable.code());
     }
 
     @Override

@@ -2,8 +2,8 @@ package uk.co.thomasc.steamkit.base;
 
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.ExtendedClientMsgHdr;
-import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
@@ -43,14 +43,13 @@ public final class PacketClientMsg implements IPacketMsg {
         msgType = eMsg;
         payload = data;
         final ExtendedClientMsgHdr extendedHdr = new ExtendedClientMsgHdr();
-        final BinaryReader is = new BinaryReader(data);
-        try {
-            extendedHdr.deSerialize(is);
-            targetJobID = extendedHdr.targetJobID;
-            sourceJobID = extendedHdr.sourceJobID;
-        } catch (final IOException e) {
+        try (ByteArrayInputStream stream = new ByteArrayInputStream(data)) {
+            extendedHdr.deserialize(stream);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        targetJobID = extendedHdr.getTargetJobID();
+        sourceJobID = extendedHdr.getSourceJobID();
     }
 
     /**

@@ -1,17 +1,19 @@
 package uk.co.thomasc.steamkit.util.crypto;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import uk.co.thomasc.steamkit.util.classlesshasher.JenkinsHash;
-import uk.co.thomasc.steamkit.util.logging.Debug;
+import org.bouncycastle.crypto.CryptoException;
+import uk.co.thomasc.steamkit.util.Passable;
+import uk.co.thomasc.steamkit.util.logging.DebugLog;
+import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
+import uk.co.thomasc.steamkit.util.stream.MemoryStream;
+import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
+import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import java.nio.ByteBuffer;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.security.*;
+import java.util.Arrays;
 import java.util.zip.CRC32;
 
 /**
@@ -19,79 +21,154 @@ import java.util.zip.CRC32;
  */
 public class CryptoHelper {
 
-    private CryptoHelper() {
-    }
+    public static final String SEC_PROV;
 
     static {
-        Security.addProvider(new BouncyCastleProvider());
-    }
-
-    /**
-     * Performs an SHA1 hash of an input byte array
-     */
-    public static byte[] SHAHash(byte[] input) {
         try {
-            final MessageDigest md = MessageDigest.getInstance("SHA-1", BouncyCastleProvider.PROVIDER_NAME);
-            return md.digest(input);
-        } catch (final NoSuchAlgorithmException | NoSuchProviderException e) {
-            e.printStackTrace();
+            Class<? extends Provider> provider =
+                    (Class<? extends Provider>) Class.forName("org.bouncycastle.jce.provider.BouncyCastleProvider");
+            Security.addProvider(provider.newInstance());
+            SEC_PROV = "BC";
+        } catch (Exception e) {
+            throw new SecurityException("Couldn't create security provider", e);
         }
-        return null;
     }
 
-    /*
-     * /// <summary> /// Encrypts using AES/CBC/PKCS7 an input byte array with a
-     * given key and IV /// </summary> public static byte[] AESEncrypt( byte[]
-     * input, byte[] key, byte[] iv ) { using ( var aes = new RijndaelManaged()
-     * ) { aes.BlockSize = 128; aes.KeySize = 128;
+    /**
+     * Generate an array of random bytes given the input length
      *
-     * aes.Mode = CipherMode.CBC; aes.Padding = PaddingMode.PKCS7;
-     *
-     * using ( var aesTransform = aes.CreateEncryptor( key, iv ) ) using ( var
-     * ms = new MemoryStream() ) using ( var cs = new CryptoStream( ms,
-     * aesTransform, CryptoStreamMode.Write ) ) { cs.Write( input, 0,
-     * input.Length ); cs.FlushFinalBlock();
-     *
-     * return ms.ToArray(); } } }
-     *
-     * /// <summary> /// Decrypts an input byte array using AES/CBC/PKCS7 with a
-     * given key and IV /// </summary> public static byte[] AESDecrypt( byte[]
-     * input, byte[] key, byte[] iv ) { using ( var aes = new RijndaelManaged()
-     * ) { aes.BlockSize = 128; aes.KeySize = 128;
-     *
-     * aes.Mode = CipherMode.CBC; aes.Padding = PaddingMode.PKCS7;
-     *
-     * byte[] plainText = new byte[ input.Length ]; int outLen = 0;
-     *
-     * using ( var aesTransform = aes.CreateDecryptor( key, iv ) ) using ( var
-     * ms = new MemoryStream( input ) ) using ( var cs = new CryptoStream( ms,
-     * aesTransform, CryptoStreamMode.Read ) ) { outLen = cs.Read( plainText, 0,
-     * plainText.Length ); }
-     *
-     * byte[] output = new byte[ outLen ]; Array.Copy( plainText, 0, output, 0,
-     * output.Length );
-     *
-     * return output; } }
+     * @param size the size of the block to generate
+     * @return the generated block
      */
+    public static byte[] generateRandomBlock(int size) {
+        SecureRandom random = new SecureRandom();
+        byte[] b = new byte[size];
+        random.nextBytes(b);
+        return b;
+    }
 
     /**
-     * Performs an encryption using AES/CBC/PKCS7 with an input byte array and
-     * key, with a random IV prepended using AES/ECB/None
+     * Performs CRC32 on an input byte array using the CrcStandard.Crc32Bit parameters
+     *
+     * @param input array to hash
+     * @return the hashed result
      */
-    public static byte[] SymmetricEncrypt(byte[] input, byte[] key) {
+    public static byte[] crcHash(byte[] input) {
+        if (input == null) {
+            throw new IllegalArgumentException("input is null");
+        }
+
+        CRC32 crc = new CRC32();
+        crc.update(input);
+        final long hash = crc.getValue();
+        MemoryStream ms = new MemoryStream(4);
+        BinaryWriter bw = new BinaryWriter(ms.asOutputStream());
+
         try {
-            Debug.Assert(key.length == 32);
+            bw.writeInt((int) hash);
+        } catch (IOException e) {
+            DebugLog.printStackTrace("CryptoHelper", e);
+        }
+        return ms.toByteArray();
+    }
+
+    /**
+     * Decrypts using AES/CBC/PKCS7 with an input byte array and key, using the random IV prepended using AES/ECB/None
+     *
+     * @param input array to decrypt
+     * @param key   encryption key
+     * @return decrypted message
+     * @throws CryptoException deception while encrypting
+     */
+    public static byte[] symmetricDecrypt(byte[] input, byte[] key) throws CryptoException {
+        return symmetricDecrypt(input, key, new Passable<byte[]>());
+    }
+
+    /**
+     * Decrypts using AES/CBC/PKCS7 with an input byte array and key, using the random IV prepended using AES/ECB/None
+     *
+     * @param input array to decrypt
+     * @param key   encryption key
+     * @param iv    the random IV
+     * @return decrypted message
+     * @throws CryptoException deception while encrypting
+     */
+    public static byte[] symmetricDecrypt(byte[] input, byte[] key, Passable<byte[]> iv) throws CryptoException {
+        if (input == null) {
+            throw new IllegalArgumentException("input is null");
+        }
+
+        if (key == null) {
+            throw new IllegalArgumentException("key is null");
+        }
+
+        try {
+
+            if (key.length != 32) {
+                DebugLog.writeLine("CryptoHelper", "SymmetricDecrypt used with non 32 byte key!");
+            }
+
+            Cipher cipher = Cipher.getInstance("AES/ECB/NoPadding", SEC_PROV);
+
+            // first 16 bytes of input is the ECB encrypted IV
+            iv.setValue(new byte[16]);
+            final byte[] cryptedIv = Arrays.copyOfRange(input, 0, 16);
+
+            // the rest is ciphertext
+            byte[] cipherText = new byte[input.length - cryptedIv.length];
+            cipherText = Arrays.copyOfRange(input, cryptedIv.length, cryptedIv.length + cipherText.length);
+
+            // decrypt the IV using ECB
+            cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(key, "AES"));
+            iv.setValue(cipher.doFinal(cryptedIv));
+
+            cipher = Cipher.getInstance("AES/CBC/PKCS7Padding", SEC_PROV);
+
+            // decrypt the remaining ciphertext in cbc with the decrypted IV
+            cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(key, "AES"), new IvParameterSpec(iv.getValue()));
+            return cipher.doFinal(cipherText);
+        } catch (final InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException |
+                NoSuchPaddingException | BadPaddingException | IllegalBlockSizeException | NoSuchProviderException e) {
+            throw new CryptoException("failed to symmetric decrypt", e);
+        }
+    }
+
+    /**
+     * Performs an encryption using AES/CBC/PKCS7 with an input byte array and key, with a random IV prepended using AES/ECB/None
+     *
+     * @param input array to encrypt
+     * @param key   encryption key
+     * @param iv    the random IV
+     * @return encrypted message
+     * @throws CryptoException exception while encrypting
+     */
+    public static byte[] symmetricEncryptWithIV(byte[] input, byte[] key, byte[] iv) throws CryptoException {
+        if (input == null) {
+            throw new IllegalArgumentException("input is null");
+        }
+
+        if (key == null) {
+            throw new IllegalArgumentException("key is null");
+        }
+
+        if (iv == null) {
+            throw new IllegalArgumentException("iv is null");
+        }
+
+        try {
+
+            if (key.length != 32) {
+                DebugLog.writeLine("CryptoHelper", "SymmetricEncrypt used with non 32 byte key!");
+            }
 
             // encrypt iv using ECB and provided key
-            Cipher cipher = Cipher.getInstance("AES/ECB/NoPadding", BouncyCastleProvider.PROVIDER_NAME);
+            Cipher cipher = Cipher.getInstance("AES/ECB/NoPadding", SEC_PROV);
             cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key, "AES"));
 
-            // generate iv
-            final byte[] iv = CryptoHelper.GenerateRandomBlock(16);
             final byte[] cryptedIv = cipher.doFinal(iv);
 
             // encrypt input plaintext with CBC using the generated (plaintext) IV and the provided key
-            cipher = Cipher.getInstance("AES/CBC/PKCS7Padding", BouncyCastleProvider.PROVIDER_NAME);
+            cipher = Cipher.getInstance("AES/CBC/PKCS7Padding", SEC_PROV);
             cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key, "AES"), new IvParameterSpec(iv));
 
             final byte[] cipherText = cipher.doFinal(input);
@@ -102,127 +179,124 @@ public class CryptoHelper {
             System.arraycopy(cipherText, 0, output, cryptedIv.length, cipherText.length);
 
             return output;
-        } catch (final InvalidKeyException |
-                InvalidAlgorithmParameterException |
-                NoSuchPaddingException |
-                NoSuchAlgorithmException |
-                BadPaddingException |
-                IllegalBlockSizeException |
-                NoSuchProviderException e) {
-            e.printStackTrace();
+        } catch (final InvalidKeyException | InvalidAlgorithmParameterException | NoSuchAlgorithmException |
+                IllegalBlockSizeException | NoSuchPaddingException | NoSuchProviderException | BadPaddingException e) {
+            throw new CryptoException("failed to symmetric encrypt", e);
         }
-        return new byte[0];
     }
 
     /**
-     * Decrypts using AES/CBC/PKCS7 with an input byte array and key, using the
-     * random IV prepended using AES/ECB/None
+     * Performs an encryption using AES/CBC/PKCS7 with an input byte array and key, with a random IV prepended using AES/ECB/None
+     *
+     * @param input array to encrypt
+     * @param key   encryption key
+     * @return encrypted message
+     * @throws CryptoException exception while encrypting
      */
-    public static byte[] SymmetricDecrypt(byte[] input, byte[] key) {
+    public static byte[] symmetricEncrypt(byte[] input, byte[] key) throws CryptoException {
+        return symmetricEncryptWithIV(input, key, generateRandomBlock(16));
+    }
+
+    /**
+     * Decrypts using AES/CBC/PKCS7 with an input byte array and key, using the IV (comprised of random bytes and the
+     * HMAC-SHA1 of the random bytes and plaintext) prepended using AES/ECB/None
+     *
+     * @param input      array to decrypt
+     * @param key        encryption key
+     * @param hmacSecret the IV
+     * @return decrypted message
+     * @throws CryptoException exception while decrypting
+     */
+    public static byte[] symmetricDecryptHMACIV(byte[] input, byte[] key, byte[] hmacSecret) throws CryptoException {
+        if (input == null) {
+            throw new IllegalArgumentException("input is null");
+        }
+
+        if (key == null) {
+            throw new IllegalArgumentException("key is null");
+        }
+
+        if (hmacSecret == null) {
+            throw new IllegalArgumentException("hmacSecret is null");
+        }
+
+        if (key.length < 16) {
+            DebugLog.writeLine("CryptoHelper", "symmetricDecryptHMACIV used with shorter than 16 byte key!");
+        }
+
+        byte[] truncatedKeyForHmac = new byte[16];
+        System.arraycopy(key, 0, truncatedKeyForHmac, 0, truncatedKeyForHmac.length);
+
+        Passable<byte[]> iv = new Passable<>(new byte[16]);
+        byte[] plaintextData = symmetricDecrypt(input, key, iv);
+
+        // validate HMAC
+        byte[] hmacBytes;
+
+        MemoryStream ms = new MemoryStream();
+        ms.write(iv.getValue(), iv.getValue().length - 3, 3);
+        ms.write(plaintextData, 0, plaintextData.length);
+        ms.seek(0, SeekOrigin.BEGIN);
+
         try {
-            Security.addProvider(new BouncyCastleProvider());
-            Debug.Assert(key.length == 32);
+            Mac mac = Mac.getInstance("HmacSHA1");
+            mac.init(new SecretKeySpec(hmacSecret, "HmacSHA1"));
+            hmacBytes = mac.doFinal(ms.toByteArray());
 
-            Cipher cipher = Cipher.getInstance("AES/ECB/NoPadding", BouncyCastleProvider.PROVIDER_NAME);
-
-            // first 16 bytes of input is the ECB encrypted IV
-            byte[] iv = new byte[16];
-            final byte[] cryptedIv = copyOfRange(input, 0, 16);
-
-            // the rest is ciphertext
-            byte[] cipherText = new byte[input.length - cryptedIv.length];
-            cipherText = copyOfRange(input, cryptedIv.length, cryptedIv.length + cipherText.length);
-
-            // decrypt the IV using ECB
-            cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(key, "AES"));
-            iv = cipher.doFinal(cryptedIv);
-
-            cipher = Cipher.getInstance("AES/CBC/PKCS7Padding", BouncyCastleProvider.PROVIDER_NAME);
-
-            // decrypt the remaining ciphertext in cbc with the decrypted IV
-            cipher.init(Cipher.DECRYPT_MODE, new SecretKeySpec(key, "AES"), new IvParameterSpec(iv));
-            return cipher.doFinal(cipherText);
-        } catch (final InvalidKeyException |
-                InvalidAlgorithmParameterException |
-                NoSuchPaddingException |
-                NoSuchAlgorithmException |
-                BadPaddingException |
-                IllegalBlockSizeException |
-                NoSuchProviderException e) {
-            e.printStackTrace();
+            for (int i = 0; i < iv.getValue().length - 3; i++) {
+                if (hmacBytes[i] != iv.getValue()[i]) {
+                    throw new CryptoException("NetFilterEncryption was unable to decrypt packet: HMAC from server did not match computed HMAC.");
+                }
+            }
+        } catch (NoSuchAlgorithmException | InvalidKeyException e) {
+            throw new CryptoException("NetFilterEncryption was unable to decrypt packet", e);
         }
-        return new byte[0];
-    }
 
-    public static byte[] copyOfRange(byte[] from, int start, int end) {
-        int length = end - start;
-        byte[] result = new byte[length];
-        System.arraycopy(from, start, result, 0, length);
-        return result;
+        return plaintextData;
     }
 
     /**
-     * Performs the Jenkins hash on an input byte array
+     * Performs an encryption using AES/CBC/PKCS7 with an input byte array and key, with a IV (comprised of random bytes
+     * and the HMAC-SHA1 of the random bytes and plaintext) prepended using AES/ECB/None
+     *
+     * @param input      array to encrypt
+     * @param key        encryption key
+     * @param hmacSecret the IV
+     * @return encrypted message
+     * @throws CryptoException exception while encrypting
      */
-    public static byte[] JenkinsHash(byte[] input) {
-        final JenkinsHash jHash = new JenkinsHash();
-        final long hash = jHash.hash(input);
-
-        final ByteBuffer buffer = ByteBuffer.allocate(4);
-        buffer.putInt((int) hash);
-
-        final byte[] array = buffer.array();
-        final byte[] output = new byte[array.length];
-        for (int i = 0; i < array.length; i++) {
-            output[array.length - 1 - i] = array[i];
+    public static byte[] symmetricEncryptWithHMACIV(byte[] input, byte[] key, byte[] hmacSecret) throws CryptoException {
+        if (input == null) {
+            throw new IllegalArgumentException("input is null");
         }
 
-        return output;
-    }
-
-    /**
-     * Performs CRC32 on an input byte array using the CrcStandard.Crc32Bit
-     * parameters
-     */
-    public static byte[] CRCHash(byte[] input) {
-        final CRC32 crc = new CRC32();
-        crc.update(input);
-        final long hash = crc.getValue();
-
-        final ByteBuffer buffer = ByteBuffer.allocate(4);
-        buffer.putInt((int) hash);
-
-        final byte[] array = buffer.array();
-        final byte[] output = new byte[array.length];
-        for (int i = 0; i < array.length; i++) {
-            output[array.length - 1 - i] = array[i];
+        if (key == null) {
+            throw new IllegalArgumentException("key is null");
         }
 
-        return output;
-    }
-
-    /**
-     * Performs an Adler32 on the given input
-     */
-    public static byte[] AdlerHash(byte[] input) {
-        int a = 0, b = 0;
-        for (final byte element : input) {
-            a = (a + element) % 65521;
-            b = (b + a) % 65521;
+        if (hmacSecret == null) {
+            throw new IllegalArgumentException("hmacSecret is null");
         }
-        final ByteBuffer buffer = ByteBuffer.allocate(4);
-        buffer.putInt(a | b << 16);
-        return buffer.array();
-    }
 
-    /**
-     * Generate an array of random bytes given the input length
-     */
-    public static byte[] GenerateRandomBlock(int size) {
-        final byte[] block = new byte[size];
-        final SecureRandom random = new SecureRandom();
-        random.nextBytes(block);
-        return block;
-    }
+        // IV is HMAC-SHA1(Random(3) + Plaintext) + Random(3). (Same random values for both)
+        byte[] iv = new byte[16];
+        byte[] random = generateRandomBlock(3);
+        System.arraycopy(random, 0, iv, iv.length - random.length, random.length);
 
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        baos.write(random, 0, random.length);
+        baos.write(input, 0, input.length);
+
+        try {
+            Mac mac = Mac.getInstance("HmacSHA1");
+            mac.init(new SecretKeySpec(hmacSecret, "HmacSHA1"));
+            byte[] hash = mac.doFinal(baos.toByteArray());
+
+            System.arraycopy(hash, 0, iv, 0, iv.length - random.length);
+
+            return symmetricEncryptWithIV(input, key, iv);
+        } catch (NoSuchAlgorithmException | InvalidKeyException e) {
+            throw new CryptoException("NetFilterEncryption was unable to decrypt packet", e);
+        }
+    }
 }

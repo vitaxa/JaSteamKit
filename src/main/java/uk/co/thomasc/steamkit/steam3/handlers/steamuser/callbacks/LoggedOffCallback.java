@@ -1,27 +1,20 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 /**
- * This callback is returned in response to a log off attempt, or when the
- * client is told to log off by the server.
+ * This callback is returned when the client is told to log off by the server.
  */
-public final class LoggedOffCallback extends CallbackMsg {
-    /**
-     * Gets the result of the log off.
-     */
-    private final EResult result;
+public class LoggedOffCallback extends CallbackMsg {
 
-    public LoggedOffCallback(CMsgClientLoggedOff resp) {
-        result = EResult.from(resp.getEresult());
+    private EResult result;
+
+    public LoggedOffCallback(EResult result) {
+        this.result = result;
     }
 
-    /**
-     * Gets the result of the log off.
-     */
     public EResult getResult() {
-        return this.result;
+        return result;
     }
 }

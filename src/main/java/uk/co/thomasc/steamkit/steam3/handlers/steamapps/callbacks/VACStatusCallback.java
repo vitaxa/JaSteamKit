@@ -20,8 +20,7 @@ public class VACStatusCallback extends CallbackMsg {
     public VACStatusCallback(MsgClientVACBanStatus msg, byte[] payload) {
         List<Integer> tempList = new ArrayList<>();
 
-        try {
-            BinaryReader br = new BinaryReader(new ByteArrayInputStream(payload));
+        try (BinaryReader br = new BinaryReader(new ByteArrayInputStream(payload))) {
             for (int i = 0; i < msg.getNumBans(); i++) {
                 tempList.add(br.readInt());
             }
