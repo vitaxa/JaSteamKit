@@ -14,18 +14,18 @@ import java.io.IOException;
 /**
  * Represents a struct backed client message.
  *
- * @param <BodyType> The body type of this message.
+ * @param <T> The body type of this message.
  */
-public class ClientMsg<BodyType extends ISteamSerializableMessage> extends MsgBase<ExtendedClientMsgHdr> {
+public class ClientMsg<T extends ISteamSerializableMessage> extends MsgBase<ExtendedClientMsgHdr> {
 
-    private BodyType body;
+    private T body;
 
     /**
      * Initializes a new instance of the {@link ClientMsg} class.
      *
      * @param bodyType body type
      */
-    public ClientMsg(Class<? extends BodyType> bodyType) {
+    public ClientMsg(Class<? extends T> bodyType) {
         this(bodyType, 64);
     }
 
@@ -35,7 +35,7 @@ public class ClientMsg<BodyType extends ISteamSerializableMessage> extends MsgBa
      * @param bodyType       body type
      * @param payloadReserve The number of bytes to initialize the payload capacity to.
      */
-    public ClientMsg(Class<? extends BodyType> bodyType, int payloadReserve) {
+    public ClientMsg(Class<? extends T> bodyType, int payloadReserve) {
         super(ExtendedClientMsgHdr.class, payloadReserve);
 
         try {
@@ -54,7 +54,7 @@ public class ClientMsg<BodyType extends ISteamSerializableMessage> extends MsgBa
      * @param bodyType body type
      * @param msg      The message that this instance is a reply for.
      */
-    public ClientMsg(Class<? extends BodyType> bodyType, MsgBase<ExtendedClientMsgHdr> msg) {
+    public ClientMsg(Class<? extends T> bodyType, MsgBase<ExtendedClientMsgHdr> msg) {
         this(bodyType, msg, 64);
     }
 
@@ -66,7 +66,7 @@ public class ClientMsg<BodyType extends ISteamSerializableMessage> extends MsgBa
      * @param msg            The message that this instance is a reply for.
      * @param payloadReserve The number of bytes to initialize the payload capacity to.
      */
-    public ClientMsg(Class<? extends BodyType> bodyType, MsgBase<ExtendedClientMsgHdr> msg, int payloadReserve) {
+    public ClientMsg(Class<? extends T> bodyType, MsgBase<ExtendedClientMsgHdr> msg, int payloadReserve) {
         this(bodyType, payloadReserve);
 
         if (msg == null) {
@@ -84,7 +84,7 @@ public class ClientMsg<BodyType extends ISteamSerializableMessage> extends MsgBa
      * @param bodyType body type
      * @param msg      The packet message to build this client message from.
      */
-    public ClientMsg(Class<? extends BodyType> bodyType, IPacketMsg msg) {
+    public ClientMsg(Class<? extends T> bodyType, IPacketMsg msg) {
         this(bodyType);
 
         if (msg == null) {
@@ -193,7 +193,7 @@ public class ClientMsg<BodyType extends ISteamSerializableMessage> extends MsgBa
     /**
      * @return the body structure of this message.
      */
-    public BodyType getBody() {
+    public T getBody() {
         return body;
     }
 }

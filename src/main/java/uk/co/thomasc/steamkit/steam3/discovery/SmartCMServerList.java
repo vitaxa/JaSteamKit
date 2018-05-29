@@ -157,7 +157,7 @@ public class SmartCMServerList {
             }
         }
 
-        Collections.sort(serverInfos, new Comparator<ServerInfo>() {
+        serverInfos.sort(new Comparator<ServerInfo>() {
             @Override
             public int compare(ServerInfo o1, ServerInfo o2) {
                 if (o1.getLastBadConnection() == null && o2.getLastBadConnection() == null) {
@@ -180,7 +180,7 @@ public class SmartCMServerList {
             return null;
         }
 
-        ServerInfo result = serverInfos.get(0);
+        ServerInfo result = serverInfos.get(new Random().nextInt(serverInfos.size()));
 
         return new ServerRecord(result.getRecord().getEndpoint(), result.getProtocol());
     }

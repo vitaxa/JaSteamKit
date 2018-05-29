@@ -1,5 +1,6 @@
 package uk.co.thomasc.steamkit.util.crypto;
 
+import org.bouncycastle.crypto.CryptoException;
 import uk.co.thomasc.steamkit.util.Passable;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
