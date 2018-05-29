@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.networking.steam3;
 
-import org.bouncycastle.crypto.CryptoException;
+import uk.co.thomasc.steamkit.util.crypto.CryptoException;
 import uk.co.thomasc.steamkit.util.crypto.CryptoHelper;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
