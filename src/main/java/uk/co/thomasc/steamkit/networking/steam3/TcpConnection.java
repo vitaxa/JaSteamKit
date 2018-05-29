@@ -34,7 +34,7 @@ public class TcpConnection extends Connection {
                 socket.shutdownOutput();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            DebugLog.printStackTrace("TcpConnection", e);
         }
     }
 
@@ -176,10 +176,6 @@ public class TcpConnection extends Connection {
         return currentEndPoint;
     }
 
-    public InetSocketAddress getCurrentEndPoint() {
-        return currentEndPoint;
-    }
-
     @Override
     public ProtocolType getProtocolType() {
         return ProtocolType.TCP;
@@ -218,7 +214,7 @@ public class TcpConnection extends Connection {
                 try {
                     canRead = netReader.available() > 0;
                 } catch (IOException e) {
-                    DebugLog.writeLine("TcpConnection", "Thread Socket exception while polling: %s", e);
+                    DebugLog.writeLine("TcpConnection", "Socket exception while polling: %s", e);
                     break;
                 }
 

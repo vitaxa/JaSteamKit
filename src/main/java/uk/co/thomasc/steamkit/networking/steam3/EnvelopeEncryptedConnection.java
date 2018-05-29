@@ -91,7 +91,6 @@ public class EnvelopeEncryptedConnection extends Connection {
 
         DebugLog.writeLine("EnvelopeEncryptedConnection", "Got encryption request. Universe: " + connectedUniverse + " Protocol ver: " + protoVersion);
 
-
         if (protoVersion != MsgChannelEncryptRequest.PROTOCOL_VERSION) {
             DebugLog.writeLine("EnvelopeEncryptedConnection", "Encryption handshake protocol version mismatch!");
         }

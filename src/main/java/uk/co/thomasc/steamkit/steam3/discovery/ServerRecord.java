@@ -56,18 +56,20 @@ public class ServerRecord {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null || !(obj instanceof ServerRecord)) {
-            return false;
-        }
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
-        ServerRecord o = (ServerRecord) obj;
+        ServerRecord that = (ServerRecord) o;
 
-        return endpoint.equals(o.endpoint) && protocolTypes.equals(o.protocolTypes);
+        if (endpoint != null ? !endpoint.equals(that.endpoint) : that.endpoint != null) return false;
+        return protocolTypes != null ? protocolTypes.equals(that.protocolTypes) : that.protocolTypes == null;
     }
 
     @Override
     public int hashCode() {
-        return endpoint.hashCode() ^ protocolTypes.hashCode();
+        int result = endpoint != null ? endpoint.hashCode() : 0;
+        result = 31 * result + (protocolTypes != null ? protocolTypes.hashCode() : 0);
+        return result;
     }
 }

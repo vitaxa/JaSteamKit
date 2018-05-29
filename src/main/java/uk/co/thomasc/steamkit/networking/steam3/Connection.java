@@ -8,50 +8,42 @@ import java.net.InetSocketAddress;
 
 public abstract class Connection {
     /**
-     * Occurs when a net message is recieved over the network.
+     * Occurs when a net message is received over the network.
      */
-    protected Event<NetMsgEventArgs> netMsgReceived = new Event<NetMsgEventArgs>();
-
-    /**
-     * Raises the {@link #netMsgReceived} event.
-     *
-     * @param e
-     *            The {@link NetMsgEventArgs} instance containing the event
-     *            data.
-     */
-    protected void onNetMsgReceived(NetMsgEventArgs e) {
-        if (netMsgReceived != null) {
-            netMsgReceived.handleEvent(this, e);
-        }
-    }
+    final Event<NetMsgEventArgs> netMsgReceived = new Event<NetMsgEventArgs>();
 
     /**
      * Occurs when the physical connection is established.
      */
-    Event<EventArgs> connected = new Event<>();
-
-    protected void onConnected(EventArgs e) {
-        if (connected != null) {
-            connected.handleEvent(this, e);
-        }
-    }
+    final Event<EventArgs> connected = new Event<>();
 
     /**
      * Occurs when the physical connection is broken.
      */
-    Event<DisconnectedEventArgs> disconnected = new Event<>();
+    final Event<DisconnectedEventArgs> disconnected = new Event<>();
 
-    protected void onDisconnected(boolean e) {
-        if (disconnected != null) {
-            disconnected.handleEvent(this, new DisconnectedEventArgs(e));
-        }
+    /**
+     * Raises the {@link #netMsgReceived} event.
+     *
+     * @param e The {@link NetMsgEventArgs} instance containing the event
+     *          data.
+     */
+    void onNetMsgReceived(NetMsgEventArgs e) {
+        netMsgReceived.handleEvent(this, e);
+    }
+
+    void onConnected(EventArgs e) {
+        connected.handleEvent(this, e);
+    }
+
+    void onDisconnected(boolean e) {
+        disconnected.handleEvent(this, new DisconnectedEventArgs(e));
     }
 
     /**
      * Connects to the specified end point.
      *
-     * @param endPoint
-     *            The end point.
+     * @param endPoint The end point.
      */
     public abstract void connect(InetSocketAddress endPoint, int timeout);
 
