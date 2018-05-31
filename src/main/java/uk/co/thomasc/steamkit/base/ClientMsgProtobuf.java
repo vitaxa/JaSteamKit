@@ -17,11 +17,11 @@ import java.lang.reflect.Method;
 /**
  * Represents a protobuf backed client message.
  *
- * @param <BodyType> The body type of this message.
+ * @param <T> The body type of this message.
  */
-public class ClientMsgProtobuf<BodyType extends GeneratedMessageV3.Builder<BodyType>> extends AClientMsgProtobuf {
+public class ClientMsgProtobuf<T extends GeneratedMessageV3.Builder<T>> extends AClientMsgProtobuf {
 
-    private BodyType body;
+    private T body;
 
     private final Class<? extends AbstractMessage> clazz;
 
@@ -77,7 +77,7 @@ public class ClientMsgProtobuf<BodyType extends GeneratedMessageV3.Builder<BodyT
 
         try {
             final Method m = clazz.getMethod("newBuilder");
-            body = (BodyType) m.invoke(null);
+            body = (T) m.invoke(null);
         } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             DebugLog.writeLine("ClientMsgProtobuf", "ClientMsgProtobuf<" + clazz.getSimpleName() + "> used for non-proto message!");
         }
@@ -115,7 +115,7 @@ public class ClientMsgProtobuf<BodyType extends GeneratedMessageV3.Builder<BodyT
     /**
      * @return the body structure of this message.
      */
-    public BodyType getBody() {
+    public T getBody() {
         return body;
     }
 
@@ -143,7 +143,7 @@ public class ClientMsgProtobuf<BodyType extends GeneratedMessageV3.Builder<BodyT
         try {
             getHeader().deserialize(ms);
             final Method m = clazz.getMethod("newBuilder");
-            body = (BodyType) m.invoke(null);
+            body = (T) m.invoke(null);
             body.mergeFrom(ms);
             payload.write(data, ms.getPosition(), ms.available());
             payload.seek(0, SeekOrigin.BEGIN);

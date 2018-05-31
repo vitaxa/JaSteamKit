@@ -23,11 +23,7 @@ public class ServerListCallback extends CallbackMsg {
         for (CMsgClientServerList.Server s : serverList.getServersList()) {
             EServerType type = EServerType.from(s.getServerType());
 
-            Collection<InetSocketAddress> addresses = servers.get(type);
-            if (addresses == null) {
-                addresses = new ArrayList<>();
-                servers.put(type, addresses);
-            }
+            Collection<InetSocketAddress> addresses = servers.computeIfAbsent(type, k -> new ArrayList<>());
 
             addresses.add(new InetSocketAddress(
                     NetHelpers.getIPAddress(s.getServerIp()), s.getServerPort()

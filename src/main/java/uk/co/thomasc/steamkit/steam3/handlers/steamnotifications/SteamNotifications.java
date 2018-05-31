@@ -25,30 +25,10 @@ public class SteamNotifications extends ClientMsgHandler {
     public SteamNotifications() {
         dispatchMap = new HashMap<>();
 
-        dispatchMap.put(EMsg.ClientUserNotifications, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleUserNotifications(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientFSOfflineMessageNotification, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleOfflineMessageNotification(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientCommentNotifications, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleCommentNotifications(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientItemAnnouncements, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleItemAnnouncements(packetMsg);
-            }
-        });
+        dispatchMap.put(EMsg.ClientUserNotifications, this::handleUserNotifications);
+        dispatchMap.put(EMsg.ClientFSOfflineMessageNotification, this::handleOfflineMessageNotification);
+        dispatchMap.put(EMsg.ClientCommentNotifications, this::handleCommentNotifications);
+        dispatchMap.put(EMsg.ClientItemAnnouncements, this::handleItemAnnouncements);
 
         dispatchMap = Collections.unmodifiableMap(dispatchMap);
     }

@@ -12,6 +12,7 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamgamecoordinator.SteamGameCoor
 import uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.SteamGameServer;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.SteamMasterServer;
 import uk.co.thomasc.steamkit.steam3.handlers.steamnotifications.SteamNotifications;
+import uk.co.thomasc.steamkit.steam3.handlers.steamscreenshots.SteamScreenshots;
 import uk.co.thomasc.steamkit.steam3.handlers.steamtrading.SteamTrading;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.SteamUser;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.SteamUserStats;
@@ -74,6 +75,7 @@ public class SteamClient extends CMClient {
         addHandler(new SteamTrading());
         addHandler(new SteamApps());
         addHandler(new SteamCloud());
+        addHandler(new SteamScreenshots());
         addHandler(new SteamUserStats());
         addHandler(new SteamWorkshop());
         addHandler(new SteamMasterServer());
@@ -82,30 +84,10 @@ public class SteamClient extends CMClient {
 
         processStartTime = new Date();
 
-        dispatchMap.put(EMsg.ClientCMList, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleCMList(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientServerList, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleServerList(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.JobHeartbeat, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleJobHeartbeat(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.DestJobFailed, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleJobFailed(packetMsg);
-            }
-        });
+        dispatchMap.put(EMsg.ClientCMList, this::handleCMList);
+        dispatchMap.put(EMsg.ClientServerList, this::handleServerList);
+        dispatchMap.put(EMsg.JobHeartbeat, this::handleJobHeartbeat);
+        dispatchMap.put(EMsg.DestJobFailed, this::handleJobFailed);
     }
 
     /**

@@ -13,20 +13,20 @@ import java.io.IOException;
 /**
  * Represents a struct backed game coordinator message.
  *
- * @param <BodyType> The body type of this message.
+ * @param <T> The body type of this message.
  */
-public class ClientGCMsg<BodyType extends IGCSerializableMessage> extends GCMsgBase<MsgGCHdr> {
+public class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBase<MsgGCHdr> {
 
     private int msgType;
 
-    private BodyType body;
+    private T body;
 
     /**
      * Initializes a new instance of the {@link ClientGCMsg} class.
      *
      * @param bodyType body type
      */
-    public ClientGCMsg(Class<? extends BodyType> bodyType) {
+    public ClientGCMsg(Class<? extends T> bodyType) {
         this(bodyType, 64);
     }
 
@@ -36,7 +36,7 @@ public class ClientGCMsg<BodyType extends IGCSerializableMessage> extends GCMsgB
      * @param bodyType       body type
      * @param payloadReserve The number of bytes to initialize the payload capacity to.
      */
-    public ClientGCMsg(Class<? extends BodyType> bodyType, int payloadReserve) {
+    public ClientGCMsg(Class<? extends T> bodyType, int payloadReserve) {
         super(MsgGCHdr.class, payloadReserve);
 
         try {
@@ -55,7 +55,7 @@ public class ClientGCMsg<BodyType extends IGCSerializableMessage> extends GCMsgB
      * @param bodyType body type
      * @param msg      The message that this instance is a reply for.
      */
-    public ClientGCMsg(Class<? extends BodyType> bodyType, GCMsgBase<MsgGCHdr> msg) {
+    public ClientGCMsg(Class<? extends T> bodyType, GCMsgBase<MsgGCHdr> msg) {
         this(bodyType, msg, 64);
     }
 
@@ -67,7 +67,7 @@ public class ClientGCMsg<BodyType extends IGCSerializableMessage> extends GCMsgB
      * @param msg            The message that this instance is a reply for.
      * @param payloadReserve The number of bytes to initialize the payload capacity to.
      */
-    public ClientGCMsg(Class<? extends BodyType> bodyType, GCMsgBase<MsgGCHdr> msg, int payloadReserve) {
+    public ClientGCMsg(Class<? extends T> bodyType, GCMsgBase<MsgGCHdr> msg, int payloadReserve) {
         this(bodyType, payloadReserve);
 
         if (msg == null) {
@@ -85,7 +85,7 @@ public class ClientGCMsg<BodyType extends IGCSerializableMessage> extends GCMsgB
      * @param bodyType body type
      * @param msg      The packet message to build this client message from.
      */
-    public ClientGCMsg(Class<? extends BodyType> bodyType, IPacketMsg msg) {
+    public ClientGCMsg(Class<? extends T> bodyType, IPacketMsg msg) {
         this(bodyType);
 
         if (msg == null) {

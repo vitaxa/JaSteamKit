@@ -57,155 +57,6 @@ public class KeyValue {
     }
 
     /**
-     * Attempts to load the given filename as a text {@link KeyValue}.
-     *
-     * @param path The path to the file to load.
-     * @return a {@link KeyValue} instance if the load was successful, or <b>null</b> on failure.
-     */
-    public static KeyValue loadAsText(String path) {
-        return loadFromFile(path, false);
-    }
-
-    /**
-     * Attempts to load the given filename as a binary {@link KeyValue}.
-     *
-     * @param path The path to the file to load.
-     * @return a {@link KeyValue} instance if the load was successful, or <b>null</b> on failure.
-     */
-    public static KeyValue tryLoadAsBinary(String path) {
-        return loadFromFile(path, true);
-    }
-
-    private static KeyValue loadFromFile(String path, boolean asBinary) {
-        File file = new File(path);
-
-        if (!file.exists() || file.isDirectory()) {
-            return null;
-        }
-
-        try (FileInputStream fis = new FileInputStream(file)) {
-            KeyValue kv = new KeyValue();
-
-            if (asBinary) {
-                if (!kv.tryReadAsBinary(fis)) {
-                    return null;
-                }
-            } else {
-                if (!kv.readAsText(fis)) {
-                    return null;
-                }
-            }
-
-            return kv;
-        } catch (IOException e) {
-            return null;
-        }
-    }
-
-    /**
-     * Attempts to create an instance of {@link KeyValue} from the given input text.
-     *
-     * @param input The input text to load.
-     * @return a {@link KeyValue} instance if the load was successful, or <b>null</b> on failure.
-     */
-    public static KeyValue loadFromString(String input) {
-        if (input == null) {
-            throw new IllegalArgumentException("input is null");
-        }
-
-        byte[] bytes = input.getBytes(Charset.forName("UTF-8"));
-
-        try (ByteArrayInputStream bais = new ByteArrayInputStream(bytes)) {
-            KeyValue kv = new KeyValue();
-
-            if (!kv.readAsText(bais)) {
-                return null;
-            }
-
-            return kv;
-        } catch (IOException e) {
-            return null;
-        }
-    }
-
-    private static String escapeText(String value) {
-        for (Map.Entry<Character, Character> entry : KVTextReader.ESCAPED_MAPPING.entrySet()) {
-            String textToReplace = String.valueOf(entry.getValue());
-            String escapedReplacement = "\\" + entry.getKey();
-            value = value.replace(textToReplace, escapedReplacement);
-        }
-
-        return value;
-    }
-
-    private static void writeString(OutputStream os, String str) throws IOException {
-        writeString(os, str, false);
-    }
-
-    private static void writeString(OutputStream os, String str, boolean quote) throws IOException {
-        str = str.replaceAll("\"", "\\\"");
-        if (quote) {
-            str = "\"" + str + "\"";
-        }
-        byte[] bytes = str.getBytes(Charset.forName("UTF-8"));
-        os.write(bytes);
-    }
-
-    private static boolean tryReadAsBinaryCore(InputStream is, KeyValue current, KeyValue parent) throws IOException {
-        current.children = new ArrayList<>();
-
-        BinaryReader br = new BinaryReader(is);
-
-        while (true) {
-            Type type = Type.from(br.readByte());
-
-            if (type == Type.END) {
-                break;
-            }
-
-            current.setName(br.readNullTermString(Charset.forName("UTF-8")));
-            switch (type) {
-                case NONE:
-                    KeyValue child = new KeyValue();
-                    boolean didReadChild = tryReadAsBinaryCore(is, child, current);
-                    if (!didReadChild) {
-                        return false;
-                    }
-                    break;
-                case STRING:
-                    current.setValue(br.readNullTermString(Charset.forName("UTF-8")));
-                    break;
-                case WIDESTRING:
-                    DebugLog.writeLine("KeyValue", "Encountered WideString type when parsing binary KeyValue, which is unsupported. Returning false.");
-                    return false;
-                case INT32:
-                case COLOR:
-                case POINTER:
-                    current.setValue(String.valueOf(br.readInt()));
-                    break;
-                case UINT64:
-                    current.setValue(String.valueOf(br.readLong()));
-                    break;
-                case FLOAT32:
-                    current.setValue(String.valueOf(br.readFloat()));
-                    break;
-                case INT64:
-                    current.setValue(String.valueOf(br.readLong()));
-                    break;
-                default:
-                    return false;
-            }
-
-            if (parent != null) {
-                parent.getChildren().add(current);
-            }
-            current = new KeyValue();
-        }
-
-        return true;
-    }
-
-    /**
      * Gets the child {@link KeyValue} with the specified key.
      * If no child with the given key exists, {@link KeyValue#INVALID} is returned.
      *
@@ -224,6 +75,7 @@ public class KeyValue {
         }
         return INVALID;
     }
+
 
     /**
      * Sets the child {@link KeyValue} with the specified key.
@@ -560,6 +412,78 @@ public class KeyValue {
     }
 
     /**
+     * Attempts to load the given filename as a text {@link KeyValue}.
+     *
+     * @param path The path to the file to load.
+     * @return a {@link KeyValue} instance if the load was successful, or <b>null</b> on failure.
+     */
+    public static KeyValue loadAsText(String path) {
+        return loadFromFile(path, false);
+    }
+
+    /**
+     * Attempts to load the given filename as a binary {@link KeyValue}.
+     *
+     * @param path The path to the file to load.
+     * @return a {@link KeyValue} instance if the load was successful, or <b>null</b> on failure.
+     */
+    public static KeyValue tryLoadAsBinary(String path) {
+        return loadFromFile(path, true);
+    }
+
+    private static KeyValue loadFromFile(String path, boolean asBinary) {
+        File file = new File(path);
+
+        if (!file.exists() || file.isDirectory()) {
+            return null;
+        }
+
+        try (FileInputStream fis = new FileInputStream(file)) {
+            KeyValue kv = new KeyValue();
+
+            if (asBinary) {
+                if (!kv.tryReadAsBinary(fis)) {
+                    return null;
+                }
+            } else {
+                if (!kv.readAsText(fis)) {
+                    return null;
+                }
+            }
+
+            return kv;
+        } catch (IOException e) {
+            return null;
+        }
+    }
+
+    /**
+     * Attempts to create an instance of {@link KeyValue} from the given input text.
+     *
+     * @param input The input text to load.
+     * @return a {@link KeyValue} instance if the load was successful, or <b>null</b> on failure.
+     */
+    public static KeyValue loadFromString(String input) {
+        if (input == null) {
+            throw new IllegalArgumentException("input is null");
+        }
+
+        byte[] bytes = input.getBytes(Charset.forName("UTF-8"));
+
+        try (ByteArrayInputStream bais = new ByteArrayInputStream(bytes)) {
+            KeyValue kv = new KeyValue();
+
+            if (!kv.readAsText(bais)) {
+                return null;
+            }
+
+            return kv;
+        } catch (IOException e) {
+            return null;
+        }
+    }
+
+    /**
      * Saves this instance to file.
      *
      * @param path   The file path to save to.
@@ -643,8 +567,31 @@ public class KeyValue {
         writeString(os, "}\n");
     }
 
+    private static String escapeText(String value) {
+        for (Map.Entry<Character, Character> entry : KVTextReader.ESCAPED_MAPPING.entrySet()) {
+            String textToReplace = String.valueOf(entry.getValue());
+            String escapedReplacement = "\\" + entry.getKey();
+            value = value.replace(textToReplace, escapedReplacement);
+        }
+
+        return value;
+    }
+
     private void writeIndents(OutputStream os, int indentLevel) throws IOException {
         writeString(os, new String(new char[indentLevel]).replace('\0', '\t'));
+    }
+
+    private static void writeString(OutputStream os, String str) throws IOException {
+        writeString(os, str, false);
+    }
+
+    private static void writeString(OutputStream os, String str, boolean quote) throws IOException {
+        str = str.replaceAll("\"", "\\\"");
+        if (quote) {
+            str = "\"" + str + "\"";
+        }
+        byte[] bytes = str.getBytes(Charset.forName("UTF-8"));
+        os.write(bytes);
     }
 
     /**
@@ -660,6 +607,60 @@ public class KeyValue {
         }
 
         return tryReadAsBinaryCore(is, this, null);
+    }
+
+    private static boolean tryReadAsBinaryCore(InputStream is, KeyValue current, KeyValue parent) throws IOException {
+        current.children = new ArrayList<>();
+
+        BinaryReader br = new BinaryReader(is);
+
+        while (true) {
+            Type type = Type.from(br.readByte());
+
+            if (type == Type.END) {
+                break;
+            }
+
+            current.setName(br.readNullTermString(Charset.forName("UTF-8")));
+            switch (type) {
+                case NONE:
+                    KeyValue child = new KeyValue();
+                    boolean didReadChild = tryReadAsBinaryCore(is, child, current);
+                    if (!didReadChild) {
+                        return false;
+                    }
+                    break;
+                case STRING:
+                    current.setValue(br.readNullTermString(Charset.forName("UTF-8")));
+                    break;
+                case WIDESTRING:
+                    DebugLog.writeLine("KeyValue", "Encountered WideString type when parsing binary KeyValue, which is unsupported. Returning false.");
+                    return false;
+                case INT32:
+                case COLOR:
+                case POINTER:
+                    current.setValue(String.valueOf(br.readInt()));
+                    break;
+                case UINT64:
+                    current.setValue(String.valueOf(br.readLong()));
+                    break;
+                case FLOAT32:
+                    current.setValue(String.valueOf(br.readFloat()));
+                    break;
+                case INT64:
+                    current.setValue(String.valueOf(br.readLong()));
+                    break;
+                default:
+                    return false;
+            }
+
+            if (parent != null) {
+                parent.getChildren().add(current);
+            }
+            current = new KeyValue();
+        }
+
+        return true;
     }
 
     @Override
@@ -685,6 +686,10 @@ public class KeyValue {
             this.code = code;
         }
 
+        public byte code() {
+            return this.code;
+        }
+
         public static Type from(byte code) {
             for (Type e : Type.values()) {
                 if (e.code == code) {
@@ -692,10 +697,6 @@ public class KeyValue {
                 }
             }
             return null;
-        }
-
-        public byte code() {
-            return this.code;
         }
     }
 }

@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientGetAppOwnershipTicket;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSAccessTokenRequest;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSChangesSinceRequest;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientPICSProductInfoRequest;
@@ -38,7 +38,7 @@ public class SteamAppsTest extends HandlerTestBase<SteamApps> {
     public void getAppOwnershipTicket() {
         JobID jobID = handler.getAppOwnershipTicket(440);
 
-        ClientMsgProtobuf<SteammessagesClientserver.CMsgClientGetAppOwnershipTicket.Builder> msg = verifySend(EMsg.ClientGetAppOwnershipTicket);
+        ClientMsgProtobuf<CMsgClientGetAppOwnershipTicket.Builder> msg = verifySend(EMsg.ClientGetAppOwnershipTicket);
 
         assertEquals(SOURCE_JOB_ID, msg.getSourceJobID());
         assertEquals(SOURCE_JOB_ID, jobID);
@@ -308,4 +308,3 @@ public class SteamAppsTest extends HandlerTestBase<SteamApps> {
         assertArrayEquals(new byte[]{(byte) 0xAA, (byte) 0xAA}, callback.getBetaPasswords().get("testname"));
     }
 }
-

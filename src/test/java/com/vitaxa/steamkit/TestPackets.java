@@ -3,19 +3,10 @@ package com.vitaxa.steamkit;
 import com.google.protobuf.ByteString;
 import uk.co.thomasc.steamkit.base.ClientMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientGameConnectTokens;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientGetAppOwnershipTicketResponse;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientCheckAppBetaPasswordResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientGetCDNAuthTokenResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientGetDepotDecryptionKeyResponse;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientRequestFreeLicenseResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientFriendProfileInfoResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientPlayerNicknameList;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientSetPlayerNicknameResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgPersonaChangeResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.*;
 import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.*;
 import uk.co.thomasc.steamkit.types.SteamID;
@@ -23,12 +14,9 @@ import uk.co.thomasc.steamkit.types.SteamID;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientChatInvite;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientSessionToken;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientAddFriendResponse;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.CMsgClientFriendMsgIncoming;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse;
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.*;
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
 
 public abstract class TestPackets {
 
@@ -418,7 +406,7 @@ public abstract class TestPackets {
     }
 
     private static byte[] clientGetDepotDecryptionKeyResponse() {
-        ClientMsgProtobuf<CMsgClientGetDepotDecryptionKeyResponse.Builder> msg = new ClientMsgProtobuf<>(CMsgClientGetDepotDecryptionKeyResponse.class, EMsg.ClientGetDepotDecryptionKeyResponse);
+        ClientMsgProtobuf<SteammessagesClientserver2.CMsgClientGetDepotDecryptionKeyResponse.Builder> msg = new ClientMsgProtobuf<>(SteammessagesClientserver2.CMsgClientGetDepotDecryptionKeyResponse.class, EMsg.ClientGetDepotDecryptionKeyResponse);
 
         msg.getBody().setEresult(EResult.OK.code());
         msg.getBody().setDepotId(1);
@@ -428,7 +416,7 @@ public abstract class TestPackets {
     }
 
     private static byte[] clientGetCDNAuthTokenResponse() {
-        ClientMsgProtobuf<CMsgClientGetCDNAuthTokenResponse.Builder> msg = new ClientMsgProtobuf<>(CMsgClientGetCDNAuthTokenResponse.class, EMsg.ClientGetCDNAuthTokenResponse);
+        ClientMsgProtobuf<SteammessagesClientserver2.CMsgClientGetCDNAuthTokenResponse.Builder> msg = new ClientMsgProtobuf<>(SteammessagesClientserver2.CMsgClientGetCDNAuthTokenResponse.class, EMsg.ClientGetCDNAuthTokenResponse);
 
         msg.getBody().setEresult(EResult.OK.code());
         msg.getBody().setExpirationTime(946684800);
@@ -453,4 +441,3 @@ public abstract class TestPackets {
 
     // endregion
 }
-

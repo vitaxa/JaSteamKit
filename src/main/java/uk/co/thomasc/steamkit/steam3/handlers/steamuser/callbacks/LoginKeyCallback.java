@@ -31,7 +31,7 @@ public final class LoginKeyCallback extends CallbackMsg {
     /**
      * Gets the unique ID.
      */
-    public int getUniqueId() {
+    public int getUniqueID() {
         return this.uniqueId;
     }
 }

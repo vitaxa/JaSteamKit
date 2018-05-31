@@ -5,25 +5,25 @@ import uk.co.thomasc.steamkit.types.JobID;
 import java.io.Closeable;
 import java.util.function.Consumer;
 
-public class Callback<TCall extends ICallbackMsg> extends CallbackBase implements Closeable {
+public class Callback<T extends ICallbackMsg> extends CallbackBase implements Closeable {
 
     ICallbackMgrInternals mgr;
 
     private JobID jobID;
 
-    private Consumer<TCall> onRun;
+    private Consumer<T> onRun;
 
-    private Class<? extends TCall> callbackType;
+    private Class<? extends T> callbackType;
 
-    public Callback(Class<? extends TCall> callbackType, Consumer<TCall> func) {
+    public Callback(Class<? extends T> callbackType, Consumer<T> func) {
         this(callbackType, func, null);
     }
 
-    public Callback(Class<? extends TCall> callbackType, Consumer<TCall> func, ICallbackMgrInternals mgr) {
+    public Callback(Class<? extends T> callbackType, Consumer<T> func, ICallbackMgrInternals mgr) {
         this(callbackType, func, mgr, JobID.INVALID);
     }
 
-    public Callback(Class<? extends TCall> callbackType, Consumer<TCall> func, ICallbackMgrInternals mgr, JobID jobID) {
+    public Callback(Class<? extends T> callbackType, Consumer<T> func, ICallbackMgrInternals mgr, JobID jobID) {
         this.jobID = jobID;
         this.onRun = func;
         this.callbackType = callbackType;
@@ -48,7 +48,7 @@ public class Callback<TCall extends ICallbackMsg> extends CallbackBase implement
     @Override
     void run(Object callback) {
         if (callbackType.isAssignableFrom(callback.getClass())) {
-            TCall cb = (TCall) callback;
+            T cb = (T) callback;
 
             if ((cb.getJobID().equals(jobID) || jobID.equals(JobID.INVALID)) && onRun != null) {
                 onRun.accept(cb);

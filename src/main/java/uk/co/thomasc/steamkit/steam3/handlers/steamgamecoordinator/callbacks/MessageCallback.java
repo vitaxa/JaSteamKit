@@ -46,8 +46,6 @@ public class MessageCallback extends CallbackMsg {
     public MessageCallback(CMsgGCClient.Builder gcMsg) {
         eMsg = gcMsg.getMsgtype();
         appId = gcMsg.getAppid();
-        // we are knowingly using this obsolete property
-        //this.Payload = gcMsg.payload;
         message = MessageCallback.getPacketGCMsg(gcMsg.getMsgtype(), gcMsg.getPayload().toByteArray());
     }
 

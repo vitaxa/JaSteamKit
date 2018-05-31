@@ -136,7 +136,7 @@ public class EnvelopeEncryptedConnection extends Connection {
             response.write(keyCrc);
             response.write(0);
         } catch (IOException e) {
-            e.printStackTrace();
+            DebugLog.printStackTrace("EnvelopeEncryptedConnection", e);
         }
 
         if (randomChallenge != null) {

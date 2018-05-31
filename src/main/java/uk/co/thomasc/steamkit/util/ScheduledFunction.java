@@ -1,53 +1,43 @@
 package uk.co.thomasc.steamkit.util;
 
-import uk.co.thomasc.steamkit.util.cSharp.events.Action;
+import java.util.Timer;
+import java.util.TimerTask;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+public class ScheduledFunction {
 
-public class ScheduledFunction implements Runnable {
-    public long delay;
+    private long delay;
 
-    private Action func;
+    private Runnable func;
 
-    private boolean bStarted;
-    private ScheduledExecutorService timer;
-    private ScheduledFuture<?> task;
+    private Timer timer;
 
-    public ScheduledFunction(Action func) {
-        this(func, 1);
-    }
+    private boolean bStarted = false;
 
-    public ScheduledFunction(Action func, long delay) {
-        this.func = func;
+    public ScheduledFunction(Runnable func, long delay) {
         this.delay = delay;
-
-        timer = Executors.newSingleThreadScheduledExecutor();
+        this.func = func;
     }
 
     public void start() {
-        if (bStarted) {
-            return;
+        if (!bStarted) {
+            timer = new Timer();
+            timer.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    if (func != null) {
+                        func.run();
+                    }
+                }
+            }, 0, delay);
+            bStarted = true;
         }
-
-        task = timer.scheduleAtFixedRate(this, 0, delay, TimeUnit.MILLISECONDS);
-        bStarted = true;
     }
 
     public void stop() {
-        if (!bStarted) {
-            return;
-        }
-
-        bStarted = !task.cancel(false);
-    }
-
-    @Override
-    public void run() {
-        if (func != null) {
-            func.call();
+        if (bStarted) {
+            timer.cancel();
+            timer = null;
+            bStarted = false;
         }
     }
 

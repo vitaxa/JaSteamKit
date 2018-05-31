@@ -7,260 +7,94 @@ import uk.co.thomasc.steamkit.base.IPacketMsg;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistory;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistoryForOfflineMessages;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistoryResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientFSGetFriendsSteamLevelsResponse;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo;
 import uk.co.thomasc.steamkit.base.generated.steamlanguage.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientSetIgnoreFriend;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientSetIgnoreFriendResponse;
+import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.*;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
-import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callbacks.*;
-import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.AccountCache;
-import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.Clan;
-import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.User;
-import uk.co.thomasc.steamkit.types.GameID;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.*;
+import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.PersonaState;
+import uk.co.thomasc.steamkit.steam3.steamclient.configuration.SteamConfiguration;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.SteamID;
+import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.*;
+import java.util.function.Consumer;
+
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.*;
 
 /**
  * This handler handles all interaction with other users on the Steam3 network.
  */
-public final class SteamFriends extends ClientMsgHandler {
-    private final Object listLock = new Object();
-    private final List<SteamID> friendList;
-    private final List<SteamID> clanList;
-    public AccountCache cache;
+@SuppressWarnings("unused")
+public class SteamFriends extends ClientMsgHandler {
+
+    private Map<EMsg, Consumer<IPacketMsg>> dispatchMap;
 
     public SteamFriends() {
-        friendList = new ArrayList<SteamID>();
-        clanList = new ArrayList<SteamID>();
-        cache = new AccountCache();
-    }
+        dispatchMap = new HashMap<>();
 
-    /**
-     * Gets the local user's persona name.
-     *
-     * @return The name.
-     */
-    public String getPersonaName() {
-        return cache.getLocalUser().name;
+        dispatchMap.put(EMsg.ClientPersonaState, this::handlePersonaState);
+        dispatchMap.put(EMsg.ClientClanState, this::handleClanState);
+        dispatchMap.put(EMsg.ClientFriendsList, this::handleFriendsList);
+        dispatchMap.put(EMsg.ClientFriendMsgIncoming, this::handleFriendMsg);
+        dispatchMap.put(EMsg.ClientFriendMsgEchoToSender, this::handleFriendEchoMsg);
+        dispatchMap.put(EMsg.ClientFSGetFriendMessageHistoryResponse, this::handleFriendMessageHistoryResponse);
+        dispatchMap.put(EMsg.ClientAddFriendResponse, this::handleFriendResponse);
+        dispatchMap.put(EMsg.ClientChatEnter, this::handleChatEnter);
+        dispatchMap.put(EMsg.ClientChatMsg, this::handleChatMsg);
+        dispatchMap.put(EMsg.ClientChatMemberInfo, this::handleChatMemberInfo);
+        dispatchMap.put(EMsg.ClientChatRoomInfo, this::handleChatRoomInfo);
+        dispatchMap.put(EMsg.ClientChatActionResult, this::handleChatActionResult);
+        dispatchMap.put(EMsg.ClientChatInvite, this::handleChatInvite);
+        dispatchMap.put(EMsg.ClientSetIgnoreFriendResponse, this::handleIgnoreFriendResponse);
+        dispatchMap.put(EMsg.ClientFriendProfileInfoResponse, this::handleProfileInfoResponse);
+        dispatchMap.put(EMsg.ClientPersonaChangeResponse, this::handlePersonaChangeResponse);
+        dispatchMap.put(EMsg.ClientPlayerNicknameList, this::handleNicknameList);
+        dispatchMap.put(EMsg.AMClientSetPlayerNicknameResponse, this::handlePlayerNicknameResponse);
+        dispatchMap.put(EMsg.ClientAMGetPersonaNameHistoryResponse, this::handleAliasHistoryResponse);
+
+        dispatchMap = Collections.unmodifiableMap(dispatchMap);
     }
 
     /**
      * Sets the local user's persona name and broadcasts it over the network.
+     * Results are returned in a{@link PersonaChangeCallback} callback.
      *
      * @param name The name.
      */
     public void setPersonaName(String name) {
-        // cache the local name right away, so that early calls to SetPersonaState don't reset the set name
-        cache.getLocalUser().name = name;
-        final ClientMsgProtobuf<CMsgClientChangeStatus.Builder> stateMsg = new ClientMsgProtobuf<CMsgClientChangeStatus.Builder>(CMsgClientChangeStatus.class, EMsg.ClientChangeStatus);
-        stateMsg.getBody().setPersonaState(cache.getLocalUser().personaState.code());
-        stateMsg.getBody().setPlayerName(name);
-        getClient().send(stateMsg);
-    }
+        if (name == null) {
+            throw new IllegalArgumentException("name is null");
+        }
 
-    /**
-     * Gets the local user's persona state.
-     *
-     * @return The persona state.
-     */
-    public EPersonaState getPersonaState() {
-        return cache.getLocalUser().personaState;
+        ClientMsgProtobuf<CMsgClientChangeStatus.Builder> stateMsg
+                = new ClientMsgProtobuf<>(CMsgClientChangeStatus.class, EMsg.ClientChangeStatus);
+
+        stateMsg.getBody().setPlayerName(name);
+
+        client.send(stateMsg);
     }
 
     /**
      * Sets the local user's persona state and broadcasts it over the network.
+     * Results are returned in a{@link PersonaChangeCallback} callback.
      *
      * @param state The state.
      */
     public void setPersonaState(EPersonaState state) {
-        cache.getLocalUser().personaState = state;
-        final ClientMsgProtobuf<CMsgClientChangeStatus.Builder> stateMsg = new ClientMsgProtobuf<CMsgClientChangeStatus.Builder>(CMsgClientChangeStatus.class, EMsg.ClientChangeStatus);
+        if (state == null) {
+            throw new IllegalArgumentException("state is null");
+        }
+
+        ClientMsgProtobuf<CMsgClientChangeStatus.Builder> stateMsg
+                = new ClientMsgProtobuf<>(CMsgClientChangeStatus.class, EMsg.ClientChangeStatus);
+
         stateMsg.getBody().setPersonaState(state.code());
-        stateMsg.getBody().setPlayerName(cache.getLocalUser().name);
-        getClient().send(stateMsg);
-    }
 
-    /**
-     * Gets the friend count of the local user.
-     *
-     * @return The number of friends.
-     */
-    public int getFriendCount() {
-        synchronized (listLock) {
-            return friendList.size();
-        }
-    }
-
-    /**
-     * Gets a friend by index.
-     *
-     * @param index The index.
-     * @return A valid steamid of a friend if the index is in range; otherwise a
-     * steamid representing 0.
-     */
-    public SteamID getFriendByIndex(int index) {
-        synchronized (listLock) {
-            if (index < 0 || index >= friendList.size()) {
-                return new SteamID();
-            }
-            return friendList.get(index);
-        }
-    }
-
-    /**
-     * Gets the persona name of a friend.
-     *
-     * @param steamId The steam id.
-     * @return The name.
-     */
-    public String getFriendPersonaName(SteamID steamId) {
-        return cache.getUser(steamId).name;
-    }
-
-    /**
-     * Gets the nickname/alias of a friend.
-     *
-     * @param steamId The steam id.
-     * @return The nickname.
-     */
-    public String getFriendNickname(SteamID steamId) {
-        return cache.getUser(steamId).nickname;
-    }
-
-    /**
-     * Gets the persona state of a friend.
-     *
-     * @param steamId The steam id.
-     * @return The persona state.
-     */
-    public EPersonaState getFriendPersonaState(SteamID steamId) {
-        return cache.getUser(steamId).personaState;
-    }
-
-    /**
-     * Gets the relationship of a friend.
-     *
-     * @param steamId The steam id.
-     * @return The relationship of the friend to the local user.
-     */
-    public EFriendRelationship getFriendRelationship(SteamID steamId) {
-        return cache.getUser(steamId).relationship;
-    }
-
-    /**
-     * Gets the last time a friend logged off.
-     *
-     * @param steamId The steam id.
-     * @return The unix timestamp representing the last time a friend logged off.
-     */
-    public long getFriendLastLogoff(SteamID steamId) {
-        return cache.getUser(steamId).lastLogoff;
-    }
-
-    /**
-     * Gets the last time a friend logged on.
-     *
-     * @param steamId The steam id.
-     * @return The unix timestamp representing the last time a friend logged on.
-     */
-    public long getFriendLastLogon(SteamID steamId) {
-        return cache.getUser(steamId).lastLogon;
-    }
-
-    /**
-     * Gets the game name of a friend playing a game.
-     *
-     * @param steamId The steam id.
-     * @return The game name of a friend playing a game, or null if they haven't
-     * been cached yet.
-     */
-    public String getFriendGamePlayedName(SteamID steamId) {
-        return cache.getUser(steamId).gameName;
-    }
-
-    /**
-     * Gets the GameID of a friend playing a game.
-     *
-     * @param steamId The steam id.
-     * @return The gameid of a friend playing a game, or 0 if they haven't been
-     * cached yet.
-     */
-    public GameID getFriendGamePlayed(SteamID steamId) {
-        return cache.getUser(steamId).gameId;
-    }
-
-    /**
-     * Gets a SHA-1 hash representing the friend's avatar.
-     *
-     * @param steamId The SteamID of the friend to get the avatar of.
-     * @return A byte array representing a SHA-1 hash of the friend's avatar.
-     */
-    public byte[] getFriendAvatar(SteamID steamId) {
-        return cache.getUser(steamId).avatarHash;
-    }
-
-    /**
-     * Gets the count of clans the local user is a member of.
-     *
-     * @return The number of clans this user is a member of.
-     */
-    public int getClanCount() {
-        synchronized (listLock) {
-            return clanList.size();
-        }
-    }
-
-    /**
-     * Gets a clan SteamID by index.
-     *
-     * @param index The index.
-     * @return A valid steamid of a clan if the index is in range; otherwise a
-     * steamid representing 0.
-     */
-    public SteamID getClanByIndex(int index) {
-        synchronized (listLock) {
-            if (index < 0 || index >= clanList.size()) {
-                return new SteamID();
-            }
-            return clanList.get(index);
-        }
-    }
-
-    /**
-     * Gets the name of a clan.
-     *
-     * @param steamId The clan SteamID.
-     * @return The name.
-     */
-    public String getClanName(SteamID steamId) {
-        return cache.getClans().getAccount(steamId).name;
-    }
-
-    /**
-     * Gets the relationship of a clan.
-     *
-     * @param steamId The clan steamid.
-     * @return The relationship of the clan to the local user.
-     */
-    public EClanRelationship getClanRelationship(SteamID steamId) {
-        return cache.getClans().getAccount(steamId).relationship;
-    }
-
-    /**
-     * Gets a SHA-1 hash representing the clan's avatar.
-     *
-     * @param steamId The SteamID of the clan to get the avatar of.
-     * @return A byte array representing a SHA-1 hash of the clan's avatar, or
-     * null if the clan could not be found.
-     */
-    public byte[] getClanAvatar(SteamID steamId) {
-        return cache.getClans().getAccount(steamId).avatarHash;
+        client.send(stateMsg);
     }
 
     /**
@@ -271,11 +105,25 @@ public final class SteamFriends extends ClientMsgHandler {
      * @param message The message to send.
      */
     public void sendChatMessage(SteamID target, EChatEntryType type, String message) {
-        final ClientMsgProtobuf<CMsgClientFriendMsg.Builder> chatMsg = new ClientMsgProtobuf<CMsgClientFriendMsg.Builder>(CMsgClientFriendMsg.class, EMsg.ClientFriendMsg);
+        if (target == null) {
+            throw new IllegalArgumentException("target is null");
+        }
+
+        if (type == null) {
+            throw new IllegalArgumentException("type is null");
+        }
+
+        if (message == null) {
+            throw new IllegalArgumentException("message is null");
+        }
+
+        ClientMsgProtobuf<CMsgClientFriendMsg.Builder> chatMsg = new ClientMsgProtobuf<>(CMsgClientFriendMsg.class, EMsg.ClientFriendMsg);
+
         chatMsg.getBody().setSteamid(target.convertToUInt64());
         chatMsg.getBody().setChatEntryType(type.code());
-        chatMsg.getBody().setMessage(ByteString.copyFrom(message.getBytes()));
-        getClient().send(chatMsg);
+        chatMsg.getBody().setMessage(ByteString.copyFrom(message, Charset.forName("UTF-8")));
+
+        client.send(chatMsg);
     }
 
     /**
@@ -284,81 +132,287 @@ public final class SteamFriends extends ClientMsgHandler {
      * @param accountNameOrEmail The account name or email of the user.
      */
     public void addFriend(String accountNameOrEmail) {
-        final ClientMsgProtobuf<CMsgClientAddFriend.Builder> addFriend = new ClientMsgProtobuf<CMsgClientAddFriend.Builder>(CMsgClientAddFriend.class, EMsg.ClientAddFriend);
+        if (accountNameOrEmail == null) {
+            throw new IllegalArgumentException("accountNameOrEmail is null");
+        }
+
+        ClientMsgProtobuf<CMsgClientAddFriend.Builder> addFriend = new ClientMsgProtobuf<>(CMsgClientAddFriend.class, EMsg.ClientAddFriend);
+
         addFriend.getBody().setAccountnameOrEmailToAdd(accountNameOrEmail);
-        getClient().send(addFriend);
+
+        client.send(addFriend);
     }
 
     /**
      * Sends a friend request to a user.
      *
-     * @param steamId The SteamID of the friend to add.
+     * @param steamID The SteamID of the friend to add.
      */
-    public void addFriend(SteamID steamId) {
-        final ClientMsgProtobuf<CMsgClientAddFriend.Builder> addFriend = new ClientMsgProtobuf<CMsgClientAddFriend.Builder>(CMsgClientAddFriend.class, EMsg.ClientAddFriend);
-        addFriend.getBody().setSteamidToAdd(steamId.convertToUInt64());
-        getClient().send(addFriend);
+    public void addFriend(SteamID steamID) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
+        }
+
+        ClientMsgProtobuf<CMsgClientAddFriend.Builder> addFriend = new ClientMsgProtobuf<>(CMsgClientAddFriend.class, EMsg.ClientAddFriend);
+
+        addFriend.getBody().setSteamidToAdd(steamID.convertToUInt64());
+
+        client.send(addFriend);
     }
 
     /**
      * Removes a friend from your friends list.
      *
-     * @param steamId The SteamID of the friend to remove.
+     * @param steamID The SteamID of the friend to remove.
      */
-    public void removeFriend(SteamID steamId) {
-        final ClientMsgProtobuf<CMsgClientRemoveFriend.Builder> removeFriend = new ClientMsgProtobuf<CMsgClientRemoveFriend.Builder>(CMsgClientRemoveFriend.class, EMsg.ClientRemoveFriend);
-        removeFriend.getBody().setFriendid(steamId.convertToUInt64());
-        getClient().send(removeFriend);
+    public void removeFriend(SteamID steamID) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
+        }
+
+        ClientMsgProtobuf<CMsgClientRemoveFriend.Builder> removeFriend = new ClientMsgProtobuf<>(CMsgClientRemoveFriend.class, EMsg.ClientRemoveFriend);
+
+        removeFriend.getBody().setFriendid(steamID.convertToUInt64());
+
+        client.send(removeFriend);
     }
 
-    // the default details to request in most situations
-    final int defaultInfoRequest = EClientPersonaStateFlag.PlayerName.code() | EClientPersonaStateFlag.Presence.code() | EClientPersonaStateFlag.SourceID.code() | EClientPersonaStateFlag.GameExtraInfo.code() | EClientPersonaStateFlag.LastSeen.code();
+    /**
+     * Attempts to join a chat room.
+     *
+     * @param steamID The SteamID of the chat room.
+     */
+    public void joinChat(SteamID steamID) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
+        }
+
+        SteamID chatID = fixChatID(steamID); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientJoinChat> joinChat = new ClientMsg<>(MsgClientJoinChat.class);
+
+        joinChat.getBody().setSteamIdChat(chatID);
+
+        client.send(joinChat);
+    }
 
     /**
-     * Requests persona state for a list of specified SteamID. Results are
-     * returned in {@link PersonaStateCallback}.
+     * Attempts to leave a chat room.
+     *
+     * @param steamID The SteamID of the chat room.
+     */
+    public void leaveChat(SteamID steamID) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
+        }
+
+        SteamID chatID = fixChatID(steamID); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatMemberInfo> leaveChat = new ClientMsg<>(MsgClientChatMemberInfo.class);
+
+        leaveChat.getBody().setSteamIdChat(chatID);
+        leaveChat.getBody().setType(EChatInfoType.StateChange);
+
+        try {
+            leaveChat.write(client.getSteamID().convertToUInt64()); // ChatterActedOn
+            leaveChat.write(EChatMemberStateChange.Left.code()); // StateChange
+            leaveChat.write(client.getSteamID().convertToUInt64()); // ChatterActedBy
+        } catch (IOException e) {
+            DebugLog.printStackTrace("SteamFriends", e);
+        }
+
+        client.send(leaveChat);
+    }
+
+    /**
+     * Sends a message to a chat room.
+     *
+     * @param steamIdChat The SteamID of the chat room.
+     * @param type        The message type.
+     * @param message     The message.
+     */
+    public void sendChatRoomMessage(SteamID steamIdChat, EChatEntryType type, String message) {
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
+        }
+
+        if (type == null) {
+            throw new IllegalArgumentException("type is null");
+        }
+
+        if (message == null) {
+            throw new IllegalArgumentException("message is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatMsg> chatMsg = new ClientMsg<>(MsgClientChatMsg.class);
+
+        chatMsg.getBody().setChatMsgType(type);
+        chatMsg.getBody().setSteamIdChatRoom(chatID);
+        chatMsg.getBody().setSteamIdChatter(client.getSteamID());
+
+        try {
+            chatMsg.writeNullTermString(message, Charset.forName("UTF-8"));
+        } catch (IOException e) {
+            DebugLog.printStackTrace("SteamFriends", e);
+        }
+
+        client.send(chatMsg);
+    }
+
+    /**
+     * Invites a user to a chat room.
+     * The results of this action will be available through the {@link ChatActionResultCallback} callback.
+     *
+     * @param steamIdUser The SteamID of the user to invite.
+     * @param steamIdChat The SteamID of the chat room to invite the user to.
+     */
+    public void inviteUserToChat(SteamID steamIdUser, SteamID steamIdChat) {
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
+        }
+
+        if (steamIdUser == null) {
+            throw new IllegalArgumentException("steamIdUser is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsgProtobuf<CMsgClientChatInvite.Builder> inviteMsg = new ClientMsgProtobuf<>(CMsgClientChatInvite.class, EMsg.ClientChatInvite);
+
+        inviteMsg.getBody().setSteamIdChat(chatID.convertToUInt64());
+        inviteMsg.getBody().setSteamIdInvited(steamIdUser.convertToUInt64());
+
+        // steamclient also sends the steamid of the user that did the invitation
+        // we'll mimic that behavior
+        inviteMsg.getBody().setSteamIdPatron(client.getSteamID().convertToUInt64());
+
+        client.send(inviteMsg);
+    }
+
+    /**
+     * Kicks the specified chat member from the given chat room.
+     *
+     * @param steamIdChat   The SteamID of chat room to kick the member from.
+     * @param steamIdMember The SteamID of the member to kick from the chat.
+     */
+    public void kickChatMember(SteamID steamIdChat, SteamID steamIdMember) {
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
+        }
+
+        if (steamIdMember == null) {
+            throw new IllegalArgumentException("steamIdMember is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatAction> kickMember = new ClientMsg<>(MsgClientChatAction.class);
+
+        kickMember.getBody().setSteamIdChat(chatID);
+        kickMember.getBody().setSteamIdUserToActOn(steamIdMember);
+
+        kickMember.getBody().setChatAction(EChatAction.Kick);
+
+        client.send(kickMember);
+    }
+
+    /**
+     * Bans the specified chat member from the given chat room.
+     *
+     * @param steamIdChat   The SteamID of chat room to ban the member from.
+     * @param steamIdMember The SteamID of the member to ban from the chat.
+     */
+    public void banChatMember(SteamID steamIdChat, SteamID steamIdMember) {
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
+        }
+
+        if (steamIdMember == null) {
+            throw new IllegalArgumentException("steamIdMember is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatAction> kickMember = new ClientMsg<>(MsgClientChatAction.class);
+
+        kickMember.getBody().setSteamIdChat(chatID);
+        kickMember.getBody().setSteamIdUserToActOn(steamIdMember);
+
+        kickMember.getBody().setChatAction(EChatAction.Ban);
+
+        client.send(kickMember);
+    }
+
+    /**
+     * Unbans the specified chat member from the given chat room.
+     *
+     * @param steamIdChat   The SteamID of chat room to unban the member from.
+     * @param steamIdMember The SteamID of the member to unban from the chat.
+     */
+    public void unbanChatMember(SteamID steamIdChat, SteamID steamIdMember) {
+        if (steamIdChat == null) {
+            throw new IllegalArgumentException("steamIdChat is null");
+        }
+
+        if (steamIdMember == null) {
+            throw new IllegalArgumentException("steamIdMember is null");
+        }
+
+        SteamID chatID = fixChatID(steamIdChat); // copy the steamid so we don't modify it
+
+        ClientMsg<MsgClientChatAction> kickMember = new ClientMsg<>(MsgClientChatAction.class);
+
+        kickMember.getBody().setSteamIdChat(chatID);
+        kickMember.getBody().setSteamIdUserToActOn(steamIdMember);
+
+        kickMember.getBody().setChatAction(EChatAction.UnBan);
+
+        client.send(kickMember);
+    }
+
+    /**
+     * Requests persona state for a list of specified SteamID.
+     * Results are returned in {@link PersonaState}.
      *
      * @param steamIdList   A list of SteamIDs to request the info of.
-     * @param requestedInfo The requested info flags.
+     * @param requestedInfo The requested info flags. If none specified, this uses {@link SteamConfiguration#getDefaultPersonaStateFlags()}.
      */
-    public void requestFriendInfo(Collection<SteamID> steamIdList, int requestedInfo) {
-        final ClientMsgProtobuf<CMsgClientRequestFriendData.Builder> request = new ClientMsgProtobuf<CMsgClientRequestFriendData.Builder>(CMsgClientRequestFriendData.class, EMsg.ClientRequestFriendData);
+    public void requestFriendInfo(List<SteamID> steamIdList, int requestedInfo) {
+        if (steamIdList == null) {
+            throw new IllegalArgumentException("steamIdList is null");
+        }
 
-        for (final SteamID steamId : steamIdList) {
-            request.getBody().getFriendsList().add(steamId.convertToUInt64());
+        if (requestedInfo == 0) {
+            requestedInfo = EClientPersonaStateFlag.code(client.getConfiguration().getDefaultPersonaStateFlags());
+        }
+
+        ClientMsgProtobuf<CMsgClientRequestFriendData.Builder> request = new ClientMsgProtobuf<>(CMsgClientRequestFriendData.class, EMsg.ClientRequestFriendData);
+
+        for (SteamID steamID : steamIdList) {
+            request.getBody().addFriends(steamID.convertToUInt64());
         }
         request.getBody().setPersonaStateRequested(requestedInfo);
 
-        getClient().send(request);
-    }
-
-    public void requestFriendInfo(Collection<SteamID> steamIdList, EClientPersonaStateFlag requestedInfo) {
-        requestFriendInfo(steamIdList, requestedInfo.code());
-    }
-
-    public void requestFriendInfo(Collection<SteamID> steamIdList) {
-        requestFriendInfo(steamIdList, defaultInfoRequest);
+        client.send(request);
     }
 
     /**
-     * Requests persona state for a specified SteamID. Results are returned in
-     * {@link PersonaStateCallback}.
+     * Requests persona state for a specified SteamID.
+     * Results are returned in {@link PersonaState}.
      *
-     * @param steamId       A SteamID to request the info of.
-     * @param requestedInfo The requested info flags.
+     * @param steamID       A SteamID to request the info of.
+     * @param requestedInfo The requested info flags. If none specified, this uses {@link SteamConfiguration#getDefaultPersonaStateFlags()}.
      */
-    public void requestFriendInfo(SteamID steamId, int requestedInfo) {
-        final List<SteamID> temp = new ArrayList<SteamID>();
-        temp.add(steamId);
-        requestFriendInfo(temp, requestedInfo);
-    }
+    public void requestFriendInfo(SteamID steamID, int requestedInfo) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
+        }
 
-    public void requestFriendInfo(SteamID steamId, EClientPersonaStateFlag requestedInfo) {
-        requestFriendInfo(steamId, requestedInfo.code());
-    }
-
-    public void requestFriendInfo(SteamID steamId) {
-        requestFriendInfo(steamId, defaultInfoRequest);
+        List<SteamID> list = new ArrayList<>();
+        list.add(steamID);
+        requestFriendInfo(list, requestedInfo);
     }
 
     /**
@@ -438,7 +492,7 @@ public final class SteamFriends extends ClientMsgHandler {
 
         request.getBody().setSteamid(steamID.convertToUInt64());
 
-        getClient().send(request);
+        client.send(request);
     }
 
     /**
@@ -453,199 +507,187 @@ public final class SteamFriends extends ClientMsgHandler {
     }
 
     /**
-     * Handles a client message. This should not be called directly.
+     * Set the nickname of a friend.
+     * The result is returned in a {@link NicknameCallback}.
+     *
+     * @param friendID the steam id of the friend
+     * @param nickname the nickname to set to
+     * @return The Job ID of the request. This can be used to find the appropriate {@link NicknameCallback}.
      */
+    public JobID setFriendNickname(SteamID friendID, String nickname) {
+        if (friendID == null) {
+            throw new IllegalArgumentException("friendID is null");
+        }
+        if (nickname == null) {
+            throw new IllegalArgumentException("nickname is null");
+        }
+
+        ClientMsgProtobuf<CMsgClientSetPlayerNickname.Builder> request =
+                new ClientMsgProtobuf<>(CMsgClientSetPlayerNickname.class, EMsg.AMClientSetPlayerNickname);
+        JobID jobID = client.getNextJobID();
+        request.setSourceJobID(jobID);
+
+        request.getBody().setSteamid(friendID.convertToUInt64());
+        request.getBody().setNickname(nickname);
+
+        client.send(request);
+
+        return jobID;
+    }
+
+    /**
+     * Request the alias history of the account of the given steam id.
+     * The result is returned in a {@link AliasHistoryCallback}.
+     *
+     * @param steamID the steam id
+     * @return The Job ID of the request. This can be used to find the appropriate {@link AliasHistoryCallback}.
+     */
+    public JobID requestAliasHistory(SteamID steamID) {
+        if (steamID == null) {
+            throw new IllegalArgumentException("steamID is null");
+        }
+        return requestAliasHistory(Collections.singletonList(steamID));
+    }
+
+    /**
+     * Request the alias history of the accounts of the given steam ids.
+     * The result is returned in a {@link AliasHistoryCallback}.
+     *
+     * @param steamIDs the steam ids
+     * @return The Job ID of the request. This can be used to find the appropriate {@link AliasHistoryCallback}.
+     */
+    public JobID requestAliasHistory(List<SteamID> steamIDs) {
+        if (steamIDs == null) {
+            throw new IllegalArgumentException("steamIDs is null");
+        }
+
+        ClientMsgProtobuf<CMsgClientAMGetPersonaNameHistory.Builder> request =
+                new ClientMsgProtobuf<>(CMsgClientAMGetPersonaNameHistory.class, EMsg.ClientAMGetPersonaNameHistory);
+        JobID jobID = client.getNextJobID();
+        request.setSourceJobID(jobID);
+
+        for (SteamID steamID : steamIDs) {
+            request.getBody().addIds(CMsgClientAMGetPersonaNameHistory.IdInstance.newBuilder()
+                    .setSteamid(steamID.convertToUInt64()));
+        }
+
+        request.getBody().setIdCount(request.getBody().getIdsCount());
+
+        client.send(request);
+
+        return jobID;
+    }
+
     @Override
     public void handleMsg(IPacketMsg packetMsg) {
-        switch (packetMsg.getMsgType()) {
-            case ClientPersonaState:
-                handlePersonaState(packetMsg);
-                break;
+        if (packetMsg == null) {
+            throw new IllegalArgumentException("packetMsg is null");
+        }
 
-            case ClientFriendsList:
-                handleFriendsList(packetMsg);
-                break;
-
-            case ClientPlayerNicknameList:
-                handlePlayerNicknameList(packetMsg);
-                break;
-
-            case ClientFriendMsgIncoming:
-                handleFriendMsg(packetMsg);
-                break;
-
-            case ClientFriendMsgEchoToSender:
-                handleFriendEchoMsg(packetMsg);
-                break;
-
-            case ClientAccountInfo:
-                handleAccountInfo(packetMsg);
-                break;
-
-            case ClientAddFriendResponse:
-                handleFriendResponse(packetMsg);
-                break;
-
-            case ClientSetIgnoreFriendResponse:
-                handleIgnoreFriendResponse(packetMsg);
-                break;
-
-            case ClientFriendProfileInfoResponse:
-                handleProfileInfoResponse(packetMsg);
-                break;
-
-            case ClientFSGetFriendsSteamLevelsResponse:
-                handleSteamLevelResponse(packetMsg);
-                break;
-
-            case ClientFSGetFriendMessageHistoryResponse:
-                handleFriendMessageHistoryResponse(packetMsg);
-                break;
+        Consumer<IPacketMsg> dispatcher = dispatchMap.get(packetMsg.getMsgType());
+        if (dispatcher != null) {
+            dispatcher.accept(packetMsg);
         }
     }
 
-    private void handleAccountInfo(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientAccountInfo.Builder> accInfo = new ClientMsgProtobuf<CMsgClientAccountInfo.Builder>(CMsgClientAccountInfo.class, packetMsg);
+    private SteamID fixChatID(SteamID steamIdChat) {
+        SteamID chatID = new SteamID(steamIdChat.convertToUInt64()); // copy the steamid so we don't modify it
 
-        // cache off our local name
-        cache.getLocalUser().name = accInfo.getBody().getPersonaName();
+        if (chatID.isClanAccount()) {
+            // this steamid is incorrect, so we'll fix it up
+            chatID.setAccountInstance(SteamID.ChatInstanceFlags.CLAN.code());
+            chatID.setAccountType(EAccountType.Chat);
+        }
+
+        return chatID;
     }
 
     private void handleFriendMsg(IPacketMsg packetMsg) {
         ClientMsgProtobuf<CMsgClientFriendMsgIncoming.Builder> friendMsg = new ClientMsgProtobuf<>(CMsgClientFriendMsgIncoming.class, packetMsg);
-        getClient().postCallback(new FriendMsgCallback(friendMsg.getBody()));
+        client.postCallback(new FriendMsgCallback(friendMsg.getBody()));
     }
 
     private void handleFriendEchoMsg(IPacketMsg packetMsg) {
         ClientMsgProtobuf<CMsgClientFriendMsgIncoming.Builder> friendMsg = new ClientMsgProtobuf<>(CMsgClientFriendMsgIncoming.class, packetMsg);
-        getClient().postCallback(new FriendMsgEchoCallback(friendMsg.getBody()));
+        client.postCallback(new FriendMsgEchoCallback(friendMsg.getBody()));
     }
 
-    private void handlePlayerNicknameList(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientPlayerNicknameList.Builder> list = new ClientMsgProtobuf<CMsgClientPlayerNicknameList.Builder>(CMsgClientPlayerNicknameList.class, packetMsg);
-        for (CMsgClientPlayerNicknameList.PlayerNickname friend : list.getBody().getNicknamesList()) {
-            cache.getUser(new SteamID(friend.getSteamid())).nickname = friend.getNickname();
-        }
-        final FriendsNicknameListCallback callback = new FriendsNicknameListCallback(list.getBody().build());
-        getClient().postCallback(callback);
+    private void handleFriendMessageHistoryResponse(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryResponse.Builder> historyResponse =
+                new ClientMsgProtobuf<>(CMsgClientChatGetFriendMessageHistoryResponse.class, packetMsg);
+        client.postCallback(new FriendMsgHistoryCallback(historyResponse.getBody(), client.getUniverse()));
     }
 
     private void handleFriendsList(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientFriendsList.Builder> list = new ClientMsgProtobuf<CMsgClientFriendsList.Builder>(CMsgClientFriendsList.class, packetMsg);
-
-        cache.getLocalUser().steamId = getClient().getSteamID();
-
-        if (!list.getBody().getBincremental()) {
-            // if we're not an incremental update, the message contains all friends, so we should clear our current list
-            synchronized (listLock) {
-                friendList.clear();
-                clanList.clear();
-            }
-        }
+        ClientMsgProtobuf<CMsgClientFriendsList.Builder> list = new ClientMsgProtobuf<>(CMsgClientFriendsList.class, packetMsg);
 
         // we have to request information for all of our friends because steam only sends persona information for online friends
-        final ClientMsgProtobuf<CMsgClientRequestFriendData.Builder> reqInfo = new ClientMsgProtobuf<CMsgClientRequestFriendData.Builder>(CMsgClientRequestFriendData.class, EMsg.ClientRequestFriendData);
+        ClientMsgProtobuf<CMsgClientRequestFriendData.Builder> reqInfo = new ClientMsgProtobuf<>(CMsgClientRequestFriendData.class, EMsg.ClientRequestFriendData);
 
-        reqInfo.getBody().setPersonaStateRequested(defaultInfoRequest);
+        reqInfo.getBody().setPersonaStateRequested(EClientPersonaStateFlag.code(client.getConfiguration().getDefaultPersonaStateFlags()));
 
-        synchronized (listLock) {
-            final List<SteamID> friendsToRemove = new ArrayList<SteamID>();
-            final List<SteamID> clansToRemove = new ArrayList<SteamID>();
-
-            for (final CMsgClientFriendsList.Friend friendObj : list.getBody().getFriendsList()) {
-                final SteamID friendId = new SteamID(friendObj.getUlfriendid());
-
-                if (friendId.isIndividualAccount()) {
-                    final User user = cache.getUser(friendId);
-
-                    user.relationship = EFriendRelationship.from(friendObj.getEfriendrelationship());
-
-                    if (friendList.contains(friendId)) {
-                        // if this is a friend on our list, and they removed us, mark them for removal
-                        if (user.relationship == EFriendRelationship.None) {
-                            friendsToRemove.add(friendId);
-                        }
-                    } else {
-                        // we don't know about this friend yet, lets add them
-                        friendList.add(friendId);
-                    }
-                } else if (friendId.isClanAccount()) {
-                    final Clan clan = cache.getClans().getAccount(friendId);
-
-                    clan.relationship = EClanRelationship.from(friendObj.getEfriendrelationship());
-
-                    if (clanList.contains(friendId)) {
-                        // mark clans we were removed/kicked from
-                        // note: not actually sure about the kicked relationship, but i'm using it for good measure
-                        if (clan.relationship == EClanRelationship.None || clan.relationship == EClanRelationship.Kicked) {
-                            clansToRemove.add(friendId);
-                        }
-                    } else {
-                        // don't know about this clan, add it
-                        clanList.add(friendId);
-                    }
-                }
-
-                if (!list.getBody().getBincremental()) {
-                    // request persona state for our friend & clan list when it's a non-incremental update
-                    reqInfo.getBody().addFriends(friendId.convertToUInt64());
-                }
+        for (CMsgClientFriendsList.Friend friendObj : list.getBody().getFriendsList()) {
+            if (!list.getBody().getBincremental()) {
+                // request persona state for our friend & clan list when it's a non-incremental update
+                reqInfo.getBody().addFriends(friendObj.getUlfriendid());
             }
-
-            // remove anything we marked for removal
-            friendList.removeAll(friendsToRemove);
-            clanList.removeAll(clansToRemove);
         }
 
         if (reqInfo.getBody().getFriendsCount() > 0) {
-            getClient().send(reqInfo);
+            client.send(reqInfo);
         }
 
-        final FriendsListCallback callback = new FriendsListCallback(list.getBody().build());
-        getClient().postCallback(callback);
+        client.postCallback(new FriendsListCallback(list.getBody()));
     }
 
     private void handlePersonaState(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientPersonaState.Builder> perState = new ClientMsgProtobuf<CMsgClientPersonaState.Builder>(CMsgClientPersonaState.class, packetMsg);
-        final int flags = perState.getBody().getStatusFlags();
-        for (final CMsgClientPersonaState.Friend friend : perState.getBody().getFriendsList()) {
-            final SteamID friendId = new SteamID(friend.getFriendid());
-            //SteamID sourceId = new SteamID(friend.getSteamidSource());
-            if (friendId.isIndividualAccount()) {
-                final User cacheFriend = cache.getUser(friendId);
-                if ((flags & EClientPersonaStateFlag.PlayerName.code()) == EClientPersonaStateFlag.PlayerName.code()) {
-                    cacheFriend.name = friend.getPlayerName();
-                }
-                //if ((flags & EClientPersonaStateFlag.Presence.v()) == EClientPersonaStateFlag.Presence.v()) {
-                if (friend.getAvatarHash() != null) cacheFriend.avatarHash = friend.getAvatarHash().toByteArray();
-                cacheFriend.personaState = EPersonaState.from(friend.getPersonaState());
-                //}
-                if ((flags & EClientPersonaStateFlag.LastSeen.code()) == EClientPersonaStateFlag.LastSeen.code()) {
-                    cacheFriend.lastLogoff = friend.getLastLogoff();
-                    cacheFriend.lastLogon = friend.getLastLogon();
-                }
-                if ((flags & EClientPersonaStateFlag.GameExtraInfo.code()) == EClientPersonaStateFlag.GameExtraInfo.code()) {
-                    cacheFriend.gameName = friend.getGameName();
-                    cacheFriend.gameId = new GameID(friend.getGameid());
-                    cacheFriend.gameAppId = friend.getGamePlayedAppId();
-                }
-            } else if (friendId.isClanAccount()) {
-                final Clan cacheClan = cache.getClans().getAccount(friendId);
-                if ((flags & EClientPersonaStateFlag.PlayerName.code()) == EClientPersonaStateFlag.PlayerName.code()) {
-                    cacheClan.name = friend.getPlayerName();
-                }
-            }
-            // TODO: cache other details/account types?
-        }
-        for (final CMsgClientPersonaState.Friend friend : perState.getBody().getFriendsList()) {
-            final PersonaStateCallback callback = new PersonaStateCallback(friend);
-            getClient().postCallback(callback);
-        }
+        ClientMsgProtobuf<CMsgClientPersonaState.Builder> persState = new ClientMsgProtobuf<>(CMsgClientPersonaState.class, packetMsg);
+
+        client.postCallback(new PersonaStatesCallback(persState.getBody()));
+    }
+
+    private void handleClanState(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientClanState.Builder> clanState = new ClientMsgProtobuf<>(CMsgClientClanState.class, packetMsg);
+        client.postCallback(new ClanStateCallback(clanState.getBody()));
     }
 
     private void handleFriendResponse(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientAddFriendResponse.Builder> friendResponse = new ClientMsgProtobuf<CMsgClientAddFriendResponse.Builder>(CMsgClientAddFriendResponse.class, packetMsg);
-        getClient().postCallback(new FriendAddedCallback(friendResponse.getBody().build()));
+        ClientMsgProtobuf<CMsgClientAddFriendResponse.Builder> friendResponse = new ClientMsgProtobuf<>(CMsgClientAddFriendResponse.class, packetMsg);
+        client.postCallback(new FriendAddedCallback(friendResponse.getBody()));
+    }
+
+    private void handleChatEnter(IPacketMsg packetMsg) {
+        ClientMsg<MsgClientChatEnter> chatEnter = new ClientMsg<>(MsgClientChatEnter.class, packetMsg);
+        byte[] payload = chatEnter.getPayload().toByteArray();
+        client.postCallback(new ChatEnterCallback(chatEnter.getBody(), payload));
+    }
+
+    private void handleChatMsg(IPacketMsg packetMsg) {
+        ClientMsg<MsgClientChatMsg> chatMsg = new ClientMsg<>(MsgClientChatMsg.class, packetMsg);
+        byte[] payload = chatMsg.getPayload().toByteArray();
+        client.postCallback(new ChatMsgCallback(chatMsg.getBody(), payload));
+    }
+
+    private void handleChatMemberInfo(IPacketMsg packetMsg) {
+        ClientMsg<MsgClientChatMemberInfo> membInfo = new ClientMsg<>(MsgClientChatMemberInfo.class, packetMsg);
+        byte[] payload = membInfo.getPayload().toByteArray();
+        client.postCallback(new ChatMemberInfoCallback(membInfo.getBody(), payload));
+    }
+
+    private void handleChatRoomInfo(IPacketMsg packetMsg) {
+        ClientMsg<MsgClientChatRoomInfo> roomInfo = new ClientMsg<>(MsgClientChatRoomInfo.class, packetMsg);
+        byte[] payload = roomInfo.getPayload().toByteArray();
+        client.postCallback(new ChatRoomInfoCallback(roomInfo.getBody(), payload));
+    }
+
+    private void handleChatActionResult(IPacketMsg packetMsg) {
+        ClientMsg<MsgClientChatActionResult> actionResult = new ClientMsg<>(MsgClientChatActionResult.class, packetMsg);
+        client.postCallback(new ChatActionResultCallback(actionResult.getBody()));
+    }
+
+    private void handleChatInvite(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientChatInvite.Builder> chatInvite = new ClientMsgProtobuf<>(CMsgClientChatInvite.class, packetMsg);
+        client.postCallback(new ChatInviteCallback(chatInvite.getBody()));
     }
 
     private void handleIgnoreFriendResponse(IPacketMsg packetMsg) {
@@ -658,21 +700,30 @@ public final class SteamFriends extends ClientMsgHandler {
         client.postCallback(new ProfileInfoCallback(new JobID(packetMsg.getTargetJobID()), response.getBody()));
     }
 
-    private void handleSteamLevelResponse(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientFSGetFriendsSteamLevelsResponse.Builder> response = new ClientMsgProtobuf<CMsgClientFSGetFriendsSteamLevelsResponse.Builder>(CMsgClientFSGetFriendsSteamLevelsResponse.class, packetMsg);
-        getClient().postCallback(new SteamLevelCallback(response.getBody().build()));
+    private void handlePersonaChangeResponse(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgPersonaChangeResponse.Builder> response = new ClientMsgProtobuf<>(CMsgPersonaChangeResponse.class, packetMsg);
+
+        client.postCallback(new PersonaChangeCallback(new JobID(packetMsg.getTargetJobID()), response.getBody()));
     }
 
-    private void handleFriendMessageHistoryResponse(IPacketMsg packetMsg) {
-        final ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryResponse.Builder> response = new ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryResponse.Builder>(CMsgClientChatGetFriendMessageHistoryResponse.class, packetMsg);
-        getClient().postCallback(new FriendMsgHistoryCallback(response.getBody(), getClient().getUniverse()));
+    private void handleNicknameList(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientPlayerNicknameList.Builder> resp =
+                new ClientMsgProtobuf<>(CMsgClientPlayerNicknameList.class, packetMsg);
+
+        client.postCallback(new NicknameListCallback(resp.getBody()));
     }
 
-    public List<SteamID> getFriendList() {
-        return this.friendList;
+    private void handlePlayerNicknameResponse(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientSetPlayerNicknameResponse.Builder> resp =
+                new ClientMsgProtobuf<>(CMsgClientSetPlayerNicknameResponse.class, packetMsg);
+
+        client.postCallback(new NicknameCallback(resp.getTargetJobID(), resp.getBody()));
     }
 
-    public List<SteamID> getClanList() {
-        return this.clanList;
+    private void handleAliasHistoryResponse(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientAMGetPersonaNameHistoryResponse.Builder> resp =
+                new ClientMsgProtobuf<>(CMsgClientAMGetPersonaNameHistoryResponse.class, packetMsg);
+
+        client.postCallback(new AliasHistoryCallback(resp.getTargetJobID(), resp.getBody()));
     }
 }

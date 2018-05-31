@@ -34,6 +34,7 @@ import java.net.InetSocketAddress;
 import java.util.*;
 import java.util.zip.GZIPInputStream;
 
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientCMList;
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
 
 /**
@@ -112,9 +113,9 @@ public abstract class CMClient {
         this.configuration = configuration;
         this.serverMap = new HashMap<>();
 
-        this.heartBeatFunc = new ScheduledFunction(() -> {
+        heartBeatFunc = new ScheduledFunction(() -> {
             send(new ClientMsgProtobuf<CMsgClientHeartBeat.Builder>(CMsgClientHeartBeat.class, EMsg.ClientHeartBeat));
-        });
+        }, 5000);
     }
 
     /**
@@ -200,13 +201,7 @@ public abstract class CMClient {
         // on the network thread, and that will lead to a disconnect callback
         // down the line
         if (connection != null) {
-            new Thread(() -> {
-                try {
-                    connection.send(msg.serialize());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }).start();
+            connection.send(msg.serialize());
         }
     }
 
@@ -246,6 +241,9 @@ public abstract class CMClient {
                 break;
             case ClientServerList: // Steam server list
                 handleServerList(packetMsg);
+                break;
+            case ClientCMList:
+                handleCMList(packetMsg);
                 break;
             case ClientSessionToken: // am session token
                 handleSessionToken(packetMsg);
@@ -414,15 +412,28 @@ public abstract class CMClient {
             EServerType type = EServerType.from(server.getServerType());
 
             Set<InetSocketAddress> endPointSet;
-            endPointSet = serverMap.get(type);
-
-            if (endPointSet == null) {
-                endPointSet = new HashSet<>();
-                serverMap.put(type, endPointSet);
-            }
+            endPointSet = serverMap.computeIfAbsent(type, k -> new HashSet<>());
 
             endPointSet.add(new InetSocketAddress(NetHelpers.getIPAddress(server.getServerIp()), server.getServerPort()));
         }
+    }
+
+    private void handleCMList(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientCMList.Builder> cmMsg = new ClientMsgProtobuf<>(CMsgClientCMList.class, packetMsg);
+
+        if (cmMsg.getBody().getCmPortsCount() != cmMsg.getBody().getCmAddressesCount()) {
+            DebugLog.writeLine("CMClient", "HandleCMList received malformed message");
+        }
+
+        List<Integer> addresses = cmMsg.getBody().getCmAddressesList();
+        List<Integer> ports = cmMsg.getBody().getCmPortsList();
+
+        List<ServerRecord> cmList = new ArrayList<>();
+        for (int i = 0; i < Math.min(addresses.size(), ports.size()); i++) {
+            cmList.add(ServerRecord.createSocketServer(new InetSocketAddress(NetHelpers.getIPAddress(addresses.get(i)), ports.get(i))));
+        }
+
+        getServers().replaceList(cmList);
     }
 
     private void handleSessionToken(IPacketMsg packetMsg) {

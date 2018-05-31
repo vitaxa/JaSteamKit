@@ -70,3 +70,4 @@ public abstract class HandlerTestBase<T extends ClientMsgHandler> extends TestBa
         return CMClient.getPacketMsg(TestPackets.getPacket(msgType, isProto));
     }
 }
+

@@ -11,6 +11,7 @@ import java.nio.file.attribute.FileTime;
 import java.nio.file.attribute.PosixFilePermission;
 import java.util.Collections;
 import java.util.Set;
+import java.util.UUID;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -90,6 +91,7 @@ public final class IOHelper {
     public static byte[] encode(String s) {
         return s.getBytes(UNICODE_CHARSET);
     }
+
 
     public static byte[] encodeASCII(String s) {
         return s.getBytes(ASCII_CHARSET);
@@ -256,7 +258,6 @@ public final class IOHelper {
         return bytes;
     }
 
-
     public static void read(InputStream input, byte[] bytes) throws IOException {
         int offset = 0;
         while (offset < bytes.length) {
@@ -396,6 +397,20 @@ public final class IOHelper {
             Files.setPosixFilePermissions(file, perms);
         }
     }
+
+    public static String addUnixUuid(String fileName) {
+        return fileName + "_" + System.currentTimeMillis() / 1000L + "_" + UUID.randomUUID();
+    }
+
+    public static String addUnixUuid(String fileName, String format) {
+        return fileName + "_" + System.currentTimeMillis() / 1000L + "_" + UUID.randomUUID() + "." + format;
+    }
+
+    public static void writeAppend(Path file, byte[] bytes) throws IOException {
+        createParentDirs(file);
+        Files.write(file, bytes, APPEND_OPTIONS);
+    }
+
 }
 
 

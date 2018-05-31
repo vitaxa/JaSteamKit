@@ -36,7 +36,7 @@ public class RSACrypto {
             final BigInteger[] keys = keyParser.parseRSAPublicKey();
             init(keys[0], keys[1]);
         } catch (final BerDecodeException e) {
-            e.printStackTrace();
+            DebugLog.printStackTrace("RSACrypto", e);
         }
     }
 

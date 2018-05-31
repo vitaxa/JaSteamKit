@@ -10,43 +10,55 @@ import uk.co.thomasc.steamkit.types.SteamID;
  * proposal.
  */
 public final class TradeResultCallback extends CallbackMsg {
-    /**
-     * Gets the Trade ID that this result is for.
-     */
-    private final int tradeID;
-    /**
-     * Gets the response of the trade proposal.
-     */
-    private final EEconTradeResponse response;
-    /**
-     * Gets the SteamID of the client that responded to the proposal.
-     */
-    private final SteamID otherClient;
+    private int tradeID;
+
+    private EEconTradeResponse response;
+
+    private SteamID otherClient;
+
+    private int numDaysSteamGuardRequired;
+
+    private int numDaysNewDeviceCooldown;
+
+    private int defaultNumDaysPasswordResetProbation;
+
+    private int numDaysPasswordResetProbation;
 
     public TradeResultCallback(CMsgTrading_InitiateTradeResponse.Builder msg) {
         tradeID = msg.getTradeRequestId();
         response = EEconTradeResponse.from(msg.getResponse());
         otherClient = new SteamID(msg.getOtherSteamid());
+        numDaysSteamGuardRequired = msg.getSteamguardRequiredDays();
+        numDaysNewDeviceCooldown = msg.getNewDeviceCooldownDays();
+        defaultNumDaysPasswordResetProbation = msg.getDefaultPasswordResetProbationDays();
+        numDaysPasswordResetProbation = msg.getPasswordResetProbationDays();
     }
 
-    /**
-     * Gets the Trade ID that this result is for.
-     */
     public int getTradeID() {
-        return this.tradeID;
+        return tradeID;
     }
 
-    /**
-     * Gets the response of the trade proposal.
-     */
     public EEconTradeResponse getResponse() {
-        return this.response;
+        return response;
     }
 
-    /**
-     * Gets the SteamID of the client that responded to the proposal.
-     */
     public SteamID getOtherClient() {
-        return this.otherClient;
+        return otherClient;
+    }
+
+    public int getNumDaysSteamGuardRequired() {
+        return numDaysSteamGuardRequired;
+    }
+
+    public int getNumDaysNewDeviceCooldown() {
+        return numDaysNewDeviceCooldown;
+    }
+
+    public int getDefaultNumDaysPasswordResetProbation() {
+        return defaultNumDaysPasswordResetProbation;
+    }
+
+    public int getNumDaysPasswordResetProbation() {
+        return numDaysPasswordResetProbation;
     }
 }

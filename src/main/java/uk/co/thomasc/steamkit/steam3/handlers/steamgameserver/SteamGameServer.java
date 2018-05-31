@@ -41,19 +41,9 @@ public final class SteamGameServer extends ClientMsgHandler {
     public SteamGameServer() {
         dispatchMap = new HashMap<>();
 
-        dispatchMap.put(EMsg.GSStatusReply, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleStatusReply(packetMsg);
-            }
-        });
+        dispatchMap.put(EMsg.GSStatusReply, this::handleStatusReply);
 
-        dispatchMap.put(EMsg.ClientTicketAuthComplete, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleAuthComplete(packetMsg);
-            }
-        });
+        dispatchMap.put(EMsg.ClientTicketAuthComplete, this::handleAuthComplete);
 
         dispatchMap = Collections.unmodifiableMap(dispatchMap);
     }
@@ -154,7 +144,7 @@ public final class SteamGameServer extends ClientMsgHandler {
         ClientMsgProtobuf<CMsgClientLogOff.Builder> logOff = new ClientMsgProtobuf<>(CMsgClientLogOff.class, EMsg.ClientLogOff);
         client.send(logOff);
 
-        // TODO: 2018-02-28 it seems like the socket is not closed after getting logged of or I am doing something horribly wrong, let's disconnect here
+        // TODO: it seems like the socket is not closed after getting logged of or I am doing something horribly wrong, let's disconnect here
         client.disconnect();
     }
 

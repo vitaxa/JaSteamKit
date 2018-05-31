@@ -43,60 +43,15 @@ public class SteamUser extends ClientMsgHandler {
     public SteamUser() {
         dispatchMap = new HashMap<>();
 
-        dispatchMap.put(EMsg.ClientLogOnResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleLogOnResponse(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientLoggedOff, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleLoggedOff(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientNewLoginKey, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleLoginKey(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientSessionToken, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleSessionToken(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientUpdateMachineAuth, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleUpdateMachineAuth(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientAccountInfo, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleAccountInfo(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientWalletInfoUpdate, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleWalletInfo(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientRequestWebAPIAuthenticateUserNonceResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleWebAPIUserNonce(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientMarketingMessageUpdate2, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleMarketingMessageUpdate(packetMsg);
-            }
-        });
+        dispatchMap.put(EMsg.ClientLogOnResponse, this::handleLogOnResponse);
+        dispatchMap.put(EMsg.ClientLoggedOff, this::handleLoggedOff);
+        dispatchMap.put(EMsg.ClientNewLoginKey, this::handleLoginKey);
+        dispatchMap.put(EMsg.ClientSessionToken, this::handleSessionToken);
+        dispatchMap.put(EMsg.ClientUpdateMachineAuth, this::handleUpdateMachineAuth);
+        dispatchMap.put(EMsg.ClientAccountInfo, this::handleAccountInfo);
+        dispatchMap.put(EMsg.ClientWalletInfoUpdate, this::handleWalletInfo);
+        dispatchMap.put(EMsg.ClientRequestWebAPIAuthenticateUserNonceResponse, this::handleWebAPIUserNonce);
+        dispatchMap.put(EMsg.ClientMarketingMessageUpdate2, this::handleMarketingMessageUpdate);
 
         dispatchMap = Collections.unmodifiableMap(dispatchMap);
     }
@@ -236,7 +191,7 @@ public class SteamUser extends ClientMsgHandler {
         ClientMsgProtobuf<CMsgClientLogOff.Builder> logOff = new ClientMsgProtobuf<>(CMsgClientLogOff.class, EMsg.ClientLogOff);
         getClient().send(logOff);
 
-        // TODO: 2018-02-28 it seems like the socket is not closed after getting logged of or I am doing something horribly wrong, let's disconnect here
+        // TODO: it seems like the socket is not closed after getting logged of or I am doing something horribly wrong, let's disconnect here
         getClient().disconnect();
     }
 
@@ -302,7 +257,7 @@ public class SteamUser extends ClientMsgHandler {
         }
 
         ClientMsgProtobuf<CMsgClientNewLoginKeyAccepted.Builder> acceptance = new ClientMsgProtobuf<>(CMsgClientNewLoginKeyAccepted.class, EMsg.ClientNewLoginKeyAccepted);
-        acceptance.getBody().setUniqueId(callback.getUniqueId());
+        acceptance.getBody().setUniqueId(callback.getUniqueID());
 
         client.send(acceptance);
     }
@@ -348,7 +303,7 @@ public class SteamUser extends ClientMsgHandler {
 
         getClient().postCallback(new LoggedOffCallback(result));
 
-        // TODO: 2018-02-28 it seems like the socket is not closed after getting logged of or I am doing something horribly wrong, let's disconnect here
+        // TODO: it seems like the socket is not closed after getting logged of or I am doing something horribly wrong, let's disconnect here
         getClient().disconnect();
     }
 
