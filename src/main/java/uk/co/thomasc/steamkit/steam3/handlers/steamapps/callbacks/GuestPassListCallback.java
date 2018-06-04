@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientUpdateGuestPassesList;
+import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgClientUpdateGuestPassesList;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.KeyValue;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;

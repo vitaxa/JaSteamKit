@@ -8,8 +8,8 @@ import uk.co.thomasc.steamkit.base.ClientMsg;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.*;
+import uk.co.thomasc.steamkit.base.generated.enums.*;
+import uk.co.thomasc.steamkit.base.generated.internal.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.SteamFriends;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.*;
 import uk.co.thomasc.steamkit.types.SteamID;
@@ -24,7 +24,6 @@ import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CM
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientChatInvite;
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistory;
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistoryForOfflineMessages;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
 
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class SteamFriendsTest extends HandlerTestBase<SteamFriends> {

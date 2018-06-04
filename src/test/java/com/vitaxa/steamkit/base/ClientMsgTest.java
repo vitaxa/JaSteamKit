@@ -2,7 +2,7 @@ package com.vitaxa.steamkit.base;
 
 import org.junit.Test;
 import uk.co.thomasc.steamkit.base.ClientMsg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientChatEnter;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgClientChatEnter;
 import uk.co.thomasc.steamkit.steam3.CMClient;
 
 import java.io.IOException;

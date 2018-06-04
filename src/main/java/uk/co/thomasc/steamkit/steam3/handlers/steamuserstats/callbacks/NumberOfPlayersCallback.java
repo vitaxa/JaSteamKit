@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgDPGetNumberOfCurrentPlayersResponse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
+import uk.co.thomasc.steamkit.base.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.SteamUserStats;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.JobID;

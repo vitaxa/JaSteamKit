@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgGCHdrProtoBuf;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgGCHdrProtoBuf;
 import uk.co.thomasc.steamkit.types.JobID;
 
 import java.io.ByteArrayInputStream;

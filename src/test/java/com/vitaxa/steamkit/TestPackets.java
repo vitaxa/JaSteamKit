@@ -7,8 +7,8 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientCheckAppBetaPasswordResponse;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientRequestFreeLicenseResponse;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.*;
+import uk.co.thomasc.steamkit.base.generated.enums.*;
+import uk.co.thomasc.steamkit.base.generated.internal.*;
 import uk.co.thomasc.steamkit.types.SteamID;
 
 import java.io.IOException;
@@ -16,7 +16,6 @@ import java.io.UnsupportedEncodingException;
 
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.*;
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.*;
 
 public abstract class TestPackets {
 

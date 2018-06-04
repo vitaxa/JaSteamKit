@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgHdr;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgHdr;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;

@@ -4,10 +4,10 @@ import com.vitaxa.steamkit.TestBase;
 import org.junit.Test;
 import uk.co.thomasc.steamkit.base.*;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientServerList;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EServerType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgHdr;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgHdrProtoBuf;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.EServerType;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgHdr;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgHdrProtoBuf;
 import uk.co.thomasc.steamkit.steam3.CMClient;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
 

@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.steamclient.configuration;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EClientPersonaStateFlag;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
+import uk.co.thomasc.steamkit.base.generated.enums.EClientPersonaStateFlag;
+import uk.co.thomasc.steamkit.base.generated.enums.EUniverse;
 import uk.co.thomasc.steamkit.networking.steam3.ProtocolType;
 import uk.co.thomasc.steamkit.steam3.discovery.provider.IServerListProvider;
 import uk.co.thomasc.steamkit.steam3.discovery.provider.NullServerListProvider;

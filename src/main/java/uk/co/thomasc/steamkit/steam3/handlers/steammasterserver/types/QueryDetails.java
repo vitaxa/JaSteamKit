@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.types;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.ERegionCode;
+import uk.co.thomasc.steamkit.base.generated.enums.ERegionCode;
 
 import java.net.InetAddress;
 

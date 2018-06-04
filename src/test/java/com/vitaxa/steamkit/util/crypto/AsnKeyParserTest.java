@@ -2,7 +2,7 @@ package com.vitaxa.steamkit.util.crypto;
 
 import com.vitaxa.steamkit.TestBase;
 import org.junit.Test;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
+import uk.co.thomasc.steamkit.base.generated.enums.EUniverse;
 import uk.co.thomasc.steamkit.util.KeyDictionary;
 import uk.co.thomasc.steamkit.util.crypto.asnkeyparser.AsnKeyParser;
 import uk.co.thomasc.steamkit.util.crypto.asnkeyparser.BerDecodeException;

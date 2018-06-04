@@ -14,8 +14,8 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClie
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientGetCDNAuthToken;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientGetDepotDecryptionKey;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientRequestFreeLicense;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.EResult;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.SteamApps;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamapps.types.PICSRequest;

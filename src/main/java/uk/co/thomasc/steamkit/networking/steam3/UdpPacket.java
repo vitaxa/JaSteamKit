@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.networking.steam3;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUdpPacketType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.UdpHeader;
+import uk.co.thomasc.steamkit.base.generated.enums.EUdpPacketType;
+import uk.co.thomasc.steamkit.base.generated.internal.UdpHeader;
 import uk.co.thomasc.steamkit.util.stream.MemoryStream;
 import uk.co.thomasc.steamkit.util.stream.SeekOrigin;
 

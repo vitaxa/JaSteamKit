@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.util.util;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EOSType;
+import uk.co.thomasc.steamkit.base.generated.enums.EOSType;
 
 public class Utils {
 

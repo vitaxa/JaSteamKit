@@ -4,7 +4,7 @@ import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientGMSServerQuery;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgGMSClientServerQueryResponse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.callbacks.QueryCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.types.QueryDetails;

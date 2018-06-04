@@ -7,9 +7,8 @@ import uk.co.thomasc.steamkit.base.IPacketMsg;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistory;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistoryForOfflineMessages;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClientChatGetFriendMessageHistoryResponse;
-import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.*;
+import uk.co.thomasc.steamkit.base.generated.enums.*;
+import uk.co.thomasc.steamkit.base.generated.internal.*;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.PersonaState;
@@ -24,6 +23,7 @@ import java.util.*;
 import java.util.function.Consumer;
 
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.*;
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverFriends.*;
 
 /**
  * This handler handles all interaction with other users on the Steam3 network.

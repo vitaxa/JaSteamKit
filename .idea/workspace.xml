@@ -2,100 +2,273 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f261ccf-db3a-4d3c-929b-3f97fdafd532" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/BitVector64.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/GameID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/GlobalID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/KVTextReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/KeyValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/SteamID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/UGCHandle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/AClientMsgProtobuf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/AClientMsgProtobuf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IClientMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IClientMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ExtendedClientMsgHdr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ExtendedClientMsgHdr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientAppUsageEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientAppUsageEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatActionResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatActionResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatEnter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatEnter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatMemberInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatMemberInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatRoomInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatRoomInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientCreateChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientCreateChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientCreateChatResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientCreateChatResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGetFriendsWhoPlayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGetFriendsWhoPlayGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGetFriendsWhoPlayGameResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGetFriendsWhoPlayGameResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientJoinChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientJoinChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientLogOnResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientLogOnResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSBeginSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSBeginSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientP2PIntroducerMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientP2PIntroducerMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientSetIgnoreFriend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientSetIgnoreFriend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientSetIgnoreFriendResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientSetIgnoreFriendResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSApprove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSApprove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSDeny.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSDeny.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetUserGroupStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetUserGroupStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetUserGroupStatusResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetUserGroupStatusResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSKick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSKick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/CMClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/CMClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/GuestPassListCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/GuestPassListCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/types/PICSProductInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/types/PICSProductInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/SteamChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/SteamChat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatActionResultCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatActionResultCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatCreateResponseCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatCreateResponseCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatEnterCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatEnterCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatInviteCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatInviteCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatMemberInfoCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatMemberInfoCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatMsgCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatMsgCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/types/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/types/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/types/ChatMemberInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/types/ChatMemberInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/types/StateChangeDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/types/StateChangeDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/SteamCloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/SteamCloud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/UGCDetailsCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/UGCDetailsCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/SteamFriends.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/SteamFriends.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendAddedCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendAddedCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendMsgCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendMsgCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendMsgEchoCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendMsgEchoCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendMsgHistoryCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendMsgHistoryCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendsListCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendsListCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendsNicknameListCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/FriendsNicknameListCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/PersonaStateCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/PersonaStateCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/ProfileInfoCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/ProfileInfoCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/SteamLevelCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/SteamLevelCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/AccountCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/AccountCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/AccountList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/AccountList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/Friend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/Friend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/FriendMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/FriendMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/SteamGameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/SteamGameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/callbacks/TicketAuthCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/callbacks/TicketAuthCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/callback/OfflineMessageNotificationCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/callback/OfflineMessageNotificationCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/SteamTrading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/SteamTrading.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/SessionStartCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/SessionStartCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/TradeProposedCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/TradeProposedCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/TradeResultCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/TradeResultCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/SteamUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/SteamUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoggedOnCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoggedOnCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/MarketingMessageCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/MarketingMessageCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/PurchaseResponseCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/LogOnDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/LogOnDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/LeaderboardEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/LeaderboardEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/webapi/SteamDirectory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/webapi/SteamDirectory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/webapi/WebAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/webapi/WebAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/JobID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/JobID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/MessageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/MessageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/gameid/GameID.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/gameid/GameType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/keyvalue/KVTextReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/keyvalue/KeyValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/keyvalue/Type.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/steam2ticket/Entry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/steam2ticket/Steam2Ticket.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/steamid/BitVector64.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/steamid/SteamID.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/ugc/GlobalID.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/ugc/UGCHandle.java" beforeDir="false" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EAccountFlags.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EAccountType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EActivationCodeClass.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EAppInfoSection.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EAppUsageEvent.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EAuthSessionResponse.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EBillingType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatAction.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatActionResult.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatEntryType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatFlags.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatInfoType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatMemberStateChange.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatPermission.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatRoomEnterResponse.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EChatRoomType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EClanPermission.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EClanRank.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EClanRelationship.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EClientPersonaStateFlag.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EClientStat.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EClientStatAggregateMethod.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EContentDownloadSourceType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ECurrencyCode.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EDRMBlobDownloadErrorDetail.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EDRMBlobDownloadType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EDenyReason.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EDepotFileFlag.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EEconTradeResponse.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EFriendFlags.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EFriendRelationship.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EIntroducerRouting.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ELeaderboardDataRequest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ELeaderboardDisplayType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ELeaderboardSortMethod.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ELeaderboardUploadScoreMethod.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ELicenseFlags.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ELicenseType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EMarketingMessageFlags.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EMsg.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ENewsUpdateType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EOSType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EPaymentMethod.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EPersonaState.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EPersonaStateFlag.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EPlatformType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EPublishedFileVisibility.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EPurchaseResultDetail.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ERegionCode.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ERemoteStoragePlatform.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EResult.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EServerFlags.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EServerType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/ESystemIMType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EUCMFilePrivacyState.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EUdpPacketType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EUniverse.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EWorkshopEnumerationType.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EWorkshopFileAction.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/enums/EWorkshopFileType.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_11.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/AClientMsgProtobuf.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/AClientMsgProtobuf.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientGCMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientGCMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientGCMsgProtobuf.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientGCMsgProtobuf.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientMsgProtobuf.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientMsgProtobuf.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IClientGCMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IClientGCMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IClientMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IClientMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IPacketMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IPacketMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ISteamSerializableHeader.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ISteamSerializableHeader.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ISteamSerializableMessage.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ISteamSerializableMessage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientGCMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientGCMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientGCMsgProtobuf.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientGCMsgProtobuf.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientMsgProtobuf.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientMsgProtobuf.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EAccountFlags.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EAccountType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EActivationCodeClass.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EAppInfoSection.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EAppUsageEvent.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EAuthSessionResponse.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EBillingType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatAction.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatActionResult.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatEntryType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatFlags.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatInfoType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatMemberStateChange.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatPermission.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatRoomEnterResponse.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EChatRoomType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EClanPermission.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EClanRank.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EClanRelationship.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EClientPersonaStateFlag.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EClientStat.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EClientStatAggregateMethod.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EContentDownloadSourceType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ECurrencyCode.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EDRMBlobDownloadErrorDetail.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EDRMBlobDownloadType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EDenyReason.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EDepotFileFlag.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EEconTradeResponse.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EFriendFlags.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EFriendRelationship.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EIntroducerRouting.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ELeaderboardDataRequest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ELeaderboardDisplayType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ELeaderboardSortMethod.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ELeaderboardUploadScoreMethod.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ELicenseFlags.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ELicenseType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EMarketingMessageFlags.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EMsg.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ENewsUpdateType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EOSType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EPaymentMethod.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EPersonaState.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EPersonaStateFlag.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EPlatformType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EPublishedFileVisibility.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EPurchaseResultDetail.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ERegionCode.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ERemoteStoragePlatform.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EResult.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EServerFlags.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EServerType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/ESystemIMType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EUCMFilePrivacyState.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EUdpPacketType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EUniverse.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EWorkshopEnumerationType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EWorkshopFileAction.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguage/EWorkshopFileType.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/Accept.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/Accept.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ChallengeData.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/ChallengeData.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ConnectData.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/ConnectData.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/Datagram.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/Datagram.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/Disconnect.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/Disconnect.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ExtendedClientMsgHdr.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/ExtendedClientMsgHdr.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgChannelEncryptRequest.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgChannelEncryptRequest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgChannelEncryptResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgChannelEncryptResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgChannelEncryptResult.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgChannelEncryptResult.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientAppUsageEvent.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientAppUsageEvent.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatAction.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientChatAction.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatActionResult.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientChatActionResult.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatEnter.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientChatEnter.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatMemberInfo.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientChatMemberInfo.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatMsg.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientChatMsg.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatRoomInfo.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientChatRoomInfo.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientCreateChat.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientCreateChat.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientCreateChatResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientCreateChatResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientEmailAddrInfo.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientEmailAddrInfo.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGenericResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientGenericResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGetFriendsWhoPlayGame.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientGetFriendsWhoPlayGame.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGetFriendsWhoPlayGameResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientGetFriendsWhoPlayGameResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientJoinChat.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientJoinChat.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientJustStrings.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientJustStrings.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientLogOnResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientLogOnResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientLoggedOff.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientLoggedOff.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientLogon.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientLogon.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientMarketingMessageUpdate2.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientMarketingMessageUpdate2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientNewLoginKey.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientNewLoginKey.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientNewLoginKeyAccepted.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientNewLoginKeyAccepted.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSBeginSession.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientOGSBeginSession.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSBeginSessionResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientOGSBeginSessionResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSEndSession.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientOGSEndSession.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSEndSessionResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientOGSEndSessionResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSWriteRow.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientOGSWriteRow.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientP2PIntroducerMessage.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientP2PIntroducerMessage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientRequestedClientStats.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientRequestedClientStats.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientServerUnavailable.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientServerUnavailable.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientSetIgnoreFriend.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientSetIgnoreFriend.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientSetIgnoreFriendResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientSetIgnoreFriendResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientUpdateGuestPassesList.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientUpdateGuestPassesList.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientVACBanStatus.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgClientVACBanStatus.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGCHdr.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGCHdr.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGCHdrProtoBuf.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGCHdrProtoBuf.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSApprove.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGSApprove.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSDeny.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGSDeny.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetPlayStatsResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGSGetPlayStatsResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetReputationResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGSGetReputationResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetUserGroupStatus.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGSGetUserGroupStatus.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetUserGroupStatusResponse.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGSGetUserGroupStatusResponse.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSKick.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGSKick.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSPerformHardwareSurvey.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgGSPerformHardwareSurvey.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgHdr.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgHdr.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgHdrProtoBuf.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/MsgHdrProtoBuf.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/UdpHeader.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/internal/UdpHeader.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/EnvelopeEncryptedConnection.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/EnvelopeEncryptedConnection.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpConnection.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpConnection.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpPacket.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpPacket.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/CMClient.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/CMClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/SteamApps.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/SteamApps.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/AppOwnershipTicketCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/AppOwnershipTicketCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/CDNAuthTokenCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/CDNAuthTokenCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/CheckAppBetaPasswordCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/CheckAppBetaPasswordCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/DepotKeyCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/DepotKeyCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/FreeLicenseCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/FreeLicenseCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/GuestPassListCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/GuestPassListCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/LicenseListCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/LicenseListCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/VACStatusCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/VACStatusCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/types/License.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/types/License.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/SteamCloud.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/SteamCloud.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/ShareFileCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/ShareFileCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/SingleFileInfoCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/SingleFileInfoCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/UGCDetailsCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/UGCDetailsCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/SteamFriends.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/SteamFriends.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/Friend.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/Friend.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgamecoordinator/SteamGameCoordinator.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgamecoordinator/SteamGameCoordinator.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/SteamGameServer.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/SteamGameServer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/callbacks/TicketAuthCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/callbacks/TicketAuthCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/types/StatusDetails.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/types/StatusDetails.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steammasterserver/SteamMasterServer.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steammasterserver/SteamMasterServer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steammasterserver/types/QueryDetails.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steammasterserver/types/QueryDetails.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/SteamNotifications.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/SteamNotifications.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/SteamTrading.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/SteamTrading.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/TradeResultCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/TradeResultCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/SteamUser.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/SteamUser.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/AccountInfoCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/AccountInfoCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoggedOffCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoggedOffCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoggedOnCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoggedOnCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/MarketingMessageCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/MarketingMessageCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/WalletInfoCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/WalletInfoCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/WebAPIUserNonceCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/WebAPIUserNonceCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/AnonymousLogOnDetails.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/AnonymousLogOnDetails.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/LogOnDetails.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/LogOnDetails.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/MachineAuthDetails.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/MachineAuthDetails.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/SteamUserStats.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/SteamUserStats.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/callbacks/FindOrCreateLeaderboardCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/callbacks/FindOrCreateLeaderboardCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/callbacks/LeaderboardEntriesCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/callbacks/LeaderboardEntriesCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/callbacks/NumberOfPlayersCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuserstats/callbacks/NumberOfPlayersCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/SteamWorkshop.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/SteamWorkshop.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/PublishedFilesCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/PublishedFilesCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserActionPublishedFilesCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserActionPublishedFilesCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserPublishedFilesCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserPublishedFilesCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserSubscribedFilesCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserSubscribedFilesCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/EnumerationDetails.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/EnumerationDetails.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/EnumerationUserDetails.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/EnumerationUserDetails.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/SteamClient.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/SteamClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbacks/ServerListCallback.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbacks/ServerListCallback.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/ISteamConfigurationBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/ISteamConfigurationBuilder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfiguration.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfigurationBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfigurationBuilder.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfigurationState.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfigurationState.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/webapi/SteamDirectory.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/webapi/SteamDirectory.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/SteamID.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/SteamID.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/HardwareUtils.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/HardwareUtils.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/KeyDictionary.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/KeyDictionary.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/util/MsgUtil.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/util/MsgUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/util/Utils.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/util/Utils.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/TestPackets.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/TestPackets.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/base/ClientMsgTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/base/ClientMsgTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/CMClientTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/CMClientTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/handlers/HandlerTestBase.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/handlers/HandlerTestBase.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/handlers/steamapps/SteamAppsTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/handlers/steamapps/SteamAppsTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/handlers/steamfriends/SteamFriendsTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/handlers/steamfriends/SteamFriendsTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/handlers/steamuser/SteamUserTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/steam/handlers/steamuser/SteamUserTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/types/KeyValueTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/types/KeyValueTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/types/SteamIDTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/types/SteamIDTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/util/crypto/AsnKeyParserTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/vitaxa/steamkit/util/crypto/AsnKeyParserTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -110,8 +283,9 @@
       <file leaf-file-name="CryptoHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/crypto/CryptoHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2448">
-              <caret line="144" column="69" selection-start-line="144" selection-start-column="69" selection-end-line="144" selection-end-column="69" />
+            <state relative-caret-position="1965">
+              <caret line="144" column="28" lean-forward="false" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,17 +293,9 @@
       <file leaf-file-name="SteammessagesClientserverLogin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesClientserverLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SteammessagesUnifiedBaseSteamclient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesUnifiedBaseSteamclient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="30">
+              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,17 +303,32 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1751">
-              <caret line="103" column="69" selection-start-line="103" selection-start-column="69" selection-end-line="103" selection-end-column="69" />
+            <state relative-caret-position="1320">
+              <caret line="88" column="69" lean-forward="false" selection-start-line="88" selection-start-column="69" selection-end-line="88" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CMClient.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CMClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/CMClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+            <state relative-caret-position="420">
+              <caret line="63" column="22" lean-forward="false" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScheduledFunction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/ScheduledFunction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="30" />
+              <folding>
+                <element signature="e#484#693#0" expanded="true" />
+                <element signature="e#692#693#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -155,8 +336,9 @@
       <file leaf-file-name="SmartCMServerList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/SmartCMServerList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+            <state relative-caret-position="1245">
+              <caret line="90" column="23" lean-forward="false" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -164,8 +346,9 @@
       <file leaf-file-name="SteammessagesClientserverFriends.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesClientserverFriends.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="30">
+              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -173,8 +356,9 @@
       <file leaf-file-name="AbstractMsgBase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/AbstractMsgBase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+            <state relative-caret-position="375">
+              <caret line="33" column="48" lean-forward="false" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,8 +366,9 @@
       <file leaf-file-name="Connection.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/Connection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="60">
+              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -198,6 +383,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -205,6 +395,7 @@
         <option value="$PROJECT_DIR$/src/test/java/org/spout/steamkit/SteamDirectoryTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/crypto/CryptoHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/CMClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/ScheduledFunction.java" />
       </list>
     </option>
   </component>
@@ -230,47 +421,59 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1416" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -278,365 +481,59 @@
             </path>
             <path>
               <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="steamkit" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="generated" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="generated" type="462c0819:PsiDirectoryNode" />
-              <item name="steamlanguage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-              <item name="generated" type="462c0819:PsiDirectoryNode" />
-              <item name="steamlanguageinternal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SteamKit-Java-master_TEST" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="steamkit" type="462c0819:PsiDirectoryNode" />
               <item name="steam3" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="types" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="logging" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaSteam/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/AbstractMsgBase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/ClientMsgProtobuf.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/IClientMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/MsgBase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientMsgProtobuf.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/ClientGCMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/GCMsgBase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/IClientGCMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ExtendedClientMsgHdr.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientAppUsageEvent.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatActionResult.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatEnter.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatMemberInfo.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientChatRoomInfo.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientCreateChat.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientCreateChatResponse.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientEmailAddrInfo.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGetFriendsWhoPlayGame.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientGetFriendsWhoPlayGameResponse.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientJoinChat.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientLogOnResponse.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSBeginSession.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSBeginSessionResponse.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSEndSession.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientOGSWriteRow.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientP2PIntroducerMessage.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientServerUnavailable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientSetIgnoreFriend.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgClientSetIgnoreFriendResponse.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGCHdr.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSApprove.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSDeny.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetReputationResponse.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetUserGroupStatus.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSGetUserGroupStatusResponse.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgGSKick.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgHdr.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/MsgHdrProtoBuf.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/Connection.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/NetFilterEncryption.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/NetMsgEventArgs.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/TcpConnection.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpConnection.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/CMClient.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/ServerInfo.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/ServerQuality.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/SmartCMServerList.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/ClientMsgHandler.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/SteamApps.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/AppOwnershipTicketCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/DepotKeyCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/FreeLicenseCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/callbacks/VACStatusCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamapps/types/PICSProductInfo.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/SteamChat.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/callbacks/ChatEnterCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamchat/types/StateChangeDetails.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/SteamCloud.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/SteamFriends.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/IgnoreFriendCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callbacks/ProfileInfoCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgamecoordinator/SteamGameCoordinator.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgamecoordinator/callbacks/MessageCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/SteamGameServer.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgameserver/callbacks/TicketAuthCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steammasterserver/SteamMasterServer.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steammasterserver/callbacks/QueryCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steammasterserver/types/QueryDetails.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steammasterserver/types/Server.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/SteamNotifications.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/SteamTrading.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamtrading/callbacks/TradeResultCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/SteamUser.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/AccountInfoCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoggedOffCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoggedOnCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/LoginKeyCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/PurchaseResponseCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/SessionTokenCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/UpdateMachineAuthCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/WalletInfoCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/LogOnDetails.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/MachineAuthDetails.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/OTPDetails.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/SteamWorkshop.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/PublishedFilesCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserActionPublishedFilesCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserPublishedFilesCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/callbacks/UserSubscribedFilesCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/EnumerationDetails.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/EnumerationUserDetails.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/SteamClient.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/CallbackMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbacks/CMListCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbacks/ConnectedCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbacks/DisconnectedCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/webapi/WebAPI.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/MessageObject.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/keyvalue/KeyValue.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/steam2ticket/Steam2Ticket.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/steamid/SteamID.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/Passable.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/ScheduledFunction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/events/Event.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/events/EventArgs.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/events/EventHandler.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/crypto/CryptoHelper.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/stream/BinaryReader.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/stream/BinaryWriter.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/util/MsgUtil.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/util/NetHelpers.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/util/Utils.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/org/spout/steamkit/util/util/NetHelpersTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/steamkit.iml</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/discovery/BasicServerListProtos.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/DisconnectedEventArgs.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/EnvelopeEncryptedConnection.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/INetFilterEncryption.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/NetFilterEncryptionWithHMAC.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/ProtocolType.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/ServerRecord.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/provider/FileServerListProvider.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/provider/IServerListProvider.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/provider/NullServerListProvider.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/ShareFileCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/SingleFileInfoCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callback/UGCDetailsCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/Notification.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/callback/CommentNotificationsCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/callback/ItemAnnouncementsCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/callback/OfflineMessageNotificationCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/callback/UserNotificationsCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/MarketingMessageCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/WebAPIUserNonceCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/types/AnonymousLogOnDetails.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/Callback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/CallbackBase.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/CallbackManager.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/ICallbackMgrInternals.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/ICallbackMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/Subscription.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbacks/ServerListCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/ISteamConfigurationBuilder.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfiguration.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfigurationBuilder.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/configuration/SteamConfigurationState.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/webapi/SteamDirectory.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/CollectionUtils.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/HardwareUtils.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/csgo/EGCMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/dota/EGCMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/tf2/ECraftingRecipe.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/tf2/EGCMsg.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/tf2/GCMsgCraftItem.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/tf2/GCMsgCraftItemResponse.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpState.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/IServerListProvider.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/provider/SteamDirectoryProvider.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamcloud/callbacks/UGCDetailsCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamgamecoordinator/callbacks/CraftResponseCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/callbacks/NotificationOfflineMsgCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/callbacks/NotificationUpdateCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamnotifications/types/NotificationType.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/OTPDetailsCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/OTPDetailsCallbackInternal.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamuser/callbacks/UserNotificationsCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/File.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/FileInfo.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/FilePublished.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamworkshop/types/FileSubscribed.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/CMsgGroupInviteAction.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/CMsgInviteUserToGroup.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/BaseJobCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/JobCallback.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/ZipUtil.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/events/EventArgsGeneric.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/events/GenericEvent.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/events/GenericEventHandler.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/ip/IPEndPoint.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/ip/ProtocolType.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/classlesshasher/JenkinsHash.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/org/spout/steamkit/types/TypesTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/test/java/org/spout/steamkit/util/crypto/CryptoHelperTest.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -653,36 +550,23 @@
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="WIDTH" value="0" />
+      <option name="HEIGHT" value="0" />
+      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
+      <module name="" />
+      <envs />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <setting name="vmparams" value="" />
@@ -693,6 +577,8 @@
       <setting name="depsClasspath" value="false" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" />
@@ -702,10 +588,12 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
+      <envs />
       <patterns />
     </configuration>
     <configuration name="steamkit [clean,compile,install]" type="MavenRunConfiguration" factoryName="Maven">
@@ -724,7 +612,6 @@
                 <option value="install" />
               </list>
             </option>
-            <option name="pomFileName" />
             <option name="profilesMap">
               <map />
             </option>
@@ -734,7 +621,16 @@
         </option>
       </MavenSettings>
     </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
@@ -747,14 +643,23 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
         <value defaultName="singleModule" />
       </option>
       <option name="USE_DEFAULT_REPORTERS" value="false" />
       <option name="PROPERTIES_FILE" />
+      <envs />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -836,6 +741,33 @@
       <envs />
       <patterns />
       <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
       <method />
@@ -986,13 +918,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -1036,12 +961,6 @@
       <module name="" />
       <envs />
       <method />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
@@ -1089,6 +1008,9 @@
       <projects_view />
     </option>
   </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -1114,6 +1036,12 @@
       <workItem from="1527423509345" duration="582000" />
       <workItem from="1527425374292" duration="2590000" />
       <workItem from="1527528143774" duration="1506000" />
+      <workItem from="1527607742533" duration="58000" />
+      <workItem from="1527608104378" duration="49000" />
+      <workItem from="1527608217869" duration="49000" />
+      <workItem from="1527781302989" duration="1116000" />
+      <workItem from="1527835362999" duration="573000" />
+      <workItem from="1528095070348" duration="575000" />
     </task>
     <task id="LOCAL-00001" summary="Rewrite work in progress">
       <created>1527454720921</created>
@@ -1122,49 +1050,66 @@
       <option name="project" value="LOCAL" />
       <updated>1527454720921</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Rewrite work in progress">
+      <created>1527607792001</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527607792001</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix">
+      <created>1527608119697</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1527608119697</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix">
+      <created>1527608263938</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527608263938</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14043000" />
+    <option name="totallyTimeSpent" value="16463000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32995737" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16017488" />
-      <window_info anchor="bottom" id="Run with VisualVM" order="7" />
-      <window_info anchor="right" id="LuaJ" order="4" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Debug with VisualVM" order="7" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32900432" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32900432" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info id="Nl-Palette" order="2" />
-      <window_info anchor="right" id="Properties" order="3" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1176,187 +1121,148 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Rewrite work in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rewrite work in progress" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientGCMsgProtobuf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpPacket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/SteamClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4545">
-          <caret line="345" column="57" selection-start-line="345" selection-start-column="57" selection-end-line="345" selection-end-column="57" />
+          <caret line="345" column="57" lean-forward="false" selection-start-line="345" selection-start-column="57" selection-end-line="345" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ISteamSerializableMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ISteamSerializableMessage.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/NetFilterEncryption.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientGCMsgProtobuf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+          <caret line="43" column="61" lean-forward="false" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpPacket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/SteamClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4545">
-          <caret line="345" column="57" selection-start-line="345" selection-start-column="57" selection-end-line="345" selection-end-column="57" />
+          <caret line="345" column="57" lean-forward="false" selection-start-line="345" selection-start-column="57" selection-end-line="345" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ISteamSerializableMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ISteamSerializableMessage.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/NetFilterEncryption.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientGCMsgProtobuf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+          <caret line="43" column="61" lean-forward="false" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpPacket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ISteamSerializableMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ISteamSerializableMessage.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/SteamClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4545">
-          <caret line="345" column="57" selection-start-line="345" selection-start-column="57" selection-end-line="345" selection-end-column="57" />
+          <caret line="345" column="57" lean-forward="false" selection-start-line="345" selection-start-column="57" selection-end-line="345" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/msg/MsgChannelEncryptRequest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ISteamSerializableMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/steamlanguageinternal/ISteamSerializableMessage.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/Msg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <caret line="13" column="48" lean-forward="false" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/csgo/EGCMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/gc/csgo/EGCMsg.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/NetFilterEncryption.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/PacketClientGCMsgProtobuf.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="43" column="61" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
+          <caret line="43" column="61" lean-forward="false" selection-start-line="43" selection-start-column="61" selection-end-line="43" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/protobuf/protobuf-java/3.2.0/protobuf-java-3.2.0.jar!/com/google/protobuf/CodedInputStream.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -1364,170 +1270,160 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/stream/BinaryReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/keyvalue/KeyValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="248" selection-start-line="248" selection-end-line="248" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/types/keyvalue/KeyValue.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesClientserver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438668">
-          <caret line="27746" column="68" selection-start-line="27746" selection-start-column="68" selection-end-line="27746" selection-end-column="68" />
+          <caret line="27746" column="68" lean-forward="false" selection-start-line="27746" selection-start-column="68" selection-end-line="27746" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+          <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/SteamClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5236">
-          <caret line="353" selection-start-line="353" selection-end-line="353" />
+          <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/UdpPacket.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/events/Action.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/cSharp/events/ActionT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/org/spout/steamkit/SteamDirectoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/org/spout/steamkit/SteamDirectoryTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/steamclient/callbackmgr/CallbackMsg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
-          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+          <caret line="43" column="62" lean-forward="false" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesClientserver2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/TcpConnection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2754">
-          <caret line="175" column="57" selection-start-line="175" selection-start-column="57" selection-end-line="175" selection-end-column="57" />
+          <caret line="175" column="57" lean-forward="false" selection-start-line="175" selection-start-column="57" selection-end-line="175" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/IServerListProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/IServerListProvider.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/ServerInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="103" column="69" selection-start-line="103" selection-start-column="69" selection-end-line="103" selection-end-column="69" />
+        <state relative-caret-position="1320">
+          <caret line="88" column="69" lean-forward="false" selection-start-line="88" selection-start-column="69" selection-end-line="88" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/crypto/CryptoHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2448">
-          <caret line="144" column="69" selection-start-line="144" selection-start-column="69" selection-end-line="144" selection-end-column="69" />
+        <state relative-caret-position="1965">
+          <caret line="144" column="28" lean-forward="false" selection-start-line="144" selection-start-column="28" selection-end-line="144" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/SmartCMServerList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+        <state relative-caret-position="1245">
+          <caret line="90" column="23" lean-forward="false" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/networking/steam3/Connection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="60">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/provider/SteamDirectoryProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/discovery/provider/SteamDirectoryProvider.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/AbstractMsgBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+        <state relative-caret-position="375">
+          <caret line="33" column="48" lean-forward="false" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesClientserverFriends.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="30">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesClientserverLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="30">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesUnifiedBaseSteamclient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/base/generated/SteammessagesUnifiedBaseSteamclient.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/CMClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
+        <state relative-caret-position="420">
+          <caret line="63" column="22" lean-forward="false" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/ScheduledFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <element signature="e#484#693#0" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/util/logging/GenericDebugListener.java" />
   </component>
 </project>

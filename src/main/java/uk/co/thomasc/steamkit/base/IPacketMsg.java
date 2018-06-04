@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 
 /**
  * Represents a simple unified interface into client messages recieved from the network.

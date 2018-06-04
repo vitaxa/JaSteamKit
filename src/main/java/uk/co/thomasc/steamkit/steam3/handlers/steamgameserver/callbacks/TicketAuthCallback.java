@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientTicketAuthComplete;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAuthSessionResponse;
+import uk.co.thomasc.steamkit.base.generated.enums.EAuthSessionResponse;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.GameID;
 import uk.co.thomasc.steamkit.types.SteamID;

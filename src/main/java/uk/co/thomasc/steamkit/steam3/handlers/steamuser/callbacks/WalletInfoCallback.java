@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientWalletInfoUpdate;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.ECurrencyCode;
+import uk.co.thomasc.steamkit.base.generated.enums.ECurrencyCode;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 
 /**

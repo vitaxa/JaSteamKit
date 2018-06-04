@@ -1,8 +1,8 @@
 package uk.co.thomasc.steamkit.networking.steam3;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUdpPacketType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.ChallengeData;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.ConnectData;
+import uk.co.thomasc.steamkit.base.generated.enums.EUdpPacketType;
+import uk.co.thomasc.steamkit.base.generated.internal.ChallengeData;
+import uk.co.thomasc.steamkit.base.generated.internal.ConnectData;
 import uk.co.thomasc.steamkit.util.cSharp.events.EventArgs;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 import uk.co.thomasc.steamkit.util.stream.MemoryStream;

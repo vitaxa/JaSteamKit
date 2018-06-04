@@ -3,7 +3,7 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamcloud;
 import uk.co.thomasc.steamkit.base.ClientMsgProtobuf;
 import uk.co.thomasc.steamkit.base.IPacketMsg;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.*;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.ShareFileCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.SingleFileInfoCallback;

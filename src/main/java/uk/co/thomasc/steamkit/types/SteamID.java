@@ -1,7 +1,7 @@
 package uk.co.thomasc.steamkit.types;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
+import uk.co.thomasc.steamkit.base.generated.enums.EAccountType;
+import uk.co.thomasc.steamkit.base.generated.enums.EUniverse;
 import uk.co.thomasc.steamkit.util.CollectionUtils;
 import uk.co.thomasc.steamkit.util.StringHelper;
 

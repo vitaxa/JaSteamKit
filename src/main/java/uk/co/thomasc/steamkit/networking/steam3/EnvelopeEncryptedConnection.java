@@ -2,12 +2,12 @@ package uk.co.thomasc.steamkit.networking.steam3;
 
 import uk.co.thomasc.steamkit.base.IPacketMsg;
 import uk.co.thomasc.steamkit.base.Msg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptRequest;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptResponse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgChannelEncryptResult;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import uk.co.thomasc.steamkit.base.generated.enums.EUniverse;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgChannelEncryptRequest;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgChannelEncryptResponse;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgChannelEncryptResult;
 import uk.co.thomasc.steamkit.steam3.CMClient;
 import uk.co.thomasc.steamkit.util.KeyDictionary;
 import uk.co.thomasc.steamkit.util.cSharp.events.EventArgs;

@@ -1,9 +1,9 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.types;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLicenseList;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.ELicenseFlags;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.ELicenseType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EPaymentMethod;
+import uk.co.thomasc.steamkit.base.generated.enums.ELicenseFlags;
+import uk.co.thomasc.steamkit.base.generated.enums.ELicenseType;
+import uk.co.thomasc.steamkit.base.generated.enums.EPaymentMethod;
 
 import java.util.Date;
 import java.util.EnumSet;

@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.util;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EOSType;
+import uk.co.thomasc.steamkit.base.generated.enums.EOSType;
 import uk.co.thomasc.steamkit.util.util.Utils;
 
 import java.io.BufferedReader;

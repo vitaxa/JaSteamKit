@@ -8,10 +8,10 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClien
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientLBSGetLBEntriesResponse;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgDPGetNumberOfCurrentPlayers;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgDPGetNumberOfCurrentPlayersResponse;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.ELeaderboardDataRequest;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.ELeaderboardDisplayType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.ELeaderboardSortMethod;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardDataRequest;
+import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardDisplayType;
+import uk.co.thomasc.steamkit.base.generated.enums.ELeaderboardSortMethod;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks.FindOrCreateLeaderboardCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks.LeaderboardEntriesCallback;

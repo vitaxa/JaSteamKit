@@ -2,8 +2,8 @@ package com.vitaxa.steamkit.types;
 
 import com.vitaxa.steamkit.TestBase;
 import org.junit.Test;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EUniverse;
+import uk.co.thomasc.steamkit.base.generated.enums.EAccountType;
+import uk.co.thomasc.steamkit.base.generated.enums.EUniverse;
 import uk.co.thomasc.steamkit.types.SteamID;
 
 import static org.junit.Assert.*;

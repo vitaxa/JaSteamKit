@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientVACBanStatus;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgClientVACBanStatus;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 

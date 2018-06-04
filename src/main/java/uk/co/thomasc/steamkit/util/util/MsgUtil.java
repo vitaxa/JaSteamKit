@@ -1,6 +1,6 @@
 package uk.co.thomasc.steamkit.util.util;
 
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 
 public class MsgUtil {
     private static final int ProtoMask = 0x80000000;

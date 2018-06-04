@@ -8,11 +8,11 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClien
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgGSStatusReply;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EAccountType;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EMsg;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EResult;
-import uk.co.thomasc.steamkit.base.generated.steamlanguage.EServerFlags;
-import uk.co.thomasc.steamkit.base.generated.steamlanguageinternal.MsgClientLogon;
+import uk.co.thomasc.steamkit.base.generated.enums.EAccountType;
+import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
+import uk.co.thomasc.steamkit.base.generated.enums.EResult;
+import uk.co.thomasc.steamkit.base.generated.enums.EServerFlags;
+import uk.co.thomasc.steamkit.base.generated.internal.MsgClientLogon;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.callbacks.StatusReplyCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamgameserver.callbacks.TicketAuthCallback;
