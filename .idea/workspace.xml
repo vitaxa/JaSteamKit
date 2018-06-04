@@ -2,31 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f261ccf-db3a-4d3c-929b-3f97fdafd532" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/AliasHistoryCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/ChatActionResultCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/ChatEnterCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/ChatInviteCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/ChatMemberInfoCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/ChatMsgCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/ChatRoomInfoCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/ClanStateCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/FriendAddedCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/FriendMsgCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/FriendMsgEchoCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/FriendMsgHistoryCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/FriendsListCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/IgnoreFriendCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/NicknameCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/NicknameListCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/PersonaChangeCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/PersonaStatesCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/callback/ProfileInfoCallback.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/ChatMemberInfo.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/Event.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/NameInstance.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/NameTableInstance.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/PersonaState.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamfriends/types/PlayerNickname.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamscreenshots/ScreenshotDetails.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamscreenshots/SteamScreenshots.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/thomasc/steamkit/steam3/handlers/steamscreenshots/callback/ScreenshotAddedCallback.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -298,6 +276,17 @@
               <item name="handlers" type="462c0819:PsiDirectoryNode" />
               <item name="steamfriends" type="462c0819:PsiDirectoryNode" />
               <item name="types" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="steamkit" type="462c0819:PsiDirectoryNode" />
+              <item name="steam3" type="462c0819:PsiDirectoryNode" />
+              <item name="handlers" type="462c0819:PsiDirectoryNode" />
+              <item name="steamscreenshots" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="steamkit" type="b2602c69:ProjectViewProjectNode" />
@@ -852,7 +841,7 @@
       <workItem from="1527608217869" duration="49000" />
       <workItem from="1527781302989" duration="1116000" />
       <workItem from="1527835362999" duration="573000" />
-      <workItem from="1528095070348" duration="636000" />
+      <workItem from="1528095070348" duration="708000" />
     </task>
     <task id="LOCAL-00001" summary="Rewrite work in progress">
       <created>1527454720921</created>
@@ -882,11 +871,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527608263938</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="forgot">
+      <created>1528120664720</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1528120664720</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16524000" />
+    <option name="totallyTimeSpent" value="16596000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -932,7 +928,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="Rewrite work in progress" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="forgot" />
+    <option name="LAST_COMMIT_MESSAGE" value="forgot" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
