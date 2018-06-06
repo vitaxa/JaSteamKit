@@ -32,6 +32,9 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 import java.util.zip.GZIPInputStream;
 
 import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientCMList;
@@ -42,6 +45,11 @@ import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLog
  * should not be use directly, but through the {@link SteamClient} class.
  */
 public abstract class CMClient {
+
+    private final static ThreadFactory THREAD_FACTORY;
+
+    private final static ExecutorService THREAD_POOL;
+
     private SteamConfiguration configuration;
 
     private boolean isConnected;
@@ -64,6 +72,15 @@ public abstract class CMClient {
     private ScheduledFunction heartBeatFunc;
 
     private Map<EServerType, Set<InetSocketAddress>> serverMap;
+
+    static {
+        THREAD_FACTORY = r -> {
+            final Thread thread = new Thread(r, "CMClient Thread");
+            thread.setDaemon(true);
+            return thread;
+        };
+        THREAD_POOL = Executors.newCachedThreadPool(THREAD_FACTORY);
+    }
 
     private final EventHandler<NetMsgEventArgs> netMsgReceived = new EventHandler<NetMsgEventArgs>() {
         @Override
@@ -201,7 +218,13 @@ public abstract class CMClient {
         // on the network thread, and that will lead to a disconnect callback
         // down the line
         if (connection != null) {
-            connection.send(msg.serialize());
+            THREAD_POOL.execute(() -> {
+                try {
+                    connection.send(msg.serialize());
+                } catch (Exception e) {
+                    DebugLog.printStackTrace("CMClient", e);
+                }
+            });
         }
     }
 
