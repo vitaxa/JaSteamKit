@@ -13,7 +13,7 @@ public class MsgClientLogon implements ISteamSerializableMessage {
 
     public static final int ObfuscationMask = 0xBAADF00D;
 
-    public static final int CurrentProtocol = 65579;
+    public static final int CurrentProtocol = 65580;
 
     public static final int ProtocolVerMajorMask = 0xFFFF0000;
 
