@@ -10,7 +10,7 @@ public enum EPlatformType {
     OSX(4),
     PS3(5),
     Linux32(6),
-    Max(6),
+    Max(7),
 
     ;
 

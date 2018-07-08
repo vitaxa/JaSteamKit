@@ -36,6 +36,8 @@ public enum EMsg {
     ClientPackageVersions(148),
     TimestampRequest(149),
     TimestampResponse(150),
+    ServiceMethodCallFromClient(151),
+    ServiceMethodSendToClient(152),
     BaseShell(200),
     AssignSysID(200),
     Exit(201),
@@ -1174,6 +1176,8 @@ public enum EMsg {
     DFSStartTransfer(5618),
     DFSTransferComplete(5619),
     DFSRouteFileResponse(5620),
+    ClientNetworkingCertRequest(5621),
+    ClientNetworkingCertRequestResponse(5622),
     BaseMDS(5800),
     AMToMDSGetDepotDecryptionKey(5812),
     MDSToAMGetDepotDecryptionKeyResponse(5813),
@@ -1343,11 +1347,21 @@ public enum EMsg {
     ClientFSEnumerateFollowingListResponse(7520),
     FSGetPendingNotificationCount(7521),
     FSGetPendingNotificationCountResponse(7522),
+    @Deprecated
     ClientFSOfflineMessageNotification(7523),
+    @Deprecated
     ClientFSRequestOfflineMessageCount(7524),
+    @Deprecated
     ClientFSGetFriendMessageHistory(7525),
+    @Deprecated
     ClientFSGetFriendMessageHistoryResponse(7526),
+    @Deprecated
     ClientFSGetFriendMessageHistoryForOfflineMessages(7527),
+    ClientChatOfflineMessageNotification(7523),
+    ClientChatRequestOfflineMessageCount(7524),
+    ClientChatGetFriendMessageHistory(7525),
+    ClientChatGetFriendMessageHistoryResponse(7526),
+    ClientChatGetFriendMessageHistoryForOfflineMessages(7527),
     ClientFSGetFriendsSteamLevels(7528),
     ClientFSGetFriendsSteamLevelsResponse(7529),
     FSRequestFriendData(7530),
@@ -1500,6 +1514,8 @@ public enum EMsg {
     RemoteClientGetControllerConfig(9510),
     RemoteClientGetControllerConfigResposne(9511),
     RemoteClientStreamingEnabled(9512),
+    ClientUnlockHEVC(9513),
+    ClientUnlockHEVCResponse(9514),
     ClientConcurrentSessionsBase(9600),
     ClientPlayingSessionState(9600),
     ClientKickPlayingSession(9601),
@@ -1512,6 +1528,7 @@ public enum EMsg {
     BaseClient3(9800),
     ClientVoiceCallPreAuthorize(9800),
     ClientVoiceCallPreAuthorizeResponse(9801),
+    ClientServerTimestampRequest(9802),
 
     ;
 

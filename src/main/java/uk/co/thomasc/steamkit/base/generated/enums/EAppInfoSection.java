@@ -18,7 +18,8 @@ public enum EAppInfoSection {
     SysReqs(14),
     Community(15),
     Store(16),
-    Max(17),
+    Localization(17),
+    Max(18),
 
     ;
 

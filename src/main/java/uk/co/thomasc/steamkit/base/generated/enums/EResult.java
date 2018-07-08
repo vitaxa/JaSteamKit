@@ -113,6 +113,8 @@ public enum EResult {
     TooManyPending(108),
     NoSiteLicensesFound(109),
     WGNetworkSendExceeded(110),
+    AccountNotFriends(111),
+    LimitedUserAccount(112),
 
     ;
 

@@ -67,7 +67,6 @@ public final class EncryptedAppTicketOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:EncryptedAppTicket)
       EncryptedAppTicketOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use EncryptedAppTicket.newBuilder() to construct.
     private EncryptedAppTicket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -90,9 +89,6 @@ public final class EncryptedAppTicketOuterClass {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -105,8 +101,8 @@ public final class EncryptedAppTicketOuterClass {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -150,14 +146,14 @@ public final class EncryptedAppTicketOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              EncryptedAppTicketOuterClass.EncryptedAppTicket.class, EncryptedAppTicketOuterClass.EncryptedAppTicket.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket.class, uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket.Builder.class);
     }
 
     private int bitField0_;
@@ -296,15 +292,16 @@ public final class EncryptedAppTicketOuterClass {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof EncryptedAppTicketOuterClass.EncryptedAppTicket)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket)) {
         return super.equals(obj);
       }
-      EncryptedAppTicketOuterClass.EncryptedAppTicket other = (EncryptedAppTicketOuterClass.EncryptedAppTicket) obj;
+      uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket other = (uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket) obj;
 
       boolean result = true;
       result = result && (hasTicketVersionNo() == other.hasTicketVersionNo());
@@ -342,7 +339,7 @@ public final class EncryptedAppTicketOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasTicketVersionNo()) {
         hash = (37 * hash) + TICKET_VERSION_NO_FIELD_NUMBER;
         hash = (53 * hash) + getTicketVersionNo();
@@ -368,69 +365,58 @@ public final class EncryptedAppTicketOuterClass {
       return hash;
     }
 
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -442,7 +428,7 @@ public final class EncryptedAppTicketOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(EncryptedAppTicketOuterClass.EncryptedAppTicket prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -462,20 +448,20 @@ public final class EncryptedAppTicketOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:EncryptedAppTicket)
-        EncryptedAppTicketOuterClass.EncryptedAppTicketOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicketOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                EncryptedAppTicketOuterClass.EncryptedAppTicket.class, EncryptedAppTicketOuterClass.EncryptedAppTicket.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket.class, uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket.Builder.class);
       }
 
-      // Construct using EncryptedAppTicketOuterClass.EncryptedAppTicket.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -507,23 +493,23 @@ public final class EncryptedAppTicketOuterClass {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.internal_static_EncryptedAppTicket_descriptor;
       }
 
-      public EncryptedAppTicketOuterClass.EncryptedAppTicket getDefaultInstanceForType() {
-        return EncryptedAppTicketOuterClass.EncryptedAppTicket.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket.getDefaultInstance();
       }
 
-      public EncryptedAppTicketOuterClass.EncryptedAppTicket build() {
-        EncryptedAppTicketOuterClass.EncryptedAppTicket result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket build() {
+        uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public EncryptedAppTicketOuterClass.EncryptedAppTicket buildPartial() {
-        EncryptedAppTicketOuterClass.EncryptedAppTicket result = new EncryptedAppTicketOuterClass.EncryptedAppTicket(this);
+      public uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket result = new uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -556,7 +542,7 @@ public final class EncryptedAppTicketOuterClass {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -569,25 +555,25 @@ public final class EncryptedAppTicketOuterClass {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof EncryptedAppTicketOuterClass.EncryptedAppTicket) {
-          return mergeFrom((EncryptedAppTicketOuterClass.EncryptedAppTicket)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(EncryptedAppTicketOuterClass.EncryptedAppTicket other) {
-        if (other == EncryptedAppTicketOuterClass.EncryptedAppTicket.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket.getDefaultInstance()) return this;
         if (other.hasTicketVersionNo()) {
           setTicketVersionNo(other.getTicketVersionNo());
         }
@@ -616,11 +602,11 @@ public final class EncryptedAppTicketOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        EncryptedAppTicketOuterClass.EncryptedAppTicket parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (EncryptedAppTicketOuterClass.EncryptedAppTicket) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -808,12 +794,12 @@ public final class EncryptedAppTicketOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:EncryptedAppTicket)
-    private static final EncryptedAppTicketOuterClass.EncryptedAppTicket DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new EncryptedAppTicketOuterClass.EncryptedAppTicket();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket();
     }
 
-    public static EncryptedAppTicketOuterClass.EncryptedAppTicket getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -823,7 +809,7 @@ public final class EncryptedAppTicketOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EncryptedAppTicket(input, extensionRegistry);
+          return new EncryptedAppTicket(input, extensionRegistry);
       }
     };
 
@@ -836,7 +822,7 @@ public final class EncryptedAppTicketOuterClass {
       return PARSER;
     }
 
-    public EncryptedAppTicketOuterClass.EncryptedAppTicket getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.EncryptedAppTicketOuterClass.EncryptedAppTicket getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -844,7 +830,7 @@ public final class EncryptedAppTicketOuterClass {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_EncryptedAppTicket_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_EncryptedAppTicket_fieldAccessorTable;
 
@@ -856,12 +842,14 @@ public final class EncryptedAppTicketOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032encrypted_app_ticket.proto\"\255\001\n\022Encrypt" +
-      "edAppTicket\022\031\n\021ticket_version_no\030\001 \001(\r\022\033" +
-      "\n\023crc_encryptedticket\030\002 \001(\r\022\034\n\024cb_encryp" +
-      "teduserdata\030\003 \001(\r\022\'\n\037cb_encrypted_appown" +
-      "ershipticket\030\004 \001(\r\022\030\n\020encrypted_ticket\030\005" +
-      " \001(\014B\005H\001\200\001\000"
+      "\nGin/dragonbra/javasteam/protobufs/steam" +
+      "client/encrypted_app_ticket.proto\"\255\001\n\022En" +
+      "cryptedAppTicket\022\031\n\021ticket_version_no\030\001 " +
+      "\001(\r\022\033\n\023crc_encryptedticket\030\002 \001(\r\022\034\n\024cb_e" +
+      "ncrypteduserdata\030\003 \001(\r\022\'\n\037cb_encrypted_a" +
+      "ppownershipticket\030\004 \001(\r\022\030\n\020encrypted_tic" +
+      "ket\030\005 \001(\014B3\n,in.dragonbra.javasteam.prot" +
+      "obufs.steamclientH\001\200\001\000"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

@@ -11,7 +11,7 @@ public enum EPersonaState {
     LookingToTrade(5),
     LookingToPlay(6),
     Invisible(7),
-    Max(8)
+    Max(8),
 
     ;
 

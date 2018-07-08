@@ -9,7 +9,10 @@ public enum EContentDownloadSourceType {
     LCS(3),
     ProxyCache(4),
     LANPeer(5),
-    Max(5),
+    SLS(6),
+    SteamCache(7),
+    OpenCache(8),
+    Max(9),
 
     ;
 

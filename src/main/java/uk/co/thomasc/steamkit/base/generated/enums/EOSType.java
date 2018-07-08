@@ -4,6 +4,7 @@ package uk.co.thomasc.steamkit.base.generated.enums;
 public enum EOSType {
 
     Unknown(-1),
+    Web(-700),
     IOSUnknown(-600),
     AndroidUnknown(-500),
     UMQ(-400),
@@ -22,6 +23,8 @@ public enum EOSType {
     MacOS1010(-87),
     MacOS1011(-86),
     MacOS1012(-85),
+    Macos1013(-84),
+    Macos1014(-83),
     MacOSMax(-1),
     LinuxUnknown(-203),
     Linux22(-202),
@@ -31,7 +34,14 @@ public enum EOSType {
     Linux35(-198),
     Linux36(-197),
     Linux310(-196),
-    LinuxMax(-103),
+    Linux316(-195),
+    Linux318(-194),
+    Linux3x(-193),
+    Linux4x(-192),
+    Linux41(-191),
+    Linux44(-190),
+    Linux49(-189),
+    LinuxMax(-101),
     WinUnknown(0),
     Win311(1),
     Win95(2),
@@ -49,7 +59,8 @@ public enum EOSType {
     Windows81(14),
     Win2012R2(15),
     Windows10(16),
-    WinMAX(15),
+    Win2016(17),
+    WinMAX(18),
     Max(26),
 
     ;

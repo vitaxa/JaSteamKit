@@ -22,7 +22,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientHeartBeat)
       CMsgClientHeartBeatOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientHeartBeat.newBuilder() to construct.
     private CMsgClientHeartBeat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -40,9 +39,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -54,8 +50,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -74,14 +70,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientHeartBeat.class, SteammessagesClientserverLogin.CMsgClientHeartBeat.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -109,15 +105,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientHeartBeat)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientHeartBeat other = (SteammessagesClientserverLogin.CMsgClientHeartBeat) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -130,75 +127,64 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -210,7 +196,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientHeartBeat prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -230,20 +216,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientHeartBeat)
-        SteammessagesClientserverLogin.CMsgClientHeartBeatOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeatOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientHeartBeat.class, SteammessagesClientserverLogin.CMsgClientHeartBeat.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientHeartBeat.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -265,23 +251,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientHeartBeat_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientHeartBeat getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientHeartBeat.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientHeartBeat build() {
-        SteammessagesClientserverLogin.CMsgClientHeartBeat result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientHeartBeat buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientHeartBeat result = new SteammessagesClientserverLogin.CMsgClientHeartBeat(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat(this);
         onBuilt();
         return result;
       }
@@ -291,7 +277,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -304,25 +290,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientHeartBeat) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientHeartBeat)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientHeartBeat other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientHeartBeat.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -336,11 +322,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientHeartBeat parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientHeartBeat) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -364,12 +350,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientHeartBeat)
-    private static final SteammessagesClientserverLogin.CMsgClientHeartBeat DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientHeartBeat();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientHeartBeat getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -379,7 +365,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientHeartBeat(input, extensionRegistry);
+          return new CMsgClientHeartBeat(input, extensionRegistry);
       }
     };
 
@@ -392,7 +378,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientHeartBeat getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientHeartBeat getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -418,7 +404,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientServerTimestampRequest)
       CMsgClientServerTimestampRequestOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientServerTimestampRequest.newBuilder() to construct.
     private CMsgClientServerTimestampRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -437,9 +422,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -452,8 +434,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -477,14 +459,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.class, SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.Builder.class);
     }
 
     private int bitField0_;
@@ -535,15 +517,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientServerTimestampRequest)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientServerTimestampRequest other = (SteammessagesClientserverLogin.CMsgClientServerTimestampRequest) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest) obj;
 
       boolean result = true;
       result = result && (hasClientRequestTimestamp() == other.hasClientRequestTimestamp());
@@ -561,7 +544,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasClientRequestTimestamp()) {
         hash = (37 * hash) + CLIENT_REQUEST_TIMESTAMP_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -572,69 +555,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -646,7 +618,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientServerTimestampRequest prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -666,20 +638,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientServerTimestampRequest)
-        SteammessagesClientserverLogin.CMsgClientServerTimestampRequestOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.class, SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -703,23 +675,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampRequest_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientServerTimestampRequest getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientServerTimestampRequest build() {
-        SteammessagesClientserverLogin.CMsgClientServerTimestampRequest result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientServerTimestampRequest buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientServerTimestampRequest result = new SteammessagesClientserverLogin.CMsgClientServerTimestampRequest(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -736,7 +708,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -749,25 +721,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientServerTimestampRequest) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientServerTimestampRequest)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientServerTimestampRequest other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest.getDefaultInstance()) return this;
         if (other.hasClientRequestTimestamp()) {
           setClientRequestTimestamp(other.getClientRequestTimestamp());
         }
@@ -784,11 +756,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientServerTimestampRequest) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -845,12 +817,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientServerTimestampRequest)
-    private static final SteammessagesClientserverLogin.CMsgClientServerTimestampRequest DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientServerTimestampRequest();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampRequest getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -860,7 +832,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientServerTimestampRequest(input, extensionRegistry);
+          return new CMsgClientServerTimestampRequest(input, extensionRegistry);
       }
     };
 
@@ -873,7 +845,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientServerTimestampRequest getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -908,7 +880,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientServerTimestampResponse)
       CMsgClientServerTimestampResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientServerTimestampResponse.newBuilder() to construct.
     private CMsgClientServerTimestampResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -928,9 +899,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -943,8 +911,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -973,14 +941,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.class, SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.Builder.class);
     }
 
     private int bitField0_;
@@ -1053,15 +1021,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientServerTimestampResponse)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientServerTimestampResponse other = (SteammessagesClientserverLogin.CMsgClientServerTimestampResponse) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse) obj;
 
       boolean result = true;
       result = result && (hasClientRequestTimestamp() == other.hasClientRequestTimestamp());
@@ -1084,7 +1053,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasClientRequestTimestamp()) {
         hash = (37 * hash) + CLIENT_REQUEST_TIMESTAMP_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -1100,69 +1069,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1174,7 +1132,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientServerTimestampResponse prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1194,20 +1152,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientServerTimestampResponse)
-        SteammessagesClientserverLogin.CMsgClientServerTimestampResponseOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.class, SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1233,23 +1191,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientServerTimestampResponse_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientServerTimestampResponse getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientServerTimestampResponse build() {
-        SteammessagesClientserverLogin.CMsgClientServerTimestampResponse result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientServerTimestampResponse buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientServerTimestampResponse result = new SteammessagesClientserverLogin.CMsgClientServerTimestampResponse(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1270,7 +1228,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1283,25 +1241,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientServerTimestampResponse) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientServerTimestampResponse)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientServerTimestampResponse other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse.getDefaultInstance()) return this;
         if (other.hasClientRequestTimestamp()) {
           setClientRequestTimestamp(other.getClientRequestTimestamp());
         }
@@ -1321,11 +1279,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientServerTimestampResponse) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1414,12 +1372,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientServerTimestampResponse)
-    private static final SteammessagesClientserverLogin.CMsgClientServerTimestampResponse DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientServerTimestampResponse();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientServerTimestampResponse getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1429,7 +1387,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientServerTimestampResponse(input, extensionRegistry);
+          return new CMsgClientServerTimestampResponse(input, extensionRegistry);
       }
     };
 
@@ -1442,7 +1400,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientServerTimestampResponse getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientServerTimestampResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1985,7 +1943,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientLogon)
       CMsgClientLogonOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientLogon.newBuilder() to construct.
     private CMsgClientLogon(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2052,9 +2009,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
@@ -2068,8 +2022,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -2350,14 +2304,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientLogon_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogon_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientLogon_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogon_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientLogon.class, SteammessagesClientserverLogin.CMsgClientLogon.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon.Builder.class);
     }
 
     private int bitField0_;
@@ -2453,7 +2407,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2469,7 +2423,7 @@ public final class SteammessagesClientserverLogin {
         getClientLanguageBytes() {
       java.lang.Object ref = clientLanguage_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         clientLanguage_ = b;
@@ -2525,7 +2479,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2541,7 +2495,7 @@ public final class SteammessagesClientserverLogin {
         getWineVersionBytes() {
       java.lang.Object ref = wineVersion_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         wineVersion_ = b;
@@ -2702,7 +2656,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2718,7 +2672,7 @@ public final class SteammessagesClientserverLogin {
         getEmailAddressBytes() {
       java.lang.Object ref = emailAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         emailAddress_ = b;
@@ -2759,7 +2713,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2775,7 +2729,7 @@ public final class SteammessagesClientserverLogin {
         getAccountNameBytes() {
       java.lang.Object ref = accountName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         accountName_ = b;
@@ -2801,7 +2755,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2817,7 +2771,7 @@ public final class SteammessagesClientserverLogin {
         getPasswordBytes() {
       java.lang.Object ref = password_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         password_ = b;
@@ -2843,7 +2797,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2859,7 +2813,7 @@ public final class SteammessagesClientserverLogin {
         getGameServerTokenBytes() {
       java.lang.Object ref = gameServerToken_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         gameServerToken_ = b;
@@ -2885,7 +2839,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2901,7 +2855,7 @@ public final class SteammessagesClientserverLogin {
         getLoginKeyBytes() {
       java.lang.Object ref = loginKey_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         loginKey_ = b;
@@ -2942,7 +2896,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2958,7 +2912,7 @@ public final class SteammessagesClientserverLogin {
         getAnonUserTargetAccountNameBytes() {
       java.lang.Object ref = anonUserTargetAccountName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         anonUserTargetAccountName_ = b;
@@ -3029,7 +2983,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3045,7 +2999,7 @@ public final class SteammessagesClientserverLogin {
         getAuthCodeBytes() {
       java.lang.Object ref = authCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         authCode_ = b;
@@ -3101,7 +3055,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3117,7 +3071,7 @@ public final class SteammessagesClientserverLogin {
         getOtpIdentifierBytes() {
       java.lang.Object ref = otpIdentifier_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         otpIdentifier_ = b;
@@ -3173,7 +3127,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3189,7 +3143,7 @@ public final class SteammessagesClientserverLogin {
         getSonyPsnServiceIdBytes() {
       java.lang.Object ref = sonyPsnServiceId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sonyPsnServiceId_ = b;
@@ -3230,7 +3184,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3246,7 +3200,7 @@ public final class SteammessagesClientserverLogin {
         getSonyPsnNameBytes() {
       java.lang.Object ref = sonyPsnName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sonyPsnName_ = b;
@@ -3302,7 +3256,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3318,7 +3272,7 @@ public final class SteammessagesClientserverLogin {
         getMachineNameBytes() {
       java.lang.Object ref = machineName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         machineName_ = b;
@@ -3344,7 +3298,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3360,7 +3314,7 @@ public final class SteammessagesClientserverLogin {
         getMachineNameUserchosenBytes() {
       java.lang.Object ref = machineNameUserchosen_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         machineNameUserchosen_ = b;
@@ -3386,7 +3340,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3402,7 +3356,7 @@ public final class SteammessagesClientserverLogin {
         getCountryOverrideBytes() {
       java.lang.Object ref = countryOverride_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         countryOverride_ = b;
@@ -3458,7 +3412,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3474,7 +3428,7 @@ public final class SteammessagesClientserverLogin {
         getTwoFactorCodeBytes() {
       java.lang.Object ref = twoFactorCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         twoFactorCode_ = b;
@@ -3515,7 +3469,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3531,7 +3485,7 @@ public final class SteammessagesClientserverLogin {
         getWebLogonNonceBytes() {
       java.lang.Object ref = webLogonNonce_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         webLogonNonce_ = b;
@@ -3907,15 +3861,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientLogon)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientLogon other = (SteammessagesClientserverLogin.CMsgClientLogon) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon) obj;
 
       boolean result = true;
       result = result && (hasProtocolVersion() == other.hasProtocolVersion());
@@ -4173,7 +4128,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasProtocolVersion()) {
         hash = (37 * hash) + PROTOCOL_VERSION_FIELD_NUMBER;
         hash = (53 * hash) + getProtocolVersion();
@@ -4385,69 +4340,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4459,7 +4403,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientLogon prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4479,20 +4423,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientLogon)
-        SteammessagesClientserverLogin.CMsgClientLogonOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogon_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogon_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogon_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogon_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientLogon.class, SteammessagesClientserverLogin.CMsgClientLogon.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientLogon.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4612,23 +4556,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogon_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogon_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogon getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientLogon.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogon build() {
-        SteammessagesClientserverLogin.CMsgClientLogon result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogon buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientLogon result = new SteammessagesClientserverLogin.CMsgClientLogon(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon(this);
         int from_bitField0_ = bitField0_;
         int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
@@ -4840,7 +4784,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -4853,25 +4797,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientLogon) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientLogon)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientLogon other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientLogon.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon.getDefaultInstance()) return this;
         if (other.hasProtocolVersion()) {
           setProtocolVersion(other.getProtocolVersion());
         }
@@ -5066,11 +5010,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientLogon parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientLogon) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5273,7 +5217,7 @@ public final class SteammessagesClientserverLogin {
           getClientLanguageBytes() {
         java.lang.Object ref = clientLanguage_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           clientLanguage_ = b;
@@ -5413,7 +5357,7 @@ public final class SteammessagesClientserverLogin {
           getWineVersionBytes() {
         java.lang.Object ref = wineVersion_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           wineVersion_ = b;
@@ -5783,7 +5727,7 @@ public final class SteammessagesClientserverLogin {
           getEmailAddressBytes() {
         java.lang.Object ref = emailAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           emailAddress_ = b;
@@ -5891,7 +5835,7 @@ public final class SteammessagesClientserverLogin {
           getAccountNameBytes() {
         java.lang.Object ref = accountName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           accountName_ = b;
@@ -5967,7 +5911,7 @@ public final class SteammessagesClientserverLogin {
           getPasswordBytes() {
         java.lang.Object ref = password_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           password_ = b;
@@ -6043,7 +5987,7 @@ public final class SteammessagesClientserverLogin {
           getGameServerTokenBytes() {
         java.lang.Object ref = gameServerToken_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           gameServerToken_ = b;
@@ -6119,7 +6063,7 @@ public final class SteammessagesClientserverLogin {
           getLoginKeyBytes() {
         java.lang.Object ref = loginKey_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           loginKey_ = b;
@@ -6227,7 +6171,7 @@ public final class SteammessagesClientserverLogin {
           getAnonUserTargetAccountNameBytes() {
         java.lang.Object ref = anonUserTargetAccountName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           anonUserTargetAccountName_ = b;
@@ -6402,7 +6346,7 @@ public final class SteammessagesClientserverLogin {
           getAuthCodeBytes() {
         java.lang.Object ref = authCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           authCode_ = b;
@@ -6542,7 +6486,7 @@ public final class SteammessagesClientserverLogin {
           getOtpIdentifierBytes() {
         java.lang.Object ref = otpIdentifier_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           otpIdentifier_ = b;
@@ -6685,7 +6629,7 @@ public final class SteammessagesClientserverLogin {
           getSonyPsnServiceIdBytes() {
         java.lang.Object ref = sonyPsnServiceId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sonyPsnServiceId_ = b;
@@ -6793,7 +6737,7 @@ public final class SteammessagesClientserverLogin {
           getSonyPsnNameBytes() {
         java.lang.Object ref = sonyPsnName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sonyPsnName_ = b;
@@ -6933,7 +6877,7 @@ public final class SteammessagesClientserverLogin {
           getMachineNameBytes() {
         java.lang.Object ref = machineName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           machineName_ = b;
@@ -7009,7 +6953,7 @@ public final class SteammessagesClientserverLogin {
           getMachineNameUserchosenBytes() {
         java.lang.Object ref = machineNameUserchosen_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           machineNameUserchosen_ = b;
@@ -7085,7 +7029,7 @@ public final class SteammessagesClientserverLogin {
           getCountryOverrideBytes() {
         java.lang.Object ref = countryOverride_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           countryOverride_ = b;
@@ -7225,7 +7169,7 @@ public final class SteammessagesClientserverLogin {
           getTwoFactorCodeBytes() {
         java.lang.Object ref = twoFactorCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           twoFactorCode_ = b;
@@ -7333,7 +7277,7 @@ public final class SteammessagesClientserverLogin {
           getWebLogonNonceBytes() {
         java.lang.Object ref = webLogonNonce_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           webLogonNonce_ = b;
@@ -7424,12 +7368,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientLogon)
-    private static final SteammessagesClientserverLogin.CMsgClientLogon DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientLogon();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientLogon getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7439,7 +7383,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientLogon(input, extensionRegistry);
+          return new CMsgClientLogon(input, extensionRegistry);
       }
     };
 
@@ -7452,7 +7396,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientLogon getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogon getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7696,7 +7640,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientLogonResponse)
       CMsgClientLogonResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientLogonResponse.newBuilder() to construct.
     private CMsgClientLogonResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7737,9 +7680,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7752,8 +7692,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -7891,14 +7831,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientLogonResponse.class, SteammessagesClientserverLogin.CMsgClientLogonResponse.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse.Builder.class);
     }
 
     private int bitField0_;
@@ -8023,7 +7963,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8039,7 +7979,7 @@ public final class SteammessagesClientserverLogin {
         getEmailDomainBytes() {
       java.lang.Object ref = emailDomain_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         emailDomain_ = b;
@@ -8095,7 +8035,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8111,7 +8051,7 @@ public final class SteammessagesClientserverLogin {
         getWebapiAuthenticateUserNonceBytes() {
       java.lang.Object ref = webapiAuthenticateUserNonce_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         webapiAuthenticateUserNonce_ = b;
@@ -8167,7 +8107,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8183,7 +8123,7 @@ public final class SteammessagesClientserverLogin {
         getVanityUrlBytes() {
       java.lang.Object ref = vanityUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vanityUrl_ = b;
@@ -8224,7 +8164,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8240,7 +8180,7 @@ public final class SteammessagesClientserverLogin {
         getIpCountryCodeBytes() {
       java.lang.Object ref = ipCountryCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         ipCountryCode_ = b;
@@ -8537,15 +8477,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientLogonResponse)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientLogonResponse other = (SteammessagesClientserverLogin.CMsgClientLogonResponse) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse) obj;
 
       boolean result = true;
       result = result && (hasEresult() == other.hasEresult());
@@ -8673,7 +8614,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasEresult()) {
         hash = (37 * hash) + ERESULT_FIELD_NUMBER;
         hash = (53 * hash) + getEresult();
@@ -8775,69 +8716,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8849,7 +8779,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientLogonResponse prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -8869,20 +8799,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientLogonResponse)
-        SteammessagesClientserverLogin.CMsgClientLogonResponseOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientLogonResponse.class, SteammessagesClientserverLogin.CMsgClientLogonResponse.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientLogonResponse.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8950,23 +8880,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogonResponse_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogonResponse getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientLogonResponse.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogonResponse build() {
-        SteammessagesClientserverLogin.CMsgClientLogonResponse result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogonResponse buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientLogonResponse result = new SteammessagesClientserverLogin.CMsgClientLogonResponse(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -9071,7 +9001,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -9084,25 +9014,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientLogonResponse) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientLogonResponse)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientLogonResponse other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientLogonResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse.getDefaultInstance()) return this;
         if (other.hasEresult()) {
           setEresult(other.getEresult());
         }
@@ -9193,11 +9123,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientLogonResponse parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientLogonResponse) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9463,7 +9393,7 @@ public final class SteammessagesClientserverLogin {
           getEmailDomainBytes() {
         java.lang.Object ref = emailDomain_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           emailDomain_ = b;
@@ -9606,7 +9536,7 @@ public final class SteammessagesClientserverLogin {
           getWebapiAuthenticateUserNonceBytes() {
         java.lang.Object ref = webapiAuthenticateUserNonce_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           webapiAuthenticateUserNonce_ = b;
@@ -9746,7 +9676,7 @@ public final class SteammessagesClientserverLogin {
           getVanityUrlBytes() {
         java.lang.Object ref = vanityUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vanityUrl_ = b;
@@ -9854,7 +9784,7 @@ public final class SteammessagesClientserverLogin {
           getIpCountryCodeBytes() {
         java.lang.Object ref = ipCountryCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           ipCountryCode_ = b;
@@ -10143,12 +10073,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientLogonResponse)
-    private static final SteammessagesClientserverLogin.CMsgClientLogonResponse DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientLogonResponse();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientLogonResponse getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10158,7 +10088,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientLogonResponse(input, extensionRegistry);
+          return new CMsgClientLogonResponse(input, extensionRegistry);
       }
     };
 
@@ -10171,7 +10101,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientLogonResponse getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogonResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10197,7 +10127,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientRequestWebAPIAuthenticateUserNonce)
       CMsgClientRequestWebAPIAuthenticateUserNonceOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientRequestWebAPIAuthenticateUserNonce.newBuilder() to construct.
     private CMsgClientRequestWebAPIAuthenticateUserNonce(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10216,9 +10145,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10231,8 +10157,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -10256,14 +10182,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.class, SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.Builder.class);
     }
 
     private int bitField0_;
@@ -10314,15 +10240,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce other = (SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce) obj;
 
       boolean result = true;
       result = result && (hasTokenType() == other.hasTokenType());
@@ -10340,7 +10267,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasTokenType()) {
         hash = (37 * hash) + TOKEN_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getTokenType();
@@ -10350,69 +10277,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10424,7 +10340,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -10444,20 +10360,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientRequestWebAPIAuthenticateUserNonce)
-        SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.class, SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10481,23 +10397,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce build() {
-        SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce result = new SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -10514,7 +10430,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -10527,25 +10443,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce.getDefaultInstance()) return this;
         if (other.hasTokenType()) {
           setTokenType(other.getTokenType());
         }
@@ -10562,11 +10478,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10623,12 +10539,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientRequestWebAPIAuthenticateUserNonce)
-    private static final SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10638,7 +10554,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientRequestWebAPIAuthenticateUserNonce(input, extensionRegistry);
+          return new CMsgClientRequestWebAPIAuthenticateUserNonce(input, extensionRegistry);
       }
     };
 
@@ -10651,7 +10567,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonce getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -10700,7 +10616,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientRequestWebAPIAuthenticateUserNonceResponse)
       CMsgClientRequestWebAPIAuthenticateUserNonceResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientRequestWebAPIAuthenticateUserNonceResponse.newBuilder() to construct.
     private CMsgClientRequestWebAPIAuthenticateUserNonceResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10721,9 +10636,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10736,8 +10648,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -10772,14 +10684,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.class, SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.Builder.class);
     }
 
     private int bitField0_;
@@ -10814,7 +10726,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -10830,7 +10742,7 @@ public final class SteammessagesClientserverLogin {
         getWebapiAuthenticateUserNonceBytes() {
       java.lang.Object ref = webapiAuthenticateUserNonce_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         webapiAuthenticateUserNonce_ = b;
@@ -10900,15 +10812,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse other = (SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse) obj;
 
       boolean result = true;
       result = result && (hasEresult() == other.hasEresult());
@@ -10936,7 +10849,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasEresult()) {
         hash = (37 * hash) + ERESULT_FIELD_NUMBER;
         hash = (53 * hash) + getEresult();
@@ -10954,69 +10867,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11028,7 +10930,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -11048,20 +10950,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientRequestWebAPIAuthenticateUserNonceResponse)
-        SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponseOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.class, SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11089,23 +10991,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse build() {
-        SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse result = new SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -11130,7 +11032,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -11143,25 +11045,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse.getDefaultInstance()) return this;
         if (other.hasEresult()) {
           setEresult(other.getEresult());
         }
@@ -11186,11 +11088,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11264,7 +11166,7 @@ public final class SteammessagesClientserverLogin {
           getWebapiAuthenticateUserNonceBytes() {
         java.lang.Object ref = webapiAuthenticateUserNonce_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           webapiAuthenticateUserNonce_ = b;
@@ -11355,12 +11257,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientRequestWebAPIAuthenticateUserNonceResponse)
-    private static final SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11370,7 +11272,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientRequestWebAPIAuthenticateUserNonceResponse(input, extensionRegistry);
+          return new CMsgClientRequestWebAPIAuthenticateUserNonceResponse(input, extensionRegistry);
       }
     };
 
@@ -11383,7 +11285,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientRequestWebAPIAuthenticateUserNonceResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11400,7 +11302,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientLogOff)
       CMsgClientLogOffOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientLogOff.newBuilder() to construct.
     private CMsgClientLogOff(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11418,9 +11319,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -11432,8 +11330,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -11452,14 +11350,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientLogOff.class, SteammessagesClientserverLogin.CMsgClientLogOff.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11487,15 +11385,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientLogOff)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientLogOff other = (SteammessagesClientserverLogin.CMsgClientLogOff) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff) obj;
 
       boolean result = true;
       result = result && unknownFields.equals(other.unknownFields);
@@ -11508,75 +11407,64 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -11588,7 +11476,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientLogOff prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -11608,20 +11496,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientLogOff)
-        SteammessagesClientserverLogin.CMsgClientLogOffOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOffOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientLogOff.class, SteammessagesClientserverLogin.CMsgClientLogOff.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientLogOff.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -11643,23 +11531,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLogOff_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogOff getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientLogOff.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogOff build() {
-        SteammessagesClientserverLogin.CMsgClientLogOff result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLogOff buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientLogOff result = new SteammessagesClientserverLogin.CMsgClientLogOff(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff(this);
         onBuilt();
         return result;
       }
@@ -11669,7 +11557,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -11682,25 +11570,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientLogOff) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientLogOff)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientLogOff other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientLogOff.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -11714,11 +11602,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientLogOff parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientLogOff) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -11742,12 +11630,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientLogOff)
-    private static final SteammessagesClientserverLogin.CMsgClientLogOff DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientLogOff();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientLogOff getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11757,7 +11645,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientLogOff(input, extensionRegistry);
+          return new CMsgClientLogOff(input, extensionRegistry);
       }
     };
 
@@ -11770,7 +11658,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientLogOff getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLogOff getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -11796,7 +11684,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientLoggedOff)
       CMsgClientLoggedOffOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientLoggedOff.newBuilder() to construct.
     private CMsgClientLoggedOff(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11815,9 +11702,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11830,8 +11714,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -11855,14 +11739,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientLoggedOff.class, SteammessagesClientserverLogin.CMsgClientLoggedOff.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff.Builder.class);
     }
 
     private int bitField0_;
@@ -11913,15 +11797,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientLoggedOff)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientLoggedOff other = (SteammessagesClientserverLogin.CMsgClientLoggedOff) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff) obj;
 
       boolean result = true;
       result = result && (hasEresult() == other.hasEresult());
@@ -11939,7 +11824,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasEresult()) {
         hash = (37 * hash) + ERESULT_FIELD_NUMBER;
         hash = (53 * hash) + getEresult();
@@ -11949,69 +11834,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12023,7 +11897,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientLoggedOff prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -12043,20 +11917,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientLoggedOff)
-        SteammessagesClientserverLogin.CMsgClientLoggedOffOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOffOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientLoggedOff.class, SteammessagesClientserverLogin.CMsgClientLoggedOff.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientLoggedOff.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -12080,23 +11954,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientLoggedOff_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLoggedOff getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientLoggedOff.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLoggedOff build() {
-        SteammessagesClientserverLogin.CMsgClientLoggedOff result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientLoggedOff buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientLoggedOff result = new SteammessagesClientserverLogin.CMsgClientLoggedOff(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -12113,7 +11987,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -12126,25 +12000,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientLoggedOff) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientLoggedOff)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientLoggedOff other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientLoggedOff.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff.getDefaultInstance()) return this;
         if (other.hasEresult()) {
           setEresult(other.getEresult());
         }
@@ -12161,11 +12035,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientLoggedOff parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientLoggedOff) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -12222,12 +12096,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientLoggedOff)
-    private static final SteammessagesClientserverLogin.CMsgClientLoggedOff DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientLoggedOff();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientLoggedOff getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12237,7 +12111,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientLoggedOff(input, extensionRegistry);
+          return new CMsgClientLoggedOff(input, extensionRegistry);
       }
     };
 
@@ -12250,7 +12124,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientLoggedOff getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientLoggedOff getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12290,7 +12164,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientNewLoginKey)
       CMsgClientNewLoginKeyOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientNewLoginKey.newBuilder() to construct.
     private CMsgClientNewLoginKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12310,9 +12183,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12325,8 +12195,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -12356,14 +12226,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientNewLoginKey.class, SteammessagesClientserverLogin.CMsgClientNewLoginKey.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey.Builder.class);
     }
 
     private int bitField0_;
@@ -12398,7 +12268,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -12414,7 +12284,7 @@ public final class SteammessagesClientserverLogin {
         getLoginKeyBytes() {
       java.lang.Object ref = loginKey_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         loginKey_ = b;
@@ -12462,15 +12332,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientNewLoginKey)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientNewLoginKey other = (SteammessagesClientserverLogin.CMsgClientNewLoginKey) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey) obj;
 
       boolean result = true;
       result = result && (hasUniqueId() == other.hasUniqueId());
@@ -12493,7 +12364,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasUniqueId()) {
         hash = (37 * hash) + UNIQUE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getUniqueId();
@@ -12507,69 +12378,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12581,7 +12441,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientNewLoginKey prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -12601,20 +12461,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientNewLoginKey)
-        SteammessagesClientserverLogin.CMsgClientNewLoginKeyOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientNewLoginKey.class, SteammessagesClientserverLogin.CMsgClientNewLoginKey.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientNewLoginKey.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -12640,23 +12500,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKey_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientNewLoginKey getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientNewLoginKey.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientNewLoginKey build() {
-        SteammessagesClientserverLogin.CMsgClientNewLoginKey result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientNewLoginKey buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientNewLoginKey result = new SteammessagesClientserverLogin.CMsgClientNewLoginKey(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -12677,7 +12537,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -12690,25 +12550,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientNewLoginKey) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientNewLoginKey)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientNewLoginKey other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientNewLoginKey.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey.getDefaultInstance()) return this;
         if (other.hasUniqueId()) {
           setUniqueId(other.getUniqueId());
         }
@@ -12730,11 +12590,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientNewLoginKey parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientNewLoginKey) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -12808,7 +12668,7 @@ public final class SteammessagesClientserverLogin {
           getLoginKeyBytes() {
         java.lang.Object ref = loginKey_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           loginKey_ = b;
@@ -12867,12 +12727,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientNewLoginKey)
-    private static final SteammessagesClientserverLogin.CMsgClientNewLoginKey DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientNewLoginKey();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKey getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12882,7 +12742,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientNewLoginKey(input, extensionRegistry);
+          return new CMsgClientNewLoginKey(input, extensionRegistry);
       }
     };
 
@@ -12895,7 +12755,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientNewLoginKey getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKey getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -12921,7 +12781,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientNewLoginKeyAccepted)
       CMsgClientNewLoginKeyAcceptedOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientNewLoginKeyAccepted.newBuilder() to construct.
     private CMsgClientNewLoginKeyAccepted(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12940,9 +12799,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12955,8 +12811,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -12980,14 +12836,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.class, SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.Builder.class);
     }
 
     private int bitField0_;
@@ -13038,15 +12894,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted other = (SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted) obj;
 
       boolean result = true;
       result = result && (hasUniqueId() == other.hasUniqueId());
@@ -13064,7 +12921,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasUniqueId()) {
         hash = (37 * hash) + UNIQUE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getUniqueId();
@@ -13074,69 +12931,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -13148,7 +12994,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -13168,20 +13014,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientNewLoginKeyAccepted)
-        SteammessagesClientserverLogin.CMsgClientNewLoginKeyAcceptedOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAcceptedOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.class, SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -13205,23 +13051,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientNewLoginKeyAccepted_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted build() {
-        SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted result = new SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13238,7 +13084,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -13251,25 +13097,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted.getDefaultInstance()) return this;
         if (other.hasUniqueId()) {
           setUniqueId(other.getUniqueId());
         }
@@ -13286,11 +13132,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -13347,12 +13193,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientNewLoginKeyAccepted)
-    private static final SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13362,7 +13208,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientNewLoginKeyAccepted(input, extensionRegistry);
+          return new CMsgClientNewLoginKeyAccepted(input, extensionRegistry);
       }
     };
 
@@ -13375,7 +13221,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientNewLoginKeyAccepted getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -13520,7 +13366,6 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:CMsgClientAccountInfo)
       CMsgClientAccountInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use CMsgClientAccountInfo.newBuilder() to construct.
     private CMsgClientAccountInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -13550,9 +13395,6 @@ public final class SteammessagesClientserverLogin {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13565,8 +13407,8 @@ public final class SteammessagesClientserverLogin {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -13649,14 +13491,14 @@ public final class SteammessagesClientserverLogin {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_descriptor;
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_fieldAccessorTable
+      return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SteammessagesClientserverLogin.CMsgClientAccountInfo.class, SteammessagesClientserverLogin.CMsgClientAccountInfo.Builder.class);
+              uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo.Builder.class);
     }
 
     private int bitField0_;
@@ -13676,7 +13518,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13692,7 +13534,7 @@ public final class SteammessagesClientserverLogin {
         getPersonaNameBytes() {
       java.lang.Object ref = personaName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         personaName_ = b;
@@ -13718,7 +13560,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13734,7 +13576,7 @@ public final class SteammessagesClientserverLogin {
         getIpCountryBytes() {
       java.lang.Object ref = ipCountry_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         ipCountry_ = b;
@@ -13805,7 +13647,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13821,7 +13663,7 @@ public final class SteammessagesClientserverLogin {
         getFacebookNameBytes() {
       java.lang.Object ref = facebookName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         facebookName_ = b;
@@ -13862,7 +13704,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs =
+        com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13878,7 +13720,7 @@ public final class SteammessagesClientserverLogin {
         getSteamguardMachineNameUserChosenBytes() {
       java.lang.Object ref = steamguardMachineNameUserChosen_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b =
+        com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         steamguardMachineNameUserChosen_ = b;
@@ -14053,15 +13895,16 @@ public final class SteammessagesClientserverLogin {
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof SteammessagesClientserverLogin.CMsgClientAccountInfo)) {
+      if (!(obj instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo)) {
         return super.equals(obj);
       }
-      SteammessagesClientserverLogin.CMsgClientAccountInfo other = (SteammessagesClientserverLogin.CMsgClientAccountInfo) obj;
+      uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo other = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo) obj;
 
       boolean result = true;
       result = result && (hasPersonaName() == other.hasPersonaName());
@@ -14134,7 +13977,7 @@ public final class SteammessagesClientserverLogin {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasPersonaName()) {
         hash = (37 * hash) + PERSONA_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getPersonaName().hashCode();
@@ -14193,69 +14036,58 @@ public final class SteammessagesClientserverLogin {
       return hash;
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(byte[] data)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseDelimitedFrom(java.io.InputStream input)
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseDelimitedFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -14267,7 +14099,7 @@ public final class SteammessagesClientserverLogin {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SteammessagesClientserverLogin.CMsgClientAccountInfo prototype) {
+    public static Builder newBuilder(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -14287,20 +14119,20 @@ public final class SteammessagesClientserverLogin {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:CMsgClientAccountInfo)
-        SteammessagesClientserverLogin.CMsgClientAccountInfoOrBuilder {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_fieldAccessorTable
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SteammessagesClientserverLogin.CMsgClientAccountInfo.class, SteammessagesClientserverLogin.CMsgClientAccountInfo.Builder.class);
+                uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo.class, uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo.Builder.class);
       }
 
-      // Construct using SteammessagesClientserverLogin.CMsgClientAccountInfo.newBuilder()
+      // Construct using uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -14346,23 +14178,23 @@ public final class SteammessagesClientserverLogin {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_descriptor;
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.internal_static_CMsgClientAccountInfo_descriptor;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientAccountInfo getDefaultInstanceForType() {
-        return SteammessagesClientserverLogin.CMsgClientAccountInfo.getDefaultInstance();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo getDefaultInstanceForType() {
+        return uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo.getDefaultInstance();
       }
 
-      public SteammessagesClientserverLogin.CMsgClientAccountInfo build() {
-        SteammessagesClientserverLogin.CMsgClientAccountInfo result = buildPartial();
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo build() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SteammessagesClientserverLogin.CMsgClientAccountInfo buildPartial() {
-        SteammessagesClientserverLogin.CMsgClientAccountInfo result = new SteammessagesClientserverLogin.CMsgClientAccountInfo(this);
+      public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo buildPartial() {
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo result = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -14423,7 +14255,7 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -14436,25 +14268,25 @@ public final class SteammessagesClientserverLogin {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SteammessagesClientserverLogin.CMsgClientAccountInfo) {
-          return mergeFrom((SteammessagesClientserverLogin.CMsgClientAccountInfo)other);
+        if (other instanceof uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo) {
+          return mergeFrom((uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SteammessagesClientserverLogin.CMsgClientAccountInfo other) {
-        if (other == SteammessagesClientserverLogin.CMsgClientAccountInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo other) {
+        if (other == uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo.getDefaultInstance()) return this;
         if (other.hasPersonaName()) {
           bitField0_ |= 0x00000001;
           personaName_ = other.personaName_;
@@ -14512,11 +14344,11 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SteammessagesClientserverLogin.CMsgClientAccountInfo parsedMessage = null;
+        uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SteammessagesClientserverLogin.CMsgClientAccountInfo) e.getUnfinishedMessage();
+          parsedMessage = (uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -14558,7 +14390,7 @@ public final class SteammessagesClientserverLogin {
           getPersonaNameBytes() {
         java.lang.Object ref = personaName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           personaName_ = b;
@@ -14634,7 +14466,7 @@ public final class SteammessagesClientserverLogin {
           getIpCountryBytes() {
         java.lang.Object ref = ipCountry_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           ipCountry_ = b;
@@ -14806,7 +14638,7 @@ public final class SteammessagesClientserverLogin {
           getFacebookNameBytes() {
         java.lang.Object ref = facebookName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           facebookName_ = b;
@@ -14914,7 +14746,7 @@ public final class SteammessagesClientserverLogin {
           getSteamguardMachineNameUserChosenBytes() {
         java.lang.Object ref = steamguardMachineNameUserChosen_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           steamguardMachineNameUserChosen_ = b;
@@ -15101,12 +14933,12 @@ public final class SteammessagesClientserverLogin {
     }
 
     // @@protoc_insertion_point(class_scope:CMsgClientAccountInfo)
-    private static final SteammessagesClientserverLogin.CMsgClientAccountInfo DEFAULT_INSTANCE;
+    private static final uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SteammessagesClientserverLogin.CMsgClientAccountInfo();
+      DEFAULT_INSTANCE = new uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo();
     }
 
-    public static SteammessagesClientserverLogin.CMsgClientAccountInfo getDefaultInstance() {
+    public static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -15116,7 +14948,7 @@ public final class SteammessagesClientserverLogin {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CMsgClientAccountInfo(input, extensionRegistry);
+          return new CMsgClientAccountInfo(input, extensionRegistry);
       }
     };
 
@@ -15129,7 +14961,7 @@ public final class SteammessagesClientserverLogin {
       return PARSER;
     }
 
-    public SteammessagesClientserverLogin.CMsgClientAccountInfo getDefaultInstanceForType() {
+    public uk.co.thomasc.steamkit.base.generated.SteammessagesClientserverLogin.CMsgClientAccountInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -15137,62 +14969,62 @@ public final class SteammessagesClientserverLogin {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientHeartBeat_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientHeartBeat_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientServerTimestampRequest_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientServerTimestampRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientServerTimestampResponse_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientServerTimestampResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientLogon_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientLogon_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientLogonResponse_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientLogonResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientLogOff_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientLogOff_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientLoggedOff_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientLoggedOff_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientNewLoginKey_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientNewLoginKey_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientNewLoginKeyAccepted_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientNewLoginKeyAccepted_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientAccountInfo_descriptor;
-  private static final
+  private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientAccountInfo_fieldAccessorTable;
 
@@ -15204,83 +15036,87 @@ public final class SteammessagesClientserverLogin {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n&steammessages_clientserver_login.proto" +
-      "\032\030steammessages_base.proto\"\025\n\023CMsgClient" +
-      "HeartBeat\"D\n CMsgClientServerTimestampRe" +
-      "quest\022 \n\030client_request_timestamp\030\001 \001(\004\"" +
-      "b\n!CMsgClientServerTimestampResponse\022 \n\030" +
-      "client_request_timestamp\030\001 \001(\004\022\033\n\023server" +
-      "_timestamp_ms\030\002 \001(\004\"\312\n\n\017CMsgClientLogon\022" +
-      "\030\n\020protocol_version\030\001 \001(\r\022\037\n\027obfustucate" +
-      "d_private_ip\030\002 \001(\r\022\017\n\007cell_id\030\003 \001(\r\022\027\n\017l" +
-      "ast_session_id\030\004 \001(\r\022\036\n\026client_package_v" +
-      "ersion\030\005 \001(\r\022\027\n\017client_language\030\006 \001(\t\022\026\n" +
-      "\016client_os_type\030\007 \001(\r\022\'\n\030should_remember" +
-      "_password\030\010 \001(\010:\005false\022\024\n\014wine_version\030\t" +
-      " \001(\t\022 \n\030ping_ms_from_cell_search\030\n \001(\r\022\021" +
-      "\n\tpublic_ip\030\024 \001(\r\022\021\n\tqos_level\030\025 \001(\r\022 \n\030" +
-      "client_supplied_steam_id\030\026 \001(\006\022\022\n\nmachin" +
-      "e_id\030\036 \001(\014\022\030\n\rlauncher_type\030\037 \001(\r:\0010\022\022\n\007" +
-      "ui_mode\030  \001(\r:\0010\022\024\n\tchat_mode\030! \001(\r:\0010\022\032" +
-      "\n\022steam2_auth_ticket\030) \001(\014\022\025\n\remail_addr" +
-      "ess\030* \001(\t\022 \n\030rtime32_account_creation\030+ " +
-      "\001(\007\022\024\n\014account_name\0302 \001(\t\022\020\n\010password\0303 " +
-      "\001(\t\022\031\n\021game_server_token\0304 \001(\t\022\021\n\tlogin_" +
-      "key\030< \001(\t\022+\n\034was_converted_deprecated_ms" +
-      "g\030F \001(\010:\005false\022%\n\035anon_user_target_accou" +
-      "nt_name\030P \001(\t\022\036\n\026resolved_user_steam_id\030" +
-      "Q \001(\006\022\032\n\022eresult_sentryfile\030R \001(\005\022\026\n\016sha" +
-      "_sentryfile\030S \001(\014\022\021\n\tauth_code\030T \001(\t\022\020\n\010" +
-      "otp_type\030U \001(\005\022\021\n\totp_value\030V \001(\r\022\026\n\016otp" +
-      "_identifier\030W \001(\t\022\035\n\025steam2_ticket_reque" +
-      "st\030X \001(\010\022\027\n\017sony_psn_ticket\030Z \001(\014\022\033\n\023son" +
-      "y_psn_service_id\030[ \001(\t\0226\n\'create_new_psn" +
-      "_linked_account_if_needed\030\\ \001(\010:\005false\022\025" +
-      "\n\rsony_psn_name\030] \001(\t\022\032\n\022game_server_app" +
-      "_id\030^ \001(\005\022)\n!steamguard_dont_remember_co" +
-      "mputer\030_ \001(\010\022\024\n\014machine_name\030` \001(\t\022\037\n\027ma" +
-      "chine_name_userchosen\030a \001(\t\022\030\n\020country_o" +
-      "verride\030b \001(\t\022\024\n\014is_steam_box\030c \001(\010\022\032\n\022c" +
-      "lient_instance_id\030d \001(\004\022\027\n\017two_factor_co" +
-      "de\030e \001(\t\022$\n\034supports_rate_limit_response" +
-      "\030f \001(\010\022\027\n\017web_logon_nonce\030g \001(\t\022\027\n\017prior" +
-      "ity_reason\030h \001(\005\"\257\005\n\027CMsgClientLogonResp" +
-      "onse\022\022\n\007eresult\030\001 \001(\005:\0012\022%\n\035out_of_game_" +
-      "heartbeat_seconds\030\002 \001(\005\022!\n\031in_game_heart" +
-      "beat_seconds\030\003 \001(\005\022\021\n\tpublic_ip\030\004 \001(\r\022\033\n" +
-      "\023rtime32_server_time\030\005 \001(\007\022\025\n\raccount_fl" +
-      "ags\030\006 \001(\r\022\017\n\007cell_id\030\007 \001(\r\022\024\n\014email_doma" +
-      "in\030\010 \001(\t\022\025\n\rsteam2_ticket\030\t \001(\014\022\030\n\020eresu" +
-      "lt_extended\030\n \001(\005\022&\n\036webapi_authenticate" +
-      "_user_nonce\030\013 \001(\t\022\036\n\026cell_id_ping_thresh" +
-      "old\030\014 \001(\r\022\020\n\010use_pics\030\r \001(\010\022\022\n\nvanity_ur" +
-      "l\030\016 \001(\t\022\037\n\027client_supplied_steamid\030\024 \001(\006" +
-      "\022\027\n\017ip_country_code\030\025 \001(\t\022\031\n\021parental_se" +
-      "ttings\030\026 \001(\014\022\"\n\032parental_setting_signatu" +
-      "re\030\027 \001(\014\022&\n\036count_loginfailures_to_migra" +
-      "te\030\030 \001(\005\022$\n\034count_disconnects_to_migrate" +
-      "\030\031 \001(\005\022#\n\033ogs_data_report_time_window\030\032 " +
-      "\001(\005\022\032\n\022client_instance_id\030\033 \001(\004\022!\n\031force" +
-      "_client_update_check\030\034 \001(\010\"F\n,CMsgClient" +
-      "RequestWebAPIAuthenticateUserNonce\022\026\n\nto" +
-      "ken_type\030\001 \001(\005:\002-1\"\212\001\n4CMsgClientRequest" +
-      "WebAPIAuthenticateUserNonceResponse\022\022\n\007e" +
-      "result\030\001 \001(\005:\0012\022&\n\036webapi_authenticate_u" +
-      "ser_nonce\030\013 \001(\t\022\026\n\ntoken_type\030\003 \001(\005:\002-1\"" +
-      "\022\n\020CMsgClientLogOff\")\n\023CMsgClientLoggedO" +
-      "ff\022\022\n\007eresult\030\001 \001(\005:\0012\"=\n\025CMsgClientNewL" +
-      "oginKey\022\021\n\tunique_id\030\001 \001(\r\022\021\n\tlogin_key\030" +
-      "\002 \001(\t\"2\n\035CMsgClientNewLoginKeyAccepted\022\021" +
-      "\n\tunique_id\030\001 \001(\r\"\356\002\n\025CMsgClientAccountI" +
-      "nfo\022\024\n\014persona_name\030\001 \001(\t\022\022\n\nip_country\030" +
-      "\002 \001(\t\022\036\n\026count_authed_computers\030\005 \001(\005\022\025\n" +
-      "\raccount_flags\030\007 \001(\r\022\023\n\013facebook_id\030\010 \001(" +
-      "\004\022\025\n\rfacebook_name\030\t \001(\t\022%\n\035steamguard_n" +
-      "otify_newmachines\030\016 \001(\010\022+\n#steamguard_ma" +
-      "chine_name_user_chosen\030\017 \001(\t\022\031\n\021is_phone" +
-      "_verified\030\020 \001(\010\022\030\n\020two_factor_state\030\021 \001(" +
-      "\r\022\034\n\024is_phone_identifying\030\022 \001(\010\022!\n\031is_ph" +
-      "one_needing_reverify\030\023 \001(\010B\005H\001\200\001\000"
+      "\nSin/dragonbra/javasteam/protobufs/steam" +
+      "client/steammessages_clientserver_login." +
+      "proto\032Ein/dragonbra/javasteam/protobufs/" +
+      "steamclient/steammessages_base.proto\"\025\n\023" +
+      "CMsgClientHeartBeat\"D\n CMsgClientServerT" +
+      "imestampRequest\022 \n\030client_request_timest" +
+      "amp\030\001 \001(\004\"b\n!CMsgClientServerTimestampRe" +
+      "sponse\022 \n\030client_request_timestamp\030\001 \001(\004" +
+      "\022\033\n\023server_timestamp_ms\030\002 \001(\004\"\312\n\n\017CMsgCl" +
+      "ientLogon\022\030\n\020protocol_version\030\001 \001(\r\022\037\n\027o",
+      "bfustucated_private_ip\030\002 \001(\r\022\017\n\007cell_id\030" +
+      "\003 \001(\r\022\027\n\017last_session_id\030\004 \001(\r\022\036\n\026client" +
+      "_package_version\030\005 \001(\r\022\027\n\017client_languag" +
+      "e\030\006 \001(\t\022\026\n\016client_os_type\030\007 \001(\r\022\'\n\030shoul" +
+      "d_remember_password\030\010 \001(\010:\005false\022\024\n\014wine" +
+      "_version\030\t \001(\t\022 \n\030ping_ms_from_cell_sear" +
+      "ch\030\n \001(\r\022\021\n\tpublic_ip\030\024 \001(\r\022\021\n\tqos_level" +
+      "\030\025 \001(\r\022 \n\030client_supplied_steam_id\030\026 \001(\006" +
+      "\022\022\n\nmachine_id\030\036 \001(\014\022\030\n\rlauncher_type\030\037 " +
+      "\001(\r:\0010\022\022\n\007ui_mode\030  \001(\r:\0010\022\024\n\tchat_mode\030",
+      "! \001(\r:\0010\022\032\n\022steam2_auth_ticket\030) \001(\014\022\025\n\r" +
+      "email_address\030* \001(\t\022 \n\030rtime32_account_c" +
+      "reation\030+ \001(\007\022\024\n\014account_name\0302 \001(\t\022\020\n\010p" +
+      "assword\0303 \001(\t\022\031\n\021game_server_token\0304 \001(\t" +
+      "\022\021\n\tlogin_key\030< \001(\t\022+\n\034was_converted_dep" +
+      "recated_msg\030F \001(\010:\005false\022%\n\035anon_user_ta" +
+      "rget_account_name\030P \001(\t\022\036\n\026resolved_user" +
+      "_steam_id\030Q \001(\006\022\032\n\022eresult_sentryfile\030R " +
+      "\001(\005\022\026\n\016sha_sentryfile\030S \001(\014\022\021\n\tauth_code" +
+      "\030T \001(\t\022\020\n\010otp_type\030U \001(\005\022\021\n\totp_value\030V ",
+      "\001(\r\022\026\n\016otp_identifier\030W \001(\t\022\035\n\025steam2_ti" +
+      "cket_request\030X \001(\010\022\027\n\017sony_psn_ticket\030Z " +
+      "\001(\014\022\033\n\023sony_psn_service_id\030[ \001(\t\0226\n\'crea" +
+      "te_new_psn_linked_account_if_needed\030\\ \001(" +
+      "\010:\005false\022\025\n\rsony_psn_name\030] \001(\t\022\032\n\022game_" +
+      "server_app_id\030^ \001(\005\022)\n!steamguard_dont_r" +
+      "emember_computer\030_ \001(\010\022\024\n\014machine_name\030`" +
+      " \001(\t\022\037\n\027machine_name_userchosen\030a \001(\t\022\030\n" +
+      "\020country_override\030b \001(\t\022\024\n\014is_steam_box\030" +
+      "c \001(\010\022\032\n\022client_instance_id\030d \001(\004\022\027\n\017two",
+      "_factor_code\030e \001(\t\022$\n\034supports_rate_limi" +
+      "t_response\030f \001(\010\022\027\n\017web_logon_nonce\030g \001(" +
+      "\t\022\027\n\017priority_reason\030h \001(\005\"\257\005\n\027CMsgClien" +
+      "tLogonResponse\022\022\n\007eresult\030\001 \001(\005:\0012\022%\n\035ou" +
+      "t_of_game_heartbeat_seconds\030\002 \001(\005\022!\n\031in_" +
+      "game_heartbeat_seconds\030\003 \001(\005\022\021\n\tpublic_i" +
+      "p\030\004 \001(\r\022\033\n\023rtime32_server_time\030\005 \001(\007\022\025\n\r" +
+      "account_flags\030\006 \001(\r\022\017\n\007cell_id\030\007 \001(\r\022\024\n\014" +
+      "email_domain\030\010 \001(\t\022\025\n\rsteam2_ticket\030\t \001(" +
+      "\014\022\030\n\020eresult_extended\030\n \001(\005\022&\n\036webapi_au",
+      "thenticate_user_nonce\030\013 \001(\t\022\036\n\026cell_id_p" +
+      "ing_threshold\030\014 \001(\r\022\020\n\010use_pics\030\r \001(\010\022\022\n" +
+      "\nvanity_url\030\016 \001(\t\022\037\n\027client_supplied_ste" +
+      "amid\030\024 \001(\006\022\027\n\017ip_country_code\030\025 \001(\t\022\031\n\021p" +
+      "arental_settings\030\026 \001(\014\022\"\n\032parental_setti" +
+      "ng_signature\030\027 \001(\014\022&\n\036count_loginfailure" +
+      "s_to_migrate\030\030 \001(\005\022$\n\034count_disconnects_" +
+      "to_migrate\030\031 \001(\005\022#\n\033ogs_data_report_time" +
+      "_window\030\032 \001(\005\022\032\n\022client_instance_id\030\033 \001(" +
+      "\004\022!\n\031force_client_update_check\030\034 \001(\010\"F\n,",
+      "CMsgClientRequestWebAPIAuthenticateUserN" +
+      "once\022\026\n\ntoken_type\030\001 \001(\005:\002-1\"\212\001\n4CMsgCli" +
+      "entRequestWebAPIAuthenticateUserNonceRes" +
+      "ponse\022\022\n\007eresult\030\001 \001(\005:\0012\022&\n\036webapi_auth" +
+      "enticate_user_nonce\030\013 \001(\t\022\026\n\ntoken_type\030" +
+      "\003 \001(\005:\002-1\"\022\n\020CMsgClientLogOff\")\n\023CMsgCli" +
+      "entLoggedOff\022\022\n\007eresult\030\001 \001(\005:\0012\"=\n\025CMsg" +
+      "ClientNewLoginKey\022\021\n\tunique_id\030\001 \001(\r\022\021\n\t" +
+      "login_key\030\002 \001(\t\"2\n\035CMsgClientNewLoginKey" +
+      "Accepted\022\021\n\tunique_id\030\001 \001(\r\"\356\002\n\025CMsgClie",
+      "ntAccountInfo\022\024\n\014persona_name\030\001 \001(\t\022\022\n\ni" +
+      "p_country\030\002 \001(\t\022\036\n\026count_authed_computer" +
+      "s\030\005 \001(\005\022\025\n\raccount_flags\030\007 \001(\r\022\023\n\013facebo" +
+      "ok_id\030\010 \001(\004\022\025\n\rfacebook_name\030\t \001(\t\022%\n\035st" +
+      "eamguard_notify_newmachines\030\016 \001(\010\022+\n#ste" +
+      "amguard_machine_name_user_chosen\030\017 \001(\t\022\031" +
+      "\n\021is_phone_verified\030\020 \001(\010\022\030\n\020two_factor_" +
+      "state\030\021 \001(\r\022\034\n\024is_phone_identifying\030\022 \001(" +
+      "\010\022!\n\031is_phone_needing_reverify\030\023 \001(\010B3\n," +
+      "in.dragonbra.javasteam.protobufs.steamcl",
+      "ientH\001\200\001\000"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15293,7 +15129,7 @@ public final class SteammessagesClientserverLogin {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          SteammessagesBase.getDescriptor(),
+          uk.co.thomasc.steamkit.base.generated.SteammessagesBase.getDescriptor(),
         }, assigner);
     internal_static_CMsgClientHeartBeat_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -15367,7 +15203,7 @@ public final class SteammessagesClientserverLogin {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CMsgClientAccountInfo_descriptor,
         new java.lang.String[] { "PersonaName", "IpCountry", "CountAuthedComputers", "AccountFlags", "FacebookId", "FacebookName", "SteamguardNotifyNewmachines", "SteamguardMachineNameUserChosen", "IsPhoneVerified", "TwoFactorState", "IsPhoneIdentifying", "IsPhoneNeedingReverify", });
-    SteammessagesBase.getDescriptor();
+    uk.co.thomasc.steamkit.base.generated.SteammessagesBase.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

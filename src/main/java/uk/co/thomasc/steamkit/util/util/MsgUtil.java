@@ -13,8 +13,7 @@ public class MsgUtil {
     /**
      * Strips off the protobuf message flag and returns an EMsg.
      *
-     * @param msg
-     *            The message number.
+     * @param msg The message number.
      * @return The underlying EMsg.
      */
     public static int getGCMsg(int msg) {
@@ -24,8 +23,7 @@ public class MsgUtil {
     /**
      * Strips off the protobuf message flag and returns an EMsg.
      *
-     * @param msg
-     *            The message number.
+     * @param msg The message number.
      * @return The underlying EMsg.
      */
     public static EMsg getMsg(EMsg msg) {
@@ -35,8 +33,7 @@ public class MsgUtil {
     /**
      * Determines whether message is protobuf flagged.
      *
-     * @param msg
-     *            The message.
+     * @param msg The message.
      * @return true if this message is protobuf flagged; otherwise, false
      */
     public static boolean isProtoBuf(int msg) {
@@ -46,8 +43,7 @@ public class MsgUtil {
     /**
      * Determines whether message is protobuf flagged.
      *
-     * @param msg
-     *            The message.
+     * @param msg The message.
      * @return true if this message is protobuf flagged; otherwise, false
      */
     public static boolean isProtoBuf(EMsg msg) {
@@ -57,10 +53,8 @@ public class MsgUtil {
     /**
      * Crafts an EMsg, flagging it if required.
      *
-     * @param msg
-     *            The EMsg to flag.
-     * @param protobuf
-     *            if set to true, the message is protobuf flagged.
+     * @param msg      The EMsg to flag.
+     * @param protobuf if set to true, the message is protobuf flagged.
      * @return A crafted EMsg, flagged if requested.
      */
     public static int makeMsg(int msg, boolean protobuf) {
@@ -78,10 +72,8 @@ public class MsgUtil {
     /**
      * Crafts an EMsg, flagging it if required.
      *
-     * @param msg
-     *            The EMsg to flag.
-     * @param protobuf
-     *            if set to true, the message is protobuf flagged.
+     * @param msg      The EMsg to flag.
+     * @param protobuf if set to true, the message is protobuf flagged.
      * @return A crafted EMsg, flagged if requested.
      */
     public static int makeGCMsg(int msg, boolean protobuf) {
