@@ -85,7 +85,7 @@ public class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBase<Msg
      * @param bodyType body type
      * @param msg      The packet message to build this client message from.
      */
-    public ClientGCMsg(Class<? extends T> bodyType, IPacketMsg msg) {
+    public ClientGCMsg(Class<? extends T> bodyType, IPacketGCMsg msg) {
         this(bodyType);
 
         if (msg == null) {
