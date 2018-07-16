@@ -113,21 +113,21 @@ public class SmartCMServerList {
     }
 
     public boolean tryMark(InetSocketAddress endPoint, EnumSet<ProtocolType> protocolTypes, ServerQuality quality) {
-        List<ServerInfo> serverInfos = new ArrayList<>();
+        List<ServerInfo> serverInfoList = new ArrayList<>();
         synchronized (servers) {
-            for (ServerInfo x : servers) {
-                if (x.getRecord().getEndpoint().equals(endPoint) && protocolTypes.contains(x.getProtocol())) {
-                    serverInfos.add(x);
+            for (ServerInfo serverInfo : servers) {
+                if (serverInfo.getRecord().getEndpoint().equals(endPoint) && protocolTypes.contains(serverInfo.getProtocol())) {
+                    serverInfoList.add(serverInfo);
                 }
             }
 
-            for (ServerInfo serverInfo : serverInfos) {
+            for (ServerInfo serverInfo : serverInfoList) {
                 DebugLog.writeLine("SmartCMServerList", "Marking " + serverInfo.getRecord().getEndpoint() + " - " + serverInfo.getProtocol() + " as " + quality);
                 markServerCore(serverInfo, quality);
             }
         }
 
-        return serverInfos.size() > 0;
+        return serverInfoList.size() > 0;
     }
 
     private void markServerCore(ServerInfo serverInfo, ServerQuality quality) {
@@ -150,14 +150,14 @@ public class SmartCMServerList {
     private ServerRecord getNextServerCandidateInternal(EnumSet<ProtocolType> supportedProtocolTypes) {
         resetOldScores();
 
-        List<ServerInfo> serverInfos = new ArrayList<>();
+        List<ServerInfo> serverInfoList = new ArrayList<>();
         for (ServerInfo serverInfo : servers) {
             if (supportedProtocolTypes.contains(serverInfo.getProtocol())) {
-                serverInfos.add(serverInfo);
+                serverInfoList.add(serverInfo);
             }
         }
 
-        serverInfos.sort(new Comparator<ServerInfo>() {
+        serverInfoList.sort(new Comparator<ServerInfo>() {
             @Override
             public int compare(ServerInfo o1, ServerInfo o2) {
                 if (o1.getLastBadConnection() == null && o2.getLastBadConnection() == null) {
@@ -176,11 +176,11 @@ public class SmartCMServerList {
             }
         });
 
-        if (serverInfos.isEmpty()) {
+        if (serverInfoList.isEmpty()) {
             return null;
         }
 
-        ServerInfo result = serverInfos.get(new Random().nextInt(serverInfos.size()));
+        ServerInfo result = serverInfoList.get(new Random().nextInt(serverInfoList.size()));
 
         return new ServerRecord(result.getRecord().getEndpoint(), result.getProtocol());
     }
