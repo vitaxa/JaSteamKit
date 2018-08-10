@@ -2407,7 +2407,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2423,7 +2423,7 @@ public final class SteammessagesClientserverLogin {
         getClientLanguageBytes() {
       java.lang.Object ref = clientLanguage_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         clientLanguage_ = b;
@@ -2479,7 +2479,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2495,7 +2495,7 @@ public final class SteammessagesClientserverLogin {
         getWineVersionBytes() {
       java.lang.Object ref = wineVersion_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         wineVersion_ = b;
@@ -2656,7 +2656,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2672,7 +2672,7 @@ public final class SteammessagesClientserverLogin {
         getEmailAddressBytes() {
       java.lang.Object ref = emailAddress_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         emailAddress_ = b;
@@ -2713,7 +2713,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2729,7 +2729,7 @@ public final class SteammessagesClientserverLogin {
         getAccountNameBytes() {
       java.lang.Object ref = accountName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         accountName_ = b;
@@ -2755,7 +2755,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2771,7 +2771,7 @@ public final class SteammessagesClientserverLogin {
         getPasswordBytes() {
       java.lang.Object ref = password_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         password_ = b;
@@ -2797,7 +2797,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2813,7 +2813,7 @@ public final class SteammessagesClientserverLogin {
         getGameServerTokenBytes() {
       java.lang.Object ref = gameServerToken_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         gameServerToken_ = b;
@@ -2839,7 +2839,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2855,7 +2855,7 @@ public final class SteammessagesClientserverLogin {
         getLoginKeyBytes() {
       java.lang.Object ref = loginKey_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         loginKey_ = b;
@@ -2896,7 +2896,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2912,7 +2912,7 @@ public final class SteammessagesClientserverLogin {
         getAnonUserTargetAccountNameBytes() {
       java.lang.Object ref = anonUserTargetAccountName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         anonUserTargetAccountName_ = b;
@@ -2983,7 +2983,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -2999,7 +2999,7 @@ public final class SteammessagesClientserverLogin {
         getAuthCodeBytes() {
       java.lang.Object ref = authCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         authCode_ = b;
@@ -3055,7 +3055,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3071,7 +3071,7 @@ public final class SteammessagesClientserverLogin {
         getOtpIdentifierBytes() {
       java.lang.Object ref = otpIdentifier_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         otpIdentifier_ = b;
@@ -3127,7 +3127,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3143,7 +3143,7 @@ public final class SteammessagesClientserverLogin {
         getSonyPsnServiceIdBytes() {
       java.lang.Object ref = sonyPsnServiceId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sonyPsnServiceId_ = b;
@@ -3184,7 +3184,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3200,7 +3200,7 @@ public final class SteammessagesClientserverLogin {
         getSonyPsnNameBytes() {
       java.lang.Object ref = sonyPsnName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sonyPsnName_ = b;
@@ -3256,7 +3256,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3272,7 +3272,7 @@ public final class SteammessagesClientserverLogin {
         getMachineNameBytes() {
       java.lang.Object ref = machineName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         machineName_ = b;
@@ -3298,7 +3298,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3314,7 +3314,7 @@ public final class SteammessagesClientserverLogin {
         getMachineNameUserchosenBytes() {
       java.lang.Object ref = machineNameUserchosen_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         machineNameUserchosen_ = b;
@@ -3340,7 +3340,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3356,7 +3356,7 @@ public final class SteammessagesClientserverLogin {
         getCountryOverrideBytes() {
       java.lang.Object ref = countryOverride_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         countryOverride_ = b;
@@ -3412,7 +3412,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3428,7 +3428,7 @@ public final class SteammessagesClientserverLogin {
         getTwoFactorCodeBytes() {
       java.lang.Object ref = twoFactorCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         twoFactorCode_ = b;
@@ -3469,7 +3469,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3485,7 +3485,7 @@ public final class SteammessagesClientserverLogin {
         getWebLogonNonceBytes() {
       java.lang.Object ref = webLogonNonce_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         webLogonNonce_ = b;
@@ -5217,7 +5217,7 @@ public final class SteammessagesClientserverLogin {
           getClientLanguageBytes() {
         java.lang.Object ref = clientLanguage_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           clientLanguage_ = b;
@@ -5357,7 +5357,7 @@ public final class SteammessagesClientserverLogin {
           getWineVersionBytes() {
         java.lang.Object ref = wineVersion_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           wineVersion_ = b;
@@ -5727,7 +5727,7 @@ public final class SteammessagesClientserverLogin {
           getEmailAddressBytes() {
         java.lang.Object ref = emailAddress_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           emailAddress_ = b;
@@ -5835,7 +5835,7 @@ public final class SteammessagesClientserverLogin {
           getAccountNameBytes() {
         java.lang.Object ref = accountName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           accountName_ = b;
@@ -5911,7 +5911,7 @@ public final class SteammessagesClientserverLogin {
           getPasswordBytes() {
         java.lang.Object ref = password_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           password_ = b;
@@ -5987,7 +5987,7 @@ public final class SteammessagesClientserverLogin {
           getGameServerTokenBytes() {
         java.lang.Object ref = gameServerToken_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           gameServerToken_ = b;
@@ -6063,7 +6063,7 @@ public final class SteammessagesClientserverLogin {
           getLoginKeyBytes() {
         java.lang.Object ref = loginKey_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           loginKey_ = b;
@@ -6171,7 +6171,7 @@ public final class SteammessagesClientserverLogin {
           getAnonUserTargetAccountNameBytes() {
         java.lang.Object ref = anonUserTargetAccountName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           anonUserTargetAccountName_ = b;
@@ -6346,7 +6346,7 @@ public final class SteammessagesClientserverLogin {
           getAuthCodeBytes() {
         java.lang.Object ref = authCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           authCode_ = b;
@@ -6486,7 +6486,7 @@ public final class SteammessagesClientserverLogin {
           getOtpIdentifierBytes() {
         java.lang.Object ref = otpIdentifier_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           otpIdentifier_ = b;
@@ -6629,7 +6629,7 @@ public final class SteammessagesClientserverLogin {
           getSonyPsnServiceIdBytes() {
         java.lang.Object ref = sonyPsnServiceId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sonyPsnServiceId_ = b;
@@ -6737,7 +6737,7 @@ public final class SteammessagesClientserverLogin {
           getSonyPsnNameBytes() {
         java.lang.Object ref = sonyPsnName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sonyPsnName_ = b;
@@ -6877,7 +6877,7 @@ public final class SteammessagesClientserverLogin {
           getMachineNameBytes() {
         java.lang.Object ref = machineName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           machineName_ = b;
@@ -6953,7 +6953,7 @@ public final class SteammessagesClientserverLogin {
           getMachineNameUserchosenBytes() {
         java.lang.Object ref = machineNameUserchosen_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           machineNameUserchosen_ = b;
@@ -7029,7 +7029,7 @@ public final class SteammessagesClientserverLogin {
           getCountryOverrideBytes() {
         java.lang.Object ref = countryOverride_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           countryOverride_ = b;
@@ -7169,7 +7169,7 @@ public final class SteammessagesClientserverLogin {
           getTwoFactorCodeBytes() {
         java.lang.Object ref = twoFactorCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           twoFactorCode_ = b;
@@ -7277,7 +7277,7 @@ public final class SteammessagesClientserverLogin {
           getWebLogonNonceBytes() {
         java.lang.Object ref = webLogonNonce_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           webLogonNonce_ = b;
@@ -7963,7 +7963,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -7979,7 +7979,7 @@ public final class SteammessagesClientserverLogin {
         getEmailDomainBytes() {
       java.lang.Object ref = emailDomain_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         emailDomain_ = b;
@@ -8035,7 +8035,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8051,7 +8051,7 @@ public final class SteammessagesClientserverLogin {
         getWebapiAuthenticateUserNonceBytes() {
       java.lang.Object ref = webapiAuthenticateUserNonce_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         webapiAuthenticateUserNonce_ = b;
@@ -8107,7 +8107,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8123,7 +8123,7 @@ public final class SteammessagesClientserverLogin {
         getVanityUrlBytes() {
       java.lang.Object ref = vanityUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         vanityUrl_ = b;
@@ -8164,7 +8164,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8180,7 +8180,7 @@ public final class SteammessagesClientserverLogin {
         getIpCountryCodeBytes() {
       java.lang.Object ref = ipCountryCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         ipCountryCode_ = b;
@@ -9393,7 +9393,7 @@ public final class SteammessagesClientserverLogin {
           getEmailDomainBytes() {
         java.lang.Object ref = emailDomain_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           emailDomain_ = b;
@@ -9536,7 +9536,7 @@ public final class SteammessagesClientserverLogin {
           getWebapiAuthenticateUserNonceBytes() {
         java.lang.Object ref = webapiAuthenticateUserNonce_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           webapiAuthenticateUserNonce_ = b;
@@ -9676,7 +9676,7 @@ public final class SteammessagesClientserverLogin {
           getVanityUrlBytes() {
         java.lang.Object ref = vanityUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           vanityUrl_ = b;
@@ -9784,7 +9784,7 @@ public final class SteammessagesClientserverLogin {
           getIpCountryCodeBytes() {
         java.lang.Object ref = ipCountryCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           ipCountryCode_ = b;
@@ -10726,7 +10726,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -10742,7 +10742,7 @@ public final class SteammessagesClientserverLogin {
         getWebapiAuthenticateUserNonceBytes() {
       java.lang.Object ref = webapiAuthenticateUserNonce_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         webapiAuthenticateUserNonce_ = b;
@@ -11166,7 +11166,7 @@ public final class SteammessagesClientserverLogin {
           getWebapiAuthenticateUserNonceBytes() {
         java.lang.Object ref = webapiAuthenticateUserNonce_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           webapiAuthenticateUserNonce_ = b;
@@ -12268,7 +12268,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -12284,7 +12284,7 @@ public final class SteammessagesClientserverLogin {
         getLoginKeyBytes() {
       java.lang.Object ref = loginKey_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         loginKey_ = b;
@@ -12668,7 +12668,7 @@ public final class SteammessagesClientserverLogin {
           getLoginKeyBytes() {
         java.lang.Object ref = loginKey_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           loginKey_ = b;
@@ -13518,7 +13518,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13534,7 +13534,7 @@ public final class SteammessagesClientserverLogin {
         getPersonaNameBytes() {
       java.lang.Object ref = personaName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         personaName_ = b;
@@ -13560,7 +13560,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13576,7 +13576,7 @@ public final class SteammessagesClientserverLogin {
         getIpCountryBytes() {
       java.lang.Object ref = ipCountry_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         ipCountry_ = b;
@@ -13647,7 +13647,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13663,7 +13663,7 @@ public final class SteammessagesClientserverLogin {
         getFacebookNameBytes() {
       java.lang.Object ref = facebookName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         facebookName_ = b;
@@ -13704,7 +13704,7 @@ public final class SteammessagesClientserverLogin {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -13720,7 +13720,7 @@ public final class SteammessagesClientserverLogin {
         getSteamguardMachineNameUserChosenBytes() {
       java.lang.Object ref = steamguardMachineNameUserChosen_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         steamguardMachineNameUserChosen_ = b;
@@ -14390,7 +14390,7 @@ public final class SteammessagesClientserverLogin {
           getPersonaNameBytes() {
         java.lang.Object ref = personaName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           personaName_ = b;
@@ -14466,7 +14466,7 @@ public final class SteammessagesClientserverLogin {
           getIpCountryBytes() {
         java.lang.Object ref = ipCountry_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           ipCountry_ = b;
@@ -14638,7 +14638,7 @@ public final class SteammessagesClientserverLogin {
           getFacebookNameBytes() {
         java.lang.Object ref = facebookName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           facebookName_ = b;
@@ -14746,7 +14746,7 @@ public final class SteammessagesClientserverLogin {
           getSteamguardMachineNameUserChosenBytes() {
         java.lang.Object ref = steamguardMachineNameUserChosen_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           steamguardMachineNameUserChosen_ = b;
@@ -14969,62 +14969,62 @@ public final class SteammessagesClientserverLogin {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientHeartBeat_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientHeartBeat_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientServerTimestampRequest_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientServerTimestampRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientServerTimestampResponse_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientServerTimestampResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientLogon_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientLogon_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientLogonResponse_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientLogonResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientRequestWebAPIAuthenticateUserNonce_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientRequestWebAPIAuthenticateUserNonceResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientLogOff_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientLogOff_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientLoggedOff_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientLoggedOff_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientNewLoginKey_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientNewLoginKey_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientNewLoginKeyAccepted_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientNewLoginKeyAccepted_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CMsgClientAccountInfo_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CMsgClientAccountInfo_fieldAccessorTable;
 

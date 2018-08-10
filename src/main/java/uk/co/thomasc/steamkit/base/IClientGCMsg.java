@@ -1,6 +1,5 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.types.JobID;
 
 /**
@@ -20,7 +19,7 @@ public interface IClientGCMsg {
      *
      * @return The message type.
      */
-    EMsg getMsgType();
+    int getMsgType();
 
     /**
      * Gets the target job id for this client message.

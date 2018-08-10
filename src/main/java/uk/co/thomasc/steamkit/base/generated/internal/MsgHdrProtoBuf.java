@@ -1,6 +1,7 @@
 package uk.co.thomasc.steamkit.base.generated.internal;
 
 import uk.co.thomasc.steamkit.base.ISteamSerializableHeader;
+import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
 import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.util.stream.BinaryReader;
 import uk.co.thomasc.steamkit.util.stream.BinaryWriter;
@@ -9,8 +10,6 @@ import uk.co.thomasc.steamkit.util.util.MsgUtil;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
-import static uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
 
 public class MsgHdrProtoBuf implements ISteamSerializableHeader {
 

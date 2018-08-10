@@ -19,6 +19,5 @@ public class Disconnect implements ISteamSerializable {
     @Override
     public void deserialize(InputStream stream) throws IOException {
         BinaryReader br = new BinaryReader(stream);
-
     }
 }

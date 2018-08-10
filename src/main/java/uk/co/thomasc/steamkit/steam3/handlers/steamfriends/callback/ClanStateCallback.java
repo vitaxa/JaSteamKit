@@ -2,7 +2,6 @@ package uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback;
 
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientClanState;
 import uk.co.thomasc.steamkit.base.generated.enums.EAccountFlags;
-import uk.co.thomasc.steamkit.base.generated.enums.EClientPersonaStateFlag;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.Event;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import uk.co.thomasc.steamkit.types.SteamID;
@@ -19,9 +18,9 @@ public class ClanStateCallback extends CallbackMsg {
 
     private SteamID clanID;
 
-    private EnumSet<EClientPersonaStateFlag> statusFlags;
-
     private EnumSet<EAccountFlags> accountFlags;
+
+    private boolean chatRoomPrivate;
 
     private String clanName;
 
@@ -42,8 +41,8 @@ public class ClanStateCallback extends CallbackMsg {
     public ClanStateCallback(CMsgClientClanState.Builder msg) {
         clanID = new SteamID(msg.getSteamidClan());
 
-        statusFlags = EClientPersonaStateFlag.from(msg.getMUnStatusFlags());
         accountFlags = EAccountFlags.from(msg.getClanAccountFlags());
+        chatRoomPrivate = msg.getChatRoomPrivate();
 
         if (msg.hasNameInfo()) {
             clanName = msg.getNameInfo().getClanName();
@@ -74,12 +73,12 @@ public class ClanStateCallback extends CallbackMsg {
         return clanID;
     }
 
-    public EnumSet<EClientPersonaStateFlag> getStatusFlags() {
-        return statusFlags;
-    }
-
     public EnumSet<EAccountFlags> getAccountFlags() {
         return accountFlags;
+    }
+
+    public boolean isChatRoomPrivate() {
+        return chatRoomPrivate;
     }
 
     public String getClanName() {
@@ -114,3 +113,4 @@ public class ClanStateCallback extends CallbackMsg {
         return announcements;
     }
 }
+

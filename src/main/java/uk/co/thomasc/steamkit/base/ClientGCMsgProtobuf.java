@@ -3,7 +3,6 @@ package uk.co.thomasc.steamkit.base;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.GeneratedMessageV3;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesBase.CMsgProtoBufHeader;
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.generated.internal.MsgGCHdrProtoBuf;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
@@ -113,8 +112,8 @@ public class ClientGCMsgProtobuf<T extends GeneratedMessageV3.Builder<T>> extend
     }
 
     @Override
-    public EMsg getMsgType() {
-        return EMsg.from(getHeader().getMsg());
+    public int getMsgType() {
+        return getHeader().getMsg();
     }
 
     @Override

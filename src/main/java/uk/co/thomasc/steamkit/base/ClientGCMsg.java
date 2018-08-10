@@ -1,6 +1,5 @@
 package uk.co.thomasc.steamkit.base;
 
-import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.base.generated.internal.MsgGCHdr;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
@@ -105,8 +104,8 @@ public class ClientGCMsg<T extends IGCSerializableMessage> extends GCMsgBase<Msg
     }
 
     @Override
-    public EMsg getMsgType() {
-        return EMsg.from(msgType);
+    public int getMsgType() {
+        return msgType;
     }
 
     @Override

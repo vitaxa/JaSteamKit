@@ -17,7 +17,8 @@ public class MsgGCHdr implements IGCSerializableHeader {
     private long sourceJobID = 0xFFFFFFFFFFFFFFFFL;
 
     @Override
-    public void setEMsg(int msg) {}
+    public void setEMsg(int msg) {
+    }
 
     public short getHeaderVersion() {
         return this.headerVersion;
