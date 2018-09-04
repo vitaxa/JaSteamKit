@@ -48,7 +48,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>2.4.3</version>
+        <version>3.1.1</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -144,4 +144,3 @@
     </dependency>
   </dependencies>
 </project>
-
