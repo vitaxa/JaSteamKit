@@ -31,6 +31,16 @@ public class SteamUnifiedMessages extends ClientMsgHandler {
         dispatchMap.put(EMsg.ServiceMethod, this::handleServiceMethod);
     }
 
+    /**
+     * Sends a message
+     *
+     * @param unifiedProtobufMethod Protobuf method. It contains name of the RPC endpoint
+     * @param message               The message to send
+     * @param isNotification        Whether this message is a notification or not
+     * @param <T>                   The type of a protobuf object builder.
+     * @param <R>                   The type of a returned protobuf message
+     * @return protobuf response message
+     */
     public <T extends GeneratedMessageV3.Builder<T>,
             R extends GeneratedMessageV3> AsyncJob<ServiceMethodResponseCallback<R>> sendMessage(UnifiedProtobufMethod unifiedProtobufMethod,
                                                                                                  T message,
@@ -38,6 +48,16 @@ public class SteamUnifiedMessages extends ClientMsgHandler {
         return sendMessage(unifiedProtobufMethod.getName(), message, isNotification);
     }
 
+    /**
+     * Sends a message
+     *
+     * @param methodName     Name of the RPC endpoint. Takes the format ServiceName.RpcName
+     * @param message        The message to send
+     * @param isNotification Whether this message is a notification or not
+     * @param <T>            The type of a protobuf object builder.
+     * @param <R>            The type of a returned protobuf message
+     * @return protobuf response message
+     */
     public <T extends GeneratedMessageV3.Builder<T>,
             R extends GeneratedMessageV3> AsyncJob<ServiceMethodResponseCallback<R>> sendMessage(String methodName,
                                                                                                  T message,
