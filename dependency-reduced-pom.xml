@@ -4,7 +4,7 @@
   <groupId>com.vitaxa</groupId>
   <artifactId>steamkit</artifactId>
   <name>SteamKit</name>
-  <version>0.2.7</version>
+  <version>0.3.7</version>
   <build>
     <plugins>
       <plugin>

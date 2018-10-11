@@ -22,7 +22,9 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.AnonymousLogOnDeta
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.LogOnDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.MachineAuthDetails;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.DisconnectedCallback;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
+import uk.co.thomasc.steamkit.types.SimpleAsyncJob;
 import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.HardwareUtils;
 import uk.co.thomasc.steamkit.util.StringHelper;
@@ -235,7 +237,7 @@ public class SteamUser extends ClientMsgHandler {
      *
      * @return The Job ID of the request. This can be used to find the appropriate {@link WebAPIUserNonceCallback}.
      */
-    public JobID requestWebAPIUserNonce() {
+    public AsyncJob<WebAPIUserNonceCallback> requestWebAPIUserNonce() {
         ClientMsgProtobuf<CMsgClientRequestWebAPIAuthenticateUserNonce.Builder> reqMsg =
                 new ClientMsgProtobuf<>(CMsgClientRequestWebAPIAuthenticateUserNonce.class, EMsg.ClientRequestWebAPIAuthenticateUserNonce);
         JobID jobID = client.getNextJobID();
@@ -243,7 +245,7 @@ public class SteamUser extends ClientMsgHandler {
 
         client.send(reqMsg);
 
-        return jobID;
+        return new SimpleAsyncJob<WebAPIUserNonceCallback>(client, reqMsg.getSourceJobID());
     }
 
     /**

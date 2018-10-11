@@ -8,7 +8,9 @@ import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.ShareFileCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.SingleFileInfoCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamcloud.callback.UGCDetailsCallback;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
+import uk.co.thomasc.steamkit.types.SimpleAsyncJob;
 import uk.co.thomasc.steamkit.types.UGCHandle;
 
 import java.util.Collections;
@@ -26,24 +28,9 @@ public class SteamCloud extends ClientMsgHandler {
     public SteamCloud() {
         dispatchMap = new HashMap<>();
 
-        dispatchMap.put(EMsg.ClientUFSGetUGCDetailsResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleUGCDetailsResponse(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientUFSGetSingleFileInfoResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleSingleFileInfoResponse(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientUFSShareFileResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleShareFileResponse(packetMsg);
-            }
-        });
+        dispatchMap.put(EMsg.ClientUFSGetUGCDetailsResponse, this::handleUGCDetailsResponse);
+        dispatchMap.put(EMsg.ClientUFSGetSingleFileInfoResponse, this::handleSingleFileInfoResponse);
+        dispatchMap.put(EMsg.ClientUFSShareFileResponse, this::handleShareFileResponse);
 
         dispatchMap = Collections.unmodifiableMap(dispatchMap);
     }
@@ -55,7 +42,7 @@ public class SteamCloud extends ClientMsgHandler {
      * @param ugcId The unique user generated content id.
      * @return The Job ID of the request. This can be used to find the appropriate {@link UGCDetailsCallback}.
      */
-    public JobID requestUGCDetails(UGCHandle ugcId) {
+    public AsyncJob<UGCDetailsCallback> requestUGCDetails(UGCHandle ugcId) {
         if (ugcId == null) {
             throw new IllegalArgumentException("ugcId is null");
         }
@@ -69,7 +56,7 @@ public class SteamCloud extends ClientMsgHandler {
 
         client.send(request);
 
-        return jobID;
+        return new SimpleAsyncJob<UGCDetailsCallback>(client, request.getSourceJobID());
     }
 
     /**
@@ -80,7 +67,7 @@ public class SteamCloud extends ClientMsgHandler {
      * @param filename The path to the file being requested.
      * @return The Job ID of the request. This can be used to find the appropriate {@link SingleFileInfoCallback}.
      */
-    public JobID getSingleFileInfo(int appId, String filename) {
+    public AsyncJob<SingleFileInfoCallback> getSingleFileInfo(int appId, String filename) {
         ClientMsgProtobuf<CMsgClientUFSGetSingleFileInfo.Builder> request =
                 new ClientMsgProtobuf<>(CMsgClientUFSGetSingleFileInfo.class, EMsg.ClientUFSGetSingleFileInfo);
         JobID jobID = client.getNextJobID();
@@ -91,7 +78,7 @@ public class SteamCloud extends ClientMsgHandler {
 
         client.send(request);
 
-        return jobID;
+        return new SimpleAsyncJob<SingleFileInfoCallback>(client, request.getSourceJobID());
     }
 
     /**
@@ -102,7 +89,7 @@ public class SteamCloud extends ClientMsgHandler {
      * @param filename The path to the file being requested.
      * @return The Job ID of the request. This can be used to find the appropriate {@link ShareFileCallback}.
      */
-    public JobID shareFile(int appId, String filename) {
+    public AsyncJob<ShareFileCallback> shareFile(int appId, String filename) {
         ClientMsgProtobuf<CMsgClientUFSShareFile.Builder> request =
                 new ClientMsgProtobuf<>(CMsgClientUFSShareFile.class, EMsg.ClientUFSShareFile);
         JobID jobID = client.getNextJobID();
@@ -113,7 +100,7 @@ public class SteamCloud extends ClientMsgHandler {
 
         client.send(request);
 
-        return jobID;
+        return new SimpleAsyncJob<ShareFileCallback>(client, request.getSourceJobID());
     }
 
 

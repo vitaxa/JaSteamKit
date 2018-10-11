@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.EnumSet;
 
 /**
- * This callback is fired in response to chat member info being recieved.
+ * This callback is fired in response to chat member info being recived.
  */
 public class ChatMemberInfoCallback extends CallbackMsg {
     private SteamID chatRoomID;

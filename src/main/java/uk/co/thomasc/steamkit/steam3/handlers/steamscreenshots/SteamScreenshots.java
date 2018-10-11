@@ -7,7 +7,9 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgClie
 import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamscreenshots.callback.ScreenshotAddedCallback;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
+import uk.co.thomasc.steamkit.types.SimpleAsyncJob;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -41,7 +43,7 @@ public class SteamScreenshots extends ClientMsgHandler {
      * @param details The details of the screenshot.
      * @return The Job ID of the request. This can be used to find the appropriate {@link ScreenshotAddedCallback}.
      */
-    public JobID addScreenshot(ScreenshotDetails details) {
+    public AsyncJob<ScreenshotAddedCallback> addScreenshot(ScreenshotDetails details) {
         if (details == null) {
             throw new IllegalArgumentException("details is null");
         }
@@ -65,7 +67,7 @@ public class SteamScreenshots extends ClientMsgHandler {
 
         client.send(msg);
 
-        return jobID;
+        return new SimpleAsyncJob<ScreenshotAddedCallback>(client, msg.getSourceJobID());
     }
 
     @Override

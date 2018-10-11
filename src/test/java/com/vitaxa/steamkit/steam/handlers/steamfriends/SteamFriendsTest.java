@@ -364,7 +364,7 @@ public class SteamFriendsTest extends HandlerTestBase<SteamFriends> {
         SteamID userId = new SteamID(987654321L);
         handler.requestMessageHistory(userId);
 
-        ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistory.Builder> msg = verifySend(EMsg.ClientFSGetFriendMessageHistory);
+        ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistory.Builder> msg = verifySend(EMsg.ClientChatGetFriendMessageHistory);
 
         assertEquals(987654321L, msg.getBody().getSteamid());
     }
@@ -378,7 +378,7 @@ public class SteamFriendsTest extends HandlerTestBase<SteamFriends> {
     public void requestOfflineMessages() {
         handler.requestOfflineMessages();
 
-        ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryForOfflineMessages.Builder> msg = verifySend(EMsg.ClientFSGetFriendMessageHistoryForOfflineMessages);
+        ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryForOfflineMessages.Builder> msg = verifySend(EMsg.ClientChatGetFriendMessageHistoryForOfflineMessages);
 
         assertNotNull(msg);
     }

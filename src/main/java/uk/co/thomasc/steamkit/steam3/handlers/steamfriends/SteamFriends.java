@@ -13,7 +13,9 @@ import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.callback.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamfriends.types.PersonaState;
 import uk.co.thomasc.steamkit.steam3.steamclient.configuration.SteamConfiguration;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
+import uk.co.thomasc.steamkit.types.SimpleAsyncJob;
 import uk.co.thomasc.steamkit.types.SteamID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
@@ -422,7 +424,7 @@ public class SteamFriends extends ClientMsgHandler {
      * @param steamID The SteamID of the friend to ignore or unignore.
      * @return The Job ID of the request. This can be used to find the appropriate {@link IgnoreFriendCallback}.
      */
-    public JobID ignoreFriend(SteamID steamID) {
+    public AsyncJob<IgnoreFriendCallback> ignoreFriend(SteamID steamID) {
         return ignoreFriend(steamID, true);
     }
 
@@ -434,7 +436,7 @@ public class SteamFriends extends ClientMsgHandler {
      * @param setIgnore if set to <b>true</b>, the friend will be ignored; otherwise, they will be unignored.
      * @return The Job ID of the request. This can be used to find the appropriate {@link IgnoreFriendCallback}.
      */
-    public JobID ignoreFriend(SteamID steamID, boolean setIgnore) {
+    public AsyncJob<IgnoreFriendCallback> ignoreFriend(SteamID steamID, boolean setIgnore) {
         if (steamID == null) {
             throw new IllegalArgumentException("steamID is null");
         }
@@ -449,7 +451,7 @@ public class SteamFriends extends ClientMsgHandler {
 
         client.send(ignore);
 
-        return jobID;
+        return new SimpleAsyncJob<IgnoreFriendCallback>(client, ignore.getSourceJobID());
     }
 
     /**
@@ -459,7 +461,7 @@ public class SteamFriends extends ClientMsgHandler {
      * @param steamID The SteamID of the friend to request the details of.
      * @return The Job ID of the request. This can be used to find the appropriate {@link ProfileInfoCallback}.
      */
-    public JobID requestProfileInfo(SteamID steamID) {
+    public AsyncJob<ProfileInfoCallback> requestProfileInfo(SteamID steamID) {
         if (steamID == null) {
             throw new IllegalArgumentException("steamID is null");
         }
@@ -473,7 +475,7 @@ public class SteamFriends extends ClientMsgHandler {
 
         client.send(request);
 
-        return jobID;
+        return new SimpleAsyncJob<ProfileInfoCallback>(client, request.getSourceJobID());
     }
 
     /**
@@ -488,7 +490,7 @@ public class SteamFriends extends ClientMsgHandler {
         }
 
         ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistory.Builder> request =
-                new ClientMsgProtobuf<>(CMsgClientChatGetFriendMessageHistory.class, EMsg.ClientFSGetFriendMessageHistory);
+                new ClientMsgProtobuf<>(CMsgClientChatGetFriendMessageHistory.class, EMsg.ClientChatGetFriendMessageHistory);
 
         request.getBody().setSteamid(steamID.convertToUInt64());
 
@@ -502,7 +504,7 @@ public class SteamFriends extends ClientMsgHandler {
      */
     public void requestOfflineMessages() {
         ClientMsgProtobuf<CMsgClientChatGetFriendMessageHistoryForOfflineMessages.Builder> request =
-                new ClientMsgProtobuf<>(CMsgClientChatGetFriendMessageHistoryForOfflineMessages.class, EMsg.ClientFSGetFriendMessageHistoryForOfflineMessages);
+                new ClientMsgProtobuf<>(CMsgClientChatGetFriendMessageHistoryForOfflineMessages.class, EMsg.ClientChatGetFriendMessageHistoryForOfflineMessages);
         client.send(request);
     }
 

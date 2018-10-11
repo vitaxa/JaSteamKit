@@ -11,7 +11,9 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.callbacks.UserPublis
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.callbacks.UserSubscribedFilesCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.types.EnumerationDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.types.EnumerationUserDetails;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
+import uk.co.thomasc.steamkit.types.SimpleAsyncJob;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -28,30 +30,10 @@ public class SteamWorkshop extends ClientMsgHandler {
     public SteamWorkshop() {
         dispatchMap = new HashMap<>();
 
-        dispatchMap.put(EMsg.CREEnumeratePublishedFilesResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleEnumPublishedFiles(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientUCMEnumerateUserPublishedFilesResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleEnumUserPublishedFiles(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientUCMEnumerateUserSubscribedFilesResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleEnumUserSubscribedFiles(packetMsg);
-            }
-        });
-        dispatchMap.put(EMsg.ClientUCMEnumeratePublishedFilesByUserActionResponse, new Consumer<IPacketMsg>() {
-            @Override
-            public void accept(IPacketMsg packetMsg) {
-                handleEnumPublishedFilesByAction(packetMsg);
-            }
-        });
+        dispatchMap.put(EMsg.CREEnumeratePublishedFilesResponse, this::handleEnumPublishedFiles);
+        dispatchMap.put(EMsg.ClientUCMEnumerateUserPublishedFilesResponse, this::handleEnumUserPublishedFiles);
+        dispatchMap.put(EMsg.ClientUCMEnumerateUserSubscribedFilesResponse, this::handleEnumUserSubscribedFiles);
+        dispatchMap.put(EMsg.ClientUCMEnumeratePublishedFilesByUserActionResponse, this::handleEnumPublishedFilesByAction);
 
         dispatchMap = Collections.unmodifiableMap(dispatchMap);
     }
@@ -63,7 +45,7 @@ public class SteamWorkshop extends ClientMsgHandler {
      * @param details The specific details of the request.
      * @return The Job ID of the request. This can be used to find the appropriate {@link UserPublishedFilesCallback}.
      */
-    public JobID enumerateUserPublishedFiles(EnumerationUserDetails details) {
+    public AsyncJob<UserPublishedFilesCallback> enumerateUserPublishedFiles(EnumerationUserDetails details) {
         if (details == null) {
             throw new IllegalArgumentException("details is null");
         }
@@ -79,7 +61,7 @@ public class SteamWorkshop extends ClientMsgHandler {
 
         client.send(enumRequest);
 
-        return jobID;
+        return new SimpleAsyncJob<UserPublishedFilesCallback>(client, enumRequest.getSourceJobID());
     }
 
     /**
@@ -89,7 +71,7 @@ public class SteamWorkshop extends ClientMsgHandler {
      * @param details The specific details of the request.
      * @return The Job ID of the request. This can be used to find the appropriate {@link UserSubscribedFilesCallback}.
      */
-    public JobID enumerateUserSubscribedFiles(EnumerationUserDetails details) {
+    public AsyncJob<UserSubscribedFilesCallback> enumerateUserSubscribedFiles(EnumerationUserDetails details) {
         if (details == null) {
             throw new IllegalArgumentException("details is null");
         }
@@ -104,7 +86,7 @@ public class SteamWorkshop extends ClientMsgHandler {
 
         client.send(enumRequest);
 
-        return jobID;
+        return new SimpleAsyncJob<UserSubscribedFilesCallback>(client, enumRequest.getSourceJobID());
     }
 
     /**
@@ -114,7 +96,7 @@ public class SteamWorkshop extends ClientMsgHandler {
      * @param details The specific details of the request.
      * @return The Job ID of the request. This can be used to find the appropriate {@link UserActionPublishedFilesCallback}.
      */
-    public JobID enumeratePublishedFilesByUserAction(EnumerationUserDetails details) {
+    public AsyncJob<UserActionPublishedFilesCallback> enumeratePublishedFilesByUserAction(EnumerationUserDetails details) {
         if (details == null) {
             throw new IllegalArgumentException("details is null");
         }
@@ -130,7 +112,7 @@ public class SteamWorkshop extends ClientMsgHandler {
 
         client.send(enumRequest);
 
-        return jobID;
+        return new SimpleAsyncJob<UserActionPublishedFilesCallback>(client, enumRequest.getSourceJobID());
     }
 
     /**
@@ -140,7 +122,7 @@ public class SteamWorkshop extends ClientMsgHandler {
      * @param details The specific details of the request.
      * @return The Job ID of the request. This can be used to find the appropriate {@link PublishedFilesCallback}.
      */
-    public JobID enumeratePublishedFiles(EnumerationDetails details) {
+    public AsyncJob<PublishedFilesCallback> enumeratePublishedFiles(EnumerationDetails details) {
         if (details == null) {
             throw new IllegalArgumentException("details is null");
         }
@@ -160,7 +142,7 @@ public class SteamWorkshop extends ClientMsgHandler {
 
         client.send(enumRequest);
 
-        return jobID;
+        return new SimpleAsyncJob<PublishedFilesCallback>(client, enumRequest.getSourceJobID());
     }
 
     @Override

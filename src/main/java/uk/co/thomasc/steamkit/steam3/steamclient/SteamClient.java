@@ -14,6 +14,7 @@ import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.SteamMasterServe
 import uk.co.thomasc.steamkit.steam3.handlers.steamnotifications.SteamNotifications;
 import uk.co.thomasc.steamkit.steam3.handlers.steamscreenshots.SteamScreenshots;
 import uk.co.thomasc.steamkit.steam3.handlers.steamtrading.SteamTrading;
+import uk.co.thomasc.steamkit.steam3.handlers.steamunifiedmessages.SteamUnifiedMessages;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.SteamUser;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.SteamUserStats;
 import uk.co.thomasc.steamkit.steam3.handlers.steamworkshop.SteamWorkshop;
@@ -24,6 +25,7 @@ import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.ConnectedCallback;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.DisconnectedCallback;
 import uk.co.thomasc.steamkit.steam3.steamclient.callbacks.ServerListCallback;
 import uk.co.thomasc.steamkit.steam3.steamclient.configuration.SteamConfiguration;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.util.logging.DebugLog;
 
@@ -40,17 +42,19 @@ import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CM
  */
 public class SteamClient extends CMClient {
 
+    private final Object callbackLock = new Object();
+
     private Map<Class<? extends ClientMsgHandler>, ClientMsgHandler> handlers = new HashMap<>();
 
     private AtomicLong currentJobId = new AtomicLong(0L);
 
-    private Date processStartTime;
-
-    private final Object callbackLock = new Object();
-
     private Queue<ICallbackMsg> callbackQueue = new LinkedList<>();
 
     private Map<EMsg, Consumer<IPacketMsg>> dispatchMap = new HashMap<>();
+
+    private Date processStartTime;
+
+    private AsyncJobManager jobManager;
 
     /**
      * Initializes a new instance of the {@link SteamClient} class with the default configuration.
@@ -81,8 +85,10 @@ public class SteamClient extends CMClient {
         addHandler(new SteamMasterServer());
         addHandler(new SteamGameServer());
         addHandler(new SteamGameCoordinator());
+        addHandler(new SteamUnifiedMessages());
 
         processStartTime = new Date();
+        jobManager = new AsyncJobManager();
 
         dispatchMap.put(EMsg.ClientCMList, this::handleCMList);
         dispatchMap.put(EMsg.ClientServerList, this::handleServerList);
@@ -300,6 +306,8 @@ public class SteamClient extends CMClient {
             callbackQueue.offer(msg);
             callbackLock.notify();
         }
+
+        jobManager.tryCompleteJob(msg.getJobID(), msg);
     }
 
     /**
@@ -317,6 +325,10 @@ public class SteamClient extends CMClient {
         jobID.setStartTime(processStartTime);
 
         return jobID;
+    }
+
+    public void startJob(AsyncJob job) {
+        jobManager.startJob(job);
     }
 
     @Override
@@ -348,12 +360,21 @@ public class SteamClient extends CMClient {
     protected void onClientConnected() {
         super.onClientConnected();
 
+        jobManager.setTimeoutsEnabled(false);
+
         postCallback(new ConnectedCallback());
     }
 
     @Override
     protected void onClientDisconnected(boolean userInitiated) {
         super.onClientDisconnected(userInitiated);
+
+        // if we are disconnected, cancel all pending jobs
+        jobManager.cancelPendingJobs();
+
+        jobManager.setTimeoutsEnabled(false);
+
+        jobManager.close();
 
         postCallback(new DisconnectedCallback(userInitiated));
     }
@@ -371,10 +392,10 @@ public class SteamClient extends CMClient {
     }
 
     private void handleJobHeartbeat(IPacketMsg packetMsg) {
-        // TODO:
+        jobManager.heartbeatJob(new JobID(packetMsg.getTargetJobID()));
     }
 
     private void handleJobFailed(IPacketMsg packetMsg) {
-        // TODO:
+        jobManager.failJob(new JobID(packetMsg.getTargetJobID()));
     }
 }

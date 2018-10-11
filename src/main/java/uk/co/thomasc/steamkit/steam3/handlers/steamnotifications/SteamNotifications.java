@@ -26,7 +26,7 @@ public class SteamNotifications extends ClientMsgHandler {
         dispatchMap = new HashMap<>();
 
         dispatchMap.put(EMsg.ClientUserNotifications, this::handleUserNotifications);
-        dispatchMap.put(EMsg.ClientFSOfflineMessageNotification, this::handleOfflineMessageNotification);
+        dispatchMap.put(EMsg.ClientChatOfflineMessageNotification, this::handleOfflineMessageNotification);
         dispatchMap.put(EMsg.ClientCommentNotifications, this::handleCommentNotifications);
         dispatchMap.put(EMsg.ClientItemAnnouncements, this::handleItemAnnouncements);
 

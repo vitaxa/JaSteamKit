@@ -7,7 +7,7 @@ import uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr.CallbackMsg;
 import java.util.EnumSet;
 
 /**
- * This callback is recieved when account information is recieved from the
+ * This callback is recived when account information is recived from the
  * network. This generally happens after logon.
  */
 public final class AccountInfoCallback extends CallbackMsg {

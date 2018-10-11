@@ -22,6 +22,7 @@ import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.LogOnDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.MachineAuthDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.OTPDetails;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
 import uk.co.thomasc.steamkit.types.SteamID;
 
@@ -172,11 +173,10 @@ public class SteamUserTest extends HandlerTestBase<SteamUser> {
 
     @Test
     public void requestWebNonce() {
-        JobID jobID = handler.requestWebAPIUserNonce();
+        AsyncJob<WebAPIUserNonceCallback> jobID = handler.requestWebAPIUserNonce();
 
         ClientMsgProtobuf<CMsgClientRequestWebAPIAuthenticateUserNonce.Builder> msg = verifySend(EMsg.ClientRequestWebAPIAuthenticateUserNonce);
 
-        assertEquals(SOURCE_JOB_ID, jobID);
         assertEquals(SOURCE_JOB_ID, msg.getSourceJobID());
     }
 

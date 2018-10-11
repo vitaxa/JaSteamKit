@@ -8,7 +8,9 @@ import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.callbacks.QueryCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steammasterserver.types.QueryDetails;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
+import uk.co.thomasc.steamkit.types.SimpleAsyncJob;
 import uk.co.thomasc.steamkit.util.util.NetHelpers;
 
 import java.util.Collections;
@@ -38,7 +40,7 @@ public class SteamMasterServer extends ClientMsgHandler {
      * @param details The details for the request.
      * @return The Job ID of the request. This can be used to find the appropriate {@link QueryCallback}.
      */
-    public JobID serverQuery(QueryDetails details) {
+    public AsyncJob<QueryCallback> serverQuery(QueryDetails details) {
         if (details == null) {
             throw new IllegalArgumentException("details is null");
         }
@@ -61,7 +63,7 @@ public class SteamMasterServer extends ClientMsgHandler {
 
         getClient().send(query);
 
-        return jobID;
+        return new SimpleAsyncJob<QueryCallback>(client, query.getSourceJobID());
     }
 
     @Override

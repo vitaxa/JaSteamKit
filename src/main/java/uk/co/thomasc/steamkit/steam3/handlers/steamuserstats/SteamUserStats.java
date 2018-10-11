@@ -16,7 +16,9 @@ import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks.FindOrCreateLeaderboardCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks.LeaderboardEntriesCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuserstats.callbacks.NumberOfPlayersCallback;
+import uk.co.thomasc.steamkit.types.AsyncJob;
 import uk.co.thomasc.steamkit.types.JobID;
+import uk.co.thomasc.steamkit.types.SimpleAsyncJob;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -47,7 +49,7 @@ public class SteamUserStats extends ClientMsgHandler {
      * @param appId The app id to request the number of players for.
      * @return The Job ID of the request. This can be used to find the appropriate {@link NumberOfPlayersCallback}.
      */
-    public JobID getNumberOfCurrentPlayers(int appId) {
+    public AsyncJob<NumberOfPlayersCallback> getNumberOfCurrentPlayers(int appId) {
         ClientMsgProtobuf<CMsgDPGetNumberOfCurrentPlayers.Builder> msg =
                 new ClientMsgProtobuf<>(CMsgDPGetNumberOfCurrentPlayers.class, EMsg.ClientGetNumberOfCurrentPlayersDP);
         JobID jobID = getClient().getNextJobID();
@@ -57,7 +59,7 @@ public class SteamUserStats extends ClientMsgHandler {
 
         getClient().send(msg);
 
-        return jobID;
+        return new SimpleAsyncJob<NumberOfPlayersCallback>(client, msg.getSourceJobID());
     }
 
     /**
@@ -68,7 +70,7 @@ public class SteamUserStats extends ClientMsgHandler {
      * @param name  Name of the leaderboard to request.
      * @return The Job ID of the request. This can be used to find the appropriate {@link FindOrCreateLeaderboardCallback}.
      */
-    public JobID findLeaderBoard(int appId, String name) {
+    public AsyncJob<FindOrCreateLeaderboardCallback> findLeaderBoard(int appId, String name) {
         ClientMsgProtobuf<CMsgClientLBSFindOrCreateLB.Builder> msg =
                 new ClientMsgProtobuf<>(CMsgClientLBSFindOrCreateLB.class, EMsg.ClientLBSFindOrCreateLB);
         JobID jobID = getClient().getNextJobID();
@@ -83,7 +85,7 @@ public class SteamUserStats extends ClientMsgHandler {
 
         getClient().send(msg);
 
-        return jobID;
+        return new SimpleAsyncJob<FindOrCreateLeaderboardCallback>(client, msg.getSourceJobID());
     }
 
     /**
@@ -96,7 +98,10 @@ public class SteamUserStats extends ClientMsgHandler {
      * @param displayType Display type for this leaderboard.
      * @return The Job ID of the request. This can be used to find the appropriate {@link FindOrCreateLeaderboardCallback}.
      */
-    public JobID createLeaderboard(int appId, String name, ELeaderboardSortMethod sortMethod, ELeaderboardDisplayType displayType) {
+    public AsyncJob<FindOrCreateLeaderboardCallback> createLeaderboard(int appId,
+                                                                       String name,
+                                                                       ELeaderboardSortMethod sortMethod,
+                                                                       ELeaderboardDisplayType displayType) {
         ClientMsgProtobuf<CMsgClientLBSFindOrCreateLB.Builder> msg =
                 new ClientMsgProtobuf<>(CMsgClientLBSFindOrCreateLB.class, EMsg.ClientLBSFindOrCreateLB);
         JobID jobID = getClient().getNextJobID();
@@ -113,7 +118,7 @@ public class SteamUserStats extends ClientMsgHandler {
 
         getClient().send(msg);
 
-        return jobID;
+        return new SimpleAsyncJob<FindOrCreateLeaderboardCallback>(client, msg.getSourceJobID());
     }
 
     /**
@@ -127,7 +132,11 @@ public class SteamUserStats extends ClientMsgHandler {
      * @param dataRequest Type of request.
      * @return The Job ID of the request. This can be used to find the appropriate {@link LeaderboardEntriesCallback}.
      */
-    public JobID getLeaderboardEntries(int appId, int id, int rangeStart, int rangeEnd, ELeaderboardDataRequest dataRequest) {
+    public AsyncJob<LeaderboardEntriesCallback> getLeaderboardEntries(int appId,
+                                                                      int id,
+                                                                      int rangeStart,
+                                                                      int rangeEnd,
+                                                                      ELeaderboardDataRequest dataRequest) {
         ClientMsgProtobuf<CMsgClientLBSGetLBEntries.Builder> msg =
                 new ClientMsgProtobuf<>(CMsgClientLBSGetLBEntries.class, EMsg.ClientLBSGetLBEntries);
         JobID jobID = getClient().getNextJobID();
@@ -141,7 +150,7 @@ public class SteamUserStats extends ClientMsgHandler {
 
         getClient().send(msg);
 
-        return jobID;
+        return new SimpleAsyncJob<LeaderboardEntriesCallback>(client, msg.getSourceJobID());
     }
 
     @Override
