@@ -33,8 +33,8 @@ public enum UnifiedProtobufMethod {
 
     private final Class<? extends com.google.protobuf.GeneratedMessageV3> message;
 
-    UnifiedProtobufMethod(String name
-            , Class<? extends com.google.protobuf.GeneratedMessageV3> message) {
+    UnifiedProtobufMethod(String name,
+                          Class<? extends com.google.protobuf.GeneratedMessageV3> message) {
         this.name = name;
         this.message = message;
     }
