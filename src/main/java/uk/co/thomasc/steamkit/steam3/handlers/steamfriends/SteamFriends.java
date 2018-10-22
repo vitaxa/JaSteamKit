@@ -580,6 +580,35 @@ public class SteamFriends extends ClientMsgHandler {
         return jobID;
     }
 
+    /**
+     * Invites a user to a Steam group. Only send group invites in response to a user's request; sending automated group
+     * invites is a violation of the Steam Subscriber Agreement and can get you banned.
+     *
+     * @param userSteamID  - The SteamID of the user you're inviting as a SteamID object, or a string that can parse into one
+     * @param groupSteamID - The SteamID of the group you're inviting the user to as a SteamID object, or a string that can parse into one
+     */
+    public void inviteToGroup(SteamID userSteamID, SteamID groupSteamID) {
+        ClientMsg<MsgClientInviteGroup> inviteGroup = new ClientMsg<>(MsgClientInviteGroup.class);
+        inviteGroup.getBody().setSteamId(userSteamID.convertToUInt64());
+        inviteGroup.getBody().setGroupId(groupSteamID.convertToUInt64());
+
+        client.send(inviteGroup);
+    }
+
+    /**
+     * Respond to an incoming group invite.
+     *
+     * @param groupSteamID - The group you were invited to, as a SteamID object or a string which can parse into one
+     * @param accept       - true to join the group, false to ignore invitation
+     */
+    public void respondToGroupInvite(SteamID groupSteamID, boolean accept) {
+        ClientMsg<MsgClientRespondGroupInvite> respondGroupInvite = new ClientMsg<>(MsgClientRespondGroupInvite.class);
+        respondGroupInvite.getBody().setGroupId(groupSteamID.convertToUInt64());
+        respondGroupInvite.getBody().setAccept(accept);
+
+        client.send(respondGroupInvite);
+    }
+
     @Override
     public void handleMsg(IPacketMsg packetMsg) {
         if (packetMsg == null) {
