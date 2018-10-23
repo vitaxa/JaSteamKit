@@ -15,11 +15,13 @@ import java.util.List;
  */
 public class VACStatusCallback extends CallbackMsg {
 
+    private int numBans;
+
     private List<Integer> bannedApps;
 
     public VACStatusCallback(MsgClientVACBanStatus msg, byte[] payload) {
+        numBans = msg.getNumBans();
         List<Integer> tempList = new ArrayList<>();
-
         try (BinaryReader br = new BinaryReader(new ByteArrayInputStream(payload))) {
             for (int i = 0; i < msg.getNumBans(); i++) {
                 tempList.add(br.readInt());
@@ -28,6 +30,10 @@ public class VACStatusCallback extends CallbackMsg {
             throw new IllegalArgumentException("failed to read bans", e);
         }
         bannedApps = Collections.unmodifiableList(tempList);
+    }
+
+    public int getNumBans() {
+        return numBans;
     }
 
     public List<Integer> getBannedApps() {

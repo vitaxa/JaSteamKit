@@ -17,6 +17,7 @@ import uk.co.thomasc.steamkit.base.generated.internal.MsgClientLoggedOff;
 import uk.co.thomasc.steamkit.base.generated.internal.MsgClientLogon;
 import uk.co.thomasc.steamkit.base.generated.internal.MsgClientMarketingMessageUpdate2;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
+import uk.co.thomasc.steamkit.steam3.handlers.steamapps.callbacks.AccountLimitCallback;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.callbacks.*;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.AnonymousLogOnDetails;
 import uk.co.thomasc.steamkit.steam3.handlers.steamuser.types.LogOnDetails;
@@ -34,6 +35,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
+
+import static uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver.CMsgClientIsLimitedAccount;
 
 /**
  * This handler handles all user log on/log off related actions and callbacks.
@@ -54,6 +57,7 @@ public class SteamUser extends ClientMsgHandler {
         dispatchMap.put(EMsg.ClientWalletInfoUpdate, this::handleWalletInfo);
         dispatchMap.put(EMsg.ClientRequestWebAPIAuthenticateUserNonceResponse, this::handleWebAPIUserNonce);
         dispatchMap.put(EMsg.ClientMarketingMessageUpdate2, this::handleMarketingMessageUpdate);
+        dispatchMap.put(EMsg.ClientIsLimitedAccount, this::handleAccountLimit);
 
         dispatchMap = Collections.unmodifiableMap(dispatchMap);
     }
@@ -344,6 +348,11 @@ public class SteamUser extends ClientMsgHandler {
 
         byte[] payload = marketingMessage.getPayload().toByteArray();
 
-        client.postCallback(new MarketingMessageCallback(marketingMessage.getBody(), payload));
+        getClient().postCallback(new MarketingMessageCallback(marketingMessage.getBody(), payload));
+    }
+
+    private void handleAccountLimit(IPacketMsg packetMsg) {
+        ClientMsgProtobuf<CMsgClientIsLimitedAccount.Builder> accountLimit = new ClientMsgProtobuf<>(CMsgClientIsLimitedAccount.class, packetMsg);
+        getClient().postCallback(new AccountLimitCallback(accountLimit.getBody()));
     }
 }
