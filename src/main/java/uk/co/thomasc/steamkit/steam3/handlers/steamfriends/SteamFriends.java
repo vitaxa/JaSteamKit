@@ -43,6 +43,7 @@ public class SteamFriends extends ClientMsgHandler {
         dispatchMap.put(EMsg.ClientFriendsList, this::handleFriendsList);
         dispatchMap.put(EMsg.ClientFriendMsgIncoming, this::handleFriendMsg);
         dispatchMap.put(EMsg.ClientFriendMsgEchoToSender, this::handleFriendEchoMsg);
+        dispatchMap.put(EMsg.ClientFSGetFriendMessageHistoryResponse, this::handleFriendMessageHistoryResponse);
         dispatchMap.put(EMsg.ClientChatGetFriendMessageHistoryResponse, this::handleFriendMessageHistoryResponse);
         dispatchMap.put(EMsg.ClientAddFriendResponse, this::handleFriendResponse);
         dispatchMap.put(EMsg.ClientChatEnter, this::handleChatEnter);

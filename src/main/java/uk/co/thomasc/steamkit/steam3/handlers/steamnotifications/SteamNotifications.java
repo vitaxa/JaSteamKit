@@ -61,7 +61,7 @@ public class SteamNotifications extends ClientMsgHandler {
      */
     public void requestOfflineMessageCount() {
         ClientMsgProtobuf<CMsgClientRequestOfflineMessageCount.Builder> request =
-                new ClientMsgProtobuf<>(CMsgClientRequestOfflineMessageCount.class, EMsg.ClientFSRequestOfflineMessageCount);
+                new ClientMsgProtobuf<>(CMsgClientRequestOfflineMessageCount.class, EMsg.ClientChatRequestOfflineMessageCount);
 
         client.send(request);
     }

@@ -43,6 +43,8 @@ public abstract class TestPackets {
                 return clientFriendMsgIncoming();
             case ClientFriendMsgEchoToSender:
                 return clientFriendMsgEchoToSender();
+            case ClientFSGetFriendMessageHistoryResponse:
+                return clientFSGetFriendMessageHistoryResponse();
             case ClientChatGetFriendMessageHistoryResponse:
                 return clientFSGetFriendMessageHistoryResponse();
             case ClientFriendsList:
