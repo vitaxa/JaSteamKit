@@ -17,14 +17,20 @@ public final class WalletInfoCallback extends CallbackMsg {
      */
     private final ECurrencyCode currency;
     /**
-     * Gets the balance of the wallet, in cents.
+     * Gets the balance of the wallet as a 32-bit integer, in cents.
      */
     private final int balance;
 
+    /**
+     * Gets the balance of the wallet as a 64-bit integer, in cents.
+     */
+    private final long longBalance;
+
     public WalletInfoCallback(CMsgClientWalletInfoUpdate.Builder wallet) {
-        hasWallet = wallet.getHasWallet();
-        currency = ECurrencyCode.from(wallet.getCurrency());
-        balance = wallet.getBalance();
+        this.hasWallet = wallet.getHasWallet();
+        this.currency = ECurrencyCode.from(wallet.getCurrency());
+        this.balance = wallet.getBalance();
+        this.longBalance = wallet.getBalance64();
     }
 
     /**
@@ -46,5 +52,12 @@ public final class WalletInfoCallback extends CallbackMsg {
      */
     public int getBalance() {
         return this.balance;
+    }
+
+    /**
+     * Gets the balance of the wallet, in cents.
+     */
+    public long getLongBalance() {
+        return longBalance;
     }
 }
