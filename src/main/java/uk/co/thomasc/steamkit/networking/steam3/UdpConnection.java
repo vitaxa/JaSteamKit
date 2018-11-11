@@ -79,7 +79,7 @@ public class UdpConnection extends Connection {
      */
     private int inSeqHandled;
 
-    private List<UdpPacket> outPackets;
+    private final List<UdpPacket> outPackets = new ArrayList<>();
     private Map<Integer, UdpPacket> inPackets;
 
     private InetSocketAddress currentEndPoint;
@@ -96,7 +96,7 @@ public class UdpConnection extends Connection {
 
     @Override
     public void connect(InetSocketAddress endPoint, int timeout) {
-        outPackets = new ArrayList<>();
+        outPackets.clear();
         inPackets = new HashMap<>();
 
         currentEndPoint = null;
@@ -186,13 +186,13 @@ public class UdpConnection extends Connection {
      * @param packet The packet.
      */
     private void sendSequenced(UdpPacket packet) {
-        packet.getHeader().setSeqThis(outSeq);
-        packet.getHeader().setMsgStartSeq(outSeq);
-        packet.getHeader().setPacketsInMsg(1);
-
-        outPackets.add(packet);
-
-        outSeq++;
+        synchronized (outPackets) {
+            packet.getHeader().setSeqThis(outSeq);
+            packet.getHeader().setMsgStartSeq(outSeq);
+            packet.getHeader().setPacketsInMsg(1);
+            outPackets.add(packet);
+            outSeq++;
+        }
     }
 
     /**
@@ -201,14 +201,16 @@ public class UdpConnection extends Connection {
      * @param packets The packets that make up the single net message
      */
     private void sendSequenced(UdpPacket[] packets) {
-        int msgStart = outSeq;
+        synchronized (outPackets) {
+            int msgStart = outSeq;
 
-        for (UdpPacket packet : packets) {
-            sendSequenced(packet);
+            for (UdpPacket packet : packets) {
+                sendSequenced(packet);
 
-            // Correct for any assumptions made for the single-packet case.
-            packet.getHeader().setPacketsInMsg(packets.length);
-            packet.getHeader().setMsgStartSeq(msgStart);
+                // Correct for any assumptions made for the single-packet case.
+                packet.getHeader().setPacketsInMsg(packets.length);
+                packet.getHeader().setMsgStartSeq(msgStart);
+            }
         }
     }
 
@@ -262,20 +264,27 @@ public class UdpConnection extends Connection {
      * the rate at which they are sent.
      */
     private void sendPendingMessages() {
-        if (System.currentTimeMillis() > nextResend && outSeqSent > outSeqAcked) {
-            DebugLog.writeLine("UDP Connection", "Sequenced packet resend required");
+        synchronized (outPackets) {
+            if (System.currentTimeMillis() > nextResend && outSeqSent > outSeqAcked) {
+                // If we can't clear the send queue during a Disconnect, clear out the pending messages
+                if (state.get() == State.DISCONNECTING) {
+                    outPackets.clear();
+                }
 
-            // Don't send more than 3 (Steam behavior?)
-            for (int i = 0; i < RESEND_COUNT && i < outPackets.size(); i++) {
-                sendPacket(outPackets.get(i));
-            }
+                DebugLog.writeLine("UDP Connection", "Sequenced packet resend required");
 
-            nextResend = System.currentTimeMillis() + RESEND_DELAY;
-        } else if (outSeqSent < outSeqAcked + AHEAD_COUNT) {
-            // I've never seen Steam send more than 4 packets before it gets an Ack, so this limits the
-            // number of sequenced packets that can be sent out at one time.
-            for (int i = outSeqSent - outSeqAcked; i < AHEAD_COUNT && i < outPackets.size(); i++) {
-                sendPacket(outPackets.get(i));
+                // Don't send more than 3 (Steam behavior?)
+                for (int i = 0; i < RESEND_COUNT && i < outPackets.size(); i++) {
+                    sendPacket(outPackets.get(i));
+                }
+
+                nextResend = System.currentTimeMillis() + RESEND_DELAY;
+            } else if (outSeqSent < outSeqAcked + AHEAD_COUNT) {
+                // I've never seen Steam send more than 4 packets before it gets an Ack, so this limits the
+                // number of sequenced packets that can be sent out at one time.
+                for (int i = outSeqSent - outSeqAcked; i < AHEAD_COUNT && i < outPackets.size(); i++) {
+                    sendPacket(outPackets.get(i));
+                }
             }
         }
     }
@@ -570,6 +579,10 @@ public class UdpConnection extends Connection {
                     userRequestDisconnect = true;
                     break;
                 }
+            }
+
+            if (sock != null) {
+                sock.close();
             }
 
             DebugLog.writeLine("UDP Connection", "Celling onDisconnected");

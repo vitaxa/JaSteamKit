@@ -1,6 +1,7 @@
 package uk.co.thomasc.steamkit.steam3.handlers.steamunifiedmessages;
 
 import com.google.protobuf.GeneratedMessageV3;
+import uk.co.thomasc.steamkit.base.generated.unified.SteamMsgWebUIFriends.CChatRoom_SendChatMessage_Response;
 
 import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgCredentials.CCredentials_GetSteamGuardDetails_Request;
 import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgCredentials.CCredentials_GetSteamGuardDetails_Response;
@@ -8,6 +9,7 @@ import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgEcon.CEcon_G
 import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgEcon.CEcon_GetTradeOfferAccessToken_Response;
 import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgPublishedFile.CPublishedFile_GetDetails_Request;
 import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgPublishedFile.CPublishedFile_GetDetails_Response;
+import static uk.co.thomasc.steamkit.base.generated.unified.SteamMsgWebUIFriends.CChatRoom_SendChatMessage_Request;
 
 public enum UnifiedProtobufMethod {
 
@@ -27,7 +29,11 @@ public enum UnifiedProtobufMethod {
             CEcon_GetTradeOfferAccessToken_Request.class),
 
     GET_TRADE_OFFER_ACCESS_TOKEN_RESPONSE("Econ.GetTradeOfferAccessToken#1_Response",
-            CEcon_GetTradeOfferAccessToken_Response.class);
+            CEcon_GetTradeOfferAccessToken_Response.class),
+
+    SEND_CHAT_MESSAGE_REQUEST("ChatRoom_SendChatMessage#1", CChatRoom_SendChatMessage_Request.class),
+
+    SEND_CHAT_MESSAGE_RESPONSE("ChatRoom_SendChatMessage#1_Response", CChatRoom_SendChatMessage_Response.class);
 
     private final String name;
 

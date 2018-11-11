@@ -6,6 +6,7 @@ import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrad
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeRequest;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_InitiateTradeResponse;
 import uk.co.thomasc.steamkit.base.generated.SteammessagesClientserver2.CMsgTrading_StartSession;
+import uk.co.thomasc.steamkit.base.generated.enums.EEconTradeResponse;
 import uk.co.thomasc.steamkit.base.generated.enums.EMsg;
 import uk.co.thomasc.steamkit.steam3.handlers.ClientMsgHandler;
 import uk.co.thomasc.steamkit.steam3.handlers.steamtrading.callbacks.SessionStartCallback;
@@ -64,7 +65,7 @@ public final class SteamTrading extends ClientMsgHandler {
                 new ClientMsgProtobuf<>(CMsgTrading_InitiateTradeResponse.class, EMsg.EconTrading_InitiateTradeResponse);
 
         tradeResp.getBody().setTradeRequestId(tradeId);
-        tradeResp.getBody().setResponse(acceptTrade ? 1 : 0);
+        tradeResp.getBody().setResponse(acceptTrade ? EEconTradeResponse.Accepted.code() : EEconTradeResponse.Declined.code());
 
         client.send(tradeResp);
     }
