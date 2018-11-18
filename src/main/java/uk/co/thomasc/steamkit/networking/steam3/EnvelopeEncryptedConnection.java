@@ -206,8 +206,8 @@ public class EnvelopeEncryptedConnection extends Connection {
     }
 
     @Override
-    public InetSocketAddress currentIpEndPoint() {
-        return inner.currentIpEndPoint();
+    public InetSocketAddress getCurrentEndPoint() {
+        return inner.getCurrentEndPoint();
     }
 
     @Override

@@ -153,7 +153,7 @@ public class UdpConnection extends Connection {
     }
 
     @Override
-    public InetSocketAddress currentIpEndPoint() {
+    public InetSocketAddress getCurrentEndPoint() {
         return currentEndPoint;
     }
 

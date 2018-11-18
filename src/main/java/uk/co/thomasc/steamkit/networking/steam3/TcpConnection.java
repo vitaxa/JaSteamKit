@@ -172,7 +172,7 @@ public class TcpConnection extends Connection {
     }
 
     @Override
-    public InetSocketAddress currentIpEndPoint() {
+    public InetSocketAddress getCurrentEndPoint() {
         return currentEndPoint;
     }
 

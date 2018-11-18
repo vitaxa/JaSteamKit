@@ -136,12 +136,7 @@ public class AsyncJobManager {
     }
 
     public void close() {
-        try {
-            scheduledExecutorService.awaitTermination(30, TimeUnit.SECONDS);
-            scheduledExecutorService.shutdownNow();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        scheduledExecutorService.shutdownNow();
     }
 
 }

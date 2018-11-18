@@ -68,6 +68,8 @@
                                 <excludes>
                                     <exclude>org.bouncycastle:*</exclude>
                                     <exclude>junit:*</exclude>
+                                    <exclude>commons-io:*</exclude>
+                                    <exclude>commons-codec:*</exclude>
                                 </excludes>
                             </artifactSet>
                             <filters>
@@ -109,6 +111,11 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
             <version>1.59</version>
+        </dependency>
+        <dependency>
+            <groupId>org.java-websocket</groupId>
+            <artifactId>Java-WebSocket</artifactId>
+            <version>1.3.9</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

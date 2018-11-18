@@ -36,6 +36,10 @@ public abstract class Connection {
         connected.handleEvent(this, e);
     }
 
+    void onConnected() {
+        connected.handleEvent(this, null);
+    }
+
     void onDisconnected(boolean e) {
         disconnected.handleEvent(this, new DisconnectedEventArgs(e));
     }
@@ -75,7 +79,7 @@ public abstract class Connection {
      */
     public abstract InetAddress getLocalIP();
 
-    public abstract InetSocketAddress currentIpEndPoint();
+    public abstract InetSocketAddress getCurrentEndPoint();
 
     public Event<NetMsgEventArgs> getNetMsgReceived() {
         return netMsgReceived;

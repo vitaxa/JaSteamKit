@@ -6,9 +6,11 @@ public enum ProtocolType {
 
     TCP(1),
 
-    UDP(1 << 1);
+    UDP(1 << 1),
 
-    public static final EnumSet<ProtocolType> ALL = EnumSet.of(TCP, UDP);
+    WEB_SOCKET(1 << 2);
+
+    public static final EnumSet<ProtocolType> ALL = EnumSet.of(TCP, UDP, WEB_SOCKET);
 
     private final int code;
 

@@ -92,7 +92,7 @@ public abstract class CMClient {
     private final EventHandler<EventArgs> connected = new EventHandler<EventArgs>() {
         @Override
         public void handleEvent(Object sender, EventArgs e) {
-            getServers().tryMark(connection.currentIpEndPoint(), connection.getProtocolType(), ServerQuality.GOOD);
+            getServers().tryMark(connection.getCurrentEndPoint(), connection.getProtocolType(), ServerQuality.GOOD);
 
             isConnected = true;
             onClientConnected();
@@ -105,7 +105,7 @@ public abstract class CMClient {
             isConnected = false;
 
             if (!e.isUserInitiated() && !expectDisconnection) {
-                getServers().tryMark(connection.currentIpEndPoint(), connection.getProtocolType(), ServerQuality.BAD);
+                getServers().tryMark(connection.getCurrentEndPoint(), connection.getProtocolType(), ServerQuality.BAD);
             }
 
             sessionID = null;
@@ -295,7 +295,9 @@ public abstract class CMClient {
     }
 
     private Connection createConnection(EnumSet<ProtocolType> protocol) {
-        if (protocol.contains(ProtocolType.TCP)) {
+        if (protocol.contains(ProtocolType.WEB_SOCKET)) {
+            return new WebSocketConnection();
+        } else if (protocol.contains(ProtocolType.TCP)) {
             return new EnvelopeEncryptedConnection(new TcpConnection(), getUniverse());
         } else if (protocol.contains(ProtocolType.UDP)) {
             return new EnvelopeEncryptedConnection(new UdpConnection(), getUniverse());
@@ -423,7 +425,7 @@ public abstract class CMClient {
             EResult logoffResult = EResult.from(logoffMsg.getBody().getEresult());
 
             if (logoffResult == EResult.TryAnotherCM || logoffResult == EResult.ServiceUnavailable) {
-                getServers().tryMark(connection.currentIpEndPoint(), connection.getProtocolType(), ServerQuality.BAD);
+                getServers().tryMark(connection.getCurrentEndPoint(), connection.getProtocolType(), ServerQuality.BAD);
             }
         }
     }
