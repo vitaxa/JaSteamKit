@@ -62,9 +62,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -562,7 +559,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_GetInventory_Request(input, extensionRegistry);
+          return new CInventory_GetInventory_Request(input, extensionRegistry);
       }
     };
 
@@ -689,9 +686,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -803,7 +797,7 @@ public final class SteamMsgInventory {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -819,7 +813,7 @@ public final class SteamMsgInventory {
         getEtagBytes() {
       java.lang.Object ref = etag_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         etag_ = b;
@@ -867,7 +861,7 @@ public final class SteamMsgInventory {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -883,7 +877,7 @@ public final class SteamMsgInventory {
         getItemJsonBytes() {
       java.lang.Object ref = itemJson_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         itemJson_ = b;
@@ -909,7 +903,7 @@ public final class SteamMsgInventory {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -925,7 +919,7 @@ public final class SteamMsgInventory {
         getItemdefJsonBytes() {
       java.lang.Object ref = itemdefJson_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         itemdefJson_ = b;
@@ -1430,7 +1424,7 @@ public final class SteamMsgInventory {
           getEtagBytes() {
         java.lang.Object ref = etag_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           etag_ = b;
@@ -1572,7 +1566,7 @@ public final class SteamMsgInventory {
           getItemJsonBytes() {
         java.lang.Object ref = itemJson_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           itemJson_ = b;
@@ -1648,7 +1642,7 @@ public final class SteamMsgInventory {
           getItemdefJsonBytes() {
         java.lang.Object ref = itemdefJson_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           itemdefJson_ = b;
@@ -1789,7 +1783,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_Response(input, extensionRegistry);
+          return new CInventory_Response(input, extensionRegistry);
       }
     };
 
@@ -1895,9 +1889,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2767,7 +2758,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_ExchangeItem_Request(input, extensionRegistry);
+          return new CInventory_ExchangeItem_Request(input, extensionRegistry);
       }
     };
 
@@ -2835,9 +2826,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3335,7 +3323,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_GetEligiblePromoItemDefIDs_Request(input, extensionRegistry);
+          return new CInventory_GetEligiblePromoItemDefIDs_Request(input, extensionRegistry);
       }
     };
 
@@ -3397,9 +3385,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3886,7 +3871,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_GetEligiblePromoItemDefIDs_Response(input, extensionRegistry);
+          return new CInventory_GetEligiblePromoItemDefIDs_Response(input, extensionRegistry);
       }
     };
 
@@ -3985,6 +3970,15 @@ public final class SteamMsgInventory {
      * <code>optional bool trade_restriction = 7 [(.description) = "If true, apply the default trade and market restriction times to this item."];</code>
      */
     boolean getTradeRestriction();
+
+    /**
+     * <code>optional bool is_purchase = 8 [default = false, (.description) = "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."];</code>
+     */
+    boolean hasIsPurchase();
+    /**
+     * <code>optional bool is_purchase = 8 [default = false, (.description) = "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."];</code>
+     */
+    boolean getIsPurchase();
   }
   /**
    * Protobuf type {@code CInventory_AddItem_Request}
@@ -4006,6 +4000,7 @@ public final class SteamMsgInventory {
       notify_ = false;
       requestid_ = 0L;
       tradeRestriction_ = false;
+      isPurchase_ = false;
     }
 
     @java.lang.Override
@@ -4018,9 +4013,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4092,6 +4084,11 @@ public final class SteamMsgInventory {
             case 56: {
               bitField0_ |= 0x00000010;
               tradeRestriction_ = input.readBool();
+              break;
+            }
+            case 64: {
+              bitField0_ |= 0x00000020;
+              isPurchase_ = input.readBool();
               break;
             }
           }
@@ -4251,6 +4248,21 @@ public final class SteamMsgInventory {
       return tradeRestriction_;
     }
 
+    public static final int IS_PURCHASE_FIELD_NUMBER = 8;
+    private boolean isPurchase_;
+    /**
+     * <code>optional bool is_purchase = 8 [default = false, (.description) = "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."];</code>
+     */
+    public boolean hasIsPurchase() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional bool is_purchase = 8 [default = false, (.description) = "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."];</code>
+     */
+    public boolean getIsPurchase() {
+      return isPurchase_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -4283,6 +4295,9 @@ public final class SteamMsgInventory {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBool(7, tradeRestriction_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBool(8, isPurchase_);
       }
       unknownFields.writeTo(output);
     }
@@ -4329,6 +4344,10 @@ public final class SteamMsgInventory {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, tradeRestriction_);
       }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isPurchase_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4374,6 +4393,11 @@ public final class SteamMsgInventory {
         result = result && (getTradeRestriction()
             == other.getTradeRestriction());
       }
+      result = result && (hasIsPurchase() == other.hasIsPurchase());
+      if (hasIsPurchase()) {
+        result = result && (getIsPurchase()
+            == other.getIsPurchase());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -4416,6 +4440,11 @@ public final class SteamMsgInventory {
         hash = (37 * hash) + TRADE_RESTRICTION_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getTradeRestriction());
+      }
+      if (hasIsPurchase()) {
+        hash = (37 * hash) + IS_PURCHASE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getIsPurchase());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4560,6 +4589,8 @@ public final class SteamMsgInventory {
         bitField0_ = (bitField0_ & ~0x00000020);
         tradeRestriction_ = false;
         bitField0_ = (bitField0_ & ~0x00000040);
+        isPurchase_ = false;
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -4614,6 +4645,10 @@ public final class SteamMsgInventory {
           to_bitField0_ |= 0x00000010;
         }
         result.tradeRestriction_ = tradeRestriction_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.isPurchase_ = isPurchase_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4690,6 +4725,9 @@ public final class SteamMsgInventory {
         }
         if (other.hasTradeRestriction()) {
           setTradeRestriction(other.getTradeRestriction());
+        }
+        if (other.hasIsPurchase()) {
+          setIsPurchase(other.getIsPurchase());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5037,6 +5075,38 @@ public final class SteamMsgInventory {
         onChanged();
         return this;
       }
+
+      private boolean isPurchase_ ;
+      /**
+       * <code>optional bool is_purchase = 8 [default = false, (.description) = "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."];</code>
+       */
+      public boolean hasIsPurchase() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional bool is_purchase = 8 [default = false, (.description) = "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."];</code>
+       */
+      public boolean getIsPurchase() {
+        return isPurchase_;
+      }
+      /**
+       * <code>optional bool is_purchase = 8 [default = false, (.description) = "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."];</code>
+       */
+      public Builder setIsPurchase(boolean value) {
+        bitField0_ |= 0x00000080;
+        isPurchase_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool is_purchase = 8 [default = false, (.description) = "If set, treat requestid as a txnid and create this item as a result of user microtransaction purchase."];</code>
+       */
+      public Builder clearIsPurchase() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        isPurchase_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -5067,7 +5137,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_AddItem_Request(input, extensionRegistry);
+          return new CInventory_AddItem_Request(input, extensionRegistry);
       }
     };
 
@@ -5111,7 +5181,7 @@ public final class SteamMsgInventory {
     /**
      * <code>repeated .CInventory_ModifyItems_Request.ItemPropertyUpdate updates = 3;</code>
      */
-    java.util.List<SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdate> 
+    java.util.List<SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdate>
         getUpdatesList();
     /**
      * <code>repeated .CInventory_ModifyItems_Request.ItemPropertyUpdate updates = 3;</code>
@@ -5124,7 +5194,7 @@ public final class SteamMsgInventory {
     /**
      * <code>repeated .CInventory_ModifyItems_Request.ItemPropertyUpdate updates = 3;</code>
      */
-    java.util.List<? extends SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdateOrBuilder> 
+    java.util.List<? extends SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdateOrBuilder>
         getUpdatesOrBuilderList();
     /**
      * <code>repeated .CInventory_ModifyItems_Request.ItemPropertyUpdate updates = 3;</code>
@@ -5170,9 +5240,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5351,9 +5418,6 @@ public final class SteamMsgInventory {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5480,7 +5544,7 @@ public final class SteamMsgInventory {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -5496,7 +5560,7 @@ public final class SteamMsgInventory {
           getPropertyNameBytes() {
         java.lang.Object ref = propertyName_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           propertyName_ = b;
@@ -5552,7 +5616,7 @@ public final class SteamMsgInventory {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -5568,7 +5632,7 @@ public final class SteamMsgInventory {
           getPropertyValueStringBytes() {
         java.lang.Object ref = propertyValueString_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           propertyValueString_ = b;
@@ -6142,7 +6206,7 @@ public final class SteamMsgInventory {
             getPropertyNameBytes() {
           java.lang.Object ref = propertyName_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             propertyName_ = b;
@@ -6282,7 +6346,7 @@ public final class SteamMsgInventory {
             getPropertyValueStringBytes() {
           java.lang.Object ref = propertyValueString_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             propertyValueString_ = b;
@@ -6388,7 +6452,7 @@ public final class SteamMsgInventory {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ItemPropertyUpdate(input, extensionRegistry);
+            return new ItemPropertyUpdate(input, extensionRegistry);
         }
       };
 
@@ -6449,7 +6513,7 @@ public final class SteamMsgInventory {
     /**
      * <code>repeated .CInventory_ModifyItems_Request.ItemPropertyUpdate updates = 3;</code>
      */
-    public java.util.List<? extends SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdateOrBuilder> 
+    public java.util.List<? extends SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdateOrBuilder>
         getUpdatesOrBuilderList() {
       return updates_;
     }
@@ -6850,7 +6914,7 @@ public final class SteamMsgInventory {
               updatesBuilder_ = null;
               updates_ = other.updates_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              updatesBuilder_ = 
+              updatesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUpdatesFieldBuilder() : null;
             } else {
@@ -7148,7 +7212,7 @@ public final class SteamMsgInventory {
       /**
        * <code>repeated .CInventory_ModifyItems_Request.ItemPropertyUpdate updates = 3;</code>
        */
-      public java.util.List<? extends SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdateOrBuilder> 
+      public java.util.List<? extends SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdateOrBuilder>
            getUpdatesOrBuilderList() {
         if (updatesBuilder_ != null) {
           return updatesBuilder_.getMessageOrBuilderList();
@@ -7174,12 +7238,12 @@ public final class SteamMsgInventory {
       /**
        * <code>repeated .CInventory_ModifyItems_Request.ItemPropertyUpdate updates = 3;</code>
        */
-      public java.util.List<SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdate.Builder> 
+      public java.util.List<SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdate.Builder>
            getUpdatesBuilderList() {
         return getUpdatesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdate, SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdate.Builder, SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdateOrBuilder> 
+          SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdate, SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdate.Builder, SteamMsgInventory.CInventory_ModifyItems_Request.ItemPropertyUpdateOrBuilder>
           getUpdatesFieldBuilder() {
         if (updatesBuilder_ == null) {
           updatesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -7254,7 +7318,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_ModifyItems_Request(input, extensionRegistry);
+          return new CInventory_ModifyItems_Request(input, extensionRegistry);
       }
     };
 
@@ -7322,9 +7386,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7822,7 +7883,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_ConsumePlaytime_Request(input, extensionRegistry);
+          return new CInventory_ConsumePlaytime_Request(input, extensionRegistry);
       }
     };
 
@@ -7935,9 +7996,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8073,7 +8131,7 @@ public final class SteamMsgInventory {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -8089,7 +8147,7 @@ public final class SteamMsgInventory {
         getTimestampBytes() {
       java.lang.Object ref = timestamp_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         timestamp_ = b;
@@ -8680,7 +8738,7 @@ public final class SteamMsgInventory {
           getTimestampBytes() {
         java.lang.Object ref = timestamp_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           timestamp_ = b;
@@ -8818,7 +8876,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_ConsumeItem_Request(input, extensionRegistry);
+          return new CInventory_ConsumeItem_Request(input, extensionRegistry);
       }
     };
 
@@ -8901,9 +8959,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -9009,7 +9064,7 @@ public final class SteamMsgInventory {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -9025,7 +9080,7 @@ public final class SteamMsgInventory {
         getDroptimeBytes() {
       java.lang.Object ref = droptime_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         droptime_ = b;
@@ -9477,7 +9532,7 @@ public final class SteamMsgInventory {
           getDroptimeBytes() {
         java.lang.Object ref = droptime_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           droptime_ = b;
@@ -9551,7 +9606,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_DevSetNextDrop_Request(input, extensionRegistry);
+          return new CInventory_DevSetNextDrop_Request(input, extensionRegistry);
       }
     };
 
@@ -9629,9 +9684,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10206,7 +10258,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_SplitItemStack_Request(input, extensionRegistry);
+          return new CInventory_SplitItemStack_Request(input, extensionRegistry);
       }
     };
 
@@ -10294,9 +10346,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10949,7 +10998,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_CombineItemStacks_Request(input, extensionRegistry);
+          return new CInventory_CombineItemStacks_Request(input, extensionRegistry);
       }
     };
 
@@ -11007,9 +11056,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11429,7 +11475,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_GetItemDefMeta_Request(input, extensionRegistry);
+          return new CInventory_GetItemDefMeta_Request(input, extensionRegistry);
       }
     };
 
@@ -11502,9 +11548,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11590,7 +11633,7 @@ public final class SteamMsgInventory {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -11606,7 +11649,7 @@ public final class SteamMsgInventory {
         getDigestBytes() {
       java.lang.Object ref = digest_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         digest_ = b;
@@ -12000,7 +12043,7 @@ public final class SteamMsgInventory {
           getDigestBytes() {
         java.lang.Object ref = digest_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           digest_ = b;
@@ -12074,7 +12117,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_GetItemDefMeta_Response(input, extensionRegistry);
+          return new CInventory_GetItemDefMeta_Response(input, extensionRegistry);
       }
     };
 
@@ -12122,9 +12165,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -12461,7 +12501,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_GetUserPurchaseInfo_Request(input, extensionRegistry);
+          return new CInventory_GetUserPurchaseInfo_Request(input, extensionRegistry);
       }
     };
 
@@ -12519,9 +12559,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12941,7 +12978,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_GetUserPurchaseInfo_Response(input, extensionRegistry);
+          return new CInventory_GetUserPurchaseInfo_Response(input, extensionRegistry);
       }
     };
 
@@ -12985,7 +13022,7 @@ public final class SteamMsgInventory {
     /**
      * <code>repeated .CInventory_PurchaseInit_Request.LineItem line_items = 3;</code>
      */
-    java.util.List<SteamMsgInventory.CInventory_PurchaseInit_Request.LineItem> 
+    java.util.List<SteamMsgInventory.CInventory_PurchaseInit_Request.LineItem>
         getLineItemsList();
     /**
      * <code>repeated .CInventory_PurchaseInit_Request.LineItem line_items = 3;</code>
@@ -12998,7 +13035,7 @@ public final class SteamMsgInventory {
     /**
      * <code>repeated .CInventory_PurchaseInit_Request.LineItem line_items = 3;</code>
      */
-    java.util.List<? extends SteamMsgInventory.CInventory_PurchaseInit_Request.LineItemOrBuilder> 
+    java.util.List<? extends SteamMsgInventory.CInventory_PurchaseInit_Request.LineItemOrBuilder>
         getLineItemsOrBuilderList();
     /**
      * <code>repeated .CInventory_PurchaseInit_Request.LineItem line_items = 3;</code>
@@ -13034,9 +13071,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13150,9 +13184,6 @@ public final class SteamMsgInventory {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13650,7 +13681,7 @@ public final class SteamMsgInventory {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LineItem(input, extensionRegistry);
+            return new LineItem(input, extensionRegistry);
         }
       };
 
@@ -13711,7 +13742,7 @@ public final class SteamMsgInventory {
     /**
      * <code>repeated .CInventory_PurchaseInit_Request.LineItem line_items = 3;</code>
      */
-    public java.util.List<? extends SteamMsgInventory.CInventory_PurchaseInit_Request.LineItemOrBuilder> 
+    public java.util.List<? extends SteamMsgInventory.CInventory_PurchaseInit_Request.LineItemOrBuilder>
         getLineItemsOrBuilderList() {
       return lineItems_;
     }
@@ -14074,7 +14105,7 @@ public final class SteamMsgInventory {
               lineItemsBuilder_ = null;
               lineItems_ = other.lineItems_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              lineItemsBuilder_ = 
+              lineItemsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getLineItemsFieldBuilder() : null;
             } else {
@@ -14369,7 +14400,7 @@ public final class SteamMsgInventory {
       /**
        * <code>repeated .CInventory_PurchaseInit_Request.LineItem line_items = 3;</code>
        */
-      public java.util.List<? extends SteamMsgInventory.CInventory_PurchaseInit_Request.LineItemOrBuilder> 
+      public java.util.List<? extends SteamMsgInventory.CInventory_PurchaseInit_Request.LineItemOrBuilder>
            getLineItemsOrBuilderList() {
         if (lineItemsBuilder_ != null) {
           return lineItemsBuilder_.getMessageOrBuilderList();
@@ -14395,12 +14426,12 @@ public final class SteamMsgInventory {
       /**
        * <code>repeated .CInventory_PurchaseInit_Request.LineItem line_items = 3;</code>
        */
-      public java.util.List<SteamMsgInventory.CInventory_PurchaseInit_Request.LineItem.Builder> 
+      public java.util.List<SteamMsgInventory.CInventory_PurchaseInit_Request.LineItem.Builder>
            getLineItemsBuilderList() {
         return getLineItemsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgInventory.CInventory_PurchaseInit_Request.LineItem, SteamMsgInventory.CInventory_PurchaseInit_Request.LineItem.Builder, SteamMsgInventory.CInventory_PurchaseInit_Request.LineItemOrBuilder> 
+          SteamMsgInventory.CInventory_PurchaseInit_Request.LineItem, SteamMsgInventory.CInventory_PurchaseInit_Request.LineItem.Builder, SteamMsgInventory.CInventory_PurchaseInit_Request.LineItemOrBuilder>
           getLineItemsFieldBuilder() {
         if (lineItemsBuilder_ == null) {
           lineItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -14443,7 +14474,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_PurchaseInit_Request(input, extensionRegistry);
+          return new CInventory_PurchaseInit_Request(input, extensionRegistry);
       }
     };
 
@@ -14511,9 +14542,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -15012,7 +15040,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_PurchaseInit_Response(input, extensionRegistry);
+          return new CInventory_PurchaseInit_Response(input, extensionRegistry);
       }
     };
 
@@ -15090,9 +15118,6 @@ public final class SteamMsgInventory {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -15667,7 +15692,7 @@ public final class SteamMsgInventory {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CInventory_PurchaseFinalize_Request(input, extensionRegistry);
+          return new CInventory_PurchaseFinalize_Request(input, extensionRegistry);
       }
     };
 
@@ -15686,111 +15711,792 @@ public final class SteamMsgInventory {
 
   }
 
+  public interface CInventoryClient_NewItems_NotificationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CInventoryClient_NewItems_Notification)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 appid = 1;</code>
+     */
+    boolean hasAppid();
+    /**
+     * <code>optional uint32 appid = 1;</code>
+     */
+    int getAppid();
+
+    /**
+     * <code>optional .CInventory_Response inventory_response = 2;</code>
+     */
+    boolean hasInventoryResponse();
+    /**
+     * <code>optional .CInventory_Response inventory_response = 2;</code>
+     */
+    SteamMsgInventory.CInventory_Response getInventoryResponse();
+    /**
+     * <code>optional .CInventory_Response inventory_response = 2;</code>
+     */
+    SteamMsgInventory.CInventory_ResponseOrBuilder getInventoryResponseOrBuilder();
+  }
+  /**
+   * Protobuf type {@code CInventoryClient_NewItems_Notification}
+   */
+  public  static final class CInventoryClient_NewItems_Notification extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CInventoryClient_NewItems_Notification)
+      CInventoryClient_NewItems_NotificationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CInventoryClient_NewItems_Notification.newBuilder() to construct.
+    private CInventoryClient_NewItems_Notification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CInventoryClient_NewItems_Notification() {
+      appid_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CInventoryClient_NewItems_Notification(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              appid_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              SteamMsgInventory.CInventory_Response.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = inventoryResponse_.toBuilder();
+              }
+              inventoryResponse_ = input.readMessage(SteamMsgInventory.CInventory_Response.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inventoryResponse_);
+                inventoryResponse_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgInventory.internal_static_CInventoryClient_NewItems_Notification_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgInventory.internal_static_CInventoryClient_NewItems_Notification_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgInventory.CInventoryClient_NewItems_Notification.class, SteamMsgInventory.CInventoryClient_NewItems_Notification.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int APPID_FIELD_NUMBER = 1;
+    private int appid_;
+    /**
+     * <code>optional uint32 appid = 1;</code>
+     */
+    public boolean hasAppid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 appid = 1;</code>
+     */
+    public int getAppid() {
+      return appid_;
+    }
+
+    public static final int INVENTORY_RESPONSE_FIELD_NUMBER = 2;
+    private SteamMsgInventory.CInventory_Response inventoryResponse_;
+    /**
+     * <code>optional .CInventory_Response inventory_response = 2;</code>
+     */
+    public boolean hasInventoryResponse() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .CInventory_Response inventory_response = 2;</code>
+     */
+    public SteamMsgInventory.CInventory_Response getInventoryResponse() {
+      return inventoryResponse_ == null ? SteamMsgInventory.CInventory_Response.getDefaultInstance() : inventoryResponse_;
+    }
+    /**
+     * <code>optional .CInventory_Response inventory_response = 2;</code>
+     */
+    public SteamMsgInventory.CInventory_ResponseOrBuilder getInventoryResponseOrBuilder() {
+      return inventoryResponse_ == null ? SteamMsgInventory.CInventory_Response.getDefaultInstance() : inventoryResponse_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, appid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, getInventoryResponse());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, appid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getInventoryResponse());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgInventory.CInventoryClient_NewItems_Notification)) {
+        return super.equals(obj);
+      }
+      SteamMsgInventory.CInventoryClient_NewItems_Notification other = (SteamMsgInventory.CInventoryClient_NewItems_Notification) obj;
+
+      boolean result = true;
+      result = result && (hasAppid() == other.hasAppid());
+      if (hasAppid()) {
+        result = result && (getAppid()
+            == other.getAppid());
+      }
+      result = result && (hasInventoryResponse() == other.hasInventoryResponse());
+      if (hasInventoryResponse()) {
+        result = result && getInventoryResponse()
+            .equals(other.getInventoryResponse());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAppid()) {
+        hash = (37 * hash) + APPID_FIELD_NUMBER;
+        hash = (53 * hash) + getAppid();
+      }
+      if (hasInventoryResponse()) {
+        hash = (37 * hash) + INVENTORY_RESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getInventoryResponse().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgInventory.CInventoryClient_NewItems_Notification prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CInventoryClient_NewItems_Notification}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CInventoryClient_NewItems_Notification)
+        SteamMsgInventory.CInventoryClient_NewItems_NotificationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgInventory.internal_static_CInventoryClient_NewItems_Notification_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgInventory.internal_static_CInventoryClient_NewItems_Notification_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgInventory.CInventoryClient_NewItems_Notification.class, SteamMsgInventory.CInventoryClient_NewItems_Notification.Builder.class);
+      }
+
+      // Construct using SteamMsgInventory.CInventoryClient_NewItems_Notification.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getInventoryResponseFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        appid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (inventoryResponseBuilder_ == null) {
+          inventoryResponse_ = null;
+        } else {
+          inventoryResponseBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgInventory.internal_static_CInventoryClient_NewItems_Notification_descriptor;
+      }
+
+      public SteamMsgInventory.CInventoryClient_NewItems_Notification getDefaultInstanceForType() {
+        return SteamMsgInventory.CInventoryClient_NewItems_Notification.getDefaultInstance();
+      }
+
+      public SteamMsgInventory.CInventoryClient_NewItems_Notification build() {
+        SteamMsgInventory.CInventoryClient_NewItems_Notification result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgInventory.CInventoryClient_NewItems_Notification buildPartial() {
+        SteamMsgInventory.CInventoryClient_NewItems_Notification result = new SteamMsgInventory.CInventoryClient_NewItems_Notification(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.appid_ = appid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (inventoryResponseBuilder_ == null) {
+          result.inventoryResponse_ = inventoryResponse_;
+        } else {
+          result.inventoryResponse_ = inventoryResponseBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgInventory.CInventoryClient_NewItems_Notification) {
+          return mergeFrom((SteamMsgInventory.CInventoryClient_NewItems_Notification)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgInventory.CInventoryClient_NewItems_Notification other) {
+        if (other == SteamMsgInventory.CInventoryClient_NewItems_Notification.getDefaultInstance()) return this;
+        if (other.hasAppid()) {
+          setAppid(other.getAppid());
+        }
+        if (other.hasInventoryResponse()) {
+          mergeInventoryResponse(other.getInventoryResponse());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgInventory.CInventoryClient_NewItems_Notification parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgInventory.CInventoryClient_NewItems_Notification) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int appid_ ;
+      /**
+       * <code>optional uint32 appid = 1;</code>
+       */
+      public boolean hasAppid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 appid = 1;</code>
+       */
+      public int getAppid() {
+        return appid_;
+      }
+      /**
+       * <code>optional uint32 appid = 1;</code>
+       */
+      public Builder setAppid(int value) {
+        bitField0_ |= 0x00000001;
+        appid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 appid = 1;</code>
+       */
+      public Builder clearAppid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        appid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private SteamMsgInventory.CInventory_Response inventoryResponse_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SteamMsgInventory.CInventory_Response, SteamMsgInventory.CInventory_Response.Builder, SteamMsgInventory.CInventory_ResponseOrBuilder> inventoryResponseBuilder_;
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      public boolean hasInventoryResponse() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      public SteamMsgInventory.CInventory_Response getInventoryResponse() {
+        if (inventoryResponseBuilder_ == null) {
+          return inventoryResponse_ == null ? SteamMsgInventory.CInventory_Response.getDefaultInstance() : inventoryResponse_;
+        } else {
+          return inventoryResponseBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      public Builder setInventoryResponse(SteamMsgInventory.CInventory_Response value) {
+        if (inventoryResponseBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          inventoryResponse_ = value;
+          onChanged();
+        } else {
+          inventoryResponseBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      public Builder setInventoryResponse(
+          SteamMsgInventory.CInventory_Response.Builder builderForValue) {
+        if (inventoryResponseBuilder_ == null) {
+          inventoryResponse_ = builderForValue.build();
+          onChanged();
+        } else {
+          inventoryResponseBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      public Builder mergeInventoryResponse(SteamMsgInventory.CInventory_Response value) {
+        if (inventoryResponseBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              inventoryResponse_ != null &&
+              inventoryResponse_ != SteamMsgInventory.CInventory_Response.getDefaultInstance()) {
+            inventoryResponse_ =
+              SteamMsgInventory.CInventory_Response.newBuilder(inventoryResponse_).mergeFrom(value).buildPartial();
+          } else {
+            inventoryResponse_ = value;
+          }
+          onChanged();
+        } else {
+          inventoryResponseBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      public Builder clearInventoryResponse() {
+        if (inventoryResponseBuilder_ == null) {
+          inventoryResponse_ = null;
+          onChanged();
+        } else {
+          inventoryResponseBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      public SteamMsgInventory.CInventory_Response.Builder getInventoryResponseBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getInventoryResponseFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      public SteamMsgInventory.CInventory_ResponseOrBuilder getInventoryResponseOrBuilder() {
+        if (inventoryResponseBuilder_ != null) {
+          return inventoryResponseBuilder_.getMessageOrBuilder();
+        } else {
+          return inventoryResponse_ == null ?
+              SteamMsgInventory.CInventory_Response.getDefaultInstance() : inventoryResponse_;
+        }
+      }
+      /**
+       * <code>optional .CInventory_Response inventory_response = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SteamMsgInventory.CInventory_Response, SteamMsgInventory.CInventory_Response.Builder, SteamMsgInventory.CInventory_ResponseOrBuilder>
+          getInventoryResponseFieldBuilder() {
+        if (inventoryResponseBuilder_ == null) {
+          inventoryResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SteamMsgInventory.CInventory_Response, SteamMsgInventory.CInventory_Response.Builder, SteamMsgInventory.CInventory_ResponseOrBuilder>(
+                  getInventoryResponse(),
+                  getParentForChildren(),
+                  isClean());
+          inventoryResponse_ = null;
+        }
+        return inventoryResponseBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CInventoryClient_NewItems_Notification)
+    }
+
+    // @@protoc_insertion_point(class_scope:CInventoryClient_NewItems_Notification)
+    private static final SteamMsgInventory.CInventoryClient_NewItems_Notification DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgInventory.CInventoryClient_NewItems_Notification();
+    }
+
+    public static SteamMsgInventory.CInventoryClient_NewItems_Notification getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CInventoryClient_NewItems_Notification>
+        PARSER = new com.google.protobuf.AbstractParser<CInventoryClient_NewItems_Notification>() {
+      public CInventoryClient_NewItems_Notification parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CInventoryClient_NewItems_Notification(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CInventoryClient_NewItems_Notification> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CInventoryClient_NewItems_Notification> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgInventory.CInventoryClient_NewItems_Notification getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_GetInventory_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_GetInventory_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_ExchangeItem_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_ExchangeItem_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_GetEligiblePromoItemDefIDs_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_GetEligiblePromoItemDefIDs_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_GetEligiblePromoItemDefIDs_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_GetEligiblePromoItemDefIDs_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_AddItem_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_AddItem_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_ModifyItems_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_ModifyItems_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_ModifyItems_Request_ItemPropertyUpdate_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_ModifyItems_Request_ItemPropertyUpdate_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_ConsumePlaytime_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_ConsumePlaytime_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_ConsumeItem_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_ConsumeItem_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_DevSetNextDrop_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_DevSetNextDrop_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_SplitItemStack_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_SplitItemStack_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_CombineItemStacks_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_CombineItemStacks_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_GetItemDefMeta_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_GetItemDefMeta_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_GetItemDefMeta_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_GetItemDefMeta_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_GetUserPurchaseInfo_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_GetUserPurchaseInfo_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_GetUserPurchaseInfo_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_GetUserPurchaseInfo_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_PurchaseInit_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_PurchaseInit_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_PurchaseInit_Request_LineItem_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_PurchaseInit_Request_LineItem_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_PurchaseInit_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_PurchaseInit_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CInventory_PurchaseFinalize_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CInventory_PurchaseFinalize_Request_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CInventoryClient_NewItems_Notification_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CInventoryClient_NewItems_Notification_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -15809,107 +16515,118 @@ public final class SteamMsgInventory {
       "\014itemdef_json\030\004 \001(\t\022\016\n\006ticket\030\005 \001(\014\022I\n\010r" +
       "eplayed\030\006 \001(\010B7\202\265\0303If true, the requesti" +
       "d given was processed earlier.\"\216\001\n\037CInve" +
-      "ntory_ExchangeItem_Request\022\r\n\005appid\030\001 \001(" +
+      "ntory_ExchangeItem_Request\022\r\n\005appid\030\001 \001(",
       "\r\022\017\n\007steamid\030\002 \001(\004\022\027\n\017materialsitemid\030\003 " +
       "\003(\004\022\031\n\021materialsquantity\030\004 \003(\r\022\027\n\017output" +
       "itemdefid\030\005 \001(\004\"O\n-CInventory_GetEligibl" +
       "ePromoItemDefIDs_Request\022\r\n\005appid\030\001 \001(\r\022" +
       "\017\n\007steamid\030\002 \001(\004\"D\n.CInventory_GetEligib" +
       "lePromoItemDefIDs_Response\022\022\n\nitemdefids" +
-      "\030\001 \003(\004\"\303\002\n\032CInventory_AddItem_Request\022\r\n" +
+      "\030\001 \003(\004\"\314\003\n\032CInventory_AddItem_Request\022\r\n" +
       "\005appid\030\001 \001(\r\022\021\n\titemdefid\030\002 \003(\004\022\025\n\ritemp" +
       "ropsjson\030\003 \003(\t\022\017\n\007steamid\030\004 \001(\004\022\\\n\006notif" +
-      "y\030\005 \001(\010BL\202\265\030HShould notify the user that" +
+      "y\030\005 \001(\010BL\202\265\030HShould notify the user that",
       " the item was added to their Steam Inven" +
       "tory.\022\021\n\trequestid\030\006 \001(\004\022j\n\021trade_restri" +
       "ction\030\007 \001(\010BO\202\265\030KIf true, apply the defa" +
       "ult trade and market restriction times t" +
-      "o this item.\"\345\002\n\036CInventory_ModifyItems_" +
-      "Request\022\r\n\005appid\030\001 \001(\r\022\017\n\007steamid\030\002 \001(\004\022" +
-      "C\n\007updates\030\003 \003(\01322.CInventory_ModifyItem" +
-      "s_Request.ItemPropertyUpdate\022\021\n\ttimestam" +
-      "p\030\004 \001(\r\032\312\001\n\022ItemPropertyUpdate\022\016\n\006itemid" +
-      "\030\001 \001(\004\022\027\n\017remove_property\030\002 \001(\010\022\025\n\rprope" +
-      "rty_name\030\003 \001(\t\022\033\n\023property_value_bool\030\004 " +
-      "\001(\010\022\032\n\022property_value_int\030\005 \001(\003\022\035\n\025prope" +
-      "rty_value_string\030\006 \001(\t\022\034\n\024property_value" +
-      "_float\030\007 \001(\002\"F\n\"CInventory_ConsumePlayti" +
-      "me_Request\022\r\n\005appid\030\001 \001(\r\022\021\n\titemdefid\030\002" +
-      " \001(\004\"\210\001\n\036CInventory_ConsumeItem_Request\022" +
-      "\r\n\005appid\030\001 \001(\r\022\016\n\006itemid\030\002 \001(\004\022\020\n\010quanti" +
-      "ty\030\003 \001(\r\022\021\n\ttimestamp\030\004 \001(\t\022\017\n\007steamid\030\005" +
-      " \001(\004\022\021\n\trequestid\030\006 \001(\004\"W\n!CInventory_De" +
-      "vSetNextDrop_Request\022\r\n\005appid\030\001 \001(\r\022\021\n\ti" +
-      "temdefid\030\002 \001(\004\022\020\n\010droptime\030\003 \001(\t\"T\n!CInv" +
-      "entory_SplitItemStack_Request\022\r\n\005appid\030\001" +
-      " \001(\r\022\016\n\006itemid\030\002 \001(\004\022\020\n\010quantity\030\003 \001(\r\"o" +
-      "\n$CInventory_CombineItemStacks_Request\022\r" +
-      "\n\005appid\030\001 \001(\r\022\022\n\nfromitemid\030\002 \001(\004\022\022\n\ndes" +
-      "titemid\030\003 \001(\004\022\020\n\010quantity\030\004 \001(\r\"2\n!CInve" +
-      "ntory_GetItemDefMeta_Request\022\r\n\005appid\030\001 " +
-      "\001(\r\"F\n\"CInventory_GetItemDefMeta_Respons" +
-      "e\022\020\n\010modified\030\001 \001(\r\022\016\n\006digest\030\002 \001(\t\"(\n&C" +
-      "Inventory_GetUserPurchaseInfo_Request\"<\n" +
-      "\'CInventory_GetUserPurchaseInfo_Response" +
-      "\022\021\n\tecurrency\030\001 \001(\005\"\262\001\n\037CInventory_Purch" +
-      "aseInit_Request\022\r\n\005appid\030\001 \001(\r\022\020\n\010langua" +
-      "ge\030\002 \001(\005\022=\n\nline_items\030\003 \003(\0132).CInventor" +
-      "y_PurchaseInit_Request.LineItem\032/\n\010LineI" +
-      "tem\022\021\n\titemdefid\030\001 \001(\004\022\020\n\010quantity\030\002 \001(\r" +
-      "\"D\n CInventory_PurchaseInit_Response\022\017\n\007" +
-      "orderid\030\001 \001(\004\022\017\n\007transid\030\002 \001(\004\"W\n#CInven" +
-      "tory_PurchaseFinalize_Request\022\r\n\005appid\030\001" +
-      " \001(\r\022\020\n\010language\030\002 \001(\005\022\017\n\007orderid\030\003 \001(\0042" +
-      "\301\017\n\tInventory\022z\n\014GetInventory\022 .CInvento" +
-      "ry_GetInventory_Request\032\024.CInventory_Res" +
-      "ponse\"2\202\265\030.Retrieves a users inventory a" +
-      "s a big JSON blob\022o\n\014ExchangeItem\022 .CInv" +
-      "entory_ExchangeItem_Request\032\024.CInventory" +
-      "_Response\"\'\202\265\030#Craft an item in a user\'s" +
-      " inventory\022\275\001\n\032GetEligiblePromoItemDefID" +
-      "s\022..CInventory_GetEligiblePromoItemDefID" +
-      "s_Request\032/.CInventory_GetEligiblePromoI" +
-      "temDefIDs_Response\">\202\265\030:Returns a list o" +
-      "f promo item defs the user is eligible f" +
-      "or\022n\n\014AddPromoItem\022\033.CInventory_AddItem_" +
-      "Request\032\024.CInventory_Response\"+\202\265\030\'Adds " +
-      "a promo item to a user\'s inventory\022\211\001\n\017S" +
-      "afeModifyItems\022\037.CInventory_ModifyItems_" +
-      "Request\032\024.CInventory_Response\"?\202\265\030;Modif" +
-      "y an item in a user\'s inventory (safe pr" +
-      "operties only)\022\207\001\n\017ConsumePlaytime\022#.CIn" +
-      "ventory_ConsumePlaytime_Request\032\024.CInven" +
-      "tory_Response\"9\202\265\0305Consumes playtime and" +
-      " possibly returns a granted item\022Y\n\013Cons" +
-      "umeItem\022\037.CInventory_ConsumeItem_Request" +
-      "\032\024.CInventory_Response\"\023\202\265\030\017Consume an i" +
-      "tem\022n\n\017DevGenerateItem\022\033.CInventory_AddI" +
-      "tem_Request\032\024.CInventory_Response\"(\202\265\030$G" +
-      "rant an item when in developer mode\022_\n\016D" +
-      "evSetNextDrop\022\".CInventory_DevSetNextDro" +
-      "p_Request\032\024.CInventory_Response\"\023\202\265\030\017Con" +
-      "sume an item\022s\n\016SplitItemStack\022\".CInvent" +
-      "ory_SplitItemStack_Request\032\024.CInventory_" +
-      "Response\"\'\202\265\030#Split an item stack into t" +
-      "wo stacks\022q\n\021CombineItemStacks\022%.CInvent" +
-      "ory_CombineItemStacks_Request\032\024.CInvento" +
-      "ry_Response\"\037\202\265\030\033Combine two stacks of i" +
-      "tems\022\234\001\n\016GetItemDefMeta\022\".CInventory_Get" +
-      "ItemDefMeta_Request\032#.CInventory_GetItem" +
-      "DefMeta_Response\"A\202\265\030=Get metadata about" +
-      " the current item definition for this ga" +
-      "me.\022\247\001\n\023GetUserPurchaseInfo\022\'.CInventory" +
-      "_GetUserPurchaseInfo_Request\032(.CInventor" +
-      "y_GetUserPurchaseInfo_Response\"=\202\265\0309Retu" +
-      "rns information about the user such as t" +
-      "heir currency\022|\n\014PurchaseInit\022 .CInvento" +
-      "ry_PurchaseInit_Request\032!.CInventory_Pur" +
-      "chaseInit_Response\"\'\202\265\030#Initializes a pu" +
-      "rchase for the user\022u\n\020PurchaseFinalize\022" +
-      "$.CInventory_PurchaseFinalize_Request\032\024." +
-      "CInventory_Response\"%\202\265\030!Finalizes a pur" +
-      "chase for the user\032/\202\265\030+A service that p" +
-      "rovides access to inventoryB\003\200\001\001"
+      "o this item.\022\206\001\n\013is_purchase\030\010 \001(\010:\005fals" +
+      "eBj\202\265\030fIf set, treat requestid as a txni" +
+      "d and create this item as a result of us" +
+      "er microtransaction purchase.\"\345\002\n\036CInven" +
+      "tory_ModifyItems_Request\022\r\n\005appid\030\001 \001(\r\022" +
+      "\017\n\007steamid\030\002 \001(\004\022C\n\007updates\030\003 \003(\01322.CInv",
+      "entory_ModifyItems_Request.ItemPropertyU" +
+      "pdate\022\021\n\ttimestamp\030\004 \001(\r\032\312\001\n\022ItemPropert" +
+      "yUpdate\022\016\n\006itemid\030\001 \001(\004\022\027\n\017remove_proper" +
+      "ty\030\002 \001(\010\022\025\n\rproperty_name\030\003 \001(\t\022\033\n\023prope" +
+      "rty_value_bool\030\004 \001(\010\022\032\n\022property_value_i" +
+      "nt\030\005 \001(\003\022\035\n\025property_value_string\030\006 \001(\t\022" +
+      "\034\n\024property_value_float\030\007 \001(\002\"F\n\"CInvent" +
+      "ory_ConsumePlaytime_Request\022\r\n\005appid\030\001 \001" +
+      "(\r\022\021\n\titemdefid\030\002 \001(\004\"\210\001\n\036CInventory_Con" +
+      "sumeItem_Request\022\r\n\005appid\030\001 \001(\r\022\016\n\006itemi",
+      "d\030\002 \001(\004\022\020\n\010quantity\030\003 \001(\r\022\021\n\ttimestamp\030\004" +
+      " \001(\t\022\017\n\007steamid\030\005 \001(\004\022\021\n\trequestid\030\006 \001(\004" +
+      "\"W\n!CInventory_DevSetNextDrop_Request\022\r\n" +
+      "\005appid\030\001 \001(\r\022\021\n\titemdefid\030\002 \001(\004\022\020\n\010dropt" +
+      "ime\030\003 \001(\t\"T\n!CInventory_SplitItemStack_R" +
+      "equest\022\r\n\005appid\030\001 \001(\r\022\016\n\006itemid\030\002 \001(\004\022\020\n" +
+      "\010quantity\030\003 \001(\r\"o\n$CInventory_CombineIte" +
+      "mStacks_Request\022\r\n\005appid\030\001 \001(\r\022\022\n\nfromit" +
+      "emid\030\002 \001(\004\022\022\n\ndestitemid\030\003 \001(\004\022\020\n\010quanti" +
+      "ty\030\004 \001(\r\"2\n!CInventory_GetItemDefMeta_Re",
+      "quest\022\r\n\005appid\030\001 \001(\r\"F\n\"CInventory_GetIt" +
+      "emDefMeta_Response\022\020\n\010modified\030\001 \001(\r\022\016\n\006" +
+      "digest\030\002 \001(\t\"(\n&CInventory_GetUserPurcha" +
+      "seInfo_Request\"<\n\'CInventory_GetUserPurc" +
+      "haseInfo_Response\022\021\n\tecurrency\030\001 \001(\005\"\262\001\n" +
+      "\037CInventory_PurchaseInit_Request\022\r\n\005appi" +
+      "d\030\001 \001(\r\022\020\n\010language\030\002 \001(\005\022=\n\nline_items\030" +
+      "\003 \003(\0132).CInventory_PurchaseInit_Request." +
+      "LineItem\032/\n\010LineItem\022\021\n\titemdefid\030\001 \001(\004\022" +
+      "\020\n\010quantity\030\002 \001(\r\"D\n CInventory_Purchase",
+      "Init_Response\022\017\n\007orderid\030\001 \001(\004\022\017\n\007transi" +
+      "d\030\002 \001(\004\"W\n#CInventory_PurchaseFinalize_R" +
+      "equest\022\r\n\005appid\030\001 \001(\r\022\020\n\010language\030\002 \001(\005\022" +
+      "\017\n\007orderid\030\003 \001(\004\"i\n&CInventoryClient_New" +
+      "Items_Notification\022\r\n\005appid\030\001 \001(\r\0220\n\022inv" +
+      "entory_response\030\002 \001(\0132\024.CInventory_Respo" +
+      "nse2\301\017\n\tInventory\022z\n\014GetInventory\022 .CInv" +
+      "entory_GetInventory_Request\032\024.CInventory" +
+      "_Response\"2\202\265\030.Retrieves a users invento" +
+      "ry as a big JSON blob\022o\n\014ExchangeItem\022 .",
+      "CInventory_ExchangeItem_Request\032\024.CInven" +
+      "tory_Response\"\'\202\265\030#Craft an item in a us" +
+      "er\'s inventory\022\275\001\n\032GetEligiblePromoItemD" +
+      "efIDs\022..CInventory_GetEligiblePromoItemD" +
+      "efIDs_Request\032/.CInventory_GetEligiblePr" +
+      "omoItemDefIDs_Response\">\202\265\030:Returns a li" +
+      "st of promo item defs the user is eligib" +
+      "le for\022n\n\014AddPromoItem\022\033.CInventory_AddI" +
+      "tem_Request\032\024.CInventory_Response\"+\202\265\030\'A" +
+      "dds a promo item to a user\'s inventory\022\211",
+      "\001\n\017SafeModifyItems\022\037.CInventory_ModifyIt" +
+      "ems_Request\032\024.CInventory_Response\"?\202\265\030;M" +
+      "odify an item in a user\'s inventory (saf" +
+      "e properties only)\022\207\001\n\017ConsumePlaytime\022#" +
+      ".CInventory_ConsumePlaytime_Request\032\024.CI" +
+      "nventory_Response\"9\202\265\0305Consumes playtime" +
+      " and possibly returns a granted item\022Y\n\013" +
+      "ConsumeItem\022\037.CInventory_ConsumeItem_Req" +
+      "uest\032\024.CInventory_Response\"\023\202\265\030\017Consume " +
+      "an item\022n\n\017DevGenerateItem\022\033.CInventory_",
+      "AddItem_Request\032\024.CInventory_Response\"(\202" +
+      "\265\030$Grant an item when in developer mode\022" +
+      "_\n\016DevSetNextDrop\022\".CInventory_DevSetNex" +
+      "tDrop_Request\032\024.CInventory_Response\"\023\202\265\030" +
+      "\017Consume an item\022s\n\016SplitItemStack\022\".CIn" +
+      "ventory_SplitItemStack_Request\032\024.CInvent" +
+      "ory_Response\"\'\202\265\030#Split an item stack in" +
+      "to two stacks\022q\n\021CombineItemStacks\022%.CIn" +
+      "ventory_CombineItemStacks_Request\032\024.CInv" +
+      "entory_Response\"\037\202\265\030\033Combine two stacks ",
+      "of items\022\234\001\n\016GetItemDefMeta\022\".CInventory" +
+      "_GetItemDefMeta_Request\032#.CInventory_Get" +
+      "ItemDefMeta_Response\"A\202\265\030=Get metadata a" +
+      "bout the current item definition for thi" +
+      "s game.\022\247\001\n\023GetUserPurchaseInfo\022\'.CInven" +
+      "tory_GetUserPurchaseInfo_Request\032(.CInve" +
+      "ntory_GetUserPurchaseInfo_Response\"=\202\265\0309" +
+      "Returns information about the user such " +
+      "as their currency\022|\n\014PurchaseInit\022 .CInv" +
+      "entory_PurchaseInit_Request\032!.CInventory",
+      "_PurchaseInit_Response\"\'\202\265\030#Initializes " +
+      "a purchase for the user\022u\n\020PurchaseFinal" +
+      "ize\022$.CInventory_PurchaseFinalize_Reques" +
+      "t\032\024.CInventory_Response\"%\202\265\030!Finalizes a" +
+      " purchase for the user\032/\202\265\030+A service th" +
+      "at provides access to inventory2\304\001\n\017Inve" +
+      "ntoryClient\022z\n\016NotifyNewItems\022\'.CInvento" +
+      "ryClient_NewItems_Notification\032\013.NoRespo" +
+      "nse\"2\202\265\030.Notify client that the user rec" +
+      "eived new items\0325\202\265\030-Client notification",
+      "s inventory service events\300\265\030\002B\003\200\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -15922,7 +16639,7 @@ public final class SteamMsgInventory {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          SteamMsgUnifiedBase.getDescriptor(),
+                SteamMsgUnifiedBase.getDescriptor(),
         }, assigner);
     internal_static_CInventory_GetInventory_Request_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -15959,7 +16676,7 @@ public final class SteamMsgInventory {
     internal_static_CInventory_AddItem_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CInventory_AddItem_Request_descriptor,
-        new java.lang.String[] { "Appid", "Itemdefid", "Itempropsjson", "Steamid", "Notify", "Requestid", "TradeRestriction", });
+        new java.lang.String[] { "Appid", "Itemdefid", "Itempropsjson", "Steamid", "Notify", "Requestid", "TradeRestriction", "IsPurchase", });
     internal_static_CInventory_ModifyItems_Request_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_CInventory_ModifyItems_Request_fieldAccessorTable = new
@@ -16050,11 +16767,18 @@ public final class SteamMsgInventory {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CInventory_PurchaseFinalize_Request_descriptor,
         new java.lang.String[] { "Appid", "Language", "Orderid", });
+    internal_static_CInventoryClient_NewItems_Notification_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_CInventoryClient_NewItems_Notification_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CInventoryClient_NewItems_Notification_descriptor,
+        new java.lang.String[] { "Appid", "InventoryResponse", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(SteamMsgUnifiedBase.description);
     registry.add(SteamMsgUnifiedBase.methodDescription);
     registry.add(SteamMsgUnifiedBase.serviceDescription);
+    registry.add(SteamMsgUnifiedBase.serviceExecutionSite);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     SteamMsgUnifiedBase.getDescriptor();

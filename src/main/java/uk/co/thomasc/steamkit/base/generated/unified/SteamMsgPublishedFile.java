@@ -208,9 +208,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -863,7 +860,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_Subscribe_Request(input, extensionRegistry);
+          return new CPublishedFile_Subscribe_Request(input, extensionRegistry);
       }
     };
 
@@ -911,9 +908,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1250,7 +1244,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_Subscribe_Response(input, extensionRegistry);
+          return new CPublishedFile_Subscribe_Response(input, extensionRegistry);
       }
     };
 
@@ -1338,9 +1332,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1993,7 +1984,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_Unsubscribe_Request(input, extensionRegistry);
+          return new CPublishedFile_Unsubscribe_Request(input, extensionRegistry);
       }
     };
 
@@ -2041,9 +2032,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -2380,7 +2368,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_Unsubscribe_Response(input, extensionRegistry);
+          return new CPublishedFile_Unsubscribe_Response(input, extensionRegistry);
       }
     };
 
@@ -2438,9 +2426,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2861,7 +2846,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_CanSubscribe_Request(input, extensionRegistry);
+          return new CPublishedFile_CanSubscribe_Request(input, extensionRegistry);
       }
     };
 
@@ -2919,9 +2904,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3342,7 +3324,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_CanSubscribe_Response(input, extensionRegistry);
+          return new CPublishedFile_CanSubscribe_Response(input, extensionRegistry);
       }
     };
 
@@ -3615,9 +3597,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3805,7 +3784,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3821,7 +3800,7 @@ public final class SteamMsgPublishedFile {
         getCloudfilenameBytes() {
       java.lang.Object ref = cloudfilename_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         cloudfilename_ = b;
@@ -3847,7 +3826,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3863,7 +3842,7 @@ public final class SteamMsgPublishedFile {
         getPreviewCloudfilenameBytes() {
       java.lang.Object ref = previewCloudfilename_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         previewCloudfilename_ = b;
@@ -3889,7 +3868,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3905,7 +3884,7 @@ public final class SteamMsgPublishedFile {
         getTitleBytes() {
       java.lang.Object ref = title_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         title_ = b;
@@ -3931,7 +3910,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -3947,7 +3926,7 @@ public final class SteamMsgPublishedFile {
         getFileDescriptionBytes() {
       java.lang.Object ref = fileDescription_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         fileDescription_ = b;
@@ -3988,7 +3967,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -4004,7 +3983,7 @@ public final class SteamMsgPublishedFile {
         getConsumerShortcutNameBytes() {
       java.lang.Object ref = consumerShortcutName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         consumerShortcutName_ = b;
@@ -4030,7 +4009,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -4046,7 +4025,7 @@ public final class SteamMsgPublishedFile {
         getYoutubeUsernameBytes() {
       java.lang.Object ref = youtubeUsername_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         youtubeUsername_ = b;
@@ -4072,7 +4051,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -4088,7 +4067,7 @@ public final class SteamMsgPublishedFile {
         getYoutubeVideoidBytes() {
       java.lang.Object ref = youtubeVideoid_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         youtubeVideoid_ = b;
@@ -4129,7 +4108,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -4145,7 +4124,7 @@ public final class SteamMsgPublishedFile {
         getRedirectUriBytes() {
       java.lang.Object ref = redirectUri_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         redirectUri_ = b;
@@ -4200,7 +4179,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -4216,7 +4195,7 @@ public final class SteamMsgPublishedFile {
         getCollectionTypeBytes() {
       java.lang.Object ref = collectionType_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         collectionType_ = b;
@@ -4242,7 +4221,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -4258,7 +4237,7 @@ public final class SteamMsgPublishedFile {
         getGameTypeBytes() {
       java.lang.Object ref = gameType_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         gameType_ = b;
@@ -4284,7 +4263,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -4300,7 +4279,7 @@ public final class SteamMsgPublishedFile {
         getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         url_ = b;
@@ -5095,7 +5074,7 @@ public final class SteamMsgPublishedFile {
           getCloudfilenameBytes() {
         java.lang.Object ref = cloudfilename_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           cloudfilename_ = b;
@@ -5171,7 +5150,7 @@ public final class SteamMsgPublishedFile {
           getPreviewCloudfilenameBytes() {
         java.lang.Object ref = previewCloudfilename_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           previewCloudfilename_ = b;
@@ -5247,7 +5226,7 @@ public final class SteamMsgPublishedFile {
           getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           title_ = b;
@@ -5323,7 +5302,7 @@ public final class SteamMsgPublishedFile {
           getFileDescriptionBytes() {
         java.lang.Object ref = fileDescription_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           fileDescription_ = b;
@@ -5431,7 +5410,7 @@ public final class SteamMsgPublishedFile {
           getConsumerShortcutNameBytes() {
         java.lang.Object ref = consumerShortcutName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           consumerShortcutName_ = b;
@@ -5507,7 +5486,7 @@ public final class SteamMsgPublishedFile {
           getYoutubeUsernameBytes() {
         java.lang.Object ref = youtubeUsername_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           youtubeUsername_ = b;
@@ -5583,7 +5562,7 @@ public final class SteamMsgPublishedFile {
           getYoutubeVideoidBytes() {
         java.lang.Object ref = youtubeVideoid_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           youtubeVideoid_ = b;
@@ -5691,7 +5670,7 @@ public final class SteamMsgPublishedFile {
           getRedirectUriBytes() {
         java.lang.Object ref = redirectUri_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           redirectUri_ = b;
@@ -5860,7 +5839,7 @@ public final class SteamMsgPublishedFile {
           getCollectionTypeBytes() {
         java.lang.Object ref = collectionType_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           collectionType_ = b;
@@ -5936,7 +5915,7 @@ public final class SteamMsgPublishedFile {
           getGameTypeBytes() {
         java.lang.Object ref = gameType_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           gameType_ = b;
@@ -6012,7 +5991,7 @@ public final class SteamMsgPublishedFile {
           getUrlBytes() {
         java.lang.Object ref = url_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           url_ = b;
@@ -6086,7 +6065,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_Publish_Request(input, extensionRegistry);
+          return new CPublishedFile_Publish_Request(input, extensionRegistry);
       }
     };
 
@@ -6159,9 +6138,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6247,7 +6223,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -6263,7 +6239,7 @@ public final class SteamMsgPublishedFile {
         getRedirectUriBytes() {
       java.lang.Object ref = redirectUri_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         redirectUri_ = b;
@@ -6658,7 +6634,7 @@ public final class SteamMsgPublishedFile {
           getRedirectUriBytes() {
         java.lang.Object ref = redirectUri_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           redirectUri_ = b;
@@ -6732,7 +6708,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_Publish_Response(input, extensionRegistry);
+          return new CPublishedFile_Publish_Response(input, extensionRegistry);
       }
     };
 
@@ -6914,9 +6890,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8336,7 +8309,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetDetails_Request(input, extensionRegistry);
+          return new CPublishedFile_GetDetails_Request(input, extensionRegistry);
       }
     };
 
@@ -8890,7 +8863,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Preview previews = 51;</code>
      */
-    java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Preview> 
+    java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Preview>
         getPreviewsList();
     /**
      * <code>repeated .PublishedFileDetails.Preview previews = 51;</code>
@@ -8903,7 +8876,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Preview previews = 51;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.PreviewOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.PreviewOrBuilder>
         getPreviewsOrBuilderList();
     /**
      * <code>repeated .PublishedFileDetails.Preview previews = 51;</code>
@@ -8914,7 +8887,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Tag tags = 52;</code>
      */
-    java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Tag> 
+    java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Tag>
         getTagsList();
     /**
      * <code>repeated .PublishedFileDetails.Tag tags = 52;</code>
@@ -8927,7 +8900,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Tag tags = 52;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.TagOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.TagOrBuilder>
         getTagsOrBuilderList();
     /**
      * <code>repeated .PublishedFileDetails.Tag tags = 52;</code>
@@ -8938,7 +8911,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Child children = 53;</code>
      */
-    java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Child> 
+    java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Child>
         getChildrenList();
     /**
      * <code>repeated .PublishedFileDetails.Child children = 53;</code>
@@ -8951,7 +8924,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Child children = 53;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.ChildOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.ChildOrBuilder>
         getChildrenOrBuilderList();
     /**
      * <code>repeated .PublishedFileDetails.Child children = 53;</code>
@@ -8962,7 +8935,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.KVTag kvtags = 54;</code>
      */
-    java.util.List<SteamMsgPublishedFile.PublishedFileDetails.KVTag> 
+    java.util.List<SteamMsgPublishedFile.PublishedFileDetails.KVTag>
         getKvtagsList();
     /**
      * <code>repeated .PublishedFileDetails.KVTag kvtags = 54;</code>
@@ -8975,7 +8948,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.KVTag kvtags = 54;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.KVTagOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.KVTagOrBuilder>
         getKvtagsOrBuilderList();
     /**
      * <code>repeated .PublishedFileDetails.KVTag kvtags = 54;</code>
@@ -9046,24 +9019,6 @@ public final class SteamMsgPublishedFile {
         getMetadataBytes();
 
     /**
-     * <code>optional fixed64 incompatible_actor = 59;</code>
-     */
-    boolean hasIncompatibleActor();
-    /**
-     * <code>optional fixed64 incompatible_actor = 59;</code>
-     */
-    long getIncompatibleActor();
-
-    /**
-     * <code>optional uint32 incompatible_timestamp = 60;</code>
-     */
-    boolean hasIncompatibleTimestamp();
-    /**
-     * <code>optional uint32 incompatible_timestamp = 60;</code>
-     */
-    int getIncompatibleTimestamp();
-
-    /**
      * <code>optional int32 language = 61 [default = 0, (.description) = "The language of the title and description."];</code>
      */
     boolean hasLanguage();
@@ -9073,40 +9028,22 @@ public final class SteamMsgPublishedFile {
     int getLanguage();
 
     /**
-     * <code>optional bool app_has_adult_content = 65;</code>
+     * <code>optional bool maybe_inappropriate_sex = 65;</code>
      */
-    boolean hasAppHasAdultContent();
+    boolean hasMaybeInappropriateSex();
     /**
-     * <code>optional bool app_has_adult_content = 65;</code>
+     * <code>optional bool maybe_inappropriate_sex = 65;</code>
      */
-    boolean getAppHasAdultContent();
+    boolean getMaybeInappropriateSex();
 
     /**
-     * <code>optional bool app_has_adult_content_sex = 66;</code>
+     * <code>optional bool maybe_inappropriate_violence = 66;</code>
      */
-    boolean hasAppHasAdultContentSex();
+    boolean hasMaybeInappropriateViolence();
     /**
-     * <code>optional bool app_has_adult_content_sex = 66;</code>
+     * <code>optional bool maybe_inappropriate_violence = 66;</code>
      */
-    boolean getAppHasAdultContentSex();
-
-    /**
-     * <code>optional bool app_has_adult_content_violence = 67;</code>
-     */
-    boolean hasAppHasAdultContentViolence();
-    /**
-     * <code>optional bool app_has_adult_content_violence = 67;</code>
-     */
-    boolean getAppHasAdultContentViolence();
-
-    /**
-     * <code>optional bool maybe_inappropriate = 68;</code>
-     */
-    boolean hasMaybeInappropriate();
-    /**
-     * <code>optional bool maybe_inappropriate = 68;</code>
-     */
-    boolean getMaybeInappropriate();
+    boolean getMaybeInappropriateViolence();
   }
   /**
    * Protobuf type {@code PublishedFileDetails}
@@ -9179,13 +9116,9 @@ public final class SteamMsgPublishedFile {
       kvtags_ = java.util.Collections.emptyList();
       timeSubscribed_ = 0;
       metadata_ = "";
-      incompatibleActor_ = 0L;
-      incompatibleTimestamp_ = 0;
       language_ = 0;
-      appHasAdultContent_ = false;
-      appHasAdultContentSex_ = false;
-      appHasAdultContentViolence_ = false;
-      maybeInappropriate_ = false;
+      maybeInappropriateSex_ = false;
+      maybeInappropriateViolence_ = false;
     }
 
     @java.lang.Override
@@ -9198,12 +9131,8 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       int mutable_bitField1_ = 0;
-      int mutable_bitField2_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9556,18 +9485,8 @@ public final class SteamMsgPublishedFile {
               metadata_ = bs;
               break;
             }
-            case 473: {
-              bitField1_ |= 0x02000000;
-              incompatibleActor_ = input.readFixed64();
-              break;
-            }
-            case 480: {
-              bitField1_ |= 0x04000000;
-              incompatibleTimestamp_ = input.readUInt32();
-              break;
-            }
             case 488: {
-              bitField1_ |= 0x08000000;
+              bitField1_ |= 0x02000000;
               language_ = input.readInt32();
               break;
             }
@@ -9595,23 +9514,13 @@ public final class SteamMsgPublishedFile {
               break;
             }
             case 520: {
-              bitField1_ |= 0x10000000;
-              appHasAdultContent_ = input.readBool();
+              bitField1_ |= 0x04000000;
+              maybeInappropriateSex_ = input.readBool();
               break;
             }
             case 528: {
-              bitField1_ |= 0x20000000;
-              appHasAdultContentSex_ = input.readBool();
-              break;
-            }
-            case 536: {
-              bitField1_ |= 0x40000000;
-              appHasAdultContentViolence_ = input.readBool();
-              break;
-            }
-            case 544: {
-              bitField1_ |= 0x80000000;
-              maybeInappropriate_ = input.readBool();
+              bitField1_ |= 0x08000000;
+              maybeInappropriateViolence_ = input.readBool();
               break;
             }
           }
@@ -9704,9 +9613,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -9777,7 +9683,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -9793,7 +9699,7 @@ public final class SteamMsgPublishedFile {
           getTagBytes() {
         java.lang.Object ref = tag_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           tag_ = b;
@@ -10171,7 +10077,7 @@ public final class SteamMsgPublishedFile {
             getTagBytes() {
           java.lang.Object ref = tag_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             tag_ = b;
@@ -10277,7 +10183,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Tag(input, extensionRegistry);
+            return new Tag(input, extensionRegistry);
         }
       };
 
@@ -10425,9 +10331,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10561,7 +10464,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -10577,7 +10480,7 @@ public final class SteamMsgPublishedFile {
           getUrlBytes() {
         java.lang.Object ref = url_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           url_ = b;
@@ -10618,7 +10521,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -10634,7 +10537,7 @@ public final class SteamMsgPublishedFile {
           getFilenameBytes() {
         java.lang.Object ref = filename_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           filename_ = b;
@@ -10660,7 +10563,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -10676,7 +10579,7 @@ public final class SteamMsgPublishedFile {
           getYoutubevideoidBytes() {
         java.lang.Object ref = youtubevideoid_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           youtubevideoid_ = b;
@@ -10717,7 +10620,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -10733,7 +10636,7 @@ public final class SteamMsgPublishedFile {
           getExternalReferenceBytes() {
         java.lang.Object ref = externalReference_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           externalReference_ = b;
@@ -11313,7 +11216,7 @@ public final class SteamMsgPublishedFile {
             getUrlBytes() {
           java.lang.Object ref = url_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             url_ = b;
@@ -11421,7 +11324,7 @@ public final class SteamMsgPublishedFile {
             getFilenameBytes() {
           java.lang.Object ref = filename_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             filename_ = b;
@@ -11497,7 +11400,7 @@ public final class SteamMsgPublishedFile {
             getYoutubevideoidBytes() {
           java.lang.Object ref = youtubevideoid_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             youtubevideoid_ = b;
@@ -11605,7 +11508,7 @@ public final class SteamMsgPublishedFile {
             getExternalReferenceBytes() {
           java.lang.Object ref = externalReference_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             externalReference_ = b;
@@ -11679,7 +11582,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Preview(input, extensionRegistry);
+            return new Preview(input, extensionRegistry);
         }
       };
 
@@ -11757,9 +11660,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12334,7 +12234,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Child(input, extensionRegistry);
+            return new Child(input, extensionRegistry);
         }
       };
 
@@ -12412,9 +12312,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12486,7 +12383,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -12502,7 +12399,7 @@ public final class SteamMsgPublishedFile {
           getKeyBytes() {
         java.lang.Object ref = key_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           key_ = b;
@@ -12528,7 +12425,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -12544,7 +12441,7 @@ public final class SteamMsgPublishedFile {
           getValueBytes() {
         java.lang.Object ref = value_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           value_ = b;
@@ -12907,7 +12804,7 @@ public final class SteamMsgPublishedFile {
             getKeyBytes() {
           java.lang.Object ref = key_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             key_ = b;
@@ -12983,7 +12880,7 @@ public final class SteamMsgPublishedFile {
             getValueBytes() {
           java.lang.Object ref = value_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             value_ = b;
@@ -13057,7 +12954,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KVTag(input, extensionRegistry);
+            return new KVTag(input, extensionRegistry);
         }
       };
 
@@ -13135,9 +13032,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13714,7 +13608,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new VoteData(input, extensionRegistry);
+            return new VoteData(input, extensionRegistry);
         }
       };
 
@@ -13822,9 +13716,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -14641,7 +14532,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ForSaleData(input, extensionRegistry);
+            return new ForSaleData(input, extensionRegistry);
         }
       };
 
@@ -14709,9 +14600,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -15210,7 +15098,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlaytimeStats(input, extensionRegistry);
+            return new PlaytimeStats(input, extensionRegistry);
         }
       };
 
@@ -15337,7 +15225,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15353,7 +15241,7 @@ public final class SteamMsgPublishedFile {
         getFilenameBytes() {
       java.lang.Object ref = filename_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         filename_ = b;
@@ -15409,7 +15297,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15425,7 +15313,7 @@ public final class SteamMsgPublishedFile {
         getFileUrlBytes() {
       java.lang.Object ref = fileUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         fileUrl_ = b;
@@ -15451,7 +15339,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15467,7 +15355,7 @@ public final class SteamMsgPublishedFile {
         getPreviewUrlBytes() {
       java.lang.Object ref = previewUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         previewUrl_ = b;
@@ -15493,7 +15381,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15509,7 +15397,7 @@ public final class SteamMsgPublishedFile {
         getYoutubevideoidBytes() {
       java.lang.Object ref = youtubevideoid_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         youtubevideoid_ = b;
@@ -15535,7 +15423,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15551,7 +15439,7 @@ public final class SteamMsgPublishedFile {
         getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         url_ = b;
@@ -15607,7 +15495,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15623,7 +15511,7 @@ public final class SteamMsgPublishedFile {
         getTitleBytes() {
       java.lang.Object ref = title_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         title_ = b;
@@ -15649,7 +15537,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15665,7 +15553,7 @@ public final class SteamMsgPublishedFile {
         getFileDescriptionBytes() {
       java.lang.Object ref = fileDescription_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         fileDescription_ = b;
@@ -15691,7 +15579,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15707,7 +15595,7 @@ public final class SteamMsgPublishedFile {
         getShortDescriptionBytes() {
       java.lang.Object ref = shortDescription_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         shortDescription_ = b;
@@ -15883,7 +15771,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15899,7 +15787,7 @@ public final class SteamMsgPublishedFile {
         getBanReasonBytes() {
       java.lang.Object ref = banReason_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         banReason_ = b;
@@ -15970,7 +15858,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -15986,7 +15874,7 @@ public final class SteamMsgPublishedFile {
         getAppNameBytes() {
       java.lang.Object ref = appName_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         appName_ = b;
@@ -16207,7 +16095,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -16223,7 +16111,7 @@ public final class SteamMsgPublishedFile {
         getImageUrlBytes() {
       java.lang.Object ref = imageUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         imageUrl_ = b;
@@ -16279,7 +16167,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -16295,7 +16183,7 @@ public final class SteamMsgPublishedFile {
         getShortcutnameBytes() {
       java.lang.Object ref = shortcutname_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         shortcutname_ = b;
@@ -16346,7 +16234,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Preview previews = 51;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.PreviewOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.PreviewOrBuilder>
         getPreviewsOrBuilderList() {
       return previews_;
     }
@@ -16381,7 +16269,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Tag tags = 52;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.TagOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.TagOrBuilder>
         getTagsOrBuilderList() {
       return tags_;
     }
@@ -16416,7 +16304,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.Child children = 53;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.ChildOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.ChildOrBuilder>
         getChildrenOrBuilderList() {
       return children_;
     }
@@ -16451,7 +16339,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails.KVTag kvtags = 54;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.KVTagOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.KVTagOrBuilder>
         getKvtagsOrBuilderList() {
       return kvtags_;
     }
@@ -16569,7 +16457,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -16585,7 +16473,7 @@ public final class SteamMsgPublishedFile {
         getMetadataBytes() {
       java.lang.Object ref = metadata_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         metadata_ = b;
@@ -16595,43 +16483,13 @@ public final class SteamMsgPublishedFile {
       }
     }
 
-    public static final int INCOMPATIBLE_ACTOR_FIELD_NUMBER = 59;
-    private long incompatibleActor_;
-    /**
-     * <code>optional fixed64 incompatible_actor = 59;</code>
-     */
-    public boolean hasIncompatibleActor() {
-      return ((bitField1_ & 0x02000000) == 0x02000000);
-    }
-    /**
-     * <code>optional fixed64 incompatible_actor = 59;</code>
-     */
-    public long getIncompatibleActor() {
-      return incompatibleActor_;
-    }
-
-    public static final int INCOMPATIBLE_TIMESTAMP_FIELD_NUMBER = 60;
-    private int incompatibleTimestamp_;
-    /**
-     * <code>optional uint32 incompatible_timestamp = 60;</code>
-     */
-    public boolean hasIncompatibleTimestamp() {
-      return ((bitField1_ & 0x04000000) == 0x04000000);
-    }
-    /**
-     * <code>optional uint32 incompatible_timestamp = 60;</code>
-     */
-    public int getIncompatibleTimestamp() {
-      return incompatibleTimestamp_;
-    }
-
     public static final int LANGUAGE_FIELD_NUMBER = 61;
     private int language_;
     /**
      * <code>optional int32 language = 61 [default = 0, (.description) = "The language of the title and description."];</code>
      */
     public boolean hasLanguage() {
-      return ((bitField1_ & 0x08000000) == 0x08000000);
+      return ((bitField1_ & 0x02000000) == 0x02000000);
     }
     /**
      * <code>optional int32 language = 61 [default = 0, (.description) = "The language of the title and description."];</code>
@@ -16640,64 +16498,34 @@ public final class SteamMsgPublishedFile {
       return language_;
     }
 
-    public static final int APP_HAS_ADULT_CONTENT_FIELD_NUMBER = 65;
-    private boolean appHasAdultContent_;
+    public static final int MAYBE_INAPPROPRIATE_SEX_FIELD_NUMBER = 65;
+    private boolean maybeInappropriateSex_;
     /**
-     * <code>optional bool app_has_adult_content = 65;</code>
+     * <code>optional bool maybe_inappropriate_sex = 65;</code>
      */
-    public boolean hasAppHasAdultContent() {
-      return ((bitField1_ & 0x10000000) == 0x10000000);
+    public boolean hasMaybeInappropriateSex() {
+      return ((bitField1_ & 0x04000000) == 0x04000000);
     }
     /**
-     * <code>optional bool app_has_adult_content = 65;</code>
+     * <code>optional bool maybe_inappropriate_sex = 65;</code>
      */
-    public boolean getAppHasAdultContent() {
-      return appHasAdultContent_;
-    }
-
-    public static final int APP_HAS_ADULT_CONTENT_SEX_FIELD_NUMBER = 66;
-    private boolean appHasAdultContentSex_;
-    /**
-     * <code>optional bool app_has_adult_content_sex = 66;</code>
-     */
-    public boolean hasAppHasAdultContentSex() {
-      return ((bitField1_ & 0x20000000) == 0x20000000);
-    }
-    /**
-     * <code>optional bool app_has_adult_content_sex = 66;</code>
-     */
-    public boolean getAppHasAdultContentSex() {
-      return appHasAdultContentSex_;
+    public boolean getMaybeInappropriateSex() {
+      return maybeInappropriateSex_;
     }
 
-    public static final int APP_HAS_ADULT_CONTENT_VIOLENCE_FIELD_NUMBER = 67;
-    private boolean appHasAdultContentViolence_;
+    public static final int MAYBE_INAPPROPRIATE_VIOLENCE_FIELD_NUMBER = 66;
+    private boolean maybeInappropriateViolence_;
     /**
-     * <code>optional bool app_has_adult_content_violence = 67;</code>
+     * <code>optional bool maybe_inappropriate_violence = 66;</code>
      */
-    public boolean hasAppHasAdultContentViolence() {
-      return ((bitField1_ & 0x40000000) == 0x40000000);
+    public boolean hasMaybeInappropriateViolence() {
+      return ((bitField1_ & 0x08000000) == 0x08000000);
     }
     /**
-     * <code>optional bool app_has_adult_content_violence = 67;</code>
+     * <code>optional bool maybe_inappropriate_violence = 66;</code>
      */
-    public boolean getAppHasAdultContentViolence() {
-      return appHasAdultContentViolence_;
-    }
-
-    public static final int MAYBE_INAPPROPRIATE_FIELD_NUMBER = 68;
-    private boolean maybeInappropriate_;
-    /**
-     * <code>optional bool maybe_inappropriate = 68;</code>
-     */
-    public boolean hasMaybeInappropriate() {
-      return ((bitField1_ & 0x80000000) == 0x80000000);
-    }
-    /**
-     * <code>optional bool maybe_inappropriate = 68;</code>
-     */
-    public boolean getMaybeInappropriate() {
-      return maybeInappropriate_;
+    public boolean getMaybeInappropriateViolence() {
+      return maybeInappropriateViolence_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -16887,12 +16715,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 58, metadata_);
       }
       if (((bitField1_ & 0x02000000) == 0x02000000)) {
-        output.writeFixed64(59, incompatibleActor_);
-      }
-      if (((bitField1_ & 0x04000000) == 0x04000000)) {
-        output.writeUInt32(60, incompatibleTimestamp_);
-      }
-      if (((bitField1_ & 0x08000000) == 0x08000000)) {
         output.writeInt32(61, language_);
       }
       if (((bitField1_ & 0x00000200) == 0x00000200)) {
@@ -16904,17 +16726,11 @@ public final class SteamMsgPublishedFile {
       if (((bitField1_ & 0x00200000) == 0x00200000)) {
         output.writeMessage(64, getPlaytimeStats());
       }
-      if (((bitField1_ & 0x10000000) == 0x10000000)) {
-        output.writeBool(65, appHasAdultContent_);
+      if (((bitField1_ & 0x04000000) == 0x04000000)) {
+        output.writeBool(65, maybeInappropriateSex_);
       }
-      if (((bitField1_ & 0x20000000) == 0x20000000)) {
-        output.writeBool(66, appHasAdultContentSex_);
-      }
-      if (((bitField1_ & 0x40000000) == 0x40000000)) {
-        output.writeBool(67, appHasAdultContentViolence_);
-      }
-      if (((bitField1_ & 0x80000000) == 0x80000000)) {
-        output.writeBool(68, maybeInappropriate_);
+      if (((bitField1_ & 0x08000000) == 0x08000000)) {
+        output.writeBool(66, maybeInappropriateViolence_);
       }
       unknownFields.writeTo(output);
     }
@@ -17145,14 +16961,6 @@ public final class SteamMsgPublishedFile {
       }
       if (((bitField1_ & 0x02000000) == 0x02000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed64Size(59, incompatibleActor_);
-      }
-      if (((bitField1_ & 0x04000000) == 0x04000000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(60, incompatibleTimestamp_);
-      }
-      if (((bitField1_ & 0x08000000) == 0x08000000)) {
-        size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(61, language_);
       }
       if (((bitField1_ & 0x00000200) == 0x00000200)) {
@@ -17167,21 +16975,13 @@ public final class SteamMsgPublishedFile {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(64, getPlaytimeStats());
       }
-      if (((bitField1_ & 0x10000000) == 0x10000000)) {
+      if (((bitField1_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(65, appHasAdultContent_);
+          .computeBoolSize(65, maybeInappropriateSex_);
       }
-      if (((bitField1_ & 0x20000000) == 0x20000000)) {
+      if (((bitField1_ & 0x08000000) == 0x08000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(66, appHasAdultContentSex_);
-      }
-      if (((bitField1_ & 0x40000000) == 0x40000000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(67, appHasAdultContentViolence_);
-      }
-      if (((bitField1_ & 0x80000000) == 0x80000000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(68, maybeInappropriate_);
+          .computeBoolSize(66, maybeInappropriateViolence_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17492,40 +17292,20 @@ public final class SteamMsgPublishedFile {
         result = result && getMetadata()
             .equals(other.getMetadata());
       }
-      result = result && (hasIncompatibleActor() == other.hasIncompatibleActor());
-      if (hasIncompatibleActor()) {
-        result = result && (getIncompatibleActor()
-            == other.getIncompatibleActor());
-      }
-      result = result && (hasIncompatibleTimestamp() == other.hasIncompatibleTimestamp());
-      if (hasIncompatibleTimestamp()) {
-        result = result && (getIncompatibleTimestamp()
-            == other.getIncompatibleTimestamp());
-      }
       result = result && (hasLanguage() == other.hasLanguage());
       if (hasLanguage()) {
         result = result && (getLanguage()
             == other.getLanguage());
       }
-      result = result && (hasAppHasAdultContent() == other.hasAppHasAdultContent());
-      if (hasAppHasAdultContent()) {
-        result = result && (getAppHasAdultContent()
-            == other.getAppHasAdultContent());
+      result = result && (hasMaybeInappropriateSex() == other.hasMaybeInappropriateSex());
+      if (hasMaybeInappropriateSex()) {
+        result = result && (getMaybeInappropriateSex()
+            == other.getMaybeInappropriateSex());
       }
-      result = result && (hasAppHasAdultContentSex() == other.hasAppHasAdultContentSex());
-      if (hasAppHasAdultContentSex()) {
-        result = result && (getAppHasAdultContentSex()
-            == other.getAppHasAdultContentSex());
-      }
-      result = result && (hasAppHasAdultContentViolence() == other.hasAppHasAdultContentViolence());
-      if (hasAppHasAdultContentViolence()) {
-        result = result && (getAppHasAdultContentViolence()
-            == other.getAppHasAdultContentViolence());
-      }
-      result = result && (hasMaybeInappropriate() == other.hasMaybeInappropriate());
-      if (hasMaybeInappropriate()) {
-        result = result && (getMaybeInappropriate()
-            == other.getMaybeInappropriate());
+      result = result && (hasMaybeInappropriateViolence() == other.hasMaybeInappropriateViolence());
+      if (hasMaybeInappropriateViolence()) {
+        result = result && (getMaybeInappropriateViolence()
+            == other.getMaybeInappropriateViolence());
       }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
@@ -17799,38 +17579,19 @@ public final class SteamMsgPublishedFile {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
       }
-      if (hasIncompatibleActor()) {
-        hash = (37 * hash) + INCOMPATIBLE_ACTOR_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getIncompatibleActor());
-      }
-      if (hasIncompatibleTimestamp()) {
-        hash = (37 * hash) + INCOMPATIBLE_TIMESTAMP_FIELD_NUMBER;
-        hash = (53 * hash) + getIncompatibleTimestamp();
-      }
       if (hasLanguage()) {
         hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
         hash = (53 * hash) + getLanguage();
       }
-      if (hasAppHasAdultContent()) {
-        hash = (37 * hash) + APP_HAS_ADULT_CONTENT_FIELD_NUMBER;
+      if (hasMaybeInappropriateSex()) {
+        hash = (37 * hash) + MAYBE_INAPPROPRIATE_SEX_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getAppHasAdultContent());
+            getMaybeInappropriateSex());
       }
-      if (hasAppHasAdultContentSex()) {
-        hash = (37 * hash) + APP_HAS_ADULT_CONTENT_SEX_FIELD_NUMBER;
+      if (hasMaybeInappropriateViolence()) {
+        hash = (37 * hash) + MAYBE_INAPPROPRIATE_VIOLENCE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getAppHasAdultContentSex());
-      }
-      if (hasAppHasAdultContentViolence()) {
-        hash = (37 * hash) + APP_HAS_ADULT_CONTENT_VIOLENCE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getAppHasAdultContentViolence());
-      }
-      if (hasMaybeInappropriate()) {
-        hash = (37 * hash) + MAYBE_INAPPROPRIATE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getMaybeInappropriate());
+            getMaybeInappropriateViolence());
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -18118,20 +17879,12 @@ public final class SteamMsgPublishedFile {
         bitField1_ = (bitField1_ & ~0x08000000);
         metadata_ = "";
         bitField1_ = (bitField1_ & ~0x10000000);
-        incompatibleActor_ = 0L;
-        bitField1_ = (bitField1_ & ~0x20000000);
-        incompatibleTimestamp_ = 0;
-        bitField1_ = (bitField1_ & ~0x40000000);
         language_ = 0;
+        bitField1_ = (bitField1_ & ~0x20000000);
+        maybeInappropriateSex_ = false;
+        bitField1_ = (bitField1_ & ~0x40000000);
+        maybeInappropriateViolence_ = false;
         bitField1_ = (bitField1_ & ~0x80000000);
-        appHasAdultContent_ = false;
-        bitField2_ = (bitField2_ & ~0x00000001);
-        appHasAdultContentSex_ = false;
-        bitField2_ = (bitField2_ & ~0x00000002);
-        appHasAdultContentViolence_ = false;
-        bitField2_ = (bitField2_ & ~0x00000004);
-        maybeInappropriate_ = false;
-        bitField2_ = (bitField2_ & ~0x00000008);
         return this;
       }
 
@@ -18156,7 +17909,6 @@ public final class SteamMsgPublishedFile {
         SteamMsgPublishedFile.PublishedFileDetails result = new SteamMsgPublishedFile.PublishedFileDetails(this);
         int from_bitField0_ = bitField0_;
         int from_bitField1_ = bitField1_;
-        int from_bitField2_ = bitField2_;
         int to_bitField0_ = 0;
         int to_bitField1_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -18438,31 +18190,15 @@ public final class SteamMsgPublishedFile {
         if (((from_bitField1_ & 0x20000000) == 0x20000000)) {
           to_bitField1_ |= 0x02000000;
         }
-        result.incompatibleActor_ = incompatibleActor_;
+        result.language_ = language_;
         if (((from_bitField1_ & 0x40000000) == 0x40000000)) {
           to_bitField1_ |= 0x04000000;
         }
-        result.incompatibleTimestamp_ = incompatibleTimestamp_;
+        result.maybeInappropriateSex_ = maybeInappropriateSex_;
         if (((from_bitField1_ & 0x80000000) == 0x80000000)) {
           to_bitField1_ |= 0x08000000;
         }
-        result.language_ = language_;
-        if (((from_bitField2_ & 0x00000001) == 0x00000001)) {
-          to_bitField1_ |= 0x10000000;
-        }
-        result.appHasAdultContent_ = appHasAdultContent_;
-        if (((from_bitField2_ & 0x00000002) == 0x00000002)) {
-          to_bitField1_ |= 0x20000000;
-        }
-        result.appHasAdultContentSex_ = appHasAdultContentSex_;
-        if (((from_bitField2_ & 0x00000004) == 0x00000004)) {
-          to_bitField1_ |= 0x40000000;
-        }
-        result.appHasAdultContentViolence_ = appHasAdultContentViolence_;
-        if (((from_bitField2_ & 0x00000008) == 0x00000008)) {
-          to_bitField1_ |= 0x80000000;
-        }
-        result.maybeInappropriate_ = maybeInappropriate_;
+        result.maybeInappropriateViolence_ = maybeInappropriateViolence_;
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -18704,7 +18440,7 @@ public final class SteamMsgPublishedFile {
               previewsBuilder_ = null;
               previews_ = other.previews_;
               bitField1_ = (bitField1_ & ~0x00100000);
-              previewsBuilder_ = 
+              previewsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPreviewsFieldBuilder() : null;
             } else {
@@ -18730,7 +18466,7 @@ public final class SteamMsgPublishedFile {
               tagsBuilder_ = null;
               tags_ = other.tags_;
               bitField1_ = (bitField1_ & ~0x00200000);
-              tagsBuilder_ = 
+              tagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTagsFieldBuilder() : null;
             } else {
@@ -18756,7 +18492,7 @@ public final class SteamMsgPublishedFile {
               childrenBuilder_ = null;
               children_ = other.children_;
               bitField1_ = (bitField1_ & ~0x00400000);
-              childrenBuilder_ = 
+              childrenBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChildrenFieldBuilder() : null;
             } else {
@@ -18782,7 +18518,7 @@ public final class SteamMsgPublishedFile {
               kvtagsBuilder_ = null;
               kvtags_ = other.kvtags_;
               bitField1_ = (bitField1_ & ~0x00800000);
-              kvtagsBuilder_ = 
+              kvtagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getKvtagsFieldBuilder() : null;
             } else {
@@ -18807,26 +18543,14 @@ public final class SteamMsgPublishedFile {
           metadata_ = other.metadata_;
           onChanged();
         }
-        if (other.hasIncompatibleActor()) {
-          setIncompatibleActor(other.getIncompatibleActor());
-        }
-        if (other.hasIncompatibleTimestamp()) {
-          setIncompatibleTimestamp(other.getIncompatibleTimestamp());
-        }
         if (other.hasLanguage()) {
           setLanguage(other.getLanguage());
         }
-        if (other.hasAppHasAdultContent()) {
-          setAppHasAdultContent(other.getAppHasAdultContent());
+        if (other.hasMaybeInappropriateSex()) {
+          setMaybeInappropriateSex(other.getMaybeInappropriateSex());
         }
-        if (other.hasAppHasAdultContentSex()) {
-          setAppHasAdultContentSex(other.getAppHasAdultContentSex());
-        }
-        if (other.hasAppHasAdultContentViolence()) {
-          setAppHasAdultContentViolence(other.getAppHasAdultContentViolence());
-        }
-        if (other.hasMaybeInappropriate()) {
-          setMaybeInappropriate(other.getMaybeInappropriate());
+        if (other.hasMaybeInappropriateViolence()) {
+          setMaybeInappropriateViolence(other.getMaybeInappropriateViolence());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18856,7 +18580,6 @@ public final class SteamMsgPublishedFile {
       }
       private int bitField0_;
       private int bitField1_;
-      private int bitField2_;
 
       private int result_ ;
       /**
@@ -19081,7 +18804,7 @@ public final class SteamMsgPublishedFile {
           getFilenameBytes() {
         java.lang.Object ref = filename_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           filename_ = b;
@@ -19221,7 +18944,7 @@ public final class SteamMsgPublishedFile {
           getFileUrlBytes() {
         java.lang.Object ref = fileUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           fileUrl_ = b;
@@ -19297,7 +19020,7 @@ public final class SteamMsgPublishedFile {
           getPreviewUrlBytes() {
         java.lang.Object ref = previewUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           previewUrl_ = b;
@@ -19373,7 +19096,7 @@ public final class SteamMsgPublishedFile {
           getYoutubevideoidBytes() {
         java.lang.Object ref = youtubevideoid_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           youtubevideoid_ = b;
@@ -19449,7 +19172,7 @@ public final class SteamMsgPublishedFile {
           getUrlBytes() {
         java.lang.Object ref = url_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           url_ = b;
@@ -19589,7 +19312,7 @@ public final class SteamMsgPublishedFile {
           getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           title_ = b;
@@ -19665,7 +19388,7 @@ public final class SteamMsgPublishedFile {
           getFileDescriptionBytes() {
         java.lang.Object ref = fileDescription_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           fileDescription_ = b;
@@ -19741,7 +19464,7 @@ public final class SteamMsgPublishedFile {
           getShortDescriptionBytes() {
         java.lang.Object ref = shortDescription_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           shortDescription_ = b;
@@ -20137,7 +19860,7 @@ public final class SteamMsgPublishedFile {
           getBanReasonBytes() {
         java.lang.Object ref = banReason_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           banReason_ = b;
@@ -20309,7 +20032,7 @@ public final class SteamMsgPublishedFile {
           getAppNameBytes() {
         java.lang.Object ref = appName_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           appName_ = b;
@@ -20801,7 +20524,7 @@ public final class SteamMsgPublishedFile {
           getImageUrlBytes() {
         java.lang.Object ref = imageUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           imageUrl_ = b;
@@ -20941,7 +20664,7 @@ public final class SteamMsgPublishedFile {
           getShortcutnameBytes() {
         java.lang.Object ref = shortcutname_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           shortcutname_ = b;
@@ -21245,7 +20968,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails.Preview previews = 51;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.PreviewOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.PreviewOrBuilder>
            getPreviewsOrBuilderList() {
         if (previewsBuilder_ != null) {
           return previewsBuilder_.getMessageOrBuilderList();
@@ -21271,12 +20994,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails.Preview previews = 51;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Preview.Builder> 
+      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Preview.Builder>
            getPreviewsBuilderList() {
         return getPreviewsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails.Preview, SteamMsgPublishedFile.PublishedFileDetails.Preview.Builder, SteamMsgPublishedFile.PublishedFileDetails.PreviewOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails.Preview, SteamMsgPublishedFile.PublishedFileDetails.Preview.Builder, SteamMsgPublishedFile.PublishedFileDetails.PreviewOrBuilder>
           getPreviewsFieldBuilder() {
         if (previewsBuilder_ == null) {
           previewsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -21485,7 +21208,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails.Tag tags = 52;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.TagOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.TagOrBuilder>
            getTagsOrBuilderList() {
         if (tagsBuilder_ != null) {
           return tagsBuilder_.getMessageOrBuilderList();
@@ -21511,12 +21234,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails.Tag tags = 52;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Tag.Builder> 
+      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Tag.Builder>
            getTagsBuilderList() {
         return getTagsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails.Tag, SteamMsgPublishedFile.PublishedFileDetails.Tag.Builder, SteamMsgPublishedFile.PublishedFileDetails.TagOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails.Tag, SteamMsgPublishedFile.PublishedFileDetails.Tag.Builder, SteamMsgPublishedFile.PublishedFileDetails.TagOrBuilder>
           getTagsFieldBuilder() {
         if (tagsBuilder_ == null) {
           tagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -21725,7 +21448,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails.Child children = 53;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.ChildOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.ChildOrBuilder>
            getChildrenOrBuilderList() {
         if (childrenBuilder_ != null) {
           return childrenBuilder_.getMessageOrBuilderList();
@@ -21751,12 +21474,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails.Child children = 53;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Child.Builder> 
+      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Child.Builder>
            getChildrenBuilderList() {
         return getChildrenFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails.Child, SteamMsgPublishedFile.PublishedFileDetails.Child.Builder, SteamMsgPublishedFile.PublishedFileDetails.ChildOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails.Child, SteamMsgPublishedFile.PublishedFileDetails.Child.Builder, SteamMsgPublishedFile.PublishedFileDetails.ChildOrBuilder>
           getChildrenFieldBuilder() {
         if (childrenBuilder_ == null) {
           childrenBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -21965,7 +21688,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails.KVTag kvtags = 54;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.KVTagOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetails.KVTagOrBuilder>
            getKvtagsOrBuilderList() {
         if (kvtagsBuilder_ != null) {
           return kvtagsBuilder_.getMessageOrBuilderList();
@@ -21991,12 +21714,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails.KVTag kvtags = 54;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.KVTag.Builder> 
+      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.KVTag.Builder>
            getKvtagsBuilderList() {
         return getKvtagsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails.KVTag, SteamMsgPublishedFile.PublishedFileDetails.KVTag.Builder, SteamMsgPublishedFile.PublishedFileDetails.KVTagOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails.KVTag, SteamMsgPublishedFile.PublishedFileDetails.KVTag.Builder, SteamMsgPublishedFile.PublishedFileDetails.KVTagOrBuilder>
           getKvtagsFieldBuilder() {
         if (kvtagsBuilder_ == null) {
           kvtagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -22115,7 +21838,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional .PublishedFileDetails.VoteData vote_data = 55;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails.VoteData, SteamMsgPublishedFile.PublishedFileDetails.VoteData.Builder, SteamMsgPublishedFile.PublishedFileDetails.VoteDataOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails.VoteData, SteamMsgPublishedFile.PublishedFileDetails.VoteData.Builder, SteamMsgPublishedFile.PublishedFileDetails.VoteDataOrBuilder>
           getVoteDataFieldBuilder() {
         if (voteDataBuilder_ == null) {
           voteDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -22233,7 +21956,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional .PublishedFileDetails.PlaytimeStats playtime_stats = 64;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails.PlaytimeStats, SteamMsgPublishedFile.PublishedFileDetails.PlaytimeStats.Builder, SteamMsgPublishedFile.PublishedFileDetails.PlaytimeStatsOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails.PlaytimeStats, SteamMsgPublishedFile.PublishedFileDetails.PlaytimeStats.Builder, SteamMsgPublishedFile.PublishedFileDetails.PlaytimeStatsOrBuilder>
           getPlaytimeStatsFieldBuilder() {
         if (playtimeStatsBuilder_ == null) {
           playtimeStatsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -22383,7 +22106,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional .PublishedFileDetails.ForSaleData for_sale_data = 57 [(.description) = "Pricing information, if applicable."];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails.ForSaleData, SteamMsgPublishedFile.PublishedFileDetails.ForSaleData.Builder, SteamMsgPublishedFile.PublishedFileDetails.ForSaleDataOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails.ForSaleData, SteamMsgPublishedFile.PublishedFileDetails.ForSaleData.Builder, SteamMsgPublishedFile.PublishedFileDetails.ForSaleDataOrBuilder>
           getForSaleDataFieldBuilder() {
         if (forSaleDataBuilder_ == null) {
           forSaleDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -22427,7 +22150,7 @@ public final class SteamMsgPublishedFile {
           getMetadataBytes() {
         java.lang.Object ref = metadata_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           metadata_ = b;
@@ -22472,76 +22195,12 @@ public final class SteamMsgPublishedFile {
         return this;
       }
 
-      private long incompatibleActor_ ;
-      /**
-       * <code>optional fixed64 incompatible_actor = 59;</code>
-       */
-      public boolean hasIncompatibleActor() {
-        return ((bitField1_ & 0x20000000) == 0x20000000);
-      }
-      /**
-       * <code>optional fixed64 incompatible_actor = 59;</code>
-       */
-      public long getIncompatibleActor() {
-        return incompatibleActor_;
-      }
-      /**
-       * <code>optional fixed64 incompatible_actor = 59;</code>
-       */
-      public Builder setIncompatibleActor(long value) {
-        bitField1_ |= 0x20000000;
-        incompatibleActor_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional fixed64 incompatible_actor = 59;</code>
-       */
-      public Builder clearIncompatibleActor() {
-        bitField1_ = (bitField1_ & ~0x20000000);
-        incompatibleActor_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private int incompatibleTimestamp_ ;
-      /**
-       * <code>optional uint32 incompatible_timestamp = 60;</code>
-       */
-      public boolean hasIncompatibleTimestamp() {
-        return ((bitField1_ & 0x40000000) == 0x40000000);
-      }
-      /**
-       * <code>optional uint32 incompatible_timestamp = 60;</code>
-       */
-      public int getIncompatibleTimestamp() {
-        return incompatibleTimestamp_;
-      }
-      /**
-       * <code>optional uint32 incompatible_timestamp = 60;</code>
-       */
-      public Builder setIncompatibleTimestamp(int value) {
-        bitField1_ |= 0x40000000;
-        incompatibleTimestamp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint32 incompatible_timestamp = 60;</code>
-       */
-      public Builder clearIncompatibleTimestamp() {
-        bitField1_ = (bitField1_ & ~0x40000000);
-        incompatibleTimestamp_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int language_ ;
       /**
        * <code>optional int32 language = 61 [default = 0, (.description) = "The language of the title and description."];</code>
        */
       public boolean hasLanguage() {
-        return ((bitField1_ & 0x80000000) == 0x80000000);
+        return ((bitField1_ & 0x20000000) == 0x20000000);
       }
       /**
        * <code>optional int32 language = 61 [default = 0, (.description) = "The language of the title and description."];</code>
@@ -22553,7 +22212,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional int32 language = 61 [default = 0, (.description) = "The language of the title and description."];</code>
        */
       public Builder setLanguage(int value) {
-        bitField1_ |= 0x80000000;
+        bitField1_ |= 0x20000000;
         language_ = value;
         onChanged();
         return this;
@@ -22562,136 +22221,72 @@ public final class SteamMsgPublishedFile {
        * <code>optional int32 language = 61 [default = 0, (.description) = "The language of the title and description."];</code>
        */
       public Builder clearLanguage() {
-        bitField1_ = (bitField1_ & ~0x80000000);
+        bitField1_ = (bitField1_ & ~0x20000000);
         language_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean appHasAdultContent_ ;
+      private boolean maybeInappropriateSex_ ;
       /**
-       * <code>optional bool app_has_adult_content = 65;</code>
+       * <code>optional bool maybe_inappropriate_sex = 65;</code>
        */
-      public boolean hasAppHasAdultContent() {
-        return ((bitField2_ & 0x00000001) == 0x00000001);
+      public boolean hasMaybeInappropriateSex() {
+        return ((bitField1_ & 0x40000000) == 0x40000000);
       }
       /**
-       * <code>optional bool app_has_adult_content = 65;</code>
+       * <code>optional bool maybe_inappropriate_sex = 65;</code>
        */
-      public boolean getAppHasAdultContent() {
-        return appHasAdultContent_;
+      public boolean getMaybeInappropriateSex() {
+        return maybeInappropriateSex_;
       }
       /**
-       * <code>optional bool app_has_adult_content = 65;</code>
+       * <code>optional bool maybe_inappropriate_sex = 65;</code>
        */
-      public Builder setAppHasAdultContent(boolean value) {
-        bitField2_ |= 0x00000001;
-        appHasAdultContent_ = value;
+      public Builder setMaybeInappropriateSex(boolean value) {
+        bitField1_ |= 0x40000000;
+        maybeInappropriateSex_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool app_has_adult_content = 65;</code>
+       * <code>optional bool maybe_inappropriate_sex = 65;</code>
        */
-      public Builder clearAppHasAdultContent() {
-        bitField2_ = (bitField2_ & ~0x00000001);
-        appHasAdultContent_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean appHasAdultContentSex_ ;
-      /**
-       * <code>optional bool app_has_adult_content_sex = 66;</code>
-       */
-      public boolean hasAppHasAdultContentSex() {
-        return ((bitField2_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional bool app_has_adult_content_sex = 66;</code>
-       */
-      public boolean getAppHasAdultContentSex() {
-        return appHasAdultContentSex_;
-      }
-      /**
-       * <code>optional bool app_has_adult_content_sex = 66;</code>
-       */
-      public Builder setAppHasAdultContentSex(boolean value) {
-        bitField2_ |= 0x00000002;
-        appHasAdultContentSex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool app_has_adult_content_sex = 66;</code>
-       */
-      public Builder clearAppHasAdultContentSex() {
-        bitField2_ = (bitField2_ & ~0x00000002);
-        appHasAdultContentSex_ = false;
+      public Builder clearMaybeInappropriateSex() {
+        bitField1_ = (bitField1_ & ~0x40000000);
+        maybeInappropriateSex_ = false;
         onChanged();
         return this;
       }
 
-      private boolean appHasAdultContentViolence_ ;
+      private boolean maybeInappropriateViolence_ ;
       /**
-       * <code>optional bool app_has_adult_content_violence = 67;</code>
+       * <code>optional bool maybe_inappropriate_violence = 66;</code>
        */
-      public boolean hasAppHasAdultContentViolence() {
-        return ((bitField2_ & 0x00000004) == 0x00000004);
+      public boolean hasMaybeInappropriateViolence() {
+        return ((bitField1_ & 0x80000000) == 0x80000000);
       }
       /**
-       * <code>optional bool app_has_adult_content_violence = 67;</code>
+       * <code>optional bool maybe_inappropriate_violence = 66;</code>
        */
-      public boolean getAppHasAdultContentViolence() {
-        return appHasAdultContentViolence_;
+      public boolean getMaybeInappropriateViolence() {
+        return maybeInappropriateViolence_;
       }
       /**
-       * <code>optional bool app_has_adult_content_violence = 67;</code>
+       * <code>optional bool maybe_inappropriate_violence = 66;</code>
        */
-      public Builder setAppHasAdultContentViolence(boolean value) {
-        bitField2_ |= 0x00000004;
-        appHasAdultContentViolence_ = value;
+      public Builder setMaybeInappropriateViolence(boolean value) {
+        bitField1_ |= 0x80000000;
+        maybeInappropriateViolence_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool app_has_adult_content_violence = 67;</code>
+       * <code>optional bool maybe_inappropriate_violence = 66;</code>
        */
-      public Builder clearAppHasAdultContentViolence() {
-        bitField2_ = (bitField2_ & ~0x00000004);
-        appHasAdultContentViolence_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean maybeInappropriate_ ;
-      /**
-       * <code>optional bool maybe_inappropriate = 68;</code>
-       */
-      public boolean hasMaybeInappropriate() {
-        return ((bitField2_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional bool maybe_inappropriate = 68;</code>
-       */
-      public boolean getMaybeInappropriate() {
-        return maybeInappropriate_;
-      }
-      /**
-       * <code>optional bool maybe_inappropriate = 68;</code>
-       */
-      public Builder setMaybeInappropriate(boolean value) {
-        bitField2_ |= 0x00000008;
-        maybeInappropriate_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool maybe_inappropriate = 68;</code>
-       */
-      public Builder clearMaybeInappropriate() {
-        bitField2_ = (bitField2_ & ~0x00000008);
-        maybeInappropriate_ = false;
+      public Builder clearMaybeInappropriateViolence() {
+        bitField1_ = (bitField1_ & ~0x80000000);
+        maybeInappropriateViolence_ = false;
         onChanged();
         return this;
       }
@@ -22725,7 +22320,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PublishedFileDetails(input, extensionRegistry);
+          return new PublishedFileDetails(input, extensionRegistry);
       }
     };
 
@@ -22751,7 +22346,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 1;</code>
      */
-    java.util.List<SteamMsgPublishedFile.PublishedFileDetails> 
+    java.util.List<SteamMsgPublishedFile.PublishedFileDetails>
         getPublishedfiledetailsList();
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 1;</code>
@@ -22764,7 +22359,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 1;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
         getPublishedfiledetailsOrBuilderList();
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 1;</code>
@@ -22798,9 +22393,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -22866,7 +22458,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 1;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
         getPublishedfiledetailsOrBuilderList() {
       return publishedfiledetails_;
     }
@@ -23177,7 +22769,7 @@ public final class SteamMsgPublishedFile {
               publishedfiledetailsBuilder_ = null;
               publishedfiledetails_ = other.publishedfiledetails_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              publishedfiledetailsBuilder_ = 
+              publishedfiledetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPublishedfiledetailsFieldBuilder() : null;
             } else {
@@ -23408,7 +23000,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails publishedfiledetails = 1;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
            getPublishedfiledetailsOrBuilderList() {
         if (publishedfiledetailsBuilder_ != null) {
           return publishedfiledetailsBuilder_.getMessageOrBuilderList();
@@ -23434,12 +23026,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails publishedfiledetails = 1;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Builder> 
+      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Builder>
            getPublishedfiledetailsBuilderList() {
         return getPublishedfiledetailsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails, SteamMsgPublishedFile.PublishedFileDetails.Builder, SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails, SteamMsgPublishedFile.PublishedFileDetails.Builder, SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
           getPublishedfiledetailsFieldBuilder() {
         if (publishedfiledetailsBuilder_ == null) {
           publishedfiledetailsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -23482,7 +23074,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetDetails_Response(input, extensionRegistry);
+          return new CPublishedFile_GetDetails_Response(input, extensionRegistry);
       }
     };
 
@@ -23526,7 +23118,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Request.WorkshopItem workshop_items = 3;</code>
      */
-    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItem> 
+    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItem>
         getWorkshopItemsList();
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Request.WorkshopItem workshop_items = 3;</code>
@@ -23539,7 +23131,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Request.WorkshopItem workshop_items = 3;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItemOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItemOrBuilder>
         getWorkshopItemsOrBuilderList();
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Request.WorkshopItem workshop_items = 3;</code>
@@ -23575,9 +23167,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -23691,9 +23280,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -24191,7 +23777,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WorkshopItem(input, extensionRegistry);
+            return new WorkshopItem(input, extensionRegistry);
         }
       };
 
@@ -24252,7 +23838,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Request.WorkshopItem workshop_items = 3;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItemOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItemOrBuilder>
         getWorkshopItemsOrBuilderList() {
       return workshopItems_;
     }
@@ -24615,7 +24201,7 @@ public final class SteamMsgPublishedFile {
               workshopItemsBuilder_ = null;
               workshopItems_ = other.workshopItems_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              workshopItemsBuilder_ = 
+              workshopItemsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWorkshopItemsFieldBuilder() : null;
             } else {
@@ -24910,7 +24496,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetItemInfo_Request.WorkshopItem workshop_items = 3;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItemOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItemOrBuilder>
            getWorkshopItemsOrBuilderList() {
         if (workshopItemsBuilder_ != null) {
           return workshopItemsBuilder_.getMessageOrBuilderList();
@@ -24936,12 +24522,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetItemInfo_Request.WorkshopItem workshop_items = 3;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItem.Builder> 
+      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItem.Builder>
            getWorkshopItemsBuilderList() {
         return getWorkshopItemsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItem, SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItem.Builder, SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItemOrBuilder> 
+          SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItem, SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItem.Builder, SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Request.WorkshopItemOrBuilder>
           getWorkshopItemsFieldBuilder() {
         if (workshopItemsBuilder_ == null) {
           workshopItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -24984,7 +24570,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetItemInfo_Request(input, extensionRegistry);
+          return new CPublishedFile_GetItemInfo_Request(input, extensionRegistry);
       }
     };
 
@@ -25019,7 +24605,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Response.WorkshopItemInfo workshop_items = 2;</code>
      */
-    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfo> 
+    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfo>
         getWorkshopItemsList();
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Response.WorkshopItemInfo workshop_items = 2;</code>
@@ -25032,7 +24618,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Response.WorkshopItemInfo workshop_items = 2;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfoOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfoOrBuilder>
         getWorkshopItemsOrBuilderList();
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Response.WorkshopItemInfo workshop_items = 2;</code>
@@ -25067,9 +24653,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -25198,9 +24781,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -25853,7 +25433,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WorkshopItemInfo(input, extensionRegistry);
+            return new WorkshopItemInfo(input, extensionRegistry);
         }
       };
 
@@ -25899,7 +25479,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetItemInfo_Response.WorkshopItemInfo workshop_items = 2;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfoOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfoOrBuilder>
         getWorkshopItemsOrBuilderList() {
       return workshopItems_;
     }
@@ -26237,7 +25817,7 @@ public final class SteamMsgPublishedFile {
               workshopItemsBuilder_ = null;
               workshopItems_ = other.workshopItems_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              workshopItemsBuilder_ = 
+              workshopItemsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWorkshopItemsFieldBuilder() : null;
             } else {
@@ -26500,7 +26080,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetItemInfo_Response.WorkshopItemInfo workshop_items = 2;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfoOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfoOrBuilder>
            getWorkshopItemsOrBuilderList() {
         if (workshopItemsBuilder_ != null) {
           return workshopItemsBuilder_.getMessageOrBuilderList();
@@ -26526,12 +26106,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetItemInfo_Response.WorkshopItemInfo workshop_items = 2;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfo.Builder> 
+      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfo.Builder>
            getWorkshopItemsBuilderList() {
         return getWorkshopItemsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfo, SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfo.Builder, SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfoOrBuilder> 
+          SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfo, SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfo.Builder, SteamMsgPublishedFile.CPublishedFile_GetItemInfo_Response.WorkshopItemInfoOrBuilder>
           getWorkshopItemsFieldBuilder() {
         if (workshopItemsBuilder_ == null) {
           workshopItemsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -26574,7 +26154,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetItemInfo_Response(input, extensionRegistry);
+          return new CPublishedFile_GetItemInfo_Response(input, extensionRegistry);
       }
     };
 
@@ -26711,7 +26291,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Request.KVTag required_kv_tags = 30 [(.description) = "Required key-value tags to match on."];</code>
      */
-    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTag> 
+    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTag>
         getRequiredKvTagsList();
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Request.KVTag required_kv_tags = 30 [(.description) = "Required key-value tags to match on."];</code>
@@ -26724,7 +26304,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Request.KVTag required_kv_tags = 30 [(.description) = "Required key-value tags to match on."];</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTagOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTagOrBuilder>
         getRequiredKvTagsOrBuilderList();
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Request.KVTag required_kv_tags = 30 [(.description) = "Required key-value tags to match on."];</code>
@@ -26942,9 +26522,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -27205,9 +26782,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -27279,7 +26853,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -27295,7 +26869,7 @@ public final class SteamMsgPublishedFile {
           getKeyBytes() {
         java.lang.Object ref = key_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           key_ = b;
@@ -27321,7 +26895,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -27337,7 +26911,7 @@ public final class SteamMsgPublishedFile {
           getValueBytes() {
         java.lang.Object ref = value_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           value_ = b;
@@ -27700,7 +27274,7 @@ public final class SteamMsgPublishedFile {
             getKeyBytes() {
           java.lang.Object ref = key_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             key_ = b;
@@ -27776,7 +27350,7 @@ public final class SteamMsgPublishedFile {
             getValueBytes() {
           java.lang.Object ref = value_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             value_ = b;
@@ -27850,7 +27424,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KVTag(input, extensionRegistry);
+            return new KVTag(input, extensionRegistry);
         }
       };
 
@@ -27946,7 +27520,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -27962,7 +27536,7 @@ public final class SteamMsgPublishedFile {
         getTypeBytes() {
       java.lang.Object ref = type_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         type_ = b;
@@ -27988,7 +27562,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -28004,7 +27578,7 @@ public final class SteamMsgPublishedFile {
         getSortmethodBytes() {
       java.lang.Object ref = sortmethod_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         sortmethod_ = b;
@@ -28098,7 +27672,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Request.KVTag required_kv_tags = 30 [(.description) = "Required key-value tags to match on."];</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTagOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTagOrBuilder>
         getRequiredKvTagsOrBuilderList() {
       return requiredKvTags_;
     }
@@ -28168,7 +27742,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -28184,7 +27758,7 @@ public final class SteamMsgPublishedFile {
         getMatchCloudFilenameBytes() {
       java.lang.Object ref = matchCloudFilename_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         matchCloudFilename_ = b;
@@ -29323,7 +28897,7 @@ public final class SteamMsgPublishedFile {
               requiredKvTagsBuilder_ = null;
               requiredKvTags_ = other.requiredKvTags_;
               bitField0_ = (bitField0_ & ~0x00000200);
-              requiredKvTagsBuilder_ = 
+              requiredKvTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRequiredKvTagsFieldBuilder() : null;
             } else {
@@ -29571,7 +29145,7 @@ public final class SteamMsgPublishedFile {
           getTypeBytes() {
         java.lang.Object ref = type_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           type_ = b;
@@ -29647,7 +29221,7 @@ public final class SteamMsgPublishedFile {
           getSortmethodBytes() {
         java.lang.Object ref = sortmethod_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           sortmethod_ = b;
@@ -30105,7 +29679,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetUserFiles_Request.KVTag required_kv_tags = 30 [(.description) = "Required key-value tags to match on."];</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTagOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTagOrBuilder>
            getRequiredKvTagsOrBuilderList() {
         if (requiredKvTagsBuilder_ != null) {
           return requiredKvTagsBuilder_.getMessageOrBuilderList();
@@ -30131,12 +29705,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetUserFiles_Request.KVTag required_kv_tags = 30 [(.description) = "Required key-value tags to match on."];</code>
        */
-      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTag.Builder> 
+      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTag.Builder>
            getRequiredKvTagsBuilderList() {
         return getRequiredKvTagsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTag, SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTag.Builder, SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTagOrBuilder> 
+          SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTag, SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTag.Builder, SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Request.KVTagOrBuilder>
           getRequiredKvTagsFieldBuilder() {
         if (requiredKvTagsBuilder_ == null) {
           requiredKvTagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -30245,7 +29819,7 @@ public final class SteamMsgPublishedFile {
           getMatchCloudFilenameBytes() {
         java.lang.Object ref = matchCloudFilename_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           matchCloudFilename_ = b;
@@ -30767,7 +30341,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetUserFiles_Request(input, extensionRegistry);
+          return new CPublishedFile_GetUserFiles_Request(input, extensionRegistry);
       }
     };
 
@@ -30811,7 +30385,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 3;</code>
      */
-    java.util.List<SteamMsgPublishedFile.PublishedFileDetails> 
+    java.util.List<SteamMsgPublishedFile.PublishedFileDetails>
         getPublishedfiledetailsList();
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 3;</code>
@@ -30824,7 +30398,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 3;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
         getPublishedfiledetailsOrBuilderList();
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 3;</code>
@@ -30835,7 +30409,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Response.App apps = 4;</code>
      */
-    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.App> 
+    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.App>
         getAppsList();
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Response.App apps = 4;</code>
@@ -30848,7 +30422,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Response.App apps = 4;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.AppOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.AppOrBuilder>
         getAppsOrBuilderList();
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Response.App apps = 4;</code>
@@ -30885,9 +30459,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -31038,9 +30609,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -31136,7 +30704,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -31152,7 +30720,7 @@ public final class SteamMsgPublishedFile {
           getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           name_ = b;
@@ -31627,7 +31195,7 @@ public final class SteamMsgPublishedFile {
             getNameBytes() {
           java.lang.Object ref = name_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             name_ = b;
@@ -31765,7 +31333,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new App(input, extensionRegistry);
+            return new App(input, extensionRegistry);
         }
       };
 
@@ -31826,7 +31394,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 3;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
         getPublishedfiledetailsOrBuilderList() {
       return publishedfiledetails_;
     }
@@ -31861,7 +31429,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetUserFiles_Response.App apps = 4;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.AppOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.AppOrBuilder>
         getAppsOrBuilderList() {
       return apps_;
     }
@@ -32253,7 +31821,7 @@ public final class SteamMsgPublishedFile {
               publishedfiledetailsBuilder_ = null;
               publishedfiledetails_ = other.publishedfiledetails_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              publishedfiledetailsBuilder_ = 
+              publishedfiledetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPublishedfiledetailsFieldBuilder() : null;
             } else {
@@ -32279,7 +31847,7 @@ public final class SteamMsgPublishedFile {
               appsBuilder_ = null;
               apps_ = other.apps_;
               bitField0_ = (bitField0_ & ~0x00000008);
-              appsBuilder_ = 
+              appsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAppsFieldBuilder() : null;
             } else {
@@ -32574,7 +32142,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails publishedfiledetails = 3;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
            getPublishedfiledetailsOrBuilderList() {
         if (publishedfiledetailsBuilder_ != null) {
           return publishedfiledetailsBuilder_.getMessageOrBuilderList();
@@ -32600,12 +32168,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails publishedfiledetails = 3;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Builder> 
+      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Builder>
            getPublishedfiledetailsBuilderList() {
         return getPublishedfiledetailsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails, SteamMsgPublishedFile.PublishedFileDetails.Builder, SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails, SteamMsgPublishedFile.PublishedFileDetails.Builder, SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
           getPublishedfiledetailsFieldBuilder() {
         if (publishedfiledetailsBuilder_ == null) {
           publishedfiledetailsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -32814,7 +32382,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetUserFiles_Response.App apps = 4;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.AppOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.AppOrBuilder>
            getAppsOrBuilderList() {
         if (appsBuilder_ != null) {
           return appsBuilder_.getMessageOrBuilderList();
@@ -32840,12 +32408,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetUserFiles_Response.App apps = 4;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.App.Builder> 
+      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.App.Builder>
            getAppsBuilderList() {
         return getAppsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.App, SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.App.Builder, SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.AppOrBuilder> 
+          SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.App, SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.App.Builder, SteamMsgPublishedFile.CPublishedFile_GetUserFiles_Response.AppOrBuilder>
           getAppsFieldBuilder() {
         if (appsBuilder_ == null) {
           appsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -32888,7 +32456,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetUserFiles_Response(input, extensionRegistry);
+          return new CPublishedFile_GetUserFiles_Response(input, extensionRegistry);
       }
     };
 
@@ -33066,9 +32634,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -33219,7 +32784,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -33235,7 +32800,7 @@ public final class SteamMsgPublishedFile {
         getTitleBytes() {
       java.lang.Object ref = title_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         title_ = b;
@@ -33261,7 +32826,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -33277,7 +32842,7 @@ public final class SteamMsgPublishedFile {
         getFileDescriptionBytes() {
       java.lang.Object ref = fileDescription_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         fileDescription_ = b;
@@ -33347,7 +32912,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -33363,7 +32928,7 @@ public final class SteamMsgPublishedFile {
         getFilenameBytes() {
       java.lang.Object ref = filename_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         filename_ = b;
@@ -33389,7 +32954,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -33405,7 +32970,7 @@ public final class SteamMsgPublishedFile {
         getPreviewFilenameBytes() {
       java.lang.Object ref = previewFilename_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         previewFilename_ = b;
@@ -34074,7 +33639,7 @@ public final class SteamMsgPublishedFile {
           getTitleBytes() {
         java.lang.Object ref = title_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           title_ = b;
@@ -34150,7 +33715,7 @@ public final class SteamMsgPublishedFile {
           getFileDescriptionBytes() {
         java.lang.Object ref = fileDescription_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           fileDescription_ = b;
@@ -34351,7 +33916,7 @@ public final class SteamMsgPublishedFile {
           getFilenameBytes() {
         java.lang.Object ref = filename_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           filename_ = b;
@@ -34427,7 +33992,7 @@ public final class SteamMsgPublishedFile {
           getPreviewFilenameBytes() {
         java.lang.Object ref = previewFilename_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           previewFilename_ = b;
@@ -34565,7 +34130,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_Update_Request(input, extensionRegistry);
+          return new CPublishedFile_Update_Request(input, extensionRegistry);
       }
     };
 
@@ -34613,9 +34178,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -34952,7 +34514,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_Update_Response(input, extensionRegistry);
+          return new CPublishedFile_Update_Response(input, extensionRegistry);
       }
     };
 
@@ -35030,9 +34592,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -35607,7 +35166,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetChangeHistoryEntry_Request(input, extensionRegistry);
+          return new CPublishedFile_GetChangeHistoryEntry_Request(input, extensionRegistry);
       }
     };
 
@@ -35680,9 +35239,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -35753,7 +35309,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -35769,7 +35325,7 @@ public final class SteamMsgPublishedFile {
         getChangeDescriptionBytes() {
       java.lang.Object ref = changeDescription_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         changeDescription_ = b;
@@ -36146,7 +35702,7 @@ public final class SteamMsgPublishedFile {
           getChangeDescriptionBytes() {
         java.lang.Object ref = changeDescription_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           changeDescription_ = b;
@@ -36252,7 +35808,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetChangeHistoryEntry_Response(input, extensionRegistry);
+          return new CPublishedFile_GetChangeHistoryEntry_Response(input, extensionRegistry);
       }
     };
 
@@ -36350,9 +35906,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -37082,7 +36635,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetChangeHistory_Request(input, extensionRegistry);
+          return new CPublishedFile_GetChangeHistory_Request(input, extensionRegistry);
       }
     };
 
@@ -37108,7 +36661,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetChangeHistory_Response.ChangeLog changes = 1;</code>
      */
-    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLog> 
+    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLog>
         getChangesList();
     /**
      * <code>repeated .CPublishedFile_GetChangeHistory_Response.ChangeLog changes = 1;</code>
@@ -37121,7 +36674,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetChangeHistory_Response.ChangeLog changes = 1;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLogOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLogOrBuilder>
         getChangesOrBuilderList();
     /**
      * <code>repeated .CPublishedFile_GetChangeHistory_Response.ChangeLog changes = 1;</code>
@@ -37165,9 +36718,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -37291,9 +36841,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -37384,7 +36931,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -37400,7 +36947,7 @@ public final class SteamMsgPublishedFile {
           getChangeDescriptionBytes() {
         java.lang.Object ref = changeDescription_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           changeDescription_ = b;
@@ -37834,7 +37381,7 @@ public final class SteamMsgPublishedFile {
             getChangeDescriptionBytes() {
           java.lang.Object ref = changeDescription_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             changeDescription_ = b;
@@ -37940,7 +37487,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ChangeLog(input, extensionRegistry);
+            return new ChangeLog(input, extensionRegistry);
         }
       };
 
@@ -37971,7 +37518,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetChangeHistory_Response.ChangeLog changes = 1;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLogOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLogOrBuilder>
         getChangesOrBuilderList() {
       return changes_;
     }
@@ -38321,7 +37868,7 @@ public final class SteamMsgPublishedFile {
               changesBuilder_ = null;
               changes_ = other.changes_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              changesBuilder_ = 
+              changesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChangesFieldBuilder() : null;
             } else {
@@ -38555,7 +38102,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetChangeHistory_Response.ChangeLog changes = 1;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLogOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLogOrBuilder>
            getChangesOrBuilderList() {
         if (changesBuilder_ != null) {
           return changesBuilder_.getMessageOrBuilderList();
@@ -38581,12 +38128,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetChangeHistory_Response.ChangeLog changes = 1;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLog.Builder> 
+      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLog.Builder>
            getChangesBuilderList() {
         return getChangesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLog, SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLog.Builder, SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLogOrBuilder> 
+          SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLog, SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLog.Builder, SteamMsgPublishedFile.CPublishedFile_GetChangeHistory_Response.ChangeLogOrBuilder>
           getChangesFieldBuilder() {
         if (changesBuilder_ == null) {
           changesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -38661,7 +38208,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetChangeHistory_Response(input, extensionRegistry);
+          return new CPublishedFile_GetChangeHistory_Response(input, extensionRegistry);
       }
     };
 
@@ -38789,9 +38336,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -39779,7 +39323,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_RefreshVotingQueue_Request(input, extensionRegistry);
+          return new CPublishedFile_RefreshVotingQueue_Request(input, extensionRegistry);
       }
     };
 
@@ -39827,9 +39371,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -40166,7 +39707,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_RefreshVotingQueue_Response(input, extensionRegistry);
+          return new CPublishedFile_RefreshVotingQueue_Response(input, extensionRegistry);
       }
     };
 
@@ -40206,6 +39747,20 @@ public final class SteamMsgPublishedFile {
      * <code>optional uint32 page = 2 [(.description) = "Current page"];</code>
      */
     int getPage();
+
+    /**
+     * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+     */
+    boolean hasCursor();
+    /**
+     * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+     */
+    java.lang.String getCursor();
+    /**
+     * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+     */
+    com.google.protobuf.ByteString
+        getCursorBytes();
 
     /**
      * <code>optional uint32 numperpage = 3 [default = 1, (.description) = "(Optional) The number of results, per page to return."];</code>
@@ -40390,7 +39945,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_QueryFiles_Request.KVTag required_kv_tags = 34 [(.description) = "Required key-value tags to match on."];</code>
      */
-    java.util.List<SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag> 
+    java.util.List<SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag>
         getRequiredKvTagsList();
     /**
      * <code>repeated .CPublishedFile_QueryFiles_Request.KVTag required_kv_tags = 34 [(.description) = "Required key-value tags to match on."];</code>
@@ -40403,7 +39958,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_QueryFiles_Request.KVTag required_kv_tags = 34 [(.description) = "Required key-value tags to match on."];</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder>
         getRequiredKvTagsOrBuilderList();
     /**
      * <code>repeated .CPublishedFile_QueryFiles_Request.KVTag required_kv_tags = 34 [(.description) = "Required key-value tags to match on."];</code>
@@ -40543,6 +40098,7 @@ public final class SteamMsgPublishedFile {
     private CPublishedFile_QueryFiles_Request() {
       queryType_ = 0;
       page_ = 0;
+      cursor_ = "";
       numperpage_ = 1;
       creatorAppid_ = 0;
       appid_ = 0;
@@ -40584,9 +40140,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -40616,169 +40169,175 @@ public final class SteamMsgPublishedFile {
               break;
             }
             case 24: {
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               numperpage_ = input.readUInt32();
               break;
             }
             case 32: {
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               creatorAppid_ = input.readUInt32();
               break;
             }
             case 40: {
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               appid_ = input.readUInt32();
               break;
             }
             case 50: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
                 requiredtags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000040;
               }
               requiredtags_.add(bs);
               break;
             }
             case 58: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
                 excludedtags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               excludedtags_.add(bs);
               break;
             }
             case 64: {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               matchAllTags_ = input.readBool();
               break;
             }
             case 74: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
                 requiredFlags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000100;
+                mutable_bitField0_ |= 0x00000200;
               }
               requiredFlags_.add(bs);
               break;
             }
             case 82: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 omittedFlags_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               omittedFlags_.add(bs);
               break;
             }
             case 90: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               searchText_ = bs;
               break;
             }
             case 96: {
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               filetype_ = input.readUInt32();
               break;
             }
             case 105: {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               childPublishedfileid_ = input.readFixed64();
               break;
             }
             case 112: {
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               days_ = input.readUInt32();
               break;
             }
             case 120: {
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               includeRecentVotesOnly_ = input.readBool();
               break;
             }
             case 128: {
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               totalonly_ = input.readBool();
               break;
             }
             case 136: {
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00010000;
               returnVoteData_ = input.readBool();
               break;
             }
             case 144: {
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00020000;
               returnTags_ = input.readBool();
               break;
             }
             case 152: {
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00040000;
               returnKvTags_ = input.readBool();
               break;
             }
             case 160: {
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00080000;
               returnPreviews_ = input.readBool();
               break;
             }
             case 168: {
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00100000;
               returnChildren_ = input.readBool();
               break;
             }
             case 176: {
-              bitField0_ |= 0x00100000;
+              bitField0_ |= 0x00200000;
               returnShortDescription_ = input.readBool();
               break;
             }
             case 240: {
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x00400000;
               returnForSaleData_ = input.readBool();
               break;
             }
             case 248: {
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               cacheMaxAgeSeconds_ = input.readUInt32();
               break;
             }
             case 256: {
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00800000;
               returnMetadata_ = input.readBool();
               break;
             }
             case 264: {
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               language_ = input.readInt32();
               break;
             }
             case 274: {
-              if (!((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+              if (!((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
                 requiredKvTags_ = new java.util.ArrayList<SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag>();
-                mutable_bitField0_ |= 0x00020000;
+                mutable_bitField0_ |= 0x00040000;
               }
               requiredKvTags_.add(
                   input.readMessage(SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag.PARSER, extensionRegistry));
               break;
             }
             case 280: {
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00008000;
               idsOnly_ = input.readBool();
               break;
             }
             case 288: {
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x01000000;
               returnPlaytimeStats_ = input.readUInt32();
               break;
             }
             case 296: {
-              bitField0_ |= 0x01000000;
+              bitField0_ |= 0x02000000;
               returnDetails_ = input.readBool();
               break;
             }
             case 304: {
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x04000000;
               stripDescriptionBbcode_ = input.readBool();
+              break;
+            }
+            case 314: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              cursor_ = bs;
               break;
             }
           }
@@ -40789,19 +40348,19 @@ public final class SteamMsgPublishedFile {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
           requiredtags_ = requiredtags_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           excludedtags_ = excludedtags_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
           requiredFlags_ = requiredFlags_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           omittedFlags_ = omittedFlags_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x00020000) == 0x00020000)) {
+        if (((mutable_bitField0_ & 0x00040000) == 0x00040000)) {
           requiredKvTags_ = java.util.Collections.unmodifiableList(requiredKvTags_);
         }
         this.unknownFields = unknownFields.build();
@@ -40879,9 +40438,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -40953,7 +40509,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -40969,7 +40525,7 @@ public final class SteamMsgPublishedFile {
           getKeyBytes() {
         java.lang.Object ref = key_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           key_ = b;
@@ -40995,7 +40551,7 @@ public final class SteamMsgPublishedFile {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -41011,7 +40567,7 @@ public final class SteamMsgPublishedFile {
           getValueBytes() {
         java.lang.Object ref = value_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           value_ = b;
@@ -41374,7 +40930,7 @@ public final class SteamMsgPublishedFile {
             getKeyBytes() {
           java.lang.Object ref = key_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             key_ = b;
@@ -41450,7 +41006,7 @@ public final class SteamMsgPublishedFile {
             getValueBytes() {
           java.lang.Object ref = value_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             value_ = b;
@@ -41524,7 +41080,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new KVTag(input, extensionRegistry);
+            return new KVTag(input, extensionRegistry);
         }
       };
 
@@ -41574,13 +41130,55 @@ public final class SteamMsgPublishedFile {
       return page_;
     }
 
+    public static final int CURSOR_FIELD_NUMBER = 39;
+    private volatile java.lang.Object cursor_;
+    /**
+     * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+     */
+    public boolean hasCursor() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+     */
+    public java.lang.String getCursor() {
+      java.lang.Object ref = cursor_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          cursor_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+     */
+    public com.google.protobuf.ByteString
+        getCursorBytes() {
+      java.lang.Object ref = cursor_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cursor_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int NUMPERPAGE_FIELD_NUMBER = 3;
     private int numperpage_;
     /**
      * <code>optional uint32 numperpage = 3 [default = 1, (.description) = "(Optional) The number of results, per page to return."];</code>
      */
     public boolean hasNumperpage() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
      * <code>optional uint32 numperpage = 3 [default = 1, (.description) = "(Optional) The number of results, per page to return."];</code>
@@ -41595,7 +41193,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional uint32 creator_appid = 4 [(.description) = "App that created the files"];</code>
      */
     public boolean hasCreatorAppid() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
      * <code>optional uint32 creator_appid = 4 [(.description) = "App that created the files"];</code>
@@ -41610,7 +41208,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional uint32 appid = 5 [(.description) = "App that consumes the files"];</code>
      */
     public boolean hasAppid() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>optional uint32 appid = 5 [(.description) = "App that consumes the files"];</code>
@@ -41683,7 +41281,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool match_all_tags = 8 [default = true, (.description) = "If true, then items must have all the tags specified, otherwise they must have at least one of the tags."];</code>
      */
     public boolean hasMatchAllTags() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
      * <code>optional bool match_all_tags = 8 [default = true, (.description) = "If true, then items must have all the tags specified, otherwise they must have at least one of the tags."];</code>
@@ -41756,7 +41354,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional string search_text = 11 [(.description) = "Text to match in the item&#92;'s title or description"];</code>
      */
     public boolean hasSearchText() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
      * <code>optional string search_text = 11 [(.description) = "Text to match in the item&#92;'s title or description"];</code>
@@ -41766,7 +41364,7 @@ public final class SteamMsgPublishedFile {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -41782,7 +41380,7 @@ public final class SteamMsgPublishedFile {
         getSearchTextBytes() {
       java.lang.Object ref = searchText_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         searchText_ = b;
@@ -41798,7 +41396,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional uint32 filetype = 12 [(.description) = "EPublishedFileInfoMatchingFileType"];</code>
      */
     public boolean hasFiletype() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     /**
      * <code>optional uint32 filetype = 12 [(.description) = "EPublishedFileInfoMatchingFileType"];</code>
@@ -41813,7 +41411,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional fixed64 child_publishedfileid = 13 [(.description) = "Find all items that reference the given item."];</code>
      */
     public boolean hasChildPublishedfileid() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>optional fixed64 child_publishedfileid = 13 [(.description) = "Find all items that reference the given item."];</code>
@@ -41828,7 +41426,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional uint32 days = 14 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then this is the number of days to get votes for [1,7]."];</code>
      */
     public boolean hasDays() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional uint32 days = 14 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then this is the number of days to get votes for [1,7]."];</code>
@@ -41843,7 +41441,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool include_recent_votes_only = 15 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then limit result set just to items that have votes within the day range given"];</code>
      */
     public boolean hasIncludeRecentVotesOnly() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>optional bool include_recent_votes_only = 15 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then limit result set just to items that have votes within the day range given"];</code>
@@ -41858,7 +41456,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional uint32 cache_max_age_seconds = 31 [default = 0, (.description) = "Allow stale data to be returned for the specified number of seconds."];</code>
      */
     public boolean hasCacheMaxAgeSeconds() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional uint32 cache_max_age_seconds = 31 [default = 0, (.description) = "Allow stale data to be returned for the specified number of seconds."];</code>
@@ -41873,7 +41471,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional int32 language = 33 [default = 0, (.description) = "Language to search in and also what gets returned. Defaults to English."];</code>
      */
     public boolean hasLanguage() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
      * <code>optional int32 language = 33 [default = 0, (.description) = "Language to search in and also what gets returned. Defaults to English."];</code>
@@ -41893,7 +41491,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_QueryFiles_Request.KVTag required_kv_tags = 34 [(.description) = "Required key-value tags to match on."];</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder>
         getRequiredKvTagsOrBuilderList() {
       return requiredKvTags_;
     }
@@ -41923,7 +41521,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool totalonly = 16 [(.description) = "(Optional) If true, only return the total number of files that satisfy this query."];</code>
      */
     public boolean hasTotalonly() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
      * <code>optional bool totalonly = 16 [(.description) = "(Optional) If true, only return the total number of files that satisfy this query."];</code>
@@ -41938,7 +41536,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool ids_only = 35 [(.description) = "(Optional) If true, only return the published file ids of files that satisfy this query."];</code>
      */
     public boolean hasIdsOnly() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
      * <code>optional bool ids_only = 35 [(.description) = "(Optional) If true, only return the published file ids of files that satisfy this query."];</code>
@@ -41953,7 +41551,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_vote_data = 17 [(.description) = "Return vote data"];</code>
      */
     public boolean hasReturnVoteData() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
+      return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
      * <code>optional bool return_vote_data = 17 [(.description) = "Return vote data"];</code>
@@ -41968,7 +41566,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_tags = 18 [(.description) = "Return tags in the file details"];</code>
      */
     public boolean hasReturnTags() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
      * <code>optional bool return_tags = 18 [(.description) = "Return tags in the file details"];</code>
@@ -41983,7 +41581,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_kv_tags = 19 [(.description) = "Return key-value tags in the file details"];</code>
      */
     public boolean hasReturnKvTags() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
+      return ((bitField0_ & 0x00040000) == 0x00040000);
     }
     /**
      * <code>optional bool return_kv_tags = 19 [(.description) = "Return key-value tags in the file details"];</code>
@@ -41998,7 +41596,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_previews = 20 [(.description) = "Return preview image and video details in the file details"];</code>
      */
     public boolean hasReturnPreviews() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
+      return ((bitField0_ & 0x00080000) == 0x00080000);
     }
     /**
      * <code>optional bool return_previews = 20 [(.description) = "Return preview image and video details in the file details"];</code>
@@ -42013,7 +41611,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_children = 21 [(.description) = "Return child item ids in the file details"];</code>
      */
     public boolean hasReturnChildren() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
+      return ((bitField0_ & 0x00100000) == 0x00100000);
     }
     /**
      * <code>optional bool return_children = 21 [(.description) = "Return child item ids in the file details"];</code>
@@ -42028,7 +41626,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_short_description = 22 [(.description) = "Populate the short_description field instead of file_description"];</code>
      */
     public boolean hasReturnShortDescription() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
+      return ((bitField0_ & 0x00200000) == 0x00200000);
     }
     /**
      * <code>optional bool return_short_description = 22 [(.description) = "Populate the short_description field instead of file_description"];</code>
@@ -42043,7 +41641,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_for_sale_data = 30 [(.description) = "Return pricing information, if applicable"];</code>
      */
     public boolean hasReturnForSaleData() {
-      return ((bitField0_ & 0x00200000) == 0x00200000);
+      return ((bitField0_ & 0x00400000) == 0x00400000);
     }
     /**
      * <code>optional bool return_for_sale_data = 30 [(.description) = "Return pricing information, if applicable"];</code>
@@ -42058,7 +41656,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_metadata = 32 [default = false, (.description) = "Populate the metadata"];</code>
      */
     public boolean hasReturnMetadata() {
-      return ((bitField0_ & 0x00400000) == 0x00400000);
+      return ((bitField0_ & 0x00800000) == 0x00800000);
     }
     /**
      * <code>optional bool return_metadata = 32 [default = false, (.description) = "Populate the metadata"];</code>
@@ -42073,7 +41671,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional uint32 return_playtime_stats = 36 [(.description) = "Return playtime stats for the specified number of days before today."];</code>
      */
     public boolean hasReturnPlaytimeStats() {
-      return ((bitField0_ & 0x00800000) == 0x00800000);
+      return ((bitField0_ & 0x01000000) == 0x01000000);
     }
     /**
      * <code>optional uint32 return_playtime_stats = 36 [(.description) = "Return playtime stats for the specified number of days before today."];</code>
@@ -42088,7 +41686,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool return_details = 37 [(.description) = "By default, if none of the other &#92;'return_*&#92;' fields are set, only some voting details are returned. Set this to true to return the default set of details."];</code>
      */
     public boolean hasReturnDetails() {
-      return ((bitField0_ & 0x01000000) == 0x01000000);
+      return ((bitField0_ & 0x02000000) == 0x02000000);
     }
     /**
      * <code>optional bool return_details = 37 [(.description) = "By default, if none of the other &#92;'return_*&#92;' fields are set, only some voting details are returned. Set this to true to return the default set of details."];</code>
@@ -42103,7 +41701,7 @@ public final class SteamMsgPublishedFile {
      * <code>optional bool strip_description_bbcode = 38 [(.description) = "Strips BBCode from descriptions."];</code>
      */
     public boolean hasStripDescriptionBbcode() {
-      return ((bitField0_ & 0x02000000) == 0x02000000);
+      return ((bitField0_ & 0x04000000) == 0x04000000);
     }
     /**
      * <code>optional bool strip_description_bbcode = 38 [(.description) = "Strips BBCode from descriptions."];</code>
@@ -42130,13 +41728,13 @@ public final class SteamMsgPublishedFile {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeUInt32(2, page_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeUInt32(3, numperpage_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeUInt32(4, creatorAppid_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeUInt32(5, appid_);
       }
       for (int i = 0; i < requiredtags_.size(); i++) {
@@ -42145,7 +41743,7 @@ public final class SteamMsgPublishedFile {
       for (int i = 0; i < excludedtags_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, excludedtags_.getRaw(i));
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBool(8, matchAllTags_);
       }
       for (int i = 0; i < requiredFlags_.size(); i++) {
@@ -42154,68 +41752,71 @@ public final class SteamMsgPublishedFile {
       for (int i = 0; i < omittedFlags_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, omittedFlags_.getRaw(i));
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, searchText_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeUInt32(12, filetype_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeFixed64(13, childPublishedfileid_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeUInt32(14, days_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeBool(15, includeRecentVotesOnly_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeBool(16, totalonly_);
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeBool(17, returnVoteData_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         output.writeBool(18, returnTags_);
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
         output.writeBool(19, returnKvTags_);
       }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
         output.writeBool(20, returnPreviews_);
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
         output.writeBool(21, returnChildren_);
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
         output.writeBool(22, returnShortDescription_);
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
         output.writeBool(30, returnForSaleData_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeUInt32(31, cacheMaxAgeSeconds_);
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
         output.writeBool(32, returnMetadata_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeInt32(33, language_);
       }
       for (int i = 0; i < requiredKvTags_.size(); i++) {
         output.writeMessage(34, requiredKvTags_.get(i));
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeBool(35, idsOnly_);
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
         output.writeUInt32(36, returnPlaytimeStats_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
         output.writeBool(37, returnDetails_);
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
         output.writeBool(38, stripDescriptionBbcode_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 39, cursor_);
       }
       unknownFields.writeTo(output);
     }
@@ -42233,15 +41834,15 @@ public final class SteamMsgPublishedFile {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, page_);
       }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, numperpage_);
       }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, creatorAppid_);
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, appid_);
       }
@@ -42261,7 +41862,7 @@ public final class SteamMsgPublishedFile {
         size += dataSize;
         size += 1 * getExcludedtagsList().size();
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, matchAllTags_);
       }
@@ -42281,66 +41882,66 @@ public final class SteamMsgPublishedFile {
         size += dataSize;
         size += 1 * getOmittedFlagsList().size();
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, searchText_);
-      }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(12, filetype_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, searchText_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFixed64Size(13, childPublishedfileid_);
+          .computeUInt32Size(12, filetype_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(14, days_);
+          .computeFixed64Size(13, childPublishedfileid_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, includeRecentVotesOnly_);
-      }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(16, totalonly_);
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(17, returnVoteData_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(18, returnTags_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(19, returnKvTags_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(20, returnPreviews_);
-      }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(21, returnChildren_);
-      }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(22, returnShortDescription_);
-      }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(30, returnForSaleData_);
+          .computeUInt32Size(14, days_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(31, cacheMaxAgeSeconds_);
+          .computeBoolSize(15, includeRecentVotesOnly_);
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(16, totalonly_);
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(17, returnVoteData_);
+      }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(18, returnTags_);
+      }
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(19, returnKvTags_);
+      }
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(20, returnPreviews_);
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(21, returnChildren_);
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(22, returnShortDescription_);
       }
       if (((bitField0_ & 0x00400000) == 0x00400000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(32, returnMetadata_);
+          .computeBoolSize(30, returnForSaleData_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(31, cacheMaxAgeSeconds_);
+      }
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(32, returnMetadata_);
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(33, language_);
       }
@@ -42348,21 +41949,24 @@ public final class SteamMsgPublishedFile {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(34, requiredKvTags_.get(i));
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(35, idsOnly_);
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(36, returnPlaytimeStats_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(37, returnDetails_);
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(38, stripDescriptionBbcode_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39, cursor_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -42389,6 +41993,11 @@ public final class SteamMsgPublishedFile {
       if (hasPage()) {
         result = result && (getPage()
             == other.getPage());
+      }
+      result = result && (hasCursor() == other.hasCursor());
+      if (hasCursor()) {
+        result = result && getCursor()
+            .equals(other.getCursor());
       }
       result = result && (hasNumperpage() == other.hasNumperpage());
       if (hasNumperpage()) {
@@ -42538,6 +42147,10 @@ public final class SteamMsgPublishedFile {
       if (hasPage()) {
         hash = (37 * hash) + PAGE_FIELD_NUMBER;
         hash = (53 * hash) + getPage();
+      }
+      if (hasCursor()) {
+        hash = (37 * hash) + CURSOR_FIELD_NUMBER;
+        hash = (53 * hash) + getCursor().hashCode();
       }
       if (hasNumperpage()) {
         hash = (37 * hash) + NUMPERPAGE_FIELD_NUMBER;
@@ -42804,68 +42417,70 @@ public final class SteamMsgPublishedFile {
         bitField0_ = (bitField0_ & ~0x00000001);
         page_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        numperpage_ = 1;
+        cursor_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        creatorAppid_ = 0;
+        numperpage_ = 1;
         bitField0_ = (bitField0_ & ~0x00000008);
-        appid_ = 0;
+        creatorAppid_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
-        requiredtags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        appid_ = 0;
         bitField0_ = (bitField0_ & ~0x00000020);
-        excludedtags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        requiredtags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000040);
-        matchAllTags_ = true;
+        excludedtags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000080);
-        requiredFlags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        matchAllTags_ = true;
         bitField0_ = (bitField0_ & ~0x00000100);
-        omittedFlags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        requiredFlags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000200);
-        searchText_ = "";
+        omittedFlags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000400);
-        filetype_ = 0;
+        searchText_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
-        childPublishedfileid_ = 0L;
+        filetype_ = 0;
         bitField0_ = (bitField0_ & ~0x00001000);
-        days_ = 0;
+        childPublishedfileid_ = 0L;
         bitField0_ = (bitField0_ & ~0x00002000);
-        includeRecentVotesOnly_ = false;
+        days_ = 0;
         bitField0_ = (bitField0_ & ~0x00004000);
-        cacheMaxAgeSeconds_ = 0;
+        includeRecentVotesOnly_ = false;
         bitField0_ = (bitField0_ & ~0x00008000);
-        language_ = 0;
+        cacheMaxAgeSeconds_ = 0;
         bitField0_ = (bitField0_ & ~0x00010000);
+        language_ = 0;
+        bitField0_ = (bitField0_ & ~0x00020000);
         if (requiredKvTagsBuilder_ == null) {
           requiredKvTags_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00040000);
         } else {
           requiredKvTagsBuilder_.clear();
         }
         totalonly_ = false;
-        bitField0_ = (bitField0_ & ~0x00040000);
-        idsOnly_ = false;
         bitField0_ = (bitField0_ & ~0x00080000);
-        returnVoteData_ = false;
+        idsOnly_ = false;
         bitField0_ = (bitField0_ & ~0x00100000);
-        returnTags_ = false;
+        returnVoteData_ = false;
         bitField0_ = (bitField0_ & ~0x00200000);
-        returnKvTags_ = false;
+        returnTags_ = false;
         bitField0_ = (bitField0_ & ~0x00400000);
-        returnPreviews_ = false;
+        returnKvTags_ = false;
         bitField0_ = (bitField0_ & ~0x00800000);
-        returnChildren_ = false;
+        returnPreviews_ = false;
         bitField0_ = (bitField0_ & ~0x01000000);
-        returnShortDescription_ = false;
+        returnChildren_ = false;
         bitField0_ = (bitField0_ & ~0x02000000);
-        returnForSaleData_ = false;
+        returnShortDescription_ = false;
         bitField0_ = (bitField0_ & ~0x04000000);
-        returnMetadata_ = false;
+        returnForSaleData_ = false;
         bitField0_ = (bitField0_ & ~0x08000000);
-        returnPlaytimeStats_ = 0;
+        returnMetadata_ = false;
         bitField0_ = (bitField0_ & ~0x10000000);
-        returnDetails_ = false;
+        returnPlaytimeStats_ = 0;
         bitField0_ = (bitField0_ & ~0x20000000);
-        stripDescriptionBbcode_ = false;
+        returnDetails_ = false;
         bitField0_ = (bitField0_ & ~0x40000000);
+        stripDescriptionBbcode_ = false;
+        bitField0_ = (bitField0_ & ~0x80000000);
         return this;
       }
 
@@ -42901,126 +42516,130 @@ public final class SteamMsgPublishedFile {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.numperpage_ = numperpage_;
+        result.cursor_ = cursor_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.creatorAppid_ = creatorAppid_;
+        result.numperpage_ = numperpage_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.appid_ = appid_;
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
-          requiredtags_ = requiredtags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.requiredtags_ = requiredtags_;
-        if (((bitField0_ & 0x00000040) == 0x00000040)) {
-          excludedtags_ = excludedtags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        }
-        result.excludedtags_ = excludedtags_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+        result.creatorAppid_ = creatorAppid_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.matchAllTags_ = matchAllTags_;
-        if (((bitField0_ & 0x00000100) == 0x00000100)) {
-          requiredFlags_ = requiredFlags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000100);
+        result.appid_ = appid_;
+        if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          requiredtags_ = requiredtags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
-        result.requiredFlags_ = requiredFlags_;
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
-          omittedFlags_ = omittedFlags_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000200);
+        result.requiredtags_ = requiredtags_;
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          excludedtags_ = excludedtags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
-        result.omittedFlags_ = omittedFlags_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+        result.excludedtags_ = excludedtags_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.searchText_ = searchText_;
+        result.matchAllTags_ = matchAllTags_;
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          requiredFlags_ = requiredFlags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.requiredFlags_ = requiredFlags_;
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          omittedFlags_ = omittedFlags_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.omittedFlags_ = omittedFlags_;
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.filetype_ = filetype_;
+        result.searchText_ = searchText_;
         if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.childPublishedfileid_ = childPublishedfileid_;
+        result.filetype_ = filetype_;
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.days_ = days_;
+        result.childPublishedfileid_ = childPublishedfileid_;
         if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.includeRecentVotesOnly_ = includeRecentVotesOnly_;
+        result.days_ = days_;
         if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
           to_bitField0_ |= 0x00000800;
         }
-        result.cacheMaxAgeSeconds_ = cacheMaxAgeSeconds_;
+        result.includeRecentVotesOnly_ = includeRecentVotesOnly_;
         if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
           to_bitField0_ |= 0x00001000;
         }
+        result.cacheMaxAgeSeconds_ = cacheMaxAgeSeconds_;
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00002000;
+        }
         result.language_ = language_;
         if (requiredKvTagsBuilder_ == null) {
-          if (((bitField0_ & 0x00020000) == 0x00020000)) {
+          if (((bitField0_ & 0x00040000) == 0x00040000)) {
             requiredKvTags_ = java.util.Collections.unmodifiableList(requiredKvTags_);
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00040000);
           }
           result.requiredKvTags_ = requiredKvTags_;
         } else {
           result.requiredKvTags_ = requiredKvTagsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
-          to_bitField0_ |= 0x00002000;
-        }
-        result.totalonly_ = totalonly_;
         if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
           to_bitField0_ |= 0x00004000;
         }
-        result.idsOnly_ = idsOnly_;
+        result.totalonly_ = totalonly_;
         if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
           to_bitField0_ |= 0x00008000;
         }
-        result.returnVoteData_ = returnVoteData_;
+        result.idsOnly_ = idsOnly_;
         if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
           to_bitField0_ |= 0x00010000;
         }
-        result.returnTags_ = returnTags_;
+        result.returnVoteData_ = returnVoteData_;
         if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
           to_bitField0_ |= 0x00020000;
         }
-        result.returnKvTags_ = returnKvTags_;
+        result.returnTags_ = returnTags_;
         if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
           to_bitField0_ |= 0x00040000;
         }
-        result.returnPreviews_ = returnPreviews_;
+        result.returnKvTags_ = returnKvTags_;
         if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
           to_bitField0_ |= 0x00080000;
         }
-        result.returnChildren_ = returnChildren_;
+        result.returnPreviews_ = returnPreviews_;
         if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
           to_bitField0_ |= 0x00100000;
         }
-        result.returnShortDescription_ = returnShortDescription_;
+        result.returnChildren_ = returnChildren_;
         if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
           to_bitField0_ |= 0x00200000;
         }
-        result.returnForSaleData_ = returnForSaleData_;
+        result.returnShortDescription_ = returnShortDescription_;
         if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
           to_bitField0_ |= 0x00400000;
         }
-        result.returnMetadata_ = returnMetadata_;
+        result.returnForSaleData_ = returnForSaleData_;
         if (((from_bitField0_ & 0x10000000) == 0x10000000)) {
           to_bitField0_ |= 0x00800000;
         }
-        result.returnPlaytimeStats_ = returnPlaytimeStats_;
+        result.returnMetadata_ = returnMetadata_;
         if (((from_bitField0_ & 0x20000000) == 0x20000000)) {
           to_bitField0_ |= 0x01000000;
         }
-        result.returnDetails_ = returnDetails_;
+        result.returnPlaytimeStats_ = returnPlaytimeStats_;
         if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
           to_bitField0_ |= 0x02000000;
+        }
+        result.returnDetails_ = returnDetails_;
+        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
+          to_bitField0_ |= 0x04000000;
         }
         result.stripDescriptionBbcode_ = stripDescriptionBbcode_;
         result.bitField0_ = to_bitField0_;
@@ -43071,6 +42690,11 @@ public final class SteamMsgPublishedFile {
         if (other.hasPage()) {
           setPage(other.getPage());
         }
+        if (other.hasCursor()) {
+          bitField0_ |= 0x00000004;
+          cursor_ = other.cursor_;
+          onChanged();
+        }
         if (other.hasNumperpage()) {
           setNumperpage(other.getNumperpage());
         }
@@ -43083,7 +42707,7 @@ public final class SteamMsgPublishedFile {
         if (!other.requiredtags_.isEmpty()) {
           if (requiredtags_.isEmpty()) {
             requiredtags_ = other.requiredtags_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureRequiredtagsIsMutable();
             requiredtags_.addAll(other.requiredtags_);
@@ -43093,7 +42717,7 @@ public final class SteamMsgPublishedFile {
         if (!other.excludedtags_.isEmpty()) {
           if (excludedtags_.isEmpty()) {
             excludedtags_ = other.excludedtags_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureExcludedtagsIsMutable();
             excludedtags_.addAll(other.excludedtags_);
@@ -43106,7 +42730,7 @@ public final class SteamMsgPublishedFile {
         if (!other.requiredFlags_.isEmpty()) {
           if (requiredFlags_.isEmpty()) {
             requiredFlags_ = other.requiredFlags_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureRequiredFlagsIsMutable();
             requiredFlags_.addAll(other.requiredFlags_);
@@ -43116,7 +42740,7 @@ public final class SteamMsgPublishedFile {
         if (!other.omittedFlags_.isEmpty()) {
           if (omittedFlags_.isEmpty()) {
             omittedFlags_ = other.omittedFlags_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureOmittedFlagsIsMutable();
             omittedFlags_.addAll(other.omittedFlags_);
@@ -43124,7 +42748,7 @@ public final class SteamMsgPublishedFile {
           onChanged();
         }
         if (other.hasSearchText()) {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           searchText_ = other.searchText_;
           onChanged();
         }
@@ -43150,7 +42774,7 @@ public final class SteamMsgPublishedFile {
           if (!other.requiredKvTags_.isEmpty()) {
             if (requiredKvTags_.isEmpty()) {
               requiredKvTags_ = other.requiredKvTags_;
-              bitField0_ = (bitField0_ & ~0x00020000);
+              bitField0_ = (bitField0_ & ~0x00040000);
             } else {
               ensureRequiredKvTagsIsMutable();
               requiredKvTags_.addAll(other.requiredKvTags_);
@@ -43163,8 +42787,8 @@ public final class SteamMsgPublishedFile {
               requiredKvTagsBuilder_.dispose();
               requiredKvTagsBuilder_ = null;
               requiredKvTags_ = other.requiredKvTags_;
-              bitField0_ = (bitField0_ & ~0x00020000);
-              requiredKvTagsBuilder_ = 
+              bitField0_ = (bitField0_ & ~0x00040000);
+              requiredKvTagsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRequiredKvTagsFieldBuilder() : null;
             } else {
@@ -43303,12 +42927,88 @@ public final class SteamMsgPublishedFile {
         return this;
       }
 
+      private java.lang.Object cursor_ = "";
+      /**
+       * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+       */
+      public boolean hasCursor() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+       */
+      public java.lang.String getCursor() {
+        java.lang.Object ref = cursor_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            cursor_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+       */
+      public com.google.protobuf.ByteString
+          getCursorBytes() {
+        java.lang.Object ref = cursor_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cursor_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+       */
+      public Builder setCursor(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        cursor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+       */
+      public Builder clearCursor() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        cursor_ = getDefaultInstance().getCursor();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string cursor = 39 [(.description) = "Cursor to paginate through the results (set to &#92;'*&#92;' for the first request).  Prefer this over using the page parameter, as it will allow you to do deep pagination.  When used, the page parameter will be ignored."];</code>
+       */
+      public Builder setCursorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        cursor_ = value;
+        onChanged();
+        return this;
+      }
+
       private int numperpage_ = 1;
       /**
        * <code>optional uint32 numperpage = 3 [default = 1, (.description) = "(Optional) The number of results, per page to return."];</code>
        */
       public boolean hasNumperpage() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
        * <code>optional uint32 numperpage = 3 [default = 1, (.description) = "(Optional) The number of results, per page to return."];</code>
@@ -43320,7 +43020,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 numperpage = 3 [default = 1, (.description) = "(Optional) The number of results, per page to return."];</code>
        */
       public Builder setNumperpage(int value) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         numperpage_ = value;
         onChanged();
         return this;
@@ -43329,7 +43029,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 numperpage = 3 [default = 1, (.description) = "(Optional) The number of results, per page to return."];</code>
        */
       public Builder clearNumperpage() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         numperpage_ = 1;
         onChanged();
         return this;
@@ -43340,7 +43040,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 creator_appid = 4 [(.description) = "App that created the files"];</code>
        */
       public boolean hasCreatorAppid() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
        * <code>optional uint32 creator_appid = 4 [(.description) = "App that created the files"];</code>
@@ -43352,7 +43052,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 creator_appid = 4 [(.description) = "App that created the files"];</code>
        */
       public Builder setCreatorAppid(int value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         creatorAppid_ = value;
         onChanged();
         return this;
@@ -43361,7 +43061,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 creator_appid = 4 [(.description) = "App that created the files"];</code>
        */
       public Builder clearCreatorAppid() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         creatorAppid_ = 0;
         onChanged();
         return this;
@@ -43372,7 +43072,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 appid = 5 [(.description) = "App that consumes the files"];</code>
        */
       public boolean hasAppid() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>optional uint32 appid = 5 [(.description) = "App that consumes the files"];</code>
@@ -43384,7 +43084,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 appid = 5 [(.description) = "App that consumes the files"];</code>
        */
       public Builder setAppid(int value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         appid_ = value;
         onChanged();
         return this;
@@ -43393,7 +43093,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 appid = 5 [(.description) = "App that consumes the files"];</code>
        */
       public Builder clearAppid() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         appid_ = 0;
         onChanged();
         return this;
@@ -43401,9 +43101,9 @@ public final class SteamMsgPublishedFile {
 
       private com.google.protobuf.LazyStringList requiredtags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureRequiredtagsIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           requiredtags_ = new com.google.protobuf.LazyStringArrayList(requiredtags_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
          }
       }
       /**
@@ -43474,7 +43174,7 @@ public final class SteamMsgPublishedFile {
        */
       public Builder clearRequiredtags() {
         requiredtags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -43494,9 +43194,9 @@ public final class SteamMsgPublishedFile {
 
       private com.google.protobuf.LazyStringList excludedtags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureExcludedtagsIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
           excludedtags_ = new com.google.protobuf.LazyStringArrayList(excludedtags_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
          }
       }
       /**
@@ -43567,7 +43267,7 @@ public final class SteamMsgPublishedFile {
        */
       public Builder clearExcludedtags() {
         excludedtags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -43590,7 +43290,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool match_all_tags = 8 [default = true, (.description) = "If true, then items must have all the tags specified, otherwise they must have at least one of the tags."];</code>
        */
       public boolean hasMatchAllTags() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       /**
        * <code>optional bool match_all_tags = 8 [default = true, (.description) = "If true, then items must have all the tags specified, otherwise they must have at least one of the tags."];</code>
@@ -43602,7 +43302,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool match_all_tags = 8 [default = true, (.description) = "If true, then items must have all the tags specified, otherwise they must have at least one of the tags."];</code>
        */
       public Builder setMatchAllTags(boolean value) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         matchAllTags_ = value;
         onChanged();
         return this;
@@ -43611,7 +43311,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool match_all_tags = 8 [default = true, (.description) = "If true, then items must have all the tags specified, otherwise they must have at least one of the tags."];</code>
        */
       public Builder clearMatchAllTags() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         matchAllTags_ = true;
         onChanged();
         return this;
@@ -43619,9 +43319,9 @@ public final class SteamMsgPublishedFile {
 
       private com.google.protobuf.LazyStringList requiredFlags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureRequiredFlagsIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
           requiredFlags_ = new com.google.protobuf.LazyStringArrayList(requiredFlags_);
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
          }
       }
       /**
@@ -43692,7 +43392,7 @@ public final class SteamMsgPublishedFile {
        */
       public Builder clearRequiredFlags() {
         requiredFlags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
@@ -43712,9 +43412,9 @@ public final class SteamMsgPublishedFile {
 
       private com.google.protobuf.LazyStringList omittedFlags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureOmittedFlagsIsMutable() {
-        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
           omittedFlags_ = new com.google.protobuf.LazyStringArrayList(omittedFlags_);
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
          }
       }
       /**
@@ -43785,7 +43485,7 @@ public final class SteamMsgPublishedFile {
        */
       public Builder clearOmittedFlags() {
         omittedFlags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -43808,7 +43508,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional string search_text = 11 [(.description) = "Text to match in the item&#92;'s title or description"];</code>
        */
       public boolean hasSearchText() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
        * <code>optional string search_text = 11 [(.description) = "Text to match in the item&#92;'s title or description"];</code>
@@ -43834,7 +43534,7 @@ public final class SteamMsgPublishedFile {
           getSearchTextBytes() {
         java.lang.Object ref = searchText_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           searchText_ = b;
@@ -43851,7 +43551,7 @@ public final class SteamMsgPublishedFile {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000800;
         searchText_ = value;
         onChanged();
         return this;
@@ -43860,7 +43560,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional string search_text = 11 [(.description) = "Text to match in the item&#92;'s title or description"];</code>
        */
       public Builder clearSearchText() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         searchText_ = getDefaultInstance().getSearchText();
         onChanged();
         return this;
@@ -43873,7 +43573,7 @@ public final class SteamMsgPublishedFile {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000800;
         searchText_ = value;
         onChanged();
         return this;
@@ -43884,7 +43584,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 filetype = 12 [(.description) = "EPublishedFileInfoMatchingFileType"];</code>
        */
       public boolean hasFiletype() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional uint32 filetype = 12 [(.description) = "EPublishedFileInfoMatchingFileType"];</code>
@@ -43896,7 +43596,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 filetype = 12 [(.description) = "EPublishedFileInfoMatchingFileType"];</code>
        */
       public Builder setFiletype(int value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         filetype_ = value;
         onChanged();
         return this;
@@ -43905,7 +43605,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 filetype = 12 [(.description) = "EPublishedFileInfoMatchingFileType"];</code>
        */
       public Builder clearFiletype() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         filetype_ = 0;
         onChanged();
         return this;
@@ -43916,7 +43616,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional fixed64 child_publishedfileid = 13 [(.description) = "Find all items that reference the given item."];</code>
        */
       public boolean hasChildPublishedfileid() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
        * <code>optional fixed64 child_publishedfileid = 13 [(.description) = "Find all items that reference the given item."];</code>
@@ -43928,7 +43628,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional fixed64 child_publishedfileid = 13 [(.description) = "Find all items that reference the given item."];</code>
        */
       public Builder setChildPublishedfileid(long value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         childPublishedfileid_ = value;
         onChanged();
         return this;
@@ -43937,7 +43637,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional fixed64 child_publishedfileid = 13 [(.description) = "Find all items that reference the given item."];</code>
        */
       public Builder clearChildPublishedfileid() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         childPublishedfileid_ = 0L;
         onChanged();
         return this;
@@ -43948,7 +43648,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 days = 14 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then this is the number of days to get votes for [1,7]."];</code>
        */
       public boolean hasDays() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <code>optional uint32 days = 14 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then this is the number of days to get votes for [1,7]."];</code>
@@ -43960,7 +43660,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 days = 14 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then this is the number of days to get votes for [1,7]."];</code>
        */
       public Builder setDays(int value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         days_ = value;
         onChanged();
         return this;
@@ -43969,7 +43669,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 days = 14 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then this is the number of days to get votes for [1,7]."];</code>
        */
       public Builder clearDays() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         days_ = 0;
         onChanged();
         return this;
@@ -43980,7 +43680,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool include_recent_votes_only = 15 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then limit result set just to items that have votes within the day range given"];</code>
        */
       public boolean hasIncludeRecentVotesOnly() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <code>optional bool include_recent_votes_only = 15 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then limit result set just to items that have votes within the day range given"];</code>
@@ -43992,7 +43692,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool include_recent_votes_only = 15 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then limit result set just to items that have votes within the day range given"];</code>
        */
       public Builder setIncludeRecentVotesOnly(boolean value) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         includeRecentVotesOnly_ = value;
         onChanged();
         return this;
@@ -44001,7 +43701,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool include_recent_votes_only = 15 [(.description) = "If query_type is k_PublishedFileQueryType_RankedByTrend, then limit result set just to items that have votes within the day range given"];</code>
        */
       public Builder clearIncludeRecentVotesOnly() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         includeRecentVotesOnly_ = false;
         onChanged();
         return this;
@@ -44012,7 +43712,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 cache_max_age_seconds = 31 [default = 0, (.description) = "Allow stale data to be returned for the specified number of seconds."];</code>
        */
       public boolean hasCacheMaxAgeSeconds() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
        * <code>optional uint32 cache_max_age_seconds = 31 [default = 0, (.description) = "Allow stale data to be returned for the specified number of seconds."];</code>
@@ -44024,7 +43724,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 cache_max_age_seconds = 31 [default = 0, (.description) = "Allow stale data to be returned for the specified number of seconds."];</code>
        */
       public Builder setCacheMaxAgeSeconds(int value) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         cacheMaxAgeSeconds_ = value;
         onChanged();
         return this;
@@ -44033,7 +43733,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 cache_max_age_seconds = 31 [default = 0, (.description) = "Allow stale data to be returned for the specified number of seconds."];</code>
        */
       public Builder clearCacheMaxAgeSeconds() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         cacheMaxAgeSeconds_ = 0;
         onChanged();
         return this;
@@ -44044,7 +43744,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional int32 language = 33 [default = 0, (.description) = "Language to search in and also what gets returned. Defaults to English."];</code>
        */
       public boolean hasLanguage() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
        * <code>optional int32 language = 33 [default = 0, (.description) = "Language to search in and also what gets returned. Defaults to English."];</code>
@@ -44056,7 +43756,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional int32 language = 33 [default = 0, (.description) = "Language to search in and also what gets returned. Defaults to English."];</code>
        */
       public Builder setLanguage(int value) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         language_ = value;
         onChanged();
         return this;
@@ -44065,7 +43765,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional int32 language = 33 [default = 0, (.description) = "Language to search in and also what gets returned. Defaults to English."];</code>
        */
       public Builder clearLanguage() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         language_ = 0;
         onChanged();
         return this;
@@ -44074,9 +43774,9 @@ public final class SteamMsgPublishedFile {
       private java.util.List<SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag> requiredKvTags_ =
         java.util.Collections.emptyList();
       private void ensureRequiredKvTagsIsMutable() {
-        if (!((bitField0_ & 0x00020000) == 0x00020000)) {
+        if (!((bitField0_ & 0x00040000) == 0x00040000)) {
           requiredKvTags_ = new java.util.ArrayList<SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag>(requiredKvTags_);
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00040000;
          }
       }
 
@@ -44226,7 +43926,7 @@ public final class SteamMsgPublishedFile {
       public Builder clearRequiredKvTags() {
         if (requiredKvTagsBuilder_ == null) {
           requiredKvTags_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00040000);
           onChanged();
         } else {
           requiredKvTagsBuilder_.clear();
@@ -44266,7 +43966,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_QueryFiles_Request.KVTag required_kv_tags = 34 [(.description) = "Required key-value tags to match on."];</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder>
            getRequiredKvTagsOrBuilderList() {
         if (requiredKvTagsBuilder_ != null) {
           return requiredKvTagsBuilder_.getMessageOrBuilderList();
@@ -44292,18 +43992,18 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_QueryFiles_Request.KVTag required_kv_tags = 34 [(.description) = "Required key-value tags to match on."];</code>
        */
-      public java.util.List<SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag.Builder> 
+      public java.util.List<SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag.Builder>
            getRequiredKvTagsBuilderList() {
         return getRequiredKvTagsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag, SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag.Builder, SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder> 
+          SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag, SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag.Builder, SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder>
           getRequiredKvTagsFieldBuilder() {
         if (requiredKvTagsBuilder_ == null) {
           requiredKvTagsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag, SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTag.Builder, SteamMsgPublishedFile.CPublishedFile_QueryFiles_Request.KVTagOrBuilder>(
                   requiredKvTags_,
-                  ((bitField0_ & 0x00020000) == 0x00020000),
+                  ((bitField0_ & 0x00040000) == 0x00040000),
                   getParentForChildren(),
                   isClean());
           requiredKvTags_ = null;
@@ -44316,7 +44016,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool totalonly = 16 [(.description) = "(Optional) If true, only return the total number of files that satisfy this query."];</code>
        */
       public boolean hasTotalonly() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x00080000) == 0x00080000);
       }
       /**
        * <code>optional bool totalonly = 16 [(.description) = "(Optional) If true, only return the total number of files that satisfy this query."];</code>
@@ -44328,7 +44028,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool totalonly = 16 [(.description) = "(Optional) If true, only return the total number of files that satisfy this query."];</code>
        */
       public Builder setTotalonly(boolean value) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         totalonly_ = value;
         onChanged();
         return this;
@@ -44337,7 +44037,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool totalonly = 16 [(.description) = "(Optional) If true, only return the total number of files that satisfy this query."];</code>
        */
       public Builder clearTotalonly() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         totalonly_ = false;
         onChanged();
         return this;
@@ -44348,7 +44048,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool ids_only = 35 [(.description) = "(Optional) If true, only return the published file ids of files that satisfy this query."];</code>
        */
       public boolean hasIdsOnly() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
+        return ((bitField0_ & 0x00100000) == 0x00100000);
       }
       /**
        * <code>optional bool ids_only = 35 [(.description) = "(Optional) If true, only return the published file ids of files that satisfy this query."];</code>
@@ -44360,7 +44060,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool ids_only = 35 [(.description) = "(Optional) If true, only return the published file ids of files that satisfy this query."];</code>
        */
       public Builder setIdsOnly(boolean value) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         idsOnly_ = value;
         onChanged();
         return this;
@@ -44369,7 +44069,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool ids_only = 35 [(.description) = "(Optional) If true, only return the published file ids of files that satisfy this query."];</code>
        */
       public Builder clearIdsOnly() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         idsOnly_ = false;
         onChanged();
         return this;
@@ -44380,7 +44080,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_vote_data = 17 [(.description) = "Return vote data"];</code>
        */
       public boolean hasReturnVoteData() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
+        return ((bitField0_ & 0x00200000) == 0x00200000);
       }
       /**
        * <code>optional bool return_vote_data = 17 [(.description) = "Return vote data"];</code>
@@ -44392,7 +44092,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_vote_data = 17 [(.description) = "Return vote data"];</code>
        */
       public Builder setReturnVoteData(boolean value) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         returnVoteData_ = value;
         onChanged();
         return this;
@@ -44401,7 +44101,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_vote_data = 17 [(.description) = "Return vote data"];</code>
        */
       public Builder clearReturnVoteData() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         returnVoteData_ = false;
         onChanged();
         return this;
@@ -44412,7 +44112,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_tags = 18 [(.description) = "Return tags in the file details"];</code>
        */
       public boolean hasReturnTags() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x00400000) == 0x00400000);
       }
       /**
        * <code>optional bool return_tags = 18 [(.description) = "Return tags in the file details"];</code>
@@ -44424,7 +44124,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_tags = 18 [(.description) = "Return tags in the file details"];</code>
        */
       public Builder setReturnTags(boolean value) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         returnTags_ = value;
         onChanged();
         return this;
@@ -44433,7 +44133,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_tags = 18 [(.description) = "Return tags in the file details"];</code>
        */
       public Builder clearReturnTags() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         returnTags_ = false;
         onChanged();
         return this;
@@ -44444,7 +44144,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_kv_tags = 19 [(.description) = "Return key-value tags in the file details"];</code>
        */
       public boolean hasReturnKvTags() {
-        return ((bitField0_ & 0x00400000) == 0x00400000);
+        return ((bitField0_ & 0x00800000) == 0x00800000);
       }
       /**
        * <code>optional bool return_kv_tags = 19 [(.description) = "Return key-value tags in the file details"];</code>
@@ -44456,7 +44156,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_kv_tags = 19 [(.description) = "Return key-value tags in the file details"];</code>
        */
       public Builder setReturnKvTags(boolean value) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         returnKvTags_ = value;
         onChanged();
         return this;
@@ -44465,7 +44165,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_kv_tags = 19 [(.description) = "Return key-value tags in the file details"];</code>
        */
       public Builder clearReturnKvTags() {
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         returnKvTags_ = false;
         onChanged();
         return this;
@@ -44476,7 +44176,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_previews = 20 [(.description) = "Return preview image and video details in the file details"];</code>
        */
       public boolean hasReturnPreviews() {
-        return ((bitField0_ & 0x00800000) == 0x00800000);
+        return ((bitField0_ & 0x01000000) == 0x01000000);
       }
       /**
        * <code>optional bool return_previews = 20 [(.description) = "Return preview image and video details in the file details"];</code>
@@ -44488,7 +44188,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_previews = 20 [(.description) = "Return preview image and video details in the file details"];</code>
        */
       public Builder setReturnPreviews(boolean value) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         returnPreviews_ = value;
         onChanged();
         return this;
@@ -44497,7 +44197,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_previews = 20 [(.description) = "Return preview image and video details in the file details"];</code>
        */
       public Builder clearReturnPreviews() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         returnPreviews_ = false;
         onChanged();
         return this;
@@ -44508,7 +44208,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_children = 21 [(.description) = "Return child item ids in the file details"];</code>
        */
       public boolean hasReturnChildren() {
-        return ((bitField0_ & 0x01000000) == 0x01000000);
+        return ((bitField0_ & 0x02000000) == 0x02000000);
       }
       /**
        * <code>optional bool return_children = 21 [(.description) = "Return child item ids in the file details"];</code>
@@ -44520,7 +44220,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_children = 21 [(.description) = "Return child item ids in the file details"];</code>
        */
       public Builder setReturnChildren(boolean value) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
         returnChildren_ = value;
         onChanged();
         return this;
@@ -44529,7 +44229,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_children = 21 [(.description) = "Return child item ids in the file details"];</code>
        */
       public Builder clearReturnChildren() {
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         returnChildren_ = false;
         onChanged();
         return this;
@@ -44540,7 +44240,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_short_description = 22 [(.description) = "Populate the short_description field instead of file_description"];</code>
        */
       public boolean hasReturnShortDescription() {
-        return ((bitField0_ & 0x02000000) == 0x02000000);
+        return ((bitField0_ & 0x04000000) == 0x04000000);
       }
       /**
        * <code>optional bool return_short_description = 22 [(.description) = "Populate the short_description field instead of file_description"];</code>
@@ -44552,7 +44252,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_short_description = 22 [(.description) = "Populate the short_description field instead of file_description"];</code>
        */
       public Builder setReturnShortDescription(boolean value) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x04000000;
         returnShortDescription_ = value;
         onChanged();
         return this;
@@ -44561,7 +44261,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_short_description = 22 [(.description) = "Populate the short_description field instead of file_description"];</code>
        */
       public Builder clearReturnShortDescription() {
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         returnShortDescription_ = false;
         onChanged();
         return this;
@@ -44572,7 +44272,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_for_sale_data = 30 [(.description) = "Return pricing information, if applicable"];</code>
        */
       public boolean hasReturnForSaleData() {
-        return ((bitField0_ & 0x04000000) == 0x04000000);
+        return ((bitField0_ & 0x08000000) == 0x08000000);
       }
       /**
        * <code>optional bool return_for_sale_data = 30 [(.description) = "Return pricing information, if applicable"];</code>
@@ -44584,7 +44284,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_for_sale_data = 30 [(.description) = "Return pricing information, if applicable"];</code>
        */
       public Builder setReturnForSaleData(boolean value) {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x08000000;
         returnForSaleData_ = value;
         onChanged();
         return this;
@@ -44593,7 +44293,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_for_sale_data = 30 [(.description) = "Return pricing information, if applicable"];</code>
        */
       public Builder clearReturnForSaleData() {
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         returnForSaleData_ = false;
         onChanged();
         return this;
@@ -44604,7 +44304,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_metadata = 32 [default = false, (.description) = "Populate the metadata"];</code>
        */
       public boolean hasReturnMetadata() {
-        return ((bitField0_ & 0x08000000) == 0x08000000);
+        return ((bitField0_ & 0x10000000) == 0x10000000);
       }
       /**
        * <code>optional bool return_metadata = 32 [default = false, (.description) = "Populate the metadata"];</code>
@@ -44616,7 +44316,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_metadata = 32 [default = false, (.description) = "Populate the metadata"];</code>
        */
       public Builder setReturnMetadata(boolean value) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x10000000;
         returnMetadata_ = value;
         onChanged();
         return this;
@@ -44625,7 +44325,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_metadata = 32 [default = false, (.description) = "Populate the metadata"];</code>
        */
       public Builder clearReturnMetadata() {
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         returnMetadata_ = false;
         onChanged();
         return this;
@@ -44636,7 +44336,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 return_playtime_stats = 36 [(.description) = "Return playtime stats for the specified number of days before today."];</code>
        */
       public boolean hasReturnPlaytimeStats() {
-        return ((bitField0_ & 0x10000000) == 0x10000000);
+        return ((bitField0_ & 0x20000000) == 0x20000000);
       }
       /**
        * <code>optional uint32 return_playtime_stats = 36 [(.description) = "Return playtime stats for the specified number of days before today."];</code>
@@ -44648,7 +44348,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 return_playtime_stats = 36 [(.description) = "Return playtime stats for the specified number of days before today."];</code>
        */
       public Builder setReturnPlaytimeStats(int value) {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x20000000;
         returnPlaytimeStats_ = value;
         onChanged();
         return this;
@@ -44657,7 +44357,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional uint32 return_playtime_stats = 36 [(.description) = "Return playtime stats for the specified number of days before today."];</code>
        */
       public Builder clearReturnPlaytimeStats() {
-        bitField0_ = (bitField0_ & ~0x10000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         returnPlaytimeStats_ = 0;
         onChanged();
         return this;
@@ -44668,7 +44368,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_details = 37 [(.description) = "By default, if none of the other &#92;'return_*&#92;' fields are set, only some voting details are returned. Set this to true to return the default set of details."];</code>
        */
       public boolean hasReturnDetails() {
-        return ((bitField0_ & 0x20000000) == 0x20000000);
+        return ((bitField0_ & 0x40000000) == 0x40000000);
       }
       /**
        * <code>optional bool return_details = 37 [(.description) = "By default, if none of the other &#92;'return_*&#92;' fields are set, only some voting details are returned. Set this to true to return the default set of details."];</code>
@@ -44680,7 +44380,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_details = 37 [(.description) = "By default, if none of the other &#92;'return_*&#92;' fields are set, only some voting details are returned. Set this to true to return the default set of details."];</code>
        */
       public Builder setReturnDetails(boolean value) {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         returnDetails_ = value;
         onChanged();
         return this;
@@ -44689,7 +44389,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool return_details = 37 [(.description) = "By default, if none of the other &#92;'return_*&#92;' fields are set, only some voting details are returned. Set this to true to return the default set of details."];</code>
        */
       public Builder clearReturnDetails() {
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         returnDetails_ = false;
         onChanged();
         return this;
@@ -44700,7 +44400,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool strip_description_bbcode = 38 [(.description) = "Strips BBCode from descriptions."];</code>
        */
       public boolean hasStripDescriptionBbcode() {
-        return ((bitField0_ & 0x40000000) == 0x40000000);
+        return ((bitField0_ & 0x80000000) == 0x80000000);
       }
       /**
        * <code>optional bool strip_description_bbcode = 38 [(.description) = "Strips BBCode from descriptions."];</code>
@@ -44712,7 +44412,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool strip_description_bbcode = 38 [(.description) = "Strips BBCode from descriptions."];</code>
        */
       public Builder setStripDescriptionBbcode(boolean value) {
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x80000000;
         stripDescriptionBbcode_ = value;
         onChanged();
         return this;
@@ -44721,7 +44421,7 @@ public final class SteamMsgPublishedFile {
        * <code>optional bool strip_description_bbcode = 38 [(.description) = "Strips BBCode from descriptions."];</code>
        */
       public Builder clearStripDescriptionBbcode() {
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x80000000);
         stripDescriptionBbcode_ = false;
         onChanged();
         return this;
@@ -44756,7 +44456,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_QueryFiles_Request(input, extensionRegistry);
+          return new CPublishedFile_QueryFiles_Request(input, extensionRegistry);
       }
     };
 
@@ -44791,7 +44491,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 2 [(.description) = "Each file details will be populated, depending on what return values were requested."];</code>
      */
-    java.util.List<SteamMsgPublishedFile.PublishedFileDetails> 
+    java.util.List<SteamMsgPublishedFile.PublishedFileDetails>
         getPublishedfiledetailsList();
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 2 [(.description) = "Each file details will be populated, depending on what return values were requested."];</code>
@@ -44804,13 +44504,27 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 2 [(.description) = "Each file details will be populated, depending on what return values were requested."];</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
         getPublishedfiledetailsOrBuilderList();
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 2 [(.description) = "Each file details will be populated, depending on what return values were requested."];</code>
      */
     SteamMsgPublishedFile.PublishedFileDetailsOrBuilder getPublishedfiledetailsOrBuilder(
         int index);
+
+    /**
+     * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+     */
+    boolean hasNextCursor();
+    /**
+     * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+     */
+    java.lang.String getNextCursor();
+    /**
+     * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+     */
+    com.google.protobuf.ByteString
+        getNextCursorBytes();
   }
   /**
    * Protobuf type {@code CPublishedFile_QueryFiles_Response}
@@ -44827,6 +44541,7 @@ public final class SteamMsgPublishedFile {
     private CPublishedFile_QueryFiles_Response() {
       total_ = 0;
       publishedfiledetails_ = java.util.Collections.emptyList();
+      nextCursor_ = "";
     }
 
     @java.lang.Override
@@ -44839,9 +44554,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44872,6 +44584,12 @@ public final class SteamMsgPublishedFile {
               }
               publishedfiledetails_.add(
                   input.readMessage(SteamMsgPublishedFile.PublishedFileDetails.PARSER, extensionRegistry));
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              nextCursor_ = bs;
               break;
             }
           }
@@ -44928,7 +44646,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .PublishedFileDetails publishedfiledetails = 2 [(.description) = "Each file details will be populated, depending on what return values were requested."];</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
         getPublishedfiledetailsOrBuilderList() {
       return publishedfiledetails_;
     }
@@ -44952,6 +44670,48 @@ public final class SteamMsgPublishedFile {
       return publishedfiledetails_.get(index);
     }
 
+    public static final int NEXT_CURSOR_FIELD_NUMBER = 3;
+    private volatile java.lang.Object nextCursor_;
+    /**
+     * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+     */
+    public boolean hasNextCursor() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+     */
+    public java.lang.String getNextCursor() {
+      java.lang.Object ref = nextCursor_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          nextCursor_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+     */
+    public com.google.protobuf.ByteString
+        getNextCursorBytes() {
+      java.lang.Object ref = nextCursor_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextCursor_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -44970,6 +44730,9 @@ public final class SteamMsgPublishedFile {
       for (int i = 0; i < publishedfiledetails_.size(); i++) {
         output.writeMessage(2, publishedfiledetails_.get(i));
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, nextCursor_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -44985,6 +44748,9 @@ public final class SteamMsgPublishedFile {
       for (int i = 0; i < publishedfiledetails_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, publishedfiledetails_.get(i));
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, nextCursor_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -45009,6 +44775,11 @@ public final class SteamMsgPublishedFile {
       }
       result = result && getPublishedfiledetailsList()
           .equals(other.getPublishedfiledetailsList());
+      result = result && (hasNextCursor() == other.hasNextCursor());
+      if (hasNextCursor()) {
+        result = result && getNextCursor()
+            .equals(other.getNextCursor());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -45027,6 +44798,10 @@ public final class SteamMsgPublishedFile {
       if (getPublishedfiledetailsCount() > 0) {
         hash = (37 * hash) + PUBLISHEDFILEDETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getPublishedfiledetailsList().hashCode();
+      }
+      if (hasNextCursor()) {
+        hash = (37 * hash) + NEXT_CURSOR_FIELD_NUMBER;
+        hash = (53 * hash) + getNextCursor().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -45166,6 +44941,8 @@ public final class SteamMsgPublishedFile {
         } else {
           publishedfiledetailsBuilder_.clear();
         }
+        nextCursor_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -45203,6 +44980,10 @@ public final class SteamMsgPublishedFile {
         } else {
           result.publishedfiledetails_ = publishedfiledetailsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.nextCursor_ = nextCursor_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -45266,13 +45047,18 @@ public final class SteamMsgPublishedFile {
               publishedfiledetailsBuilder_ = null;
               publishedfiledetails_ = other.publishedfiledetails_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              publishedfiledetailsBuilder_ = 
+              publishedfiledetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPublishedfiledetailsFieldBuilder() : null;
             } else {
               publishedfiledetailsBuilder_.addAllMessages(other.publishedfiledetails_);
             }
           }
+        }
+        if (other.hasNextCursor()) {
+          bitField0_ |= 0x00000004;
+          nextCursor_ = other.nextCursor_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -45529,7 +45315,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails publishedfiledetails = 2 [(.description) = "Each file details will be populated, depending on what return values were requested."];</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
            getPublishedfiledetailsOrBuilderList() {
         if (publishedfiledetailsBuilder_ != null) {
           return publishedfiledetailsBuilder_.getMessageOrBuilderList();
@@ -45555,12 +45341,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .PublishedFileDetails publishedfiledetails = 2 [(.description) = "Each file details will be populated, depending on what return values were requested."];</code>
        */
-      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Builder> 
+      public java.util.List<SteamMsgPublishedFile.PublishedFileDetails.Builder>
            getPublishedfiledetailsBuilderList() {
         return getPublishedfiledetailsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.PublishedFileDetails, SteamMsgPublishedFile.PublishedFileDetails.Builder, SteamMsgPublishedFile.PublishedFileDetailsOrBuilder> 
+          SteamMsgPublishedFile.PublishedFileDetails, SteamMsgPublishedFile.PublishedFileDetails.Builder, SteamMsgPublishedFile.PublishedFileDetailsOrBuilder>
           getPublishedfiledetailsFieldBuilder() {
         if (publishedfiledetailsBuilder_ == null) {
           publishedfiledetailsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -45572,6 +45358,82 @@ public final class SteamMsgPublishedFile {
           publishedfiledetails_ = null;
         }
         return publishedfiledetailsBuilder_;
+      }
+
+      private java.lang.Object nextCursor_ = "";
+      /**
+       * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+       */
+      public boolean hasNextCursor() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+       */
+      public java.lang.String getNextCursor() {
+        java.lang.Object ref = nextCursor_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            nextCursor_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+       */
+      public com.google.protobuf.ByteString
+          getNextCursorBytes() {
+        java.lang.Object ref = nextCursor_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nextCursor_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+       */
+      public Builder setNextCursor(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nextCursor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+       */
+      public Builder clearNextCursor() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        nextCursor_ = getDefaultInstance().getNextCursor();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string next_cursor = 3 [(.description) = "If a paging cursor was used, then this will be the next cursor to use for paging through results"];</code>
+       */
+      public Builder setNextCursorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        nextCursor_ = value;
+        onChanged();
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -45603,7 +45465,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_QueryFiles_Response(input, extensionRegistry);
+          return new CPublishedFile_QueryFiles_Response(input, extensionRegistry);
       }
     };
 
@@ -45681,9 +45543,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46258,7 +46117,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_AddAppRelationship_Request(input, extensionRegistry);
+          return new CPublishedFile_AddAppRelationship_Request(input, extensionRegistry);
       }
     };
 
@@ -46306,9 +46165,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -46645,7 +46501,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_AddAppRelationship_Response(input, extensionRegistry);
+          return new CPublishedFile_AddAppRelationship_Response(input, extensionRegistry);
       }
     };
 
@@ -46723,9 +46579,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47300,7 +47153,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_RemoveAppRelationship_Request(input, extensionRegistry);
+          return new CPublishedFile_RemoveAppRelationship_Request(input, extensionRegistry);
       }
     };
 
@@ -47348,9 +47201,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -47687,7 +47537,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_RemoveAppRelationship_Response(input, extensionRegistry);
+          return new CPublishedFile_RemoveAppRelationship_Response(input, extensionRegistry);
       }
     };
 
@@ -47745,9 +47595,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48168,7 +48015,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetAppRelationships_Request(input, extensionRegistry);
+          return new CPublishedFile_GetAppRelationships_Request(input, extensionRegistry);
       }
     };
 
@@ -48194,7 +48041,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetAppRelationships_Response.AppRelationship app_relationships = 3;</code>
      */
-    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationship> 
+    java.util.List<SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationship>
         getAppRelationshipsList();
     /**
      * <code>repeated .CPublishedFile_GetAppRelationships_Response.AppRelationship app_relationships = 3;</code>
@@ -48207,7 +48054,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetAppRelationships_Response.AppRelationship app_relationships = 3;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationshipOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationshipOrBuilder>
         getAppRelationshipsOrBuilderList();
     /**
      * <code>repeated .CPublishedFile_GetAppRelationships_Response.AppRelationship app_relationships = 3;</code>
@@ -48241,9 +48088,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48347,9 +48191,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48846,7 +48687,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AppRelationship(input, extensionRegistry);
+            return new AppRelationship(input, extensionRegistry);
         }
       };
 
@@ -48876,7 +48717,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_GetAppRelationships_Response.AppRelationship app_relationships = 3;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationshipOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationshipOrBuilder>
         getAppRelationshipsOrBuilderList() {
       return appRelationships_;
     }
@@ -49187,7 +49028,7 @@ public final class SteamMsgPublishedFile {
               appRelationshipsBuilder_ = null;
               appRelationships_ = other.appRelationships_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              appRelationshipsBuilder_ = 
+              appRelationshipsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAppRelationshipsFieldBuilder() : null;
             } else {
@@ -49418,7 +49259,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetAppRelationships_Response.AppRelationship app_relationships = 3;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationshipOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationshipOrBuilder>
            getAppRelationshipsOrBuilderList() {
         if (appRelationshipsBuilder_ != null) {
           return appRelationshipsBuilder_.getMessageOrBuilderList();
@@ -49444,12 +49285,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_GetAppRelationships_Response.AppRelationship app_relationships = 3;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationship.Builder> 
+      public java.util.List<SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationship.Builder>
            getAppRelationshipsBuilderList() {
         return getAppRelationshipsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationship, SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationship.Builder, SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationshipOrBuilder> 
+          SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationship, SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationship.Builder, SteamMsgPublishedFile.CPublishedFile_GetAppRelationships_Response.AppRelationshipOrBuilder>
           getAppRelationshipsFieldBuilder() {
         if (appRelationshipsBuilder_ == null) {
           appRelationshipsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -49492,7 +49333,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_GetAppRelationships_Response(input, extensionRegistry);
+          return new CPublishedFile_GetAppRelationships_Response(input, extensionRegistry);
       }
     };
 
@@ -49564,9 +49405,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -50133,7 +49971,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_StartPlaytimeTracking_Request(input, extensionRegistry);
+          return new CPublishedFile_StartPlaytimeTracking_Request(input, extensionRegistry);
       }
     };
 
@@ -50181,9 +50019,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -50520,7 +50355,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_StartPlaytimeTracking_Response(input, extensionRegistry);
+          return new CPublishedFile_StartPlaytimeTracking_Response(input, extensionRegistry);
       }
     };
 
@@ -50592,9 +50427,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51161,7 +50993,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_StopPlaytimeTracking_Request(input, extensionRegistry);
+          return new CPublishedFile_StopPlaytimeTracking_Request(input, extensionRegistry);
       }
     };
 
@@ -51209,9 +51041,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -51548,7 +51377,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_StopPlaytimeTracking_Response(input, extensionRegistry);
+          return new CPublishedFile_StopPlaytimeTracking_Response(input, extensionRegistry);
       }
     };
 
@@ -51606,9 +51435,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -52028,7 +51854,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_StopPlaytimeTrackingForAllAppItems_Request(input, extensionRegistry);
+          return new CPublishedFile_StopPlaytimeTrackingForAllAppItems_Request(input, extensionRegistry);
       }
     };
 
@@ -52076,9 +51902,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -52415,7 +52238,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_StopPlaytimeTrackingForAllAppItems_Response(input, extensionRegistry);
+          return new CPublishedFile_StopPlaytimeTrackingForAllAppItems_Response(input, extensionRegistry);
       }
     };
 
@@ -52450,7 +52273,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage controller_config_usage = 2;</code>
      */
-    java.util.List<SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage> 
+    java.util.List<SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage>
         getControllerConfigUsageList();
     /**
      * <code>repeated .CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage controller_config_usage = 2;</code>
@@ -52463,7 +52286,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage controller_config_usage = 2;</code>
      */
-    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsageOrBuilder> 
+    java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsageOrBuilder>
         getControllerConfigUsageOrBuilderList();
     /**
      * <code>repeated .CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage controller_config_usage = 2;</code>
@@ -52498,9 +52321,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -52609,9 +52429,6 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -53112,7 +52929,7 @@ public final class SteamMsgPublishedFile {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ControllerConfigUsage(input, extensionRegistry);
+            return new ControllerConfigUsage(input, extensionRegistry);
         }
       };
 
@@ -53158,7 +52975,7 @@ public final class SteamMsgPublishedFile {
     /**
      * <code>repeated .CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage controller_config_usage = 2;</code>
      */
-    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsageOrBuilder> 
+    public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsageOrBuilder>
         getControllerConfigUsageOrBuilderList() {
       return controllerConfigUsage_;
     }
@@ -53496,7 +53313,7 @@ public final class SteamMsgPublishedFile {
               controllerConfigUsageBuilder_ = null;
               controllerConfigUsage_ = other.controllerConfigUsage_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              controllerConfigUsageBuilder_ = 
+              controllerConfigUsageBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getControllerConfigUsageFieldBuilder() : null;
             } else {
@@ -53759,7 +53576,7 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage controller_config_usage = 2;</code>
        */
-      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsageOrBuilder> 
+      public java.util.List<? extends SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsageOrBuilder>
            getControllerConfigUsageOrBuilderList() {
         if (controllerConfigUsageBuilder_ != null) {
           return controllerConfigUsageBuilder_.getMessageOrBuilderList();
@@ -53785,12 +53602,12 @@ public final class SteamMsgPublishedFile {
       /**
        * <code>repeated .CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage controller_config_usage = 2;</code>
        */
-      public java.util.List<SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage.Builder> 
+      public java.util.List<SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage.Builder>
            getControllerConfigUsageBuilderList() {
         return getControllerConfigUsageFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage, SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage.Builder, SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsageOrBuilder> 
+          SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage, SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsage.Builder, SteamMsgPublishedFile.CPublishedFile_SetPlaytimeForControllerConfigs_Request.ControllerConfigUsageOrBuilder>
           getControllerConfigUsageFieldBuilder() {
         if (controllerConfigUsageBuilder_ == null) {
           controllerConfigUsageBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -53833,7 +53650,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_SetPlaytimeForControllerConfigs_Request(input, extensionRegistry);
+          return new CPublishedFile_SetPlaytimeForControllerConfigs_Request(input, extensionRegistry);
       }
     };
 
@@ -53881,9 +53698,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -54220,7 +54034,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_SetPlaytimeForControllerConfigs_Response(input, extensionRegistry);
+          return new CPublishedFile_SetPlaytimeForControllerConfigs_Response(input, extensionRegistry);
       }
     };
 
@@ -54288,9 +54102,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -54789,7 +54600,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_AddChild_Request(input, extensionRegistry);
+          return new CPublishedFile_AddChild_Request(input, extensionRegistry);
       }
     };
 
@@ -54837,9 +54648,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -55176,7 +54984,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_AddChild_Response(input, extensionRegistry);
+          return new CPublishedFile_AddChild_Response(input, extensionRegistry);
       }
     };
 
@@ -55244,9 +55052,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -55745,7 +55550,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_RemoveChild_Request(input, extensionRegistry);
+          return new CPublishedFile_RemoveChild_Request(input, extensionRegistry);
       }
     };
 
@@ -55793,9 +55598,6 @@ public final class SteamMsgPublishedFile {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -56132,7 +55934,7 @@ public final class SteamMsgPublishedFile {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPublishedFile_RemoveChild_Response(input, extensionRegistry);
+          return new CPublishedFile_RemoveChild_Response(input, extensionRegistry);
       }
     };
 
@@ -56153,292 +55955,292 @@ public final class SteamMsgPublishedFile {
 
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_Subscribe_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_Subscribe_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_Subscribe_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_Subscribe_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_Unsubscribe_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_Unsubscribe_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_Unsubscribe_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_Unsubscribe_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_CanSubscribe_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_CanSubscribe_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_CanSubscribe_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_CanSubscribe_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_Publish_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_Publish_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_Publish_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_Publish_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetDetails_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetDetails_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PublishedFileDetails_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PublishedFileDetails_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PublishedFileDetails_Tag_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PublishedFileDetails_Tag_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PublishedFileDetails_Preview_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PublishedFileDetails_Preview_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PublishedFileDetails_Child_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PublishedFileDetails_Child_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PublishedFileDetails_KVTag_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PublishedFileDetails_KVTag_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PublishedFileDetails_VoteData_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PublishedFileDetails_VoteData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PublishedFileDetails_ForSaleData_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PublishedFileDetails_ForSaleData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_PublishedFileDetails_PlaytimeStats_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PublishedFileDetails_PlaytimeStats_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetDetails_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetDetails_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetItemInfo_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetItemInfo_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetItemInfo_Request_WorkshopItem_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetItemInfo_Request_WorkshopItem_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetItemInfo_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetItemInfo_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetItemInfo_Response_WorkshopItemInfo_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetItemInfo_Response_WorkshopItemInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetUserFiles_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetUserFiles_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetUserFiles_Request_KVTag_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetUserFiles_Request_KVTag_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetUserFiles_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetUserFiles_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetUserFiles_Response_App_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetUserFiles_Response_App_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_Update_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_Update_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_Update_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_Update_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetChangeHistoryEntry_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetChangeHistoryEntry_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetChangeHistoryEntry_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetChangeHistoryEntry_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetChangeHistory_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetChangeHistory_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetChangeHistory_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetChangeHistory_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetChangeHistory_Response_ChangeLog_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetChangeHistory_Response_ChangeLog_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_RefreshVotingQueue_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_RefreshVotingQueue_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_RefreshVotingQueue_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_RefreshVotingQueue_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_QueryFiles_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_QueryFiles_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_QueryFiles_Request_KVTag_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_QueryFiles_Request_KVTag_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_QueryFiles_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_QueryFiles_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_AddAppRelationship_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_AddAppRelationship_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_AddAppRelationship_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_AddAppRelationship_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_RemoveAppRelationship_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_RemoveAppRelationship_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_RemoveAppRelationship_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_RemoveAppRelationship_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetAppRelationships_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetAppRelationships_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetAppRelationships_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetAppRelationships_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_GetAppRelationships_Response_AppRelationship_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_GetAppRelationships_Response_AppRelationship_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_StartPlaytimeTracking_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_StartPlaytimeTracking_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_StartPlaytimeTracking_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_StartPlaytimeTracking_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_StopPlaytimeTracking_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_StopPlaytimeTracking_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_StopPlaytimeTracking_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_StopPlaytimeTracking_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_StopPlaytimeTrackingForAllAppItems_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_StopPlaytimeTrackingForAllAppItems_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_StopPlaytimeTrackingForAllAppItems_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_StopPlaytimeTrackingForAllAppItems_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_SetPlaytimeForControllerConfigs_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_SetPlaytimeForControllerConfigs_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_SetPlaytimeForControllerConfigs_Request_ControllerConfigUsage_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_SetPlaytimeForControllerConfigs_Request_ControllerConfigUsage_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_SetPlaytimeForControllerConfigs_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_SetPlaytimeForControllerConfigs_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_AddChild_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_AddChild_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_AddChild_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_AddChild_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_RemoveChild_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_RemoveChild_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPublishedFile_RemoveChild_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPublishedFile_RemoveChild_Response_fieldAccessorTable;
 
@@ -56459,7 +56261,7 @@ public final class SteamMsgPublishedFile {
       "Response\"v\n\"CPublishedFile_Unsubscribe_R" +
       "equest\022\027\n\017publishedfileid\030\001 \001(\004\022\021\n\tlist_" +
       "type\030\002 \001(\r\022\r\n\005appid\030\003 \001(\005\022\025\n\rnotify_clie" +
-      "nt\030\004 \001(\010\"%\n#CPublishedFile_Unsubscribe_R" +
+      "nt\030\004 \001(\010\"%\n#CPublishedFile_Unsubscribe_R",
       "esponse\">\n#CPublishedFile_CanSubscribe_R" +
       "equest\022\027\n\017publishedfileid\030\001 \001(\004\"=\n$CPubl" +
       "ishedFile_CanSubscribe_Response\022\025\n\rcan_s" +
@@ -56469,7 +56271,7 @@ public final class SteamMsgPublishedFile {
       "mer_appid\030\002 \001(\rB+\202\265\030\'App Id this file is" +
       " being published TO.\022K\n\rcloudfilename\030\003 " +
       "\001(\tB4\202\265\0300Name of the file to publish in " +
-      "the user\'s cloud.\022[\n\025preview_cloudfilena" +
+      "the user\'s cloud.\022[\n\025preview_cloudfilena",
       "me\030\004 \001(\tB<\202\265\0308Name of the file to use as" +
       " the published file\'s preview.\0225\n\005title\030" +
       "\005 \001(\tB&\202\265\030\"Text title for the published " +
@@ -56479,7 +56281,7 @@ public final class SteamMsgPublishedFile {
       ") Type of Workshop file to publish.\022I\n\026c" +
       "onsumer_shortcut_name\030\010 \001(\tB)\202\265\030%Shortcu" +
       "t name for the published file.\022I\n\020youtub" +
-      "e_username\030\t \001(\tB/\202\265\030+(Optional) User\'s " +
+      "e_username\030\t \001(\tB/\202\265\030+(Optional) User\'s ",
       "YouTube account username.\022\\\n\017youtube_vid" +
       "eoid\030\n \001(\tBC\202\265\030?(Optional) Video Id of a" +
       " YouTube video for this published file.\022" +
@@ -56489,7 +56291,7 @@ public final class SteamMsgPublishedFile {
       "blic, etc.)\022k\n\014redirect_uri\030\014 \001(\tBU\202\265\030Q(" +
       "Optional) If supplied, the resulting pub" +
       "lished file\'s Id is appended to the URI." +
-      "\022D\n\004tags\030\r \003(\tB6\202\265\0302Array of text tags t" +
+      "\022D\n\004tags\030\r \003(\tB6\202\265\0302Array of text tags t",
       "o apply to the published file.\022Y\n\017collec" +
       "tion_type\030\016 \001(\tB@\202\265\030<(Optional) Type of " +
       "collection the published file represents" +
@@ -56499,7 +56301,7 @@ public final class SteamMsgPublishedFile {
       "presents a game, this is the URL to that" +
       " game\'s page.\"P\n\037CPublishedFile_Publish_" +
       "Response\022\027\n\017publishedfileid\030\001 \001(\004\022\024\n\014red" +
-      "irect_uri\030\002 \001(\t\"\255\010\n!CPublishedFile_GetDe" +
+      "irect_uri\030\002 \001(\t\"\255\010\n!CPublishedFile_GetDe",
       "tails_Request\022P\n\020publishedfileids\030\001 \003(\006B" +
       "6\202\265\0302Set of published file Ids to retrie" +
       "ve details for.\022Q\n\013includetags\030\002 \001(\010B<\202\265" +
@@ -56509,7 +56311,7 @@ public final class SteamMsgPublishedFile {
       "ew information in the returned details.\022" +
       "N\n\017includechildren\030\004 \001(\010B5\202\265\0301If true, r" +
       "eturn children in the returned details.\022" +
-      "R\n\rincludekvtags\030\005 \001(\010B;\202\265\0307If true, ret" +
+      "R\n\rincludekvtags\030\005 \001(\010B;\202\265\0307If true, ret",
       "urn key value tags in the returned detai" +
       "ls.\022L\n\014includevotes\030\006 \001(\010B6\202\265\0302If true, " +
       "return vote data in the returned details" +
@@ -56519,17 +56321,17 @@ public final class SteamMsgPublishedFile {
       "data\030\n \001(\010B0\202\265\030,If true, return pricing " +
       "data, if applicable.\022B\n\017includemetadata\030" +
       "\013 \001(\010B)\202\265\030%If true, populate the metadat" +
-      "a field.\022U\n\010language\030\014 \001(\005:\0010B@\202\265\030<Speci" +
+      "a field.\022U\n\010language\030\014 \001(\005:\0010B@\202\265\030<Speci",
       "fies the localized text to return. Defau" +
       "lts to English.\022g\n\025return_playtime_stats" +
       "\030\r \001(\rBH\202\265\030DReturn playtime stats for th" +
       "e specified number of days before today." +
       "\022\r\n\005appid\030\016 \001(\r\022F\n\030strip_description_bbc" +
       "ode\030\017 \001(\010B$\202\265\030 Strips BBCode from descri" +
-      "ptions.\"\374\024\n\024PublishedFileDetails\022\016\n\006resu" +
+      "ptions.\"\200\024\n\024PublishedFileDetails\022\016\n\006resu" +
       "lt\030\001 \001(\r\022\027\n\017publishedfileid\030\002 \001(\004\022\017\n\007cre" +
       "ator\030\003 \001(\006\022\025\n\rcreator_appid\030\004 \001(\r\022\026\n\016con" +
-      "sumer_appid\030\005 \001(\r\022\033\n\023consumer_shortcutid" +
+      "sumer_appid\030\005 \001(\r\022\033\n\023consumer_shortcutid",
       "\030\006 \001(\r\022\020\n\010filename\030\007 \001(\t\022\021\n\tfile_size\030\010 " +
       "\001(\004\022\031\n\021preview_file_size\030\t \001(\004\022\020\n\010file_u" +
       "rl\030\n \001(\t\022\023\n\013preview_url\030\013 \001(\t\022\026\n\016youtube" +
@@ -56539,7 +56341,7 @@ public final class SteamMsgPublishedFile {
       "short_description\030\022 \001(\t\022\024\n\014time_created\030" +
       "\023 \001(\r\022\024\n\014time_updated\030\024 \001(\r\022\022\n\nvisibilit" +
       "y\030\025 \001(\r\022\r\n\005flags\030\026 \001(\r\022\025\n\rworkshop_file\030" +
-      "\027 \001(\010\022\031\n\021workshop_accepted\030\030 \001(\010\022\032\n\022show" +
+      "\027 \001(\010\022\031\n\021workshop_accepted\030\030 \001(\010\022\032\n\022show",
       "_subscribe_all\030\031 \001(\010\022\036\n\026num_comments_dev" +
       "eloper\030\032 \001(\005\022\033\n\023num_comments_public\030\033 \001(" +
       "\005\022\016\n\006banned\030\034 \001(\010\022\022\n\nban_reason\030\035 \001(\t\022\016\n" +
@@ -56549,7 +56351,7 @@ public final class SteamMsgPublishedFile {
       "\025\n\rsubscriptions\030$ \001(\r\022\021\n\tfavorited\030% \001(" +
       "\r\022\021\n\tfollowers\030& \001(\r\022\036\n\026lifetime_subscri" +
       "ptions\030\' \001(\r\022\032\n\022lifetime_favorited\030( \001(\r" +
-      "\022\032\n\022lifetime_followers\030) \001(\r\022\031\n\021lifetime" +
+      "\022\032\n\022lifetime_followers\030) \001(\r\022\031\n\021lifetime",
       "_playtime\030> \001(\004\022\"\n\032lifetime_playtime_ses" +
       "sions\030? \001(\004\022\r\n\005views\030* \001(\r\022\023\n\013image_widt" +
       "h\030+ \001(\r\022\024\n\014image_height\030, \001(\r\022\021\n\timage_u" +
@@ -56559,7 +56361,7 @@ public final class SteamMsgPublishedFile {
       "eviews\0303 \003(\0132\035.PublishedFileDetails.Prev" +
       "iew\022\'\n\004tags\0304 \003(\0132\031.PublishedFileDetails" +
       ".Tag\022-\n\010children\0305 \003(\0132\033.PublishedFileDe" +
-      "tails.Child\022+\n\006kvtags\0306 \003(\0132\033.PublishedF" +
+      "tails.Child\022+\n\006kvtags\0306 \003(\0132\033.PublishedF",
       "ileDetails.KVTag\0221\n\tvote_data\0307 \001(\0132\036.Pu" +
       "blishedFileDetails.VoteData\022;\n\016playtime_" +
       "stats\030@ \001(\0132#.PublishedFileDetails.Playt" +
@@ -56569,377 +56371,383 @@ public final class SteamMsgPublishedFile {
       "alls\022a\n\rfor_sale_data\0309 \001(\0132!.PublishedF" +
       "ileDetails.ForSaleDataB\'\202\265\030#Pricing info" +
       "rmation, if applicable.\0227\n\010metadata\030: \001(" +
-      "\tB%\202\265\030!Metadata associated with the item" +
-      "\022\032\n\022incompatible_actor\030; \001(\006\022\036\n\026incompat" +
-      "ible_timestamp\030< \001(\r\022C\n\010language\030= \001(\005:\001" +
-      "0B.\202\265\030*The language of the title and des" +
-      "cription.\022\035\n\025app_has_adult_content\030A \001(\010" +
-      "\022!\n\031app_has_adult_content_sex\030B \001(\010\022&\n\036a" +
-      "pp_has_adult_content_violence\030C \001(\010\022\033\n\023m" +
-      "aybe_inappropriate\030D \001(\010\032%\n\003Tag\022\013\n\003tag\030\001" +
-      " \001(\t\022\021\n\tadminonly\030\002 \001(\010\032\246\001\n\007Preview\022\021\n\tp" +
-      "reviewid\030\001 \001(\004\022\021\n\tsortorder\030\002 \001(\r\022\013\n\003url" +
-      "\030\003 \001(\t\022\014\n\004size\030\004 \001(\r\022\020\n\010filename\030\005 \001(\t\022\026" +
-      "\n\016youtubevideoid\030\006 \001(\t\022\024\n\014preview_type\030\007" +
-      " \001(\r\022\032\n\022external_reference\030\010 \001(\t\032F\n\005Chil" +
-      "d\022\027\n\017publishedfileid\030\001 \001(\004\022\021\n\tsortorder\030" +
-      "\002 \001(\r\022\021\n\tfile_type\030\003 \001(\r\032#\n\005KVTag\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\032?\n\010VoteData\022\r\n\005sco" +
-      "re\030\001 \001(\002\022\020\n\010votes_up\030\002 \001(\r\022\022\n\nvotes_down" +
-      "\030\003 \001(\r\032\334\001\n\013ForSaleData\022\023\n\013is_for_sale\030\001 " +
-      "\001(\010\022\026\n\016price_category\030\002 \001(\r\022A\n\007estatus\030\003" +
-      " \001(\0162\034.EPublishedFileForSaleStatus:\022k_PF" +
-      "FSS_NotForSale\022\034\n\024price_category_floor\030\004" +
-      " \001(\r\022\"\n\032price_is_pay_what_you_want\030\005 \001(\010" +
-      "\022\033\n\023discount_percentage\030\006 \001(\r\032?\n\rPlaytim" +
-      "eStats\022\030\n\020playtime_seconds\030\001 \001(\004\022\024\n\014num_" +
-      "sessions\030\002 \001(\004\"Y\n\"CPublishedFile_GetDeta" +
-      "ils_Response\0223\n\024publishedfiledetails\030\001 \003" +
-      "(\0132\025.PublishedFileDetails\"\332\001\n\"CPublished" +
-      "File_GetItemInfo_Request\022\016\n\006app_id\030\001 \001(\r" +
-      "\022\031\n\021last_time_updated\030\002 \001(\r\022H\n\016workshop_" +
-      "items\030\003 \003(\01320.CPublishedFile_GetItemInfo" +
-      "_Request.WorkshopItem\032?\n\014WorkshopItem\022\031\n" +
-      "\021published_file_id\030\001 \001(\006\022\024\n\014time_updated" +
-      "\030\002 \001(\r\"\362\001\n#CPublishedFile_GetItemInfo_Re" +
-      "sponse\022\023\n\013update_time\030\001 \001(\r\022M\n\016workshop_" +
-      "items\030\002 \003(\01325.CPublishedFile_GetItemInfo" +
-      "_Response.WorkshopItemInfo\032g\n\020WorkshopIt" +
-      "emInfo\022\031\n\021published_file_id\030\001 \001(\006\022\024\n\014tim" +
-      "e_updated\030\002 \001(\r\022\023\n\013manifest_id\030\003 \001(\006\022\r\n\005" +
-      "flags\030\004 \001(\r\"\247\022\n#CPublishedFile_GetUserFi" +
-      "les_Request\022J\n\007steamid\030\001 \001(\006B9\202\265\0305Steam " +
-      "ID of the user whose files are being req" +
-      "uested.\022F\n\005appid\030\002 \001(\rB7\202\265\0303App Id of th" +
-      "e app that the files were published to.\022" +
-      ":\n\004page\030\004 \001(\r:\0011B)\202\265\030%(Optional) Startin" +
-      "g page for results.\022P\n\nnumperpage\030\005 \001(\r:" +
-      "\0011B9\202\265\0305(Optional) The number of results" +
-      ", per page to return.\022C\n\004type\030\006 \001(\t:\007myf" +
-      "ilesB,\202\265\030((Optional) Type of files to be" +
-      " returned.\022Y\n\nsortmethod\030\007 \001(\t:\013lastupda" +
-      "tedB8\202\265\0304(Optional) Sorting method to us" +
-      "e on returned values.\022;\n\007privacy\030\t \001(\rB*" +
-      "\202\265\030&(optional) Filter by privacy setting" +
-      "s.\022h\n\014requiredtags\030\n \003(\tBR\202\265\030N(Optional)" +
-      " Tags that must be present on a publishe" +
-      "d file to satisfy the query.\022l\n\014excluded" +
-      "tags\030\013 \003(\tBV\202\265\030R(Optional) Tags that mus" +
-      "t NOT be present on a published file to " +
-      "satisfy the query.\022n\n\020required_kv_tags\030\036" +
-      " \003(\0132*.CPublishedFile_GetUserFiles_Reque" +
-      "st.KVTagB(\202\265\030$Required key-value tags to" +
-      " match on.\022=\n\010filetype\030\016 \001(\rB+\202\265\030\'(Optio" +
-      "nal) File type to match files to.\022a\n\rcre" +
-      "ator_appid\030\017 \001(\rBJ\202\265\030FApp Id of the app " +
-      "that published the files, only matched i" +
-      "f specified.\022I\n\024match_cloud_filename\030\020 \001" +
-      "(\tB+\202\265\030\'Match this cloud filename if spe" +
-      "cified.\022j\n\025cache_max_age_seconds\030\033 \001(\r:\001" +
-      "0BH\202\265\030DAllow stale data to be returned f" +
-      "or the specified number of seconds.\022U\n\010l" +
-      "anguage\030\035 \001(\005:\0010B@\202\265\030<Specifies the loca" +
-      "lized text to return. Defaults to Englis" +
-      "h.\022i\n\ttotalonly\030\021 \001(\010BV\202\265\030R(Optional) If" +
-      " true, only return the total number of f" +
-      "iles that satisfy this query.\022n\n\010ids_onl" +
-      "y\030\022 \001(\010B\\\202\265\030X(Optional) If true, only re" +
-      "turn the published file ids of files tha" +
-      "t satisfy this query.\0224\n\020return_vote_dat" +
-      "a\030\023 \001(\010:\004trueB\024\202\265\030\020Return vote data\0228\n\013r" +
-      "eturn_tags\030\024 \001(\010B#\202\265\030\037Return tags in the" +
-      " file details\022K\n\016return_kv_tags\030\025 \001(\010:\004t" +
-      "rueB-\202\265\030)Return key-value tags in the fi" +
-      "le details\022W\n\017return_previews\030\026 \001(\010B>\202\265\030" +
-      ":Return preview image and video details " +
-      "in the file details\022F\n\017return_children\030\027" +
-      " \001(\010B-\202\265\030)Return child item ids in the f" +
-      "ile details\022l\n\030return_short_description\030" +
-      "\030 \001(\010:\004trueBD\202\265\030@Populate the short_desc" +
-      "ription field instead of file_descriptio" +
-      "n\022K\n\024return_for_sale_data\030\032 \001(\010B-\202\265\030)Ret" +
-      "urn pricing information, if applicable\022?" +
-      "\n\017return_metadata\030\034 \001(\010:\005falseB\037\202\265\030\033Popu" +
-      "late the metadata field\022g\n\025return_playti" +
-      "me_stats\030\037 \001(\rBH\202\265\030DReturn playtime stat" +
-      "s for the specified number of days befor" +
-      "e today.\022F\n\030strip_description_bbcode\030  \001" +
-      "(\010B$\202\265\030 Strips BBCode from descriptions." +
-      "\032#\n\005KVTag\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\200\002" +
-      "\n$CPublishedFile_GetUserFiles_Response\022\r" +
-      "\n\005total\030\001 \001(\r\022\022\n\nstartindex\030\002 \001(\r\0223\n\024pub" +
-      "lishedfiledetails\030\003 \003(\0132\025.PublishedFileD" +
-      "etails\0227\n\004apps\030\004 \003(\0132).CPublishedFile_Ge" +
-      "tUserFiles_Response.App\032G\n\003App\022\r\n\005appid\030" +
-      "\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\022\n\nshortcutid\030\003 \001(\r\022" +
-      "\017\n\007private\030\004 \001(\010\"\221\006\n\035CPublishedFile_Upda" +
-      "te_Request\0229\n\005appid\030\001 \001(\rB*\202\265\030&App Id th" +
-      "is published file belongs to.\022L\n\017publish" +
-      "edfileid\030\002 \001(\006B3\202\265\030/Published file id of" +
-      " the file we\'d like update.\022:\n\005title\030\003 \001" +
-      "(\tB+\202\265\030\'(Optional) Title of the publishe" +
-      "d file.\022K\n\020file_description\030\004 \001(\tB1\202\265\030-(" +
-      "Optional) Description of the published f" +
-      "ile.\022D\n\nvisibility\030\005 \001(\rB0\202\265\030,(Optional)" +
-      " Visibility of the published file.\022@\n\004ta" +
-      "gs\030\006 \003(\tB2\202\265\030.(Optional) Set of tags for" +
-      " the published file.\022A\n\010filename\030\007 \001(\tB/" +
-      "\202\265\030+(Optional) Filename for the publishe" +
-      "d file.\022Q\n\020preview_filename\030\010 \001(\tB7\202\265\0303(" +
-      "Optional) Preview filename for the publi" +
-      "shed file.\022^\n\013image_width\030\017 \001(\rBI\202\265\030E(Op" +
-      "tional) If this is an image file, you ca" +
-      "n specify the image width.\022`\n\014image_heig" +
-      "ht\030\020 \001(\rBJ\202\265\030F(Optional) If this is an i" +
-      "mage file, you can specify the image hei" +
-      "ght.\" \n\036CPublishedFile_Update_Response\"\270" +
-      "\001\n,CPublishedFile_GetChangeHistoryEntry_" +
-      "Request\022c\n\017publishedfileid\030\001 \001(\006BJ\202\265\030FPu" +
-      "blished file id of the file we\'d like to" +
-      " get the change history for.\022\021\n\ttimestam" +
-      "p\030\002 \001(\r\022\020\n\010language\030\003 \001(\005\"]\n-CPublishedF" +
-      "ile_GetChangeHistoryEntry_Response\022\032\n\022ch" +
-      "ange_description\030\001 \001(\t\022\020\n\010language\030\002 \001(\005" +
-      "\"\236\002\n\'CPublishedFile_GetChangeHistory_Req" +
-      "uest\022c\n\017publishedfileid\030\001 \001(\006BJ\202\265\030FPubli" +
-      "shed file id of the file we\'d like to ge" +
-      "t the change history for.\022@\n\ntotal_only\030" +
-      "\002 \001(\010B,\202\265\030(Return the total number of ch" +
-      "anges only.\022\022\n\nstartindex\030\003 \001(\r\022\r\n\005count" +
-      "\030\004 \001(\r\022)\n\010language\030\005 \001(\005:\0010B\024\202\265\030\020Desired" +
-      " language\"\315\001\n(CPublishedFile_GetChangeHi" +
-      "story_Response\022D\n\007changes\030\001 \003(\01323.CPubli" +
-      "shedFile_GetChangeHistory_Response.Chang" +
-      "eLog\022\r\n\005total\030\002 \001(\r\032L\n\tChangeLog\022\021\n\ttime" +
-      "stamp\030\001 \001(\r\022\032\n\022change_description\030\002 \001(\t\022" +
-      "\020\n\010language\030\003 \001(\005\"\273\004\n)CPublishedFile_Ref" +
-      "reshVotingQueue_Request\022\r\n\005appid\030\001 \001(\r\022B" +
-      "\n\022matching_file_type\030\002 \001(\rB&\202\265\030\"EPublish" +
-      "edFileInfoMatchingFileType\022l\n\004tags\030\003 \003(\t" +
-      "B^\202\265\030ZInclude files that have all the ta" +
-      "gs or any of the tags if match_all_tags " +
-      "is set to false.\022\225\001\n\016match_all_tags\030\004 \001(" +
-      "\010:\004trueBw\202\265\030sIf true, then files must ha" +
-      "ve all the tags specified.  If false, th" +
-      "en must have at least one of the tags sp" +
-      "ecified.\022I\n\rexcluded_tags\030\005 \003(\tB2\202\265\030.Exc" +
-      "lude any files that have any of these ta" +
-      "gs.\022j\n\022desired_queue_size\030\006 \001(\rBN\202\265\030JDes" +
-      "ired number of items in the voting queue" +
-      ".  May be clamped by the server\",\n*CPubl" +
-      "ishedFile_RefreshVotingQueue_Response\"\255\026" +
-      "\n!CPublishedFile_QueryFiles_Request\022L\n\nq" +
-      "uery_type\030\001 \001(\rB8\202\265\0304enumeration EPublis" +
-      "hedFileQueryType in clientenums.h\022\036\n\004pag" +
-      "e\030\002 \001(\rB\020\202\265\030\014Current page\022P\n\nnumperpage\030" +
-      "\003 \001(\r:\0011B9\202\265\0305(Optional) The number of r" +
-      "esults, per page to return.\0225\n\rcreator_a" +
-      "ppid\030\004 \001(\rB\036\202\265\030\032App that created the fil" +
-      "es\022.\n\005appid\030\005 \001(\rB\037\202\265\030\033App that consumes" +
-      " the files\022N\n\014requiredtags\030\006 \003(\tB8\202\265\0304Ta" +
-      "gs to match on. See match_all_tags param" +
-      "eter below\022l\n\014excludedtags\030\007 \003(\tBV\202\265\030R(O" +
-      "ptional) Tags that must NOT be present o" +
-      "n a published file to satisfy the query." +
-      "\022\212\001\n\016match_all_tags\030\010 \001(\010:\004trueBl\202\265\030hIf " +
-      "true, then items must have all the tags " +
-      "specified, otherwise they must have at l" +
-      "east one of the tags.\022Q\n\016required_flags\030" +
-      "\t \003(\tB9\202\265\0305Required flags that must be s" +
-      "et on any returned items\022K\n\romitted_flag" +
-      "s\030\n \003(\tB4\202\265\0300Flags that must not be set " +
-      "on any returned items\022I\n\013search_text\030\013 \001" +
-      "(\tB4\202\265\0300Text to match in the item\'s titl" +
-      "e or description\0228\n\010filetype\030\014 \001(\rB&\202\265\030\"" +
-      "EPublishedFileInfoMatchingFileType\022P\n\025ch" +
-      "ild_publishedfileid\030\r \001(\006B1\202\265\030-Find all " +
-      "items that reference the given item.\022\202\001\n" +
-      "\004days\030\016 \001(\rBt\202\265\030pIf query_type is k_Publ" +
-      "ishedFileQueryType_RankedByTrend, then t" +
-      "his is the number of days to get votes f" +
-      "or [1,7].\022\260\001\n\031include_recent_votes_only\030" +
-      "\017 \001(\010B\214\001\202\265\030\207\001If query_type is k_Publishe" +
-      "dFileQueryType_RankedByTrend, then limit" +
-      " result set just to items that have vote" +
-      "s within the day range given\022j\n\025cache_ma" +
-      "x_age_seconds\030\037 \001(\r:\0010BH\202\265\030DAllow stale " +
-      "data to be returned for the specified nu" +
-      "mber of seconds.\022`\n\010language\030! \001(\005:\0010BK\202" +
-      "\265\030GLanguage to search in and also what g" +
-      "ets returned. Defaults to English.\022l\n\020re" +
-      "quired_kv_tags\030\" \003(\0132(.CPublishedFile_Qu" +
-      "eryFiles_Request.KVTagB(\202\265\030$Required key" +
-      "-value tags to match on.\022i\n\ttotalonly\030\020 " +
-      "\001(\010BV\202\265\030R(Optional) If true, only return" +
-      " the total number of files that satisfy " +
-      "this query.\022n\n\010ids_only\030# \001(\010B\\\202\265\030X(Opti" +
-      "onal) If true, only return the published" +
-      " file ids of files that satisfy this que" +
-      "ry.\022.\n\020return_vote_data\030\021 \001(\010B\024\202\265\030\020Retur" +
-      "n vote data\0228\n\013return_tags\030\022 \001(\010B#\202\265\030\037Re" +
-      "turn tags in the file details\022E\n\016return_" +
-      "kv_tags\030\023 \001(\010B-\202\265\030)Return key-value tags" +
-      " in the file details\022W\n\017return_previews\030" +
-      "\024 \001(\010B>\202\265\030:Return preview image and vide" +
-      "o details in the file details\022F\n\017return_" +
-      "children\030\025 \001(\010B-\202\265\030)Return child item id" +
-      "s in the file details\022f\n\030return_short_de" +
-      "scription\030\026 \001(\010BD\202\265\030@Populate the short_" +
-      "description field instead of file_descri" +
-      "ption\022K\n\024return_for_sale_data\030\036 \001(\010B-\202\265\030" +
-      ")Return pricing information, if applicab" +
-      "le\0229\n\017return_metadata\030  \001(\010:\005falseB\031\202\265\030\025" +
-      "Populate the metadata\022g\n\025return_playtime" +
-      "_stats\030$ \001(\rBH\202\265\030DReturn playtime stats " +
-      "for the specified number of days before " +
-      "today.\022\267\001\n\016return_details\030% \001(\010B\236\001\202\265\030\231\001B" +
-      "y default, if none of the other \'return_" +
-      "*\' fields are set, only some voting deta" +
-      "ils are returned. Set this to true to re" +
-      "turn the default set of details.\022F\n\030stri" +
-      "p_description_bbcode\030& \001(\010B$\202\265\030 Strips B" +
-      "BCode from descriptions.\032#\n\005KVTag\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\212\002\n\"CPublishedFile" +
-      "_QueryFiles_Response\022T\n\005total\030\001 \001(\rBE\202\265\030" +
-      "ANumber of matches found, not necessaril" +
-      "y number of items returned\022\215\001\n\024published" +
-      "filedetails\030\002 \003(\0132\025.PublishedFileDetails" +
-      "BX\202\265\030TEach file details will be populate" +
-      "d, depending on what return values were " +
-      "requested.\"i\n)CPublishedFile_AddAppRelat" +
-      "ionship_Request\022\027\n\017publishedfileid\030\001 \001(\004" +
-      "\022\r\n\005appid\030\002 \001(\r\022\024\n\014relationship\030\003 \001(\r\",\n" +
-      "*CPublishedFile_AddAppRelationship_Respo" +
-      "nse\"l\n,CPublishedFile_RemoveAppRelations" +
-      "hip_Request\022\027\n\017publishedfileid\030\001 \001(\004\022\r\n\005" +
-      "appid\030\002 \001(\r\022\024\n\014relationship\030\003 \001(\r\"/\n-CPu" +
-      "blishedFile_RemoveAppRelationship_Respon" +
-      "se\"E\n*CPublishedFile_GetAppRelationships" +
-      "_Request\022\027\n\017publishedfileid\030\001 \001(\004\"\276\001\n+CP" +
-      "ublishedFile_GetAppRelationships_Respons" +
-      "e\022W\n\021app_relationships\030\003 \003(\0132<.CPublishe" +
-      "dFile_GetAppRelationships_Response.AppRe" +
-      "lationship\0326\n\017AppRelationship\022\r\n\005appid\030\001" +
-      " \001(\r\022\024\n\014relationship\030\002 \001(\r\"W\n,CPublished" +
-      "File_StartPlaytimeTracking_Request\022\r\n\005ap" +
-      "pid\030\001 \001(\r\022\030\n\020publishedfileids\030\002 \003(\004\"/\n-C" +
-      "PublishedFile_StartPlaytimeTracking_Resp" +
-      "onse\"V\n+CPublishedFile_StopPlaytimeTrack" +
-      "ing_Request\022\r\n\005appid\030\001 \001(\r\022\030\n\020publishedf" +
-      "ileids\030\002 \003(\004\".\n,CPublishedFile_StopPlayt" +
-      "imeTracking_Response\"J\n9CPublishedFile_S" +
-      "topPlaytimeTrackingForAllAppItems_Reques" +
-      "t\022\r\n\005appid\030\001 \001(\r\"<\n:CPublishedFile_StopP" +
-      "laytimeTrackingForAllAppItems_Response\"\201" +
-      "\002\n6CPublishedFile_SetPlaytimeForControll" +
-      "erConfigs_Request\022\r\n\005appid\030\001 \001(\r\022n\n\027cont" +
-      "roller_config_usage\030\002 \003(\0132M.CPublishedFi" +
-      "le_SetPlaytimeForControllerConfigs_Reque" +
-      "st.ControllerConfigUsage\032H\n\025ControllerCo" +
-      "nfigUsage\022\027\n\017publishedfileid\030\001 \001(\004\022\026\n\016se" +
-      "conds_active\030\002 \001(\002\"9\n7CPublishedFile_Set" +
-      "PlaytimeForControllerConfigs_Response\"Y\n" +
-      "\037CPublishedFile_AddChild_Request\022\027\n\017publ" +
-      "ishedfileid\030\001 \001(\004\022\035\n\025child_publishedfile" +
-      "id\030\002 \001(\004\"\"\n CPublishedFile_AddChild_Resp" +
-      "onse\"\\\n\"CPublishedFile_RemoveChild_Reque" +
-      "st\022\027\n\017publishedfileid\030\001 \001(\004\022\035\n\025child_pub" +
-      "lishedfileid\030\002 \001(\004\"%\n#CPublishedFile_Rem" +
-      "oveChild_Response*\310\001\n\033EPublishedFileForS" +
-      "aleStatus\022\026\n\022k_PFFSS_NotForSale\020\000\022\033\n\027k_P" +
-      "FFSS_PendingApproval\020\001\022\033\n\027k_PFFSS_Approv" +
-      "edForSale\020\002\022\033\n\027k_PFFSS_RejectedForSale\020\003" +
-      "\022\033\n\027k_PFFSS_NoLongerForSale\020\004\022\035\n\031k_PFFSS",
-      "_TentativeApproval\020\0052\364\033\n\rPublishedFile\022\201" +
-      "\001\n\tSubscribe\022!.CPublishedFile_Subscribe_" +
-      "Request\032\".CPublishedFile_Subscribe_Respo" +
-      "nse\"-\202\265\030)Subscribes the user to the publ" +
-      "ished file\022\213\001\n\013Unsubscribe\022#.CPublishedF" +
-      "ile_Unsubscribe_Request\032$.CPublishedFile" +
-      "_Unsubscribe_Response\"1\202\265\030-Unsubscribes " +
-      "the user from the published file\022\226\001\n\014Can" +
-      "Subscribe\022$.CPublishedFile_CanSubscribe_" +
-      "Request\032%.CPublishedFile_CanSubscribe_Re" +
-      "sponse\"9\202\265\0305Check if the user can subscr" +
-      "ibe to the published file\022\200\001\n\007Publish\022\037." +
-      "CPublishedFile_Publish_Request\032 .CPublis" +
-      "hedFile_Publish_Response\"2\202\265\030.Publishes " +
-      "a clouded user file to the Workshop.\022\220\001\n" +
-      "\nGetDetails\022\".CPublishedFile_GetDetails_" +
-      "Request\032#.CPublishedFile_GetDetails_Resp" +
-      "onse\"9\202\265\0305Retrieves information about a " +
-      "set of published files.\022\223\001\n\013GetItemInfo\022" +
-      "#.CPublishedFile_GetItemInfo_Request\032$.C" +
-      "PublishedFile_GetItemInfo_Response\"9\202\265\0305" +
-      "Retrieves information about a set of pub" +
-      "lished files.\022\205\001\n\014GetUserFiles\022$.CPublis" +
-      "hedFile_GetUserFiles_Request\032%.CPublishe" +
-      "dFile_GetUserFiles_Response\"(\202\265\030$Retriev" +
-      "es files published by a user.\022z\n\006Update\022" +
-      "\036.CPublishedFile_Update_Request\032\037.CPubli" +
-      "shedFile_Update_Response\"/\202\265\030+Updates in" +
-      "formation about a published file.\022\300\001\n\025Ge" +
-      "tChangeHistoryEntry\022-.CPublishedFile_Get" +
-      "ChangeHistoryEntry_Request\032..CPublishedF" +
-      "ile_GetChangeHistoryEntry_Response\"H\202\265\030D" +
-      "Returns data on a specific change histor" +
-      "y entry for a published file\022\244\001\n\020GetChan" +
-      "geHistory\022(.CPublishedFile_GetChangeHist" +
-      "ory_Request\032).CPublishedFile_GetChangeHi" +
-      "story_Response\";\202\265\0307Returns data on the " +
-      "change history for a published file\022\230\001\n\022" +
-      "RefreshVotingQueue\022*.CPublishedFile_Refr" +
-      "eshVotingQueue_Request\032+.CPublishedFile_" +
-      "RefreshVotingQueue_Response\")\202\265\030%Refresh" +
-      " the voting queue for the user\022\206\001\n\nQuery" +
-      "Files\022\".CPublishedFile_QueryFiles_Reques" +
-      "t\032#.CPublishedFile_QueryFiles_Response\"/" +
-      "\202\265\030+Performs a search query for publishe" +
-      "d files\022\263\001\n\022AddAppRelationship\022*.CPublis" +
-      "hedFile_AddAppRelationship_Request\032+.CPu" +
-      "blishedFile_AddAppRelationship_Response\"" +
-      "D\202\265\030@Adds a relationship between the pub" +
-      "lished file and the given app\022\276\001\n\025Remove" +
-      "AppRelationship\022-.CPublishedFile_RemoveA" +
-      "ppRelationship_Request\032..CPublishedFile_" +
-      "RemoveAppRelationship_Response\"F\202\265\030BRemo" +
-      "ve a relationship between the published " +
-      "file and the given app\022\263\001\n\023GetAppRelatio" +
-      "nships\022+.CPublishedFile_GetAppRelationsh" +
-      "ips_Request\032,.CPublishedFile_GetAppRelat" +
-      "ionships_Response\"A\202\265\030=Returns the list " +
-      "of app relationships for this published " +
-      "file\022\263\001\n\025StartPlaytimeTracking\022-.CPublis" +
-      "hedFile_StartPlaytimeTracking_Request\032.." +
-      "CPublishedFile_StartPlaytimeTracking_Res" +
-      "ponse\";\202\265\0307Start usage tracking for a gi" +
-      "ven set of published files\022\260\001\n\024StopPlayt" +
-      "imeTracking\022,.CPublishedFile_StopPlaytim" +
-      "eTracking_Request\032-.CPublishedFile_StopP" +
-      "laytimeTracking_Response\";\202\265\0307Stops usag" +
-      "e tracking for a given set of published " +
-      "files\022\355\001\n\"StopPlaytimeTrackingForAllAppI" +
-      "tems\022:.CPublishedFile_StopPlaytimeTracki" +
-      "ngForAllAppItems_Request\032;.CPublishedFil" +
-      "e_StopPlaytimeTrackingForAllAppItems_Res" +
-      "ponse\"N\202\265\030JStops usage tracking for all " +
-      "items currently tracked for the specifie" +
-      "d app\022\230\002\n\037SetPlaytimeForControllerConfig" +
-      "s\0227.CPublishedFile_SetPlaytimeForControl" +
-      "lerConfigs_Request\0328.CPublishedFile_SetP" +
-      "laytimeForControllerConfigs_Response\"\201\001\202" +
-      "\265\030}Stops usage tracking all controller c" +
-      "onfigs for the given app and set the usa" +
-      "ge time for the for the given controller" +
-      " configs\022\217\001\n\010AddChild\022 .CPublishedFile_A" +
-      "ddChild_Request\032!.CPublishedFile_AddChil" +
-      "d_Response\">\202\265\030:Adds a parent->child rel" +
-      "ationship between the given items.\022\231\001\n\013R" +
-      "emoveChild\022#.CPublishedFile_RemoveChild_" +
-      "Request\032$.CPublishedFile_RemoveChild_Res" +
-      "ponse\"?\202\265\030;Removes parent->child relatio" +
-      "nship between the given items.\032+\202\265\030\'A se" +
-      "rvice to access published file dataB\003\200\001\001"
+      "\tB%\202\265\030!Metadata associated with the item",
+      "\022C\n\010language\030= \001(\005:\0010B.\202\265\030*The language " +
+      "of the title and description.\022\037\n\027maybe_i" +
+      "nappropriate_sex\030A \001(\010\022$\n\034maybe_inapprop" +
+      "riate_violence\030B \001(\010\032%\n\003Tag\022\013\n\003tag\030\001 \001(\t" +
+      "\022\021\n\tadminonly\030\002 \001(\010\032\246\001\n\007Preview\022\021\n\tprevi" +
+      "ewid\030\001 \001(\004\022\021\n\tsortorder\030\002 \001(\r\022\013\n\003url\030\003 \001" +
+      "(\t\022\014\n\004size\030\004 \001(\r\022\020\n\010filename\030\005 \001(\t\022\026\n\016yo" +
+      "utubevideoid\030\006 \001(\t\022\024\n\014preview_type\030\007 \001(\r" +
+      "\022\032\n\022external_reference\030\010 \001(\t\032F\n\005Child\022\027\n" +
+      "\017publishedfileid\030\001 \001(\004\022\021\n\tsortorder\030\002 \001(",
+      "\r\022\021\n\tfile_type\030\003 \001(\r\032#\n\005KVTag\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t\032?\n\010VoteData\022\r\n\005score\030\001" +
+      " \001(\002\022\020\n\010votes_up\030\002 \001(\r\022\022\n\nvotes_down\030\003 \001" +
+      "(\r\032\334\001\n\013ForSaleData\022\023\n\013is_for_sale\030\001 \001(\010\022" +
+      "\026\n\016price_category\030\002 \001(\r\022A\n\007estatus\030\003 \001(\016" +
+      "2\034.EPublishedFileForSaleStatus:\022k_PFFSS_" +
+      "NotForSale\022\034\n\024price_category_floor\030\004 \001(\r" +
+      "\022\"\n\032price_is_pay_what_you_want\030\005 \001(\010\022\033\n\023" +
+      "discount_percentage\030\006 \001(\r\032?\n\rPlaytimeSta" +
+      "ts\022\030\n\020playtime_seconds\030\001 \001(\004\022\024\n\014num_sess",
+      "ions\030\002 \001(\004\"Y\n\"CPublishedFile_GetDetails_" +
+      "Response\0223\n\024publishedfiledetails\030\001 \003(\0132\025" +
+      ".PublishedFileDetails\"\332\001\n\"CPublishedFile" +
+      "_GetItemInfo_Request\022\016\n\006app_id\030\001 \001(\r\022\031\n\021" +
+      "last_time_updated\030\002 \001(\r\022H\n\016workshop_item" +
+      "s\030\003 \003(\01320.CPublishedFile_GetItemInfo_Req" +
+      "uest.WorkshopItem\032?\n\014WorkshopItem\022\031\n\021pub" +
+      "lished_file_id\030\001 \001(\006\022\024\n\014time_updated\030\002 \001" +
+      "(\r\"\362\001\n#CPublishedFile_GetItemInfo_Respon" +
+      "se\022\023\n\013update_time\030\001 \001(\r\022M\n\016workshop_item",
+      "s\030\002 \003(\01325.CPublishedFile_GetItemInfo_Res" +
+      "ponse.WorkshopItemInfo\032g\n\020WorkshopItemIn" +
+      "fo\022\031\n\021published_file_id\030\001 \001(\006\022\024\n\014time_up" +
+      "dated\030\002 \001(\r\022\023\n\013manifest_id\030\003 \001(\006\022\r\n\005flag" +
+      "s\030\004 \001(\r\"\247\022\n#CPublishedFile_GetUserFiles_" +
+      "Request\022J\n\007steamid\030\001 \001(\006B9\202\265\0305Steam ID o" +
+      "f the user whose files are being request" +
+      "ed.\022F\n\005appid\030\002 \001(\rB7\202\265\0303App Id of the ap" +
+      "p that the files were published to.\022:\n\004p" +
+      "age\030\004 \001(\r:\0011B)\202\265\030%(Optional) Starting pa",
+      "ge for results.\022P\n\nnumperpage\030\005 \001(\r:\0011B9" +
+      "\202\265\0305(Optional) The number of results, pe" +
+      "r page to return.\022C\n\004type\030\006 \001(\t:\007myfiles" +
+      "B,\202\265\030((Optional) Type of files to be ret" +
+      "urned.\022Y\n\nsortmethod\030\007 \001(\t:\013lastupdatedB" +
+      "8\202\265\0304(Optional) Sorting method to use on" +
+      " returned values.\022;\n\007privacy\030\t \001(\rB*\202\265\030&" +
+      "(optional) Filter by privacy settings.\022h" +
+      "\n\014requiredtags\030\n \003(\tBR\202\265\030N(Optional) Tag" +
+      "s that must be present on a published fi",
+      "le to satisfy the query.\022l\n\014excludedtags" +
+      "\030\013 \003(\tBV\202\265\030R(Optional) Tags that must NO" +
+      "T be present on a published file to sati" +
+      "sfy the query.\022n\n\020required_kv_tags\030\036 \003(\013" +
+      "2*.CPublishedFile_GetUserFiles_Request.K" +
+      "VTagB(\202\265\030$Required key-value tags to mat" +
+      "ch on.\022=\n\010filetype\030\016 \001(\rB+\202\265\030\'(Optional)" +
+      " File type to match files to.\022a\n\rcreator" +
+      "_appid\030\017 \001(\rBJ\202\265\030FApp Id of the app that" +
+      " published the files, only matched if sp",
+      "ecified.\022I\n\024match_cloud_filename\030\020 \001(\tB+" +
+      "\202\265\030\'Match this cloud filename if specifi" +
+      "ed.\022j\n\025cache_max_age_seconds\030\033 \001(\r:\0010BH\202" +
+      "\265\030DAllow stale data to be returned for t" +
+      "he specified number of seconds.\022U\n\010langu" +
+      "age\030\035 \001(\005:\0010B@\202\265\030<Specifies the localize" +
+      "d text to return. Defaults to English.\022i" +
+      "\n\ttotalonly\030\021 \001(\010BV\202\265\030R(Optional) If tru" +
+      "e, only return the total number of files" +
+      " that satisfy this query.\022n\n\010ids_only\030\022 ",
+      "\001(\010B\\\202\265\030X(Optional) If true, only return" +
+      " the published file ids of files that sa" +
+      "tisfy this query.\0224\n\020return_vote_data\030\023 " +
+      "\001(\010:\004trueB\024\202\265\030\020Return vote data\0228\n\013retur" +
+      "n_tags\030\024 \001(\010B#\202\265\030\037Return tags in the fil" +
+      "e details\022K\n\016return_kv_tags\030\025 \001(\010:\004trueB" +
+      "-\202\265\030)Return key-value tags in the file d" +
+      "etails\022W\n\017return_previews\030\026 \001(\010B>\202\265\030:Ret" +
+      "urn preview image and video details in t" +
+      "he file details\022F\n\017return_children\030\027 \001(\010",
+      "B-\202\265\030)Return child item ids in the file " +
+      "details\022l\n\030return_short_description\030\030 \001(" +
+      "\010:\004trueBD\202\265\030@Populate the short_descript" +
+      "ion field instead of file_description\022K\n" +
+      "\024return_for_sale_data\030\032 \001(\010B-\202\265\030)Return " +
+      "pricing information, if applicable\022?\n\017re" +
+      "turn_metadata\030\034 \001(\010:\005falseB\037\202\265\030\033Populate" +
+      " the metadata field\022g\n\025return_playtime_s" +
+      "tats\030\037 \001(\rBH\202\265\030DReturn playtime stats fo" +
+      "r the specified number of days before to",
+      "day.\022F\n\030strip_description_bbcode\030  \001(\010B$" +
+      "\202\265\030 Strips BBCode from descriptions.\032#\n\005" +
+      "KVTag\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\200\002\n$CP" +
+      "ublishedFile_GetUserFiles_Response\022\r\n\005to" +
+      "tal\030\001 \001(\r\022\022\n\nstartindex\030\002 \001(\r\0223\n\024publish" +
+      "edfiledetails\030\003 \003(\0132\025.PublishedFileDetai" +
+      "ls\0227\n\004apps\030\004 \003(\0132).CPublishedFile_GetUse" +
+      "rFiles_Response.App\032G\n\003App\022\r\n\005appid\030\001 \001(" +
+      "\r\022\014\n\004name\030\002 \001(\t\022\022\n\nshortcutid\030\003 \001(\r\022\017\n\007p" +
+      "rivate\030\004 \001(\010\"\221\006\n\035CPublishedFile_Update_R",
+      "equest\0229\n\005appid\030\001 \001(\rB*\202\265\030&App Id this p" +
+      "ublished file belongs to.\022L\n\017publishedfi" +
+      "leid\030\002 \001(\006B3\202\265\030/Published file id of the" +
+      " file we\'d like update.\022:\n\005title\030\003 \001(\tB+" +
+      "\202\265\030\'(Optional) Title of the published fi" +
+      "le.\022K\n\020file_description\030\004 \001(\tB1\202\265\030-(Opti" +
+      "onal) Description of the published file." +
+      "\022D\n\nvisibility\030\005 \001(\rB0\202\265\030,(Optional) Vis" +
+      "ibility of the published file.\022@\n\004tags\030\006" +
+      " \003(\tB2\202\265\030.(Optional) Set of tags for the",
+      " published file.\022A\n\010filename\030\007 \001(\tB/\202\265\030+" +
+      "(Optional) Filename for the published fi" +
+      "le.\022Q\n\020preview_filename\030\010 \001(\tB7\202\265\0303(Opti" +
+      "onal) Preview filename for the published" +
+      " file.\022^\n\013image_width\030\017 \001(\rBI\202\265\030E(Option" +
+      "al) If this is an image file, you can sp" +
+      "ecify the image width.\022`\n\014image_height\030\020" +
+      " \001(\rBJ\202\265\030F(Optional) If this is an image" +
+      " file, you can specify the image height." +
+      "\" \n\036CPublishedFile_Update_Response\"\270\001\n,C",
+      "PublishedFile_GetChangeHistoryEntry_Requ" +
+      "est\022c\n\017publishedfileid\030\001 \001(\006BJ\202\265\030FPublis" +
+      "hed file id of the file we\'d like to get" +
+      " the change history for.\022\021\n\ttimestamp\030\002 " +
+      "\001(\r\022\020\n\010language\030\003 \001(\005\"]\n-CPublishedFile_" +
+      "GetChangeHistoryEntry_Response\022\032\n\022change" +
+      "_description\030\001 \001(\t\022\020\n\010language\030\002 \001(\005\"\236\002\n" +
+      "\'CPublishedFile_GetChangeHistory_Request" +
+      "\022c\n\017publishedfileid\030\001 \001(\006BJ\202\265\030FPublished" +
+      " file id of the file we\'d like to get th",
+      "e change history for.\022@\n\ntotal_only\030\002 \001(" +
+      "\010B,\202\265\030(Return the total number of change" +
+      "s only.\022\022\n\nstartindex\030\003 \001(\r\022\r\n\005count\030\004 \001" +
+      "(\r\022)\n\010language\030\005 \001(\005:\0010B\024\202\265\030\020Desired lan" +
+      "guage\"\315\001\n(CPublishedFile_GetChangeHistor" +
+      "y_Response\022D\n\007changes\030\001 \003(\01323.CPublished" +
+      "File_GetChangeHistory_Response.ChangeLog" +
+      "\022\r\n\005total\030\002 \001(\r\032L\n\tChangeLog\022\021\n\ttimestam" +
+      "p\030\001 \001(\r\022\032\n\022change_description\030\002 \001(\t\022\020\n\010l" +
+      "anguage\030\003 \001(\005\"\273\004\n)CPublishedFile_Refresh",
+      "VotingQueue_Request\022\r\n\005appid\030\001 \001(\r\022B\n\022ma" +
+      "tching_file_type\030\002 \001(\rB&\202\265\030\"EPublishedFi" +
+      "leInfoMatchingFileType\022l\n\004tags\030\003 \003(\tB^\202\265" +
+      "\030ZInclude files that have all the tags o" +
+      "r any of the tags if match_all_tags is s" +
+      "et to false.\022\225\001\n\016match_all_tags\030\004 \001(\010:\004t" +
+      "rueBw\202\265\030sIf true, then files must have a" +
+      "ll the tags specified.  If false, then m" +
+      "ust have at least one of the tags specif" +
+      "ied.\022I\n\rexcluded_tags\030\005 \003(\tB2\202\265\030.Exclude",
+      " any files that have any of these tags.\022" +
+      "j\n\022desired_queue_size\030\006 \001(\rBN\202\265\030JDesired" +
+      " number of items in the voting queue.  M" +
+      "ay be clamped by the server\",\n*CPublishe" +
+      "dFile_RefreshVotingQueue_Response\"\230\030\n!CP" +
+      "ublishedFile_QueryFiles_Request\022L\n\nquery" +
+      "_type\030\001 \001(\rB8\202\265\0304enumeration EPublishedF" +
+      "ileQueryType in clientenums.h\022\036\n\004page\030\002 " +
+      "\001(\rB\020\202\265\030\014Current page\022\350\001\n\006cursor\030\' \001(\tB\327" +
+      "\001\202\265\030\322\001Cursor to paginate through the res",
+      "ults (set to \'*\' for the first request)." +
+      "  Prefer this over using the page parame" +
+      "ter, as it will allow you to do deep pag" +
+      "ination.  When used, the page parameter " +
+      "will be ignored.\022P\n\nnumperpage\030\003 \001(\r:\0011B" +
+      "9\202\265\0305(Optional) The number of results, p" +
+      "er page to return.\0225\n\rcreator_appid\030\004 \001(" +
+      "\rB\036\202\265\030\032App that created the files\022.\n\005app" +
+      "id\030\005 \001(\rB\037\202\265\030\033App that consumes the file" +
+      "s\022N\n\014requiredtags\030\006 \003(\tB8\202\265\0304Tags to mat",
+      "ch on. See match_all_tags parameter belo" +
+      "w\022l\n\014excludedtags\030\007 \003(\tBV\202\265\030R(Optional) " +
+      "Tags that must NOT be present on a publi" +
+      "shed file to satisfy the query.\022\212\001\n\016matc" +
+      "h_all_tags\030\010 \001(\010:\004trueBl\202\265\030hIf true, the" +
+      "n items must have all the tags specified" +
+      ", otherwise they must have at least one " +
+      "of the tags.\022Q\n\016required_flags\030\t \003(\tB9\202\265" +
+      "\0305Required flags that must be set on any" +
+      " returned items\022K\n\romitted_flags\030\n \003(\tB4",
+      "\202\265\0300Flags that must not be set on any re" +
+      "turned items\022I\n\013search_text\030\013 \001(\tB4\202\265\0300T" +
+      "ext to match in the item\'s title or desc" +
+      "ription\0228\n\010filetype\030\014 \001(\rB&\202\265\030\"EPublishe" +
+      "dFileInfoMatchingFileType\022P\n\025child_publi" +
+      "shedfileid\030\r \001(\006B1\202\265\030-Find all items tha" +
+      "t reference the given item.\022\202\001\n\004days\030\016 \001" +
+      "(\rBt\202\265\030pIf query_type is k_PublishedFile" +
+      "QueryType_RankedByTrend, then this is th" +
+      "e number of days to get votes for [1,7].",
+      "\022\260\001\n\031include_recent_votes_only\030\017 \001(\010B\214\001\202" +
+      "\265\030\207\001If query_type is k_PublishedFileQuer" +
+      "yType_RankedByTrend, then limit result s" +
+      "et just to items that have votes within " +
+      "the day range given\022j\n\025cache_max_age_sec" +
+      "onds\030\037 \001(\r:\0010BH\202\265\030DAllow stale data to b" +
+      "e returned for the specified number of s" +
+      "econds.\022`\n\010language\030! \001(\005:\0010BK\202\265\030GLangua" +
+      "ge to search in and also what gets retur" +
+      "ned. Defaults to English.\022l\n\020required_kv",
+      "_tags\030\" \003(\0132(.CPublishedFile_QueryFiles_" +
+      "Request.KVTagB(\202\265\030$Required key-value ta" +
+      "gs to match on.\022i\n\ttotalonly\030\020 \001(\010BV\202\265\030R" +
+      "(Optional) If true, only return the tota" +
+      "l number of files that satisfy this quer" +
+      "y.\022n\n\010ids_only\030# \001(\010B\\\202\265\030X(Optional) If " +
+      "true, only return the published file ids" +
+      " of files that satisfy this query.\022.\n\020re" +
+      "turn_vote_data\030\021 \001(\010B\024\202\265\030\020Return vote da" +
+      "ta\0228\n\013return_tags\030\022 \001(\010B#\202\265\030\037Return tags",
+      " in the file details\022E\n\016return_kv_tags\030\023" +
+      " \001(\010B-\202\265\030)Return key-value tags in the f" +
+      "ile details\022W\n\017return_previews\030\024 \001(\010B>\202\265" +
+      "\030:Return preview image and video details" +
+      " in the file details\022F\n\017return_children\030" +
+      "\025 \001(\010B-\202\265\030)Return child item ids in the " +
+      "file details\022f\n\030return_short_description" +
+      "\030\026 \001(\010BD\202\265\030@Populate the short_descripti" +
+      "on field instead of file_description\022K\n\024" +
+      "return_for_sale_data\030\036 \001(\010B-\202\265\030)Return p",
+      "ricing information, if applicable\0229\n\017ret" +
+      "urn_metadata\030  \001(\010:\005falseB\031\202\265\030\025Populate " +
+      "the metadata\022g\n\025return_playtime_stats\030$ " +
+      "\001(\rBH\202\265\030DReturn playtime stats for the s" +
+      "pecified number of days before today.\022\267\001" +
+      "\n\016return_details\030% \001(\010B\236\001\202\265\030\231\001By default" +
+      ", if none of the other \'return_*\' fields" +
+      " are set, only some voting details are r" +
+      "eturned. Set this to true to return the " +
+      "default set of details.\022F\n\030strip_descrip",
+      "tion_bbcode\030& \001(\010B$\202\265\030 Strips BBCode fro" +
+      "m descriptions.\032#\n\005KVTag\022\013\n\003key\030\001 \001(\t\022\r\n" +
+      "\005value\030\002 \001(\t\"\205\003\n\"CPublishedFile_QueryFil" +
+      "es_Response\022T\n\005total\030\001 \001(\rBE\202\265\030ANumber o" +
+      "f matches found, not necessarily number " +
+      "of items returned\022\215\001\n\024publishedfiledetai" +
+      "ls\030\002 \003(\0132\025.PublishedFileDetailsBX\202\265\030TEac" +
+      "h file details will be populated, depend" +
+      "ing on what return values were requested" +
+      ".\022y\n\013next_cursor\030\003 \001(\tBd\202\265\030`If a paging ",
+      "cursor was used, then this will be the n" +
+      "ext cursor to use for paging through res" +
+      "ults\"i\n)CPublishedFile_AddAppRelationshi" +
+      "p_Request\022\027\n\017publishedfileid\030\001 \001(\004\022\r\n\005ap" +
+      "pid\030\002 \001(\r\022\024\n\014relationship\030\003 \001(\r\",\n*CPubl" +
+      "ishedFile_AddAppRelationship_Response\"l\n" +
+      ",CPublishedFile_RemoveAppRelationship_Re" +
+      "quest\022\027\n\017publishedfileid\030\001 \001(\004\022\r\n\005appid\030" +
+      "\002 \001(\r\022\024\n\014relationship\030\003 \001(\r\"/\n-CPublishe" +
+      "dFile_RemoveAppRelationship_Response\"E\n*",
+      "CPublishedFile_GetAppRelationships_Reque" +
+      "st\022\027\n\017publishedfileid\030\001 \001(\004\"\276\001\n+CPublish" +
+      "edFile_GetAppRelationships_Response\022W\n\021a" +
+      "pp_relationships\030\003 \003(\0132<.CPublishedFile_" +
+      "GetAppRelationships_Response.AppRelation" +
+      "ship\0326\n\017AppRelationship\022\r\n\005appid\030\001 \001(\r\022\024" +
+      "\n\014relationship\030\002 \001(\r\"W\n,CPublishedFile_S" +
+      "tartPlaytimeTracking_Request\022\r\n\005appid\030\001 " +
+      "\001(\r\022\030\n\020publishedfileids\030\002 \003(\004\"/\n-CPublis" +
+      "hedFile_StartPlaytimeTracking_Response\"V",
+      "\n+CPublishedFile_StopPlaytimeTracking_Re" +
+      "quest\022\r\n\005appid\030\001 \001(\r\022\030\n\020publishedfileids" +
+      "\030\002 \003(\004\".\n,CPublishedFile_StopPlaytimeTra" +
+      "cking_Response\"J\n9CPublishedFile_StopPla" +
+      "ytimeTrackingForAllAppItems_Request\022\r\n\005a" +
+      "ppid\030\001 \001(\r\"<\n:CPublishedFile_StopPlaytim" +
+      "eTrackingForAllAppItems_Response\"\201\002\n6CPu" +
+      "blishedFile_SetPlaytimeForControllerConf" +
+      "igs_Request\022\r\n\005appid\030\001 \001(\r\022n\n\027controller" +
+      "_config_usage\030\002 \003(\0132M.CPublishedFile_Set",
+      "PlaytimeForControllerConfigs_Request.Con" +
+      "trollerConfigUsage\032H\n\025ControllerConfigUs" +
+      "age\022\027\n\017publishedfileid\030\001 \001(\004\022\026\n\016seconds_" +
+      "active\030\002 \001(\002\"9\n7CPublishedFile_SetPlayti" +
+      "meForControllerConfigs_Response\"Y\n\037CPubl" +
+      "ishedFile_AddChild_Request\022\027\n\017publishedf" +
+      "ileid\030\001 \001(\004\022\035\n\025child_publishedfileid\030\002 \001" +
+      "(\004\"\"\n CPublishedFile_AddChild_Response\"\\" +
+      "\n\"CPublishedFile_RemoveChild_Request\022\027\n\017" +
+      "publishedfileid\030\001 \001(\004\022\035\n\025child_published",
+      "fileid\030\002 \001(\004\"%\n#CPublishedFile_RemoveChi" +
+      "ld_Response*\310\001\n\033EPublishedFileForSaleSta" +
+      "tus\022\026\n\022k_PFFSS_NotForSale\020\000\022\033\n\027k_PFFSS_P" +
+      "endingApproval\020\001\022\033\n\027k_PFFSS_ApprovedForS" +
+      "ale\020\002\022\033\n\027k_PFFSS_RejectedForSale\020\003\022\033\n\027k_" +
+      "PFFSS_NoLongerForSale\020\004\022\035\n\031k_PFFSS_Tenta" +
+      "tiveApproval\020\0052\364\033\n\rPublishedFile\022\201\001\n\tSub" +
+      "scribe\022!.CPublishedFile_Subscribe_Reques" +
+      "t\032\".CPublishedFile_Subscribe_Response\"-\202" +
+      "\265\030)Subscribes the user to the published ",
+      "file\022\213\001\n\013Unsubscribe\022#.CPublishedFile_Un" +
+      "subscribe_Request\032$.CPublishedFile_Unsub" +
+      "scribe_Response\"1\202\265\030-Unsubscribes the us" +
+      "er from the published file\022\226\001\n\014CanSubscr" +
+      "ibe\022$.CPublishedFile_CanSubscribe_Reques" +
+      "t\032%.CPublishedFile_CanSubscribe_Response" +
+      "\"9\202\265\0305Check if the user can subscribe to" +
+      " the published file\022\200\001\n\007Publish\022\037.CPubli" +
+      "shedFile_Publish_Request\032 .CPublishedFil" +
+      "e_Publish_Response\"2\202\265\030.Publishes a clou",
+      "ded user file to the Workshop.\022\220\001\n\nGetDe" +
+      "tails\022\".CPublishedFile_GetDetails_Reques" +
+      "t\032#.CPublishedFile_GetDetails_Response\"9" +
+      "\202\265\0305Retrieves information about a set of" +
+      " published files.\022\223\001\n\013GetItemInfo\022#.CPub" +
+      "lishedFile_GetItemInfo_Request\032$.CPublis" +
+      "hedFile_GetItemInfo_Response\"9\202\265\0305Retrie" +
+      "ves information about a set of published" +
+      " files.\022\205\001\n\014GetUserFiles\022$.CPublishedFil" +
+      "e_GetUserFiles_Request\032%.CPublishedFile_",
+      "GetUserFiles_Response\"(\202\265\030$Retrieves fil" +
+      "es published by a user.\022z\n\006Update\022\036.CPub" +
+      "lishedFile_Update_Request\032\037.CPublishedFi" +
+      "le_Update_Response\"/\202\265\030+Updates informat" +
+      "ion about a published file.\022\300\001\n\025GetChang" +
+      "eHistoryEntry\022-.CPublishedFile_GetChange" +
+      "HistoryEntry_Request\032..CPublishedFile_Ge" +
+      "tChangeHistoryEntry_Response\"H\202\265\030DReturn" +
+      "s data on a specific change history entr" +
+      "y for a published file\022\244\001\n\020GetChangeHist",
+      "ory\022(.CPublishedFile_GetChangeHistory_Re" +
+      "quest\032).CPublishedFile_GetChangeHistory_" +
+      "Response\";\202\265\0307Returns data on the change" +
+      " history for a published file\022\230\001\n\022Refres" +
+      "hVotingQueue\022*.CPublishedFile_RefreshVot" +
+      "ingQueue_Request\032+.CPublishedFile_Refres" +
+      "hVotingQueue_Response\")\202\265\030%Refresh the v" +
+      "oting queue for the user\022\206\001\n\nQueryFiles\022" +
+      "\".CPublishedFile_QueryFiles_Request\032#.CP" +
+      "ublishedFile_QueryFiles_Response\"/\202\265\030+Pe",
+      "rforms a search query for published file" +
+      "s\022\263\001\n\022AddAppRelationship\022*.CPublishedFil" +
+      "e_AddAppRelationship_Request\032+.CPublishe" +
+      "dFile_AddAppRelationship_Response\"D\202\265\030@A" +
+      "dds a relationship between the published" +
+      " file and the given app\022\276\001\n\025RemoveAppRel" +
+      "ationship\022-.CPublishedFile_RemoveAppRela" +
+      "tionship_Request\032..CPublishedFile_Remove" +
+      "AppRelationship_Response\"F\202\265\030BRemove a r" +
+      "elationship between the published file a",
+      "nd the given app\022\263\001\n\023GetAppRelationships" +
+      "\022+.CPublishedFile_GetAppRelationships_Re" +
+      "quest\032,.CPublishedFile_GetAppRelationshi" +
+      "ps_Response\"A\202\265\030=Returns the list of app" +
+      " relationships for this published file\022\263" +
+      "\001\n\025StartPlaytimeTracking\022-.CPublishedFil" +
+      "e_StartPlaytimeTracking_Request\032..CPubli" +
+      "shedFile_StartPlaytimeTracking_Response\"" +
+      ";\202\265\0307Start usage tracking for a given se" +
+      "t of published files\022\260\001\n\024StopPlaytimeTra",
+      "cking\022,.CPublishedFile_StopPlaytimeTrack" +
+      "ing_Request\032-.CPublishedFile_StopPlaytim" +
+      "eTracking_Response\";\202\265\0307Stops usage trac" +
+      "king for a given set of published files\022" +
+      "\355\001\n\"StopPlaytimeTrackingForAllAppItems\022:" +
+      ".CPublishedFile_StopPlaytimeTrackingForA" +
+      "llAppItems_Request\032;.CPublishedFile_Stop" +
+      "PlaytimeTrackingForAllAppItems_Response\"" +
+      "N\202\265\030JStops usage tracking for all items " +
+      "currently tracked for the specified app\022",
+      "\230\002\n\037SetPlaytimeForControllerConfigs\0227.CP" +
+      "ublishedFile_SetPlaytimeForControllerCon" +
+      "figs_Request\0328.CPublishedFile_SetPlaytim" +
+      "eForControllerConfigs_Response\"\201\001\202\265\030}Sto" +
+      "ps usage tracking all controller configs" +
+      " for the given app and set the usage tim" +
+      "e for the for the given controller confi" +
+      "gs\022\217\001\n\010AddChild\022 .CPublishedFile_AddChil" +
+      "d_Request\032!.CPublishedFile_AddChild_Resp" +
+      "onse\">\202\265\030:Adds a parent->child relations",
+      "hip between the given items.\022\231\001\n\013RemoveC" +
+      "hild\022#.CPublishedFile_RemoveChild_Reques" +
+      "t\032$.CPublishedFile_RemoveChild_Response\"" +
+      "?\202\265\030;Removes parent->child relationship " +
+      "between the given items.\032+\202\265\030\'A service " +
+      "to access published file dataB\003\200\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -56952,7 +56760,7 @@ public final class SteamMsgPublishedFile {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          SteamMsgUnifiedBase.getDescriptor(),
+                SteamMsgUnifiedBase.getDescriptor(),
         }, assigner);
     internal_static_CPublishedFile_Subscribe_Request_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -57013,7 +56821,7 @@ public final class SteamMsgPublishedFile {
     internal_static_PublishedFileDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PublishedFileDetails_descriptor,
-        new java.lang.String[] { "Result", "Publishedfileid", "Creator", "CreatorAppid", "ConsumerAppid", "ConsumerShortcutid", "Filename", "FileSize", "PreviewFileSize", "FileUrl", "PreviewUrl", "Youtubevideoid", "Url", "HcontentFile", "HcontentPreview", "Title", "FileDescription", "ShortDescription", "TimeCreated", "TimeUpdated", "Visibility", "Flags", "WorkshopFile", "WorkshopAccepted", "ShowSubscribeAll", "NumCommentsDeveloper", "NumCommentsPublic", "Banned", "BanReason", "Banner", "CanBeDeleted", "Incompatible", "AppName", "FileType", "CanSubscribe", "Subscriptions", "Favorited", "Followers", "LifetimeSubscriptions", "LifetimeFavorited", "LifetimeFollowers", "LifetimePlaytime", "LifetimePlaytimeSessions", "Views", "ImageWidth", "ImageHeight", "ImageUrl", "SpoilerTag", "Shortcutid", "Shortcutname", "NumChildren", "NumReports", "Previews", "Tags", "Children", "Kvtags", "VoteData", "PlaytimeStats", "TimeSubscribed", "ForSaleData", "Metadata", "IncompatibleActor", "IncompatibleTimestamp", "Language", "AppHasAdultContent", "AppHasAdultContentSex", "AppHasAdultContentViolence", "MaybeInappropriate", });
+        new java.lang.String[] { "Result", "Publishedfileid", "Creator", "CreatorAppid", "ConsumerAppid", "ConsumerShortcutid", "Filename", "FileSize", "PreviewFileSize", "FileUrl", "PreviewUrl", "Youtubevideoid", "Url", "HcontentFile", "HcontentPreview", "Title", "FileDescription", "ShortDescription", "TimeCreated", "TimeUpdated", "Visibility", "Flags", "WorkshopFile", "WorkshopAccepted", "ShowSubscribeAll", "NumCommentsDeveloper", "NumCommentsPublic", "Banned", "BanReason", "Banner", "CanBeDeleted", "Incompatible", "AppName", "FileType", "CanSubscribe", "Subscriptions", "Favorited", "Followers", "LifetimeSubscriptions", "LifetimeFavorited", "LifetimeFollowers", "LifetimePlaytime", "LifetimePlaytimeSessions", "Views", "ImageWidth", "ImageHeight", "ImageUrl", "SpoilerTag", "Shortcutid", "Shortcutname", "NumChildren", "NumReports", "Previews", "Tags", "Children", "Kvtags", "VoteData", "PlaytimeStats", "TimeSubscribed", "ForSaleData", "Metadata", "Language", "MaybeInappropriateSex", "MaybeInappropriateViolence", });
     internal_static_PublishedFileDetails_Tag_descriptor =
       internal_static_PublishedFileDetails_descriptor.getNestedTypes().get(0);
     internal_static_PublishedFileDetails_Tag_fieldAccessorTable = new
@@ -57169,7 +56977,7 @@ public final class SteamMsgPublishedFile {
     internal_static_CPublishedFile_QueryFiles_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPublishedFile_QueryFiles_Request_descriptor,
-        new java.lang.String[] { "QueryType", "Page", "Numperpage", "CreatorAppid", "Appid", "Requiredtags", "Excludedtags", "MatchAllTags", "RequiredFlags", "OmittedFlags", "SearchText", "Filetype", "ChildPublishedfileid", "Days", "IncludeRecentVotesOnly", "CacheMaxAgeSeconds", "Language", "RequiredKvTags", "Totalonly", "IdsOnly", "ReturnVoteData", "ReturnTags", "ReturnKvTags", "ReturnPreviews", "ReturnChildren", "ReturnShortDescription", "ReturnForSaleData", "ReturnMetadata", "ReturnPlaytimeStats", "ReturnDetails", "StripDescriptionBbcode", });
+        new java.lang.String[] { "QueryType", "Page", "Cursor", "Numperpage", "CreatorAppid", "Appid", "Requiredtags", "Excludedtags", "MatchAllTags", "RequiredFlags", "OmittedFlags", "SearchText", "Filetype", "ChildPublishedfileid", "Days", "IncludeRecentVotesOnly", "CacheMaxAgeSeconds", "Language", "RequiredKvTags", "Totalonly", "IdsOnly", "ReturnVoteData", "ReturnTags", "ReturnKvTags", "ReturnPreviews", "ReturnChildren", "ReturnShortDescription", "ReturnForSaleData", "ReturnMetadata", "ReturnPlaytimeStats", "ReturnDetails", "StripDescriptionBbcode", });
     internal_static_CPublishedFile_QueryFiles_Request_KVTag_descriptor =
       internal_static_CPublishedFile_QueryFiles_Request_descriptor.getNestedTypes().get(0);
     internal_static_CPublishedFile_QueryFiles_Request_KVTag_fieldAccessorTable = new
@@ -57181,7 +56989,7 @@ public final class SteamMsgPublishedFile {
     internal_static_CPublishedFile_QueryFiles_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPublishedFile_QueryFiles_Response_descriptor,
-        new java.lang.String[] { "Total", "Publishedfiledetails", });
+        new java.lang.String[] { "Total", "Publishedfiledetails", "NextCursor", });
     internal_static_CPublishedFile_AddAppRelationship_Request_descriptor =
       getDescriptor().getMessageTypes().get(25);
     internal_static_CPublishedFile_AddAppRelationship_Request_fieldAccessorTable = new
@@ -57309,7 +57117,7 @@ public final class SteamMsgPublishedFile {
     registry.add(SteamMsgUnifiedBase.serviceDescription);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    SteamMsgUnifiedBase.getDescriptor();
+      SteamMsgUnifiedBase.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

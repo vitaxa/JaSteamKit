@@ -52,9 +52,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -474,7 +471,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_GetUploadServerInfo_Request(input, extensionRegistry);
+          return new CCloud_GetUploadServerInfo_Request(input, extensionRegistry);
       }
     };
 
@@ -537,9 +534,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1032,7 +1026,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_GetUploadServerInfo_Response(input, extensionRegistry);
+          return new CCloud_GetUploadServerInfo_Response(input, extensionRegistry);
       }
     };
 
@@ -1200,9 +1194,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2581,7 +2572,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_BeginHTTPUpload_Request(input, extensionRegistry);
+          return new CCloud_BeginHTTPUpload_Request(input, extensionRegistry);
       }
     };
 
@@ -2714,9 +2705,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2857,9 +2845,6 @@ public final class SteamMsgCloud {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3502,7 +3487,7 @@ public final class SteamMsgCloud {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HTTPHeaders(input, extensionRegistry);
+            return new HTTPHeaders(input, extensionRegistry);
         }
       };
 
@@ -4657,7 +4642,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_BeginHTTPUpload_Response(input, extensionRegistry);
+          return new CCloud_BeginHTTPUpload_Response(input, extensionRegistry);
       }
     };
 
@@ -4755,9 +4740,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5555,7 +5537,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_CommitHTTPUpload_Request(input, extensionRegistry);
+          return new CCloud_CommitHTTPUpload_Request(input, extensionRegistry);
       }
     };
 
@@ -5613,9 +5595,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6036,7 +6015,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_CommitHTTPUpload_Response(input, extensionRegistry);
+          return new CCloud_CommitHTTPUpload_Response(input, extensionRegistry);
       }
     };
 
@@ -6104,9 +6083,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -6604,7 +6580,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_GetFileDetails_Request(input, extensionRegistry);
+          return new CCloud_GetFileDetails_Request(input, extensionRegistry);
       }
     };
 
@@ -6742,9 +6718,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7852,7 +7825,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_UserFile(input, extensionRegistry);
+          return new CCloud_UserFile(input, extensionRegistry);
       }
     };
 
@@ -7913,9 +7886,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8444,7 +8414,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_GetFileDetails_Response(input, extensionRegistry);
+          return new CCloud_GetFileDetails_Response(input, extensionRegistry);
       }
     };
 
@@ -8532,9 +8502,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -9186,7 +9153,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_EnumerateUserFiles_Request(input, extensionRegistry);
+          return new CCloud_EnumerateUserFiles_Request(input, extensionRegistry);
       }
     };
 
@@ -9269,9 +9236,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10033,7 +9997,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_EnumerateUserFiles_Response(input, extensionRegistry);
+          return new CCloud_EnumerateUserFiles_Response(input, extensionRegistry);
       }
     };
 
@@ -10106,9 +10070,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10678,7 +10639,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_Delete_Request(input, extensionRegistry);
+          return new CCloud_Delete_Request(input, extensionRegistry);
       }
     };
 
@@ -10726,9 +10687,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -11065,7 +11023,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_Delete_Response(input, extensionRegistry);
+          return new CCloud_Delete_Response(input, extensionRegistry);
       }
     };
 
@@ -11113,9 +11071,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -11452,7 +11407,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_GetClientEncryptionKey_Request(input, extensionRegistry);
+          return new CCloud_GetClientEncryptionKey_Request(input, extensionRegistry);
       }
     };
 
@@ -11520,9 +11475,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12022,7 +11974,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_GetClientEncryptionKey_Response(input, extensionRegistry);
+          return new CCloud_GetClientEncryptionKey_Response(input, extensionRegistry);
       }
     };
 
@@ -12145,9 +12097,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13106,7 +13055,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_CDNReport_Notification(input, extensionRegistry);
+          return new CCloud_CDNReport_Notification(input, extensionRegistry);
       }
     };
 
@@ -13254,9 +13203,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -14442,7 +14388,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ExternalStorageTransferReport_Notification(input, extensionRegistry);
+          return new CCloud_ExternalStorageTransferReport_Notification(input, extensionRegistry);
       }
     };
 
@@ -14595,9 +14541,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -15789,7 +15732,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientBeginFileUpload_Request(input, extensionRegistry);
+          return new CCloud_ClientBeginFileUpload_Request(input, extensionRegistry);
       }
     };
 
@@ -15952,9 +15895,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -16110,9 +16050,6 @@ public final class SteamMsgCloud {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -16755,7 +16692,7 @@ public final class SteamMsgCloud {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HTTPHeaders(input, extensionRegistry);
+            return new HTTPHeaders(input, extensionRegistry);
         }
       };
 
@@ -18130,7 +18067,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientCloudFileUploadBlockDetails(input, extensionRegistry);
+          return new ClientCloudFileUploadBlockDetails(input, extensionRegistry);
       }
     };
 
@@ -18213,9 +18150,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -18978,7 +18912,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientBeginFileUpload_Response(input, extensionRegistry);
+          return new CCloud_ClientBeginFileUpload_Response(input, extensionRegistry);
       }
     };
 
@@ -19071,9 +19005,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -19801,7 +19732,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientCommitFileUpload_Request(input, extensionRegistry);
+          return new CCloud_ClientCommitFileUpload_Request(input, extensionRegistry);
       }
     };
 
@@ -19859,9 +19790,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -20282,7 +20210,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientCommitFileUpload_Response(input, extensionRegistry);
+          return new CCloud_ClientCommitFileUpload_Response(input, extensionRegistry);
       }
     };
 
@@ -20355,9 +20283,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -20927,7 +20852,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientFileDownload_Request(input, extensionRegistry);
+          return new CCloud_ClientFileDownload_Request(input, extensionRegistry);
       }
     };
 
@@ -21110,9 +21035,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -21278,9 +21200,6 @@ public final class SteamMsgCloud {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -21923,7 +21842,7 @@ public final class SteamMsgCloud {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HTTPHeaders(input, extensionRegistry);
+            return new HTTPHeaders(input, extensionRegistry);
         }
       };
 
@@ -23443,7 +23362,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientFileDownload_Response(input, extensionRegistry);
+          return new CCloud_ClientFileDownload_Response(input, extensionRegistry);
       }
     };
 
@@ -23526,9 +23445,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -24176,7 +24092,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientDeleteFile_Request(input, extensionRegistry);
+          return new CCloud_ClientDeleteFile_Request(input, extensionRegistry);
       }
     };
 
@@ -24224,9 +24140,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -24563,7 +24476,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientDeleteFile_Response(input, extensionRegistry);
+          return new CCloud_ClientDeleteFile_Response(input, extensionRegistry);
       }
     };
 
@@ -24631,9 +24544,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -25131,7 +25041,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_ClientConflictResolution_Notification(input, extensionRegistry);
+          return new CCloud_ClientConflictResolution_Notification(input, extensionRegistry);
       }
     };
 
@@ -25179,9 +25089,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -25518,7 +25425,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_EnumerateUserApps_Request(input, extensionRegistry);
+          return new CCloud_EnumerateUserApps_Request(input, extensionRegistry);
       }
     };
 
@@ -25591,9 +25498,6 @@ public final class SteamMsgCloud {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -25707,9 +25611,6 @@ public final class SteamMsgCloud {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -26284,7 +26185,7 @@ public final class SteamMsgCloud {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Apps(input, extensionRegistry);
+            return new Apps(input, extensionRegistry);
         }
       };
 
@@ -26930,7 +26831,7 @@ public final class SteamMsgCloud {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CCloud_EnumerateUserApps_Response(input, extensionRegistry);
+          return new CCloud_EnumerateUserApps_Response(input, extensionRegistry);
       }
     };
 
@@ -27132,7 +27033,7 @@ public final class SteamMsgCloud {
       "\030\001 \001(\t\"\224\006\n\036CCloud_BeginHTTPUpload_Reques" +
       "t\022?\n\005appid\030\001 \001(\rB0\202\265\030,App ID for which t" +
       "he file is being uploaded.\0223\n\tfile_size\030" +
-      "\002 \001(\rB \202\265\030\034Original file size in bytes.\022" +
+      "\002 \001(\rB \202\265\030\034Original file size in bytes.\022",
       "=\n\010filename\030\003 \001(\tB+\202\265\030\'Name of the file " +
       "to store in the cloud.\022V\n\010file_sha\030\004 \001(\t" +
       "BD\202\265\030@Hex string (40 digits) representin" +
@@ -27142,7 +27043,7 @@ public final class SteamMsgCloud {
       "ise.\022z\n\021platforms_to_sync\030\006 \003(\tB_\202\265\030[Arr" +
       "ay of string specifying which platforms " +
       "to sync; value values: all, windows, osx" +
-      ", linux.\022r\n\025request_headers_names\030\007 \003(\tB" +
+      ", linux.\022r\n\025request_headers_names\030\007 \003(\tB",
       "S\202\265\030ONames for headers you\'ll want to se" +
       "t on your upload request. May be left bl" +
       "ank.\022\226\001\n\026request_headers_values\030\010 \003(\tBv\202" +
@@ -27152,7 +27053,7 @@ public final class SteamMsgCloud {
       "\n\037CCloud_BeginHTTPUpload_Response\022/\n\005ugc" +
       "id\030\001 \001(\006B \202\265\030\034UGC ID of the uploaded fil" +
       "e.\0220\n\ttimestamp\030\002 \001(\007B\035\202\265\030\031Server timest" +
-      "amp of file.\022X\n\010url_host\030\003 \001(\tBF\202\265\030BHost" +
+      "amp of file.\022X\n\010url_host\030\003 \001(\tBF\202\265\030BHost",
       " name of server to which file should be " +
       "uploaded via HTTP PUT.\022O\n\010url_path\030\004 \001(\t" +
       "B=\202\265\0309Relative path on server to which f" +
@@ -27162,7 +27063,7 @@ public final class SteamMsgCloud {
       "d_BeginHTTPUpload_Response.HTTPHeadersB4" +
       "\202\265\0300Name-value pairs to be sent in HTTP " +
       "PUT request.\032*\n\013HTTPHeaders\022\014\n\004name\030\001 \001(" +
-      "\t\022\r\n\005value\030\002 \001(\t\"\255\004\n\037CCloud_CommitHTTPUp" +
+      "\t\022\r\n\005value\030\002 \001(\t\"\255\004\n\037CCloud_CommitHTTPUp",
       "load_Request\022\244\001\n\022transfer_succeeded\030\001 \001(" +
       "\010B\207\001\202\265\030\202\001True if the HTTP PUT to the upl" +
       "oad URL succeeded (URL provided in respo" +
@@ -27172,7 +27073,7 @@ public final class SteamMsgCloud {
       "ded. Must match the app ID provided to C" +
       "loud.BeginHTTPUpload.\022\225\001\n\010file_sha\030\003 \001(\t" +
       "B\202\001\202\265\030~Hex string (40 digits) representi" +
-      "ng the SHA1 digest of the file. Must mat" +
+      "ng the SHA1 digest of the file. Must mat",
       "ch the SHA1 digest provided to Cloud.Beg" +
       "inHTTPUpload.\022Q\n\010filename\030\004 \001(\tB?\202\265\030;Fil" +
       "ename as specified in the Cloud.BeginHTT" +
@@ -27182,7 +27083,7 @@ public final class SteamMsgCloud {
       "itted, false otherwise.\"\214\001\n\035CCloud_GetFi" +
       "leDetails_Request\022;\n\005ugcid\030\001 \001(\004B,\202\265\030(ID" +
       " of the Cloud file to get details for.\022." +
-      "\n\005appid\030\002 \001(\rB\037\202\265\030\033App ID the file belon" +
+      "\n\005appid\030\002 \001(\rB\037\202\265\030\033App ID the file belon",
       "gs to.\"\234\001\n\017CCloud_UserFile\022\r\n\005appid\030\001 \001(" +
       "\r\022\r\n\005ugcid\030\002 \001(\004\022\020\n\010filename\030\003 \001(\t\022\021\n\tti" +
       "mestamp\030\004 \001(\004\022\021\n\tfile_size\030\005 \001(\r\022\013\n\003url\030" +
@@ -27192,7 +27093,7 @@ public final class SteamMsgCloud {
       "Cloud_EnumerateUserFiles_Request\0224\n\005appi" +
       "d\030\001 \001(\rB%\202\265\030!App ID to enumerate the fil" +
       "es of.\022\233\001\n\020extended_details\030\002 \001(\010B\200\001\202\265\030|" +
-      "(Optional) Get extended details back on " +
+      "(Optional) Get extended details back on ",
       "the files found. Defaults to only return" +
       "ed the app Id and UGC Id of the files fo" +
       "und.\022|\n\005count\030\003 \001(\rBm\202\265\030i(Optional) Maxi" +
@@ -27202,7 +27103,7 @@ public final class SteamMsgCloud {
       "tional) Starting index to begin enumerat" +
       "ion at. Defaults to the beginning of the" +
       " list.\"Z\n\"CCloud_EnumerateUserFiles_Resp" +
-      "onse\022\037\n\005files\030\001 \003(\0132\020.CCloud_UserFile\022\023\n" +
+      "onse\022\037\n\005files\030\001 \003(\0132\020.CCloud_UserFile\022\023\n",
       "\013total_files\030\002 \001(\r\"Y\n\025CCloud_Delete_Requ" +
       "est\022\020\n\010filename\030\001 \001(\t\022.\n\005appid\030\002 \001(\rB\037\202\265" +
       "\030\033App ID the file belongs to.\"\030\n\026CCloud_" +
@@ -27212,7 +27113,7 @@ public final class SteamMsgCloud {
       "-256 encryption key\022\033\n\003crc\030\002 \001(\005B\016\202\265\030\nCR" +
       "C of key\"\252\001\n\035CCloud_CDNReport_Notificati" +
       "on\022\017\n\007steamid\030\001 \001(\006\022\013\n\003url\030\002 \001(\t\022\017\n\007succ" +
-      "ess\030\003 \001(\010\022\030\n\020http_status_code\030\004 \001(\r\022\026\n\016e" +
+      "ess\030\003 \001(\010\022\030\n\020http_status_code\030\004 \001(\r\022\026\n\016e",
       "xpected_bytes\030\005 \001(\004\022\026\n\016received_bytes\030\006 " +
       "\001(\004\022\020\n\010duration\030\007 \001(\r\"\340\001\n1CCloud_Externa" +
       "lStorageTransferReport_Notification\022\014\n\004h" +
@@ -27222,7 +27123,7 @@ public final class SteamMsgCloud {
       "ctual\030\007 \001(\004\022\023\n\013duration_ms\030\010 \001(\r\022\016\n\006cell" +
       "id\030\t \001(\r\"\274\005\n$CCloud_ClientBeginFileUploa" +
       "d_Request\022?\n\005appid\030\001 \001(\rB0\202\265\030,App ID for" +
-      " which the file is being uploaded.\022D\n\tfi" +
+      " which the file is being uploaded.\022D\n\tfi",
       "le_size\030\002 \001(\rB1\202\265\030-file size as transmit" +
       "ted and stored in Cloud.\022N\n\rraw_file_siz" +
       "e\030\003 \001(\rB7\202\265\0303file size before any compre" +
@@ -27232,7 +27133,7 @@ public final class SteamMsgCloud {
       "me\030\006 \001(\tB+\202\265\030\'Name of the file to store " +
       "in the cloud.\022%\n\021platforms_to_sync\030\007 \001(\r" +
       ":\n4294967295\022F\n\007cell_id\030\t \001(\rB5\202\265\0301Clien" +
-      "t\'s cell ID so we can pick storage locat" +
+      "t\'s cell ID so we can pick storage locat",
       "ion.\022Q\n\013can_encrypt\030\n \001(\010B<\202\265\0308if true, " +
       "client can encrypt the file before uploa" +
       "ding it\022f\n\016is_shared_file\030\013 \001(\010BN\202\265\030Jif " +
@@ -27242,7 +27143,7 @@ public final class SteamMsgCloud {
       "t\030\001 \001(\tBF\202\265\030BHost name of server to whic" +
       "h file should be uploaded via HTTP PUT.\022" +
       "O\n\010url_path\030\002 \001(\tB=\202\265\0309Relative path on " +
-      "server to which file should be uploaded." +
+      "server to which file should be uploaded.",
       "\022>\n\tuse_https\030\003 \001(\010B+\202\265\030\'If true, use ht" +
       "tps, otherwise use http.\022;\n\013http_method\030" +
       "\004 \001(\005B&\202\265\030\"EHTTPMethod to use for this b" +
@@ -27252,7 +27153,7 @@ public final class SteamMsgCloud {
       "PUT request.\0228\n\014block_offset\030\006 \001(\004B\"\202\265\030\036" +
       "offset of file block to upload\022m\n\014block_" +
       "length\030\007 \001(\rBW\202\265\030Slength of file block t" +
-      "o upload - if zero, no part of the file " +
+      "o upload - if zero, no part of the file ",
       "is part of this block\022_\n\022explicit_body_d" +
       "ata\030\010 \001(\014BC\202\265\030?explicit body data to use" +
       ", instead of file data, for this block\022o" +
@@ -27262,7 +27163,7 @@ public final class SteamMsgCloud {
       "eaders\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\355\001\n%" +
       "CCloud_ClientBeginFileUpload_Response\022[\n" +
       "\014encrypt_file\030\001 \001(\010BE\202\265\030AIf true, the fi" +
-      "le should be encrypted by the client bef" +
+      "le should be encrypted by the client bef",
       "ore upload\022g\n\016block_requests\030\002 \003(\0132\".Cli" +
       "entCloudFileUploadBlockDetailsB+\202\265\030\'HTTP" +
       " requests to make to perform upload\"\311\003\n%" +
@@ -27272,7 +27173,7 @@ public final class SteamMsgCloud {
       " of them failed.\022x\n\005appid\030\002 \001(\rBi\202\265\030eApp" +
       " ID for which the file is being uploaded" +
       ". Must match the app ID provided to Clou" +
-      "d.BeginFileUpload.\022p\n\010file_sha\030\003 \001(\014B^\202\265" +
+      "d.BeginFileUpload.\022p\n\010file_sha\030\003 \001(\014B^\202\265",
       "\030ZSHA1 digest of the raw file. Must matc" +
       "h the SHA1 digest provided to Cloud.Begi" +
       "nFileUpload.\022Q\n\010filename\030\004 \001(\tB?\202\265\030;File" +
@@ -27282,7 +27183,7 @@ public final class SteamMsgCloud {
       "(\010BA\202\265\030=True if the file was successfull" +
       "y committed, false otherwise.\"\200\001\n!CCloud" +
       "_ClientFileDownload_Request\022.\n\005appid\030\001 \001" +
-      "(\rB\037\202\265\030\033App ID the file is part of.\022+\n\010f" +
+      "(\rB\037\202\265\030\033App ID the file is part of.\022+\n\010f",
       "ilename\030\002 \001(\tB\031\202\265\030\025Filename of the file." +
       "\"\376\005\n\"CCloud_ClientFileDownload_Response\022" +
       "2\n\005appid\030\001 \001(\rB#\202\265\030\037Application the file" +
@@ -27292,7 +27193,7 @@ public final class SteamMsgCloud {
       "ze when decompressed and/or decrypted\022!\n" +
       "\010sha_file\030\004 \001(\014B\017\202\265\030\013SHA of file\022)\n\ntime" +
       "_stamp\030\005 \001(\004B\025\202\265\030\021Timestamp of file\022J\n\022i" +
-      "s_explicit_delete\030\006 \001(\010B.\202\265\030*True if thi" +
+      "s_explicit_delete\030\006 \001(\010B.\202\265\030*True if thi",
       "s is an explicitly deleted file\022/\n\010url_h" +
       "ost\030\007 \001(\tB\035\202\265\030\031Host to GET the file from" +
       "\022O\n\010url_path\030\010 \001(\tB=\202\265\0309Path on that hos" +
@@ -27302,7 +27203,7 @@ public final class SteamMsgCloud {
       "\003(\0132/.CCloud_ClientFileDownload_Response" +
       ".HTTPHeadersB4\202\265\0300Name-value pairs to be" +
       " sent in HTTP GET request.\022\021\n\tencrypted\030" +
-      "\013 \001(\010\032*\n\013HTTPHeaders\022\014\n\004name\030\001 \001(\t\022\r\n\005va" +
+      "\013 \001(\010\032*\n\013HTTPHeaders\022\014\n\004name\030\001 \001(\t\022\r\n\005va",
       "lue\030\002 \001(\t\"\343\001\n\037CCloud_ClientDeleteFile_Re" +
       "quest\022>\n\005appid\030\001 \001(\rB/\202\265\030+App ID for whi" +
       "ch the file is being deleted.\022\'\n\010filenam" +
@@ -27312,7 +27213,7 @@ public final class SteamMsgCloud {
       "\"\n CCloud_ClientDeleteFile_Response\"\340\001\n," +
       "CCloud_ClientConflictResolution_Notifica" +
       "tion\022>\n\005appid\030\001 \001(\rB/\202\265\030+App ID for whic" +
-      "h the conflict was resolved.\022p\n\021chose_lo" +
+      "h the conflict was resolved.\022p\n\021chose_lo",
       "cal_files\030\002 \001(\010BU\202\265\030QDid the user choose" +
       " to keep the files local to the machine " +
       "they are on right now?\"\"\n CCloud_Enumera" +
@@ -27322,7 +27223,7 @@ public final class SteamMsgCloud {
       "\r\n\005appid\030\001 \001(\r\022\022\n\ntotalcount\030\002 \001(\005\022\021\n\tto" +
       "talsize\030\003 \001(\0032\253\022\n\005Cloud\022\234\001\n\023GetUploadSer" +
       "verInfo\022#.CCloud_GetUploadServerInfo_Req" +
-      "uest\032$.CCloud_GetUploadServerInfo_Respon" +
+      "uest\032$.CCloud_GetUploadServerInfo_Respon",
       "se\":\202\265\0306Returns the URL of the proper cl" +
       "oud server for a user.\022\250\002\n\017BeginHTTPUplo" +
       "ad\022\037.CCloud_BeginHTTPUpload_Request\032 .CC" +
@@ -27332,7 +27233,7 @@ public final class SteamMsgCloud {
       "uld be uploaded via HTTP PUT to the retu" +
       "rned URL, after which the upload must be" +
       " finalized by a call to CommitHTTPUpload" +
-      ".\022\255\001\n\020CommitHTTPUpload\022 .CCloud_CommitHT" +
+      ".\022\255\001\n\020CommitHTTPUpload\022 .CCloud_CommitHT",
       "TPUpload_Request\032!.CCloud_CommitHTTPUplo" +
       "ad_Response\"T\202\265\030PCommits a file upload i" +
       "nitiated by BeginHTTPUpload and transfer" +
@@ -27342,7 +27243,7 @@ public final class SteamMsgCloud {
       "s on a Cloud file.\022\272\001\n\022EnumerateUserFile" +
       "s\022\".CCloud_EnumerateUserFiles_Request\032#." +
       "CCloud_EnumerateUserFiles_Response\"[\202\265\030W" +
-      "Enumerates Cloud files for a user of a g" +
+      "Enumerates Cloud files for a user of a g",
       "iven app ID. Returns up to 500 files at " +
       "a time.\022d\n\006Delete\022\026.CCloud_Delete_Reques" +
       "t\032\027.CCloud_Delete_Response\")\202\265\030%Deletes " +
@@ -27352,7 +27253,7 @@ public final class SteamMsgCloud {
       "ptionKey_Response\".\202\265\030*Gets the user\'s C" +
       "loud file encryption key.\022c\n\tCDNReport\022\036" +
       ".CCloud_CDNReport_Notification\032\013.NoRespo" +
-      "nse\")\202\265\030%Reports the result of a CDN tra" +
+      "nse\")\202\265\030%Reports the result of a CDN tra",
       "nsfer.\022\237\001\n\035ExternalStorageTransferReport" +
       "\0222.CCloud_ExternalStorageTransferReport_" +
       "Notification\032\013.NoResponse\"=\202\265\0309Reports t" +
@@ -27362,7 +27263,7 @@ public final class SteamMsgCloud {
       "ud_ClientBeginFileUpload_Response\" \202\265\030\034I" +
       "nitiate an upload to Cloud.\022\232\001\n\026ClientCo" +
       "mmitFileUpload\022&.CCloud_ClientCommitFile" +
-      "Upload_Request\032\'.CCloud_ClientCommitFile" +
+      "Upload_Request\032\'.CCloud_ClientCommitFile",
       "Upload_Response\"/\202\265\030+Commit the file upl" +
       "oad or indicate failure.\022|\n\022ClientFileDo" +
       "wnload\022\".CCloud_ClientFileDownload_Reque" +
@@ -27372,7 +27273,7 @@ public final class SteamMsgCloud {
       "uest\032!.CCloud_ClientDeleteFile_Response\"" +
       "\034\202\265\030\030Delete or forget a file.\022\216\001\n\030Client" +
       "ConflictResolution\022-.CCloud_ClientConfli" +
-      "ctResolution_Notification\032\013.NoResponse\"6" +
+      "ctResolution_Notification\032\013.NoResponse\"6",
       "\202\265\0302User has picked a resolution for a C" +
       "loud conflict.\022\217\001\n\021EnumerateUserApps\022!.C" +
       "Cloud_EnumerateUserApps_Request\032\".CCloud" +

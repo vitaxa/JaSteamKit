@@ -13,6 +13,105 @@ public final class SteamMsgPlayer {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code ENotificationSetting}
+   */
+  public enum ENotificationSetting
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>k_ENotificationSettingNotifyUseDefault = 0;</code>
+     */
+    k_ENotificationSettingNotifyUseDefault(0),
+    /**
+     * <code>k_ENotificationSettingAlways = 1;</code>
+     */
+    k_ENotificationSettingAlways(1),
+    /**
+     * <code>k_ENotificationSettingNever = 2;</code>
+     */
+    k_ENotificationSettingNever(2),
+    ;
+
+    /**
+     * <code>k_ENotificationSettingNotifyUseDefault = 0;</code>
+     */
+    public static final int k_ENotificationSettingNotifyUseDefault_VALUE = 0;
+    /**
+     * <code>k_ENotificationSettingAlways = 1;</code>
+     */
+    public static final int k_ENotificationSettingAlways_VALUE = 1;
+    /**
+     * <code>k_ENotificationSettingNever = 2;</code>
+     */
+    public static final int k_ENotificationSettingNever_VALUE = 2;
+
+
+    public final int getNumber() {
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ENotificationSetting valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ENotificationSetting forNumber(int value) {
+      switch (value) {
+        case 0: return k_ENotificationSettingNotifyUseDefault;
+        case 1: return k_ENotificationSettingAlways;
+        case 2: return k_ENotificationSettingNever;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ENotificationSetting>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        ENotificationSetting> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ENotificationSetting>() {
+            public ENotificationSetting findValueByNumber(int number) {
+              return ENotificationSetting.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return SteamMsgPlayer.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final ENotificationSetting[] VALUES = values();
+
+    public static ENotificationSetting valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ENotificationSetting(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:ENotificationSetting)
+  }
+
   public interface CPlayer_GetMutualFriendsForIncomingInvites_RequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:CPlayer_GetMutualFriendsForIncomingInvites_Request)
       com.google.protobuf.MessageOrBuilder {
@@ -42,9 +141,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -381,7 +477,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetMutualFriendsForIncomingInvites_Request(input, extensionRegistry);
+          return new CPlayer_GetMutualFriendsForIncomingInvites_Request(input, extensionRegistry);
       }
     };
 
@@ -453,9 +549,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1023,7 +1116,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_IncomingInviteMutualFriendList(input, extensionRegistry);
+          return new CPlayer_IncomingInviteMutualFriendList(input, extensionRegistry);
       }
     };
 
@@ -1049,7 +1142,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_IncomingInviteMutualFriendList incoming_invite_mutual_friends_lists = 1;</code>
      */
-    java.util.List<SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendList> 
+    java.util.List<SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendList>
         getIncomingInviteMutualFriendsListsList();
     /**
      * <code>repeated .CPlayer_IncomingInviteMutualFriendList incoming_invite_mutual_friends_lists = 1;</code>
@@ -1062,7 +1155,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_IncomingInviteMutualFriendList incoming_invite_mutual_friends_lists = 1;</code>
      */
-    java.util.List<? extends SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendListOrBuilder> 
+    java.util.List<? extends SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendListOrBuilder>
         getIncomingInviteMutualFriendsListsOrBuilderList();
     /**
      * <code>repeated .CPlayer_IncomingInviteMutualFriendList incoming_invite_mutual_friends_lists = 1;</code>
@@ -1096,9 +1189,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1164,7 +1254,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_IncomingInviteMutualFriendList incoming_invite_mutual_friends_lists = 1;</code>
      */
-    public java.util.List<? extends SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendListOrBuilder> 
+    public java.util.List<? extends SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendListOrBuilder>
         getIncomingInviteMutualFriendsListsOrBuilderList() {
       return incomingInviteMutualFriendsLists_;
     }
@@ -1475,7 +1565,7 @@ public final class SteamMsgPlayer {
               incomingInviteMutualFriendsListsBuilder_ = null;
               incomingInviteMutualFriendsLists_ = other.incomingInviteMutualFriendsLists_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              incomingInviteMutualFriendsListsBuilder_ = 
+              incomingInviteMutualFriendsListsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getIncomingInviteMutualFriendsListsFieldBuilder() : null;
             } else {
@@ -1706,7 +1796,7 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_IncomingInviteMutualFriendList incoming_invite_mutual_friends_lists = 1;</code>
        */
-      public java.util.List<? extends SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendListOrBuilder> 
+      public java.util.List<? extends SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendListOrBuilder>
            getIncomingInviteMutualFriendsListsOrBuilderList() {
         if (incomingInviteMutualFriendsListsBuilder_ != null) {
           return incomingInviteMutualFriendsListsBuilder_.getMessageOrBuilderList();
@@ -1732,12 +1822,12 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_IncomingInviteMutualFriendList incoming_invite_mutual_friends_lists = 1;</code>
        */
-      public java.util.List<SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendList.Builder> 
+      public java.util.List<SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendList.Builder>
            getIncomingInviteMutualFriendsListsBuilderList() {
         return getIncomingInviteMutualFriendsListsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendList, SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendList.Builder, SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendListOrBuilder> 
+          SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendList, SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendList.Builder, SteamMsgPlayer.CPlayer_IncomingInviteMutualFriendListOrBuilder>
           getIncomingInviteMutualFriendsListsFieldBuilder() {
         if (incomingInviteMutualFriendsListsBuilder_ == null) {
           incomingInviteMutualFriendsListsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -1780,7 +1870,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetMutualFriendsForIncomingInvites_Response(input, extensionRegistry);
+          return new CPlayer_GetMutualFriendsForIncomingInvites_Response(input, extensionRegistry);
       }
     };
 
@@ -1838,9 +1928,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2260,7 +2347,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetGameBadgeLevels_Request(input, extensionRegistry);
+          return new CPlayer_GetGameBadgeLevels_Request(input, extensionRegistry);
       }
     };
 
@@ -2295,7 +2382,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetGameBadgeLevels_Response.Badge badges = 2;</code>
      */
-    java.util.List<SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.Badge> 
+    java.util.List<SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.Badge>
         getBadgesList();
     /**
      * <code>repeated .CPlayer_GetGameBadgeLevels_Response.Badge badges = 2;</code>
@@ -2308,7 +2395,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetGameBadgeLevels_Response.Badge badges = 2;</code>
      */
-    java.util.List<? extends SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.BadgeOrBuilder> 
+    java.util.List<? extends SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.BadgeOrBuilder>
         getBadgesOrBuilderList();
     /**
      * <code>repeated .CPlayer_GetGameBadgeLevels_Response.Badge badges = 2;</code>
@@ -2343,9 +2430,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2464,9 +2548,6 @@ public final class SteamMsgPlayer {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3040,7 +3121,7 @@ public final class SteamMsgPlayer {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Badge(input, extensionRegistry);
+            return new Badge(input, extensionRegistry);
         }
       };
 
@@ -3086,7 +3167,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetGameBadgeLevels_Response.Badge badges = 2;</code>
      */
-    public java.util.List<? extends SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.BadgeOrBuilder> 
+    public java.util.List<? extends SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.BadgeOrBuilder>
         getBadgesOrBuilderList() {
       return badges_;
     }
@@ -3424,7 +3505,7 @@ public final class SteamMsgPlayer {
               badgesBuilder_ = null;
               badges_ = other.badges_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              badgesBuilder_ = 
+              badgesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBadgesFieldBuilder() : null;
             } else {
@@ -3687,7 +3768,7 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_GetGameBadgeLevels_Response.Badge badges = 2;</code>
        */
-      public java.util.List<? extends SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.BadgeOrBuilder> 
+      public java.util.List<? extends SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.BadgeOrBuilder>
            getBadgesOrBuilderList() {
         if (badgesBuilder_ != null) {
           return badgesBuilder_.getMessageOrBuilderList();
@@ -3713,12 +3794,12 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_GetGameBadgeLevels_Response.Badge badges = 2;</code>
        */
-      public java.util.List<SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.Badge.Builder> 
+      public java.util.List<SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.Badge.Builder>
            getBadgesBuilderList() {
         return getBadgesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.Badge, SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.Badge.Builder, SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.BadgeOrBuilder> 
+          SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.Badge, SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.Badge.Builder, SteamMsgPlayer.CPlayer_GetGameBadgeLevels_Response.BadgeOrBuilder>
           getBadgesFieldBuilder() {
         if (badgesBuilder_ == null) {
           badgesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -3761,7 +3842,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetGameBadgeLevels_Response(input, extensionRegistry);
+          return new CPlayer_GetGameBadgeLevels_Response(input, extensionRegistry);
       }
     };
 
@@ -3819,9 +3900,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4241,7 +4319,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetLastPlayedTimes_Request(input, extensionRegistry);
+          return new CPlayer_GetLastPlayedTimes_Request(input, extensionRegistry);
       }
     };
 
@@ -4267,7 +4345,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
      */
-    java.util.List<SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game> 
+    java.util.List<SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game>
         getGamesList();
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
@@ -4280,7 +4358,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
      */
-    java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder> 
+    java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder>
         getGamesOrBuilderList();
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
@@ -4314,9 +4392,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4410,6 +4485,15 @@ public final class SteamMsgPlayer {
        * <code>optional int32 playtime_forever = 4;</code>
        */
       int getPlaytimeForever();
+
+      /**
+       * <code>optional uint32 first_playtime = 5;</code>
+       */
+      boolean hasFirstPlaytime();
+      /**
+       * <code>optional uint32 first_playtime = 5;</code>
+       */
+      int getFirstPlaytime();
     }
     /**
      * Protobuf type {@code CPlayer_GetLastPlayedTimes_Response.Game}
@@ -4428,6 +4512,7 @@ public final class SteamMsgPlayer {
         lastPlaytime_ = 0;
         playtime2Weeks_ = 0;
         playtimeForever_ = 0;
+        firstPlaytime_ = 0;
       }
 
       @java.lang.Override
@@ -4440,9 +4525,6 @@ public final class SteamMsgPlayer {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4479,6 +4561,11 @@ public final class SteamMsgPlayer {
               case 32: {
                 bitField0_ |= 0x00000008;
                 playtimeForever_ = input.readInt32();
+                break;
+              }
+              case 40: {
+                bitField0_ |= 0x00000010;
+                firstPlaytime_ = input.readUInt32();
                 break;
               }
             }
@@ -4566,6 +4653,21 @@ public final class SteamMsgPlayer {
         return playtimeForever_;
       }
 
+      public static final int FIRST_PLAYTIME_FIELD_NUMBER = 5;
+      private int firstPlaytime_;
+      /**
+       * <code>optional uint32 first_playtime = 5;</code>
+       */
+      public boolean hasFirstPlaytime() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional uint32 first_playtime = 5;</code>
+       */
+      public int getFirstPlaytime() {
+        return firstPlaytime_;
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -4590,6 +4692,9 @@ public final class SteamMsgPlayer {
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
           output.writeInt32(4, playtimeForever_);
         }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          output.writeUInt32(5, firstPlaytime_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -4613,6 +4718,10 @@ public final class SteamMsgPlayer {
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(4, playtimeForever_);
+        }
+        if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(5, firstPlaytime_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -4650,6 +4759,11 @@ public final class SteamMsgPlayer {
           result = result && (getPlaytimeForever()
               == other.getPlaytimeForever());
         }
+        result = result && (hasFirstPlaytime() == other.hasFirstPlaytime());
+        if (hasFirstPlaytime()) {
+          result = result && (getFirstPlaytime()
+              == other.getFirstPlaytime());
+        }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -4676,6 +4790,10 @@ public final class SteamMsgPlayer {
         if (hasPlaytimeForever()) {
           hash = (37 * hash) + PLAYTIME_FOREVER_FIELD_NUMBER;
           hash = (53 * hash) + getPlaytimeForever();
+        }
+        if (hasFirstPlaytime()) {
+          hash = (37 * hash) + FIRST_PLAYTIME_FIELD_NUMBER;
+          hash = (53 * hash) + getFirstPlaytime();
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
@@ -4814,6 +4932,8 @@ public final class SteamMsgPlayer {
           bitField0_ = (bitField0_ & ~0x00000004);
           playtimeForever_ = 0;
           bitField0_ = (bitField0_ & ~0x00000008);
+          firstPlaytime_ = 0;
+          bitField0_ = (bitField0_ & ~0x00000010);
           return this;
         }
 
@@ -4854,6 +4974,10 @@ public final class SteamMsgPlayer {
             to_bitField0_ |= 0x00000008;
           }
           result.playtimeForever_ = playtimeForever_;
+          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+            to_bitField0_ |= 0x00000010;
+          }
+          result.firstPlaytime_ = firstPlaytime_;
           result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
@@ -4907,6 +5031,9 @@ public final class SteamMsgPlayer {
           }
           if (other.hasPlaytimeForever()) {
             setPlaytimeForever(other.getPlaytimeForever());
+          }
+          if (other.hasFirstPlaytime()) {
+            setFirstPlaytime(other.getFirstPlaytime());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -5063,6 +5190,38 @@ public final class SteamMsgPlayer {
           onChanged();
           return this;
         }
+
+        private int firstPlaytime_ ;
+        /**
+         * <code>optional uint32 first_playtime = 5;</code>
+         */
+        public boolean hasFirstPlaytime() {
+          return ((bitField0_ & 0x00000010) == 0x00000010);
+        }
+        /**
+         * <code>optional uint32 first_playtime = 5;</code>
+         */
+        public int getFirstPlaytime() {
+          return firstPlaytime_;
+        }
+        /**
+         * <code>optional uint32 first_playtime = 5;</code>
+         */
+        public Builder setFirstPlaytime(int value) {
+          bitField0_ |= 0x00000010;
+          firstPlaytime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint32 first_playtime = 5;</code>
+         */
+        public Builder clearFirstPlaytime() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          firstPlaytime_ = 0;
+          onChanged();
+          return this;
+        }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFields(unknownFields);
@@ -5093,7 +5252,7 @@ public final class SteamMsgPlayer {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Game(input, extensionRegistry);
+            return new Game(input, extensionRegistry);
         }
       };
 
@@ -5123,7 +5282,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
      */
-    public java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder> 
+    public java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder>
         getGamesOrBuilderList() {
       return games_;
     }
@@ -5434,7 +5593,7 @@ public final class SteamMsgPlayer {
               gamesBuilder_ = null;
               games_ = other.games_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              gamesBuilder_ = 
+              gamesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getGamesFieldBuilder() : null;
             } else {
@@ -5665,7 +5824,7 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
        */
-      public java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder> 
+      public java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder>
            getGamesOrBuilderList() {
         if (gamesBuilder_ != null) {
           return gamesBuilder_.getMessageOrBuilderList();
@@ -5691,12 +5850,12 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
        */
-      public java.util.List<SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game.Builder> 
+      public java.util.List<SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game.Builder>
            getGamesBuilderList() {
         return getGamesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game, SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game.Builder, SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder> 
+          SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game, SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game.Builder, SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder>
           getGamesFieldBuilder() {
         if (gamesBuilder_ == null) {
           gamesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -5739,7 +5898,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetLastPlayedTimes_Response(input, extensionRegistry);
+          return new CPlayer_GetLastPlayedTimes_Response(input, extensionRegistry);
       }
     };
 
@@ -5787,9 +5946,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6126,7 +6282,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_AcceptSSA_Request(input, extensionRegistry);
+          return new CPlayer_AcceptSSA_Request(input, extensionRegistry);
       }
     };
 
@@ -6174,9 +6330,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6513,7 +6666,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_AcceptSSA_Response(input, extensionRegistry);
+          return new CPlayer_AcceptSSA_Response(input, extensionRegistry);
       }
     };
 
@@ -6561,9 +6714,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -6900,7 +7050,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetNicknameList_Request(input, extensionRegistry);
+          return new CPlayer_GetNicknameList_Request(input, extensionRegistry);
       }
     };
 
@@ -6926,7 +7076,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetNicknameList_Response.PlayerNickname nicknames = 1;</code>
      */
-    java.util.List<SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNickname> 
+    java.util.List<SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNickname>
         getNicknamesList();
     /**
      * <code>repeated .CPlayer_GetNicknameList_Response.PlayerNickname nicknames = 1;</code>
@@ -6939,7 +7089,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetNicknameList_Response.PlayerNickname nicknames = 1;</code>
      */
-    java.util.List<? extends SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNicknameOrBuilder> 
+    java.util.List<? extends SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNicknameOrBuilder>
         getNicknamesOrBuilderList();
     /**
      * <code>repeated .CPlayer_GetNicknameList_Response.PlayerNickname nicknames = 1;</code>
@@ -6973,9 +7123,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7084,9 +7231,6 @@ public final class SteamMsgPlayer {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7172,7 +7316,7 @@ public final class SteamMsgPlayer {
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
+          com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           if (bs.isValidUtf8()) {
@@ -7188,7 +7332,7 @@ public final class SteamMsgPlayer {
           getNicknameBytes() {
         java.lang.Object ref = nickname_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           nickname_ = b;
@@ -7582,7 +7726,7 @@ public final class SteamMsgPlayer {
             getNicknameBytes() {
           java.lang.Object ref = nickname_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString b =
                 com.google.protobuf.ByteString.copyFromUtf8(
                     (java.lang.String) ref);
             nickname_ = b;
@@ -7656,7 +7800,7 @@ public final class SteamMsgPlayer {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PlayerNickname(input, extensionRegistry);
+            return new PlayerNickname(input, extensionRegistry);
         }
       };
 
@@ -7686,7 +7830,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetNicknameList_Response.PlayerNickname nicknames = 1;</code>
      */
-    public java.util.List<? extends SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNicknameOrBuilder> 
+    public java.util.List<? extends SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNicknameOrBuilder>
         getNicknamesOrBuilderList() {
       return nicknames_;
     }
@@ -7997,7 +8141,7 @@ public final class SteamMsgPlayer {
               nicknamesBuilder_ = null;
               nicknames_ = other.nicknames_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              nicknamesBuilder_ = 
+              nicknamesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNicknamesFieldBuilder() : null;
             } else {
@@ -8228,7 +8372,7 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_GetNicknameList_Response.PlayerNickname nicknames = 1;</code>
        */
-      public java.util.List<? extends SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNicknameOrBuilder> 
+      public java.util.List<? extends SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNicknameOrBuilder>
            getNicknamesOrBuilderList() {
         if (nicknamesBuilder_ != null) {
           return nicknamesBuilder_.getMessageOrBuilderList();
@@ -8254,12 +8398,12 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_GetNicknameList_Response.PlayerNickname nicknames = 1;</code>
        */
-      public java.util.List<SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNickname.Builder> 
+      public java.util.List<SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNickname.Builder>
            getNicknamesBuilderList() {
         return getNicknamesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNickname, SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNickname.Builder, SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNicknameOrBuilder> 
+          SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNickname, SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNickname.Builder, SteamMsgPlayer.CPlayer_GetNicknameList_Response.PlayerNicknameOrBuilder>
           getNicknamesFieldBuilder() {
         if (nicknamesBuilder_ == null) {
           nicknamesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -8302,7 +8446,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetNicknameList_Response(input, extensionRegistry);
+          return new CPlayer_GetNicknameList_Response(input, extensionRegistry);
       }
     };
 
@@ -8316,6 +8460,3341 @@ public final class SteamMsgPlayer {
     }
 
     public SteamMsgPlayer.CPlayer_GetNicknameList_Response getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CPlayer_GetPerFriendPreferences_RequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CPlayer_GetPerFriendPreferences_Request)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code CPlayer_GetPerFriendPreferences_Request}
+   */
+  public  static final class CPlayer_GetPerFriendPreferences_Request extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CPlayer_GetPerFriendPreferences_Request)
+      CPlayer_GetPerFriendPreferences_RequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CPlayer_GetPerFriendPreferences_Request.newBuilder() to construct.
+    private CPlayer_GetPerFriendPreferences_Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CPlayer_GetPerFriendPreferences_Request() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CPlayer_GetPerFriendPreferences_Request(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Request_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Request_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request.class, SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request)) {
+        return super.equals(obj);
+      }
+      SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request other = (SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CPlayer_GetPerFriendPreferences_Request}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CPlayer_GetPerFriendPreferences_Request)
+        SteamMsgPlayer.CPlayer_GetPerFriendPreferences_RequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Request_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Request_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request.class, SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request.Builder.class);
+      }
+
+      // Construct using SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Request_descriptor;
+      }
+
+      public SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request getDefaultInstanceForType() {
+        return SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request.getDefaultInstance();
+      }
+
+      public SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request build() {
+        SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request buildPartial() {
+        SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request result = new SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request) {
+          return mergeFrom((SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request other) {
+        if (other == SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CPlayer_GetPerFriendPreferences_Request)
+    }
+
+    // @@protoc_insertion_point(class_scope:CPlayer_GetPerFriendPreferences_Request)
+    private static final SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request();
+    }
+
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CPlayer_GetPerFriendPreferences_Request>
+        PARSER = new com.google.protobuf.AbstractParser<CPlayer_GetPerFriendPreferences_Request>() {
+      public CPlayer_GetPerFriendPreferences_Request parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CPlayer_GetPerFriendPreferences_Request(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CPlayer_GetPerFriendPreferences_Request> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CPlayer_GetPerFriendPreferences_Request> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Request getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PerFriendPreferencesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:PerFriendPreferences)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional fixed32 accountid = 1;</code>
+     */
+    boolean hasAccountid();
+    /**
+     * <code>optional fixed32 accountid = 1;</code>
+     */
+    int getAccountid();
+
+    /**
+     * <code>optional string nickname = 2;</code>
+     */
+    boolean hasNickname();
+    /**
+     * <code>optional string nickname = 2;</code>
+     */
+    java.lang.String getNickname();
+    /**
+     * <code>optional string nickname = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNicknameBytes();
+
+    /**
+     * <code>optional .ENotificationSetting notifications_showingame = 3 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    boolean hasNotificationsShowingame();
+    /**
+     * <code>optional .ENotificationSetting notifications_showingame = 3 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    SteamMsgPlayer.ENotificationSetting getNotificationsShowingame();
+
+    /**
+     * <code>optional .ENotificationSetting notifications_showonline = 4 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    boolean hasNotificationsShowonline();
+    /**
+     * <code>optional .ENotificationSetting notifications_showonline = 4 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    SteamMsgPlayer.ENotificationSetting getNotificationsShowonline();
+
+    /**
+     * <code>optional .ENotificationSetting notifications_showmessages = 5 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    boolean hasNotificationsShowmessages();
+    /**
+     * <code>optional .ENotificationSetting notifications_showmessages = 5 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    SteamMsgPlayer.ENotificationSetting getNotificationsShowmessages();
+
+    /**
+     * <code>optional .ENotificationSetting sounds_showingame = 6 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    boolean hasSoundsShowingame();
+    /**
+     * <code>optional .ENotificationSetting sounds_showingame = 6 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    SteamMsgPlayer.ENotificationSetting getSoundsShowingame();
+
+    /**
+     * <code>optional .ENotificationSetting sounds_showonline = 7 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    boolean hasSoundsShowonline();
+    /**
+     * <code>optional .ENotificationSetting sounds_showonline = 7 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    SteamMsgPlayer.ENotificationSetting getSoundsShowonline();
+
+    /**
+     * <code>optional .ENotificationSetting sounds_showmessages = 8 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    boolean hasSoundsShowmessages();
+    /**
+     * <code>optional .ENotificationSetting sounds_showmessages = 8 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    SteamMsgPlayer.ENotificationSetting getSoundsShowmessages();
+  }
+  /**
+   * Protobuf type {@code PerFriendPreferences}
+   */
+  public  static final class PerFriendPreferences extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:PerFriendPreferences)
+      PerFriendPreferencesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use PerFriendPreferences.newBuilder() to construct.
+    private PerFriendPreferences(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private PerFriendPreferences() {
+      accountid_ = 0;
+      nickname_ = "";
+      notificationsShowingame_ = 0;
+      notificationsShowonline_ = 0;
+      notificationsShowmessages_ = 0;
+      soundsShowingame_ = 0;
+      soundsShowonline_ = 0;
+      soundsShowmessages_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private PerFriendPreferences(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 13: {
+              bitField0_ |= 0x00000001;
+              accountid_ = input.readFixed32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              nickname_ = bs;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              SteamMsgPlayer.ENotificationSetting value = SteamMsgPlayer.ENotificationSetting.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                bitField0_ |= 0x00000004;
+                notificationsShowingame_ = rawValue;
+              }
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+              SteamMsgPlayer.ENotificationSetting value = SteamMsgPlayer.ENotificationSetting.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                notificationsShowonline_ = rawValue;
+              }
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+              SteamMsgPlayer.ENotificationSetting value = SteamMsgPlayer.ENotificationSetting.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(5, rawValue);
+              } else {
+                bitField0_ |= 0x00000010;
+                notificationsShowmessages_ = rawValue;
+              }
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+              SteamMsgPlayer.ENotificationSetting value = SteamMsgPlayer.ENotificationSetting.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(6, rawValue);
+              } else {
+                bitField0_ |= 0x00000020;
+                soundsShowingame_ = rawValue;
+              }
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+              SteamMsgPlayer.ENotificationSetting value = SteamMsgPlayer.ENotificationSetting.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(7, rawValue);
+              } else {
+                bitField0_ |= 0x00000040;
+                soundsShowonline_ = rawValue;
+              }
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+              SteamMsgPlayer.ENotificationSetting value = SteamMsgPlayer.ENotificationSetting.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(8, rawValue);
+              } else {
+                bitField0_ |= 0x00000080;
+                soundsShowmessages_ = rawValue;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgPlayer.internal_static_PerFriendPreferences_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgPlayer.internal_static_PerFriendPreferences_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgPlayer.PerFriendPreferences.class, SteamMsgPlayer.PerFriendPreferences.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ACCOUNTID_FIELD_NUMBER = 1;
+    private int accountid_;
+    /**
+     * <code>optional fixed32 accountid = 1;</code>
+     */
+    public boolean hasAccountid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional fixed32 accountid = 1;</code>
+     */
+    public int getAccountid() {
+      return accountid_;
+    }
+
+    public static final int NICKNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object nickname_;
+    /**
+     * <code>optional string nickname = 2;</code>
+     */
+    public boolean hasNickname() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string nickname = 2;</code>
+     */
+    public java.lang.String getNickname() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          nickname_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string nickname = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNicknameBytes() {
+      java.lang.Object ref = nickname_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nickname_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NOTIFICATIONS_SHOWINGAME_FIELD_NUMBER = 3;
+    private int notificationsShowingame_;
+    /**
+     * <code>optional .ENotificationSetting notifications_showingame = 3 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public boolean hasNotificationsShowingame() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .ENotificationSetting notifications_showingame = 3 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public SteamMsgPlayer.ENotificationSetting getNotificationsShowingame() {
+      SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(notificationsShowingame_);
+      return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+    }
+
+    public static final int NOTIFICATIONS_SHOWONLINE_FIELD_NUMBER = 4;
+    private int notificationsShowonline_;
+    /**
+     * <code>optional .ENotificationSetting notifications_showonline = 4 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public boolean hasNotificationsShowonline() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .ENotificationSetting notifications_showonline = 4 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public SteamMsgPlayer.ENotificationSetting getNotificationsShowonline() {
+      SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(notificationsShowonline_);
+      return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+    }
+
+    public static final int NOTIFICATIONS_SHOWMESSAGES_FIELD_NUMBER = 5;
+    private int notificationsShowmessages_;
+    /**
+     * <code>optional .ENotificationSetting notifications_showmessages = 5 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public boolean hasNotificationsShowmessages() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .ENotificationSetting notifications_showmessages = 5 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public SteamMsgPlayer.ENotificationSetting getNotificationsShowmessages() {
+      SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(notificationsShowmessages_);
+      return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+    }
+
+    public static final int SOUNDS_SHOWINGAME_FIELD_NUMBER = 6;
+    private int soundsShowingame_;
+    /**
+     * <code>optional .ENotificationSetting sounds_showingame = 6 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public boolean hasSoundsShowingame() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional .ENotificationSetting sounds_showingame = 6 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public SteamMsgPlayer.ENotificationSetting getSoundsShowingame() {
+      SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(soundsShowingame_);
+      return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+    }
+
+    public static final int SOUNDS_SHOWONLINE_FIELD_NUMBER = 7;
+    private int soundsShowonline_;
+    /**
+     * <code>optional .ENotificationSetting sounds_showonline = 7 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public boolean hasSoundsShowonline() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional .ENotificationSetting sounds_showonline = 7 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public SteamMsgPlayer.ENotificationSetting getSoundsShowonline() {
+      SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(soundsShowonline_);
+      return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+    }
+
+    public static final int SOUNDS_SHOWMESSAGES_FIELD_NUMBER = 8;
+    private int soundsShowmessages_;
+    /**
+     * <code>optional .ENotificationSetting sounds_showmessages = 8 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public boolean hasSoundsShowmessages() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional .ENotificationSetting sounds_showmessages = 8 [default = k_ENotificationSettingNotifyUseDefault];</code>
+     */
+    public SteamMsgPlayer.ENotificationSetting getSoundsShowmessages() {
+      SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(soundsShowmessages_);
+      return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeFixed32(1, accountid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nickname_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeEnum(3, notificationsShowingame_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(4, notificationsShowonline_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeEnum(5, notificationsShowmessages_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeEnum(6, soundsShowingame_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeEnum(7, soundsShowonline_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeEnum(8, soundsShowmessages_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed32Size(1, accountid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nickname_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, notificationsShowingame_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, notificationsShowonline_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, notificationsShowmessages_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, soundsShowingame_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, soundsShowonline_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, soundsShowmessages_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgPlayer.PerFriendPreferences)) {
+        return super.equals(obj);
+      }
+      SteamMsgPlayer.PerFriendPreferences other = (SteamMsgPlayer.PerFriendPreferences) obj;
+
+      boolean result = true;
+      result = result && (hasAccountid() == other.hasAccountid());
+      if (hasAccountid()) {
+        result = result && (getAccountid()
+            == other.getAccountid());
+      }
+      result = result && (hasNickname() == other.hasNickname());
+      if (hasNickname()) {
+        result = result && getNickname()
+            .equals(other.getNickname());
+      }
+      result = result && (hasNotificationsShowingame() == other.hasNotificationsShowingame());
+      if (hasNotificationsShowingame()) {
+        result = result && notificationsShowingame_ == other.notificationsShowingame_;
+      }
+      result = result && (hasNotificationsShowonline() == other.hasNotificationsShowonline());
+      if (hasNotificationsShowonline()) {
+        result = result && notificationsShowonline_ == other.notificationsShowonline_;
+      }
+      result = result && (hasNotificationsShowmessages() == other.hasNotificationsShowmessages());
+      if (hasNotificationsShowmessages()) {
+        result = result && notificationsShowmessages_ == other.notificationsShowmessages_;
+      }
+      result = result && (hasSoundsShowingame() == other.hasSoundsShowingame());
+      if (hasSoundsShowingame()) {
+        result = result && soundsShowingame_ == other.soundsShowingame_;
+      }
+      result = result && (hasSoundsShowonline() == other.hasSoundsShowonline());
+      if (hasSoundsShowonline()) {
+        result = result && soundsShowonline_ == other.soundsShowonline_;
+      }
+      result = result && (hasSoundsShowmessages() == other.hasSoundsShowmessages());
+      if (hasSoundsShowmessages()) {
+        result = result && soundsShowmessages_ == other.soundsShowmessages_;
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAccountid()) {
+        hash = (37 * hash) + ACCOUNTID_FIELD_NUMBER;
+        hash = (53 * hash) + getAccountid();
+      }
+      if (hasNickname()) {
+        hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNickname().hashCode();
+      }
+      if (hasNotificationsShowingame()) {
+        hash = (37 * hash) + NOTIFICATIONS_SHOWINGAME_FIELD_NUMBER;
+        hash = (53 * hash) + notificationsShowingame_;
+      }
+      if (hasNotificationsShowonline()) {
+        hash = (37 * hash) + NOTIFICATIONS_SHOWONLINE_FIELD_NUMBER;
+        hash = (53 * hash) + notificationsShowonline_;
+      }
+      if (hasNotificationsShowmessages()) {
+        hash = (37 * hash) + NOTIFICATIONS_SHOWMESSAGES_FIELD_NUMBER;
+        hash = (53 * hash) + notificationsShowmessages_;
+      }
+      if (hasSoundsShowingame()) {
+        hash = (37 * hash) + SOUNDS_SHOWINGAME_FIELD_NUMBER;
+        hash = (53 * hash) + soundsShowingame_;
+      }
+      if (hasSoundsShowonline()) {
+        hash = (37 * hash) + SOUNDS_SHOWONLINE_FIELD_NUMBER;
+        hash = (53 * hash) + soundsShowonline_;
+      }
+      if (hasSoundsShowmessages()) {
+        hash = (37 * hash) + SOUNDS_SHOWMESSAGES_FIELD_NUMBER;
+        hash = (53 * hash) + soundsShowmessages_;
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.PerFriendPreferences parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgPlayer.PerFriendPreferences prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code PerFriendPreferences}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:PerFriendPreferences)
+        SteamMsgPlayer.PerFriendPreferencesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgPlayer.internal_static_PerFriendPreferences_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgPlayer.internal_static_PerFriendPreferences_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgPlayer.PerFriendPreferences.class, SteamMsgPlayer.PerFriendPreferences.Builder.class);
+      }
+
+      // Construct using SteamMsgPlayer.PerFriendPreferences.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        accountid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        nickname_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        notificationsShowingame_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        notificationsShowonline_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        notificationsShowmessages_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        soundsShowingame_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        soundsShowonline_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        soundsShowmessages_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgPlayer.internal_static_PerFriendPreferences_descriptor;
+      }
+
+      public SteamMsgPlayer.PerFriendPreferences getDefaultInstanceForType() {
+        return SteamMsgPlayer.PerFriendPreferences.getDefaultInstance();
+      }
+
+      public SteamMsgPlayer.PerFriendPreferences build() {
+        SteamMsgPlayer.PerFriendPreferences result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgPlayer.PerFriendPreferences buildPartial() {
+        SteamMsgPlayer.PerFriendPreferences result = new SteamMsgPlayer.PerFriendPreferences(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.accountid_ = accountid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.nickname_ = nickname_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.notificationsShowingame_ = notificationsShowingame_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.notificationsShowonline_ = notificationsShowonline_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.notificationsShowmessages_ = notificationsShowmessages_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.soundsShowingame_ = soundsShowingame_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.soundsShowonline_ = soundsShowonline_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.soundsShowmessages_ = soundsShowmessages_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgPlayer.PerFriendPreferences) {
+          return mergeFrom((SteamMsgPlayer.PerFriendPreferences)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgPlayer.PerFriendPreferences other) {
+        if (other == SteamMsgPlayer.PerFriendPreferences.getDefaultInstance()) return this;
+        if (other.hasAccountid()) {
+          setAccountid(other.getAccountid());
+        }
+        if (other.hasNickname()) {
+          bitField0_ |= 0x00000002;
+          nickname_ = other.nickname_;
+          onChanged();
+        }
+        if (other.hasNotificationsShowingame()) {
+          setNotificationsShowingame(other.getNotificationsShowingame());
+        }
+        if (other.hasNotificationsShowonline()) {
+          setNotificationsShowonline(other.getNotificationsShowonline());
+        }
+        if (other.hasNotificationsShowmessages()) {
+          setNotificationsShowmessages(other.getNotificationsShowmessages());
+        }
+        if (other.hasSoundsShowingame()) {
+          setSoundsShowingame(other.getSoundsShowingame());
+        }
+        if (other.hasSoundsShowonline()) {
+          setSoundsShowonline(other.getSoundsShowonline());
+        }
+        if (other.hasSoundsShowmessages()) {
+          setSoundsShowmessages(other.getSoundsShowmessages());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgPlayer.PerFriendPreferences parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgPlayer.PerFriendPreferences) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int accountid_ ;
+      /**
+       * <code>optional fixed32 accountid = 1;</code>
+       */
+      public boolean hasAccountid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional fixed32 accountid = 1;</code>
+       */
+      public int getAccountid() {
+        return accountid_;
+      }
+      /**
+       * <code>optional fixed32 accountid = 1;</code>
+       */
+      public Builder setAccountid(int value) {
+        bitField0_ |= 0x00000001;
+        accountid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional fixed32 accountid = 1;</code>
+       */
+      public Builder clearAccountid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        accountid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object nickname_ = "";
+      /**
+       * <code>optional string nickname = 2;</code>
+       */
+      public boolean hasNickname() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string nickname = 2;</code>
+       */
+      public java.lang.String getNickname() {
+        java.lang.Object ref = nickname_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            nickname_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string nickname = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNicknameBytes() {
+        java.lang.Object ref = nickname_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nickname_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string nickname = 2;</code>
+       */
+      public Builder setNickname(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        nickname_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string nickname = 2;</code>
+       */
+      public Builder clearNickname() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nickname_ = getDefaultInstance().getNickname();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string nickname = 2;</code>
+       */
+      public Builder setNicknameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        nickname_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int notificationsShowingame_ = 0;
+      /**
+       * <code>optional .ENotificationSetting notifications_showingame = 3 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public boolean hasNotificationsShowingame() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showingame = 3 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public SteamMsgPlayer.ENotificationSetting getNotificationsShowingame() {
+        SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(notificationsShowingame_);
+        return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showingame = 3 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder setNotificationsShowingame(SteamMsgPlayer.ENotificationSetting value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        notificationsShowingame_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showingame = 3 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder clearNotificationsShowingame() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        notificationsShowingame_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int notificationsShowonline_ = 0;
+      /**
+       * <code>optional .ENotificationSetting notifications_showonline = 4 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public boolean hasNotificationsShowonline() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showonline = 4 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public SteamMsgPlayer.ENotificationSetting getNotificationsShowonline() {
+        SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(notificationsShowonline_);
+        return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showonline = 4 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder setNotificationsShowonline(SteamMsgPlayer.ENotificationSetting value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        notificationsShowonline_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showonline = 4 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder clearNotificationsShowonline() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        notificationsShowonline_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int notificationsShowmessages_ = 0;
+      /**
+       * <code>optional .ENotificationSetting notifications_showmessages = 5 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public boolean hasNotificationsShowmessages() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showmessages = 5 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public SteamMsgPlayer.ENotificationSetting getNotificationsShowmessages() {
+        SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(notificationsShowmessages_);
+        return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showmessages = 5 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder setNotificationsShowmessages(SteamMsgPlayer.ENotificationSetting value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        notificationsShowmessages_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .ENotificationSetting notifications_showmessages = 5 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder clearNotificationsShowmessages() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        notificationsShowmessages_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int soundsShowingame_ = 0;
+      /**
+       * <code>optional .ENotificationSetting sounds_showingame = 6 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public boolean hasSoundsShowingame() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showingame = 6 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public SteamMsgPlayer.ENotificationSetting getSoundsShowingame() {
+        SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(soundsShowingame_);
+        return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showingame = 6 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder setSoundsShowingame(SteamMsgPlayer.ENotificationSetting value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
+        soundsShowingame_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showingame = 6 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder clearSoundsShowingame() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        soundsShowingame_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int soundsShowonline_ = 0;
+      /**
+       * <code>optional .ENotificationSetting sounds_showonline = 7 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public boolean hasSoundsShowonline() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showonline = 7 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public SteamMsgPlayer.ENotificationSetting getSoundsShowonline() {
+        SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(soundsShowonline_);
+        return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showonline = 7 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder setSoundsShowonline(SteamMsgPlayer.ENotificationSetting value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000040;
+        soundsShowonline_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showonline = 7 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder clearSoundsShowonline() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        soundsShowonline_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int soundsShowmessages_ = 0;
+      /**
+       * <code>optional .ENotificationSetting sounds_showmessages = 8 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public boolean hasSoundsShowmessages() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showmessages = 8 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public SteamMsgPlayer.ENotificationSetting getSoundsShowmessages() {
+        SteamMsgPlayer.ENotificationSetting result = SteamMsgPlayer.ENotificationSetting.valueOf(soundsShowmessages_);
+        return result == null ? SteamMsgPlayer.ENotificationSetting.k_ENotificationSettingNotifyUseDefault : result;
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showmessages = 8 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder setSoundsShowmessages(SteamMsgPlayer.ENotificationSetting value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
+        soundsShowmessages_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .ENotificationSetting sounds_showmessages = 8 [default = k_ENotificationSettingNotifyUseDefault];</code>
+       */
+      public Builder clearSoundsShowmessages() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        soundsShowmessages_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:PerFriendPreferences)
+    }
+
+    // @@protoc_insertion_point(class_scope:PerFriendPreferences)
+    private static final SteamMsgPlayer.PerFriendPreferences DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgPlayer.PerFriendPreferences();
+    }
+
+    public static SteamMsgPlayer.PerFriendPreferences getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<PerFriendPreferences>
+        PARSER = new com.google.protobuf.AbstractParser<PerFriendPreferences>() {
+      public PerFriendPreferences parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PerFriendPreferences(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<PerFriendPreferences> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PerFriendPreferences> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgPlayer.PerFriendPreferences getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CPlayer_GetPerFriendPreferences_ResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CPlayer_GetPerFriendPreferences_Response)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    java.util.List<SteamMsgPlayer.PerFriendPreferences>
+        getPreferencesList();
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    SteamMsgPlayer.PerFriendPreferences getPreferences(int index);
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    int getPreferencesCount();
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    java.util.List<? extends SteamMsgPlayer.PerFriendPreferencesOrBuilder>
+        getPreferencesOrBuilderList();
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code CPlayer_GetPerFriendPreferences_Response}
+   */
+  public  static final class CPlayer_GetPerFriendPreferences_Response extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CPlayer_GetPerFriendPreferences_Response)
+      CPlayer_GetPerFriendPreferences_ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CPlayer_GetPerFriendPreferences_Response.newBuilder() to construct.
+    private CPlayer_GetPerFriendPreferences_Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CPlayer_GetPerFriendPreferences_Response() {
+      preferences_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CPlayer_GetPerFriendPreferences_Response(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                preferences_ = new java.util.ArrayList<SteamMsgPlayer.PerFriendPreferences>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              preferences_.add(
+                  input.readMessage(SteamMsgPlayer.PerFriendPreferences.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          preferences_ = java.util.Collections.unmodifiableList(preferences_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Response_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Response_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response.class, SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response.Builder.class);
+    }
+
+    public static final int PREFERENCES_FIELD_NUMBER = 1;
+    private java.util.List<SteamMsgPlayer.PerFriendPreferences> preferences_;
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    public java.util.List<SteamMsgPlayer.PerFriendPreferences> getPreferencesList() {
+      return preferences_;
+    }
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    public java.util.List<? extends SteamMsgPlayer.PerFriendPreferencesOrBuilder>
+        getPreferencesOrBuilderList() {
+      return preferences_;
+    }
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    public int getPreferencesCount() {
+      return preferences_.size();
+    }
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    public SteamMsgPlayer.PerFriendPreferences getPreferences(int index) {
+      return preferences_.get(index);
+    }
+    /**
+     * <code>repeated .PerFriendPreferences preferences = 1;</code>
+     */
+    public SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder(
+        int index) {
+      return preferences_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < preferences_.size(); i++) {
+        output.writeMessage(1, preferences_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < preferences_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, preferences_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response)) {
+        return super.equals(obj);
+      }
+      SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response other = (SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response) obj;
+
+      boolean result = true;
+      result = result && getPreferencesList()
+          .equals(other.getPreferencesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPreferencesCount() > 0) {
+        hash = (37 * hash) + PREFERENCES_FIELD_NUMBER;
+        hash = (53 * hash) + getPreferencesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CPlayer_GetPerFriendPreferences_Response}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CPlayer_GetPerFriendPreferences_Response)
+        SteamMsgPlayer.CPlayer_GetPerFriendPreferences_ResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Response_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Response_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response.class, SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response.Builder.class);
+      }
+
+      // Construct using SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPreferencesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (preferencesBuilder_ == null) {
+          preferences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          preferencesBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgPlayer.internal_static_CPlayer_GetPerFriendPreferences_Response_descriptor;
+      }
+
+      public SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response getDefaultInstanceForType() {
+        return SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response.getDefaultInstance();
+      }
+
+      public SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response build() {
+        SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response buildPartial() {
+        SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response result = new SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response(this);
+        int from_bitField0_ = bitField0_;
+        if (preferencesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            preferences_ = java.util.Collections.unmodifiableList(preferences_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.preferences_ = preferences_;
+        } else {
+          result.preferences_ = preferencesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response) {
+          return mergeFrom((SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response other) {
+        if (other == SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response.getDefaultInstance()) return this;
+        if (preferencesBuilder_ == null) {
+          if (!other.preferences_.isEmpty()) {
+            if (preferences_.isEmpty()) {
+              preferences_ = other.preferences_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePreferencesIsMutable();
+              preferences_.addAll(other.preferences_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.preferences_.isEmpty()) {
+            if (preferencesBuilder_.isEmpty()) {
+              preferencesBuilder_.dispose();
+              preferencesBuilder_ = null;
+              preferences_ = other.preferences_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              preferencesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPreferencesFieldBuilder() : null;
+            } else {
+              preferencesBuilder_.addAllMessages(other.preferences_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<SteamMsgPlayer.PerFriendPreferences> preferences_ =
+        java.util.Collections.emptyList();
+      private void ensurePreferencesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          preferences_ = new java.util.ArrayList<SteamMsgPlayer.PerFriendPreferences>(preferences_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder> preferencesBuilder_;
+
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public java.util.List<SteamMsgPlayer.PerFriendPreferences> getPreferencesList() {
+        if (preferencesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(preferences_);
+        } else {
+          return preferencesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public int getPreferencesCount() {
+        if (preferencesBuilder_ == null) {
+          return preferences_.size();
+        } else {
+          return preferencesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferences getPreferences(int index) {
+        if (preferencesBuilder_ == null) {
+          return preferences_.get(index);
+        } else {
+          return preferencesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder setPreferences(
+          int index, SteamMsgPlayer.PerFriendPreferences value) {
+        if (preferencesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePreferencesIsMutable();
+          preferences_.set(index, value);
+          onChanged();
+        } else {
+          preferencesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder setPreferences(
+          int index, SteamMsgPlayer.PerFriendPreferences.Builder builderForValue) {
+        if (preferencesBuilder_ == null) {
+          ensurePreferencesIsMutable();
+          preferences_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          preferencesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder addPreferences(SteamMsgPlayer.PerFriendPreferences value) {
+        if (preferencesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePreferencesIsMutable();
+          preferences_.add(value);
+          onChanged();
+        } else {
+          preferencesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder addPreferences(
+          int index, SteamMsgPlayer.PerFriendPreferences value) {
+        if (preferencesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePreferencesIsMutable();
+          preferences_.add(index, value);
+          onChanged();
+        } else {
+          preferencesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder addPreferences(
+          SteamMsgPlayer.PerFriendPreferences.Builder builderForValue) {
+        if (preferencesBuilder_ == null) {
+          ensurePreferencesIsMutable();
+          preferences_.add(builderForValue.build());
+          onChanged();
+        } else {
+          preferencesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder addPreferences(
+          int index, SteamMsgPlayer.PerFriendPreferences.Builder builderForValue) {
+        if (preferencesBuilder_ == null) {
+          ensurePreferencesIsMutable();
+          preferences_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          preferencesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder addAllPreferences(
+          java.lang.Iterable<? extends SteamMsgPlayer.PerFriendPreferences> values) {
+        if (preferencesBuilder_ == null) {
+          ensurePreferencesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, preferences_);
+          onChanged();
+        } else {
+          preferencesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder clearPreferences() {
+        if (preferencesBuilder_ == null) {
+          preferences_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          preferencesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder removePreferences(int index) {
+        if (preferencesBuilder_ == null) {
+          ensurePreferencesIsMutable();
+          preferences_.remove(index);
+          onChanged();
+        } else {
+          preferencesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferences.Builder getPreferencesBuilder(
+          int index) {
+        return getPreferencesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder(
+          int index) {
+        if (preferencesBuilder_ == null) {
+          return preferences_.get(index);  } else {
+          return preferencesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public java.util.List<? extends SteamMsgPlayer.PerFriendPreferencesOrBuilder>
+           getPreferencesOrBuilderList() {
+        if (preferencesBuilder_ != null) {
+          return preferencesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(preferences_);
+        }
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferences.Builder addPreferencesBuilder() {
+        return getPreferencesFieldBuilder().addBuilder(
+            SteamMsgPlayer.PerFriendPreferences.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferences.Builder addPreferencesBuilder(
+          int index) {
+        return getPreferencesFieldBuilder().addBuilder(
+            index, SteamMsgPlayer.PerFriendPreferences.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .PerFriendPreferences preferences = 1;</code>
+       */
+      public java.util.List<SteamMsgPlayer.PerFriendPreferences.Builder>
+           getPreferencesBuilderList() {
+        return getPreferencesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder>
+          getPreferencesFieldBuilder() {
+        if (preferencesBuilder_ == null) {
+          preferencesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder>(
+                  preferences_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          preferences_ = null;
+        }
+        return preferencesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CPlayer_GetPerFriendPreferences_Response)
+    }
+
+    // @@protoc_insertion_point(class_scope:CPlayer_GetPerFriendPreferences_Response)
+    private static final SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response();
+    }
+
+    public static SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CPlayer_GetPerFriendPreferences_Response>
+        PARSER = new com.google.protobuf.AbstractParser<CPlayer_GetPerFriendPreferences_Response>() {
+      public CPlayer_GetPerFriendPreferences_Response parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CPlayer_GetPerFriendPreferences_Response(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CPlayer_GetPerFriendPreferences_Response> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CPlayer_GetPerFriendPreferences_Response> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgPlayer.CPlayer_GetPerFriendPreferences_Response getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CPlayer_SetPerFriendPreferences_RequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CPlayer_SetPerFriendPreferences_Request)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional .PerFriendPreferences preferences = 1;</code>
+     */
+    boolean hasPreferences();
+    /**
+     * <code>optional .PerFriendPreferences preferences = 1;</code>
+     */
+    SteamMsgPlayer.PerFriendPreferences getPreferences();
+    /**
+     * <code>optional .PerFriendPreferences preferences = 1;</code>
+     */
+    SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder();
+  }
+  /**
+   * Protobuf type {@code CPlayer_SetPerFriendPreferences_Request}
+   */
+  public  static final class CPlayer_SetPerFriendPreferences_Request extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CPlayer_SetPerFriendPreferences_Request)
+      CPlayer_SetPerFriendPreferences_RequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CPlayer_SetPerFriendPreferences_Request.newBuilder() to construct.
+    private CPlayer_SetPerFriendPreferences_Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CPlayer_SetPerFriendPreferences_Request() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CPlayer_SetPerFriendPreferences_Request(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              SteamMsgPlayer.PerFriendPreferences.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+                subBuilder = preferences_.toBuilder();
+              }
+              preferences_ = input.readMessage(SteamMsgPlayer.PerFriendPreferences.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(preferences_);
+                preferences_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000001;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Request_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Request_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request.class, SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int PREFERENCES_FIELD_NUMBER = 1;
+    private SteamMsgPlayer.PerFriendPreferences preferences_;
+    /**
+     * <code>optional .PerFriendPreferences preferences = 1;</code>
+     */
+    public boolean hasPreferences() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional .PerFriendPreferences preferences = 1;</code>
+     */
+    public SteamMsgPlayer.PerFriendPreferences getPreferences() {
+      return preferences_ == null ? SteamMsgPlayer.PerFriendPreferences.getDefaultInstance() : preferences_;
+    }
+    /**
+     * <code>optional .PerFriendPreferences preferences = 1;</code>
+     */
+    public SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder() {
+      return preferences_ == null ? SteamMsgPlayer.PerFriendPreferences.getDefaultInstance() : preferences_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, getPreferences());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getPreferences());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request)) {
+        return super.equals(obj);
+      }
+      SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request other = (SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request) obj;
+
+      boolean result = true;
+      result = result && (hasPreferences() == other.hasPreferences());
+      if (hasPreferences()) {
+        result = result && getPreferences()
+            .equals(other.getPreferences());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasPreferences()) {
+        hash = (37 * hash) + PREFERENCES_FIELD_NUMBER;
+        hash = (53 * hash) + getPreferences().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CPlayer_SetPerFriendPreferences_Request}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CPlayer_SetPerFriendPreferences_Request)
+        SteamMsgPlayer.CPlayer_SetPerFriendPreferences_RequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Request_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Request_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request.class, SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request.Builder.class);
+      }
+
+      // Construct using SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPreferencesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (preferencesBuilder_ == null) {
+          preferences_ = null;
+        } else {
+          preferencesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Request_descriptor;
+      }
+
+      public SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request getDefaultInstanceForType() {
+        return SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request.getDefaultInstance();
+      }
+
+      public SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request build() {
+        SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request buildPartial() {
+        SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request result = new SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (preferencesBuilder_ == null) {
+          result.preferences_ = preferences_;
+        } else {
+          result.preferences_ = preferencesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request) {
+          return mergeFrom((SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request other) {
+        if (other == SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request.getDefaultInstance()) return this;
+        if (other.hasPreferences()) {
+          mergePreferences(other.getPreferences());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private SteamMsgPlayer.PerFriendPreferences preferences_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder> preferencesBuilder_;
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      public boolean hasPreferences() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferences getPreferences() {
+        if (preferencesBuilder_ == null) {
+          return preferences_ == null ? SteamMsgPlayer.PerFriendPreferences.getDefaultInstance() : preferences_;
+        } else {
+          return preferencesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder setPreferences(SteamMsgPlayer.PerFriendPreferences value) {
+        if (preferencesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          preferences_ = value;
+          onChanged();
+        } else {
+          preferencesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder setPreferences(
+          SteamMsgPlayer.PerFriendPreferences.Builder builderForValue) {
+        if (preferencesBuilder_ == null) {
+          preferences_ = builderForValue.build();
+          onChanged();
+        } else {
+          preferencesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder mergePreferences(SteamMsgPlayer.PerFriendPreferences value) {
+        if (preferencesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              preferences_ != null &&
+              preferences_ != SteamMsgPlayer.PerFriendPreferences.getDefaultInstance()) {
+            preferences_ =
+              SteamMsgPlayer.PerFriendPreferences.newBuilder(preferences_).mergeFrom(value).buildPartial();
+          } else {
+            preferences_ = value;
+          }
+          onChanged();
+        } else {
+          preferencesBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      public Builder clearPreferences() {
+        if (preferencesBuilder_ == null) {
+          preferences_ = null;
+          onChanged();
+        } else {
+          preferencesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferences.Builder getPreferencesBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getPreferencesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder() {
+        if (preferencesBuilder_ != null) {
+          return preferencesBuilder_.getMessageOrBuilder();
+        } else {
+          return preferences_ == null ?
+              SteamMsgPlayer.PerFriendPreferences.getDefaultInstance() : preferences_;
+        }
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder>
+          getPreferencesFieldBuilder() {
+        if (preferencesBuilder_ == null) {
+          preferencesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder>(
+                  getPreferences(),
+                  getParentForChildren(),
+                  isClean());
+          preferences_ = null;
+        }
+        return preferencesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CPlayer_SetPerFriendPreferences_Request)
+    }
+
+    // @@protoc_insertion_point(class_scope:CPlayer_SetPerFriendPreferences_Request)
+    private static final SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request();
+    }
+
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CPlayer_SetPerFriendPreferences_Request>
+        PARSER = new com.google.protobuf.AbstractParser<CPlayer_SetPerFriendPreferences_Request>() {
+      public CPlayer_SetPerFriendPreferences_Request parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CPlayer_SetPerFriendPreferences_Request(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CPlayer_SetPerFriendPreferences_Request> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CPlayer_SetPerFriendPreferences_Request> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Request getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CPlayer_SetPerFriendPreferences_ResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CPlayer_SetPerFriendPreferences_Response)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code CPlayer_SetPerFriendPreferences_Response}
+   */
+  public  static final class CPlayer_SetPerFriendPreferences_Response extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CPlayer_SetPerFriendPreferences_Response)
+      CPlayer_SetPerFriendPreferences_ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CPlayer_SetPerFriendPreferences_Response.newBuilder() to construct.
+    private CPlayer_SetPerFriendPreferences_Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CPlayer_SetPerFriendPreferences_Response() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CPlayer_SetPerFriendPreferences_Response(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Response_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Response_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response.class, SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response)) {
+        return super.equals(obj);
+      }
+      SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response other = (SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CPlayer_SetPerFriendPreferences_Response}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CPlayer_SetPerFriendPreferences_Response)
+        SteamMsgPlayer.CPlayer_SetPerFriendPreferences_ResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Response_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Response_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response.class, SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response.Builder.class);
+      }
+
+      // Construct using SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgPlayer.internal_static_CPlayer_SetPerFriendPreferences_Response_descriptor;
+      }
+
+      public SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response getDefaultInstanceForType() {
+        return SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response.getDefaultInstance();
+      }
+
+      public SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response build() {
+        SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response buildPartial() {
+        SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response result = new SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response) {
+          return mergeFrom((SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response other) {
+        if (other == SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CPlayer_SetPerFriendPreferences_Response)
+    }
+
+    // @@protoc_insertion_point(class_scope:CPlayer_SetPerFriendPreferences_Response)
+    private static final SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response();
+    }
+
+    public static SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CPlayer_SetPerFriendPreferences_Response>
+        PARSER = new com.google.protobuf.AbstractParser<CPlayer_SetPerFriendPreferences_Response>() {
+      public CPlayer_SetPerFriendPreferences_Response parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CPlayer_SetPerFriendPreferences_Response(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CPlayer_SetPerFriendPreferences_Response> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CPlayer_SetPerFriendPreferences_Response> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgPlayer.CPlayer_SetPerFriendPreferences_Response getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8360,9 +11839,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8783,7 +12259,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_AddFriend_Request(input, extensionRegistry);
+          return new CPlayer_AddFriend_Request(input, extensionRegistry);
       }
     };
 
@@ -8851,9 +12327,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -9351,7 +12824,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_AddFriend_Response(input, extensionRegistry);
+          return new CPlayer_AddFriend_Response(input, extensionRegistry);
       }
     };
 
@@ -9409,9 +12882,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -9832,7 +13302,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_RemoveFriend_Request(input, extensionRegistry);
+          return new CPlayer_RemoveFriend_Request(input, extensionRegistry);
       }
     };
 
@@ -9890,9 +13360,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10312,7 +13779,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_RemoveFriend_Response(input, extensionRegistry);
+          return new CPlayer_RemoveFriend_Response(input, extensionRegistry);
       }
     };
 
@@ -10380,9 +13847,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -10881,7 +14345,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_IgnoreFriend_Request(input, extensionRegistry);
+          return new CPlayer_IgnoreFriend_Request(input, extensionRegistry);
       }
     };
 
@@ -10939,9 +14403,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -11361,7 +14822,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_IgnoreFriend_Response(input, extensionRegistry);
+          return new CPlayer_IgnoreFriend_Response(input, extensionRegistry);
       }
     };
 
@@ -11409,9 +14870,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -11748,7 +15206,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetCommunityPreferences_Request(input, extensionRegistry);
+          return new CPlayer_GetCommunityPreferences_Request(input, extensionRegistry);
       }
     };
 
@@ -11836,9 +15294,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -12492,7 +15947,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_CommunityPreferences(input, extensionRegistry);
+          return new CPlayer_CommunityPreferences(input, extensionRegistry);
       }
     };
 
@@ -12553,9 +16008,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13042,7 +16494,7 @@ public final class SteamMsgPlayer {
        * <code>optional .CPlayer_CommunityPreferences preferences = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          SteamMsgPlayer.CPlayer_CommunityPreferences, SteamMsgPlayer.CPlayer_CommunityPreferences.Builder, SteamMsgPlayer.CPlayer_CommunityPreferencesOrBuilder> 
+          SteamMsgPlayer.CPlayer_CommunityPreferences, SteamMsgPlayer.CPlayer_CommunityPreferences.Builder, SteamMsgPlayer.CPlayer_CommunityPreferencesOrBuilder>
           getPreferencesFieldBuilder() {
         if (preferencesBuilder_ == null) {
           preferencesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -13084,7 +16536,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetCommunityPreferences_Response(input, extensionRegistry);
+          return new CPlayer_GetCommunityPreferences_Response(input, extensionRegistry);
       }
     };
 
@@ -13145,9 +16597,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -13634,7 +17083,7 @@ public final class SteamMsgPlayer {
        * <code>optional .CPlayer_CommunityPreferences preferences = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          SteamMsgPlayer.CPlayer_CommunityPreferences, SteamMsgPlayer.CPlayer_CommunityPreferences.Builder, SteamMsgPlayer.CPlayer_CommunityPreferencesOrBuilder> 
+          SteamMsgPlayer.CPlayer_CommunityPreferences, SteamMsgPlayer.CPlayer_CommunityPreferences.Builder, SteamMsgPlayer.CPlayer_CommunityPreferencesOrBuilder>
           getPreferencesFieldBuilder() {
         if (preferencesBuilder_ == null) {
           preferencesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -13676,7 +17125,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_SetCommunityPreferences_Request(input, extensionRegistry);
+          return new CPlayer_SetCommunityPreferences_Request(input, extensionRegistry);
       }
     };
 
@@ -13724,9 +17173,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -14063,7 +17509,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_SetCommunityPreferences_Response(input, extensionRegistry);
+          return new CPlayer_SetCommunityPreferences_Response(input, extensionRegistry);
       }
     };
 
@@ -14121,9 +17567,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -14543,7 +17986,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetNewSteamAnnouncementState_Request(input, extensionRegistry);
+          return new CPlayer_GetNewSteamAnnouncementState_Request(input, extensionRegistry);
       }
     };
 
@@ -14651,9 +18094,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -14755,7 +18195,7 @@ public final class SteamMsgPlayer {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -14771,7 +18211,7 @@ public final class SteamMsgPlayer {
         getAnnouncementHeadlineBytes() {
       java.lang.Object ref = announcementHeadline_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         announcementHeadline_ = b;
@@ -14797,7 +18237,7 @@ public final class SteamMsgPlayer {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -14813,7 +18253,7 @@ public final class SteamMsgPlayer {
         getAnnouncementUrlBytes() {
       java.lang.Object ref = announcementUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         announcementUrl_ = b;
@@ -15314,7 +18754,7 @@ public final class SteamMsgPlayer {
           getAnnouncementHeadlineBytes() {
         java.lang.Object ref = announcementHeadline_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           announcementHeadline_ = b;
@@ -15390,7 +18830,7 @@ public final class SteamMsgPlayer {
           getAnnouncementUrlBytes() {
         java.lang.Object ref = announcementUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           announcementUrl_ = b;
@@ -15528,7 +18968,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_GetNewSteamAnnouncementState_Response(input, extensionRegistry);
+          return new CPlayer_GetNewSteamAnnouncementState_Response(input, extensionRegistry);
       }
     };
 
@@ -15596,9 +19036,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -16096,7 +19533,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_UpdateSteamAnnouncementLastRead_Request(input, extensionRegistry);
+          return new CPlayer_UpdateSteamAnnouncementLastRead_Request(input, extensionRegistry);
       }
     };
 
@@ -16144,9 +19581,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -16483,7 +19917,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_UpdateSteamAnnouncementLastRead_Response(input, extensionRegistry);
+          return new CPlayer_UpdateSteamAnnouncementLastRead_Response(input, extensionRegistry);
       }
     };
 
@@ -16509,7 +19943,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
      */
-    java.util.List<SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game> 
+    java.util.List<SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game>
         getGamesList();
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
@@ -16522,7 +19956,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
      */
-    java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder> 
+    java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder>
         getGamesOrBuilderList();
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
@@ -16556,9 +19990,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -16624,7 +20055,7 @@ public final class SteamMsgPlayer {
     /**
      * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
      */
-    public java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder> 
+    public java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder>
         getGamesOrBuilderList() {
       return games_;
     }
@@ -16935,7 +20366,7 @@ public final class SteamMsgPlayer {
               gamesBuilder_ = null;
               games_ = other.games_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              gamesBuilder_ = 
+              gamesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getGamesFieldBuilder() : null;
             } else {
@@ -17166,7 +20597,7 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
        */
-      public java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder> 
+      public java.util.List<? extends SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder>
            getGamesOrBuilderList() {
         if (gamesBuilder_ != null) {
           return gamesBuilder_.getMessageOrBuilderList();
@@ -17192,12 +20623,12 @@ public final class SteamMsgPlayer {
       /**
        * <code>repeated .CPlayer_GetLastPlayedTimes_Response.Game games = 1;</code>
        */
-      public java.util.List<SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game.Builder> 
+      public java.util.List<SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game.Builder>
            getGamesBuilderList() {
         return getGamesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game, SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game.Builder, SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder> 
+          SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game, SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.Game.Builder, SteamMsgPlayer.CPlayer_GetLastPlayedTimes_Response.GameOrBuilder>
           getGamesFieldBuilder() {
         if (gamesBuilder_ == null) {
           gamesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -17240,7 +20671,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_LastPlayedTimes_Notification(input, extensionRegistry);
+          return new CPlayer_LastPlayedTimes_Notification(input, extensionRegistry);
       }
     };
 
@@ -17323,9 +20754,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -17416,7 +20844,7 @@ public final class SteamMsgPlayer {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -17432,7 +20860,7 @@ public final class SteamMsgPlayer {
         getNicknameBytes() {
       java.lang.Object ref = nickname_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         nickname_ = b;
@@ -17867,7 +21295,7 @@ public final class SteamMsgPlayer {
           getNicknameBytes() {
         java.lang.Object ref = nickname_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           nickname_ = b;
@@ -17973,7 +21401,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_FriendNicknameChanged_Notification(input, extensionRegistry);
+          return new CPlayer_FriendNicknameChanged_Notification(input, extensionRegistry);
       }
     };
 
@@ -18081,9 +21509,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -18185,7 +21610,7 @@ public final class SteamMsgPlayer {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -18201,7 +21626,7 @@ public final class SteamMsgPlayer {
         getAnnouncementHeadlineBytes() {
       java.lang.Object ref = announcementHeadline_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         announcementHeadline_ = b;
@@ -18227,7 +21652,7 @@ public final class SteamMsgPlayer {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (bs.isValidUtf8()) {
@@ -18243,7 +21668,7 @@ public final class SteamMsgPlayer {
         getAnnouncementUrlBytes() {
       java.lang.Object ref = announcementUrl_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         announcementUrl_ = b;
@@ -18744,7 +22169,7 @@ public final class SteamMsgPlayer {
           getAnnouncementHeadlineBytes() {
         java.lang.Object ref = announcementHeadline_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           announcementHeadline_ = b;
@@ -18820,7 +22245,7 @@ public final class SteamMsgPlayer {
           getAnnouncementUrlBytes() {
         java.lang.Object ref = announcementUrl_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
           announcementUrl_ = b;
@@ -18958,7 +22383,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_NewSteamAnnouncementState_Notification(input, extensionRegistry);
+          return new CPlayer_NewSteamAnnouncementState_Notification(input, extensionRegistry);
       }
     };
 
@@ -19019,9 +22444,6 @@ public final class SteamMsgPlayer {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -19508,7 +22930,7 @@ public final class SteamMsgPlayer {
        * <code>optional .CPlayer_CommunityPreferences preferences = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          SteamMsgPlayer.CPlayer_CommunityPreferences, SteamMsgPlayer.CPlayer_CommunityPreferences.Builder, SteamMsgPlayer.CPlayer_CommunityPreferencesOrBuilder> 
+          SteamMsgPlayer.CPlayer_CommunityPreferences, SteamMsgPlayer.CPlayer_CommunityPreferences.Builder, SteamMsgPlayer.CPlayer_CommunityPreferencesOrBuilder>
           getPreferencesFieldBuilder() {
         if (preferencesBuilder_ == null) {
           preferencesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
@@ -19550,7 +22972,7 @@ public final class SteamMsgPlayer {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CPlayer_CommunityPreferencesChanged_Notification(input, extensionRegistry);
+          return new CPlayer_CommunityPreferencesChanged_Notification(input, extensionRegistry);
       }
     };
 
@@ -19569,171 +22991,877 @@ public final class SteamMsgPlayer {
 
   }
 
+  public interface CPlayer_PerFriendPreferencesChanged_NotificationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:CPlayer_PerFriendPreferencesChanged_Notification)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional fixed32 accountid = 1;</code>
+     */
+    boolean hasAccountid();
+    /**
+     * <code>optional fixed32 accountid = 1;</code>
+     */
+    int getAccountid();
+
+    /**
+     * <code>optional .PerFriendPreferences preferences = 2;</code>
+     */
+    boolean hasPreferences();
+    /**
+     * <code>optional .PerFriendPreferences preferences = 2;</code>
+     */
+    SteamMsgPlayer.PerFriendPreferences getPreferences();
+    /**
+     * <code>optional .PerFriendPreferences preferences = 2;</code>
+     */
+    SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder();
+  }
+  /**
+   * Protobuf type {@code CPlayer_PerFriendPreferencesChanged_Notification}
+   */
+  public  static final class CPlayer_PerFriendPreferencesChanged_Notification extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:CPlayer_PerFriendPreferencesChanged_Notification)
+      CPlayer_PerFriendPreferencesChanged_NotificationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CPlayer_PerFriendPreferencesChanged_Notification.newBuilder() to construct.
+    private CPlayer_PerFriendPreferencesChanged_Notification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CPlayer_PerFriendPreferencesChanged_Notification() {
+      accountid_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CPlayer_PerFriendPreferencesChanged_Notification(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 13: {
+              bitField0_ |= 0x00000001;
+              accountid_ = input.readFixed32();
+              break;
+            }
+            case 18: {
+              SteamMsgPlayer.PerFriendPreferences.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = preferences_.toBuilder();
+              }
+              preferences_ = input.readMessage(SteamMsgPlayer.PerFriendPreferences.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(preferences_);
+                preferences_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return SteamMsgPlayer.internal_static_CPlayer_PerFriendPreferencesChanged_Notification_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return SteamMsgPlayer.internal_static_CPlayer_PerFriendPreferencesChanged_Notification_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification.class, SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int ACCOUNTID_FIELD_NUMBER = 1;
+    private int accountid_;
+    /**
+     * <code>optional fixed32 accountid = 1;</code>
+     */
+    public boolean hasAccountid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional fixed32 accountid = 1;</code>
+     */
+    public int getAccountid() {
+      return accountid_;
+    }
+
+    public static final int PREFERENCES_FIELD_NUMBER = 2;
+    private SteamMsgPlayer.PerFriendPreferences preferences_;
+    /**
+     * <code>optional .PerFriendPreferences preferences = 2;</code>
+     */
+    public boolean hasPreferences() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .PerFriendPreferences preferences = 2;</code>
+     */
+    public SteamMsgPlayer.PerFriendPreferences getPreferences() {
+      return preferences_ == null ? SteamMsgPlayer.PerFriendPreferences.getDefaultInstance() : preferences_;
+    }
+    /**
+     * <code>optional .PerFriendPreferences preferences = 2;</code>
+     */
+    public SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder() {
+      return preferences_ == null ? SteamMsgPlayer.PerFriendPreferences.getDefaultInstance() : preferences_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeFixed32(1, accountid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, getPreferences());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFixed32Size(1, accountid_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getPreferences());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification)) {
+        return super.equals(obj);
+      }
+      SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification other = (SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification) obj;
+
+      boolean result = true;
+      result = result && (hasAccountid() == other.hasAccountid());
+      if (hasAccountid()) {
+        result = result && (getAccountid()
+            == other.getAccountid());
+      }
+      result = result && (hasPreferences() == other.hasPreferences());
+      if (hasPreferences()) {
+        result = result && getPreferences()
+            .equals(other.getPreferences());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasAccountid()) {
+        hash = (37 * hash) + ACCOUNTID_FIELD_NUMBER;
+        hash = (53 * hash) + getAccountid();
+      }
+      if (hasPreferences()) {
+        hash = (37 * hash) + PREFERENCES_FIELD_NUMBER;
+        hash = (53 * hash) + getPreferences().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code CPlayer_PerFriendPreferencesChanged_Notification}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:CPlayer_PerFriendPreferencesChanged_Notification)
+        SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_NotificationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return SteamMsgPlayer.internal_static_CPlayer_PerFriendPreferencesChanged_Notification_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return SteamMsgPlayer.internal_static_CPlayer_PerFriendPreferencesChanged_Notification_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification.class, SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification.Builder.class);
+      }
+
+      // Construct using SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getPreferencesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        accountid_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (preferencesBuilder_ == null) {
+          preferences_ = null;
+        } else {
+          preferencesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return SteamMsgPlayer.internal_static_CPlayer_PerFriendPreferencesChanged_Notification_descriptor;
+      }
+
+      public SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification getDefaultInstanceForType() {
+        return SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification.getDefaultInstance();
+      }
+
+      public SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification build() {
+        SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification buildPartial() {
+        SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification result = new SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.accountid_ = accountid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (preferencesBuilder_ == null) {
+          result.preferences_ = preferences_;
+        } else {
+          result.preferences_ = preferencesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification) {
+          return mergeFrom((SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification other) {
+        if (other == SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification.getDefaultInstance()) return this;
+        if (other.hasAccountid()) {
+          setAccountid(other.getAccountid());
+        }
+        if (other.hasPreferences()) {
+          mergePreferences(other.getPreferences());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int accountid_ ;
+      /**
+       * <code>optional fixed32 accountid = 1;</code>
+       */
+      public boolean hasAccountid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional fixed32 accountid = 1;</code>
+       */
+      public int getAccountid() {
+        return accountid_;
+      }
+      /**
+       * <code>optional fixed32 accountid = 1;</code>
+       */
+      public Builder setAccountid(int value) {
+        bitField0_ |= 0x00000001;
+        accountid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional fixed32 accountid = 1;</code>
+       */
+      public Builder clearAccountid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        accountid_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private SteamMsgPlayer.PerFriendPreferences preferences_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder> preferencesBuilder_;
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      public boolean hasPreferences() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferences getPreferences() {
+        if (preferencesBuilder_ == null) {
+          return preferences_ == null ? SteamMsgPlayer.PerFriendPreferences.getDefaultInstance() : preferences_;
+        } else {
+          return preferencesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      public Builder setPreferences(SteamMsgPlayer.PerFriendPreferences value) {
+        if (preferencesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          preferences_ = value;
+          onChanged();
+        } else {
+          preferencesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      public Builder setPreferences(
+          SteamMsgPlayer.PerFriendPreferences.Builder builderForValue) {
+        if (preferencesBuilder_ == null) {
+          preferences_ = builderForValue.build();
+          onChanged();
+        } else {
+          preferencesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      public Builder mergePreferences(SteamMsgPlayer.PerFriendPreferences value) {
+        if (preferencesBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              preferences_ != null &&
+              preferences_ != SteamMsgPlayer.PerFriendPreferences.getDefaultInstance()) {
+            preferences_ =
+              SteamMsgPlayer.PerFriendPreferences.newBuilder(preferences_).mergeFrom(value).buildPartial();
+          } else {
+            preferences_ = value;
+          }
+          onChanged();
+        } else {
+          preferencesBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      public Builder clearPreferences() {
+        if (preferencesBuilder_ == null) {
+          preferences_ = null;
+          onChanged();
+        } else {
+          preferencesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferences.Builder getPreferencesBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getPreferencesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      public SteamMsgPlayer.PerFriendPreferencesOrBuilder getPreferencesOrBuilder() {
+        if (preferencesBuilder_ != null) {
+          return preferencesBuilder_.getMessageOrBuilder();
+        } else {
+          return preferences_ == null ?
+              SteamMsgPlayer.PerFriendPreferences.getDefaultInstance() : preferences_;
+        }
+      }
+      /**
+       * <code>optional .PerFriendPreferences preferences = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder>
+          getPreferencesFieldBuilder() {
+        if (preferencesBuilder_ == null) {
+          preferencesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              SteamMsgPlayer.PerFriendPreferences, SteamMsgPlayer.PerFriendPreferences.Builder, SteamMsgPlayer.PerFriendPreferencesOrBuilder>(
+                  getPreferences(),
+                  getParentForChildren(),
+                  isClean());
+          preferences_ = null;
+        }
+        return preferencesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:CPlayer_PerFriendPreferencesChanged_Notification)
+    }
+
+    // @@protoc_insertion_point(class_scope:CPlayer_PerFriendPreferencesChanged_Notification)
+    private static final SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification();
+    }
+
+    public static SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<CPlayer_PerFriendPreferencesChanged_Notification>
+        PARSER = new com.google.protobuf.AbstractParser<CPlayer_PerFriendPreferencesChanged_Notification>() {
+      public CPlayer_PerFriendPreferencesChanged_Notification parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CPlayer_PerFriendPreferencesChanged_Notification(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CPlayer_PerFriendPreferencesChanged_Notification> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CPlayer_PerFriendPreferencesChanged_Notification> getParserForType() {
+      return PARSER;
+    }
+
+    public SteamMsgPlayer.CPlayer_PerFriendPreferencesChanged_Notification getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetMutualFriendsForIncomingInvites_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetMutualFriendsForIncomingInvites_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_IncomingInviteMutualFriendList_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_IncomingInviteMutualFriendList_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetMutualFriendsForIncomingInvites_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetMutualFriendsForIncomingInvites_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetGameBadgeLevels_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetGameBadgeLevels_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetGameBadgeLevels_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetGameBadgeLevels_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetGameBadgeLevels_Response_Badge_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetGameBadgeLevels_Response_Badge_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetLastPlayedTimes_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetLastPlayedTimes_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetLastPlayedTimes_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetLastPlayedTimes_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetLastPlayedTimes_Response_Game_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetLastPlayedTimes_Response_Game_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_AcceptSSA_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_AcceptSSA_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_AcceptSSA_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_AcceptSSA_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetNicknameList_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetNicknameList_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetNicknameList_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetNicknameList_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetNicknameList_Response_PlayerNickname_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetNicknameList_Response_PlayerNickname_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CPlayer_GetPerFriendPreferences_Request_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CPlayer_GetPerFriendPreferences_Request_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_PerFriendPreferences_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_PerFriendPreferences_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CPlayer_GetPerFriendPreferences_Response_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CPlayer_GetPerFriendPreferences_Response_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CPlayer_SetPerFriendPreferences_Request_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CPlayer_SetPerFriendPreferences_Request_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CPlayer_SetPerFriendPreferences_Response_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CPlayer_SetPerFriendPreferences_Response_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_AddFriend_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_AddFriend_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_AddFriend_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_AddFriend_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_RemoveFriend_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_RemoveFriend_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_RemoveFriend_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_RemoveFriend_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_IgnoreFriend_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_IgnoreFriend_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_IgnoreFriend_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_IgnoreFriend_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetCommunityPreferences_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetCommunityPreferences_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_CommunityPreferences_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_CommunityPreferences_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetCommunityPreferences_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetCommunityPreferences_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_SetCommunityPreferences_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_SetCommunityPreferences_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_SetCommunityPreferences_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_SetCommunityPreferences_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetNewSteamAnnouncementState_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetNewSteamAnnouncementState_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_GetNewSteamAnnouncementState_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_GetNewSteamAnnouncementState_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Request_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Request_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Response_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Response_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_LastPlayedTimes_Notification_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_LastPlayedTimes_Notification_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_FriendNicknameChanged_Notification_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_FriendNicknameChanged_Notification_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_NewSteamAnnouncementState_Notification_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_NewSteamAnnouncementState_Notification_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_CPlayer_CommunityPreferencesChanged_Notification_descriptor;
-  private static final 
+  private static final
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_CPlayer_CommunityPreferencesChanged_Notification_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_CPlayer_PerFriendPreferencesChanged_Notification_descriptor;
+  private static final
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_CPlayer_PerFriendPreferencesChanged_Notification_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -19752,7 +23880,7 @@ public final class SteamMsgPlayer {
       "Player_GetMutualFriendsForIncomingInvite" +
       "s_Response\022U\n$incoming_invite_mutual_fri" +
       "ends_lists\030\001 \003(\0132\'.CPlayer_IncomingInvit" +
-      "eMutualFriendList\"3\n\"CPlayer_GetGameBadg" +
+      "eMutualFriendList\"3\n\"CPlayer_GetGameBadg",
       "eLevels_Request\022\r\n\005appid\030\001 \001(\r\"\265\001\n#CPlay" +
       "er_GetGameBadgeLevels_Response\022\024\n\014player" +
       "_level\030\001 \001(\r\022:\n\006badges\030\002 \003(\0132*.CPlayer_G" +
@@ -19761,140 +23889,183 @@ public final class SteamMsgPlayer {
       "er_color\030\003 \001(\r\"\202\001\n\"CPlayer_GetLastPlayed" +
       "Times_Request\022\\\n\017min_last_played\030\001 \001(\rBC" +
       "\202\265\030?The most recent last-played time the" +
-      " client already knows about\"\300\001\n#CPlayer_" +
-      "GetLastPlayedTimes_Response\0228\n\005games\030\001 \003" +
+      " client already knows about\"\330\001\n#CPlayer_" +
+      "GetLastPlayedTimes_Response\0228\n\005games\030\001 \003",
       "(\0132).CPlayer_GetLastPlayedTimes_Response" +
-      ".Game\032_\n\004Game\022\r\n\005appid\030\001 \001(\005\022\025\n\rlast_pla" +
+      ".Game\032w\n\004Game\022\r\n\005appid\030\001 \001(\005\022\025\n\rlast_pla" +
       "ytime\030\002 \001(\r\022\027\n\017playtime_2weeks\030\003 \001(\005\022\030\n\020" +
-      "playtime_forever\030\004 \001(\005\"\033\n\031CPlayer_Accept" +
-      "SSA_Request\"\034\n\032CPlayer_AcceptSSA_Respons" +
-      "e\"!\n\037CPlayer_GetNicknameList_Request\"\236\001\n" +
-      " CPlayer_GetNicknameList_Response\022C\n\tnic" +
-      "knames\030\001 \003(\01320.CPlayer_GetNicknameList_R" +
-      "esponse.PlayerNickname\0325\n\016PlayerNickname" +
-      "\022\021\n\taccountid\030\001 \001(\007\022\020\n\010nickname\030\002 \001(\t\"c\n" +
-      "\031CPlayer_AddFriend_Request\022F\n\007steamid\030\001 " +
-      "\001(\006B5\202\265\0301Steam ID of user to whom to sen" +
-      "d a friend invite.\"\366\001\n\032CPlayer_AddFriend" +
-      "_Response\022O\n\013invite_sent\030\001 \001(\010B:\202\265\0306True" +
-      " if the operation was successful, false " +
-      "otherwise.\022\206\001\n\023friend_relationship\030\002 \001(\r" +
-      "Bi\202\265\030ethe resulting relationship.  Depen" +
-      "ding on state, may move directly to frie" +
-      "nds rather than invite sent\"R\n\034CPlayer_R" +
-      "emoveFriend_Request\0222\n\007steamid\030\001 \001(\006B!\202\265" +
-      "\030\035Steam ID of friend to remove.\"\\\n\035CPlay" +
-      "er_RemoveFriend_Response\022;\n\023friend_relat" +
-      "ionship\030\001 \001(\rB\036\202\265\030\032the resulting relatio" +
-      "nship\"\177\n\034CPlayer_IgnoreFriend_Request\022\017\n" +
-      "\007steamid\030\001 \001(\006\022N\n\010unignore\030\002 \001(\010B<\202\265\0308If" +
-      " set, remove from ignore/block list inst" +
-      "ead of adding \"\\\n\035CPlayer_IgnoreFriend_R" +
-      "esponse\022;\n\023friend_relationship\030\001 \001(\rB\036\202\265" +
-      "\030\032the resulting relationship\")\n\'CPlayer_" +
-      "GetCommunityPreferences_Request\"\261\001\n\034CPla" +
-      "yer_CommunityPreferences\022)\n\033hide_adult_c" +
-      "ontent_violence\030\001 \001(\010:\004true\022$\n\026hide_adul" +
-      "t_content_sex\030\002 \001(\010:\004true\022%\n\026parenthesiz" +
-      "e_nicknames\030\004 \001(\010:\005false\022\031\n\021timestamp_up" +
-      "dated\030\003 \001(\r\"^\n(CPlayer_GetCommunityPrefe" +
-      "rences_Response\0222\n\013preferences\030\001 \001(\0132\035.C" +
-      "Player_CommunityPreferences\"]\n\'CPlayer_S" +
-      "etCommunityPreferences_Request\0222\n\013prefer" +
-      "ences\030\001 \001(\0132\035.CPlayer_CommunityPreferenc" +
-      "es\"*\n(CPlayer_SetCommunityPreferences_Re" +
-      "sponse\"@\n,CPlayer_GetNewSteamAnnouncemen" +
-      "tState_Request\022\020\n\010language\030\001 \001(\005\"\246\001\n-CPl" +
-      "ayer_GetNewSteamAnnouncementState_Respon" +
-      "se\022\r\n\005state\030\001 \001(\005\022\035\n\025announcement_headli" +
-      "ne\030\002 \001(\t\022\030\n\020announcement_url\030\003 \001(\t\022\023\n\013ti" +
-      "me_posted\030\004 \001(\r\022\030\n\020announcement_gid\030\005 \001(" +
-      "\004\"`\n/CPlayer_UpdateSteamAnnouncementLast" +
-      "Read_Request\022\030\n\020announcement_gid\030\001 \001(\004\022\023" +
-      "\n\013time_posted\030\002 \001(\r\"2\n0CPlayer_UpdateSte" +
-      "amAnnouncementLastRead_Response\"`\n$CPlay" +
-      "er_LastPlayedTimes_Notification\0228\n\005games" +
-      "\030\001 \003(\0132).CPlayer_GetLastPlayedTimes_Resp" +
-      "onse.Game\"j\n*CPlayer_FriendNicknameChang" +
-      "ed_Notification\022\021\n\taccountid\030\001 \001(\007\022\020\n\010ni" +
-      "ckname\030\002 \001(\t\022\027\n\017is_echo_to_self\030\003 \001(\010\"\247\001" +
-      "\n.CPlayer_NewSteamAnnouncementState_Noti" +
-      "fication\022\r\n\005state\030\001 \001(\005\022\035\n\025announcement_" +
-      "headline\030\002 \001(\t\022\030\n\020announcement_url\030\003 \001(\t" +
-      "\022\023\n\013time_posted\030\004 \001(\r\022\030\n\020announcement_gi" +
-      "d\030\005 \001(\004\"f\n0CPlayer_CommunityPreferencesC" +
-      "hanged_Notification\0222\n\013preferences\030\001 \001(\013" +
-      "2\035.CPlayer_CommunityPreferences2\370\017\n\006Play" +
-      "er\022\357\001\n\"GetMutualFriendsForIncomingInvite" +
-      "s\0223.CPlayer_GetMutualFriendsForIncomingI" +
-      "nvites_Request\0324.CPlayer_GetMutualFriend" +
-      "sForIncomingInvites_Response\"^\202\265\030ZGet me" +
-      " the mutual friends for each of my pendi" +
-      "ng incoming invites (individuals and cla" +
-      "ns).\022\266\001\n\022GetGameBadgeLevels\022#.CPlayer_Ge" +
-      "tGameBadgeLevels_Request\032$.CPlayer_GetGa" +
-      "meBadgeLevels_Response\"U\202\265\030QReturns the " +
-      "Steam Level of a user, the Badge level f" +
-      "or the game, and if it\'s foil\022\225\001\n\030Client" +
-      "GetLastPlayedTimes\022#.CPlayer_GetLastPlay" +
-      "edTimes_Request\032$.CPlayer_GetLastPlayedT" +
-      "imes_Response\".\202\265\030*Gets the last-played " +
-      "times for the account\022c\n\tAcceptSSA\022\032.CPl" +
-      "ayer_AcceptSSA_Request\032\033.CPlayer_AcceptS" +
-      "SA_Response\"\035\202\265\030\031User is accepting the S" +
-      "SA\022\224\001\n\017GetNicknameList\022 .CPlayer_GetNick" +
-      "nameList_Request\032!.CPlayer_GetNicknameLi" +
-      "st_Response\"<\202\265\0308Gets the list of nickna" +
-      "mes this user has for other users\022s\n\tAdd" +
-      "Friend\022\032.CPlayer_AddFriend_Request\032\033.CPl" +
-      "ayer_AddFriend_Response\"-\202\265\030)Invites ano" +
-      "ther Steam user to be a friend\022\202\001\n\014Remov" +
-      "eFriend\022\035.CPlayer_RemoveFriend_Request\032\036" +
-      ".CPlayer_RemoveFriend_Response\"3\202\265\030/Remo" +
-      "ves a friend or ignores a friend suggest" +
-      "ion\022\246\001\n\014IgnoreFriend\022\035.CPlayer_IgnoreFri" +
-      "end_Request\032\036.CPlayer_IgnoreFriend_Respo" +
-      "nse\"W\202\265\030SBlocks or unblocks communicatio" +
-      "n with the user.  Despite name, can be a" +
-      " non-friend.\022\236\001\n\027GetCommunityPreferences" +
-      "\022(.CPlayer_GetCommunityPreferences_Reque" +
-      "st\032).CPlayer_GetCommunityPreferences_Res" +
-      "ponse\".\202\265\030*Returns the player\'s communit" +
-      "y preferences\022\233\001\n\027SetCommunityPreference" +
-      "s\022(.CPlayer_SetCommunityPreferences_Requ" +
-      "est\032).CPlayer_SetCommunityPreferences_Re" +
-      "sponse\"+\202\265\030\'Sets the player\'s community " +
-      "preferences\022\336\001\n\034GetNewSteamAnnouncementS" +
-      "tate\022-.CPlayer_GetNewSteamAnnouncementSt" +
-      "ate_Request\032..CPlayer_GetNewSteamAnnounc" +
-      "ementState_Response\"_\202\265\030[Calculates and " +
-      "returns what to display for UI that rend" +
-      "ers new steam announcement available\022\274\001\n" +
-      "\037UpdateSteamAnnouncementLastRead\0220.CPlay" +
-      "er_UpdateSteamAnnouncementLastRead_Reque" +
-      "st\0321.CPlayer_UpdateSteamAnnouncementLast" +
-      "Read_Response\"4\202\265\0300Marks latest announce" +
-      "ment timestamp read by user\032-\202\265\030)A servi" +
-      "ce for accessing Steam player data2\327\005\n\014P" +
-      "layerClient\022\214\001\n\025NotifyLastPlayedTimes\022%." +
-      "CPlayer_LastPlayedTimes_Notification\032\013.N" +
-      "oResponse\"?\202\265\030;Notification from server " +
-      "to client of more recent play time\022\244\001\n\033N" +
-      "otifyFriendNicknameChanged\022+.CPlayer_Fri" +
-      "endNicknameChanged_Notification\032\013.NoResp" +
-      "onse\"K\202\265\030GNotification from server to cl" +
-      "ient that a friend\'s nickname has change" +
-      "d\022\244\001\n\037NotifyNewSteamAnnouncementState\022/." +
-      "CPlayer_NewSteamAnnouncementState_Notifi" +
-      "cation\032\013.NoResponse\"C\202\265\030?Notifies client" +
-      " of changes to steam announcement state " +
-      "for user\022\271\001\n!NotifyCommunityPreferencesC" +
-      "hanged\0221.CPlayer_CommunityPreferencesCha" +
-      "nged_Notification\032\013.NoResponse\"T\202\265\030PNoti" +
-      "fication from server to client that thei" +
-      "r community preferences have changed\032.\202\265" +
-      "\030&Steam player data client notifications" +
-      "\300\265\030\002B\003\200\001\001"
+      "playtime_forever\030\004 \001(\005\022\026\n\016first_playtime" +
+      "\030\005 \001(\r\"\033\n\031CPlayer_AcceptSSA_Request\"\034\n\032C" +
+      "Player_AcceptSSA_Response\"!\n\037CPlayer_Get" +
+      "NicknameList_Request\"\236\001\n CPlayer_GetNick" +
+      "nameList_Response\022C\n\tnicknames\030\001 \003(\01320.C" +
+      "Player_GetNicknameList_Response.PlayerNi" +
+      "ckname\0325\n\016PlayerNickname\022\021\n\taccountid\030\001 ",
+      "\001(\007\022\020\n\010nickname\030\002 \001(\t\")\n\'CPlayer_GetPerF" +
+      "riendPreferences_Request\"\360\004\n\024PerFriendPr" +
+      "eferences\022\021\n\taccountid\030\001 \001(\007\022\020\n\010nickname" +
+      "\030\002 \001(\t\022_\n\030notifications_showingame\030\003 \001(\016" +
+      "2\025.ENotificationSetting:&k_ENotification" +
+      "SettingNotifyUseDefault\022_\n\030notifications" +
+      "_showonline\030\004 \001(\0162\025.ENotificationSetting" +
+      ":&k_ENotificationSettingNotifyUseDefault" +
+      "\022a\n\032notifications_showmessages\030\005 \001(\0162\025.E" +
+      "NotificationSetting:&k_ENotificationSett",
+      "ingNotifyUseDefault\022X\n\021sounds_showingame" +
+      "\030\006 \001(\0162\025.ENotificationSetting:&k_ENotifi" +
+      "cationSettingNotifyUseDefault\022X\n\021sounds_" +
+      "showonline\030\007 \001(\0162\025.ENotificationSetting:" +
+      "&k_ENotificationSettingNotifyUseDefault\022" +
+      "Z\n\023sounds_showmessages\030\010 \001(\0162\025.ENotifica" +
+      "tionSetting:&k_ENotificationSettingNotif" +
+      "yUseDefault\"V\n(CPlayer_GetPerFriendPrefe" +
+      "rences_Response\022*\n\013preferences\030\001 \003(\0132\025.P" +
+      "erFriendPreferences\"U\n\'CPlayer_SetPerFri",
+      "endPreferences_Request\022*\n\013preferences\030\001 " +
+      "\001(\0132\025.PerFriendPreferences\"*\n(CPlayer_Se" +
+      "tPerFriendPreferences_Response\"c\n\031CPlaye" +
+      "r_AddFriend_Request\022F\n\007steamid\030\001 \001(\006B5\202\265" +
+      "\0301Steam ID of user to whom to send a fri" +
+      "end invite.\"\366\001\n\032CPlayer_AddFriend_Respon" +
+      "se\022O\n\013invite_sent\030\001 \001(\010B:\202\265\0306True if the" +
+      " operation was successful, false otherwi" +
+      "se.\022\206\001\n\023friend_relationship\030\002 \001(\rBi\202\265\030et" +
+      "he resulting relationship.  Depending on",
+      " state, may move directly to friends rat" +
+      "her than invite sent\"R\n\034CPlayer_RemoveFr" +
+      "iend_Request\0222\n\007steamid\030\001 \001(\006B!\202\265\030\035Steam" +
+      " ID of friend to remove.\"\\\n\035CPlayer_Remo" +
+      "veFriend_Response\022;\n\023friend_relationship" +
+      "\030\001 \001(\rB\036\202\265\030\032the resulting relationship\"\177" +
+      "\n\034CPlayer_IgnoreFriend_Request\022\017\n\007steami" +
+      "d\030\001 \001(\006\022N\n\010unignore\030\002 \001(\010B<\202\265\0308If set, r" +
+      "emove from ignore/block list instead of " +
+      "adding \"\\\n\035CPlayer_IgnoreFriend_Response",
+      "\022;\n\023friend_relationship\030\001 \001(\rB\036\202\265\030\032the r" +
+      "esulting relationship\")\n\'CPlayer_GetComm" +
+      "unityPreferences_Request\"\261\001\n\034CPlayer_Com" +
+      "munityPreferences\022)\n\033hide_adult_content_" +
+      "violence\030\001 \001(\010:\004true\022$\n\026hide_adult_conte" +
+      "nt_sex\030\002 \001(\010:\004true\022%\n\026parenthesize_nickn" +
+      "ames\030\004 \001(\010:\005false\022\031\n\021timestamp_updated\030\003" +
+      " \001(\r\"^\n(CPlayer_GetCommunityPreferences_" +
+      "Response\0222\n\013preferences\030\001 \001(\0132\035.CPlayer_" +
+      "CommunityPreferences\"]\n\'CPlayer_SetCommu",
+      "nityPreferences_Request\0222\n\013preferences\030\001" +
+      " \001(\0132\035.CPlayer_CommunityPreferences\"*\n(C" +
+      "Player_SetCommunityPreferences_Response\"" +
+      "@\n,CPlayer_GetNewSteamAnnouncementState_" +
+      "Request\022\020\n\010language\030\001 \001(\005\"\246\001\n-CPlayer_Ge" +
+      "tNewSteamAnnouncementState_Response\022\r\n\005s" +
+      "tate\030\001 \001(\005\022\035\n\025announcement_headline\030\002 \001(" +
+      "\t\022\030\n\020announcement_url\030\003 \001(\t\022\023\n\013time_post" +
+      "ed\030\004 \001(\r\022\030\n\020announcement_gid\030\005 \001(\004\"`\n/CP" +
+      "layer_UpdateSteamAnnouncementLastRead_Re",
+      "quest\022\030\n\020announcement_gid\030\001 \001(\004\022\023\n\013time_" +
+      "posted\030\002 \001(\r\"2\n0CPlayer_UpdateSteamAnnou" +
+      "ncementLastRead_Response\"`\n$CPlayer_Last" +
+      "PlayedTimes_Notification\0228\n\005games\030\001 \003(\0132" +
+      ").CPlayer_GetLastPlayedTimes_Response.Ga" +
+      "me\"j\n*CPlayer_FriendNicknameChanged_Noti" +
+      "fication\022\021\n\taccountid\030\001 \001(\007\022\020\n\010nickname\030" +
+      "\002 \001(\t\022\027\n\017is_echo_to_self\030\003 \001(\010\"\247\001\n.CPlay" +
+      "er_NewSteamAnnouncementState_Notificatio" +
+      "n\022\r\n\005state\030\001 \001(\005\022\035\n\025announcement_headlin",
+      "e\030\002 \001(\t\022\030\n\020announcement_url\030\003 \001(\t\022\023\n\013tim" +
+      "e_posted\030\004 \001(\r\022\030\n\020announcement_gid\030\005 \001(\004" +
+      "\"f\n0CPlayer_CommunityPreferencesChanged_" +
+      "Notification\0222\n\013preferences\030\001 \001(\0132\035.CPla" +
+      "yer_CommunityPreferences\"q\n0CPlayer_PerF" +
+      "riendPreferencesChanged_Notification\022\021\n\t" +
+      "accountid\030\001 \001(\007\022*\n\013preferences\030\002 \001(\0132\025.P" +
+      "erFriendPreferences*\205\001\n\024ENotificationSet" +
+      "ting\022*\n&k_ENotificationSettingNotifyUseD" +
+      "efault\020\000\022 \n\034k_ENotificationSettingAlways",
+      "\020\001\022\037\n\033k_ENotificationSettingNever\020\0022\362\022\n\006" +
+      "Player\022\357\001\n\"GetMutualFriendsForIncomingIn" +
+      "vites\0223.CPlayer_GetMutualFriendsForIncom" +
+      "ingInvites_Request\0324.CPlayer_GetMutualFr" +
+      "iendsForIncomingInvites_Response\"^\202\265\030ZGe" +
+      "t me the mutual friends for each of my p" +
+      "ending incoming invites (individuals and" +
+      " clans).\022\266\001\n\022GetGameBadgeLevels\022#.CPlaye" +
+      "r_GetGameBadgeLevels_Request\032$.CPlayer_G" +
+      "etGameBadgeLevels_Response\"U\202\265\030QReturns ",
+      "the Steam Level of a user, the Badge lev" +
+      "el for the game, and if it\'s foil\022\225\001\n\030Cl" +
+      "ientGetLastPlayedTimes\022#.CPlayer_GetLast" +
+      "PlayedTimes_Request\032$.CPlayer_GetLastPla" +
+      "yedTimes_Response\".\202\265\030*Gets the last-pla" +
+      "yed times for the account\022c\n\tAcceptSSA\022\032" +
+      ".CPlayer_AcceptSSA_Request\032\033.CPlayer_Acc" +
+      "eptSSA_Response\"\035\202\265\030\031User is accepting t" +
+      "he SSA\022\224\001\n\017GetNicknameList\022 .CPlayer_Get" +
+      "NicknameList_Request\032!.CPlayer_GetNickna",
+      "meList_Response\"<\202\265\0308Gets the list of ni" +
+      "cknames this user has for other users\022\275\001" +
+      "\n\027GetPerFriendPreferences\022(.CPlayer_GetP" +
+      "erFriendPreferences_Request\032).CPlayer_Ge" +
+      "tPerFriendPreferences_Response\"M\202\265\030IGets" +
+      " the list of per-friend preferences this" +
+      " user has set for other users\022\267\001\n\027SetPer" +
+      "FriendPreferences\022(.CPlayer_SetPerFriend" +
+      "Preferences_Request\032).CPlayer_SetPerFrie" +
+      "ndPreferences_Response\"G\202\265\030CSets the log",
+      "ged in user\'s per-friend preferences for" +
+      " the given user\022s\n\tAddFriend\022\032.CPlayer_A" +
+      "ddFriend_Request\032\033.CPlayer_AddFriend_Res" +
+      "ponse\"-\202\265\030)Invites another Steam user to" +
+      " be a friend\022\202\001\n\014RemoveFriend\022\035.CPlayer_" +
+      "RemoveFriend_Request\032\036.CPlayer_RemoveFri" +
+      "end_Response\"3\202\265\030/Removes a friend or ig" +
+      "nores a friend suggestion\022\246\001\n\014IgnoreFrie" +
+      "nd\022\035.CPlayer_IgnoreFriend_Request\032\036.CPla" +
+      "yer_IgnoreFriend_Response\"W\202\265\030SBlocks or",
+      " unblocks communication with the user.  " +
+      "Despite name, can be a non-friend.\022\236\001\n\027G" +
+      "etCommunityPreferences\022(.CPlayer_GetComm" +
+      "unityPreferences_Request\032).CPlayer_GetCo" +
+      "mmunityPreferences_Response\".\202\265\030*Returns" +
+      " the player\'s community preferences\022\233\001\n\027" +
+      "SetCommunityPreferences\022(.CPlayer_SetCom" +
+      "munityPreferences_Request\032).CPlayer_SetC" +
+      "ommunityPreferences_Response\"+\202\265\030\'Sets t" +
+      "he player\'s community preferences\022\336\001\n\034Ge",
+      "tNewSteamAnnouncementState\022-.CPlayer_Get" +
+      "NewSteamAnnouncementState_Request\032..CPla" +
+      "yer_GetNewSteamAnnouncementState_Respons" +
+      "e\"_\202\265\030[Calculates and returns what to di" +
+      "splay for UI that renders new steam anno" +
+      "uncement available\022\274\001\n\037UpdateSteamAnnoun" +
+      "cementLastRead\0220.CPlayer_UpdateSteamAnno" +
+      "uncementLastRead_Request\0321.CPlayer_Updat" +
+      "eSteamAnnouncementLastRead_Response\"4\202\265\030" +
+      "0Marks latest announcement timestamp rea",
+      "d by user\032-\202\265\030)A service for accessing S" +
+      "team player data2\204\007\n\014PlayerClient\022\214\001\n\025No" +
+      "tifyLastPlayedTimes\022%.CPlayer_LastPlayed" +
+      "Times_Notification\032\013.NoResponse\"?\202\265\030;Not" +
+      "ification from server to client of more " +
+      "recent play time\022\244\001\n\033NotifyFriendNicknam" +
+      "eChanged\022+.CPlayer_FriendNicknameChanged" +
+      "_Notification\032\013.NoResponse\"K\202\265\030GNotifica" +
+      "tion from server to client that a friend" +
+      "\'s nickname has changed\022\244\001\n\037NotifyNewSte",
+      "amAnnouncementState\022/.CPlayer_NewSteamAn" +
+      "nouncementState_Notification\032\013.NoRespons" +
+      "e\"C\202\265\030?Notifies client of changes to ste" +
+      "am announcement state for user\022\271\001\n!Notif" +
+      "yCommunityPreferencesChanged\0221.CPlayer_C" +
+      "ommunityPreferencesChanged_Notification\032" +
+      "\013.NoResponse\"T\202\265\030PNotification from serv" +
+      "er to client that their community prefer" +
+      "ences have changed\022\252\001\n!NotifyPerFriendPr" +
+      "eferencesChanged\0221.CPlayer_PerFriendPref",
+      "erencesChanged_Notification\032\013.NoResponse" +
+      "\"E\202\265\030ANotification from server that per-" +
+      "friend preferences have changed\032.\202\265\030&Ste" +
+      "am player data client notifications\300\265\030\002B" +
+      "\003\200\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -19907,7 +24078,7 @@ public final class SteamMsgPlayer {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          SteamMsgUnifiedBase.getDescriptor(),
+                SteamMsgUnifiedBase.getDescriptor(),
         }, assigner);
     internal_static_CPlayer_GetMutualFriendsForIncomingInvites_Request_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -19962,7 +24133,7 @@ public final class SteamMsgPlayer {
     internal_static_CPlayer_GetLastPlayedTimes_Response_Game_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_GetLastPlayedTimes_Response_Game_descriptor,
-        new java.lang.String[] { "Appid", "LastPlaytime", "Playtime2Weeks", "PlaytimeForever", });
+        new java.lang.String[] { "Appid", "LastPlaytime", "Playtime2Weeks", "PlaytimeForever", "FirstPlaytime", });
     internal_static_CPlayer_AcceptSSA_Request_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_CPlayer_AcceptSSA_Request_fieldAccessorTable = new
@@ -19993,120 +24164,156 @@ public final class SteamMsgPlayer {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_GetNicknameList_Response_PlayerNickname_descriptor,
         new java.lang.String[] { "Accountid", "Nickname", });
-    internal_static_CPlayer_AddFriend_Request_descriptor =
+    internal_static_CPlayer_GetPerFriendPreferences_Request_descriptor =
       getDescriptor().getMessageTypes().get(11);
+    internal_static_CPlayer_GetPerFriendPreferences_Request_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CPlayer_GetPerFriendPreferences_Request_descriptor,
+        new java.lang.String[] { });
+    internal_static_PerFriendPreferences_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_PerFriendPreferences_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_PerFriendPreferences_descriptor,
+        new java.lang.String[] { "Accountid", "Nickname", "NotificationsShowingame", "NotificationsShowonline", "NotificationsShowmessages", "SoundsShowingame", "SoundsShowonline", "SoundsShowmessages", });
+    internal_static_CPlayer_GetPerFriendPreferences_Response_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_CPlayer_GetPerFriendPreferences_Response_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CPlayer_GetPerFriendPreferences_Response_descriptor,
+        new java.lang.String[] { "Preferences", });
+    internal_static_CPlayer_SetPerFriendPreferences_Request_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_CPlayer_SetPerFriendPreferences_Request_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CPlayer_SetPerFriendPreferences_Request_descriptor,
+        new java.lang.String[] { "Preferences", });
+    internal_static_CPlayer_SetPerFriendPreferences_Response_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_CPlayer_SetPerFriendPreferences_Response_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CPlayer_SetPerFriendPreferences_Response_descriptor,
+        new java.lang.String[] { });
+    internal_static_CPlayer_AddFriend_Request_descriptor =
+      getDescriptor().getMessageTypes().get(16);
     internal_static_CPlayer_AddFriend_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_AddFriend_Request_descriptor,
         new java.lang.String[] { "Steamid", });
     internal_static_CPlayer_AddFriend_Response_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_CPlayer_AddFriend_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_AddFriend_Response_descriptor,
         new java.lang.String[] { "InviteSent", "FriendRelationship", });
     internal_static_CPlayer_RemoveFriend_Request_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_CPlayer_RemoveFriend_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_RemoveFriend_Request_descriptor,
         new java.lang.String[] { "Steamid", });
     internal_static_CPlayer_RemoveFriend_Response_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_CPlayer_RemoveFriend_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_RemoveFriend_Response_descriptor,
         new java.lang.String[] { "FriendRelationship", });
     internal_static_CPlayer_IgnoreFriend_Request_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_CPlayer_IgnoreFriend_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_IgnoreFriend_Request_descriptor,
         new java.lang.String[] { "Steamid", "Unignore", });
     internal_static_CPlayer_IgnoreFriend_Response_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_CPlayer_IgnoreFriend_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_IgnoreFriend_Response_descriptor,
         new java.lang.String[] { "FriendRelationship", });
     internal_static_CPlayer_GetCommunityPreferences_Request_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_CPlayer_GetCommunityPreferences_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_GetCommunityPreferences_Request_descriptor,
         new java.lang.String[] { });
     internal_static_CPlayer_CommunityPreferences_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_CPlayer_CommunityPreferences_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_CommunityPreferences_descriptor,
         new java.lang.String[] { "HideAdultContentViolence", "HideAdultContentSex", "ParenthesizeNicknames", "TimestampUpdated", });
     internal_static_CPlayer_GetCommunityPreferences_Response_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_CPlayer_GetCommunityPreferences_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_GetCommunityPreferences_Response_descriptor,
         new java.lang.String[] { "Preferences", });
     internal_static_CPlayer_SetCommunityPreferences_Request_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_CPlayer_SetCommunityPreferences_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_SetCommunityPreferences_Request_descriptor,
         new java.lang.String[] { "Preferences", });
     internal_static_CPlayer_SetCommunityPreferences_Response_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_CPlayer_SetCommunityPreferences_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_SetCommunityPreferences_Response_descriptor,
         new java.lang.String[] { });
     internal_static_CPlayer_GetNewSteamAnnouncementState_Request_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_CPlayer_GetNewSteamAnnouncementState_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_GetNewSteamAnnouncementState_Request_descriptor,
         new java.lang.String[] { "Language", });
     internal_static_CPlayer_GetNewSteamAnnouncementState_Response_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_CPlayer_GetNewSteamAnnouncementState_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_GetNewSteamAnnouncementState_Response_descriptor,
         new java.lang.String[] { "State", "AnnouncementHeadline", "AnnouncementUrl", "TimePosted", "AnnouncementGid", });
     internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Request_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Request_descriptor,
         new java.lang.String[] { "AnnouncementGid", "TimePosted", });
     internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Response_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_UpdateSteamAnnouncementLastRead_Response_descriptor,
         new java.lang.String[] { });
     internal_static_CPlayer_LastPlayedTimes_Notification_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_CPlayer_LastPlayedTimes_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_LastPlayedTimes_Notification_descriptor,
         new java.lang.String[] { "Games", });
     internal_static_CPlayer_FriendNicknameChanged_Notification_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_CPlayer_FriendNicknameChanged_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_FriendNicknameChanged_Notification_descriptor,
         new java.lang.String[] { "Accountid", "Nickname", "IsEchoToSelf", });
     internal_static_CPlayer_NewSteamAnnouncementState_Notification_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_CPlayer_NewSteamAnnouncementState_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_NewSteamAnnouncementState_Notification_descriptor,
         new java.lang.String[] { "State", "AnnouncementHeadline", "AnnouncementUrl", "TimePosted", "AnnouncementGid", });
     internal_static_CPlayer_CommunityPreferencesChanged_Notification_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_CPlayer_CommunityPreferencesChanged_Notification_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CPlayer_CommunityPreferencesChanged_Notification_descriptor,
         new java.lang.String[] { "Preferences", });
+    internal_static_CPlayer_PerFriendPreferencesChanged_Notification_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_CPlayer_PerFriendPreferencesChanged_Notification_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_CPlayer_PerFriendPreferencesChanged_Notification_descriptor,
+        new java.lang.String[] { "Accountid", "Preferences", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(SteamMsgUnifiedBase.description);
