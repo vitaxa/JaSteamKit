@@ -107,7 +107,7 @@ public class CallbackManager implements ICallbackMgrInternals {
     }
 
     /**
-     * REgisters the provided {@link Consumer} to receive callbacks of type {@link TCallback}
+     * Registers the provided {@link Consumer} to receive callbacks of type {@link TCallback}
      *
      * @param callbackType type of the callback
      * @param callbackFunc The function to invoke with the callback.
