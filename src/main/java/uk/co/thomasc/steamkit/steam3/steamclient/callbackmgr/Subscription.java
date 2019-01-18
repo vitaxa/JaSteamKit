@@ -3,10 +3,6 @@ package uk.co.thomasc.steamkit.steam3.steamclient.callbackmgr;
 import java.io.Closeable;
 import java.io.IOException;
 
-/**
- * @author lngtr
- * @since 2018-02-23
- */
 public class Subscription implements Closeable {
 
     private ICallbackMgrInternals manager;
